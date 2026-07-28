@@ -46,11 +46,38 @@ function text(node) {
   return "";
 }
 
+const NAMED_ENTITIES = {
+  amp: "&", lt: "<", gt: ">", quot: '"', apos: "'", nbsp: " ",
+  ndash: "–", mdash: "—", hellip: "…", middot: "·", laquo: "«", raquo: "»",
+  lsquo: "‘", rsquo: "’", ldquo: "“", rdquo: "”", dagger: "†", sect: "§",
+  deg: "°", times: "×", copy: "©", reg: "®", trade: "™", prime: "′",
+  eacute: "é", egrave: "è", ecirc: "ê", agrave: "à", acirc: "â", ccedil: "ç",
+  iacute: "í", icirc: "î", oacute: "ó", ocirc: "ô", uacute: "ú", ucirc: "û",
+  auml: "ä", ouml: "ö", uuml: "ü", ntilde: "ñ", aring: "å", oslash: "ø",
+  aelig: "æ", szlig: "ß",
+};
+
+/**
+ * Two passes because WordPress double-encodes: a feed title of
+ * "STC, Writing &amp;#038; Me" needs &amp; -> & first, then &#038; -> &.
+ */
+function decodeEntities(s) {
+  let out = String(s);
+  for (let i = 0; i < 2; i++) {
+    out = out
+      .replace(/&([a-z]+);/gi, (m, name) => NAMED_ENTITIES[name.toLowerCase()] ?? m)
+      .replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(+n))
+      .replace(/&#x([0-9a-f]+);/gi, (_, n) => String.fromCodePoint(parseInt(n, 16)));
+  }
+  return out;
+}
+
 function stripTags(s) {
-  return String(s)
-    .replace(/<[^>]*>/g, "")
-    .replace(/\s+/g, " ")
-    .trim();
+  return decodeEntities(
+    String(s)
+      .replace(/<[^>]*>/g, "")
+      .replace(/\s+/g, " ")
+  ).trim();
 }
 
 /** Atom <link> handling: prefer rel="alternate", fall back to first href. */

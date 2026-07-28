@@ -12,12 +12,12 @@
 <title>Ultrafilter</title>
 <style>
   :root {
-    --bg: #F5F6F2;
+    --bg: #F7F3EB;
     --ink: #20262B;
     --muted: #6B7278;
     --faint: #9AA1A6;
-    --line: #DBDED6;
-    --hover: #EBEDE6;
+    --line: #E0D9CB;
+    --hover: #EFEAE0;
     --display: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
     --body: Seravek, "Gill Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
     --mono: "SF Mono", Menlo, Consolas, monospace;
@@ -31,9 +31,11 @@
     line-height: 1.5;
     padding: 2.5rem 1.25rem 5rem;
   }
-  .wrap { max-width: 46rem; margin: 0 auto; }
+  .wrap { max-width: 76rem; }
+  .cols { display: flex; gap: 3rem; align-items: flex-start; }
+  .main { flex: 1; min-width: 0; max-width: 52rem; }
 
-  header { border-bottom: 3px double var(--ink); padding-bottom: 1rem; }
+  header { border-bottom: 3px double var(--ink); padding-bottom: .4rem; }
   .mast-row { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: .5rem; }
   h1 { font-family: var(--display); font-weight: 400; font-size: 2.35rem; letter-spacing: .01em; }
   .mast-tools { display: flex; align-items: center; gap: .75rem; font-size: .8rem; color: var(--muted); }
@@ -49,18 +51,19 @@
   .chips { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1.25rem 0 0; }
   .chip { display: inline-flex; align-items: center; gap: .45rem; border: 1px solid var(--line);
           border-radius: 999px; background: none; padding: .35rem .9rem; font-size: .85rem; }
-  .chip .dot { width: .55rem; height: .55rem; border-radius: 50%; background: var(--dot, var(--faint)); }
   .chip .n { color: var(--muted); font-family: var(--mono); font-size: .7rem; }
   .chip[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: #fff; }
   .chip[aria-pressed="true"] .n { color: #cfd4d8; }
 
-  #ledger { display: none; margin-top: 1.25rem; border: 1px solid var(--line); border-radius: .5rem;
-            padding: 1rem 1.25rem; font-size: .82rem; }
-  #ledger.open { display: block; }
+  .ticon { width: .95rem; height: .95rem; flex: none; color: var(--dot, var(--faint)); }
+
+  #ledger { flex: none; width: 17rem; position: sticky; top: 1.5rem; margin-top: 1.25rem;
+            border: 1px solid var(--line); border-radius: .5rem; padding: 1rem 1.25rem; font-size: .82rem; }
   #ledger h2 { font-family: var(--display); font-weight: 400; font-size: 1.05rem; margin-bottom: .5rem; }
-  .ledger-row { display: flex; justify-content: space-between; gap: 1rem; padding: .3rem 0; border-top: 1px dotted var(--line); }
+  .ledger-row { display: flex; justify-content: space-between; flex-wrap: wrap; gap: .15rem .75rem;
+                padding: .3rem 0; border-top: 1px dotted var(--line); }
   .ledger-row a { color: var(--ink); }
-  .ledger-status { font-family: var(--mono); font-size: .7rem; text-align: right; max-width: 20rem; word-break: break-word; }
+  .ledger-status { font-family: var(--mono); font-size: .68rem; word-break: break-word; }
   .ok { color: #557A33; }
   .fail { color: #A33B2E; }
 
@@ -69,8 +72,11 @@
   .dateline::after { content: ""; flex: 1; border-top: 1px solid var(--line); }
   .post { display: flex; gap: .75rem; padding: .55rem .5rem; border-radius: .4rem; align-items: baseline; }
   .post:hover { background: var(--hover); }
-  .post .dot { flex: none; width: .55rem; height: .55rem; border-radius: 50%; background: var(--dot, var(--faint)); position: relative; top: -.05rem; }
+  .post .ticon { position: relative; top: .15rem; }
   .post-main { min-width: 0; }
+  .post .copy { flex: none; margin-left: auto; font-size: .7rem; padding: .15rem .6rem;
+                color: var(--muted); opacity: 0; }
+  .post:hover .copy, .post:focus-within .copy { opacity: 1; }
   .post-title { font-family: var(--display); font-size: 1.05rem; color: var(--ink); text-decoration: none; }
   .post-title:hover { text-decoration: underline; text-underline-offset: 3px; }
   .post-title:visited { color: var(--muted); }
@@ -78,10 +84,16 @@
 
   #status-line { margin-top: 2rem; color: var(--muted); font-size: .9rem; }
 
-  @media (prefers-reduced-motion: no-preference) { .post { transition: background .12s ease; } }
+  @media (prefers-reduced-motion: no-preference) { .post { transition: background .12s ease; } .post .copy { transition: opacity .12s ease; } }
+  @media (max-width: 64rem) {
+    .cols { flex-direction: column; gap: 0; }
+    .main { max-width: none; }
+    #ledger { position: static; width: auto; align-self: stretch; order: 1; }
+  }
   @media (max-width: 480px) {
     .post { flex-wrap: wrap; }
     .post-src { margin-left: 1.3rem; }
+    .post .copy { opacity: 1; }
   }
 </style>
 </head>
@@ -93,17 +105,18 @@
       <h1>Ultrafilter</h1>
       <div class="mast-tools">
         <span id="report">Loading&hellip;</span>
-        <button id="toggle-ledger" aria-expanded="false">Feeds</button>
       </div>
     </div>
   </header>
 
-  <div class="chips" id="chips" role="group" aria-label="Filter by topic"></div>
-
-  <section id="ledger" aria-label="Feed status"></section>
-
-  <main id="list" aria-live="polite"></main>
-  <p id="status-line">Loading posts&hellip;</p>
+  <div class="cols">
+    <div class="main">
+      <div class="chips" id="chips" role="group" aria-label="Filter by topic"></div>
+      <main id="list" aria-live="polite"></main>
+      <p id="status-line">Loading posts&hellip;</p>
+    </div>
+    <aside id="ledger" aria-label="Feed status"></aside>
+  </div>
 
 </div>
 
@@ -126,6 +139,20 @@ function topicColor(id) {
   return t ? t.color : "#9AA1A6";
 }
 
+const ICONS = {
+  math:    '<path d="M18 5H8l6 7-6 7h10"/>',                                     // sigma
+  sci:     '<path d="M10 3h4M11 3v5L5.8 17.5A2 2 0 0 0 7.6 21h8.8a2 2 0 0 0 1.8-3.5L13 8V3"/>', // flask
+  arthist: '<path d="M12 3 3 9.5h18L12 3zM5 12v6M9.7 12v6M14.3 12v6M19 12v6M4 21h16"/>',        // temple
+  arts:    '<path d="M20 4l-9.5 9.5-3-3L17 1zM20 4l-3-3M8.5 12.5C6 13 4.5 14.5 4.5 17c0 1.5-1.5 2.5-1.5 2.5s4.5 1.5 6.5-.5c1.4-1.4 1.5-3.5 1.5-3.5z"/>', // brush
+  climate: '<path d="M5 21C5 12 11 6 21 5c-1 10-7 16-16 16zM5 21c1-6 4-10 9-13"/>',             // leaf
+};
+
+function icon(id) {
+  const path = ICONS[id] || '<circle cx="12" cy="12" r="5"/>';
+  return `<svg class="ticon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${path}</svg>`;
+}
+
 function visibleCount(topicId) {
   const posts = data?.posts || [];
   return topicId === "all" ? posts.length : posts.filter(p => p.topics.includes(topicId)).length;
@@ -136,7 +163,7 @@ function renderChips() {
   $("#chips").innerHTML = chips.map(c => `
     <button class="chip" data-topic="${esc(c.id)}" aria-pressed="${activeTopic === c.id}"
       style="--dot:${esc(c.color)}">
-      <span class="dot" aria-hidden="true"></span>
+      ${icon(c.id)}
       ${esc(c.label)} <span class="n">${visibleCount(c.id)}</span>
     </button>`).join("");
   // Clicking the active chip deselects it, returning to the unfiltered view.
@@ -152,11 +179,10 @@ function renderLedger() {
   const rows = feeds.map(f => {
     const ok = f.status === "ok";
     const label = ok
-      ? `${f.count} posts${f.source && f.source !== "direct" ? ` \u00b7 via ${esc(f.source)}` : ""}`
+      ? `${f.count} post${f.count === 1 ? "" : "s"}${f.source && f.source !== "direct" ? ` \u00b7 via ${esc(f.source)}` : ""}`
       : `failed \u2014 ${esc(f.error || "unknown")}`;
     return `<div class="ledger-row">
-      <span><a href="${esc(f.site)}" target="_blank" rel="noopener">${esc(f.name)}</a>
-        <span style="color:var(--faint)"> \u2014 ${esc(f.author)}</span></span>
+      <a href="${esc(f.site)}" target="_blank" rel="noopener" title="${esc(f.author)}">${esc(f.name)}</a>
       <span class="ledger-status ${ok ? "ok" : "fail"}">${label}</span>
     </div>`;
   }).join("");
@@ -175,11 +201,12 @@ function renderList() {
     const key = d && !isNaN(d) ? dateKey(d) : "Undated";
     if (key !== lastKey) { html += `<h2 class="dateline">${key}</h2>`; lastKey = key; }
     html += `<div class="post" style="--dot:${topicColor(p.topics[0])}">
-      <span class="dot" aria-hidden="true"></span>
+      ${icon(p.topics[0])}
       <span class="post-main">
         <a class="post-title" href="${esc(p.link)}" target="_blank" rel="noopener">${esc(p.title)}</a>
         <span class="post-src">${esc(p.feed)}</span>
       </span>
+      <button class="copy" data-link="${esc(p.link)}">Copy link</button>
     </div>`;
   }
   $("#list").innerHTML = html;
@@ -233,10 +260,18 @@ async function load() {
   }
 }
 
-$("#toggle-ledger").addEventListener("click", () => {
-  const open = $("#ledger").classList.toggle("open");
-  $("#toggle-ledger").setAttribute("aria-expanded", String(open));
+$("#list").addEventListener("click", async e => {
+  const btn = e.target.closest(".copy");
+  if (!btn) return;
+  try {
+    await navigator.clipboard.writeText(btn.dataset.link);
+    btn.textContent = "Copied";
+  } catch {
+    btn.textContent = "Couldn't copy";
+  }
+  setTimeout(() => { btn.textContent = "Copy link"; }, 1200);
 });
+
 load();
 </script>
 </body>
