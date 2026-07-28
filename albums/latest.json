@@ -1,0 +1,50 @@
+{
+  "date": "2026-07-28",
+  "title": "Three albums for 28 July",
+  "albums": [
+    {
+      "category": "focus",
+      "header": "Focus",
+      "artist": "Stan Getz & Charlie Byrd",
+      "album": "Jazz Samba",
+      "year": 1962,
+      "genres": [
+        "bossa nova",
+        "jazz"
+      ],
+      "spotify_url": "https://open.spotify.com/album/02RHeW2EeunpzF2qsMjHSv",
+      "link_is_search": false,
+      "blurb": "Guitarist Charlie Byrd came back from a 1961 State Department tour of Brazil with bossa nova records in hand and recruited tenor saxophonist Stan Getz for a session at All Souls Unitarian Church in Washington, D.C., cut in a single February 1962 afternoon. The album introduced bossa nova to American audiences at large and set the stage for Getz's later Brazilian collaborations, including Getz/Gilberto.",
+      "reception": "It reached No. 1 on the Billboard pop albums chart in 1963, and \"Desafinado\" won Getz the Grammy for Best Jazz Performance."
+    },
+    {
+      "category": "familiar_artist",
+      "header": "Enjoy",
+      "artist": "Moses Sumney",
+      "album": "Aromanticism",
+      "year": 2017,
+      "genres": [
+        "soul",
+        "art folk"
+      ],
+      "spotify_url": "https://open.spotify.com/album/3GEa8PdRoag1vtVUQCAla1",
+      "link_is_search": false,
+      "blurb": "Sumney's debut studio album, released on Jagjaguwar in 2017 after a pair of self-released EPs and years of guest appearances, is a concept record about lovelessness that questions the idea of romance as normative and necessary. His multi-tracked falsetto carries spare arrangements that sit between folk, soul, and ambient jazz.",
+      "reception": "The album drew widespread acclaim (Metacritic 85) and made year-end lists at The New York Times, NPR, and Pitchfork, which later included it among the 200 best albums of the 2010s."
+    },
+    {
+      "category": "new_artist",
+      "header": "Explore",
+      "artist": "Cocteau Twins",
+      "album": "Heaven or Las Vegas",
+      "year": 1990,
+      "genres": [
+        "dream pop"
+      ],
+      "spotify_url": "https://open.spotify.com/album/5lEphbceIgaK1XxWeSrC9E",
+      "link_is_search": false,
+      "blurb": "The Scottish trio spent the 1980s building dream pop around Elizabeth Fraser's voice, an instrument often closer to glossolalia than lyrics. This 1990 record, their final album for the independent label 4AD, is where her singing tilts toward decipherable English, over Robin Guthrie's shimmering guitar layers and Simon Raymonde's bass.",
+      "reception": "It reached No. 7 on the UK Albums Chart, and retrospective rankings place it high: No. 245 on Rolling Stone's 2020 list of the 500 greatest albums, and first on Pitchfork's 2018 list of the 30 best dream pop albums."
+    }
+  ]
+}
