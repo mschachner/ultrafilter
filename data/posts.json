@@ -1,14 +1,1455 @@
 {
- "generated": null,
+ "generated": "2026-07-28T13:31:54.664Z",
  "topics": [
-  { "id": "math",    "label": "Mathematics", "color": "#4756A8" },
-  { "id": "sci",     "label": "Sciences",    "color": "#1F7A70" },
-  { "id": "arthist", "label": "Art history", "color": "#A2731F" },
-  { "id": "arts",    "label": "The arts",    "color": "#94456F" },
-  { "id": "climate", "label": "Climate",     "color": "#557A33" }
+  {
+   "id": "math",
+   "label": "Mathematics",
+   "color": "#4756A8"
+  },
+  {
+   "id": "sci",
+   "label": "Sciences",
+   "color": "#1F7A70"
+  },
+  {
+   "id": "arthist",
+   "label": "Art history",
+   "color": "#A2731F"
+  },
+  {
+   "id": "arts",
+   "label": "The arts",
+   "color": "#94456F"
+  },
+  {
+   "id": "climate",
+   "label": "Climate",
+   "color": "#557A33"
+  }
  ],
- "feedsTotal": 0,
- "feedsOk": 0,
- "feeds": [],
- "posts": []
+ "feedsTotal": 21,
+ "feedsOk": 18,
+ "feeds": [
+  {
+   "name": "Joel David Hamkins",
+   "author": "Joel David Hamkins",
+   "site": "https://jdh.hamkins.org",
+   "topics": [
+    "math"
+   ],
+   "status": "ok",
+   "count": 8,
+   "error": null
+  },
+  {
+   "name": "Combinatorics and more",
+   "author": "Gil Kalai",
+   "site": "https://gilkalai.wordpress.com",
+   "topics": [
+    "math"
+   ],
+   "status": "ok",
+   "count": 8,
+   "error": null
+  },
+  {
+   "name": "Azimuth",
+   "author": "John Baez",
+   "site": "https://johncarlosbaez.wordpress.com",
+   "topics": [
+    "math",
+    "climate"
+   ],
+   "status": "ok",
+   "count": 8,
+   "error": null
+  },
+  {
+   "name": "The n-Category Café",
+   "author": "John Baez et al.",
+   "site": "https://golem.ph.utexas.edu/category/",
+   "topics": [
+    "math"
+   ],
+   "status": "ok",
+   "count": 8,
+   "error": null
+  },
+  {
+   "name": "Not Even Wrong",
+   "author": "Peter Woit",
+   "site": "https://www.math.columbia.edu/~woit/wordpress/",
+   "topics": [
+    "math",
+    "sci"
+   ],
+   "status": "ok",
+   "count": 8,
+   "error": null
+  },
+  {
+   "name": "Peter Cameron's Blog",
+   "author": "Peter Cameron",
+   "site": "https://cameroncounts.wordpress.com",
+   "topics": [
+    "math"
+   ],
+   "status": "ok",
+   "count": 8,
+   "error": null
+  },
+  {
+   "name": "In the Pipeline",
+   "author": "Derek Lowe",
+   "site": "https://www.science.org/blogs/pipeline",
+   "topics": [
+    "sci"
+   ],
+   "status": "ok",
+   "count": 8,
+   "error": null
+  },
+  {
+   "name": "Of Particular Significance",
+   "author": "Matt Strassler",
+   "site": "https://profmattstrassler.com",
+   "topics": [
+    "sci"
+   ],
+   "status": "ok",
+   "count": 1,
+   "error": null
+  },
+  {
+   "name": "Small Things Considered",
+   "author": "Roberto, Christoph et al.",
+   "site": "https://smallthingsconsidered.blog",
+   "topics": [
+    "sci"
+   ],
+   "status": "ok",
+   "count": 8,
+   "error": null
+  },
+  {
+   "name": "Astrobites",
+   "author": "Astro PhD students",
+   "site": "https://astrobites.org",
+   "topics": [
+    "sci"
+   ],
+   "status": "ok",
+   "count": 8,
+   "error": null
+  },
+  {
+   "name": "Smarthistory",
+   "author": "Harris, Zucker et al.",
+   "site": "https://smarthistory.org",
+   "topics": [
+    "arthist"
+   ],
+   "status": "failed",
+   "count": 0,
+   "error": "HTTP 403"
+  },
+  {
+   "name": "Art History News",
+   "author": "Bendor Grosvenor",
+   "site": "https://www.arthistorynews.com",
+   "topics": [
+    "arthist"
+   ],
+   "status": "failed",
+   "count": 0,
+   "error": "HTTP 404"
+  },
+  {
+   "name": "Journal18",
+   "author": "Editorial board",
+   "site": "https://www.journal18.org",
+   "topics": [
+    "arthist"
+   ],
+   "status": "ok",
+   "count": 8,
+   "error": null
+  },
+  {
+   "name": "Observations on Film Art",
+   "author": "Kristin Thompson",
+   "site": "https://www.davidbordwell.net/blog/",
+   "topics": [
+    "arts"
+   ],
+   "status": "ok",
+   "count": 6,
+   "error": null
+  },
+  {
+   "name": "The Rest Is Noise",
+   "author": "Alex Ross",
+   "site": "https://therestisnoise.com",
+   "topics": [
+    "arts"
+   ],
+   "status": "ok",
+   "count": 8,
+   "error": null
+  },
+  {
+   "name": "HowlRound",
+   "author": "Theater commons",
+   "site": "https://howlround.com",
+   "topics": [
+    "arts"
+   ],
+   "status": "failed",
+   "count": 0,
+   "error": "HTTP 403"
+  },
+  {
+   "name": "DanceViewTimes",
+   "author": "Adams, Cargill, Sum",
+   "site": "https://www.danceviewtimes.net",
+   "topics": [
+    "arts"
+   ],
+   "status": "ok",
+   "count": 8,
+   "error": null
+  },
+  {
+   "name": "Two Coats of Paint",
+   "author": "Sharon Butler",
+   "site": "https://twocoatsofpaint.com",
+   "topics": [
+    "arts"
+   ],
+   "status": "ok",
+   "count": 3,
+   "error": null
+  },
+  {
+   "name": "RealClimate",
+   "author": "Climate scientists",
+   "site": "https://www.realclimate.org",
+   "topics": [
+    "climate"
+   ],
+   "status": "ok",
+   "count": 8,
+   "error": null
+  },
+  {
+   "name": "Carbon Brief",
+   "author": "Carbon Brief staff",
+   "site": "https://www.carbonbrief.org",
+   "topics": [
+    "climate"
+   ],
+   "status": "ok",
+   "count": 8,
+   "error": null
+  },
+  {
+   "name": "Legal Planet",
+   "author": "UCLA/Berkeley law",
+   "site": "https://legal-planet.org",
+   "topics": [
+    "climate"
+   ],
+   "status": "ok",
+   "count": 8,
+   "error": null
+  }
+ ],
+ "posts": [
+  {
+   "title": "Dust Deal with It",
+   "link": "https://astrobites.org/2026/07/28/hwo-exozodi/",
+   "date": "2026-07-28T13:00:00.000Z",
+   "feed": "Astrobites",
+   "topics": [
+    "sci"
+   ]
+  },
+  {
+   "title": "Analysis: Wind and solar power overtake fossil fuels in Germany for first time ever",
+   "link": "https://www.carbonbrief.org/analysis-wind-and-solar-power-overtake-fossil-fuels-in-germany-for-first-time-ever",
+   "date": "2026-07-28T11:49:20.000Z",
+   "feed": "Carbon Brief",
+   "topics": [
+    "climate"
+   ]
+  },
+  {
+   "title": "Analysis: 84% of nations miss deadline to identify ‘nature-harming’ subsidies by 2025",
+   "link": "https://www.carbonbrief.org/analysis-84-of-nations-miss-deadline-to-identify-nature-harming-subsidies-by-2025",
+   "date": "2026-07-28T11:41:55.000Z",
+   "feed": "Carbon Brief",
+   "topics": [
+    "climate"
+   ]
+  },
+  {
+   "title": "Ensuring Environmental Protections Without CEQA",
+   "link": "https://legal-planet.org/2026/07/27/ensuring-environmental-protections-without-ceqa/",
+   "date": "2026-07-27T22:38:04.000Z",
+   "feed": "Legal Planet",
+   "topics": [
+    "climate"
+   ]
+  },
+  {
+   "title": "The Sting in the Tail of the Clean Air Act",
+   "link": "https://legal-planet.org/2026/07/27/the-sting-in-the-tail-of-the-clean-air-act/",
+   "date": "2026-07-27T14:45:41.000Z",
+   "feed": "Legal Planet",
+   "topics": [
+    "climate"
+   ]
+  },
+  {
+   "title": "The Invisible Architecture Between the Stars",
+   "link": "https://astrobites.org/2026/07/27/the-invisible-architecture-between-the-stars/",
+   "date": "2026-07-27T13:00:00.000Z",
+   "feed": "Astrobites",
+   "topics": [
+    "sci"
+   ]
+  },
+  {
+   "title": "STC, Writing &#038; Me",
+   "link": "https://smallthingsconsidered.blog/schaechter/2026/07/stc-writing-me/",
+   "date": "2026-07-27T08:00:00.000Z",
+   "feed": "Small Things Considered",
+   "topics": [
+    "sci"
+   ]
+  },
+  {
+   "title": "At the grave of Leonhard Frank",
+   "link": "https://therestisnoise.com/at-the-grave-of-leonhard-frank/",
+   "date": "2026-07-27T06:50:25.000Z",
+   "feed": "The Rest Is Noise",
+   "topics": [
+    "arts"
+   ]
+  },
+  {
+   "title": "Taking a Tip From Plants - For the Eyes?",
+   "link": "https://www.science.org/content/blog-post/taking-tip-plants-eyes",
+   "date": "2026-07-27T02:52:23.000Z",
+   "feed": "In the Pipeline",
+   "topics": [
+    "sci"
+   ]
+  },
+  {
+   "title": "Requiem for a Field?",
+   "link": "https://www.math.columbia.edu/~woit/wordpress/?p=15787",
+   "date": "2026-07-26T18:15:44.000Z",
+   "feed": "Not Even Wrong",
+   "topics": [
+    "math",
+    "sci"
+   ]
+  },
+  {
+   "title": "Words and Music",
+   "link": "https://www.danceviewtimes.net/words-and-music/",
+   "date": "2026-07-26T00:14:12.000Z",
+   "feed": "DanceViewTimes",
+   "topics": [
+    "arts"
+   ]
+  },
+  {
+   "title": "Crossing red lines to detect dark matter.",
+   "link": "https://astrobites.org/2026/07/25/hydrogen-alpha-dark/",
+   "date": "2026-07-25T16:03:53.000Z",
+   "feed": "Astrobites",
+   "topics": [
+    "sci"
+   ]
+  },
+  {
+   "title": "Peter Bradley: Pleasure and provocation",
+   "link": "https://twocoatsofpaint.com/2026/07/peter-bradley-pleasure-and-provocation.html?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=peter-bradley-pleasure-and-provocation",
+   "date": "2026-07-24T18:21:40.000Z",
+   "feed": "Two Coats of Paint",
+   "topics": [
+    "arts"
+   ]
+  },
+  {
+   "title": "Renewable Energy Policy After the Federal Retreat",
+   "link": "https://legal-planet.org/2026/07/24/renewable-energy-policy-after-the-federal-retreat/",
+   "date": "2026-07-24T17:44:51.000Z",
+   "feed": "Legal Planet",
+   "topics": [
+    "climate"
+   ]
+  },
+  {
+   "title": "Melora Kuhn: Refreshing myth",
+   "link": "https://twocoatsofpaint.com/2026/07/melora-kuhn-refreshing-myth.html?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=melora-kuhn-refreshing-myth",
+   "date": "2026-07-24T15:28:30.000Z",
+   "feed": "Two Coats of Paint",
+   "topics": [
+    "arts"
+   ]
+  },
+  {
+   "title": "Which way is the wind blowing in wind energy litigation?",
+   "link": "https://legal-planet.org/2026/07/24/guest-post/",
+   "date": "2026-07-24T14:55:05.000Z",
+   "feed": "Legal Planet",
+   "topics": [
+    "climate"
+   ]
+  },
+  {
+   "title": "Factcheck: No, Europe’s heatwaves are not being ‘caused’ by declining air pollution",
+   "link": "https://www.carbonbrief.org/factcheck-no-europes-heatwaves-are-not-being-caused-by-declining-air-pollution",
+   "date": "2026-07-24T14:15:24.000Z",
+   "feed": "Carbon Brief",
+   "topics": [
+    "climate"
+   ]
+  },
+  {
+   "title": "Access to finance ‘strengthens climate resilience’ among sub-Saharan women",
+   "link": "https://www.carbonbrief.org/access-to-finance-strengthens-climate-resilience-among-sub-saharan-women",
+   "date": "2026-07-24T11:29:45.000Z",
+   "feed": "Carbon Brief",
+   "topics": [
+    "climate"
+   ]
+  },
+  {
+   "title": "State of the climate: Rapidly developing El Niño raises chance of record-warm 2026",
+   "link": "https://www.carbonbrief.org/state-of-the-climate-rapidly-developing-el-nino-raises-chance-of-record-warm-2026",
+   "date": "2026-07-24T10:59:37.000Z",
+   "feed": "Carbon Brief",
+   "topics": [
+    "climate"
+   ]
+  },
+  {
+   "title": "Clinical Failure Rates Over the Decades: Yikes",
+   "link": "https://www.science.org/content/blog-post/clinical-failure-rates-over-decades-yikes",
+   "date": "2026-07-24T10:08:56.000Z",
+   "feed": "In the Pipeline",
+   "topics": [
+    "sci"
+   ]
+  },
+  {
+   "title": "Griffin and Griffin: City lights",
+   "link": "https://twocoatsofpaint.com/2026/07/griffin-and-griffin-city-lights.html?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=griffin-and-griffin-city-lights",
+   "date": "2026-07-23T18:08:39.000Z",
+   "feed": "Two Coats of Paint",
+   "topics": [
+    "arts"
+   ]
+  },
+  {
+   "title": "Escalating the War on Science",
+   "link": "https://legal-planet.org/2026/07/23/escalating-the-war-on-science-2/",
+   "date": "2026-07-23T15:57:48.000Z",
+   "feed": "Legal Planet",
+   "topics": [
+    "climate"
+   ]
+  },
+  {
+   "title": "Looking Inwards on an Evolving Milky Way",
+   "link": "https://astrobites.org/2026/07/23/maaps-and-the-galaxy/",
+   "date": "2026-07-23T13:00:00.000Z",
+   "feed": "Astrobites",
+   "topics": [
+    "sci"
+   ]
+  },
+  {
+   "title": "Various News Items",
+   "link": "https://gilkalai.wordpress.com/2026/07/23/various-news-items/",
+   "date": "2026-07-23T12:08:48.000Z",
+   "feed": "Combinatorics and more",
+   "topics": [
+    "math"
+   ]
+  },
+  {
+   "title": "Entropy, partitions, groups and AI",
+   "link": "https://cameroncounts.wordpress.com/2026/07/23/entropy-partitions-groups-and-ai/",
+   "date": "2026-07-23T08:41:21.000Z",
+   "feed": "Peter Cameron's Blog",
+   "topics": [
+    "math"
+   ]
+  },
+  {
+   "title": "The Assault On Science Funding Continues",
+   "link": "https://www.science.org/content/blog-post/assault-science-funding-continues",
+   "date": "2026-07-23T01:51:26.000Z",
+   "feed": "In the Pipeline",
+   "topics": [
+    "sci"
+   ]
+  },
+  {
+   "title": "Canada in Flames",
+   "link": "https://legal-planet.org/2026/07/22/canada-in-flames/",
+   "date": "2026-07-22T14:56:07.000Z",
+   "feed": "Legal Planet",
+   "topics": [
+    "climate"
+   ]
+  },
+  {
+   "title": "I read the news today, oh boy",
+   "link": "https://cameroncounts.wordpress.com/2026/07/22/i-read-the-news-today-oh-boy/",
+   "date": "2026-07-22T14:14:35.000Z",
+   "feed": "Peter Cameron's Blog",
+   "topics": [
+    "math"
+   ]
+  },
+  {
+   "title": "Beyond the galaxy: finding exoplanets with gravitational waves",
+   "link": "https://astrobites.org/2026/07/22/extragalactic-exoplanets-gws/",
+   "date": "2026-07-22T13:00:00.000Z",
+   "feed": "Astrobites",
+   "topics": [
+    "sci"
+   ]
+  },
+  {
+   "title": "Jordan Triples and the Standard Model",
+   "link": "https://johncarlosbaez.wordpress.com/2026/07/22/jordan-triples-and-the-standard-model/",
+   "date": "2026-07-22T12:36:44.000Z",
+   "feed": "Azimuth",
+   "topics": [
+    "math",
+    "climate"
+   ]
+  },
+  {
+   "title": "AI for the working mathematician",
+   "link": "https://cameroncounts.wordpress.com/2026/07/22/ai-for-the-working-mathematician/",
+   "date": "2026-07-22T08:35:32.000Z",
+   "feed": "Peter Cameron's Blog",
+   "topics": [
+    "math"
+   ]
+  },
+  {
+   "title": "Thoughts on the Netflix Analogy",
+   "link": "https://www.science.org/content/blog-post/thoughts-netflix-analogy",
+   "date": "2026-07-22T03:32:34.000Z",
+   "feed": "In the Pipeline",
+   "topics": [
+    "sci"
+   ]
+  },
+  {
+   "title": "Trying to Create Permit Certainty",
+   "link": "https://legal-planet.org/2026/07/21/trying-to-create-permit-certainty/",
+   "date": "2026-07-21T19:05:07.000Z",
+   "feed": "Legal Planet",
+   "topics": [
+    "climate"
+   ]
+  },
+  {
+   "title": "Should we be data center YIMBYs?",
+   "link": "https://legal-planet.org/2026/07/21/should-we-be-data-center-yimbys/",
+   "date": "2026-07-21T15:10:51.000Z",
+   "feed": "Legal Planet",
+   "topics": [
+    "climate"
+   ]
+  },
+  {
+   "title": "Thermal electrons can explain the mysterious radio behavior of a tidal disruption event",
+   "link": "https://astrobites.org/2026/07/21/thermal-electrons-in-tdes/",
+   "date": "2026-07-21T13:35:52.000Z",
+   "feed": "Astrobites",
+   "topics": [
+    "sci"
+   ]
+  },
+  {
+   "title": "Benchmarking the Benchmarks",
+   "link": "https://www.science.org/content/blog-post/benchmarking-benchmarks",
+   "date": "2026-07-21T11:12:24.000Z",
+   "feed": "In the Pipeline",
+   "topics": [
+    "sci"
+   ]
+  },
+  {
+   "title": "Q&#038;A: What the EU’s carbon market review means for climate action",
+   "link": "https://www.carbonbrief.org/qa-what-the-eus-carbon-market-review-means-for-climate-action",
+   "date": "2026-07-20T16:22:59.000Z",
+   "feed": "Carbon Brief",
+   "topics": [
+    "climate"
+   ]
+  },
+  {
+   "title": "A Meditation on the Chemistry of WASP-39b",
+   "link": "https://astrobites.org/2026/07/20/a-meditation-on-the-chemistry-of-wasp-39b/",
+   "date": "2026-07-20T13:47:57.000Z",
+   "feed": "Astrobites",
+   "topics": [
+    "sci"
+   ]
+  },
+  {
+   "title": "Not Your Average Bird",
+   "link": "https://www.danceviewtimes.net/not-your-average-bird/",
+   "date": "2026-07-20T01:42:27.000Z",
+   "feed": "DanceViewTimes",
+   "topics": [
+    "arts"
+   ]
+  },
+  {
+   "title": "More Pancreatic Cancer Vaccine Progress - Treatment and Preventative",
+   "link": "https://www.science.org/content/blog-post/more-pancreatic-cancer-vaccine-progress-treatment-and-preventative",
+   "date": "2026-07-20T01:08:04.000Z",
+   "feed": "In the Pipeline",
+   "topics": [
+    "sci"
+   ]
+  },
+  {
+   "title": "How Do Spiral Galaxies Form?",
+   "link": "https://astrobites.org/2026/07/18/how-do-spiral-galaxies-form/",
+   "date": "2026-07-18T22:19:32.000Z",
+   "feed": "Astrobites",
+   "topics": [
+    "sci"
+   ]
+  },
+  {
+   "title": "Octonions and the Standard Model (Part 15)",
+   "link": "https://golem.ph.utexas.edu/category/2026/07/octonions_and_the_standard_mod_14.html",
+   "date": "2026-07-18T17:56:16.000Z",
+   "feed": "The n-Category Café",
+   "topics": [
+    "math"
+   ]
+  },
+  {
+   "title": "Galilean Limits of Electromagnetism",
+   "link": "https://johncarlosbaez.wordpress.com/2026/07/18/galilean-limits-of-electromagnetism/",
+   "date": "2026-07-18T16:35:13.000Z",
+   "feed": "Azimuth",
+   "topics": [
+    "math",
+    "climate"
+   ]
+  },
+  {
+   "title": "Q&#038;A: Europe’s May and June heatwave deaths – and how they were counted",
+   "link": "https://www.carbonbrief.org/qa-europes-may-and-june-heatwave-deaths-and-how-they-were-counted",
+   "date": "2026-07-17T11:17:09.000Z",
+   "feed": "Carbon Brief",
+   "topics": [
+    "climate"
+   ]
+  },
+  {
+   "title": "Soul Man",
+   "link": "https://www.danceviewtimes.net/soul-man/",
+   "date": "2026-07-16T15:39:24.000Z",
+   "feed": "DanceViewTimes",
+   "topics": [
+    "arts"
+   ]
+  },
+  {
+   "title": "Micha A. Perles 90th Birthday Meeting",
+   "link": "https://gilkalai.wordpress.com/2026/07/16/micha-a-perles-90th-birthday-meeting/",
+   "date": "2026-07-16T11:27:05.000Z",
+   "feed": "Combinatorics and more",
+   "topics": [
+    "math"
+   ]
+  },
+  {
+   "title": "More Condensate Secrets Revealed",
+   "link": "https://www.science.org/content/blog-post/more-condensate-secrets-revealed",
+   "date": "2026-07-16T01:42:07.000Z",
+   "feed": "In the Pipeline",
+   "topics": [
+    "sci"
+   ]
+  },
+  {
+   "title": "Various and Sundry",
+   "link": "https://www.math.columbia.edu/~woit/wordpress/?p=15770",
+   "date": "2026-07-15T20:51:23.000Z",
+   "feed": "Not Even Wrong",
+   "topics": [
+    "math",
+    "sci"
+   ]
+  },
+  {
+   "title": "UK withdraws millions in funding from world’s second-largest rainforest in Congo",
+   "link": "https://www.carbonbrief.org/uk-withdraws-millions-in-funding-from-worlds-second-largest-rainforest-in-congo",
+   "date": "2026-07-15T16:04:22.000Z",
+   "feed": "Carbon Brief",
+   "topics": [
+    "climate"
+   ]
+  },
+  {
+   "title": "The Battle For Sickle Cell",
+   "link": "https://www.science.org/content/blog-post/battle-sickle-cell",
+   "date": "2026-07-15T04:11:49.000Z",
+   "feed": "In the Pipeline",
+   "topics": [
+    "sci"
+   ]
+  },
+  {
+   "title": "A Backward Glance",
+   "link": "https://www.danceviewtimes.net/a-backward-glance/",
+   "date": "2026-07-13T01:31:06.000Z",
+   "feed": "DanceViewTimes",
+   "topics": [
+    "arts"
+   ]
+  },
+  {
+   "title": "Notes on Wick Rotation and Chiral Field Theories",
+   "link": "https://www.math.columbia.edu/~woit/wordpress/?p=15768",
+   "date": "2026-07-09T23:21:02.000Z",
+   "feed": "Not Even Wrong",
+   "topics": [
+    "math",
+    "sci"
+   ]
+  },
+  {
+   "title": "This new El Niño is different",
+   "link": "https://www.realclimate.org/index.php/archives/2026/07/this-new-el-nino-is-different/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=this-new-el-nino-is-different",
+   "date": "2026-07-08T11:05:30.000Z",
+   "feed": "RealClimate",
+   "topics": [
+    "climate"
+   ]
+  },
+  {
+   "title": "On the contingent contingency of V = HOD and independence over the maximality principles, Fudan University, Shanghai, July 2026",
+   "link": "https://jdh.hamkins.org/contingent-contingency-of-hod-fudan-july-2026/",
+   "date": "2026-07-07T03:05:37.000Z",
+   "feed": "Joel David Hamkins",
+   "topics": [
+    "math"
+   ]
+  },
+  {
+   "title": "Early Fireworks",
+   "link": "https://www.danceviewtimes.net/early-fireworks-2/",
+   "date": "2026-07-05T19:57:41.000Z",
+   "feed": "DanceViewTimes",
+   "topics": [
+    "arts"
+   ]
+  },
+  {
+   "title": "Sunny Side Up",
+   "link": "https://www.danceviewtimes.net/sunny-side-up-3/",
+   "date": "2026-07-03T13:55:59.000Z",
+   "feed": "DanceViewTimes",
+   "topics": [
+    "arts"
+   ]
+  },
+  {
+   "title": "Speculative Fiction",
+   "link": "https://www.danceviewtimes.net/speculative-fiction/",
+   "date": "2026-07-03T06:49:25.000Z",
+   "feed": "DanceViewTimes",
+   "topics": [
+    "arts"
+   ]
+  },
+  {
+   "title": "The Ramanujan Challenge for AI",
+   "link": "https://gilkalai.wordpress.com/2026/07/02/the-ramanujan-challenge-for-ai/",
+   "date": "2026-07-02T20:49:34.000Z",
+   "feed": "Combinatorics and more",
+   "topics": [
+    "math"
+   ]
+  },
+  {
+   "title": "A Brahms moment",
+   "link": "https://therestisnoise.com/a-brahms-moment/",
+   "date": "2026-07-02T16:56:56.000Z",
+   "feed": "The Rest Is Noise",
+   "topics": [
+    "arts"
+   ]
+  },
+  {
+   "title": "Unforced Variations: July 2026",
+   "link": "https://www.realclimate.org/index.php/archives/2026/07/unforced-variations-july-2026/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=unforced-variations-july-2026",
+   "date": "2026-07-01T21:13:10.000Z",
+   "feed": "RealClimate",
+   "topics": [
+    "climate"
+   ]
+  },
+  {
+   "title": "Knights of Old",
+   "link": "https://www.danceviewtimes.net/knights-of-old/",
+   "date": "2026-07-01T01:39:55.000Z",
+   "feed": "DanceViewTimes",
+   "topics": [
+    "arts"
+   ]
+  },
+  {
+   "title": "Personal note",
+   "link": "https://therestisnoise.com/personal-note-2/",
+   "date": "2026-06-29T12:00:11.000Z",
+   "feed": "The Rest Is Noise",
+   "topics": [
+    "arts"
+   ]
+  },
+  {
+   "title": "From the Old Abbey",
+   "link": "https://cameroncounts.wordpress.com/2026/06/26/from-the-old-abbey/",
+   "date": "2026-06-26T15:30:14.000Z",
+   "feed": "Peter Cameron's Blog",
+   "topics": [
+    "math"
+   ]
+  },
+  {
+   "title": "Matching in NC and Local Events",
+   "link": "https://gilkalai.wordpress.com/2026/06/22/matching-in-nc-and-local-events/",
+   "date": "2026-06-22T07:39:35.000Z",
+   "feed": "Combinatorics and more",
+   "topics": [
+    "math"
+   ]
+  },
+  {
+   "title": "A Reicha moment",
+   "link": "https://therestisnoise.com/a-reicha-moment-2/",
+   "date": "2026-06-20T22:09:24.000Z",
+   "feed": "The Rest Is Noise",
+   "topics": [
+    "arts"
+   ]
+  },
+  {
+   "title": "Set-theoretic mereology as a foundation of mathematics? Shandong University, Workshop on Mereology, China, June 2026",
+   "link": "https://jdh.hamkins.org/set-theoretic-mereology-shandong-june-2026/",
+   "date": "2026-06-20T01:33:32.000Z",
+   "feed": "Joel David Hamkins",
+   "topics": [
+    "math"
+   ]
+  },
+  {
+   "title": "Nightafternight playlist",
+   "link": "https://therestisnoise.com/nightafternight-playlist-54/",
+   "date": "2026-06-18T20:26:42.000Z",
+   "feed": "The Rest Is Noise",
+   "topics": [
+    "arts"
+   ]
+  },
+  {
+   "title": "A sensational Ramsey breakthrough by Domagoj Bradač (reblogged from Sam Mattheus&#8217; blog)",
+   "link": "https://gilkalai.wordpress.com/2026/06/18/a-sensational-ramsey-breakthrough-by-domagoj-bradac-reblogged-from-sam-mattheus-blog/",
+   "date": "2026-06-18T14:35:27.000Z",
+   "feed": "Combinatorics and more",
+   "topics": [
+    "math"
+   ]
+  },
+  {
+   "title": "Liner notes to What Belongs to You",
+   "link": "https://therestisnoise.com/liner-notes-to-what-belongs-to-you/",
+   "date": "2026-06-17T01:22:12.000Z",
+   "feed": "The Rest Is Noise",
+   "topics": [
+    "arts"
+   ]
+  },
+  {
+   "title": "Octonions and the Standard Model",
+   "link": "https://johncarlosbaez.wordpress.com/2026/06/16/octonions-and-the-standard-model-2/",
+   "date": "2026-06-16T15:54:54.000Z",
+   "feed": "Azimuth",
+   "topics": [
+    "math",
+    "climate"
+   ]
+  },
+  {
+   "title": "Habermas, Dudamel/Conlon",
+   "link": "https://therestisnoise.com/habermas-dudamel-conlon/",
+   "date": "2026-06-15T15:04:00.000Z",
+   "feed": "The Rest Is Noise",
+   "topics": [
+    "arts"
+   ]
+  },
+  {
+   "title": "Summer Vacation",
+   "link": "https://smallthingsconsidered.blog/schaechter/2026/06/summer-vacation-2026/",
+   "date": "2026-06-15T09:30:00.000Z",
+   "feed": "Small Things Considered",
+   "topics": [
+    "sci"
+   ]
+  },
+  {
+   "title": "Octonions and the Standard Model (Part 14)",
+   "link": "https://golem.ph.utexas.edu/category/2026/06/octonions_and_the_standard_mod_13.html",
+   "date": "2026-06-13T01:00:00.000Z",
+   "feed": "The n-Category Café",
+   "topics": [
+    "math"
+   ]
+  },
+  {
+   "title": "Observations on David Bordwell",
+   "link": "https://www.davidbordwell.net/blog/2026/06/11/observations-on-david-bordwell/",
+   "date": "2026-06-11T20:06:04.000Z",
+   "feed": "Observations on Film Art",
+   "topics": [
+    "arts"
+   ]
+  },
+  {
+   "title": "Complexifying the Complex",
+   "link": "https://www.math.columbia.edu/~woit/wordpress/?p=15742",
+   "date": "2026-06-11T17:07:28.000Z",
+   "feed": "Not Even Wrong",
+   "topics": [
+    "math",
+    "sci"
+   ]
+  },
+  {
+   "title": "Retrospective, January to June 2026",
+   "link": "https://smallthingsconsidered.blog/schaechter/2026/06/retrospective-january-to-june-2026/",
+   "date": "2026-06-11T09:30:00.000Z",
+   "feed": "Small Things Considered",
+   "topics": [
+    "sci"
+   ]
+  },
+  {
+   "title": "The Modal Logic of Forcing and Set-theoretic Potentialism, Peking University lectures, June/July 2026",
+   "link": "https://jdh.hamkins.org/modal-logic-of-forcing-and-potentialism-peking-university-2026/",
+   "date": "2026-06-08T22:31:42.000Z",
+   "feed": "Joel David Hamkins",
+   "topics": [
+    "math"
+   ]
+  },
+  {
+   "title": "Backstroke Swimming",
+   "link": "https://smallthingsconsidered.blog/schaechter/2026/06/backstroke-swimming/",
+   "date": "2026-06-08T08:54:55.000Z",
+   "feed": "Small Things Considered",
+   "topics": [
+    "sci"
+   ]
+  },
+  {
+   "title": "The First AI QFT Textbook",
+   "link": "https://www.math.columbia.edu/~woit/wordpress/?p=15735",
+   "date": "2026-06-07T20:19:52.000Z",
+   "feed": "Not Even Wrong",
+   "topics": [
+    "math",
+    "sci"
+   ]
+  },
+  {
+   "title": "Three Interviews",
+   "link": "https://gilkalai.wordpress.com/2026/06/06/three-interviews/",
+   "date": "2026-06-06T17:15:52.000Z",
+   "feed": "Combinatorics and more",
+   "topics": [
+    "math"
+   ]
+  },
+  {
+   "title": "The Only Game in Town",
+   "link": "https://www.math.columbia.edu/~woit/wordpress/?p=15726",
+   "date": "2026-06-05T21:44:49.000Z",
+   "feed": "Not Even Wrong",
+   "topics": [
+    "math",
+    "sci"
+   ]
+  },
+  {
+   "title": "The Floer Jungle",
+   "link": "https://www.math.columbia.edu/~woit/wordpress/?p=15715",
+   "date": "2026-06-05T18:03:10.000Z",
+   "feed": "Not Even Wrong",
+   "topics": [
+    "math",
+    "sci"
+   ]
+  },
+  {
+   "title": "Killing Dormant Bacteria",
+   "link": "https://smallthingsconsidered.blog/schaechter/2026/06/killing-dormant-bacteria/",
+   "date": "2026-06-04T09:23:25.000Z",
+   "feed": "Small Things Considered",
+   "topics": [
+    "sci"
+   ]
+  },
+  {
+   "title": "End of Civilization News",
+   "link": "https://www.math.columbia.edu/~woit/wordpress/?p=15705",
+   "date": "2026-06-02T21:26:52.000Z",
+   "feed": "Not Even Wrong",
+   "topics": [
+    "math",
+    "sci"
+   ]
+  },
+  {
+   "title": "A New Blog",
+   "link": "https://golem.ph.utexas.edu/category/2026/06/a_new_blog.html",
+   "date": "2026-06-02T19:34:52.000Z",
+   "feed": "The n-Category Café",
+   "topics": [
+    "math"
+   ]
+  },
+  {
+   "title": "Interview with Micah Zarin",
+   "link": "https://johncarlosbaez.wordpress.com/2026/06/02/interview-with-micah-zarin/",
+   "date": "2026-06-02T08:00:32.000Z",
+   "feed": "Azimuth",
+   "topics": [
+    "math",
+    "climate"
+   ]
+  },
+  {
+   "title": "Summing the Reciprocals of Primes",
+   "link": "https://johncarlosbaez.wordpress.com/2026/06/01/summing-the-reciprocals-of-primes/",
+   "date": "2026-06-01T15:20:33.000Z",
+   "feed": "Azimuth",
+   "topics": [
+    "math",
+    "climate"
+   ]
+  },
+  {
+   "title": "Have a Good Day",
+   "link": "https://smallthingsconsidered.blog/schaechter/2026/06/have-a-good-day/",
+   "date": "2026-06-01T08:00:00.000Z",
+   "feed": "Small Things Considered",
+   "topics": [
+    "sci"
+   ]
+  },
+  {
+   "title": "Unforced Variations: June 2026",
+   "link": "https://www.realclimate.org/index.php/archives/2026/06/unforced-variations-june-2026/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=unforced-variations-june-2026",
+   "date": "2026-06-01T06:45:12.000Z",
+   "feed": "RealClimate",
+   "topics": [
+    "climate"
+   ]
+  },
+  {
+   "title": "“The Arctic Council is not dead”",
+   "link": "https://www.realclimate.org/index.php/archives/2026/05/the-arctic-council-is-not-dead/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=the-arctic-council-is-not-dead",
+   "date": "2026-05-30T09:38:52.000Z",
+   "feed": "RealClimate",
+   "topics": [
+    "climate"
+   ]
+  },
+  {
+   "title": "From Pentagons to Pentagrams",
+   "link": "https://johncarlosbaez.wordpress.com/2026/05/29/from-pentagons-to-pentagrams/",
+   "date": "2026-05-29T12:00:57.000Z",
+   "feed": "Azimuth",
+   "topics": [
+    "math",
+    "climate"
+   ]
+  },
+  {
+   "title": "An ABC conjecture proved",
+   "link": "https://cameroncounts.wordpress.com/2026/05/29/an-abc-conjecture-proved/",
+   "date": "2026-05-29T10:15:44.000Z",
+   "feed": "Peter Cameron's Blog",
+   "topics": [
+    "math"
+   ]
+  },
+  {
+   "title": "Tiny Mystery Plasmid",
+   "link": "https://smallthingsconsidered.blog/schaechter/2026/05/tiny-mystery-plasmid/",
+   "date": "2026-05-28T08:00:56.000Z",
+   "feed": "Small Things Considered",
+   "topics": [
+    "sci"
+   ]
+  },
+  {
+   "title": "The Great Icosahedron",
+   "link": "https://johncarlosbaez.wordpress.com/2026/05/27/the-great-icosahedron/",
+   "date": "2026-05-27T08:00:49.000Z",
+   "feed": "Azimuth",
+   "topics": [
+    "math",
+    "climate"
+   ]
+  },
+  {
+   "title": "Rules for retirement",
+   "link": "https://cameroncounts.wordpress.com/2026/05/27/rules-for-retirement/",
+   "date": "2026-05-27T07:34:40.000Z",
+   "feed": "Peter Cameron's Blog",
+   "topics": [
+    "math"
+   ]
+  },
+  {
+   "title": "Storytelling in Science...",
+   "link": "https://smallthingsconsidered.blog/schaechter/2026/05/storytelling-in-science/",
+   "date": "2026-05-25T08:00:00.000Z",
+   "feed": "Small Things Considered",
+   "topics": [
+    "sci"
+   ]
+  },
+  {
+   "title": "What Are Atoms Made Of?",
+   "link": "https://johncarlosbaez.wordpress.com/2026/05/24/what-are-atoms-made-of/",
+   "date": "2026-05-24T09:00:18.000Z",
+   "feed": "Azimuth",
+   "topics": [
+    "math",
+    "climate"
+   ]
+  },
+  {
+   "title": "Amazing: Erdős&#8217; Unit Distance Problem was Disproved! It was achieved by AI!",
+   "link": "https://gilkalai.wordpress.com/2026/05/21/amazing-erdos-unit-distance-problem-was-disproved-it-was-achieved-by-ai/",
+   "date": "2026-05-20T23:01:57.000Z",
+   "feed": "Combinatorics and more",
+   "topics": [
+    "math"
+   ]
+  },
+  {
+   "title": "Scenarios, schmenarios&#8230;",
+   "link": "https://www.realclimate.org/index.php/archives/2026/05/scenarios-schmenarios/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=scenarios-schmenarios",
+   "date": "2026-05-20T11:16:03.000Z",
+   "feed": "RealClimate",
+   "topics": [
+    "climate"
+   ]
+  },
+  {
+   "title": "For Felicity Lott",
+   "link": "https://therestisnoise.com/for-felicity-lott/",
+   "date": "2026-05-19T02:33:32.000Z",
+   "feed": "The Rest Is Noise",
+   "topics": [
+    "arts"
+   ]
+  },
+  {
+   "title": "Three easy proofs of Pythagoras&#8217; Theorem",
+   "link": "https://cameroncounts.wordpress.com/2026/05/08/three-easy-proofs-of-pythagoras-theorem/",
+   "date": "2026-05-08T08:37:42.000Z",
+   "feed": "Peter Cameron's Blog",
+   "topics": [
+    "math"
+   ]
+  },
+  {
+   "title": "Unforced Variations: May 2026",
+   "link": "https://www.realclimate.org/index.php/archives/2026/05/unforced-variations-may-2026/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=unforced-variations-may-2026",
+   "date": "2026-05-01T13:23:19.000Z",
+   "feed": "RealClimate",
+   "topics": [
+    "climate"
+   ]
+  },
+  {
+   "title": "Quantum Mechanics of the Inverse Cube Force Law",
+   "link": "https://golem.ph.utexas.edu/category/2026/04/the_quantum_mechanics_of_the_i.html",
+   "date": "2026-04-29T23:43:00.000Z",
+   "feed": "The n-Category Café",
+   "topics": [
+    "math"
+   ]
+  },
+  {
+   "title": "1725. Native American Allies at the Court of Louis XV: An Exhibition Review – by Sophia Bevacqua",
+   "link": "https://www.journal18.org/nq/1725-native-american-allies-at-the-court-of-louis-xv-an-exhibition-review-by-sophia-bevacqua/",
+   "date": "2026-04-29T08:21:44.000Z",
+   "feed": "Journal18",
+   "topics": [
+    "arthist"
+   ]
+  },
+  {
+   "title": "A real-world problem",
+   "link": "https://cameroncounts.wordpress.com/2026/04/25/a-real-world-problem/",
+   "date": "2026-04-25T07:40:24.000Z",
+   "feed": "Peter Cameron's Blog",
+   "topics": [
+    "math"
+   ]
+  },
+  {
+   "title": "A potentialist perspective on ultrafinitism, Ohio University",
+   "link": "https://jdh.hamkins.org/a-potentialist-perspective-on-ultrafinitism-ohio-university/",
+   "date": "2026-04-23T21:24:28.000Z",
+   "feed": "Joel David Hamkins",
+   "topics": [
+    "math"
+   ]
+  },
+  {
+   "title": "Unforced Variations: Apr 2026",
+   "link": "https://www.realclimate.org/index.php/archives/2026/04/unforced-variations-apr-2026/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=unforced-variations-apr-2026",
+   "date": "2026-04-13T21:25:14.000Z",
+   "feed": "RealClimate",
+   "topics": [
+    "climate"
+   ]
+  },
+  {
+   "title": "A reflection on reflection",
+   "link": "https://www.realclimate.org/index.php/archives/2026/04/a-reflection-on-reflection/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=a-reflection-on-reflection",
+   "date": "2026-04-13T13:35:44.000Z",
+   "feed": "RealClimate",
+   "topics": [
+    "climate"
+   ]
+  },
+  {
+   "title": "Rhyme, Not Replication: Curating and Interpreting Almost Unknown – by Jonathan Michael Square and Tyler Horne",
+   "link": "https://www.journal18.org/nq/rhyme-not-replication-curating-and-interpreting-almost-unknown-by-jonathan-michael-square-and-tyler-horne/",
+   "date": "2026-04-07T18:05:55.000Z",
+   "feed": "Journal18",
+   "topics": [
+    "arthist"
+   ]
+  },
+  {
+   "title": "Revolution’s Ends: American War, Patriotism, and Culture in a Dilating Eighteenth Century",
+   "link": "https://www.journal18.org/issue21/revolutions-ends-american-war-patriotism-and-culture-in-a-dilating-eighteenth-century/",
+   "date": "2026-04-07T17:07:00.000Z",
+   "feed": "Journal18",
+   "topics": [
+    "arthist"
+   ]
+  },
+  {
+   "title": "The Revolution’s Sanctuary: Designing the La Réole Temple of Reason, Year II",
+   "link": "https://www.journal18.org/issue21/the-revolutions-sanctuary-designing-the-la-reole-temple-of-reason-year-ii/",
+   "date": "2026-04-07T17:06:00.000Z",
+   "feed": "Journal18",
+   "topics": [
+    "arthist"
+   ]
+  },
+  {
+   "title": "Three-Fingered Jack: Staging Resistance in the Toy Theater",
+   "link": "https://www.journal18.org/issue21/three-fingered-jack-staging-resistance-in-the-toy-theater/",
+   "date": "2026-04-07T17:05:00.000Z",
+   "feed": "Journal18",
+   "topics": [
+    "arthist"
+   ]
+  },
+  {
+   "title": "Finding William Lee: A Black Founder in Early American Portraiture",
+   "link": "https://www.journal18.org/issue21/finding-william-lee-a-black-founder-in-early-american-portraiture/",
+   "date": "2026-04-07T17:04:00.000Z",
+   "feed": "Journal18",
+   "topics": [
+    "arthist"
+   ]
+  },
+  {
+   "title": "Contingent Truths of the French Revolution: Representing the Abolition of Slavery of 1794",
+   "link": "https://www.journal18.org/issue21/contingent-truths-of-the-french-revolution-representing-the-abolition-of-slavery-of-1794/",
+   "date": "2026-04-07T17:03:00.000Z",
+   "feed": "Journal18",
+   "topics": [
+    "arthist"
+   ]
+  },
+  {
+   "title": "“My interventions project back what has been erased”: Firelei Báez in Conversation with J. Cabelle Ahn",
+   "link": "https://www.journal18.org/issue21/my-interventions-project-back-what-has-been-erased-firelei-baez-in-conversation-with-j-cabelle-ahn/",
+   "date": "2026-04-07T17:02:00.000Z",
+   "feed": "Journal18",
+   "topics": [
+    "arthist"
+   ]
+  },
+  {
+   "title": "The spectrum of consistency strengths for membership in a computably enumerable set, Notre Dame Logic Seminar, April 2026",
+   "link": "https://jdh.hamkins.org/consistency-strengths-for-membership-in-a-ce-set-notre-dame-logic-seminar-april-2026/",
+   "date": "2026-04-04T18:28:35.000Z",
+   "feed": "Joel David Hamkins",
+   "topics": [
+    "math"
+   ]
+  },
+  {
+   "title": "Polymath Plus AI",
+   "link": "https://gilkalai.wordpress.com/2026/04/03/polymath-plus-ai/",
+   "date": "2026-04-03T07:34:31.000Z",
+   "feed": "Combinatorics and more",
+   "topics": [
+    "math"
+   ]
+  },
+  {
+   "title": "The Book of Infinity, MIT Press, 2026",
+   "link": "https://jdh.hamkins.org/the-book-of-infinity/",
+   "date": "2026-03-28T18:18:18.000Z",
+   "feed": "Joel David Hamkins",
+   "topics": [
+    "math"
+   ]
+  },
+  {
+   "title": "Geometry and the Exceptional Jordan Algebra",
+   "link": "https://golem.ph.utexas.edu/category/2026/03/geometry_and_the_exceptional_j.html",
+   "date": "2026-03-28T00:44:54.000Z",
+   "feed": "The n-Category Café",
+   "topics": [
+    "math"
+   ]
+  },
+  {
+   "title": "John Ford in a whole new light",
+   "link": "https://www.davidbordwell.net/blog/2026/03/23/john-ford-in-a-whole-new-light/",
+   "date": "2026-03-23T15:35:43.000Z",
+   "feed": "Observations on Film Art",
+   "topics": [
+    "arts"
+   ]
+  },
+  {
+   "title": "The Agent That Doesn't Know Itself",
+   "link": "https://golem.ph.utexas.edu/category/2026/03/the_agent_that_doesnt_know_its.html",
+   "date": "2026-03-20T22:39:58.000Z",
+   "feed": "The n-Category Café",
+   "topics": [
+    "math"
+   ]
+  },
+  {
+   "title": "A Typed Language for Agent Coordination",
+   "link": "https://golem.ph.utexas.edu/category/2026/03/a_typed_language_for_agent_coordination.html",
+   "date": "2026-03-11T22:59:53.000Z",
+   "feed": "The n-Category Café",
+   "topics": [
+    "math"
+   ]
+  },
+  {
+   "title": "Criterion Takes Us to Romania",
+   "link": "https://www.davidbordwell.net/blog/2026/03/03/criterion-takes-us-to-romania/",
+   "date": "2026-03-03T18:19:39.000Z",
+   "feed": "Observations on Film Art",
+   "topics": [
+    "arts"
+   ]
+  },
+  {
+   "title": "Truth and paradox in the theory of finite and infinite games, Owens Memorial Lecture, Wayne State University, April 2026",
+   "link": "https://jdh.hamkins.org/truth-and-paradox-infinite-games-owens-lecture-wayne-state-april-2026/",
+   "date": "2026-02-12T02:43:42.000Z",
+   "feed": "Joel David Hamkins",
+   "topics": [
+    "math"
+   ]
+  },
+  {
+   "title": "Mathematicians do not agree on the essential structure of the complex numbers, ASL/APA Central Division Meeting, Chicago, February 2026",
+   "link": "https://jdh.hamkins.org/essential-structure-of-the-complex-numbers-asl-apa-chicago-2026/",
+   "date": "2026-02-11T20:58:58.000Z",
+   "feed": "Joel David Hamkins",
+   "topics": [
+    "math"
+   ]
+  },
+  {
+   "title": "The Univalence Principle",
+   "link": "https://golem.ph.utexas.edu/category/2026/02/the_univalence_principle.html",
+   "date": "2026-02-11T02:26:50.000Z",
+   "feed": "The n-Category Café",
+   "topics": [
+    "math"
+   ]
+  },
+  {
+   "title": "The Physicists and Mr. Epstein",
+   "link": "https://profmattstrassler.com/2026/02/05/the-physicists-and-mr-epstein/",
+   "date": "2026-02-05T13:24:00.000Z",
+   "feed": "Of Particular Significance",
+   "topics": [
+    "sci"
+   ]
+  },
+  {
+   "title": "THE FRODO FRANCHISE is an audiobook!",
+   "link": "https://www.davidbordwell.net/blog/2026/02/04/the-frodo-franchise-is-an-audiobook/",
+   "date": "2026-02-04T17:02:55.000Z",
+   "feed": "Observations on Film Art",
+   "topics": [
+    "arts"
+   ]
+  },
+  {
+   "title": "The ten best films of &#8230; 1935",
+   "link": "https://www.davidbordwell.net/blog/2026/01/17/the-ten-best-films-of-1935/",
+   "date": "2026-01-18T02:04:59.000Z",
+   "feed": "Observations on Film Art",
+   "topics": [
+    "arts"
+   ]
+  },
+  {
+   "title": "David and Wes",
+   "link": "https://www.davidbordwell.net/blog/2025/10/06/david-and-wes/",
+   "date": "2025-10-06T18:34:52.000Z",
+   "feed": "Observations on Film Art",
+   "topics": [
+    "arts"
+   ]
+  }
+ ]
 }
