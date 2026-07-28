@@ -1,5 +1,5 @@
 {
- "generated": "2026-07-28T14:11:42.188Z",
+ "generated": "2026-07-28T14:32:50.571Z",
  "topics": [
   {
    "id": "math",
@@ -28,7 +28,7 @@
   }
  ],
  "feedsTotal": 22,
- "feedsOk": 19,
+ "feedsOk": 22,
  "feeds": [
   {
    "name": "Joel David Hamkins",
@@ -147,9 +147,10 @@
    "topics": [
     "sci"
    ],
-   "status": "failed",
-   "count": 0,
-   "error": "smallthingsconsidered.blog/feed/: no <item> or <entry> elements found | proxy(jina): HTTP 422 | proxy(allorigins): HTTP 408"
+   "status": "ok",
+   "count": 8,
+   "source": "direct",
+   "error": null
   },
   {
    "name": "Astrobites",
@@ -170,9 +171,10 @@
    "topics": [
     "arthist"
    ],
-   "status": "failed",
+   "status": "ok",
    "count": 0,
-   "error": "smarthistory.org/feed/: HTTP 403 | smarthistory.org/?feed=rss2: HTTP 403 | proxy(jina): no <item> or <entry> elements found | proxy(allorigins): no <item> or <entry> elements found"
+   "source": "feedly",
+   "error": null
   },
   {
    "name": "Art History News",
@@ -217,9 +219,10 @@
    "topics": [
     "arts"
    ],
-   "status": "failed",
-   "count": 0,
-   "error": "therestisnoise.com/feed/: no <item> or <entry> elements found | proxy(jina): no <item> or <entry> elements found | proxy(allorigins): HTTP 408"
+   "status": "ok",
+   "count": 8,
+   "source": "feedly",
+   "error": null
   },
   {
    "name": "HowlRound",
@@ -295,6 +298,15 @@
   }
  ],
  "posts": [
+  {
+   "title": "UCLA Law Clinic Files Brief Supporting DC’s Clean Buildings Act in DC Circuit",
+   "link": "https://legal-planet.org/2026/07/28/ucla-law-clinic-files-brief-supporting-dcs-clean-buildings-act-in-dc-circuit/",
+   "date": "2026-07-28T14:30:06.000Z",
+   "feed": "Legal Planet",
+   "topics": [
+    "climate"
+   ]
+  },
   {
    "title": "Dust Deal with It",
    "link": "https://astrobites.org/2026/07/28/hwo-exozodi/",
@@ -390,6 +402,15 @@
    "link": "https://astrobites.org/2026/07/27/the-invisible-architecture-between-the-stars/",
    "date": "2026-07-27T13:00:00.000Z",
    "feed": "Astrobites",
+   "topics": [
+    "sci"
+   ]
+  },
+  {
+   "title": "STC, Writing &#038; Me",
+   "link": "https://smallthingsconsidered.blog/schaechter/2026/07/stc-writing-me/",
+   "date": "2026-07-27T08:00:00.000Z",
+   "feed": "Small Things Considered",
    "topics": [
     "sci"
    ]
@@ -634,15 +655,6 @@
    "title": "Trying to Create Permit Certainty",
    "link": "https://legal-planet.org/2026/07/21/trying-to-create-permit-certainty/",
    "date": "2026-07-21T19:05:07.000Z",
-   "feed": "Legal Planet",
-   "topics": [
-    "climate"
-   ]
-  },
-  {
-   "title": "Should we be data center YIMBYs?",
-   "link": "https://legal-planet.org/2026/07/21/should-we-be-data-center-yimbys/",
-   "date": "2026-07-21T15:10:51.000Z",
    "feed": "Legal Planet",
    "topics": [
     "climate"
@@ -1049,6 +1061,15 @@
    ]
   },
   {
+   "title": "Summer Vacation",
+   "link": "https://smallthingsconsidered.blog/schaechter/2026/06/summer-vacation-2026/",
+   "date": "2026-06-15T09:30:00.000Z",
+   "feed": "Small Things Considered",
+   "topics": [
+    "sci"
+   ]
+  },
+  {
    "title": "Octonions and the Standard Model (Part 14)",
    "link": "https://golem.ph.utexas.edu/category/2026/06/octonions_and_the_standard_mod_13.html",
    "date": "2026-06-13T01:00:00.000Z",
@@ -1077,12 +1098,30 @@
    ]
   },
   {
+   "title": "Retrospective, January to June 2026",
+   "link": "https://smallthingsconsidered.blog/schaechter/2026/06/retrospective-january-to-june-2026/",
+   "date": "2026-06-11T09:30:00.000Z",
+   "feed": "Small Things Considered",
+   "topics": [
+    "sci"
+   ]
+  },
+  {
    "title": "The Modal Logic of Forcing and Set-theoretic Potentialism, Peking University lectures, June/July 2026",
    "link": "https://jdh.hamkins.org/modal-logic-of-forcing-and-potentialism-peking-university-2026/",
    "date": "2026-06-08T22:31:42.000Z",
    "feed": "Joel David Hamkins",
    "topics": [
     "math"
+   ]
+  },
+  {
+   "title": "Backstroke Swimming",
+   "link": "https://smallthingsconsidered.blog/schaechter/2026/06/backstroke-swimming/",
+   "date": "2026-06-08T08:54:55.000Z",
+   "feed": "Small Things Considered",
+   "topics": [
+    "sci"
    ]
   },
   {
@@ -1121,6 +1160,15 @@
    "feed": "Not Even Wrong",
    "topics": [
     "math",
+    "sci"
+   ]
+  },
+  {
+   "title": "Killing Dormant Bacteria",
+   "link": "https://smallthingsconsidered.blog/schaechter/2026/06/killing-dormant-bacteria/",
+   "date": "2026-06-04T09:23:25.000Z",
+   "feed": "Small Things Considered",
+   "topics": [
     "sci"
    ]
   },
@@ -1164,6 +1212,15 @@
    ]
   },
   {
+   "title": "Have a Good Day",
+   "link": "https://smallthingsconsidered.blog/schaechter/2026/06/have-a-good-day/",
+   "date": "2026-06-01T08:00:00.000Z",
+   "feed": "Small Things Considered",
+   "topics": [
+    "sci"
+   ]
+  },
+  {
    "title": "Unforced Variations: June 2026",
    "link": "https://www.realclimate.org/index.php/archives/2026/06/unforced-variations-june-2026/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=unforced-variations-june-2026",
    "date": "2026-06-01T06:45:12.000Z",
@@ -1201,6 +1258,15 @@
    ]
   },
   {
+   "title": "Tiny Mystery Plasmid",
+   "link": "https://smallthingsconsidered.blog/schaechter/2026/05/tiny-mystery-plasmid/",
+   "date": "2026-05-28T08:00:56.000Z",
+   "feed": "Small Things Considered",
+   "topics": [
+    "sci"
+   ]
+  },
+  {
    "title": "The Great Icosahedron",
    "link": "https://johncarlosbaez.wordpress.com/2026/05/27/the-great-icosahedron/",
    "date": "2026-05-27T08:00:49.000Z",
@@ -1217,6 +1283,15 @@
    "feed": "Peter Cameron's Blog",
    "topics": [
     "math"
+   ]
+  },
+  {
+   "title": "Storytelling in Science...",
+   "link": "https://smallthingsconsidered.blog/schaechter/2026/05/storytelling-in-science/",
+   "date": "2026-05-25T08:00:00.000Z",
+   "feed": "Small Things Considered",
+   "topics": [
+    "sci"
    ]
   },
   {
@@ -1513,6 +1588,78 @@
    "link": "https://www.davidbordwell.net/blog/2025/10/06/david-and-wes/",
    "date": "2025-10-06T18:34:52.000Z",
    "feed": "Observations on Film Art",
+   "topics": [
+    "arts"
+   ]
+  },
+  {
+   "title": "Martinů",
+   "link": "https://www.therestisnoise.com/2025/09/martin%C5%AF.html",
+   "date": "2025-09-09T15:54:34.000Z",
+   "feed": "The Rest Is Noise",
+   "topics": [
+    "arts"
+   ]
+  },
+  {
+   "title": "Twilight of the blogs",
+   "link": "https://www.therestisnoise.com/2025/09/twilight-of-the-blogs.html",
+   "date": "2025-09-03T13:31:27.000Z",
+   "feed": "The Rest Is Noise",
+   "topics": [
+    "arts"
+   ]
+  },
+  {
+   "title": "Tarkovsky's Faustus film",
+   "link": "https://www.therestisnoise.com/2025/09/tarkovsky-on-manns-faustus.html",
+   "date": "2025-09-01T15:33:44.000Z",
+   "feed": "The Rest Is Noise",
+   "topics": [
+    "arts"
+   ]
+  },
+  {
+   "title": "The view from Blue Heights Drive",
+   "link": "https://www.therestisnoise.com/2025/08/the-view-from-blue-heights-drive.html",
+   "date": "2025-08-30T00:35:01.000Z",
+   "feed": "The Rest Is Noise",
+   "topics": [
+    "arts"
+   ]
+  },
+  {
+   "title": "Robin on Riley",
+   "link": "https://www.therestisnoise.com/2025/08/robin-on-riley.html",
+   "date": "2025-08-26T19:22:52.000Z",
+   "feed": "The Rest Is Noise",
+   "topics": [
+    "arts"
+   ]
+  },
+  {
+   "title": "The stark truth",
+   "link": "https://www.therestisnoise.com/2025/08/the-stark-truth.html",
+   "date": "2025-08-26T17:17:19.000Z",
+   "feed": "The Rest Is Noise",
+   "topics": [
+    "arts"
+   ]
+  },
+  {
+   "title": "Martinů shelf",
+   "link": "https://www.therestisnoise.com/2025/08/martin%C5%AF-shelf.html",
+   "date": "2025-08-25T21:35:27.000Z",
+   "feed": "The Rest Is Noise",
+   "topics": [
+    "arts"
+   ]
+  },
+  {
+   "title": "More Newlin",
+   "link": "https://www.therestisnoise.com/2025/08/more-newlin.html",
+   "date": "2025-08-25T05:46:11.000Z",
+   "feed": "The Rest Is Noise",
    "topics": [
     "arts"
    ]
