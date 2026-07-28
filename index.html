@@ -36,7 +36,7 @@
   .rail { flex: 1 1 36rem; min-width: 0; }
 
   header { border-bottom: 3px double var(--ink); padding-bottom: .5rem; }
-  .mast-row { display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: .75rem 2rem; }
+  .mast-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .75rem 2rem; }
   h1 { font-family: var(--display); font-weight: 400; font-size: 2.35rem; letter-spacing: .01em; line-height: 1.15; }
 
   button {
@@ -50,18 +50,19 @@
   /* ------------------------------ weather ------------------------------ */
   #weather { display: none; align-items: flex-end; flex-wrap: wrap; gap: .5rem 1.5rem; margin-left: auto; }
   #weather.on { display: flex; }
-  .wx-now { display: flex; align-items: center; gap: .6rem; padding-bottom: .1rem; }
-  .wx-now .ticon { width: 1.35rem; height: 1.35rem; color: var(--muted); }
-  .wx-temp { font-family: var(--display); font-size: 1.45rem; line-height: 1; }
-  .wx-desc { font-size: .74rem; color: var(--muted); line-height: 1.35; }
-  .wx-days { display: flex; gap: .85rem; flex-wrap: wrap; }
-  .wx-day { text-align: center; min-width: 2.6rem; }
-  .wx-day .d { font-family: var(--mono); font-size: .6rem; letter-spacing: .05em;
+  .wx-now { display: flex; align-items: center; gap: .6rem; }
+  .wx-now .ticon { width: 1.25rem; height: 1.25rem; color: var(--muted); }
+  .wx-temp { font-family: var(--display); font-size: 1.4rem; line-height: 1; }
+  .wx-desc { font-size: .7rem; color: var(--muted); line-height: 1.3; }
+  /* The day strip stays no taller than the masthead title. */
+  .wx-days { display: flex; gap: .7rem; flex-wrap: wrap; }
+  .wx-day { text-align: center; min-width: 2.4rem; line-height: 1.05; }
+  .wx-day .d { font-family: var(--mono); font-size: .52rem; letter-spacing: .05em;
                text-transform: uppercase; color: var(--muted); }
-  .wx-day .ticon { width: .95rem; height: .95rem; color: var(--muted); margin: .1rem 0 0; }
-  .wx-day .t { font-family: var(--mono); font-size: .66rem; }
+  .wx-day .ticon { width: .72rem; height: .72rem; color: var(--muted); margin-top: .04rem; }
+  .wx-day .t { font-family: var(--mono); font-size: .6rem; }
   .wx-day .t .lo { color: var(--faint); }
-  .wx-day .p { font-family: var(--mono); font-size: .58rem; color: #4756A8; }
+  .wx-day .p { font-family: var(--mono); font-size: .5rem; color: #4756A8; }
 
   /* --------------------------- daily sections --------------------------- */
   .klabel { font-family: var(--mono); font-size: .66rem; letter-spacing: .09em;
@@ -70,21 +71,47 @@
   #albums-sec, #wiki-sec { display: none; }
   #albums-sec.on, #wiki-sec.on { display: block; }
 
+  /* Each card sits on its category's colour; all type on it runs cream. */
   .albums { display: flex; flex-wrap: wrap; gap: 1.25rem; align-items: flex-start; }
   .album { flex: 1 1 10rem; min-width: 10rem; max-width: 22rem;
-           border: 1px solid var(--line); border-top: 3px solid var(--acc, var(--line));
-           border-radius: .5rem; padding: .95rem 1.05rem; }
-  .album .klabel { color: var(--acc, var(--muted)); }
+           background: var(--acc, var(--hover)); color: #F0EBE1;
+           border-radius: .5rem; padding: 1rem 1.1rem; }
+  .album .klabel { color: rgba(240, 235, 225, .8); }
+  .cover-btn { display: block; width: 100%; padding: 0; margin: 0 0 .7rem; border: none;
+               border-radius: .35rem; background: none; cursor: zoom-in; }
   .album-cover { display: block; width: 100%; aspect-ratio: 1; object-fit: cover;
-                 border-radius: .35rem; margin-bottom: .65rem; background: var(--hover); }
+                 border-radius: .35rem; }
+  @media (prefers-reduced-motion: no-preference) {
+    .album-cover { transition: transform .15s ease, box-shadow .15s ease; }
+  }
+  .cover-btn:hover { background: none; }
+  .cover-btn:hover .album-cover, .cover-btn:focus-visible .album-cover {
+    transform: scale(1.02); box-shadow: 0 .35rem 1rem rgba(20, 24, 28, .35); }
   .album-head { margin: .35rem 0 .1rem; font-family: var(--display); font-size: 1.05rem; line-height: 1.3; }
-  .album-head a { color: var(--ink); text-decoration: none; }
+  .album-head a { color: #F0EBE1; text-decoration: none; }
   .album-head a:hover { text-decoration: underline; text-underline-offset: 3px; }
-  .album-year { color: var(--muted); font-size: .85rem; }
-  .album-genres { font-family: var(--mono); font-size: .68rem; color: var(--muted); margin-bottom: .5rem; }
+  .album-year { color: rgba(240, 235, 225, .75); font-size: .85rem; }
+  .album-genres { font-family: var(--mono); font-size: .68rem; color: rgba(240, 235, 225, .85); margin-bottom: .5rem; }
   .album p { font-size: .84rem; line-height: 1.45; }
-  .album .reception { margin-top: .5rem; color: var(--muted); }
-  .srch { font-family: var(--mono); font-size: .62rem; color: var(--faint); margin-left: .3rem; }
+  .album .reception { margin-top: .5rem; color: rgba(240, 235, 225, .82); }
+  .srch { font-family: var(--mono); font-size: .62rem; color: rgba(240, 235, 225, .6); margin-left: .3rem; }
+
+  /* ------------------------- cover lightbox ------------------------- */
+  #lightbox { position: fixed; inset: 0; z-index: 50; display: flex; flex-direction: column;
+              align-items: center; justify-content: center; gap: 1rem;
+              background: rgba(32, 38, 43, .35);
+              -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
+  #lightbox[hidden] { display: none; }
+  #lightbox .lb-art { width: min(76vmin, 40rem); aspect-ratio: 1; border-radius: .5rem;
+                      object-fit: cover; box-shadow: 0 1.5rem 4rem rgba(20, 24, 28, .5); }
+  #lightbox figure, #lb-stage { display: contents; }
+  #lightbox figcaption { font-family: var(--display); font-size: 1.05rem; color: #F7F3EB;
+                         text-shadow: 0 1px 8px rgba(20, 24, 28, .6); text-align: center;
+                         padding: 0 1rem; }
+  #lb-close { position: fixed; top: 1.1rem; right: 1.25rem; width: 2.6rem; height: 2.6rem;
+              border: none; border-radius: 999px; background: rgba(32, 38, 43, .55);
+              color: #F0EBE1; font-size: 1.35rem; line-height: 1; cursor: pointer; }
+  #lb-close:hover { background: rgba(32, 38, 43, .8); }
 
   .wiki { display: grid; grid-template-columns: minmax(0, 1fr) 17rem; gap: 2rem; }
   .tfa-title { font-family: var(--display); font-size: 1.35rem; color: var(--ink);
@@ -184,6 +211,14 @@
       <div id="weather" aria-label="Weather"></div>
     </div>
   </header>
+
+  <div id="lightbox" hidden>
+    <button id="lb-close" aria-label="Close">&#10005;</button>
+    <figure>
+      <div id="lb-stage"></div>
+      <figcaption id="lb-cap"></figcaption>
+    </figure>
+  </div>
 
   <div class="cols">
     <div class="main">
@@ -344,17 +379,52 @@ function renderWeather(cfg, w) {
 
 /* ---------------------------- daily sections ---------------------------- */
 
-// The album accent palette: one colour per category, echoed by the card's
-// top rule, its label, and the concentric-rings artwork drawn when an album
-// has no cover.
-const ACCENTS = ["#3F5164", "#966F33", "#603F6A"];
+// The album accent palette: one colour per category — the card's ground, and
+// the concentric-rings artwork drawn when an album has no cover. (The Enjoy
+// bronze is deepened from the ring palette's ochre so cream type stays
+// readable on it.)
+const ACCENTS = ["#3F5164", "#6E5024", "#603F6A"];
 
-function ringsCover(acc) {
+function ringsSvg(acc, cls) {
   const rings = [20, 46, 72, 98, 124]
     .map(r => `<circle cx="150" cy="150" r="${r}" fill="none" stroke="#F0EBE1" stroke-width="3"/>`)
     .join("");
-  return `<svg class="album-cover" viewBox="0 0 300 300" aria-hidden="true">
+  return `<svg class="${cls}" viewBox="0 0 300 300" aria-hidden="true">
     <rect width="300" height="300" fill="${acc}"/>${rings}</svg>`;
+}
+
+/* --------------------------- cover lightbox ---------------------------- */
+
+// Spotify oEmbed thumbnails are the 300px variant; the 640px variant lives at
+// the same URL with a different size segment. Try it, fall back on error.
+function hiRes(url) {
+  return url.includes("00001e02") ? url.replace("00001e02", "0000b273") : url;
+}
+
+function openLightbox(i) {
+  const al = state.albums?.albums?.[i];
+  if (!al) return;
+  const acc = ACCENTS[i % ACCENTS.length];
+  const stage = $("#lb-stage");
+  if (al.cover) {
+    const img = document.createElement("img");
+    img.className = "lb-art";
+    img.alt = `Cover of ${al.album}`;
+    img.onerror = () => { if (img.src !== al.cover) { img.onerror = null; img.src = al.cover; } };
+    img.src = hiRes(al.cover);
+    stage.replaceChildren(img);
+  } else {
+    stage.innerHTML = ringsSvg(acc, "lb-art");
+  }
+  $("#lb-cap").textContent = `${al.artist} — ${al.album}${al.year ? ` (${al.year})` : ""}`;
+  $("#lightbox").hidden = false;
+  document.body.style.overflow = "hidden";
+  $("#lb-close").focus();
+}
+
+function closeLightbox() {
+  $("#lightbox").hidden = true;
+  document.body.style.overflow = "";
 }
 
 function renderAlbums() {
@@ -373,8 +443,11 @@ function renderAlbums() {
     const link = al.spotify_url
       ? `<a href="${esc(al.spotify_url)}" target="_blank" rel="noopener">${name}</a>${al.link_is_search ? '<span class="srch">search</span>' : ""}`
       : name;
+    const art = al.cover
+      ? `<img class="album-cover" src="${esc(al.cover)}" alt="" loading="lazy">`
+      : ringsSvg(acc, "album-cover");
     return `<article class="album" style="--acc:${acc}">
-      ${al.cover ? `<img class="album-cover" src="${esc(al.cover)}" alt="" loading="lazy">` : ringsCover(acc)}
+      <button class="cover-btn" data-i="${i}" aria-label="View cover of ${esc(al.album)}">${art}</button>
       <span class="klabel">${esc(al.header)}</span>
       <div class="album-head">${esc(al.artist)}<br>${link}
         ${al.year ? `<span class="album-year">(${esc(al.year)})</span>` : ""}</div>
@@ -560,6 +633,18 @@ async function load() {
   renderBlogroll();
   loadWeather();   // async; re-renders the ledger row when it settles
 }
+
+$("#albums-sec").addEventListener("click", e => {
+  const btn = e.target.closest(".cover-btn");
+  if (btn) openLightbox(Number(btn.dataset.i));
+});
+$("#lightbox").addEventListener("click", e => {
+  // The X, or anywhere that isn't the artwork itself, closes the view.
+  if (!e.target.closest(".lb-art")) closeLightbox();
+});
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape" && !$("#lightbox").hidden) closeLightbox();
+});
 
 $("#list").addEventListener("click", async e => {
   const btn = e.target.closest(".copy");
