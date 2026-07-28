@@ -107,6 +107,14 @@ The contract the task fulfills:
 }
 ```
 
+## Themes
+
+Six presets ship in `index.html` — three light (Broadsheet, the default;
+Preprint; Gallery) and three dark (Slate, Console, Nocturne), each with its
+own faces. The palette button in the masthead switches; the choice persists
+per browser via `localStorage`. All faces are system fonts, so theming adds
+no external requests.
+
 ## Setup
 
 1. **Create a repository** and copy these files into it (push to `main`).
