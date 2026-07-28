@@ -1,0 +1,14 @@
+{
+  "name": "ultrafilter",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A link-only aggregator for a hand-picked blogroll.",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-feeds.mjs",
+    "serve": "python3 -m http.server 8123"
+  },
+  "dependencies": {
+    "fast-xml-parser": "^4.5.0"
+  }
+}

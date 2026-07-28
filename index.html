@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Keeps this page out of search results. Note: it does NOT make the page
+     private — anyone with the URL can still read it. Do not add a robots.txt
+     "Disallow" rule for this path: that would stop crawlers from fetching the
+     page, which means they'd never see this noindex tag and could still list
+     the bare URL if they found a link to it. -->
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<title>Ultrafilter</title>
+<style>
+  :root {
+    --bg: #F5F6F2;
+    --ink: #20262B;
+    --muted: #6B7278;
+    --faint: #9AA1A6;
+    --line: #DBDED6;
+    --hover: #EBEDE6;
+    --display: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    --body: Seravek, "Gill Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+    --mono: "SF Mono", Menlo, Consolas, monospace;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { font-size: 16px; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--body);
+    line-height: 1.5;
+    padding: 2.5rem 1.25rem 5rem;
+  }
+  .wrap { max-width: 46rem; margin: 0 auto; }
+
+  header { border-bottom: 3px double var(--ink); padding-bottom: 1rem; }
+  .mast-row { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: .5rem; }
+  h1 { font-family: var(--display); font-weight: 400; font-size: 2.35rem; letter-spacing: .01em; }
+  h1 .star { color: var(--faint); font-size: 1.4rem; vertical-align: super; }
+  .mast-tools { display: flex; align-items: center; gap: .75rem; font-size: .8rem; color: var(--muted); }
+  .tagline { color: var(--muted); font-size: .9rem; margin-top: .25rem; }
+
+  button {
+    font-family: var(--body); font-size: .8rem; color: var(--ink);
+    background: none; border: 1px solid var(--line); border-radius: 999px;
+    padding: .3rem .85rem; cursor: pointer;
+  }
+  button:hover { background: var(--hover); }
+  button:focus-visible, a:focus-visible { outline: 2px solid #4756A8; outline-offset: 2px; }
+  button[disabled] { opacity: .5; cursor: default; }
+
+  .chips { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1.25rem 0 0; }
+  .chip { display: inline-flex; align-items: center; gap: .45rem; border: 1px solid var(--line);
+          border-radius: 999px; background: none; padding: .35rem .9rem; font-size: .85rem; }
+  .chip .dot { width: .55rem; height: .55rem; border-radius: 50%; background: var(--dot, var(--faint)); }
+  .chip .n { color: var(--muted); font-family: var(--mono); font-size: .7rem; }
+  .chip[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: #fff; }
+  .chip[aria-pressed="true"] .n { color: #cfd4d8; }
+
+  #ledger { display: none; margin-top: 1.25rem; border: 1px solid var(--line); border-radius: .5rem;
+            padding: 1rem 1.25rem; font-size: .82rem; }
+  #ledger.open { display: block; }
+  #ledger h2 { font-family: var(--display); font-weight: 400; font-size: 1.05rem; margin-bottom: .5rem; }
+  .ledger-row { display: flex; justify-content: space-between; gap: 1rem; padding: .3rem 0; border-top: 1px dotted var(--line); }
+  .ledger-row a { color: var(--ink); }
+  .ledger-status { font-family: var(--mono); font-size: .7rem; text-align: right; max-width: 20rem; word-break: break-word; }
+  .ok { color: #557A33; }
+  .fail { color: #A33B2E; }
+  .ledger-note { color: var(--muted); margin-top: .75rem; }
+
+  .dateline { font-family: var(--mono); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase;
+              color: var(--muted); margin: 2.25rem 0 .5rem; display: flex; align-items: center; gap: .75rem; }
+  .dateline::after { content: ""; flex: 1; border-top: 1px solid var(--line); }
+  .post { display: flex; gap: .75rem; padding: .55rem .5rem; border-radius: .4rem; align-items: baseline; }
+  .post:hover { background: var(--hover); }
+  .post .dot { flex: none; width: .55rem; height: .55rem; border-radius: 50%; background: var(--dot, var(--faint)); position: relative; top: -.05rem; }
+  .post-main { min-width: 0; }
+  .post-title { font-family: var(--display); font-size: 1.05rem; color: var(--ink); text-decoration: none; }
+  .post-title:hover { text-decoration: underline; text-underline-offset: 3px; }
+  .post-title:visited { color: var(--muted); }
+  .post-src { font-size: .78rem; color: var(--muted); margin-left: .6rem; white-space: nowrap; }
+
+  #status-line { margin-top: 2rem; color: var(--muted); font-size: .9rem; }
+  footer { margin-top: 3.5rem; border-top: 1px solid var(--line); padding-top: 1rem; color: var(--muted); font-size: .78rem; }
+  footer code { font-family: var(--mono); font-size: .72rem; }
+  footer p + p { margin-top: .4rem; }
+
+  @media (prefers-reduced-motion: no-preference) { .post { transition: background .12s ease; } }
+  @media (max-width: 480px) {
+    .post { flex-wrap: wrap; }
+    .post-src { margin-left: 1.3rem; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="mast-row">
+      <h1>Ultrafilter<span class="star">*</span></h1>
+      <div class="mast-tools">
+        <span id="report">Loading&hellip;</span>
+        <button id="toggle-ledger" aria-expanded="false">Feeds</button>
+        <button id="reload">Reload</button>
+      </div>
+    </div>
+    <p class="tagline">Latest posts from the blogroll. Every link opens the original.</p>
+  </header>
+
+  <div class="chips" id="chips" role="group" aria-label="Filter by topic"></div>
+
+  <section id="ledger" aria-label="Feed status"></section>
+
+  <main id="list" aria-live="polite"></main>
+  <p id="status-line">Loading posts&hellip;</p>
+
+  <footer>
+    <p>* An ultrafilter on a set of blogs: for every topic, either it&rsquo;s in or it&rsquo;s out.</p>
+    <p>Feeds are fetched by a scheduled job every six hours and stored in <code>data/posts.json</code>; this page just reads that file. To add or remove a blog, edit <code>feeds.config.json</code> &mdash; the next run picks it up, or trigger one immediately from the repository&rsquo;s Actions tab.</p>
+    <p>This page carries a <code>noindex</code> tag so search engines skip it. That keeps it out of results; it does not make it private.</p>
+  </footer>
+
+</div>
+
+<script>
+const DATA_URL = "./data/posts.json";
+
+let data = null;
+let activeTopic = "all";
+
+const $ = sel => document.querySelector(sel);
+
+function esc(s) {
+  const d = document.createElement("div");
+  d.textContent = s == null ? "" : s;
+  return d.innerHTML;
+}
+
+function topicColor(id) {
+  const t = (data?.topics || []).find(t => t.id === id);
+  return t ? t.color : "#9AA1A6";
+}
+
+function visibleCount(topicId) {
+  const posts = data?.posts || [];
+  return topicId === "all" ? posts.length : posts.filter(p => p.topics.includes(topicId)).length;
+}
+
+function renderChips() {
+  const chips = [{ id: "all", label: "Everything" }, ...(data?.topics || [])];
+  $("#chips").innerHTML = chips.map(c => `
+    <button class="chip" data-topic="${esc(c.id)}" aria-pressed="${activeTopic === c.id}"
+      ${c.color ? `style="--dot:${esc(c.color)}"` : ""}>
+      ${c.id !== "all" ? '<span class="dot" aria-hidden="true"></span>' : ""}
+      ${esc(c.label)} <span class="n">${visibleCount(c.id)}</span>
+    </button>`).join("");
+  document.querySelectorAll(".chip").forEach(btn =>
+    btn.addEventListener("click", () => { activeTopic = btn.dataset.topic; render(); }));
+}
+
+function renderLedger() {
+  const feeds = data?.feeds || [];
+  const rows = feeds.map(f => {
+    const ok = f.status === "ok";
+    const label = ok ? `${f.count} posts` : `failed \u2014 ${esc(f.error || "unknown")}`;
+    return `<div class="ledger-row">
+      <span><a href="${esc(f.site)}" target="_blank" rel="noopener">${esc(f.name)}</a>
+        <span style="color:var(--faint)"> \u2014 ${esc(f.author)}</span></span>
+      <span class="ledger-status ${ok ? "ok" : "fail"}">${label}</span>
+    </div>`;
+  }).join("");
+  $("#ledger").innerHTML = `<h2>Feed ledger</h2>${rows}
+    <p class="ledger-note">Status is from the last scheduled run. A persistent <code>HTTP 403</code> means the publisher blocks automated fetching; <code>HTTP 404</code> or <code>no &lt;item&gt;</code> means the feed URL in <code>feeds.config.json</code> needs updating.</p>`;
+}
+
+function renderList() {
+  const posts = (data?.posts || [])
+    .filter(p => activeTopic === "all" || p.topics.includes(activeTopic));
+
+  if (!posts.length) { $("#list").innerHTML = ""; return; }
+
+  const fmt = new Intl.DateTimeFormat(undefined, { weekday: "long", month: "long", day: "numeric", year: "numeric" });
+  let html = "", lastKey = null;
+  for (const p of posts) {
+    const d = p.date ? new Date(p.date) : null;
+    const key = d && !isNaN(d) ? fmt.format(d) : "Undated";
+    if (key !== lastKey) { html += `<h2 class="dateline">${key}</h2>`; lastKey = key; }
+    html += `<div class="post" style="--dot:${topicColor(p.topics[0])}">
+      <span class="dot" aria-hidden="true"></span>
+      <span class="post-main">
+        <a class="post-title" href="${esc(p.link)}" target="_blank" rel="noopener">${esc(p.title)}</a>
+        <span class="post-src">${esc(p.feed)}</span>
+      </span>
+    </div>`;
+  }
+  $("#list").innerHTML = html;
+}
+
+function renderStatus() {
+  const failed = (data?.feeds || []).filter(f => f.status !== "ok").length;
+  $("#report").textContent = `${data.feedsOk} of ${data.feedsTotal} feeds` + (failed ? ` (${failed} failed)` : "");
+  const when = data.generated ? new Date(data.generated) : null;
+  const rel = when ? relativeTime(when) : "unknown";
+  $("#status-line").textContent = `${(data.posts || []).length} posts \u00b7 refreshed ${rel}.`;
+}
+
+function relativeTime(then) {
+  const mins = Math.round((Date.now() - then.getTime()) / 60000);
+  if (mins < 2) return "just now";
+  if (mins < 60) return `${mins} minutes ago`;
+  const hrs = Math.round(mins / 60);
+  if (hrs < 24) return `${hrs} hour${hrs === 1 ? "" : "s"} ago`;
+  const days = Math.round(hrs / 24);
+  return `${days} day${days === 1 ? "" : "s"} ago`;
+}
+
+function render() {
+  renderChips();
+  renderLedger();
+  renderList();
+  renderStatus();
+}
+
+async function load() {
+  const btn = $("#reload");
+  btn.disabled = true;
+  try {
+    // Cache-buster so a refreshed build shows up without a hard reload.
+    const res = await fetch(`${DATA_URL}?t=${Date.now()}`, { cache: "no-store" });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    data = await res.json();
+    render();
+  } catch (err) {
+    $("#status-line").textContent =
+      `Couldn't load ${DATA_URL} (${err.message}). If this is a fresh checkout, the scheduled job hasn't run yet \u2014 trigger it from the Actions tab, or run "npm ci && node scripts/build-feeds.mjs" locally.`;
+    $("#report").textContent = "no data";
+  } finally {
+    btn.disabled = false;
+  }
+}
+
+$("#toggle-ledger").addEventListener("click", () => {
+  const open = $("#ledger").classList.toggle("open");
+  $("#toggle-ledger").setAttribute("aria-expanded", String(open));
+});
+$("#reload").addEventListener("click", load);
+
+load();
+</script>
+</body>
+</html>

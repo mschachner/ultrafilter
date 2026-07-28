@@ -1,0 +1,14 @@
+{
+ "generated": null,
+ "topics": [
+  { "id": "math",    "label": "Mathematics", "color": "#4756A8" },
+  { "id": "sci",     "label": "Sciences",    "color": "#1F7A70" },
+  { "id": "arthist", "label": "Art history", "color": "#A2731F" },
+  { "id": "arts",    "label": "The arts",    "color": "#94456F" },
+  { "id": "climate", "label": "Climate",     "color": "#557A33" }
+ ],
+ "feedsTotal": 0,
+ "feedsOk": 0,
+ "feeds": [],
+ "posts": []
+}

@@ -1,0 +1,55 @@
+name: Refresh blogroll
+
+on:
+  schedule:
+    # Every six hours, at :17 past (off-the-hour times get less contention
+    # on GitHub's shared scheduler, so runs start closer to on time).
+    - cron: "17 */6 * * *"
+  workflow_dispatch: # lets you trigger a refresh by hand from the Actions tab
+  push:
+    branches: [main]
+    paths:
+      - "feeds.config.json"
+      - "scripts/**"
+      - ".github/workflows/refresh-feeds.yml"
+
+# Never let two refreshes run at once — they'd fight over the same commit.
+concurrency:
+  group: refresh-feeds
+  cancel-in-progress: false
+
+permissions:
+  contents: write # needed to commit data/posts.json back to the repo
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Fetch feeds
+        run: node scripts/build-feeds.mjs
+
+      - name: Commit updated posts
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/posts.json
+          if git diff --staged --quiet; then
+            echo "No change in feed data; nothing to commit."
+          else
+            git commit -m "Refresh blogroll ($(date -u '+%Y-%m-%d %H:%M UTC'))"
+            git push
+          fi
