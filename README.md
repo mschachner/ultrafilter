@@ -1,9 +1,10 @@
 # Ultrafilter
 
 A link-only aggregator for a hand-picked blogroll. A scheduled GitHub Action
-fetches every feed, writes the results to `data/posts.json`, and the page reads
-that file. No reader view, no post content — just titles, dates, and links out
-to the original.
+fetches every feed, writes the results to `data/posts.json`, and deploys the
+site (page + data) straight to GitHub Pages — nothing is committed back to the
+repository, so `main` only ever contains your own commits. No reader view, no
+post content — just titles, dates, and links out to the original.
 
 Fetching happens on GitHub's servers rather than in your browser, which solves
 two problems the browser version had: no CORS restrictions, and requests can
@@ -14,29 +15,23 @@ anonymous fetchers.
 
 1. **Create a repository** and copy these files into it (push to `main`).
 
-2. **Turn on Pages.** Settings → Pages → Source: *Deploy from a branch* →
-   Branch: `main`, folder: `/ (root)`. Your page will be at
-   `https://<username>.github.io/<repo>/`.
+2. **Turn on Pages.** Settings → Pages → Source: *GitHub Actions*. Your page
+   will be at `https://<username>.github.io/<repo>/`.
 
-3. **Allow the Action to commit.** Settings → Actions → General → Workflow
-   permissions → *Read and write permissions*. Without this, the refresh job
-   can fetch feeds but can't save the results.
-
-4. **Run it once by hand.** Actions tab → *Refresh blogroll* → *Run workflow*.
-   The first run populates `data/posts.json`; until then the page will tell you
-   there's no data yet.
+3. **Run it once by hand** (or just push). Actions tab → *Refresh blogroll* →
+   *Run workflow*. Every run fetches the feeds and deploys the site with fresh
+   data; until the first one finishes there's nothing at the URL.
 
 After that it refreshes every six hours on its own.
 
 ### Putting it inside an existing site instead
 
-If you'd rather this live in a subdirectory of a site repo you already have,
-copy everything into a subfolder (say `ultrafilter/`), then adjust two paths:
-in the workflow, change `git add data/posts.json` to
-`git add ultrafilter/data/posts.json` and add a `working-directory:` of
-`ultrafilter` to the install and fetch steps. The workflow commits a single
-file rather than deploying a build artifact, precisely so it can't disturb
-whatever else your site does.
+The workflow deploys its build as the *entire* Pages site, so it wants a repo
+of its own. To embed the blogroll in a site repo you already have, don't reuse
+this workflow as-is — it would replace your whole site. Either have your
+site's own build pipeline run `scripts/build-feeds.mjs` and include the output
+in its deploy, or fall back to the older approach where the workflow commits
+`data/posts.json` to the branch your site deploys from.
 
 ## Search engines
 
@@ -96,8 +91,8 @@ A source only counts as working if its response actually parses as a feed —
 a `200` that turns out to be a challenge page (or a proxy that rewrites the
 XML) falls through to the next source like any other failure.
 
-Push a change to `feeds.config.json` and the workflow reruns immediately — it
-triggers on pushes to that file as well as on the schedule.
+Any push to `main` redeploys the site with freshly fetched feeds, so a config
+change takes effect as soon as its push lands.
 
 ## Reading the feed ledger
 
@@ -112,7 +107,8 @@ feed. When something fails, the error tells you what to do:
 | `HTTP 5xx` / `timeouts` | The blog's server had a bad moment. It'll likely fix itself. |
 
 The job fails loudly only if *every* feed breaks — a couple of stubborn
-publishers won't turn the whole run red.
+publishers won't turn the whole run red. A failed run deploys nothing, so the
+previously published site stays up untouched.
 
 ## Running it locally
 
@@ -127,7 +123,8 @@ blocks `fetch` of local files; the tiny server above sidesteps that.
 
 ## A note on scheduled workflows
 
-GitHub disables cron-triggered workflows in repositories with no activity for
-60 days, and emails you when it does. Since this repo commits to itself every
-six hours, that shouldn't come up — but if refreshes ever stop silently, check
-the Actions tab first.
+GitHub disables cron-triggered workflows in repositories with no commits for
+60 days, and emails you when it does. Since the refresh job deliberately never
+commits, this *will* come up if you go two months without pushing anything:
+the schedule pauses until you re-enable the workflow from the Actions tab (or
+push again). The email is the tell; re-enabling is one click.
