@@ -1,5 +1,5 @@
 {
- "generated": "2026-07-28T13:48:46.001Z",
+ "generated": "2026-07-28T14:02:39.199Z",
  "topics": [
   {
    "id": "math",
@@ -18,7 +18,7 @@
   },
   {
    "id": "arts",
-   "label": "The arts",
+   "label": "Arts",
    "color": "#94456F"
   },
   {
@@ -161,7 +161,7 @@
    ],
    "status": "failed",
    "count": 0,
-   "error": "no <item> or <entry> elements found"
+   "error": "smarthistory.org/feed/: HTTP 403 | smarthistory.org/?feed=rss2: HTTP 403 | proxy(jina): no <item> or <entry> elements found | proxy(allorigins): no <item> or <entry> elements found"
   },
   {
    "name": "Art History News",
