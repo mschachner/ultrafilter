@@ -123,6 +123,11 @@ export function parseFeedXml(xml) {
  * turns out to be a challenge page, or a proxy that rewrites the XML, is
  * just another failure to fall through — not a reason to give up on the
  * remaining sources.
+ *
+ * The very last resort is Feedly's public API: their crawler has already
+ * fetched and parsed the feed, so publisher-side blocks and encoding quirks
+ * don't apply. The trade-off is that we get Feedly's copy, not the
+ * publisher's — at worst a crawl-interval stale.
  */
 async function fetchAnySource(feed) {
   const candidates = [
@@ -145,6 +150,15 @@ async function fetchAnySource(feed) {
         url: "https://api.allorigins.win/raw?url=" + encodeURIComponent(feed.feed),
         source: "proxy",
         label: "proxy(allorigins)",
+      },
+      {
+        url:
+          "https://cloud.feedly.com/v3/streams/contents?streamId=" +
+          encodeURIComponent("feed/" + feed.feed) +
+          "&count=20",
+        source: "feedly",
+        label: "feedly",
+        parse: parseFeedlyJson,
       }
     );
   }
@@ -153,13 +167,31 @@ async function fetchAnySource(feed) {
   for (const c of candidates) {
     try {
       const body = await fetchFeed(c.url, c.headers);
-      return { entries: parseFeedXml(body), source: c.source };
+      return { entries: (c.parse || parseFeedXml)(body), source: c.source };
     } catch (err) {
       problems.push(`${c.label}: ${err.message || err}`);
     }
   }
 
   throw new Error(problems.join(" | "));
+}
+
+/** Feedly stream JSON -> the same entry shape parseFeedXml produces. */
+export function parseFeedlyJson(body) {
+  const doc = JSON.parse(body);
+  const items = Array.isArray(doc.items) ? doc.items : [];
+  if (!items.length) throw new Error("no items in Feedly stream");
+  return items
+    .map(i => ({
+      title: stripTags(i.title || "") || "(untitled)",
+      link: String(
+        i.alternate?.[0]?.href ||
+          i.canonicalUrl ||
+          (typeof i.originId === "string" && i.originId.startsWith("http") ? i.originId : "")
+      ).trim(),
+      date: i.published ? new Date(i.published) : null,
+    }))
+    .filter(e => e.link);
 }
 
 function shortUrl(u) {

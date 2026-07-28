@@ -85,11 +85,12 @@ Two optional per-feed keys help with awkward publishers:
 - `"altFeeds": ["https://example.org/?feed=rss2"]` — other URLs to try if the
   primary one fails. Useful when a site exposes the same feed at more than one
   path and a firewall only guards one of them.
-- `"proxyFallback": false` — skip the read-through proxies for this feed. By
+- `"proxyFallback": false` — skip the indirect sources for this feed. By
   default, a feed that fails every direct URL is retried via `r.jina.ai` and
-  then `api.allorigins.win`, which fetch from different infrastructure and can
-  get past IP-based blocks. The ledger marks anything fetched this way as
-  `via proxy`.
+  `api.allorigins.win` (read-through proxies), and finally via Feedly's
+  public API, whose crawler has already fetched and parsed the feed —
+  immune to publisher-side blocks, at the cost of being Feedly's copy rather
+  than the publisher's. The ledger marks these as `via proxy` / `via feedly`.
 
 A source only counts as working if its response actually parses as a feed —
 a `200` that turns out to be a challenge page (or a proxy that rewrites the
