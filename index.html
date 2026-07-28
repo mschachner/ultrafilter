@@ -48,7 +48,61 @@
   button:hover { background: var(--hover); }
   button:focus-visible, a:focus-visible { outline: 2px solid #4756A8; outline-offset: 2px; }
 
-  .chips { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1.25rem 0 0; }
+  /* ------------------------------ weather ------------------------------ */
+  #weather { display: none; margin-top: 1.25rem; border: 1px solid var(--line); border-radius: .5rem;
+             padding: .8rem 1.1rem; flex-wrap: wrap; align-items: center;
+             gap: .9rem 1.75rem; max-width: 52rem; }
+  #weather.on { display: flex; }
+  .wx-now { display: flex; align-items: center; gap: .7rem; }
+  .wx-now .ticon { width: 1.5rem; height: 1.5rem; color: var(--muted); }
+  .wx-temp { font-family: var(--display); font-size: 1.7rem; line-height: 1; }
+  .wx-desc { font-size: .82rem; color: var(--muted); line-height: 1.3; }
+  .wx-days { display: flex; gap: 1rem; margin-left: auto; flex-wrap: wrap; }
+  .wx-day { text-align: center; min-width: 3rem; }
+  .wx-day .d { font-family: var(--mono); font-size: .65rem; letter-spacing: .05em;
+               text-transform: uppercase; color: var(--muted); }
+  .wx-day .ticon { width: 1.05rem; height: 1.05rem; color: var(--muted); margin: .15rem 0 .05rem; }
+  .wx-day .t { font-family: var(--mono); font-size: .7rem; }
+  .wx-day .t .lo { color: var(--faint); }
+  .wx-day .p { font-family: var(--mono); font-size: .62rem; color: #4756A8; }
+
+  /* --------------------------- daily sections --------------------------- */
+  .klabel { font-family: var(--mono); font-size: .66rem; letter-spacing: .09em;
+            text-transform: uppercase; color: var(--muted); }
+
+  #albums-sec, #wiki-sec { display: none; }
+  #albums-sec.on, #wiki-sec.on { display: block; }
+
+  .albums { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  .album { border: 1px solid var(--line); border-radius: .5rem; padding: .95rem 1.05rem; min-width: 0; }
+  .album-head { margin: .35rem 0 .1rem; font-family: var(--display); font-size: 1.05rem; line-height: 1.3; }
+  .album-head a { color: var(--ink); text-decoration: none; }
+  .album-head a:hover { text-decoration: underline; text-underline-offset: 3px; }
+  .album-year { color: var(--muted); font-size: .85rem; }
+  .album-genres { font-family: var(--mono); font-size: .68rem; color: var(--muted); margin-bottom: .5rem; }
+  .album p { font-size: .84rem; line-height: 1.45; }
+  .album .reception { margin-top: .5rem; color: var(--muted); }
+  .srch { font-family: var(--mono); font-size: .62rem; color: var(--faint); margin-left: .3rem; }
+
+  .wiki { display: grid; grid-template-columns: minmax(0, 1fr) 17rem; gap: 2rem; }
+  .tfa-title { font-family: var(--display); font-size: 1.35rem; color: var(--ink);
+               text-decoration: none; display: inline-block; margin: .3rem 0 .05rem; }
+  .tfa-title:hover { text-decoration: underline; text-underline-offset: 3px; }
+  .tfa-desc { font-size: .82rem; color: var(--muted); display: block; margin-bottom: .5rem; }
+  .tfa-extract { font-size: .88rem; line-height: 1.5; display: -webkit-box;
+                 -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden; }
+  .wpick { display: flex; gap: .6rem; padding: .45rem 0; border-top: 1px dotted var(--line);
+           align-items: baseline; }
+  .wpick:first-of-type { margin-top: .45rem; }
+  .wpick .ticon { position: relative; top: .15rem; flex: none; }
+  .wpick-main { min-width: 0; }
+  .wpick-title { font-family: var(--display); font-size: .98rem; color: var(--ink); text-decoration: none; }
+  .wpick-title:hover { text-decoration: underline; text-underline-offset: 3px; }
+  .wpick-desc { display: block; font-size: .74rem; color: var(--muted);
+                white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+  /* ------------------------------ blogroll ------------------------------ */
+  .chips { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1rem 0 0; }
   .chip { display: inline-flex; align-items: center; gap: .45rem; border: 1px solid var(--line);
           border-radius: 999px; background: none; padding: .35rem .9rem; font-size: .85rem; }
   .chip .n { color: var(--muted); font-family: var(--mono); font-size: .7rem; }
@@ -60,16 +114,20 @@
   #ledger { flex: none; width: 17rem; position: sticky; top: 1.5rem; margin-top: 1.25rem;
             border: 1px solid var(--line); border-radius: .5rem; padding: 1rem 1.25rem; font-size: .82rem; }
   #ledger h2 { font-family: var(--display); font-weight: 400; font-size: 1.05rem; margin-bottom: .5rem; }
+  #ledger h2 + .ledger-row { border-top: none; }
+  .ledger-gap { margin-top: .65rem; }
   .ledger-row { display: flex; justify-content: space-between; flex-wrap: wrap; gap: .15rem .75rem;
                 padding: .3rem 0; border-top: 1px dotted var(--line); }
   .ledger-row a { color: var(--ink); }
   .ledger-status { font-family: var(--mono); font-size: .68rem; word-break: break-word; }
   .ok { color: #557A33; }
   .fail { color: #A33B2E; }
+  .dim { color: var(--faint); }
 
   .dateline { font-family: var(--mono); font-size: .75rem; letter-spacing: .04em;
               color: var(--muted); margin: 2.25rem 0 .5rem; display: flex; align-items: center; gap: .75rem; }
   .dateline::after { content: ""; flex: 1; border-top: 1px solid var(--line); }
+  .section-head { margin-bottom: .9rem; }
   .post { display: flex; gap: .75rem; padding: .55rem .5rem; border-radius: .4rem; align-items: baseline; }
   .post:hover { background: var(--hover); }
   .post .ticon { position: relative; top: .15rem; }
@@ -89,11 +147,14 @@
     .cols { flex-direction: column; gap: 0; }
     .main { max-width: none; }
     #ledger { position: static; width: auto; align-self: stretch; order: 1; }
+    .albums { grid-template-columns: 1fr; }
+    .wiki { grid-template-columns: 1fr; gap: 1rem; }
   }
   @media (max-width: 480px) {
     .post { flex-wrap: wrap; }
     .post-src { margin-left: 1.3rem; }
     .post .copy { opacity: 1; }
+    .wx-days { margin-left: 0; }
   }
 </style>
 </head>
@@ -109,21 +170,25 @@
     </div>
   </header>
 
+  <div id="weather" aria-label="Weather"></div>
+
   <div class="cols">
     <div class="main">
+      <section id="albums-sec" aria-label="Albums"></section>
+      <section id="wiki-sec" aria-label="Wikipedia"></section>
+      <h2 class="dateline">Blogroll</h2>
       <div class="chips" id="chips" role="group" aria-label="Filter by topic"></div>
       <main id="list" aria-live="polite"></main>
       <p id="status-line">Loading posts&hellip;</p>
     </div>
-    <aside id="ledger" aria-label="Feed status"></aside>
+    <aside id="ledger" aria-label="Ledger"></aside>
   </div>
 
 </div>
 
 <script>
-const DATA_URL = "./data/posts.json";
-
-let data = null;
+const state = { blogroll: null, wikipedia: null, albums: null, weather: null };
+const sectionNotes = {};   // ledger rows for the non-blogroll sections
 let activeTopic = "all";
 
 const $ = sel => document.querySelector(sel);
@@ -135,7 +200,7 @@ function esc(s) {
 }
 
 function topicColor(id) {
-  const t = (data?.topics || []).find(t => t.id === id);
+  const t = (state.blogroll?.topics || []).find(t => t.id === id);
   return t ? t.color : "#9AA1A6";
 }
 
@@ -153,13 +218,175 @@ function icon(id) {
     stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${path}</svg>`;
 }
 
+/* ------------------------------- weather ------------------------------- */
+
+// WMO weather codes -> [description, icon key]
+function wmo(code) {
+  const c = Number(code);
+  if (c === 0) return ["Clear", "sun"];
+  if (c === 1) return ["Mainly clear", "sun"];
+  if (c === 2) return ["Partly cloudy", "cloudsun"];
+  if (c === 3) return ["Overcast", "cloud"];
+  if (c === 45 || c === 48) return ["Fog", "fog"];
+  if (c >= 51 && c <= 57) return ["Drizzle", "rain"];
+  if (c >= 61 && c <= 67) return ["Rain", "rain"];
+  if (c >= 71 && c <= 77) return ["Snow", "snow"];
+  if (c >= 80 && c <= 82) return ["Showers", "rain"];
+  if (c === 85 || c === 86) return ["Snow showers", "snow"];
+  if (c >= 95) return ["Thunderstorm", "storm"];
+  return ["", "cloud"];
+}
+
+const WX_ICONS = {
+  sun:      '<circle cx="12" cy="12" r="4"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/>',
+  cloudsun: '<path d="M11 4v2M5.7 6.2l1.4 1.4M3 12h2M18.4 7.5a4 4 0 0 0-6.9-1.2"/><path d="M7.5 13.3A4.5 4.5 0 0 1 12 9a4.5 4.5 0 0 1 4.4 3.6A3.3 3.3 0 0 1 16 19H8a3.3 3.3 0 0 1-.5-5.7z"/>',
+  cloud:    '<path d="M6.5 11.3A5 5 0 0 1 11.5 6a5 5 0 0 1 4.9 4A3.7 3.7 0 0 1 16 17.5H7a3.7 3.7 0 0 1-.5-6.2z"/>',
+  fog:      '<path d="M6.5 8.3A5 5 0 0 1 11.5 3a5 5 0 0 1 4.9 4A3.7 3.7 0 0 1 16 14.5H7a3.7 3.7 0 0 1-.5-6.2z"/><path d="M5 18h14M7 21h10"/>',
+  rain:     '<path d="M6.5 9.3A5 5 0 0 1 11.5 4a5 5 0 0 1 4.9 4A3.7 3.7 0 0 1 16 15.5H7a3.7 3.7 0 0 1-.5-6.2z"/><path d="M8 18.5l-1 2.5M12.5 18.5l-1 2.5M17 18.5l-1 2.5"/>',
+  snow:     '<path d="M6.5 9.3A5 5 0 0 1 11.5 4a5 5 0 0 1 4.9 4A3.7 3.7 0 0 1 16 15.5H7a3.7 3.7 0 0 1-.5-6.2z"/><path d="M8 19h.01M12 21h.01M16 19h.01"/>',
+  storm:    '<path d="M6.5 9.3A5 5 0 0 1 11.5 4a5 5 0 0 1 4.9 4A3.7 3.7 0 0 1 16 15.5H7a3.7 3.7 0 0 1-.5-6.2z"/><path d="M12.5 15.5 10 19h3l-1.8 3.5"/>',
+};
+
+function wxIcon(key) {
+  return `<svg class="ticon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${WX_ICONS[key] || WX_ICONS.cloud}</svg>`;
+}
+
+async function loadWeather() {
+  const cfg = state.weather?.config;
+  if (!cfg) { sectionNotes.weather = { cls: "dim", text: "no config" }; renderLedger(); return; }
+  try {
+    const u = new URL("https://api.open-meteo.com/v1/forecast");
+    u.searchParams.set("latitude", cfg.latitude);
+    u.searchParams.set("longitude", cfg.longitude);
+    u.searchParams.set("current", "temperature_2m,apparent_temperature,weather_code,wind_speed_10m");
+    u.searchParams.set("daily", "weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max");
+    u.searchParams.set("temperature_unit", cfg.temperatureUnit || "fahrenheit");
+    u.searchParams.set("wind_speed_unit", cfg.windSpeedUnit || "mph");
+    u.searchParams.set("timezone", cfg.timezone || "auto");
+    u.searchParams.set("forecast_days", cfg.days || 5);
+    const res = await fetch(u, { signal: AbortSignal.timeout(12000) });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    renderWeather(cfg, await res.json());
+    sectionNotes.weather = { cls: "ok", text: "live" };
+  } catch (err) {
+    sectionNotes.weather = { cls: "fail", text: `failed — ${err.message || err}` };
+  }
+  renderLedger();
+}
+
+function renderWeather(cfg, w) {
+  const cur = w.current || {};
+  const [desc, ic] = wmo(cur.weather_code);
+  const temp = Math.round(cur.temperature_2m);
+  const feels = Math.round(cur.apparent_temperature);
+  const bits = [desc, Math.abs(feels - temp) >= 3 ? `feels ${feels}°` : null,
+                cur.wind_speed_10m != null ? `wind ${Math.round(cur.wind_speed_10m)} ${cfg.windSpeedUnit || "mph"}` : null]
+    .filter(Boolean).join(" · ");
+
+  const d = w.daily || {};
+  const days = (d.time || []).map((t, i) => {
+    const [, dic] = wmo(d.weather_code?.[i]);
+    const label = i === 0 ? "Today"
+      : new Date(t + "T12:00:00").toLocaleDateString("en-GB", { weekday: "short" });
+    const pop = d.precipitation_probability_max?.[i];
+    return `<div class="wx-day">
+      <div class="d">${esc(label)}</div>
+      ${wxIcon(dic)}
+      <div class="t">${Math.round(d.temperature_2m_max?.[i])}° <span class="lo">${Math.round(d.temperature_2m_min?.[i])}°</span></div>
+      <div class="p">${pop >= 15 ? pop + "%" : "&nbsp;"}</div>
+    </div>`;
+  }).join("");
+
+  $("#weather").innerHTML = `
+    <div class="wx-now">
+      ${wxIcon(ic)}
+      <span class="wx-temp">${temp}°</span>
+      <span class="wx-desc">${esc(cfg.place)}<br>${esc(bits)}</span>
+    </div>
+    <div class="wx-days">${days}</div>`;
+  $("#weather").classList.add("on");
+}
+
+/* ---------------------------- daily sections ---------------------------- */
+
+// "2026-07-28" -> "Tuesday 28 July" (parsed at noon to dodge timezone edges).
+function prettyDate(key) {
+  const d = new Date(`${key}T12:00:00`);
+  if (isNaN(d)) return "";
+  return d.toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long" });
+}
+
+function renderAlbums() {
+  const a = state.albums;
+  if (!a?.albums?.length) {
+    sectionNotes.albums = a?.status === "pending"
+      ? { cls: "dim", text: "pending" }
+      : { cls: "fail", text: `failed — ${a?.error || "no data"}` };
+    return;
+  }
+  sectionNotes.albums = { cls: a.stale ? "dim" : "ok", text: `${a.stale ? "stale · " : ""}${a.date}` };
+
+  const cards = a.albums.map(al => {
+    const name = `<i>${esc(al.album)}</i>`;
+    const link = al.spotify_url
+      ? `<a href="${esc(al.spotify_url)}" target="_blank" rel="noopener">${name}</a>${al.link_is_search ? '<span class="srch">search</span>' : ""}`
+      : name;
+    return `<article class="album">
+      <span class="klabel">${esc(al.header)}</span>
+      <div class="album-head">${esc(al.artist)}<br>${link}
+        ${al.year ? `<span class="album-year">(${esc(al.year)})</span>` : ""}</div>
+      ${al.genres?.length ? `<div class="album-genres">${esc(al.genres.join(" · "))}</div>` : ""}
+      <p>${esc(al.blurb)}</p>
+      ${al.reception ? `<p class="reception">${esc(al.reception)}</p>` : ""}
+    </article>`;
+  }).join("");
+
+  $("#albums-sec").innerHTML =
+    `<h2 class="dateline section-head">Albums · ${esc(prettyDate(a.date))}</h2>
+     <div class="albums">${cards}</div>`;
+  $("#albums-sec").classList.add("on");
+}
+
+function renderWiki() {
+  const w = state.wikipedia;
+  if (!w || (!w.tfa && !w.picks?.length)) {
+    sectionNotes.wikipedia = { cls: "fail", text: `failed — ${w?.error || "no data"}` };
+    return;
+  }
+  sectionNotes.wikipedia = { cls: w.stale ? "dim" : "ok", text: `${w.stale ? "stale · " : ""}${w.date}` };
+
+  const tfa = w.tfa ? `<div class="tfa">
+      <span class="klabel">Featured article</span><br>
+      <a class="tfa-title" href="${esc(w.tfa.url)}" target="_blank" rel="noopener">${esc(w.tfa.title)}</a>
+      <span class="tfa-desc">${esc(w.tfa.description)}</span>
+      <p class="tfa-extract">${esc(w.tfa.extract)}</p>
+    </div>` : "<div></div>";
+
+  const picks = (w.picks || []).map(p => `
+    <div class="wpick" style="--dot:${topicColor(p.topicId)}">
+      ${icon(p.topicId)}
+      <span class="wpick-main">
+        <a class="wpick-title" href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.title)}</a>
+        <span class="wpick-desc" title="${esc(p.description)}">${esc(p.description)}</span>
+      </span>
+    </div>`).join("");
+
+  $("#wiki-sec").innerHTML =
+    `<h2 class="dateline section-head">Wikipedia · ${esc(prettyDate(w.date))}</h2>
+     <div class="wiki">${tfa}<div class="wpicks">${picks}</div></div>`;
+  $("#wiki-sec").classList.add("on");
+}
+
+/* ------------------------------ blogroll ------------------------------- */
+
 function visibleCount(topicId) {
-  const posts = data?.posts || [];
+  const posts = state.blogroll?.posts || [];
   return topicId === "all" ? posts.length : posts.filter(p => p.topics.includes(topicId)).length;
 }
 
 function renderChips() {
-  const chips = data?.topics || [];
+  const chips = state.blogroll?.topics || [];
   $("#chips").innerHTML = chips.map(c => `
     <button class="chip" data-topic="${esc(c.id)}" aria-pressed="${activeTopic === c.id}"
       style="--dot:${esc(c.color)}">
@@ -170,27 +397,39 @@ function renderChips() {
   document.querySelectorAll(".chip").forEach(btn =>
     btn.addEventListener("click", () => {
       activeTopic = activeTopic === btn.dataset.topic ? "all" : btn.dataset.topic;
-      render();
+      renderBlogroll();
     }));
 }
 
 function renderLedger() {
-  const feeds = data?.feeds || [];
-  const rows = feeds.map(f => {
+  const rows = [];
+  const note = (label, n) => n && rows.push(
+    `<div class="ledger-row"><span>${label}</span><span class="ledger-status ${n.cls}">${esc(n.text)}</span></div>`);
+  const b = state.blogroll;
+  note("Blogroll", b?.posts
+    ? { cls: b.stale ? "dim" : "ok", text: `${b.stale ? "stale · " : ""}${b.feedsOk}/${b.feedsTotal} feeds` }
+    : { cls: "fail", text: `failed — ${b?.error || "no data"}` });
+  note("Wikipedia", sectionNotes.wikipedia);
+  note("Albums", sectionNotes.albums);
+  note("Weather", sectionNotes.weather);
+
+  const feeds = (state.blogroll?.feeds || []).map(f => {
     const ok = f.status === "ok";
     const label = ok
-      ? `${f.count} post${f.count === 1 ? "" : "s"}${f.source && f.source !== "direct" ? ` \u00b7 via ${esc(f.source)}` : ""}`
-      : `failed \u2014 ${esc(f.error || "unknown")}`;
+      ? `${f.count} post${f.count === 1 ? "" : "s"}${f.source && f.source !== "direct" ? ` · via ${esc(f.source)}` : ""}`
+      : `failed — ${esc(f.error || "unknown")}`;
     return `<div class="ledger-row">
       <a href="${esc(f.site)}" target="_blank" rel="noopener" title="${esc(f.author)}">${esc(f.name)}</a>
       <span class="ledger-status ${ok ? "ok" : "fail"}">${label}</span>
     </div>`;
   }).join("");
-  $("#ledger").innerHTML = `<h2>Feed ledger</h2>${rows}`;
+
+  $("#ledger").innerHTML = `<h2>Ledger</h2>${rows.join("")}` +
+    (feeds ? `<div class="ledger-gap"></div>${feeds}` : "");
 }
 
 function renderList() {
-  const posts = (data?.posts || [])
+  const posts = (state.blogroll?.posts || [])
     .filter(p => activeTopic === "all" || p.topics.includes(activeTopic));
 
   if (!posts.length) { $("#list").innerHTML = ""; return; }
@@ -222,11 +461,18 @@ function dateKey(d) {
 }
 
 function renderStatus() {
-  const failed = (data?.feeds || []).filter(f => f.status !== "ok").length;
-  $("#report").textContent = `${data.feedsOk} of ${data.feedsTotal} feeds` + (failed ? ` (${failed} failed)` : "");
-  const when = data.generated ? new Date(data.generated) : null;
+  const b = state.blogroll;
+  if (!b?.posts) {
+    $("#report").textContent = "no data";
+    $("#status-line").textContent =
+      `Couldn't load data/blogroll.json${b?.error ? ` (${b.error})` : ""}. If this is a fresh checkout, the scheduled job hasn't run yet — trigger it from the Actions tab, or run "npm ci && node scripts/build.mjs" locally.`;
+    return;
+  }
+  const failed = (b.feeds || []).filter(f => f.status !== "ok").length;
+  $("#report").textContent = `${b.feedsOk} of ${b.feedsTotal} feeds` + (failed ? ` (${failed} failed)` : "");
+  const when = b.generated ? new Date(b.generated) : null;
   $("#status-line").textContent =
-    `${(data.posts || []).length} posts \u00b7 updated ${when ? relativeTime(when) : "unknown"}.`;
+    `${(b.posts || []).length} posts · updated ${when ? relativeTime(when) : "unknown"}.`;
 }
 
 function relativeTime(then) {
@@ -239,25 +485,32 @@ function relativeTime(then) {
   return `${days} day${days === 1 ? "" : "s"} ago`;
 }
 
-function render() {
+function renderBlogroll() {
   renderChips();
   renderLedger();
   renderList();
   renderStatus();
 }
 
+async function loadJson(name) {
+  // Cache-buster so a refreshed build shows up without a hard reload.
+  const res = await fetch(`./data/${name}.json?t=${Date.now()}`, { cache: "no-store" });
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  return res.json();
+}
+
 async function load() {
-  try {
-    // Cache-buster so a refreshed build shows up without a hard reload.
-    const res = await fetch(`${DATA_URL}?t=${Date.now()}`, { cache: "no-store" });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    data = await res.json();
-    render();
-  } catch (err) {
-    $("#status-line").textContent =
-      `Couldn't load ${DATA_URL} (${err.message}). If this is a fresh checkout, the scheduled job hasn't run yet \u2014 trigger it from the Actions tab, or run "npm ci && node scripts/build-feeds.mjs" locally.`;
-    $("#report").textContent = "no data";
-  }
+  const [b, w, a, wx] = await Promise.allSettled(
+    ["blogroll", "wikipedia", "albums", "weather"].map(loadJson));
+  state.blogroll = b.status === "fulfilled" ? b.value : { error: b.reason?.message };
+  state.wikipedia = w.status === "fulfilled" ? w.value : { error: w.reason?.message };
+  state.albums = a.status === "fulfilled" ? a.value : { error: a.reason?.message, status: "failed" };
+  state.weather = wx.status === "fulfilled" ? wx.value : null;
+
+  renderAlbums();
+  renderWiki();
+  renderBlogroll();
+  loadWeather();   // async; re-renders the ledger row when it settles
 }
 
 $("#list").addEventListener("click", async e => {

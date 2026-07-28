@@ -1,15 +1,106 @@
 # Ultrafilter
 
-A link-only aggregator for a hand-picked blogroll. A scheduled GitHub Action
-fetches every feed, writes the results to `data/posts.json`, and deploys the
-site (page + data) straight to GitHub Pages — nothing is committed back to the
-repository, so `main` only ever contains your own commits. No reader view, no
-post content — just titles, dates, and links out to the original.
+A personal daily feed on GitHub Pages, in four sections: a hand-picked
+blogroll, the weather, Wikipedia (the day's featured article plus a few
+quality articles from chosen interest areas), and the day's three album
+picks.
 
-Fetching happens on GitHub's servers rather than in your browser, which solves
-two problems the browser version had: no CORS restrictions, and requests can
-carry a normal browser `User-Agent`, which gets past publishers that reject
-anonymous fetchers.
+The architecture is one-directional. A scheduled GitHub Action builds every
+section's data file and deploys the site (page + data) straight to Pages —
+nothing is committed back to the repository, so `main` only ever contains
+your own commits. Editorial content comes from outside: a scheduled Claude
+task researches the album picks each morning and commits them to a separate
+private data repository, which the build then reads with a read-only token.
+The task writes data; the Action is the only thing that publishes. Weather
+is the one exception to build-time fetching — the page queries Open-Meteo
+directly on load, so the temperature on screen is current rather than
+build-time.
+
+Each section's data is built independently, and a section whose build fails
+falls back to the copy currently published on the live site, so one flaky
+upstream can't blank the rest of the page. The same mechanism keeps the
+daily sections stable: a rebuild that finds today's Wikipedia payload
+already published reuses it instead of re-rolling the picks.
+
+## Sections
+
+### Blogroll
+
+Link-only: titles, dates, and links out to the original — no reader view.
+Fetching happens on GitHub's servers rather than in your browser, which
+solves two problems a browser version would have: no CORS restrictions, and
+requests can carry a normal browser `User-Agent`, which gets past publishers
+that reject anonymous fetchers.
+
+Two optional per-feed keys in `config.json` help with awkward publishers:
+
+- `"altFeeds": ["https://example.org/?feed=rss2"]` — other URLs to try if the
+  primary one fails. Useful when a site exposes the same feed at more than one
+  path and a firewall only guards one of them.
+- `"proxyFallback": false` — skip the indirect sources for this feed. By
+  default, a feed that fails every direct URL is retried via `r.jina.ai` and
+  `api.allorigins.win` (read-through proxies), and finally via Feedly's
+  public API, whose crawler has already fetched and parsed the feed —
+  immune to publisher-side blocks, at the cost of being Feedly's copy rather
+  than the publisher's. The ledger marks these as `via proxy` / `via feedly`.
+
+A source only counts as working if its response actually parses as a feed —
+a `200` that turns out to be a challenge page (or a proxy that rewrites the
+XML) falls through to the next source like any other failure.
+
+### Weather
+
+Fetched client-side from [Open-Meteo](https://open-meteo.com/) (free, no
+API key). The build only passes the `weather` block of `config.json`
+through to the page: place name, coordinates, timezone, units, forecast
+days. Note that the coordinates are readable by anyone who finds the page.
+
+### Wikipedia
+
+The featured article comes from Wikimedia's featured-content API. The picks
+are random members of English Wikipedia's **Good articles** category,
+filtered by `articletopic:` (the ORES topic taxonomy) to the interest areas
+in `config.json`; which areas are drawn from rotates with the day of the
+year. Both are keyed to the local date and re-rolled once a day, however
+often the build runs.
+
+Each entry in `wikipedia.topics` maps an interest area to one or more
+[articletopic values](https://www.mediawiki.org/wiki/Help:CirrusSearch#articletopic);
+add or reweight areas there.
+
+### Albums
+
+The "Daily album recommendations" Claude task publishes its three picks —
+with blurbs — as `albums/latest.json` (plus a dated copy) in the private
+`spotify-recs` repository, next to the recommendation-history CSV it
+already keeps. The build fetches that file via the GitHub contents API
+using the `SPOTIFY_RECS_TOKEN` secret. No secret configured, or no file
+yet: the section quietly reads `pending` in the ledger. Transient fetch
+failures keep the previous day's picks, marked `stale`.
+
+The contract the task fulfills:
+
+```jsonc
+{
+  "date": "2026-07-29",
+  "title": "Three albums for 29 July",
+  "albums": [
+    {
+      "category": "focus",          // focus | familiar_artist | new_artist
+      "header": "Focus",            // Focus | Enjoy | Explore
+      "artist": "…",
+      "album": "…",
+      "year": 1974,
+      "genres": ["…"],
+      "spotify_url": "https://open.spotify.com/album/…",
+      "link_is_search": false,      // true when only a search link could be verified
+      "blurb": "…",                 // the bulletin's info paragraph
+      "reception": "…"              // the verified reception sentence
+    }
+    // … three entries, in Focus, Enjoy, Explore order
+  ]
+}
+```
 
 ## Setup
 
@@ -18,20 +109,26 @@ anonymous fetchers.
 2. **Turn on Pages.** Settings → Pages → Source: *GitHub Actions*. Your page
    will be at `https://<username>.github.io/<repo>/`.
 
-3. **Run it once by hand** (or just push). Actions tab → *Refresh blogroll* →
-   *Run workflow*. Every run fetches the feeds and deploys the site with fresh
-   data; until the first one finishes there's nothing at the URL.
+3. **Add the albums token** (skip if you don't use the albums section):
+   a fine-grained PAT with read-only **Contents** access to the data
+   repository, saved as the `SPOTIFY_RECS_TOKEN` Actions secret
+   (Settings → Secrets and variables → Actions).
 
-After that it refreshes every six hours on its own.
+4. **Run it once by hand** (or just push). Actions tab → *Build and deploy* →
+   *Run workflow*. Every run builds all sections and deploys the site with
+   fresh data; until the first one finishes there's nothing at the URL.
+
+After that it refreshes every six hours on its own, plus once at 9:45 UTC to
+pick up the morning's albums shortly after the Claude task lands them.
 
 ### Putting it inside an existing site instead
 
 The workflow deploys its build as the *entire* Pages site, so it wants a repo
-of its own. To embed the blogroll in a site repo you already have, don't reuse
-this workflow as-is — it would replace your whole site. Either have your
-site's own build pipeline run `scripts/build-feeds.mjs` and include the output
-in its deploy, or fall back to the older approach where the workflow commits
-`data/posts.json` to the branch your site deploys from.
+of its own. To embed this page in a site repo you already have, don't reuse
+the workflow as-is — it would replace your whole site. Either have your
+site's own build pipeline run `scripts/build.mjs` and include the output
+in its deploy, or fall back to committing `data/` to the branch your site
+deploys from.
 
 ## Search engines
 
@@ -51,53 +148,23 @@ Two caveats worth being clear about:
   still appear in results if a link to it is discovered elsewhere. Allowing the
   crawl and serving `noindex` is the reliable combination.
 
-## Maintaining the blogroll
+## Maintaining it
 
-Everything lives in `feeds.config.json`:
+Everything lives in `config.json`: the blogroll's topics and feeds, the
+weather location, the Wikipedia interest areas, and the albums data source.
+Adding a blogroll topic means adding an entry to `blogroll.topics` and
+referencing its `id` from any feed; the filter chips and dot colors follow
+automatically. `site` is the deployed URL, which the build uses to recover
+the currently-published data when a section's fresh build fails.
 
-```jsonc
-{
-  "itemsPerFeed": 8,     // most recent N posts kept per feed
-  "maxAgeDays": 400,     // anything older is dropped
-  "topics": [ { "id": "math", "label": "Mathematics", "color": "#4756A8" } ],
-  "feeds": [
-    {
-      "name": "Blog title",
-      "author": "Who writes it",
-      "site": "https://example.org",          // linked from the feed ledger
-      "feed": "https://example.org/feed/",    // the actual RSS/Atom URL
-      "topics": ["math"]                      // one or more topic ids
-    }
-  ]
-}
-```
-
-Adding a topic means adding an entry to `topics` and referencing its `id` from
-any feed. The filter chips and dot colors follow automatically.
-
-Two optional per-feed keys help with awkward publishers:
-
-- `"altFeeds": ["https://example.org/?feed=rss2"]` — other URLs to try if the
-  primary one fails. Useful when a site exposes the same feed at more than one
-  path and a firewall only guards one of them.
-- `"proxyFallback": false` — skip the indirect sources for this feed. By
-  default, a feed that fails every direct URL is retried via `r.jina.ai` and
-  `api.allorigins.win` (read-through proxies), and finally via Feedly's
-  public API, whose crawler has already fetched and parsed the feed —
-  immune to publisher-side blocks, at the cost of being Feedly's copy rather
-  than the publisher's. The ledger marks these as `via proxy` / `via feedly`.
-
-A source only counts as working if its response actually parses as a feed —
-a `200` that turns out to be a challenge page (or a proxy that rewrites the
-XML) falls through to the next source like any other failure.
-
-Any push to `main` redeploys the site with freshly fetched feeds, so a config
+Any push to `main` redeploys the site with freshly built data, so a config
 change takes effect as soon as its push lands.
 
-## Reading the feed ledger
+## Reading the ledger
 
-The **Feeds** button on the page shows the result of the last run for every
-feed. When something fails, the error tells you what to do:
+The ledger on the page reports the last build: one row per section, then
+one row per blogroll feed. When a feed fails, the error tells you what to
+do:
 
 | What it says | What it means |
 | --- | --- |
@@ -105,26 +172,32 @@ feed. When something fails, the error tells you what to do:
 | `HTTP 403` | The publisher blocks automated fetching — frequently by IP range, since CI runners sit in cloud ranges that firewalls reject. The build retries such feeds through a read-through proxy automatically. |
 | `no <item> or <entry> elements found` | That URL returned something that isn't a feed (a web page, or a proxy's rewrite of one). Each failed source is listed with its own error, separated by `\|`. |
 | `HTTP 5xx` / `timeouts` | The blog's server had a bad moment. It'll likely fix itself. |
+| `stale · <date>` | That section's fresh build failed, so the previously published data is still being served. |
+| `pending` | The albums section has no token configured, or the task hasn't published a file yet. |
 
-The job fails loudly only if *every* feed breaks — a couple of stubborn
-publishers won't turn the whole run red. A failed run deploys nothing, so the
-previously published site stays up untouched.
+The job fails loudly only if the blogroll ends up with no posts from any
+source — a couple of stubborn publishers won't turn the whole run red. A
+failed run deploys nothing, so the previously published site stays up
+untouched.
 
 ## Running it locally
 
 ```sh
 npm ci
-node scripts/build-feeds.mjs   # writes data/posts.json
+node scripts/build.mjs         # writes data/*.json
 python3 -m http.server 8123    # then open http://localhost:8123/
 ```
 
-Opening `index.html` directly from disk works in Safari but not Chrome, which
-blocks `fetch` of local files; the tiny server above sidesteps that.
+Locally the albums section needs `SPOTIFY_RECS_TOKEN` in the environment to
+build fresh; without it the builder falls back to whatever the live site is
+serving. Opening `index.html` directly from disk works in Safari but not
+Chrome, which blocks `fetch` of local files; the tiny server above sidesteps
+that.
 
 ## A note on scheduled workflows
 
 GitHub disables cron-triggered workflows in repositories with no commits for
-60 days, and emails you when it does. Since the refresh job deliberately never
+60 days, and emails you when it does. Since the build job deliberately never
 commits, this *will* come up if you go two months without pushing anything:
 the schedule pauses until you re-enable the workflow from the Actions tab (or
 push again). The email is the tell; re-enabling is one click.

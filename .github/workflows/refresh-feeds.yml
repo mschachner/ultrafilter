@@ -1,13 +1,16 @@
-name: Refresh blogroll
+name: Build and deploy
 
 on:
   schedule:
     # Every six hours, at :17 past (off-the-hour times get less contention
     # on GitHub's shared scheduler, so runs start closer to on time).
     - cron: "17 */6 * * *"
+    # Once more shortly after the album task's 9:04 UTC firing, so the day's
+    # picks are on the page by breakfast.
+    - cron: "45 9 * * *"
   workflow_dispatch: # lets you trigger a refresh by hand from the Actions tab
   push:
-    branches: [main] # any push redeploys the site with fresh feed data
+    branches: [main] # any push redeploys the site with fresh data
 
 # Deploys are serialized; a run already in flight finishes rather than being
 # cancelled, so a deploy is never half-done.
@@ -43,8 +46,12 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Fetch feeds
-        run: node scripts/build-feeds.mjs
+      - name: Build section data
+        run: node scripts/build.mjs
+        env:
+          # Fine-grained PAT, read-only Contents on the private albums repo.
+          # Without it the albums section quietly stays pending.
+          SPOTIFY_RECS_TOKEN: ${{ secrets.SPOTIFY_RECS_TOKEN }}
 
       # Only what the site actually serves goes into the artifact —
       # no node_modules, scripts, or repo housekeeping.

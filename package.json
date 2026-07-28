@@ -1,11 +1,11 @@
 {
   "name": "ultrafilter",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
-  "description": "A link-only aggregator for a hand-picked blogroll.",
+  "description": "A personal daily feed: blogroll, weather, Wikipedia, and album picks.",
   "type": "module",
   "scripts": {
-    "build": "node scripts/build-feeds.mjs",
+    "build": "node scripts/build.mjs",
     "serve": "python3 -m http.server 8123"
   },
   "dependencies": {

@@ -1,27 +1,15 @@
-#!/usr/bin/env node
 /**
- * Fetches every feed in feeds.config.json and writes data/posts.json.
- *
- * Runs on a server (GitHub Actions), so there is no CORS problem and we can
- * send a real browser User-Agent — which is what gets us past the publishers
- * that reject anonymous fetchers.
+ * Blogroll section: fetches every feed in the config and produces the posts
+ * payload. Runs on a server (GitHub Actions), so there is no CORS problem and
+ * we can send a real browser User-Agent — which is what gets us past the
+ * publishers that reject anonymous fetchers.
  */
 
-import { readFile, writeFile, mkdir } from "node:fs/promises";
-import { dirname, resolve } from "node:path";
-import { fileURLToPath } from "node:url";
 import { XMLParser } from "fast-xml-parser";
+import { fetchText } from "../lib.mjs";
 
-const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
-const CONFIG_PATH = resolve(ROOT, "feeds.config.json");
-const OUT_PATH = resolve(ROOT, "data/posts.json");
-
-const UA =
-  "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 " +
-  "(KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36";
-
-const TIMEOUT_MS = 25000;
-const ATTEMPTS = 3;
+const FEED_ACCEPT =
+  "application/rss+xml, application/atom+xml, application/xml;q=0.9, text/xml;q=0.9, */*;q=0.8";
 
 const parser = new XMLParser({
   ignoreAttributes: false,
@@ -193,7 +181,7 @@ async function fetchAnySource(feed) {
   const problems = [];
   for (const c of candidates) {
     try {
-      const body = await fetchFeed(c.url, c.headers);
+      const body = await fetchText(c.url, { Accept: FEED_ACCEPT, ...(c.headers || {}) });
       return { entries: (c.parse || parseFeedXml)(body), source: c.source };
     } catch (err) {
       problems.push(`${c.label}: ${err.message || err}`);
@@ -230,52 +218,30 @@ function shortUrl(u) {
   }
 }
 
-async function fetchFeed(url, extraHeaders = {}) {
-  let lastErr;
-  for (let attempt = 1; attempt <= ATTEMPTS; attempt++) {
-    try {
-      const res = await fetch(url, {
-        redirect: "follow",
-        signal: AbortSignal.timeout(TIMEOUT_MS),
-        headers: {
-          "User-Agent": UA,
-          Accept:
-            "application/rss+xml, application/atom+xml, application/xml;q=0.9, text/xml;q=0.9, */*;q=0.8",
-          "Accept-Language": "en-US,en;q=0.9",
-          ...extraHeaders,
-        },
-      });
-      if (!res.ok) {
-        const err = new Error(`HTTP ${res.status}`);
-        // 4xx (except 429) is a settled answer — retrying won't change it.
-        err.permanent = res.status >= 400 && res.status < 500 && res.status !== 429;
-        throw err;
-      }
-      const body = await res.text();
-      if (!body.trim()) throw new Error("empty response body");
-      return body;
-    } catch (err) {
-      lastErr = err;
-      if (err.permanent || attempt === ATTEMPTS) break;
-      await new Promise(r => setTimeout(r, 1500 * attempt));
-    }
-  }
-  throw lastErr;
+function meta(feed) {
+  return {
+    name: feed.name,
+    author: feed.author,
+    site: feed.site,
+    topics: feed.topics,
+  };
 }
 
-/* --------------------------------- main -------------------------------- */
+/* --------------------------------- build ------------------------------- */
 
-export async function main() {
-  const config = JSON.parse(await readFile(CONFIG_PATH, "utf8"));
-  const perFeed = config.itemsPerFeed ?? 8;
-  const cutoff = config.maxAgeDays
-    ? Date.now() - config.maxAgeDays * 86400000
-    : null;
+/**
+ * Builds the blogroll payload. Throws only if every feed failed — a couple
+ * of stubborn publishers shouldn't take the section down.
+ */
+export async function build(config) {
+  const cfg = config.blogroll;
+  const perFeed = cfg.itemsPerFeed ?? 8;
+  const cutoff = cfg.maxAgeDays ? Date.now() - cfg.maxAgeDays * 86400000 : null;
 
   const report = [];
   const posts = [];
 
-  for (const feed of config.feeds) {
+  for (const feed of cfg.feeds) {
     try {
       const { entries: parsed, source } = await fetchAnySource(feed);
       const entries = parsed.slice(0, perFeed);
@@ -310,42 +276,14 @@ export async function main() {
   });
 
   const okCount = report.filter(r => r.status === "ok").length;
-  const out = {
+  if (okCount === 0) throw new Error("every feed failed");
+
+  return {
     generated: new Date().toISOString(),
-    topics: config.topics,
+    topics: cfg.topics,
     feedsTotal: report.length,
     feedsOk: okCount,
     feeds: report,
     posts: deduped,
   };
-
-  await mkdir(dirname(OUT_PATH), { recursive: true });
-  await writeFile(OUT_PATH, JSON.stringify(out, null, 1) + "\n", "utf8");
-
-  console.log(
-    `\nWrote ${deduped.length} posts from ${okCount}/${report.length} feeds -> data/posts.json`
-  );
-
-  // Fail the job only if essentially everything broke — a couple of stubborn
-  // publishers shouldn't turn the whole build red.
-  if (okCount === 0) {
-    console.error("Every feed failed; refusing to publish an empty file.");
-    process.exit(1);
-  }
-}
-
-function meta(feed) {
-  return {
-    name: feed.name,
-    author: feed.author,
-    site: feed.site,
-    topics: feed.topics,
-  };
-}
-
-if (import.meta.url === `file://${process.argv[1]}`) {
-  main().catch(err => {
-    console.error(err);
-    process.exit(1);
-  });
 }
