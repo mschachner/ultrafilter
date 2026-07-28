@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- The Ultrafilter mark: the album-placeholder rings on the slate ground. -->
+  <rect width="100" height="100" rx="22" fill="#3F5164"/>
+  <g fill="none" stroke="#F0EBE1" stroke-width="7">
+    <circle cx="50" cy="50" r="12"/>
+    <circle cx="50" cy="50" r="26"/>
+    <circle cx="50" cy="50" r="40"/>
+  </g>
+</svg>
