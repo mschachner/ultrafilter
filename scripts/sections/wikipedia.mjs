@@ -68,7 +68,9 @@ export async function build(config, { published }) {
   // every six-hourly rebuild would defeat the point of a daily section.
   if (published?.date === today.key && (published.tfa || published.picks?.length)) {
     console.log(`ok    wikipedia — reusing published payload for ${today.key}`);
-    return published;
+    // The topic map rides along so the page's "another three" re-roll always
+    // has it, even when the content itself is reused.
+    return { ...published, topics: cfg.topics };
   }
 
   let tfa = null;
@@ -105,6 +107,7 @@ export async function build(config, { published }) {
   return {
     generated: new Date().toISOString(),
     date: today.key,
+    topics: cfg.topics,
     tfa,
     picks,
   };
