@@ -11,6 +11,7 @@
   "feeds": [
     { "name": "Joel David Hamkins",       "author": "Joel David Hamkins",        "site": "https://jdh.hamkins.org",                      "feed": "https://jdh.hamkins.org/feed/",                          "topics": ["math"] },
     { "name": "Combinatorics and more",   "author": "Gil Kalai",                 "site": "https://gilkalai.wordpress.com",               "feed": "https://gilkalai.wordpress.com/feed/",                   "topics": ["math"] },
+    { "name": "What's new",               "author": "Terence Tao",               "site": "https://terrytao.wordpress.com",               "feed": "https://terrytao.wordpress.com/feed/",                   "topics": ["math"] },
     { "name": "Azimuth",                  "author": "John Baez",                 "site": "https://johncarlosbaez.wordpress.com",         "feed": "https://johncarlosbaez.wordpress.com/feed/",             "topics": ["math", "climate"] },
     { "name": "The n-Category Café",      "author": "John Baez et al.",          "site": "https://golem.ph.utexas.edu/category/",        "feed": "https://golem.ph.utexas.edu/category/atom10.xml",        "topics": ["math"] },
     { "name": "Not Even Wrong",           "author": "Peter Woit",                "site": "https://www.math.columbia.edu/~woit/wordpress/", "feed": "https://www.math.columbia.edu/~woit/wordpress/?feed=rss2", "topics": ["math", "sci"] },

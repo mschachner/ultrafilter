@@ -114,7 +114,6 @@ const DATA_URL = "./data/posts.json";
 
 let data = null;
 let activeTopic = "all";
-let lastChecked = null; // set on manual Reload only
 
 const $ = sel => document.querySelector(sel);
 
@@ -201,9 +200,8 @@ function renderStatus() {
   const failed = (data?.feeds || []).filter(f => f.status !== "ok").length;
   $("#report").textContent = `${data.feedsOk} of ${data.feedsTotal} feeds` + (failed ? ` (${failed} failed)` : "");
   const when = data.generated ? new Date(data.generated) : null;
-  const parts = [`${(data.posts || []).length} posts`, `updated ${when ? relativeTime(when) : "unknown"}`];
-  if (lastChecked) parts.push(`checked ${relativeTime(lastChecked)}`);
-  $("#status-line").textContent = parts.join(" \u00b7 ") + ".";
+  $("#status-line").textContent =
+    `${(data.posts || []).length} posts \u00b7 updated ${when ? relativeTime(when) : "unknown"}.`;
 }
 
 function relativeTime(then) {
@@ -233,7 +231,6 @@ async function load({ manual = false } = {}) {
     const res = await fetch(`${DATA_URL}?t=${Date.now()}`, { cache: "no-store" });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     data = await res.json();
-    if (manual) lastChecked = new Date();
     render();
   } catch (err) {
     $("#status-line").textContent =
