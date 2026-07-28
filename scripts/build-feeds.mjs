@@ -113,30 +113,49 @@ export function parseFeedXml(xml) {
 }
 
 /**
- * Tries, in order: the primary feed URL, any altFeeds, and finally a
- * read-through proxy. The proxy exists for publishers that reject this
+ * Tries, in order: the primary feed URL, any altFeeds, and finally
+ * read-through proxies. The proxies exist for publishers that reject this
  * runner outright — a 403 with a browser User-Agent usually means the block
  * is on the IP range (CI runners live in well-known cloud ranges that many
  * firewalls reject), and fetching from somewhere else is the only way past.
+ *
+ * Each source must both FETCH and PARSE to count as a success. A 200 that
+ * turns out to be a challenge page, or a proxy that rewrites the XML, is
+ * just another failure to fall through — not a reason to give up on the
+ * remaining sources.
  */
 async function fetchAnySource(feed) {
-  const urls = [feed.feed, ...(feed.altFeeds || [])];
-  const problems = [];
-
-  for (const url of urls) {
-    try {
-      return { body: await fetchFeed(url), source: url === feed.feed ? "direct" : "alt" };
-    } catch (err) {
-      problems.push(`${shortUrl(url)}: ${err.message || err}`);
-    }
-  }
+  const candidates = [
+    { url: feed.feed, source: "direct", label: shortUrl(feed.feed) },
+    ...(feed.altFeeds || []).map(u => ({ url: u, source: "alt", label: shortUrl(u) })),
+  ];
 
   if (feed.proxyFallback !== false) {
-    const proxied = "https://r.jina.ai/" + feed.feed;
+    candidates.push(
+      {
+        url: "https://r.jina.ai/" + feed.feed,
+        source: "proxy",
+        label: "proxy(jina)",
+        // Jina Reader converts everything to markdown by default, which
+        // destroys the XML. Both header spellings ask for the raw document
+        // (the accepted name has changed across versions; extras are ignored).
+        headers: { "X-Return-Format": "html", "X-Respond-With": "html" },
+      },
+      {
+        url: "https://api.allorigins.win/raw?url=" + encodeURIComponent(feed.feed),
+        source: "proxy",
+        label: "proxy(allorigins)",
+      }
+    );
+  }
+
+  const problems = [];
+  for (const c of candidates) {
     try {
-      return { body: await fetchFeed(proxied), source: "proxy" };
+      const body = await fetchFeed(c.url, c.headers);
+      return { entries: parseFeedXml(body), source: c.source };
     } catch (err) {
-      problems.push(`proxy: ${err.message || err}`);
+      problems.push(`${c.label}: ${err.message || err}`);
     }
   }
 
@@ -152,7 +171,7 @@ function shortUrl(u) {
   }
 }
 
-async function fetchFeed(url) {
+async function fetchFeed(url, extraHeaders = {}) {
   let lastErr;
   for (let attempt = 1; attempt <= ATTEMPTS; attempt++) {
     try {
@@ -164,6 +183,7 @@ async function fetchFeed(url) {
           Accept:
             "application/rss+xml, application/atom+xml, application/xml;q=0.9, text/xml;q=0.9, */*;q=0.8",
           "Accept-Language": "en-US,en;q=0.9",
+          ...extraHeaders,
         },
       });
       if (!res.ok) {
@@ -198,8 +218,8 @@ export async function main() {
 
   for (const feed of config.feeds) {
     try {
-      const { body: xml, source } = await fetchAnySource(feed);
-      const entries = parseFeedXml(xml).slice(0, perFeed);
+      const { entries: parsed, source } = await fetchAnySource(feed);
+      const entries = parsed.slice(0, perFeed);
       let kept = 0;
       for (const e of entries) {
         if (cutoff && e.date && e.date.getTime() < cutoff) continue;

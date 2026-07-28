@@ -36,9 +36,7 @@
   header { border-bottom: 3px double var(--ink); padding-bottom: 1rem; }
   .mast-row { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: .5rem; }
   h1 { font-family: var(--display); font-weight: 400; font-size: 2.35rem; letter-spacing: .01em; }
-  h1 .star { color: var(--faint); font-size: 1.4rem; vertical-align: super; }
   .mast-tools { display: flex; align-items: center; gap: .75rem; font-size: .8rem; color: var(--muted); }
-  .tagline { color: var(--muted); font-size: .9rem; margin-top: .25rem; }
 
   button {
     font-family: var(--body); font-size: .8rem; color: var(--ink);
@@ -66,9 +64,8 @@
   .ledger-status { font-family: var(--mono); font-size: .7rem; text-align: right; max-width: 20rem; word-break: break-word; }
   .ok { color: #557A33; }
   .fail { color: #A33B2E; }
-  .ledger-note { color: var(--muted); margin-top: .75rem; }
 
-  .dateline { font-family: var(--mono); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase;
+  .dateline { font-family: var(--mono); font-size: .75rem; letter-spacing: .04em;
               color: var(--muted); margin: 2.25rem 0 .5rem; display: flex; align-items: center; gap: .75rem; }
   .dateline::after { content: ""; flex: 1; border-top: 1px solid var(--line); }
   .post { display: flex; gap: .75rem; padding: .55rem .5rem; border-radius: .4rem; align-items: baseline; }
@@ -81,9 +78,6 @@
   .post-src { font-size: .78rem; color: var(--muted); margin-left: .6rem; white-space: nowrap; }
 
   #status-line { margin-top: 2rem; color: var(--muted); font-size: .9rem; }
-  footer { margin-top: 3.5rem; border-top: 1px solid var(--line); padding-top: 1rem; color: var(--muted); font-size: .78rem; }
-  footer code { font-family: var(--mono); font-size: .72rem; }
-  footer p + p { margin-top: .4rem; }
 
   @media (prefers-reduced-motion: no-preference) { .post { transition: background .12s ease; } }
   @media (max-width: 480px) {
@@ -97,14 +91,13 @@
 
   <header>
     <div class="mast-row">
-      <h1>Ultrafilter<span class="star">*</span></h1>
+      <h1>Ultrafilter</h1>
       <div class="mast-tools">
         <span id="report">Loading&hellip;</span>
         <button id="toggle-ledger" aria-expanded="false">Feeds</button>
         <button id="reload">Reload</button>
       </div>
     </div>
-    <p class="tagline">Latest posts from the blogroll. Every link opens the original.</p>
   </header>
 
   <div class="chips" id="chips" role="group" aria-label="Filter by topic"></div>
@@ -114,12 +107,6 @@
   <main id="list" aria-live="polite"></main>
   <p id="status-line">Loading posts&hellip;</p>
 
-  <footer>
-    <p>* An ultrafilter on a set of blogs: for every topic, either it&rsquo;s in or it&rsquo;s out.</p>
-    <p>Feeds are fetched by a scheduled job every six hours and stored in <code>data/posts.json</code>; this page just reads that file. To add or remove a blog, edit <code>feeds.config.json</code> &mdash; the next run picks it up, or trigger one immediately from the repository&rsquo;s Actions tab.</p>
-    <p>This page carries a <code>noindex</code> tag so search engines skip it. That keeps it out of results; it does not make it private.</p>
-  </footer>
-
 </div>
 
 <script>
@@ -127,6 +114,7 @@ const DATA_URL = "./data/posts.json";
 
 let data = null;
 let activeTopic = "all";
+let lastChecked = null; // set on manual Reload only
 
 const $ = sel => document.querySelector(sel);
 
@@ -147,15 +135,19 @@ function visibleCount(topicId) {
 }
 
 function renderChips() {
-  const chips = [{ id: "all", label: "Everything" }, ...(data?.topics || [])];
+  const chips = data?.topics || [];
   $("#chips").innerHTML = chips.map(c => `
     <button class="chip" data-topic="${esc(c.id)}" aria-pressed="${activeTopic === c.id}"
-      ${c.color ? `style="--dot:${esc(c.color)}"` : ""}>
-      ${c.id !== "all" ? '<span class="dot" aria-hidden="true"></span>' : ""}
+      style="--dot:${esc(c.color)}">
+      <span class="dot" aria-hidden="true"></span>
       ${esc(c.label)} <span class="n">${visibleCount(c.id)}</span>
     </button>`).join("");
+  // Clicking the active chip deselects it, returning to the unfiltered view.
   document.querySelectorAll(".chip").forEach(btn =>
-    btn.addEventListener("click", () => { activeTopic = btn.dataset.topic; render(); }));
+    btn.addEventListener("click", () => {
+      activeTopic = activeTopic === btn.dataset.topic ? "all" : btn.dataset.topic;
+      render();
+    }));
 }
 
 function renderLedger() {
@@ -171,8 +163,7 @@ function renderLedger() {
       <span class="ledger-status ${ok ? "ok" : "fail"}">${label}</span>
     </div>`;
   }).join("");
-  $("#ledger").innerHTML = `<h2>Feed ledger</h2>${rows}
-    <p class="ledger-note">Status is from the last scheduled run. A persistent <code>HTTP 403</code> means the publisher blocks automated fetching; <code>HTTP 404</code> or <code>no &lt;item&gt;</code> means the feed URL in <code>feeds.config.json</code> needs updating.</p>`;
+  $("#ledger").innerHTML = `<h2>Feed ledger</h2>${rows}`;
 }
 
 function renderList() {
@@ -181,11 +172,10 @@ function renderList() {
 
   if (!posts.length) { $("#list").innerHTML = ""; return; }
 
-  const fmt = new Intl.DateTimeFormat(undefined, { weekday: "long", month: "long", day: "numeric", year: "numeric" });
   let html = "", lastKey = null;
   for (const p of posts) {
     const d = p.date ? new Date(p.date) : null;
-    const key = d && !isNaN(d) ? fmt.format(d) : "Undated";
+    const key = d && !isNaN(d) ? dateKey(d) : "Undated";
     if (key !== lastKey) { html += `<h2 class="dateline">${key}</h2>`; lastKey = key; }
     html += `<div class="post" style="--dot:${topicColor(p.topics[0])}">
       <span class="dot" aria-hidden="true"></span>
@@ -198,12 +188,22 @@ function renderList() {
   $("#list").innerHTML = html;
 }
 
+// "Monday 27 July", with the year only when it isn't the current one.
+function dateKey(d) {
+  const weekday = d.toLocaleDateString("en-GB", { weekday: "long" });
+  const month = d.toLocaleDateString("en-GB", { month: "long" });
+  const year = d.getFullYear();
+  const suffix = year === new Date().getFullYear() ? "" : ` ${year}`;
+  return `${weekday} ${d.getDate()} ${month}${suffix}`;
+}
+
 function renderStatus() {
   const failed = (data?.feeds || []).filter(f => f.status !== "ok").length;
   $("#report").textContent = `${data.feedsOk} of ${data.feedsTotal} feeds` + (failed ? ` (${failed} failed)` : "");
   const when = data.generated ? new Date(data.generated) : null;
-  const rel = when ? relativeTime(when) : "unknown";
-  $("#status-line").textContent = `${(data.posts || []).length} posts \u00b7 refreshed ${rel}.`;
+  const parts = [`${(data.posts || []).length} posts`, `updated ${when ? relativeTime(when) : "unknown"}`];
+  if (lastChecked) parts.push(`checked ${relativeTime(lastChecked)}`);
+  $("#status-line").textContent = parts.join(" \u00b7 ") + ".";
 }
 
 function relativeTime(then) {
@@ -223,20 +223,28 @@ function render() {
   renderStatus();
 }
 
-async function load() {
+async function load({ manual = false } = {}) {
   const btn = $("#reload");
   btn.disabled = true;
+  if (manual) btn.textContent = "Reloading\u2026";
+  const started = Date.now();
   try {
     // Cache-buster so a refreshed build shows up without a hard reload.
     const res = await fetch(`${DATA_URL}?t=${Date.now()}`, { cache: "no-store" });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     data = await res.json();
+    if (manual) lastChecked = new Date();
     render();
   } catch (err) {
     $("#status-line").textContent =
       `Couldn't load ${DATA_URL} (${err.message}). If this is a fresh checkout, the scheduled job hasn't run yet \u2014 trigger it from the Actions tab, or run "npm ci && node scripts/build-feeds.mjs" locally.`;
     $("#report").textContent = "no data";
   } finally {
+    if (manual) {
+      // Hold the in-flight label long enough to register as feedback.
+      await new Promise(r => setTimeout(r, Math.max(0, 450 - (Date.now() - started))));
+      btn.textContent = "Reload";
+    }
     btn.disabled = false;
   }
 }
@@ -245,7 +253,7 @@ $("#toggle-ledger").addEventListener("click", () => {
   const open = $("#ledger").classList.toggle("open");
   $("#toggle-ledger").setAttribute("aria-expanded", String(open));
 });
-$("#reload").addEventListener("click", load);
+$("#reload").addEventListener("click", () => load({ manual: true }));
 
 load();
 </script>

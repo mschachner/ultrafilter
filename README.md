@@ -85,10 +85,15 @@ Two optional per-feed keys help with awkward publishers:
 - `"altFeeds": ["https://example.org/?feed=rss2"]` — other URLs to try if the
   primary one fails. Useful when a site exposes the same feed at more than one
   path and a firewall only guards one of them.
-- `"proxyFallback": false` — skip the read-through proxy for this feed. By
-  default, a feed that fails every direct URL is retried once via
-  `r.jina.ai`, which fetches from different infrastructure and can get past
-  IP-based blocks. The ledger marks anything fetched this way as `via proxy`.
+- `"proxyFallback": false` — skip the read-through proxies for this feed. By
+  default, a feed that fails every direct URL is retried via `r.jina.ai` and
+  then `api.allorigins.win`, which fetch from different infrastructure and can
+  get past IP-based blocks. The ledger marks anything fetched this way as
+  `via proxy`.
+
+A source only counts as working if its response actually parses as a feed —
+a `200` that turns out to be a challenge page (or a proxy that rewrites the
+XML) falls through to the next source like any other failure.
 
 Push a change to `feeds.config.json` and the workflow reruns immediately — it
 triggers on pushes to that file as well as on the schedule.
@@ -102,7 +107,7 @@ feed. When something fails, the error tells you what to do:
 | --- | --- |
 | `HTTP 404` | The feed URL is wrong or the blog moved. Find the new one. |
 | `HTTP 403` | The publisher blocks automated fetching — frequently by IP range, since CI runners sit in cloud ranges that firewalls reject. The build retries such feeds through a read-through proxy automatically. |
-| `no <item> or <entry> elements found` | The URL returned a web page, not a feed. |
+| `no <item> or <entry> elements found` | That URL returned something that isn't a feed (a web page, or a proxy's rewrite of one). Each failed source is listed with its own error, separated by `\|`. |
 | `HTTP 5xx` / `timeouts` | The blog's server had a bad moment. It'll likely fix itself. |
 
 The job fails loudly only if *every* feed breaks — a couple of stubborn
