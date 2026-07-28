@@ -1,11 +1,12 @@
 /**
  * Albums section: reads the day's picks from the private spotify-recs repo,
  * where the "Daily album recommendations" scheduled task publishes them
- * (albums/latest.json, alongside its recommendation-history CSV).
+ * (albums/latest.json, alongside its recommendation-history CSV), then
+ * enriches each pick with cover art from Spotify's public oEmbed endpoint.
  *
- * This builder only reads; the scheduled task is the sole writer. Access is a
- * fine-grained read-only PAT provided via the environment (see config
- * albums.tokenEnv). Distinct outcomes:
+ * This builder only reads the data repo; the scheduled task is the sole
+ * writer. Access is a fine-grained read-only PAT provided via the
+ * environment (see config albums.tokenEnv). Distinct outcomes:
  *   - no token configured  -> "pending" payload; the page keeps the section hidden
  *   - file not there (404) -> "pending" payload; the task simply hasn't published yet
  *   - transient failure    -> throws, so the orchestrator falls back to the
@@ -19,7 +20,30 @@ function pending(note) {
   return { generated: new Date().toISOString(), status: "pending", note };
 }
 
-export async function build(config) {
+/**
+ * Cover art via Spotify's oEmbed endpoint (public, no auth). One attempt,
+ * short timeout — a missing cover just renders as a text-only card. Covers
+ * already present in the currently-published payload for the same URL are
+ * reused rather than re-fetched on every six-hourly rebuild.
+ */
+async function coverFor(url, known) {
+  if (!url || !/open\.spotify\.com\/album\//.test(url)) return null;
+  if (known.has(url)) return known.get(url);
+  try {
+    const res = await fetch(
+      `https://open.spotify.com/oembed?url=${encodeURIComponent(url)}`,
+      { signal: AbortSignal.timeout(8000), headers: { Accept: "application/json" } }
+    );
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const doc = await res.json();
+    return typeof doc.thumbnail_url === "string" ? doc.thumbnail_url : null;
+  } catch (err) {
+    console.log(`--    albums — no cover for ${url} (${err.message || err})`);
+    return null;
+  }
+}
+
+export async function build(config, { published } = {}) {
   const cfg = config.albums;
   const token = process.env[cfg.tokenEnv];
   if (!token) return pending(`no ${cfg.tokenEnv} in the environment`);
@@ -48,13 +72,15 @@ export async function build(config) {
     throw new Error(`malformed albums payload in ${cfg.repo}/${cfg.path}`);
   }
 
-  console.log(`ok    albums — ${complete.length} picks for ${doc.date}`);
-  return {
-    generated: new Date().toISOString(),
-    status: "ok",
-    date: doc.date,
-    title: doc.title || null,
-    albums: complete.map(a => ({
+  const knownCovers = new Map(
+    (published?.albums || [])
+      .filter(a => a.spotify_url && a.cover)
+      .map(a => [a.spotify_url, a.cover])
+  );
+
+  const out = [];
+  for (const a of complete) {
+    out.push({
       category: a.category || null,
       header: a.header || a.category || "",
       artist: a.artist,
@@ -63,8 +89,18 @@ export async function build(config) {
       genres: Array.isArray(a.genres) ? a.genres : [],
       spotify_url: a.spotify_url || null,
       link_is_search: Boolean(a.link_is_search),
+      cover: a.link_is_search ? null : await coverFor(a.spotify_url, knownCovers),
       blurb: a.blurb,
       reception: a.reception || null,
-    })),
+    });
+  }
+
+  console.log(`ok    albums — ${out.length} picks for ${doc.date} (${out.filter(a => a.cover).length} covers)`);
+  return {
+    generated: new Date().toISOString(),
+    status: "ok",
+    date: doc.date,
+    title: doc.title || null,
+    albums: out,
   };
 }

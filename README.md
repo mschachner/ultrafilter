@@ -51,9 +51,11 @@ XML) falls through to the next source like any other failure.
 ### Weather
 
 Fetched client-side from [Open-Meteo](https://open-meteo.com/) (free, no
-API key). The build only passes the `weather` block of `config.json`
-through to the page: place name, coordinates, timezone, units, forecast
-days. Note that the coordinates are readable by anyone who finds the page.
+API key) and rendered in the masthead next to the date. The build only
+passes the `weather` block of `config.json` through to the page: place
+name, coordinates, timezone, units (`temperatureUnit`, `windSpeedUnit`),
+forecast days. Note that the coordinates are readable by anyone who finds
+the page.
 
 ### Wikipedia
 
@@ -74,9 +76,11 @@ The "Daily album recommendations" Claude task publishes its three picks —
 with blurbs — as `albums/latest.json` (plus a dated copy) in the private
 `spotify-recs` repository, next to the recommendation-history CSV it
 already keeps. The build fetches that file via the GitHub contents API
-using the `SPOTIFY_RECS_TOKEN` secret. No secret configured, or no file
-yet: the section quietly reads `pending` in the ledger. Transient fetch
-failures keep the previous day's picks, marked `stale`.
+using the `SPOTIFY_RECS_TOKEN` secret, then adds cover art to each entry
+from Spotify's public oEmbed endpoint (no auth; a missing cover just
+renders as a text-only card). No secret configured, or no file yet: the
+section quietly reads `pending` in the ledger. Transient fetch failures
+keep the previous day's picks, marked `stale`.
 
 The contract the task fulfills:
 
@@ -162,9 +166,9 @@ change takes effect as soon as its push lands.
 
 ## Reading the ledger
 
-The ledger on the page reports the last build: one row per section, then
-one row per blogroll feed. When a feed fails, the error tells you what to
-do:
+The ledger on the page reports the last build: one row per section, with
+the per-feed detail collapsed under the Blogroll row. When a feed fails,
+the error tells you what to do:
 
 | What it says | What it means |
 | --- | --- |

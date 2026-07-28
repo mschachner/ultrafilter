@@ -34,11 +34,11 @@
   .wrap { max-width: 76rem; }
   .cols { display: flex; gap: 3rem; align-items: flex-start; }
   .main { flex: 1; min-width: 0; max-width: 52rem; }
+  .rail { flex: none; width: 19rem; min-width: 0; }
 
-  header { border-bottom: 3px double var(--ink); padding-bottom: .4rem; }
-  .mast-row { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: .5rem; }
-  h1 { font-family: var(--display); font-weight: 400; font-size: 2.35rem; letter-spacing: .01em; }
-  .mast-tools { display: flex; align-items: center; gap: .75rem; font-size: .8rem; color: var(--muted); }
+  header { border-bottom: 3px double var(--ink); padding-bottom: .5rem; }
+  .mast-row { display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: .75rem 2rem; }
+  h1 { font-family: var(--display); font-weight: 400; font-size: 2.35rem; letter-spacing: .01em; line-height: 1.15; }
 
   button {
     font-family: var(--body); font-size: .8rem; color: var(--ink);
@@ -49,22 +49,20 @@
   button:focus-visible, a:focus-visible { outline: 2px solid #4756A8; outline-offset: 2px; }
 
   /* ------------------------------ weather ------------------------------ */
-  #weather { display: none; margin-top: 1.25rem; border: 1px solid var(--line); border-radius: .5rem;
-             padding: .8rem 1.1rem; flex-wrap: wrap; align-items: center;
-             gap: .9rem 1.75rem; max-width: 52rem; }
+  #weather { display: none; align-items: flex-end; flex-wrap: wrap; gap: .5rem 1.5rem; margin-left: auto; }
   #weather.on { display: flex; }
-  .wx-now { display: flex; align-items: center; gap: .7rem; }
-  .wx-now .ticon { width: 1.5rem; height: 1.5rem; color: var(--muted); }
-  .wx-temp { font-family: var(--display); font-size: 1.7rem; line-height: 1; }
-  .wx-desc { font-size: .82rem; color: var(--muted); line-height: 1.3; }
-  .wx-days { display: flex; gap: 1rem; margin-left: auto; flex-wrap: wrap; }
-  .wx-day { text-align: center; min-width: 3rem; }
-  .wx-day .d { font-family: var(--mono); font-size: .65rem; letter-spacing: .05em;
+  .wx-now { display: flex; align-items: center; gap: .6rem; padding-bottom: .1rem; }
+  .wx-now .ticon { width: 1.35rem; height: 1.35rem; color: var(--muted); }
+  .wx-temp { font-family: var(--display); font-size: 1.45rem; line-height: 1; }
+  .wx-desc { font-size: .74rem; color: var(--muted); line-height: 1.35; }
+  .wx-days { display: flex; gap: .85rem; flex-wrap: wrap; }
+  .wx-day { text-align: center; min-width: 2.6rem; }
+  .wx-day .d { font-family: var(--mono); font-size: .6rem; letter-spacing: .05em;
                text-transform: uppercase; color: var(--muted); }
-  .wx-day .ticon { width: 1.05rem; height: 1.05rem; color: var(--muted); margin: .15rem 0 .05rem; }
-  .wx-day .t { font-family: var(--mono); font-size: .7rem; }
+  .wx-day .ticon { width: .95rem; height: .95rem; color: var(--muted); margin: .1rem 0 0; }
+  .wx-day .t { font-family: var(--mono); font-size: .66rem; }
   .wx-day .t .lo { color: var(--faint); }
-  .wx-day .p { font-family: var(--mono); font-size: .62rem; color: #4756A8; }
+  .wx-day .p { font-family: var(--mono); font-size: .58rem; color: #4756A8; }
 
   /* --------------------------- daily sections --------------------------- */
   .klabel { font-family: var(--mono); font-size: .66rem; letter-spacing: .09em;
@@ -73,8 +71,10 @@
   #albums-sec, #wiki-sec { display: none; }
   #albums-sec.on, #wiki-sec.on { display: block; }
 
-  .albums { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  .albums { display: flex; flex-direction: column; gap: 1rem; }
   .album { border: 1px solid var(--line); border-radius: .5rem; padding: .95rem 1.05rem; min-width: 0; }
+  .album-cover { display: block; width: 100%; aspect-ratio: 1; object-fit: cover;
+                 border-radius: .35rem; margin-bottom: .65rem; background: var(--hover); }
   .album-head { margin: .35rem 0 .1rem; font-family: var(--display); font-size: 1.05rem; line-height: 1.3; }
   .album-head a { color: var(--ink); text-decoration: none; }
   .album-head a:hover { text-decoration: underline; text-underline-offset: 3px; }
@@ -111,11 +111,10 @@
 
   .ticon { width: .95rem; height: .95rem; flex: none; color: var(--dot, var(--faint)); }
 
-  #ledger { flex: none; width: 17rem; position: sticky; top: 1.5rem; margin-top: 1.25rem;
-            border: 1px solid var(--line); border-radius: .5rem; padding: 1rem 1.25rem; font-size: .82rem; }
+  #ledger { margin-top: 2.25rem; border: 1px solid var(--line); border-radius: .5rem;
+            padding: 1rem 1.25rem; font-size: .82rem; }
   #ledger h2 { font-family: var(--display); font-weight: 400; font-size: 1.05rem; margin-bottom: .5rem; }
-  #ledger h2 + .ledger-row { border-top: none; }
-  .ledger-gap { margin-top: .65rem; }
+  #ledger h2 + .lgroup > summary.ledger-row, #ledger h2 + .ledger-row { border-top: none; }
   .ledger-row { display: flex; justify-content: space-between; flex-wrap: wrap; gap: .15rem .75rem;
                 padding: .3rem 0; border-top: 1px dotted var(--line); }
   .ledger-row a { color: var(--ink); }
@@ -124,9 +123,18 @@
   .fail { color: #A33B2E; }
   .dim { color: var(--faint); }
 
+  .lgroup > summary { list-style: none; cursor: pointer; }
+  .lgroup > summary::-webkit-details-marker { display: none; }
+  .lcaret { display: inline-block; font-size: .58rem; color: var(--faint);
+            margin-right: .4rem; transform: translateY(-.1em); transition: transform .12s ease; }
+  .lgroup[open] .lcaret { transform: rotate(90deg); }
+  .lfeeds { padding-left: .85rem; }
+  .lfeeds .ledger-row { font-size: .78rem; }
+
   .dateline { font-family: var(--mono); font-size: .75rem; letter-spacing: .04em;
               color: var(--muted); margin: 2.25rem 0 .5rem; display: flex; align-items: center; gap: .75rem; }
-  .dateline::after { content: ""; flex: 1; border-top: 1px solid var(--line); }
+  .dateline::after { content: ""; flex: 1; border-top: 1px solid var(--line); order: 1; }
+  .dateline .dl-note { order: 2; }
   .section-head { margin-bottom: .9rem; }
   .post { display: flex; gap: .75rem; padding: .55rem .5rem; border-radius: .4rem; align-items: baseline; }
   .post:hover { background: var(--hover); }
@@ -146,15 +154,15 @@
   @media (max-width: 64rem) {
     .cols { flex-direction: column; gap: 0; }
     .main { max-width: none; }
-    #ledger { position: static; width: auto; align-self: stretch; order: 1; }
-    .albums { grid-template-columns: 1fr; }
+    .rail { width: auto; align-self: stretch; order: -1; }
+    #weather { margin-left: 0; }
+    .album-cover { max-width: 17rem; }
     .wiki { grid-template-columns: 1fr; gap: 1rem; }
   }
   @media (max-width: 480px) {
     .post { flex-wrap: wrap; }
     .post-src { margin-left: 1.3rem; }
     .post .copy { opacity: 1; }
-    .wx-days { margin-left: 0; }
   }
 </style>
 </head>
@@ -163,25 +171,23 @@
 
   <header>
     <div class="mast-row">
-      <h1>Ultrafilter</h1>
-      <div class="mast-tools">
-        <span id="report">Loading&hellip;</span>
-      </div>
+      <h1 id="mast-date">&nbsp;</h1>
+      <div id="weather" aria-label="Weather"></div>
     </div>
   </header>
 
-  <div id="weather" aria-label="Weather"></div>
-
   <div class="cols">
     <div class="main">
-      <section id="albums-sec" aria-label="Albums"></section>
       <section id="wiki-sec" aria-label="Wikipedia"></section>
-      <h2 class="dateline">Blogroll</h2>
+      <h2 class="dateline">Blogroll<span class="dl-note" id="feeds-note"></span></h2>
       <div class="chips" id="chips" role="group" aria-label="Filter by topic"></div>
       <main id="list" aria-live="polite"></main>
       <p id="status-line">Loading posts&hellip;</p>
     </div>
-    <aside id="ledger" aria-label="Ledger"></aside>
+    <aside class="rail">
+      <section id="albums-sec" aria-label="Albums"></section>
+      <div id="ledger" aria-label="Ledger"></div>
+    </aside>
   </div>
 
 </div>
@@ -216,6 +222,24 @@ function icon(id) {
   const path = ICONS[id] || '<circle cx="12" cy="12" r="5"/>';
   return `<svg class="ticon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
     stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${path}</svg>`;
+}
+
+/* -------------------------------- dates -------------------------------- */
+
+// Today, in the viewer's clock: "2026-07-28" and "Tuesday 28 July".
+const TODAY_KEY = new Intl.DateTimeFormat("en-CA",
+  { year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
+
+function prettyDate(key) {
+  const d = new Date(`${key}T12:00:00`);
+  if (isNaN(d)) return "";
+  return d.toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long" });
+}
+
+// Section headers carry a date only when it isn't today's (stale or rolled over).
+function sectionHead(label, dataKey, note) {
+  const dated = dataKey && dataKey !== TODAY_KEY ? ` · ${prettyDate(dataKey)}` : "";
+  return `<h2 class="dateline section-head">${esc(label)}${esc(dated)}${note ? `<span class="dl-note">${esc(note)}</span>` : ""}</h2>`;
 }
 
 /* ------------------------------- weather ------------------------------- */
@@ -261,7 +285,7 @@ async function loadWeather() {
     u.searchParams.set("longitude", cfg.longitude);
     u.searchParams.set("current", "temperature_2m,apparent_temperature,weather_code,wind_speed_10m");
     u.searchParams.set("daily", "weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max");
-    u.searchParams.set("temperature_unit", cfg.temperatureUnit || "fahrenheit");
+    u.searchParams.set("temperature_unit", cfg.temperatureUnit || "celsius");
     u.searchParams.set("wind_speed_unit", cfg.windSpeedUnit || "mph");
     u.searchParams.set("timezone", cfg.timezone || "auto");
     u.searchParams.set("forecast_days", cfg.days || 5);
@@ -310,13 +334,6 @@ function renderWeather(cfg, w) {
 
 /* ---------------------------- daily sections ---------------------------- */
 
-// "2026-07-28" -> "Tuesday 28 July" (parsed at noon to dodge timezone edges).
-function prettyDate(key) {
-  const d = new Date(`${key}T12:00:00`);
-  if (isNaN(d)) return "";
-  return d.toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long" });
-}
-
 function renderAlbums() {
   const a = state.albums;
   if (!a?.albums?.length) {
@@ -333,6 +350,7 @@ function renderAlbums() {
       ? `<a href="${esc(al.spotify_url)}" target="_blank" rel="noopener">${name}</a>${al.link_is_search ? '<span class="srch">search</span>' : ""}`
       : name;
     return `<article class="album">
+      ${al.cover ? `<img class="album-cover" src="${esc(al.cover)}" alt="" loading="lazy">` : ""}
       <span class="klabel">${esc(al.header)}</span>
       <div class="album-head">${esc(al.artist)}<br>${link}
         ${al.year ? `<span class="album-year">(${esc(al.year)})</span>` : ""}</div>
@@ -342,9 +360,7 @@ function renderAlbums() {
     </article>`;
   }).join("");
 
-  $("#albums-sec").innerHTML =
-    `<h2 class="dateline section-head">Albums · ${esc(prettyDate(a.date))}</h2>
-     <div class="albums">${cards}</div>`;
+  $("#albums-sec").innerHTML = sectionHead("Albums", a.date) + `<div class="albums">${cards}</div>`;
   $("#albums-sec").classList.add("on");
 }
 
@@ -372,9 +388,8 @@ function renderWiki() {
       </span>
     </div>`).join("");
 
-  $("#wiki-sec").innerHTML =
-    `<h2 class="dateline section-head">Wikipedia · ${esc(prettyDate(w.date))}</h2>
-     <div class="wiki">${tfa}<div class="wpicks">${picks}</div></div>`;
+  $("#wiki-sec").innerHTML = sectionHead("Wikipedia", w.date) +
+    `<div class="wiki">${tfa}<div class="wpicks">${picks}</div></div>`;
   $("#wiki-sec").classList.add("on");
 }
 
@@ -402,18 +417,12 @@ function renderChips() {
 }
 
 function renderLedger() {
-  const rows = [];
-  const note = (label, n) => n && rows.push(
-    `<div class="ledger-row"><span>${label}</span><span class="ledger-status ${n.cls}">${esc(n.text)}</span></div>`);
   const b = state.blogroll;
-  note("Blogroll", b?.posts
-    ? { cls: b.stale ? "dim" : "ok", text: `${b.stale ? "stale · " : ""}${b.feedsOk}/${b.feedsTotal} feeds` }
-    : { cls: "fail", text: `failed — ${b?.error || "no data"}` });
-  note("Wikipedia", sectionNotes.wikipedia);
-  note("Albums", sectionNotes.albums);
-  note("Weather", sectionNotes.weather);
+  const wasOpen = $("#ledger .lgroup")?.open ?? false;
 
-  const feeds = (state.blogroll?.feeds || []).map(f => {
+  const row = (label, n) => n ? `<div class="ledger-row"><span>${label}</span><span class="ledger-status ${n.cls}">${esc(n.text)}</span></div>` : "";
+
+  const feedRows = (b?.feeds || []).map(f => {
     const ok = f.status === "ok";
     const label = ok
       ? `${f.count} post${f.count === 1 ? "" : "s"}${f.source && f.source !== "direct" ? ` · via ${esc(f.source)}` : ""}`
@@ -424,8 +433,21 @@ function renderLedger() {
     </div>`;
   }).join("");
 
-  $("#ledger").innerHTML = `<h2>Ledger</h2>${rows.join("")}` +
-    (feeds ? `<div class="ledger-gap"></div>${feeds}` : "");
+  const bNote = b?.posts
+    ? { cls: b.stale ? "dim" : "ok", text: `${b.stale ? "stale · " : ""}${b.feedsOk}/${b.feedsTotal} feeds` }
+    : { cls: "fail", text: `failed — ${b?.error || "no data"}` };
+  const blogrollRow = feedRows
+    ? `<details class="lgroup"${wasOpen ? " open" : ""}>
+        <summary class="ledger-row"><span><span class="lcaret">&#9656;</span>Blogroll</span>
+          <span class="ledger-status ${bNote.cls}">${esc(bNote.text)}</span></summary>
+        <div class="lfeeds">${feedRows}</div>
+      </details>`
+    : row("Blogroll", bNote);
+
+  $("#ledger").innerHTML = `<h2>Ledger</h2>` + blogrollRow +
+    row("Wikipedia", sectionNotes.wikipedia) +
+    row("Albums", sectionNotes.albums) +
+    row("Weather", sectionNotes.weather);
 }
 
 function renderList() {
@@ -463,13 +485,13 @@ function dateKey(d) {
 function renderStatus() {
   const b = state.blogroll;
   if (!b?.posts) {
-    $("#report").textContent = "no data";
+    $("#feeds-note").textContent = "no data";
     $("#status-line").textContent =
       `Couldn't load data/blogroll.json${b?.error ? ` (${b.error})` : ""}. If this is a fresh checkout, the scheduled job hasn't run yet — trigger it from the Actions tab, or run "npm ci && node scripts/build.mjs" locally.`;
     return;
   }
   const failed = (b.feeds || []).filter(f => f.status !== "ok").length;
-  $("#report").textContent = `${b.feedsOk} of ${b.feedsTotal} feeds` + (failed ? ` (${failed} failed)` : "");
+  $("#feeds-note").textContent = `${b.feedsOk} of ${b.feedsTotal} feeds` + (failed ? ` (${failed} failed)` : "");
   const when = b.generated ? new Date(b.generated) : null;
   $("#status-line").textContent =
     `${(b.posts || []).length} posts · updated ${when ? relativeTime(when) : "unknown"}.`;
@@ -500,6 +522,8 @@ async function loadJson(name) {
 }
 
 async function load() {
+  $("#mast-date").textContent = prettyDate(TODAY_KEY);
+
   const [b, w, a, wx] = await Promise.allSettled(
     ["blogroll", "wikipedia", "albums", "weather"].map(loadJson));
   state.blogroll = b.status === "fulfilled" ? b.value : { error: b.reason?.message };

@@ -42,7 +42,7 @@
     "latitude": 42.444,
     "longitude": -76.502,
     "timezone": "America/New_York",
-    "temperatureUnit": "fahrenheit",
+    "temperatureUnit": "celsius",
     "windSpeedUnit": "mph",
     "days": 5
   },
