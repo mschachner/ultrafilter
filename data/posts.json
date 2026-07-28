@@ -1,5 +1,5 @@
 {
- "generated": "2026-07-28T13:31:54.664Z",
+ "generated": "2026-07-28T13:48:46.001Z",
  "topics": [
   {
    "id": "math",
@@ -28,7 +28,7 @@
   }
  ],
  "feedsTotal": 21,
- "feedsOk": 18,
+ "feedsOk": 20,
  "feeds": [
   {
    "name": "Joel David Hamkins",
@@ -39,6 +39,7 @@
    ],
    "status": "ok",
    "count": 8,
+   "source": "direct",
    "error": null
   },
   {
@@ -50,6 +51,7 @@
    ],
    "status": "ok",
    "count": 8,
+   "source": "direct",
    "error": null
   },
   {
@@ -62,6 +64,7 @@
    ],
    "status": "ok",
    "count": 8,
+   "source": "direct",
    "error": null
   },
   {
@@ -73,6 +76,7 @@
    ],
    "status": "ok",
    "count": 8,
+   "source": "direct",
    "error": null
   },
   {
@@ -85,6 +89,7 @@
    ],
    "status": "ok",
    "count": 8,
+   "source": "direct",
    "error": null
   },
   {
@@ -96,6 +101,7 @@
    ],
    "status": "ok",
    "count": 8,
+   "source": "direct",
    "error": null
   },
   {
@@ -107,6 +113,7 @@
    ],
    "status": "ok",
    "count": 8,
+   "source": "direct",
    "error": null
   },
   {
@@ -118,6 +125,7 @@
    ],
    "status": "ok",
    "count": 1,
+   "source": "direct",
    "error": null
   },
   {
@@ -129,6 +137,7 @@
    ],
    "status": "ok",
    "count": 8,
+   "source": "direct",
    "error": null
   },
   {
@@ -140,6 +149,7 @@
    ],
    "status": "ok",
    "count": 8,
+   "source": "direct",
    "error": null
   },
   {
@@ -151,7 +161,7 @@
    ],
    "status": "failed",
    "count": 0,
-   "error": "HTTP 403"
+   "error": "no <item> or <entry> elements found"
   },
   {
    "name": "Art History News",
@@ -160,9 +170,10 @@
    "topics": [
     "arthist"
    ],
-   "status": "failed",
-   "count": 0,
-   "error": "HTTP 404"
+   "status": "ok",
+   "count": 4,
+   "source": "direct",
+   "error": null
   },
   {
    "name": "Journal18",
@@ -173,6 +184,7 @@
    ],
    "status": "ok",
    "count": 8,
+   "source": "direct",
    "error": null
   },
   {
@@ -184,6 +196,7 @@
    ],
    "status": "ok",
    "count": 6,
+   "source": "direct",
    "error": null
   },
   {
@@ -195,6 +208,7 @@
    ],
    "status": "ok",
    "count": 8,
+   "source": "direct",
    "error": null
   },
   {
@@ -204,9 +218,10 @@
    "topics": [
     "arts"
    ],
-   "status": "failed",
-   "count": 0,
-   "error": "HTTP 403"
+   "status": "ok",
+   "count": 8,
+   "source": "direct",
+   "error": null
   },
   {
    "name": "DanceViewTimes",
@@ -217,6 +232,7 @@
    ],
    "status": "ok",
    "count": 8,
+   "source": "direct",
    "error": null
   },
   {
@@ -228,6 +244,7 @@
    ],
    "status": "ok",
    "count": 3,
+   "source": "direct",
    "error": null
   },
   {
@@ -239,6 +256,7 @@
    ],
    "status": "ok",
    "count": 8,
+   "source": "direct",
    "error": null
   },
   {
@@ -250,6 +268,7 @@
    ],
    "status": "ok",
    "count": 8,
+   "source": "direct",
    "error": null
   },
   {
@@ -261,6 +280,7 @@
    ],
    "status": "ok",
    "count": 8,
+   "source": "direct",
    "error": null
   }
  ],
@@ -293,12 +313,57 @@
    ]
   },
   {
+   "title": "Gaspar de Crayer being Restored by Museo de Bellas Artes Valencia",
+   "link": "http://www.arthistorynews.com/articles/9731_Gaspar_de_Crayer_being_Restored_by_Museo_de_Bellas_Artes_Valencia",
+   "date": "2026-07-28T07:40:00.000Z",
+   "feed": "Art History News",
+   "topics": [
+    "arthist"
+   ]
+  },
+  {
+   "title": "Van Gogh and Italians in Paris",
+   "link": "http://www.arthistorynews.com/articles/9730_Van_Gogh_and_Italians_in_Paris",
+   "date": "2026-07-28T07:22:52.000Z",
+   "feed": "Art History News",
+   "topics": [
+    "arthist"
+   ]
+  },
+  {
+   "title": "Research Impressionist & Modern Art at Christie's New York",
+   "link": "http://www.arthistorynews.com/articles/9729_Research_Impressionist__Modern_Art_at_Christies_New_York",
+   "date": "2026-07-28T07:11:52.000Z",
+   "feed": "Art History News",
+   "topics": [
+    "arthist"
+   ]
+  },
+  {
+   "title": "The British Museum hiring Project Curators",
+   "link": "http://www.arthistorynews.com/articles/9728_The_British_Museum_hiring_Project_Curators",
+   "date": "2026-07-28T07:03:05.000Z",
+   "feed": "Art History News",
+   "topics": [
+    "arthist"
+   ]
+  },
+  {
    "title": "Ensuring Environmental Protections Without CEQA",
    "link": "https://legal-planet.org/2026/07/27/ensuring-environmental-protections-without-ceqa/",
    "date": "2026-07-27T22:38:04.000Z",
    "feed": "Legal Planet",
    "topics": [
     "climate"
+   ]
+  },
+  {
+   "title": "How Performing Arts Help to Heal",
+   "link": "https://howlround.com/how-performing-arts-help-heal",
+   "date": "2026-07-27T16:24:02.000Z",
+   "feed": "HowlRound",
+   "topics": [
+    "arts"
    ]
   },
   {
@@ -456,6 +521,15 @@
    ]
   },
   {
+   "title": "How a Student-Directed Production Became a Cosmic Cup of Coffee with Our Queer Ancestors",
+   "link": "https://howlround.com/how-student-directed-production-became-cosmic-cup-coffee-our-queer-ancestors",
+   "date": "2026-07-23T17:22:24.000Z",
+   "feed": "HowlRound",
+   "topics": [
+    "arts"
+   ]
+  },
+  {
    "title": "Escalating the War on Science",
    "link": "https://legal-planet.org/2026/07/23/escalating-the-war-on-science-2/",
    "date": "2026-07-23T15:57:48.000Z",
@@ -574,6 +648,24 @@
    ]
   },
   {
+   "title": "You Can’t Bring Gay to the Corn",
+   "link": "https://howlround.com/you-cant-bring-gay-corn",
+   "date": "2026-07-21T14:37:00.000Z",
+   "feed": "HowlRound",
+   "topics": [
+    "arts"
+   ]
+  },
+  {
+   "title": "Building Theatrical Bridges in Queer and Trans Ohio",
+   "link": "https://howlround.com/building-theatrical-bridges-queer-and-trans-ohio",
+   "date": "2026-07-21T14:13:44.000Z",
+   "feed": "HowlRound",
+   "topics": [
+    "arts"
+   ]
+  },
+  {
    "title": "Thermal electrons can explain the mysterious radio behavior of a tidal disruption event",
    "link": "https://astrobites.org/2026/07/21/thermal-electrons-in-tdes/",
    "date": "2026-07-21T13:35:52.000Z",
@@ -598,6 +690,15 @@
    "feed": "Carbon Brief",
    "topics": [
     "climate"
+   ]
+  },
+  {
+   "title": "Directing Queer Theatre at Its Edges on College Campuses: An Invitation",
+   "link": "https://howlround.com/directing-queer-theatre-its-edges-college-campuses-invitation",
+   "date": "2026-07-20T15:25:03.000Z",
+   "feed": "HowlRound",
+   "topics": [
+    "arts"
    ]
   },
   {
@@ -665,6 +766,24 @@
    ]
   },
   {
+   "title": "Equitable Contracting for Arts Workers",
+   "link": "https://howlround.com/happenings/equitable-contracting-arts-workers",
+   "date": "2026-07-16T17:37:38.000Z",
+   "feed": "HowlRound",
+   "topics": [
+    "arts"
+   ]
+  },
+  {
+   "title": "I Don’t Know How She Gives Script Notes from Great Wolf Lodge",
+   "link": "https://howlround.com/i-dont-know-how-she-gives-script-notes-great-wolf-lodge",
+   "date": "2026-07-16T16:06:19.000Z",
+   "feed": "HowlRound",
+   "topics": [
+    "arts"
+   ]
+  },
+  {
    "title": "Soul Man",
    "link": "https://www.danceviewtimes.net/soul-man/",
    "date": "2026-07-16T15:39:24.000Z",
@@ -708,6 +827,15 @@
    "feed": "Carbon Brief",
    "topics": [
     "climate"
+   ]
+  },
+  {
+   "title": "Suzan-Lori Parks's Watch Me Work",
+   "link": "https://howlround.com/happenings/suzan-lori-parkss-watch-me-work-48",
+   "date": "2026-07-15T15:45:23.000Z",
+   "feed": "HowlRound",
+   "topics": [
+    "arts"
    ]
   },
   {
