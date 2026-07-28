@@ -112,6 +112,46 @@ export function parseFeedXml(xml) {
   return nodes.map(n => normalizeEntry(n, isAtom)).filter(e => e.link);
 }
 
+/**
+ * Tries, in order: the primary feed URL, any altFeeds, and finally a
+ * read-through proxy. The proxy exists for publishers that reject this
+ * runner outright — a 403 with a browser User-Agent usually means the block
+ * is on the IP range (CI runners live in well-known cloud ranges that many
+ * firewalls reject), and fetching from somewhere else is the only way past.
+ */
+async function fetchAnySource(feed) {
+  const urls = [feed.feed, ...(feed.altFeeds || [])];
+  const problems = [];
+
+  for (const url of urls) {
+    try {
+      return { body: await fetchFeed(url), source: url === feed.feed ? "direct" : "alt" };
+    } catch (err) {
+      problems.push(`${shortUrl(url)}: ${err.message || err}`);
+    }
+  }
+
+  if (feed.proxyFallback !== false) {
+    const proxied = "https://r.jina.ai/" + feed.feed;
+    try {
+      return { body: await fetchFeed(proxied), source: "proxy" };
+    } catch (err) {
+      problems.push(`proxy: ${err.message || err}`);
+    }
+  }
+
+  throw new Error(problems.join(" | "));
+}
+
+function shortUrl(u) {
+  try {
+    const { host, pathname, search } = new URL(u);
+    return host + pathname + search;
+  } catch {
+    return u;
+  }
+}
+
 async function fetchFeed(url) {
   let lastErr;
   for (let attempt = 1; attempt <= ATTEMPTS; attempt++) {
@@ -158,7 +198,7 @@ export async function main() {
 
   for (const feed of config.feeds) {
     try {
-      const xml = await fetchFeed(feed.feed);
+      const { body: xml, source } = await fetchAnySource(feed);
       const entries = parseFeedXml(xml).slice(0, perFeed);
       let kept = 0;
       for (const e of entries) {
@@ -172,8 +212,8 @@ export async function main() {
         });
         kept++;
       }
-      report.push({ ...meta(feed), status: "ok", count: kept, error: null });
-      console.log(`ok    ${feed.name} — ${kept} posts`);
+      report.push({ ...meta(feed), status: "ok", count: kept, source, error: null });
+      console.log(`ok    ${feed.name} — ${kept} posts${source === "direct" ? "" : ` (via ${source})`}`);
     } catch (err) {
       const msg = String(err?.message || err);
       report.push({ ...meta(feed), status: "failed", count: 0, error: msg });

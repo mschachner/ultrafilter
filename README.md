@@ -80,6 +80,16 @@ Everything lives in `feeds.config.json`:
 Adding a topic means adding an entry to `topics` and referencing its `id` from
 any feed. The filter chips and dot colors follow automatically.
 
+Two optional per-feed keys help with awkward publishers:
+
+- `"altFeeds": ["https://example.org/?feed=rss2"]` — other URLs to try if the
+  primary one fails. Useful when a site exposes the same feed at more than one
+  path and a firewall only guards one of them.
+- `"proxyFallback": false` — skip the read-through proxy for this feed. By
+  default, a feed that fails every direct URL is retried once via
+  `r.jina.ai`, which fetches from different infrastructure and can get past
+  IP-based blocks. The ledger marks anything fetched this way as `via proxy`.
+
 Push a change to `feeds.config.json` and the workflow reruns immediately — it
 triggers on pushes to that file as well as on the schedule.
 
@@ -91,7 +101,7 @@ feed. When something fails, the error tells you what to do:
 | What it says | What it means |
 | --- | --- |
 | `HTTP 404` | The feed URL is wrong or the blog moved. Find the new one. |
-| `HTTP 403` | The publisher is blocking automated fetching. Often unfixable. |
+| `HTTP 403` | The publisher blocks automated fetching — frequently by IP range, since CI runners sit in cloud ranges that firewalls reject. The build retries such feeds through a read-through proxy automatically. |
 | `no <item> or <entry> elements found` | The URL returned a web page, not a feed. |
 | `HTTP 5xx` / `timeouts` | The blog's server had a bad moment. It'll likely fix itself. |
 

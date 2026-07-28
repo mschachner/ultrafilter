@@ -162,7 +162,9 @@ function renderLedger() {
   const feeds = data?.feeds || [];
   const rows = feeds.map(f => {
     const ok = f.status === "ok";
-    const label = ok ? `${f.count} posts` : `failed \u2014 ${esc(f.error || "unknown")}`;
+    const label = ok
+      ? `${f.count} posts${f.source && f.source !== "direct" ? ` \u00b7 via ${esc(f.source)}` : ""}`
+      : `failed \u2014 ${esc(f.error || "unknown")}`;
     return `<div class="ledger-row">
       <span><a href="${esc(f.site)}" target="_blank" rel="noopener">${esc(f.name)}</a>
         <span style="color:var(--faint)"> \u2014 ${esc(f.author)}</span></span>
