@@ -51,18 +51,20 @@
   #weather { display: none; align-items: flex-end; flex-wrap: wrap; gap: .5rem 1.5rem; margin-left: auto; }
   #weather.on { display: flex; }
   .wx-now { display: flex; align-items: center; gap: .6rem; }
-  .wx-now .ticon { width: 1.25rem; height: 1.25rem; color: var(--muted); }
-  .wx-temp { font-family: var(--display); font-size: 1.4rem; line-height: 1; }
-  .wx-desc { font-size: .7rem; color: var(--muted); line-height: 1.3; }
-  /* The day strip stays no taller than the masthead title. */
-  .wx-days { display: flex; gap: .7rem; flex-wrap: wrap; }
-  .wx-day { text-align: center; min-width: 2.4rem; line-height: 1.05; }
-  .wx-day .d { font-family: var(--mono); font-size: .52rem; letter-spacing: .05em;
-               text-transform: uppercase; color: var(--muted); }
-  .wx-day .ticon { width: .72rem; height: .72rem; color: var(--muted); margin-top: .04rem; }
-  .wx-day .t { font-family: var(--mono); font-size: .6rem; }
+  .wx-now .ticon { width: 1.4rem; height: 1.4rem; color: var(--muted); }
+  .wx-temp { font-family: var(--display); font-size: 1.55rem; line-height: 1; }
+  .wx-desc { font-size: .76rem; color: var(--muted); line-height: 1.3; }
+  /* Two lines per day — day + icon, then temps — so the type stays readable
+     while the strip fits inside the masthead title's height. */
+  .wx-days { display: flex; gap: 1.4rem; flex-wrap: wrap; }
+  .wx-day { text-align: center; line-height: 1.25; }
+  .wx-day .d { font-family: var(--mono); font-size: .66rem; letter-spacing: .05em;
+               text-transform: uppercase; color: var(--muted);
+               display: flex; align-items: center; justify-content: center; gap: .3rem; }
+  .wx-day .ticon { width: .95rem; height: .95rem; color: var(--muted); }
+  .wx-day .t { font-family: var(--mono); font-size: .8rem; }
   .wx-day .t .lo { color: var(--faint); }
-  .wx-day .p { font-family: var(--mono); font-size: .5rem; color: #4756A8; }
+  .wx-day .p { font-family: var(--mono); font-size: .7rem; color: #4756A8; }
 
   /* --------------------------- daily sections --------------------------- */
   .klabel { font-family: var(--mono); font-size: .66rem; letter-spacing: .09em;
@@ -140,25 +142,28 @@
 
   .ticon { width: .95rem; height: .95rem; flex: none; color: var(--dot, var(--faint)); }
 
-  #ledger { margin-top: 2.25rem; max-width: 38rem; border: 1px solid var(--line); border-radius: .5rem;
-            padding: 1rem 1.25rem; font-size: .82rem; }
-  #ledger h2 { font-family: var(--display); font-weight: 400; font-size: 1.05rem; margin-bottom: .5rem; }
-  #ledger h2 + .lgroup > summary.ledger-row, #ledger h2 + .ledger-row { border-top: none; }
-  .ledger-row { display: flex; justify-content: space-between; flex-wrap: wrap; gap: .15rem .75rem;
-                padding: .3rem 0; border-top: 1px dotted var(--line); }
-  .ledger-row a { color: var(--ink); }
+  /* The ledger is the site footer: one line of section statuses, with the
+     per-feed detail expanding into columns below it. */
+  #ledger { margin-top: 4rem; border-top: 3px double var(--ink); padding-top: .85rem;
+            font-size: .82rem; }
+  .ledger-sections { display: flex; flex-wrap: wrap; align-items: baseline; gap: .4rem 2.5rem; }
+  .lsec { display: inline-flex; align-items: baseline; gap: .6rem; color: var(--ink); }
+  button.lsec { font-family: var(--body); font-size: .82rem; border: none; border-radius: 0;
+                background: none; padding: 0; cursor: pointer; }
+  button.lsec:hover { background: none; text-decoration: underline; text-underline-offset: 3px; }
   .ledger-status { font-family: var(--mono); font-size: .68rem; word-break: break-word; }
   .ok { color: #557A33; }
   .fail { color: #A33B2E; }
   .dim { color: var(--faint); }
-
-  .lgroup > summary { list-style: none; cursor: pointer; }
-  .lgroup > summary::-webkit-details-marker { display: none; }
   .lcaret { display: inline-block; font-size: .58rem; color: var(--faint);
             margin-right: .4rem; transform: translateY(-.1em); transition: transform .12s ease; }
-  .lgroup[open] .lcaret { transform: rotate(90deg); }
-  .lfeeds { padding-left: .85rem; }
-  .lfeeds .ledger-row { font-size: .78rem; }
+  .lcaret.open { transform: rotate(90deg); }
+  .lfeeds { margin-top: .75rem; padding-top: .35rem; border-top: 1px dotted var(--line);
+            column-width: 17rem; column-gap: 2.5rem; }
+  .ledger-row { display: flex; justify-content: space-between; flex-wrap: wrap; gap: .15rem .75rem;
+                padding: .3rem 0; border-bottom: 1px dotted var(--line); break-inside: avoid;
+                font-size: .78rem; }
+  .ledger-row a { color: var(--ink); }
 
   .dateline { font-family: var(--mono); font-size: .75rem; letter-spacing: .04em;
               color: var(--muted); margin: 2.25rem 0 .5rem; display: flex; align-items: center; gap: .75rem; }
@@ -182,6 +187,9 @@
   .post-title:hover { text-decoration: underline; text-underline-offset: 3px; }
   .post-title:visited { color: var(--muted); }
   .post-src { font-size: .78rem; color: var(--muted); margin-left: .6rem; white-space: nowrap; }
+
+  .more-wrap { margin-top: 1.25rem; }
+  #show-more { padding: .4rem 1.1rem; }
 
   #status-line { margin-top: 2rem; color: var(--muted); font-size: .9rem; }
 
@@ -230,9 +238,10 @@
     </div>
     <aside class="rail">
       <section id="albums-sec" aria-label="Albums"></section>
-      <div id="ledger" aria-label="Ledger"></div>
     </aside>
   </div>
+
+  <footer id="ledger" aria-label="Ledger"></footer>
 
 </div>
 
@@ -240,6 +249,8 @@
 const state = { blogroll: null, wikipedia: null, albums: null, weather: null };
 const sectionNotes = {};   // ledger rows for the non-blogroll sections
 let activeTopic = "all";
+let postsShown = 15;       // "Show more" lifts this to everything
+let feedsOpen = false;     // per-feed detail in the footer ledger
 
 const $ = sel => document.querySelector(sel);
 
@@ -360,10 +371,8 @@ function renderWeather(cfg, w) {
       : new Date(t + "T12:00:00").toLocaleDateString("en-GB", { weekday: "short" });
     const pop = d.precipitation_probability_max?.[i];
     return `<div class="wx-day">
-      <div class="d">${esc(label)}</div>
-      ${wxIcon(dic)}
-      <div class="t">${Math.round(d.temperature_2m_max?.[i])}° <span class="lo">${Math.round(d.temperature_2m_min?.[i])}°</span></div>
-      <div class="p">${pop >= 15 ? pop + "%" : "&nbsp;"}</div>
+      <div class="d">${esc(label)} ${wxIcon(dic)}</div>
+      <div class="t">${Math.round(d.temperature_2m_max?.[i])}° <span class="lo">${Math.round(d.temperature_2m_min?.[i])}°</span>${pop >= 15 ? ` <span class="p">${pop}%</span>` : ""}</div>
     </div>`;
   }).join("");
 
@@ -457,7 +466,7 @@ function renderAlbums() {
     </article>`;
   }).join("");
 
-  $("#albums-sec").innerHTML = sectionHead("Albums", a.date) + `<div class="albums">${cards}</div>`;
+  $("#albums-sec").innerHTML = sectionHead("Today's albums", a.date) + `<div class="albums">${cards}</div>`;
   $("#albums-sec").classList.add("on");
 }
 
@@ -515,9 +524,8 @@ function renderChips() {
 
 function renderLedger() {
   const b = state.blogroll;
-  const wasOpen = $("#ledger .lgroup")?.open ?? false;
 
-  const row = (label, n) => n ? `<div class="ledger-row"><span>${label}</span><span class="ledger-status ${n.cls}">${esc(n.text)}</span></div>` : "";
+  const seg = (label, n) => n ? `<span class="lsec">${label}<span class="ledger-status ${n.cls}">${esc(n.text)}</span></span>` : "";
 
   const feedRows = (b?.feeds || []).map(f => {
     const ok = f.status === "ok";
@@ -533,25 +541,31 @@ function renderLedger() {
   const bNote = b?.posts
     ? { cls: b.stale ? "dim" : "ok", text: `${b.stale ? "stale · " : ""}${b.feedsOk}/${b.feedsTotal} feeds` }
     : { cls: "fail", text: `failed — ${b?.error || "no data"}` };
-  const blogrollRow = feedRows
-    ? `<details class="lgroup"${wasOpen ? " open" : ""}>
-        <summary class="ledger-row"><span><span class="lcaret">&#9656;</span>Blogroll</span>
-          <span class="ledger-status ${bNote.cls}">${esc(bNote.text)}</span></summary>
-        <div class="lfeeds">${feedRows}</div>
-      </details>`
-    : row("Blogroll", bNote);
+  const blogrollSeg = feedRows
+    ? `<button class="lsec" id="lfeeds-toggle" aria-expanded="${feedsOpen}">
+        <span><span class="lcaret${feedsOpen ? " open" : ""}">&#9656;</span>Blogroll</span>
+        <span class="ledger-status ${bNote.cls}">${esc(bNote.text)}</span></button>`
+    : seg("Blogroll", bNote);
 
-  $("#ledger").innerHTML = `<h2>Ledger</h2>` + blogrollRow +
-    row("Wikipedia", sectionNotes.wikipedia) +
-    row("Albums", sectionNotes.albums) +
-    row("Weather", sectionNotes.weather);
+  $("#ledger").innerHTML =
+    `<div class="ledger-sections"><span class="klabel">Ledger</span>` + blogrollSeg +
+    seg("Wikipedia", sectionNotes.wikipedia) +
+    seg("Albums", sectionNotes.albums) +
+    seg("Weather", sectionNotes.weather) + `</div>` +
+    (feedsOpen && feedRows ? `<div class="lfeeds">${feedRows}</div>` : "");
+
+  $("#lfeeds-toggle")?.addEventListener("click", () => {
+    feedsOpen = !feedsOpen;
+    renderLedger();
+  });
 }
 
 function renderList() {
-  const posts = (state.blogroll?.posts || [])
+  const all = (state.blogroll?.posts || [])
     .filter(p => activeTopic === "all" || p.topics.includes(activeTopic));
 
-  if (!posts.length) { $("#list").innerHTML = ""; return; }
+  if (!all.length) { $("#list").innerHTML = ""; return; }
+  const posts = all.slice(0, postsShown);
 
   let html = "", lastKey = null;
   for (const p of posts) {
@@ -566,6 +580,9 @@ function renderList() {
       </span>
       <button class="copy" data-link="${esc(p.link)}">Copy link</button>
     </div>`;
+  }
+  if (all.length > posts.length) {
+    html += `<div class="more-wrap"><button id="show-more">Show ${all.length - posts.length} more</button></div>`;
   }
   $("#list").innerHTML = html;
 }
@@ -647,6 +664,11 @@ document.addEventListener("keydown", e => {
 });
 
 $("#list").addEventListener("click", async e => {
+  if (e.target.id === "show-more") {
+    postsShown = Infinity;
+    renderList();
+    return;
+  }
   const btn = e.target.closest(".copy");
   if (!btn) return;
   try {

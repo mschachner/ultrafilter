@@ -27,6 +27,7 @@ already published reuses it instead of re-rolling the picks.
 ### Blogroll
 
 Link-only: titles, dates, and links out to the original — no reader view.
+The page shows the newest 15 posts; a *Show more* button reveals the rest.
 Fetching happens on GitHub's servers rather than in your browser, which
 solves two problems a browser version would have: no CORS restrictions, and
 requests can carry a normal browser `User-Agent`, which gets past publishers
@@ -166,9 +167,9 @@ change takes effect as soon as its push lands.
 
 ## Reading the ledger
 
-The ledger on the page reports the last build: one row per section, with
-the per-feed detail collapsed under the Blogroll row. When a feed fails,
-the error tells you what to do:
+The ledger in the page footer reports the last build: one entry per
+section, with the per-feed detail expanding under the Blogroll entry. When
+a feed fails, the error tells you what to do:
 
 | What it says | What it means |
 | --- | --- |
