@@ -45,7 +45,6 @@
   }
   button:hover { background: var(--hover); }
   button:focus-visible, a:focus-visible { outline: 2px solid #4756A8; outline-offset: 2px; }
-  button[disabled] { opacity: .5; cursor: default; }
 
   .chips { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1.25rem 0 0; }
   .chip { display: inline-flex; align-items: center; gap: .45rem; border: 1px solid var(--line);
@@ -95,7 +94,6 @@
       <div class="mast-tools">
         <span id="report">Loading&hellip;</span>
         <button id="toggle-ledger" aria-expanded="false">Feeds</button>
-        <button id="reload">Reload</button>
       </div>
     </div>
   </header>
@@ -221,11 +219,7 @@ function render() {
   renderStatus();
 }
 
-async function load({ manual = false } = {}) {
-  const btn = $("#reload");
-  btn.disabled = true;
-  if (manual) btn.textContent = "Reloading\u2026";
-  const started = Date.now();
+async function load() {
   try {
     // Cache-buster so a refreshed build shows up without a hard reload.
     const res = await fetch(`${DATA_URL}?t=${Date.now()}`, { cache: "no-store" });
@@ -236,13 +230,6 @@ async function load({ manual = false } = {}) {
     $("#status-line").textContent =
       `Couldn't load ${DATA_URL} (${err.message}). If this is a fresh checkout, the scheduled job hasn't run yet \u2014 trigger it from the Actions tab, or run "npm ci && node scripts/build-feeds.mjs" locally.`;
     $("#report").textContent = "no data";
-  } finally {
-    if (manual) {
-      // Hold the in-flight label long enough to register as feedback.
-      await new Promise(r => setTimeout(r, Math.max(0, 450 - (Date.now() - started))));
-      btn.textContent = "Reload";
-    }
-    btn.disabled = false;
   }
 }
 
@@ -250,8 +237,6 @@ $("#toggle-ledger").addEventListener("click", () => {
   const open = $("#ledger").classList.toggle("open");
   $("#toggle-ledger").setAttribute("aria-expanded", String(open));
 });
-$("#reload").addEventListener("click", () => load({ manual: true }));
-
 load();
 </script>
 </body>
