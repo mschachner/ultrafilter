@@ -161,7 +161,7 @@
   #albums-sec.on, #wiki-sec.on { display: block; }
 
   /* Each card sits on its category's colour; all type on it runs cream. */
-  .albums { display: flex; flex-wrap: wrap; gap: 1.25rem; align-items: flex-start; }
+  .albums { display: flex; flex-wrap: wrap; gap: 1.25rem; align-items: stretch; }
   .album { flex: 1 1 10rem; min-width: 10rem; max-width: 22rem;
            background: var(--acc, var(--hover)); color: #F0EBE1;
            border-radius: .5rem; padding: 1rem 1.1rem; }
@@ -316,14 +316,22 @@
     .main { max-width: none; }
     .rail { width: auto; align-self: stretch; order: -1; }
     #weather { margin-left: 0; }
-    .album-cover { max-width: 17rem; }
     .wiki { grid-template-columns: 1fr; gap: 1rem; }
   }
   @media (max-width: 480px) {
+    body { padding: 1.75rem 1.1rem 4rem; }
+    h1 { font-size: 1.9rem; }
+    .mast-row { position: relative; }
+    #theme-ui { position: absolute; top: -.15rem; right: 0; }
+    #weather.on { gap: .5rem 1rem; }
+    .wx-days { gap: .7rem; }
+    .wx-day:nth-child(5) { display: none; }   /* four days is plenty on a phone */
+    .section-head { font-size: 1.3rem; }
+    .album { flex-basis: 100%; }
+    .album-cover { max-width: 19rem; margin-inline: auto; }
     .post { flex-wrap: wrap; }
     .post-src { margin-left: 1.3rem; }
     .post .copy { opacity: 1; }
-    .album { flex-basis: 100%; }
   }
 </style>
 </head>
