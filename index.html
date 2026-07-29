@@ -313,8 +313,10 @@
   @media (prefers-reduced-motion: no-preference) { .post { transition: background .12s ease; } .post .copy { transition: opacity .12s ease; } }
   @media (max-width: 64rem) {
     .cols { flex-direction: column; gap: 0; }
-    .main { max-width: none; }
-    .rail { width: auto; align-self: stretch; order: -1; }
+    /* In a column, horizontal flex-bases would become minimum HEIGHTS —
+       neutralize them so each block is only as tall as its content. */
+    .main { flex: none; max-width: none; }
+    .rail { flex: none; width: auto; align-self: stretch; order: -1; }
     #weather { margin-left: 0; }
     .wiki { grid-template-columns: 1fr; gap: 1rem; }
 
@@ -346,8 +348,10 @@
     .wx-days { gap: .65rem; flex-wrap: nowrap; }
     .wx-day:nth-child(n+5) { display: none; }   /* four days is plenty on a phone */
     .section-head { font-size: 1.3rem; }
-    .post { flex-wrap: wrap; }
-    .post-src { margin-left: 1.3rem; }
+    /* Hanging icon, title wrapping beside it, source on its own line under
+       the title — the same shape as the Wikipedia picks. */
+    .post-main { flex: 1 1 0; }
+    .post-src { display: block; margin: .1rem 0 0; white-space: normal; }
     .post .copy { opacity: 1; }
   }
 </style>
