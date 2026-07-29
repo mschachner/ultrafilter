@@ -317,18 +317,35 @@
     .rail { width: auto; align-self: stretch; order: -1; }
     #weather { margin-left: 0; }
     .wiki { grid-template-columns: 1fr; gap: 1rem; }
+
+    /* Stacked layouts get compact landscape album cards: thumbnail and
+       title only, tapping the card unfolds the blurb. */
+    .albums { gap: .8rem; }
+    .album { flex-basis: 100%; max-width: none; position: relative; cursor: pointer;
+             display: grid; grid-template-columns: 5.2rem minmax(0, 1fr);
+             column-gap: .95rem; align-items: center; padding: .8rem 2rem .8rem .95rem; }
+    .cover-btn { grid-column: 1; grid-row: 1 / span 3; width: 5.2rem;
+                 margin: 0; align-self: center; }
+    .album .klabel, .album-head, .album-genres { grid-column: 2; }
+    .album-head { margin: .05rem 0; font-size: 1rem; }
+    .album-genres { margin-bottom: 0; }
+    .album p { grid-column: 1 / -1; display: none; margin-top: .55rem; }
+    .album.open p { display: block; }
+    .album.open .reception { margin-top: .45rem; }
+    .album::after { content: "\25BE"; position: absolute; top: .85rem; right: .9rem;
+                    font-size: .72rem; color: rgba(240, 235, 225, .65);
+                    transition: transform .15s ease; }
+    .album.open::after { transform: rotate(180deg); }
   }
-  @media (max-width: 480px) {
+  @media (max-width: 40rem) {
     body { padding: 1.75rem 1.1rem 4rem; }
     h1 { font-size: 1.9rem; }
     .mast-row { position: relative; }
     #theme-ui { position: absolute; top: -.15rem; right: 0; }
-    #weather.on { gap: .5rem 1rem; }
-    .wx-days { gap: .7rem; }
-    .wx-day:nth-child(5) { display: none; }   /* four days is plenty on a phone */
+    #weather.on { gap: .4rem .9rem; }
+    .wx-days { gap: .65rem; flex-wrap: nowrap; }
+    .wx-day:nth-child(n+5) { display: none; }   /* four days is plenty on a phone */
     .section-head { font-size: 1.3rem; }
-    .album { flex-basis: 100%; }
-    .album-cover { max-width: 19rem; margin-inline: auto; }
     .post { flex-wrap: wrap; }
     .post-src { margin-left: 1.3rem; }
     .post .copy { opacity: 1; }
@@ -906,7 +923,14 @@ async function load() {
 
 $("#albums-sec").addEventListener("click", e => {
   const btn = e.target.closest(".cover-btn");
-  if (btn) openLightbox(Number(btn.dataset.i));
+  if (btn) return openLightbox(Number(btn.dataset.i));
+  if (e.target.closest("a")) return;   // Spotify links keep working
+  // On stacked layouts the card itself is an accordion.
+  const card = e.target.closest(".album");
+  if (card && window.matchMedia("(max-width: 64rem)").matches) {
+    card.classList.toggle("open");
+    card.setAttribute("aria-expanded", card.classList.contains("open"));
+  }
 });
 $("#wiki-sec").addEventListener("click", e => {
   if (e.target.closest("#reroll")) rerollPicks();
