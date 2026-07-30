@@ -79,7 +79,9 @@ with blurbs — as `albums/latest.json` (plus a dated copy) in the private
 already keeps. The build fetches that file via the GitHub contents API
 using the `SPOTIFY_RECS_TOKEN` secret, then adds cover art to each entry
 from Spotify's public oEmbed endpoint (no auth; a missing cover just
-renders as a text-only card). No secret configured, or no file yet: the
+renders as a text-only card). On desktop browsers, album links first try
+the Spotify app via its `spotify:` URI and fall back to the web player if
+nothing answers within a beat — installation can't be detected outright. No secret configured, or no file yet: the
 section quietly reads `pending` in the ledger. Transient fetch failures
 keep the previous day's picks, marked `stale`.
 

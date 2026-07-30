@@ -925,10 +925,34 @@ async function load() {
   loadWeather();   // async; re-renders the ledger row when it settles
 }
 
+/**
+ * On desktops, album links first try the Spotify app. A page cannot know
+ * whether the app is installed, so this is an attempt-and-fall-back: navigate
+ * to the spotify: URI, and if the browser hasn't lost focus a moment later
+ * (nothing answered the URI), open the web player instead. Phones are left
+ * alone — open.spotify.com already deep-links into the app there.
+ */
+function maybeOpenInApp(e, href) {
+  const m = href.match(/open\.spotify\.com\/album\/([A-Za-z0-9]+)/);
+  if (!m || !window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+  e.preventDefault();
+  let answered = false;
+  const settle = () => { answered = true; };
+  addEventListener("blur", settle, { once: true });
+  document.addEventListener("visibilitychange", settle, { once: true });
+  setTimeout(() => {
+    removeEventListener("blur", settle);
+    document.removeEventListener("visibilitychange", settle);
+    if (!answered && !document.hidden) window.open(href, "_blank", "noopener");
+  }, 1200);
+  location.href = `spotify:album:${m[1]}`;
+}
+
 $("#albums-sec").addEventListener("click", e => {
   const btn = e.target.closest(".cover-btn");
   if (btn) return openLightbox(Number(btn.dataset.i));
-  if (e.target.closest("a")) return;   // Spotify links keep working
+  const link = e.target.closest("a");
+  if (link) return maybeOpenInApp(e, link.href);   // search links pass through
   // On stacked layouts the card itself is an accordion.
   const card = e.target.closest(".album");
   if (card && window.matchMedia("(max-width: 64rem)").matches) {
