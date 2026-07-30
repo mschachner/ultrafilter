@@ -62,6 +62,8 @@
   "albums": {
     "repo": "mschachner/spotify-recs",
     "path": "albums/latest.json",
+    "dir": "albums",
+    "historyPath": "recommendation_history.csv",
     "tokenEnv": "SPOTIFY_RECS_TOKEN"
   }
 }

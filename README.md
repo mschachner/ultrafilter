@@ -85,6 +85,16 @@ nothing answers within a beat — installation can't be detected outright. No se
 section quietly reads `pending` in the ledger. Transient fetch failures
 keep the previous day's picks, marked `stale`.
 
+The archive of every pick lives on its own page, `albums.html` ("The
+record crate"), linked under the daily cards: sortable by recommendation
+date, release year, or artist, and filterable by category, genre, and
+search. Its data file, `data/archive.json`, is built by merging the dated
+`albums/*.json` files with `recommendation_history.csv` — picks from
+before the JSON era appear with facts and cover but no notes. The build
+uses the currently-published archive as a cache, so it only reads what's
+new. The two pages duplicate the theme CSS; a theme change means editing
+both.
+
 The contract the task fulfills:
 
 ```jsonc

@@ -58,7 +58,7 @@ jobs:
       - name: Assemble the site
         run: |
           mkdir _site
-          cp index.html favicon.svg favicon.png apple-touch-icon.png _site/
+          cp index.html albums.html favicon.svg favicon.png apple-touch-icon.png _site/
           cp -r data _site/
 
       - name: Configure Pages

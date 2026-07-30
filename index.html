@@ -184,6 +184,10 @@
   .album p { font-size: .84rem; line-height: 1.45; }
   .album .reception { margin-top: .5rem; color: rgba(240, 235, 225, .82); }
   .srch { font-family: var(--mono); font-size: .62rem; color: rgba(240, 235, 225, .6); margin-left: .3rem; }
+  .crate-link { display: inline-block; margin-top: .9rem; font-family: var(--mono);
+                font-size: .72rem; letter-spacing: .05em; text-transform: uppercase;
+                color: var(--muted); text-decoration: none; }
+  .crate-link:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
 
   /* ------------------------- cover lightbox ------------------------- */
   #lightbox { position: fixed; inset: 0; z-index: 50; display: flex; flex-direction: column;
@@ -678,7 +682,9 @@ function renderAlbums() {
     </article>`;
   }).join("");
 
-  $("#albums-sec").innerHTML = sectionHead("Today's albums", a.date) + `<div class="albums">${cards}</div>`;
+  $("#albums-sec").innerHTML = sectionHead("Today's albums", a.date) +
+    `<div class="albums">${cards}</div>` +
+    `<a class="crate-link" href="albums.html">The record crate &rarr;</a>`;
   $("#albums-sec").classList.add("on");
 }
 

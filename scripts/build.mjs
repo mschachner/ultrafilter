@@ -19,6 +19,7 @@ import { loadPublished } from "./lib.mjs";
 import * as blogroll from "./sections/blogroll.mjs";
 import * as wikipedia from "./sections/wikipedia.mjs";
 import * as albums from "./sections/albums.mjs";
+import * as archive from "./sections/archive.mjs";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const CONFIG_PATH = resolve(ROOT, "config.json");
@@ -28,6 +29,7 @@ const SECTIONS = [
   { name: "blogroll", ...blogroll },
   { name: "wikipedia", ...wikipedia },
   { name: "albums", ...albums },
+  { name: "archive", ...archive },
 ];
 
 export async function main() {
