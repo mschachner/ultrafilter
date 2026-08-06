@@ -312,6 +312,32 @@
   .theme-name { flex: 1; }
   .theme-check { font-family: var(--mono); font-size: .7rem; color: var(--ok); }
 
+  /* ---------------------------- add-blog dialog --------------------------- */
+  #add-dialog { margin: auto;   /* the global reset kills the UA's centering */
+                background: var(--bg); color: var(--ink); border: 1px solid var(--line);
+                border-radius: .6rem; padding: 1.3rem 1.4rem 1.4rem; width: min(28rem, 92vw);
+                box-shadow: 0 .6rem 1.8rem rgba(20, 24, 28, .22); }
+  #add-dialog::backdrop { background: rgba(32, 38, 43, .35);
+                          -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+  #add-dialog h2 { font-family: var(--display); font-weight: 400; font-size: 1.35rem;
+                   margin-bottom: .3rem; }
+  .af-hint { font-size: .78rem; color: var(--muted); line-height: 1.4; }
+  .af-row { margin-top: .8rem; }
+  .af-row > label { display: block; font-family: var(--mono); font-size: .66rem; letter-spacing: .09em;
+                    text-transform: uppercase; color: var(--muted); margin-bottom: .25rem; }
+  .af-row input { width: 100%; font-family: var(--body); font-size: .88rem; color: var(--ink);
+                  background: none; border: 1px solid var(--line); border-radius: .4rem;
+                  padding: .45rem .6rem; }
+  .af-row input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .af-url { display: flex; gap: .5rem; }
+  .af-url input { flex: 1; min-width: 0; }
+  .af-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 1rem; }
+  .af-token-note { font-size: .74rem; color: var(--muted); margin-top: .3rem; line-height: 1.4; }
+  .af-token-note a { color: var(--accent); }
+  .af-status { margin-top: .9rem; font-family: var(--mono); font-size: .72rem;
+               min-height: 1.1em; word-break: break-word; }
+  .af-actions { display: flex; justify-content: flex-end; gap: .6rem; margin-top: 1rem; }
+
   #status-line { margin-top: 2rem; color: var(--muted); font-size: .9rem; }
 
   @media (prefers-reduced-motion: no-preference) { .post { transition: background .12s ease; } .post .copy { transition: opacity .12s ease; } }
@@ -357,6 +383,7 @@
     .post-main { flex: 1 1 0; }
     .post-src { display: block; margin: .1rem 0 0; white-space: normal; }
     .post .copy { opacity: 1; }
+    .af-grid { grid-template-columns: 1fr; gap: 0; }
   }
 </style>
 </head>
@@ -393,7 +420,11 @@
   <div class="cols">
     <div class="main">
       <section id="wiki-sec" aria-label="Wikipedia"></section>
-      <h2 class="section-head">Blogroll<span class="dl-note" id="feeds-note"></span></h2>
+      <h2 class="section-head">Blogroll<span class="dl-note"><button id="add-blog" class="reroll"
+          title="Add a blog" aria-label="Add a blog to the blogroll">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+            stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+        </button></span><span class="dl-note" id="feeds-note"></span></h2>
       <div class="chips" id="chips" role="group" aria-label="Filter by topic"></div>
       <main id="list" aria-live="polite"></main>
       <p id="status-line">Loading posts&hellip;</p>
@@ -402,6 +433,44 @@
       <section id="albums-sec" aria-label="Albums"></section>
     </aside>
   </div>
+
+  <dialog id="add-dialog" aria-labelledby="af-title">
+    <h2 id="af-title">Add a blog</h2>
+    <p class="af-hint">Paste the blog's address and look it up — the feed, name, and site
+      fill themselves in. Adding commits the entry to <code>config.json</code>, which
+      rebuilds and redeploys the site.</p>
+    <form id="add-form" novalidate>
+      <div class="af-row">
+        <label for="af-url">Blog address</label>
+        <div class="af-url">
+          <input id="af-url" type="url" placeholder="https://example.org" autocomplete="off">
+          <button type="button" id="af-lookup">Look&nbsp;up</button>
+        </div>
+      </div>
+      <div class="af-grid">
+        <div class="af-row"><label for="af-name">Name</label><input id="af-name" type="text" autocomplete="off"></div>
+        <div class="af-row"><label for="af-author">Author</label><input id="af-author" type="text" autocomplete="off"></div>
+      </div>
+      <div class="af-row"><label for="af-site">Site</label><input id="af-site" type="url" autocomplete="off"></div>
+      <div class="af-row"><label for="af-feed">Feed URL</label><input id="af-feed" type="url" autocomplete="off"></div>
+      <div class="af-row"><label id="af-topics-label">Topics</label>
+        <div class="chips" id="af-topics" role="group" aria-labelledby="af-topics-label" style="margin:0"></div></div>
+      <div class="af-row" id="af-repo-row" hidden>
+        <label for="af-repo">Repository (owner/name)</label><input id="af-repo" type="text" autocomplete="off"></div>
+      <div class="af-row">
+        <label for="af-token">GitHub token</label>
+        <input id="af-token" type="password" autocomplete="off">
+        <p class="af-token-note">A <a href="https://github.com/settings/personal-access-tokens/new"
+          target="_blank" rel="noopener">fine-grained token</a> with read-and-write
+          <i>Contents</i> permission on this repository only. It never leaves this browser.</p>
+      </div>
+      <p id="af-status" class="af-status" aria-live="polite"></p>
+      <div class="af-actions">
+        <button type="button" id="af-cancel">Cancel</button>
+        <button type="submit" id="af-submit">Add to blogroll</button>
+      </div>
+    </form>
+  </dialog>
 
   <footer id="ledger" aria-label="Ledger"></footer>
 
@@ -1011,6 +1080,277 @@ $("#list").addEventListener("click", async e => {
   }
   setTimeout(() => { btn.textContent = "Copy link"; }, 1200);
 });
+
+/* ------------------------------ add a blog ------------------------------ */
+
+/* The "+" by the Blogroll heading. Discovery and verification run in the
+   browser — through the same read-through proxies the build uses, since most
+   blogs don't send CORS headers — and the commit goes through the GitHub
+   contents API with a fine-grained PAT kept in this browser's localStorage.
+   The push to main then triggers the normal build-and-deploy workflow, so
+   the new blog appears on the next deploy, a few minutes later. */
+
+const LS_TOKEN = "ultrafilter:ghToken", LS_REPO = "ultrafilter:ghRepo";
+const lsGet = k => { try { return localStorage.getItem(k) || ""; } catch { return ""; } };
+const lsSet = (k, v) => { try { v ? localStorage.setItem(k, v) : localStorage.removeItem(k); } catch {} };
+
+// On GitHub Pages the repository is readable off the URL; anywhere else
+// (localhost, a custom domain) the dialog shows a repository field instead.
+function repoFromUrl() {
+  const m = location.hostname.match(/^([^.]+)\.github\.io$/i);
+  const seg = location.pathname.split("/").filter(Boolean)[0];
+  return m && seg ? `${m[1]}/${seg}` : "";
+}
+const currentRepo = () => repoFromUrl() || lsGet(LS_REPO);
+
+let afVerified = null;   // { url, count, source } for the last feed that parsed
+let afBusy = false;
+
+// Same philosophy as the build: a source only counts if its response
+// actually parses as a feed, and failures fall through to the next source.
+async function fetchFeedText(url) {
+  const sources = [
+    { url, label: "direct" },
+    { url: "https://api.allorigins.win/raw?url=" + encodeURIComponent(url), label: "proxy" },
+    { url: "https://r.jina.ai/" + url, label: "proxy",
+      headers: { "X-Return-Format": "html", "X-Respond-With": "html" } },
+  ];
+  const problems = [];
+  for (const s of sources) {
+    try {
+      const res = await fetch(s.url, { headers: s.headers || {}, signal: AbortSignal.timeout(15000) });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      return { text: await res.text(), source: s.label };
+    } catch (err) { problems.push(`${s.label}: ${err.message || err}`); }
+  }
+  throw new Error(problems.join(" | "));
+}
+
+// Feed XML -> { count, title, site, author }; throws if it isn't a feed.
+function parseFeed(txt) {
+  const doc = new DOMParser().parseFromString(txt, "text/xml");
+  if (doc.querySelector("parsererror")) throw new Error("not a feed");
+  const items = doc.querySelectorAll("item, entry");
+  if (!items.length) throw new Error("no <item> or <entry> elements");
+  const topLevel = sel =>
+    [...doc.querySelectorAll(sel)].find(el => !el.closest("item, entry")) || null;
+  let site = "";
+  for (const l of doc.querySelectorAll("link")) {
+    if (l.closest("item, entry")) continue;
+    const href = l.getAttribute("href");
+    if (href) {                                   // Atom <link rel href>
+      if ((l.getAttribute("rel") || "alternate") === "alternate") { site = href; break; }
+      if (!site) site = href;
+    } else if (!site && l.textContent.trim().startsWith("http")) {
+      site = l.textContent.trim();                // RSS <link>text</link>
+    }
+  }
+  let author = "";
+  const ed = topLevel("managingEditor");          // RSS: "mail@x.org (Name)"
+  if (ed) author = (ed.textContent.match(/\(([^)]+)\)/) || [])[1] || "";
+  if (!author) author = (topLevel("author")?.querySelector("name")?.textContent || "").trim();
+  return { count: items.length,
+           title: (topLevel("title")?.textContent || "").trim(),
+           site: site.trim(), author: author.trim() };
+}
+
+// The address may be the feed itself, or a page that links to one (or hides
+// one at a well-known path). Returns { feed, source, count, title, site, author }.
+async function discoverFeed(input) {
+  const first = await fetchFeedText(input).catch(err => {
+    throw new Error(`couldn't fetch that address — ${err.message || err}`);
+  });
+  try { return { feed: input, source: first.source, ...parseFeed(first.text) }; } catch {}
+
+  const page = new DOMParser().parseFromString(first.text, "text/html");
+  const cands = [];
+  for (const l of page.querySelectorAll('link[rel="alternate"]')) {
+    if (!/(rss|atom)\+xml/i.test(l.getAttribute("type") || "")) continue;
+    try { cands.push(new URL(l.getAttribute("href"), input).href); } catch {}
+  }
+  const root = input.endsWith("/") ? input : input + "/";
+  for (const g of ["feed/", "feed.xml", "rss", "rss.xml", "atom.xml", "index.xml"])
+    cands.push(root + g);
+
+  const seen = new Set();
+  for (const c of cands) {
+    if (seen.has(c)) continue;
+    seen.add(c);
+    try {
+      const { text, source } = await fetchFeedText(c);
+      const info = parseFeed(text);
+      return { feed: c, source,
+               ...info,
+               title: info.title || (page.querySelector("title")?.textContent || "").trim(),
+               site: info.site || input };
+    } catch {}
+  }
+  throw new Error("no feed found at that address — paste the feed URL directly if you know it");
+}
+
+/* Text-level insertion into config.json, so the file's hand formatting
+   survives — JSON.stringify would reflow the whole thing. Finds the feeds
+   array by bracket-matching (string-aware) and slots the new entry in
+   before the closing bracket, matching the last entry's indentation. */
+function insertFeedEntry(text, entryLine) {
+  const key = text.indexOf('"feeds"');
+  if (key < 0) throw new Error('no "feeds" key in config.json');
+  const open = text.indexOf("[", key);
+  if (open < 0) throw new Error('no array after "feeds"');
+  let depth = 0, inStr = false, escNext = false, close = -1;
+  for (let i = open; i < text.length; i++) {
+    const ch = text[i];
+    if (inStr) {
+      if (escNext) escNext = false;
+      else if (ch === "\\") escNext = true;
+      else if (ch === '"') inStr = false;
+      continue;
+    }
+    if (ch === '"') inStr = true;
+    else if (ch === "[") depth++;
+    else if (ch === "]" && !--depth) { close = i; break; }
+  }
+  if (close < 0) throw new Error("couldn't find the end of the feeds array");
+  let end = close;                          // walk back over the ] line's whitespace
+  while (end > open && /\s/.test(text[end - 1])) end--;
+  const lastLine = text.slice(text.lastIndexOf("\n", end - 1) + 1, end);
+  const indent = (lastLine.match(/^\s*/) || ["      "])[0];
+  return text.slice(0, end) + ",\n" + indent + entryLine + text.slice(end, close) + text.slice(close);
+}
+
+function b64encode(s) {
+  let bin = "";
+  for (const b of new TextEncoder().encode(s)) bin += String.fromCharCode(b);
+  return btoa(bin);
+}
+function b64decode(s) {
+  return new TextDecoder().decode(Uint8Array.from(atob(s.replace(/\s+/g, "")), c => c.charCodeAt(0)));
+}
+const ghHeaders = t => ({ Authorization: `Bearer ${t}`, Accept: "application/vnd.github+json",
+                          "X-GitHub-Api-Version": "2022-11-28" });
+
+async function commitFeed(entry) {
+  const repo = currentRepo(), token = lsGet(LS_TOKEN);
+  const url = `https://api.github.com/repos/${repo}/contents/config.json`;
+  const got = await fetch(url, { headers: ghHeaders(token) });
+  if (got.status === 401) throw new Error("GitHub rejected the token — paste a fresh one");
+  if (got.status === 404) throw new Error(`GitHub can't see ${repo} — check the token's repository access`);
+  if (!got.ok) throw new Error(`GitHub HTTP ${got.status}`);
+  const file = await got.json();
+  const cfgText = b64decode(file.content);
+  const cfg = JSON.parse(cfgText);
+
+  const norm = u => String(u || "").replace(/^https?:\/\//, "").replace(/\/+$/, "").toLowerCase();
+  const dupe = (cfg.blogroll?.feeds || []).find(f =>
+    norm(f.feed) === norm(entry.feed) || norm(f.site) === norm(entry.site));
+  if (dupe) throw new Error(`already on the blogroll as “${dupe.name}”`);
+
+  const line = `{ "name": ${JSON.stringify(entry.name)}, "author": ${JSON.stringify(entry.author)}, ` +
+    `"site": ${JSON.stringify(entry.site)}, "feed": ${JSON.stringify(entry.feed)}, ` +
+    `"topics": ${JSON.stringify(entry.topics)} }`;
+  const next = insertFeedEntry(cfgText, line);
+  JSON.parse(next);   // the spliced file must still parse before it ships
+
+  const put = await fetch(url, {
+    method: "PUT",
+    headers: { ...ghHeaders(token), "Content-Type": "application/json" },
+    body: JSON.stringify({ message: `Blogroll: add ${entry.name}`,
+                           content: b64encode(next), sha: file.sha, branch: "main" }),
+  });
+  if (put.status === 409) throw new Error("config.json changed while we worked — try again");
+  if (!put.ok) throw new Error(`commit failed — GitHub HTTP ${put.status}`);
+}
+
+function afStatus(msg, cls) {
+  const el = $("#af-status");
+  el.textContent = msg;
+  el.className = "af-status" + (cls ? ` ${cls}` : "");
+}
+
+function openAddDialog() {
+  $("#af-topics").innerHTML = (state.blogroll?.topics || []).map(t => `
+    <button type="button" class="chip af-topic" data-id="${esc(t.id)}" aria-pressed="false"
+      style="--dot:${topicColor(t.id)}">${icon(t.id)}${esc(t.label)}</button>`).join("");
+  $("#add-form").reset();
+  afVerified = null;
+  afBusy = false;
+  $("#af-token").placeholder = lsGet(LS_TOKEN) ? "saved — leave blank to keep" : "github_pat_…";
+  $("#af-repo-row").hidden = !!repoFromUrl();
+  $("#af-repo").value = lsGet(LS_REPO);
+  $("#af-submit").disabled = false;
+  $("#af-cancel").textContent = "Cancel";
+  afStatus("");
+  $("#add-dialog").showModal();
+}
+
+async function afLookup() {
+  const raw = $("#af-url").value.trim();
+  if (!raw) return afStatus("enter the blog's address first", "fail");
+  const input = /^https?:\/\//i.test(raw) ? raw : `https://${raw}`;
+  $("#af-lookup").disabled = true;
+  afStatus("looking for a feed…", "dim");
+  try {
+    const r = await discoverFeed(input);
+    $("#af-feed").value = r.feed;
+    if (!$("#af-name").value) $("#af-name").value = r.title;
+    if (!$("#af-author").value) $("#af-author").value = r.author;
+    if (!$("#af-site").value) $("#af-site").value = r.site || input;
+    afVerified = { url: r.feed, count: r.count, source: r.source };
+    afStatus(`feed verified — ${r.count} item${r.count === 1 ? "" : "s"}` +
+             (r.source === "direct" ? "" : " · via proxy"), "ok");
+  } catch (err) {
+    afStatus(String(err.message || err), "fail");
+  }
+  $("#af-lookup").disabled = false;
+}
+
+async function afSubmit(e) {
+  e.preventDefault();
+  if (afBusy) return;
+  const name = $("#af-name").value.trim();
+  const site = $("#af-site").value.trim();
+  const feed = $("#af-feed").value.trim();
+  const author = $("#af-author").value.trim() || name;
+  const topics = [...document.querySelectorAll('.af-topic[aria-pressed="true"]')].map(b => b.dataset.id);
+  const tokenIn = $("#af-token").value.trim();
+  if (tokenIn) { lsSet(LS_TOKEN, tokenIn); $("#af-token").value = ""; }
+  if (!$("#af-repo-row").hidden) lsSet(LS_REPO, $("#af-repo").value.trim());
+
+  if (!feed || !name) return afStatus("need at least a name and a feed URL — try Look up", "fail");
+  if (!topics.length) return afStatus("pick at least one topic", "fail");
+  if (!lsGet(LS_TOKEN)) return afStatus("paste a GitHub token first (note below)", "fail");
+  if (!currentRepo()) return afStatus("can't tell which repository this is — fill in the repository field", "fail");
+
+  afBusy = true;
+  $("#af-submit").disabled = true;
+  try {
+    if (afVerified?.url !== feed) {
+      afStatus("verifying the feed…", "dim");
+      const { text, source } = await fetchFeedText(feed);
+      afVerified = { url: feed, count: parseFeed(text).count, source };
+    }
+    afStatus("committing to config.json…", "dim");
+    await commitFeed({ name, author, site, feed, topics });
+    afStatus("committed — the site rebuilds and redeploys in a few minutes, and the new blog appears then", "ok");
+    $("#af-cancel").textContent = "Close";
+  } catch (err) {
+    afStatus(String(err.message || err), "fail");
+    $("#af-submit").disabled = false;
+  }
+  afBusy = false;
+}
+
+$("#add-blog").addEventListener("click", openAddDialog);
+$("#af-lookup").addEventListener("click", afLookup);
+$("#af-url").addEventListener("keydown", e => {
+  if (e.key === "Enter") { e.preventDefault(); afLookup(); }
+});
+$("#af-topics").addEventListener("click", e => {
+  const t = e.target.closest(".af-topic");
+  if (t) t.setAttribute("aria-pressed", t.getAttribute("aria-pressed") === "true" ? "false" : "true");
+});
+$("#add-form").addEventListener("submit", afSubmit);
+$("#af-cancel").addEventListener("click", () => $("#add-dialog").close());
 
 load();
 </script>

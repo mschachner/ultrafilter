@@ -185,6 +185,26 @@ the currently-published data when a section's fresh build fails.
 Any push to `main` redeploys the site with freshly built data, so a config
 change takes effect as soon as its push lands.
 
+### Adding a blog from the page
+
+The **+** button next to the Blogroll heading adds a feed without leaving the
+site. Paste the blog's address and the dialog finds the feed itself — as the
+feed URL directly, via the page's `<link rel="alternate">`, or by probing
+common paths (`/feed/`, `/atom.xml`, …), falling back to the same
+read-through proxies the build uses when the publisher doesn't send CORS
+headers. A source only counts once it actually parses as a feed, and the
+name, author, and site prefill from it. Committing goes through the GitHub
+contents API: the entry is spliced into `config.json` textually (so the
+file's hand formatting survives), and the push triggers the normal
+build-and-deploy — the new blog is on the page a few minutes later.
+Duplicates are refused by feed or site URL.
+
+One-time setup per browser: the dialog asks for a fine-grained PAT with
+read-and-write **Contents** permission on this repository only, kept in
+`localStorage` (`ultrafilter:ghToken`) — it never travels anywhere but
+api.github.com. Off GitHub Pages (localhost, a custom domain) the dialog
+also asks which repository to commit to, since it can't be read off the URL.
+
 ## Reading the ledger
 
 The ledger in the page footer reports the last build: one entry per
