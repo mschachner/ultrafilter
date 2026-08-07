@@ -85,8 +85,8 @@ nothing answers within a beat — installation can't be detected outright. No se
 section quietly reads `pending` in the ledger. Transient fetch failures
 keep the previous day's picks, marked `stale`.
 
-The archive of every pick lives on its own page, `albums.html` ("The
-record crate"), linked under the daily cards: sortable by recommendation
+The archive of every pick lives on its own page, `albums.html` ("All
+albums"), linked under the daily cards: sortable by recommendation
 date, release year, or artist, and filterable by category, genre, and
 search. Its data file, `data/archive.json`, is built by merging the dated
 `albums/*.json` files with `recommendation_history.csv` — picks from
@@ -121,11 +121,18 @@ The contract the task fulfills:
 
 ## Themes
 
-Six presets ship in `index.html` — three light (Broadsheet, the default;
-Preprint; Gallery) and three dark (Slate, Console, Nocturne), each with its
-own faces. The palette button in the masthead switches; the choice persists
-per browser via `localStorage`. All faces are system fonts, so theming adds
-no external requests.
+Fourteen theme families ship in `index.html`, each in a light *and* a dark
+variant — mostly organic, calming palettes (Moss, Flax, Clay, Tidepool,
+Dune) with a few that branch out (Cartographer, Observatory, Zine),
+alongside the original faces (Broadsheet, the default; Preprint; Gallery;
+Slate; Nocturne; Console). The palette button in the masthead picks the
+family and a Light/Dark switch picks the mode; both persist per browser via
+`localStorage` (`ultrafilter:theme`, `ultrafilter:mode`), and a first visit
+follows the system's light/dark preference. All faces are system fonts;
+some families lay a faint tiling texture over the ground colour, loaded
+from [transparenttextures.com](https://www.transparenttextures.com/) — the
+one external request theming makes, and if it can't be reached the plain
+colour simply shows.
 
 ## Setup
 

@@ -14,105 +14,243 @@
 <link rel="icon" href="favicon.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <script>
-  // Apply the stored theme before first paint so there is no flash.
+  // Apply the stored theme before first paint so there is no flash. Values
+  // saved by the old single-mode themes ("slate", ...) map onto the same
+  // family; with nothing saved, the system light/dark preference decides.
   try {
-    const t = localStorage.getItem("ultrafilter:theme");
-    if (t) document.documentElement.dataset.theme = t;
+    const legacyDark = ["slate", "console", "nocturne"];
+    const f = localStorage.getItem("ultrafilter:theme") || "broadsheet";
+    let m = localStorage.getItem("ultrafilter:mode");
+    if (!m) m = legacyDark.includes(f) ? "dark"
+      : matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    document.documentElement.dataset.theme = `${f}-${m}`;
   } catch {}
 </script>
 <style>
   /* ------------------------------- themes -------------------------------
-     Three light, three dark, each with its own faces. Broadsheet (the
-     original cream newspaper) is the default; the palette button in the
-     masthead switches, and the choice persists in this browser. */
-  :root {                       /* Broadsheet — cream newsprint */
-    --bg: #F7F3EB;
-    --ink: #20262B;
-    --muted: #6B7278;
-    --faint: #9AA1A6;
-    --line: #E0D9CB;
-    --hover: #EFEAE0;
-    --accent: #4756A8;
-    --ok: #557A33;
-    --fail: #A33B2E;
+     Fourteen theme families, each with a light and a dark variant. The
+     palette button in the masthead picks the family, a Light/Dark switch
+     picks the mode, and both persist in this browser (a first visit follows
+     the system preference). Broadsheet light is the default and the :root
+     fallback. Fonts are set once per family via the prefix selector; some
+     families lay a faint tiling texture from transparenttextures.com over
+     the ground colour — if the texture fails to load, the plain colour
+     simply shows. */
+  :root {                                    /* Broadsheet — cream newsprint */
+    --bg: #F7F3EB; --ink: #20262B; --muted: #6B7278; --faint: #9AA1A6;
+    --line: #E0D9CB; --hover: #EFEAE0; --accent: #4756A8; --ok: #557A33; --fail: #A33B2E;
+    --texture: none; color-scheme: light;
     --display: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
     --body: Seravek, "Gill Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
     --mono: "SF Mono", Menlo, Consolas, monospace;
   }
-  html[data-theme="preprint"] {  /* Preprint — white paper, LaTeX manners */
-    --bg: #FEFEFC;
-    --ink: #1B1B1F;
-    --muted: #5F6268;
-    --faint: #9B9EA4;
-    --line: #E5E4DF;
-    --hover: #F1F0EB;
-    --accent: #3A5BA0;
-    --ok: #46783A;
-    --fail: #A63B2E;
+  html[data-theme$="-dark"] { color-scheme: dark; }
+  html[data-theme="broadsheet-dark"] {       /* the same newsroom, after close */
+    --bg: #231F19; --ink: #E9E2D3; --muted: #A79E8D; --faint: #6F6759;
+    --line: #3A3429; --hover: #2B2620; --accent: #9AA9E2; --ok: #9CBB80; --fail: #DB9384;
+  }
+
+  html[data-theme^="preprint"] {             /* Preprint — LaTeX manners */
     --display: Baskerville, "Libre Baskerville", "Times New Roman", Georgia, serif;
     --body: Charter, "Bitstream Charter", "Iowan Old Style", Georgia, serif;
     --mono: "Courier New", Courier, monospace;
   }
-  html[data-theme="gallery"] {   /* Gallery — cool white, catalogue sans */
-    --bg: #FAFAF7;
-    --ink: #26282B;
-    --muted: #6F747B;
-    --faint: #A2A6AB;
-    --line: #E4E3DE;
-    --hover: #F0EFEA;
-    --accent: #497A8A;
-    --ok: #5B8046;
-    --fail: #B0503F;
+  html[data-theme="preprint-light"] {
+    --bg: #FEFEFC; --ink: #1B1B1F; --muted: #5F6268; --faint: #9B9EA4;
+    --line: #E5E4DF; --hover: #F1F0EB; --accent: #3A5BA0; --ok: #46783A; --fail: #A63B2E;
+  }
+  html[data-theme="preprint-dark"] {
+    --bg: #1E1D1A; --ink: #E7E4DB; --muted: #9E9B91; --faint: #6B6960;
+    --line: #343330; --hover: #272622; --accent: #90A6D8; --ok: #93B57E; --fail: #D08D7E;
+  }
+
+  html[data-theme^="gallery"] {              /* Gallery — catalogue sans */
     --display: Optima, Candara, "Gill Sans", "Segoe UI", sans-serif;
     --body: "Avenir Next", Avenir, "Helvetica Neue", Helvetica, sans-serif;
     --mono: "SF Mono", Menlo, Consolas, monospace;
   }
-  html[data-theme="slate"] {     /* Slate — the ring palette's blue, after dark */
-    --bg: #242B34;
-    --ink: #E6E1D5;
-    --muted: #9AA2AC;
-    --faint: #67707B;
-    --line: #3A434F;
-    --hover: #2C3541;
-    --accent: #98ABDC;
-    --ok: #98BC7D;
-    --fail: #DB9384;
+  html[data-theme="gallery-light"] {
+    --bg: #FAFAF7; --ink: #26282B; --muted: #6F747B; --faint: #A2A6AB;
+    --line: #E4E3DE; --hover: #F0EFEA; --accent: #497A8A; --ok: #5B8046; --fail: #B0503F;
+  }
+  html[data-theme="gallery-dark"] {
+    --bg: #212426; --ink: #E2E2DD; --muted: #9CA1A6; --faint: #686D72;
+    --line: #35383B; --hover: #292C2E; --accent: #88B0C0; --ok: #9FBE85; --fail: #D6907F;
+  }
+
+  html[data-theme^="moss"] {                 /* Moss — forest floor */
+    --display: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    --body: Seravek, "Gill Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+    --mono: "SF Mono", Menlo, Consolas, monospace;
+  }
+  html[data-theme="moss-light"] {
+    --bg: #EFF1E5; --ink: #2B3327; --muted: #68715F; --faint: #979D8C;
+    --line: #D9DDC8; --hover: #E5E8D6; --accent: #5B7C45; --ok: #557A33; --fail: #A6513A;
+    --texture: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+  }
+  html[data-theme="moss-dark"] {
+    --bg: #1E231B; --ink: #DEE3D0; --muted: #A3AB94; --faint: #6F7764;
+    --line: #343B2C; --hover: #262C21; --accent: #A3C284; --ok: #9CBB80; --fail: #D08D7E;
+    --texture: url("https://www.transparenttextures.com/patterns/black-felt.png");
+  }
+
+  html[data-theme^="flax"] {                 /* Flax — oat, wool, and linen */
+    --display: "Palatino Linotype", Palatino, Georgia, serif;
+    --body: "Gill Sans", Seravek, "Segoe UI", system-ui, sans-serif;
+    --mono: Menlo, Consolas, monospace;
+  }
+  html[data-theme="flax-light"] {
+    --bg: #F6F1E6; --ink: #3A342A; --muted: #7B7263; --faint: #A69E8D;
+    --line: #E3DCC9; --hover: #EEE8D9; --accent: #7C6636; --ok: #5E7A38; --fail: #A6513A;
+    --texture: url("https://www.transparenttextures.com/patterns/light-wool.png");
+  }
+  html[data-theme="flax-dark"] {
+    --bg: #221F19; --ink: #E6E0D1; --muted: #A89E8C; --faint: #736C5C;
+    --line: #393326; --hover: #2A261F; --accent: #CCAA6C; --ok: #9CBB80; --fail: #D08D7E;
+    --texture: url("https://www.transparenttextures.com/patterns/black-linen.png");
+  }
+
+  html[data-theme^="clay"] {                 /* Clay — terracotta and umber */
+    --display: "Hoefler Text", "Palatino Linotype", Palatino, Georgia, serif;
+    --body: Seravek, "Gill Sans", "Segoe UI", system-ui, sans-serif;
+    --mono: Menlo, Consolas, monospace;
+  }
+  html[data-theme="clay-light"] {
+    --bg: #F7EDE2; --ink: #3C2C23; --muted: #826859; --faint: #AE9B8D;
+    --line: #E8D8C7; --hover: #F0E3D4; --accent: #B3593B; --ok: #6B8047; --fail: #A33B2E;
+    --texture: url("https://www.transparenttextures.com/patterns/arches.png");
+  }
+  html[data-theme="clay-dark"] {
+    --bg: #261C15; --ink: #EBDFD2; --muted: #B09A8A; --faint: #7C6A5C;
+    --line: #402F25; --hover: #2F231C; --accent: #DE9471; --ok: #A3BC85; --fail: #E09A88;
+    --texture: url("https://www.transparenttextures.com/patterns/dark-leather.png");
+  }
+
+  html[data-theme^="tidepool"] {             /* Tidepool — sea glass and kelp */
+    --display: Optima, Candara, "Gill Sans", "Segoe UI", sans-serif;
+    --body: "Avenir Next", Avenir, "Helvetica Neue", Helvetica, sans-serif;
+    --mono: "SF Mono", Menlo, Consolas, monospace;
+  }
+  html[data-theme="tidepool-light"] {
+    --bg: #E9F0EC; --ink: #223732; --muted: #5E736D; --faint: #8FA19B;
+    --line: #D2DED7; --hover: #DEE8E2; --accent: #337568; --ok: #4C7A55; --fail: #A6513A;
+    --texture: url("https://www.transparenttextures.com/patterns/wavecut.png");
+  }
+  html[data-theme="tidepool-dark"] {
+    --bg: #16211E; --ink: #D8E2DC; --muted: #93A69F; --faint: #64756E;
+    --line: #2A3832; --hover: #1F2B27; --accent: #7FB5A8; --ok: #93BC93; --fail: #D08D7E;
+    --texture: url("https://www.transparenttextures.com/patterns/dark-fish-skin.png");
+  }
+
+  html[data-theme^="dune"] {                 /* Dune — warm sand, long light */
+    --display: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    --body: "Avenir Next", Avenir, Seravek, "Helvetica Neue", sans-serif;
+    --mono: Menlo, Consolas, monospace;
+  }
+  html[data-theme="dune-light"] {
+    --bg: #F5ECDB; --ink: #453729; --muted: #85735B; --faint: #AE9F87;
+    --line: #E5D8C0; --hover: #EEE4CF; --accent: #9A7130; --ok: #6E7F3C; --fail: #A6432E;
+    --texture: url("https://www.transparenttextures.com/patterns/sandpaper.png");
+  }
+  html[data-theme="dune-dark"] {
+    --bg: #251E14; --ink: #EAE1CD; --muted: #AC9F84; --faint: #786C57;
+    --line: #3C3324; --hover: #2D261B; --accent: #DAB56B; --ok: #A9BC80; --fail: #DB9384;
+    --texture: url("https://www.transparenttextures.com/patterns/black-paper.png");
+  }
+
+  html[data-theme^="cartographer"] {         /* Cartographer — the map room */
+    --display: Baskerville, "Hoefler Text", "Times New Roman", Georgia, serif;
+    --body: Charter, "Bitstream Charter", "Iowan Old Style", Georgia, serif;
+    --mono: "Courier New", Courier, monospace;
+  }
+  html[data-theme="cartographer-light"] {
+    --bg: #F2E9D7; --ink: #3B3123; --muted: #7C6F57; --faint: #A89C83;
+    --line: #E0D3B8; --hover: #EAE0CA; --accent: #9C4A38; --ok: #5F7A3C; --fail: #A33B2E;
+    --texture: url("https://www.transparenttextures.com/patterns/cartographer.png");
+  }
+  html[data-theme="cartographer-dark"] {
+    --bg: #1F242A; --ink: #E2DECD; --muted: #A1A08D; --faint: #6E7061;
+    --line: #343B43; --hover: #282E35; --accent: #CBA260; --ok: #9CBB80; --fail: #DB9384;
+    --texture: url("https://www.transparenttextures.com/patterns/black-thread.png");
+  }
+
+  html[data-theme^="observatory"] {          /* Observatory — dawn sky, star chart */
     --display: "New York", ui-serif, Georgia, serif;
     --body: system-ui, -apple-system, "Helvetica Neue", sans-serif;
     --mono: "SF Mono", Menlo, Consolas, monospace;
   }
-  html[data-theme="console"] {   /* Console — near-black, everything mono */
-    --bg: #17191B;
-    --ink: #D6D3C9;
-    --muted: #8E9296;
-    --faint: #5C6165;
-    --line: #2B2E31;
-    --hover: #202326;
-    --accent: #93B383;
-    --ok: #93B383;
-    --fail: #CD8B7C;
+  html[data-theme="observatory-light"] {
+    --bg: #EDF1F7; --ink: #232837; --muted: #626B7F; --faint: #969DAE;
+    --line: #D7DEE9; --hover: #E2E7F0; --accent: #47539D; --ok: #4F7A3F; --fail: #A84636;
+  }
+  html[data-theme="observatory-dark"] {
+    --bg: #151826; --ink: #DCDEE8; --muted: #9BA0B3; --faint: #676D82;
+    --line: #2B2F43; --hover: #1D2132; --accent: #D9B75E; --ok: #98BC7D; --fail: #DB9384;
+    --texture: url("https://www.transparenttextures.com/patterns/stardust.png");
+  }
+
+  html[data-theme^="slate"] {                /* Slate — the ring palette's blue */
+    --display: "New York", ui-serif, Georgia, serif;
+    --body: system-ui, -apple-system, "Helvetica Neue", sans-serif;
+    --mono: "SF Mono", Menlo, Consolas, monospace;
+  }
+  html[data-theme="slate-light"] {
+    --bg: #EDF0F4; --ink: #232A33; --muted: #606B77; --faint: #96A0AB;
+    --line: #D7DDE4; --hover: #E2E7ED; --accent: #43619E; --ok: #4F7A3F; --fail: #A84636;
+  }
+  html[data-theme="slate-dark"] {
+    --bg: #242B34; --ink: #E6E1D5; --muted: #9AA2AC; --faint: #67707B;
+    --line: #3A434F; --hover: #2C3541; --accent: #98ABDC; --ok: #98BC7D; --fail: #DB9384;
+  }
+
+  html[data-theme^="nocturne"] {             /* Nocturne — plum, dusk and dawn */
+    --display: "Hoefler Text", "Palatino Linotype", Palatino, Georgia, serif;
+    --body: Seravek, "Gill Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+    --mono: Menlo, Consolas, monospace;
+  }
+  html[data-theme="nocturne-light"] {
+    --bg: #F5F0F4; --ink: #342C38; --muted: #7C7182; --faint: #A99FAE;
+    --line: #E4DAE2; --hover: #ECE3EA; --accent: #8A5878; --ok: #5B8046; --fail: #A9503F;
+  }
+  html[data-theme="nocturne-dark"] {
+    --bg: #221E26; --ink: #E9E2D8; --muted: #A79DAC; --faint: #746B79;
+    --line: #37313E; --hover: #2B2531; --accent: #C39FB4; --ok: #9CBB80; --fail: #D68D7E;
+  }
+
+  html[data-theme^="console"] {              /* Console — everything mono */
     --display: "SF Mono", Menlo, Consolas, monospace;
     --body: "SF Mono", Menlo, Consolas, monospace;
     --mono: "SF Mono", Menlo, Consolas, monospace;
   }
-  html[data-theme="nocturne"] {  /* Nocturne — plum-black, an evening face */
-    --bg: #221E26;
-    --ink: #E9E2D8;
-    --muted: #A79DAC;
-    --faint: #746B79;
-    --line: #37313E;
-    --hover: #2B2531;
-    --accent: #C39FB4;
-    --ok: #9CBB80;
-    --fail: #D68D7E;
-    --display: "Hoefler Text", "Palatino Linotype", Palatino, Georgia, serif;
-    --body: Seravek, "Gill Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
-    --mono: Menlo, Consolas, monospace;
+  html[data-theme="console-light"] {
+    --bg: #F2F1E8; --ink: #30372D; --muted: #6E7669; --faint: #9BA294;
+    --line: #DBDCCD; --hover: #E8E8DB; --accent: #4C7A3F; --ok: #4C7A3F; --fail: #A6503C;
+  }
+  html[data-theme="console-dark"] {
+    --bg: #17191B; --ink: #D6D3C9; --muted: #8E9296; --faint: #5C6165;
+    --line: #2B2E31; --hover: #202326; --accent: #93B383; --ok: #93B383; --fail: #CD8B7C;
+  }
+
+  html[data-theme^="zine"] {                 /* Zine — risograph duotone */
+    --display: Futura, "Avenir Next", "Century Gothic", "Gill Sans", sans-serif;
+    --body: "Avenir Next", Avenir, "Helvetica Neue", Helvetica, sans-serif;
+    --mono: "SF Mono", Menlo, Consolas, monospace;
+  }
+  html[data-theme="zine-light"] {
+    --bg: #FAF6EE; --ink: #232244; --muted: #5F5F7B; --faint: #9A9AB1;
+    --line: #E4E0D1; --hover: #F0EBDE; --accent: #2C50C8; --ok: #3F8A4F; --fail: #C24634;
+    --texture: url("https://www.transparenttextures.com/patterns/noisy.png");
+  }
+  html[data-theme="zine-dark"] {
+    --bg: #191A26; --ink: #E6E4EC; --muted: #A2A0B7; --faint: #6E6C83;
+    --line: #2F3043; --hover: #222331; --accent: #E87A9E; --ok: #7FBE8A; --fail: #D97A5F;
+    --texture: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { font-size: 16px; }
   body {
     background: var(--bg);
+    background-image: var(--texture);
     color: var(--ink);
     font-family: var(--body);
     line-height: 1.5;
@@ -299,18 +437,32 @@
   #theme-btn:hover { color: var(--ink); background: var(--hover); }
   #theme-btn svg { width: 1.35rem; height: 1.35rem; }
   #theme-menu { position: absolute; right: 0; top: calc(100% + .55rem); z-index: 40;
-                min-width: 13.5rem; background: var(--bg); border: 1px solid var(--line);
-                border-radius: .6rem; padding: .45rem; box-shadow: 0 .6rem 1.8rem rgba(20, 24, 28, .22); }
-  .theme-group { padding: .3rem .55rem .15rem; }
-  .theme-opt { display: flex; width: 100%; align-items: center; gap: .65rem;
-               border: none; border-radius: .4rem; background: none;
-               padding: .35rem .55rem; font-size: .85rem; color: var(--ink); text-align: left; }
-  .theme-opt:hover { background: var(--hover); }
-  .theme-swatch { flex: none; width: 1.7rem; height: 1.7rem; border-radius: .35rem;
-                  border: 1px solid var(--line); display: flex; align-items: center;
-                  justify-content: center; font-size: .85rem; line-height: 1; }
-  .theme-name { flex: 1; }
-  .theme-check { font-family: var(--mono); font-size: .7rem; color: var(--ok); }
+                width: 21rem; max-width: min(21rem, calc(100vw - 2.2rem));
+                max-height: min(75vh, 34rem); overflow: auto; overscroll-behavior: contain;
+                background: var(--bg); background-image: var(--texture);
+                border: 1px solid var(--line); border-radius: .7rem; padding: .55rem;
+                box-shadow: 0 .6rem 1.8rem rgba(20, 24, 28, .28); }
+  .mode-row { display: flex; gap: .35rem; padding: .1rem .1rem .55rem; margin-bottom: .5rem;
+              border-bottom: 1px dotted var(--line); }
+  .mode-btn { flex: 1; font-family: var(--body); font-size: .78rem; color: var(--muted);
+              background: none; border: 1px solid var(--line); border-radius: 999px;
+              padding: .32rem 0; }
+  .mode-btn[aria-pressed="true"] { color: var(--ink); border-color: var(--muted);
+              background: color-mix(in srgb, var(--ink) 10%, var(--bg)); }
+  .theme-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .25rem .35rem; }
+  .theme-opt { display: flex; align-items: center; gap: .6rem; border: none;
+               border-radius: .5rem; background: none; padding: .35rem .45rem;
+               font-size: .84rem; color: var(--ink); text-align: left; }
+  .theme-opt:hover, .theme-opt[aria-pressed="true"] { background: var(--hover); }
+  .theme-swatch { flex: none; position: relative; width: 2.15rem; height: 2.15rem;
+                  border-radius: .45rem; border: 1px solid var(--line); overflow: hidden;
+                  display: flex; align-items: center; justify-content: center;
+                  font-size: .95rem; line-height: 1; }
+  .theme-opt[aria-pressed="true"] .theme-swatch { outline: 2px solid var(--accent);
+                  outline-offset: 1px; }
+  .theme-dot { position: absolute; right: .2rem; bottom: .2rem; width: .5rem; height: .5rem;
+               border-radius: 999px; }
+  .theme-name { flex: 1; line-height: 1.2; }
 
   /* ---------------------------- add-blog dialog --------------------------- */
   #add-dialog { margin: auto;   /* the global reset kills the UA's centering */
@@ -493,20 +645,64 @@ function esc(s) {
 
 /* -------------------------------- themes -------------------------------- */
 
+const TEXTURES = "https://www.transparenttextures.com/patterns/";
 const THEMES = [
-  { id: "broadsheet", name: "Broadsheet", dark: false, bg: "#F7F3EB", ink: "#20262B", face: "'Iowan Old Style', Palatino, Georgia, serif" },
-  { id: "preprint",   name: "Preprint",   dark: false, bg: "#FEFEFC", ink: "#1B1B1F", face: "Baskerville, Georgia, serif" },
-  { id: "gallery",    name: "Gallery",    dark: false, bg: "#FAFAF7", ink: "#26282B", face: "Optima, Candara, 'Gill Sans', sans-serif" },
-  { id: "slate",      name: "Slate",      dark: true,  bg: "#242B34", ink: "#E6E1D5", face: "'New York', ui-serif, Georgia, serif" },
-  { id: "console",    name: "Console",    dark: true,  bg: "#17191B", ink: "#D6D3C9", face: "'SF Mono', Menlo, monospace" },
-  { id: "nocturne",   name: "Nocturne",   dark: true,  bg: "#221E26", ink: "#E9E2D8", face: "'Hoefler Text', Palatino, Georgia, serif" },
+  { id: "broadsheet",   name: "Broadsheet",   face: "'Iowan Old Style', Palatino, Georgia, serif",
+    light: { bg: "#F7F3EB", ink: "#20262B", accent: "#4756A8", tex: null },
+    dark:  { bg: "#231F19", ink: "#E9E2D3", accent: "#9AA9E2", tex: null } },
+  { id: "preprint",     name: "Preprint",     face: "Baskerville, Georgia, serif",
+    light: { bg: "#FEFEFC", ink: "#1B1B1F", accent: "#3A5BA0", tex: null },
+    dark:  { bg: "#1E1D1A", ink: "#E7E4DB", accent: "#90A6D8", tex: null } },
+  { id: "gallery",      name: "Gallery",      face: "Optima, Candara, 'Gill Sans', sans-serif",
+    light: { bg: "#FAFAF7", ink: "#26282B", accent: "#497A8A", tex: null },
+    dark:  { bg: "#212426", ink: "#E2E2DD", accent: "#88B0C0", tex: null } },
+  { id: "moss",         name: "Moss",         face: "'Iowan Old Style', Palatino, Georgia, serif",
+    light: { bg: "#EFF1E5", ink: "#2B3327", accent: "#5B7C45", tex: "natural-paper" },
+    dark:  { bg: "#1E231B", ink: "#DEE3D0", accent: "#A3C284", tex: "black-felt" } },
+  { id: "flax",         name: "Flax",         face: "'Palatino Linotype', Palatino, Georgia, serif",
+    light: { bg: "#F6F1E6", ink: "#3A342A", accent: "#7C6636", tex: "light-wool" },
+    dark:  { bg: "#221F19", ink: "#E6E0D1", accent: "#CCAA6C", tex: "black-linen" } },
+  { id: "clay",         name: "Clay",         face: "'Hoefler Text', Palatino, Georgia, serif",
+    light: { bg: "#F7EDE2", ink: "#3C2C23", accent: "#B3593B", tex: "arches" },
+    dark:  { bg: "#261C15", ink: "#EBDFD2", accent: "#DE9471", tex: "dark-leather" } },
+  { id: "tidepool",     name: "Tidepool",     face: "Optima, Candara, 'Gill Sans', sans-serif",
+    light: { bg: "#E9F0EC", ink: "#223732", accent: "#337568", tex: "wavecut" },
+    dark:  { bg: "#16211E", ink: "#D8E2DC", accent: "#7FB5A8", tex: "dark-fish-skin" } },
+  { id: "dune",         name: "Dune",         face: "'Iowan Old Style', Palatino, Georgia, serif",
+    light: { bg: "#F5ECDB", ink: "#453729", accent: "#9A7130", tex: "sandpaper" },
+    dark:  { bg: "#251E14", ink: "#EAE1CD", accent: "#DAB56B", tex: "black-paper" } },
+  { id: "cartographer", name: "Cartographer", face: "Baskerville, 'Hoefler Text', Georgia, serif",
+    light: { bg: "#F2E9D7", ink: "#3B3123", accent: "#9C4A38", tex: "cartographer" },
+    dark:  { bg: "#1F242A", ink: "#E2DECD", accent: "#CBA260", tex: "black-thread" } },
+  { id: "observatory",  name: "Observatory",  face: "'New York', ui-serif, Georgia, serif",
+    light: { bg: "#EDF1F7", ink: "#232837", accent: "#47539D", tex: null },
+    dark:  { bg: "#151826", ink: "#DCDEE8", accent: "#D9B75E", tex: "stardust" } },
+  { id: "slate",        name: "Slate",        face: "'New York', ui-serif, Georgia, serif",
+    light: { bg: "#EDF0F4", ink: "#232A33", accent: "#43619E", tex: null },
+    dark:  { bg: "#242B34", ink: "#E6E1D5", accent: "#98ABDC", tex: null } },
+  { id: "nocturne",     name: "Nocturne",     face: "'Hoefler Text', Palatino, Georgia, serif",
+    light: { bg: "#F5F0F4", ink: "#342C38", accent: "#8A5878", tex: null },
+    dark:  { bg: "#221E26", ink: "#E9E2D8", accent: "#C39FB4", tex: null } },
+  { id: "console",      name: "Console",      face: "'SF Mono', Menlo, monospace",
+    light: { bg: "#F2F1E8", ink: "#30372D", accent: "#4C7A3F", tex: null },
+    dark:  { bg: "#17191B", ink: "#D6D3C9", accent: "#93B383", tex: null } },
+  { id: "zine",         name: "Zine",         face: "Futura, 'Avenir Next', sans-serif",
+    light: { bg: "#FAF6EE", ink: "#232244", accent: "#2C50C8", tex: "noisy" },
+    dark:  { bg: "#191A26", ink: "#E6E4EC", accent: "#E87A9E", tex: "asfalt-dark" } },
 ];
-let currentTheme = document.documentElement.dataset.theme || "broadsheet";
-if (!THEMES.some(t => t.id === currentTheme)) currentTheme = "broadsheet";
-const isDarkTheme = () => THEMES.find(t => t.id === currentTheme)?.dark ?? false;
 
-// The topic palette is tuned for light grounds; on dark themes, lift each
+// Family and mode, recovered from the attribute the pre-paint script set.
+let themeFamily = "broadsheet", themeMode = "light";
+{
+  const m = (document.documentElement.dataset.theme || "").match(/^([a-z]+)-(light|dark)$/);
+  if (m && THEMES.some(t => t.id === m[1])) { themeFamily = m[1]; themeMode = m[2]; }
+  else if (matchMedia("(prefers-color-scheme: dark)").matches) themeMode = "dark";
+  document.documentElement.dataset.theme = `${themeFamily}-${themeMode}`;
+}
+
+// The topic palette is tuned for light grounds; on dark variants, lift each
 // colour's lightness (and ease its saturation) so dots and chips stay legible.
+const isDarkTheme = () => themeMode === "dark";
 function themeDot(hex) {
   if (!isDarkTheme() || !/^#[0-9a-f]{6}$/i.test(hex)) return hex;
   const [r, g, b] = [1, 3, 5].map(i => parseInt(hex.slice(i, i + 2), 16) / 255);
@@ -520,24 +716,34 @@ function themeDot(hex) {
   return "#" + [R, G, B].map(v => Math.round((v + m) * 255).toString(16).padStart(2, "0")).join("");
 }
 
-function applyTheme(id) {
-  currentTheme = THEMES.some(t => t.id === id) ? id : "broadsheet";
-  if (currentTheme === "broadsheet") delete document.documentElement.dataset.theme;
-  else document.documentElement.dataset.theme = currentTheme;
-  try { localStorage.setItem("ultrafilter:theme", currentTheme); } catch {}
+function setTheme(family, mode) {
+  themeFamily = THEMES.some(t => t.id === family) ? family : "broadsheet";
+  themeMode = mode === "dark" ? "dark" : "light";
+  document.documentElement.dataset.theme = `${themeFamily}-${themeMode}`;
+  try {
+    localStorage.setItem("ultrafilter:theme", themeFamily);
+    localStorage.setItem("ultrafilter:mode", themeMode);
+  } catch {}
   renderWiki();        // re-tint topic dots for the new ground
   renderBlogroll();
 }
 
 function renderThemeMenu() {
-  const groups = [["Light", THEMES.filter(t => !t.dark)], ["Dark", THEMES.filter(t => t.dark)]];
-  $("#theme-menu").innerHTML = groups.map(([label, list]) =>
-    `<div class="theme-group klabel">${label}</div>` + list.map(t => `
-      <button class="theme-opt" data-theme="${t.id}">
-        <span class="theme-swatch" style="background:${t.bg};color:${t.ink};font-family:${t.face}">Aa</span>
-        <span class="theme-name">${esc(t.name)}</span>
-        ${t.id === currentTheme ? '<span class="theme-check">&#10003;</span>' : ""}
-      </button>`).join("")).join("");
+  const opts = THEMES.map(t => {
+    const v = t[themeMode];
+    const tex = v.tex ? `background-image:url('${TEXTURES}${v.tex}.png');` : "";
+    return `<button class="theme-opt" data-theme="${t.id}" aria-pressed="${t.id === themeFamily}">
+      <span class="theme-swatch" style="background-color:${v.bg};${tex}color:${v.ink};font-family:${t.face}">Aa<span
+        class="theme-dot" style="background:${v.accent}"></span></span>
+      <span class="theme-name">${esc(t.name)}</span>
+    </button>`;
+  }).join("");
+  $("#theme-menu").innerHTML = `
+    <div class="mode-row" role="group" aria-label="Light or dark">
+      <button class="mode-btn" data-mode="light" aria-pressed="${themeMode === "light"}">Light</button>
+      <button class="mode-btn" data-mode="dark" aria-pressed="${themeMode === "dark"}">Dark</button>
+    </div>
+    <div class="theme-grid">${opts}</div>`;
 }
 
 function closeThemeMenu() {
@@ -753,7 +959,7 @@ function renderAlbums() {
 
   $("#albums-sec").innerHTML = sectionHead("Today's albums", a.date) +
     `<div class="albums">${cards}</div>` +
-    `<a class="crate-link" href="albums.html">The record crate &rarr;</a>`;
+    `<a class="crate-link" href="albums.html">All albums &rarr;</a>`;
   $("#albums-sec").classList.add("on");
 }
 
@@ -1055,10 +1261,14 @@ $("#theme-btn").addEventListener("click", e => {
   else closeThemeMenu();
 });
 $("#theme-menu").addEventListener("click", e => {
+  // Re-rendering the menu detaches the clicked node, which would make the
+  // outside-click closer below misread this as an outside click — so the
+  // menu stays open for browsing; Esc or a click elsewhere dismisses it.
+  e.stopPropagation();
+  const mode = e.target.closest(".mode-btn");
+  if (mode) { setTheme(themeFamily, mode.dataset.mode); renderThemeMenu(); return; }
   const opt = e.target.closest(".theme-opt");
-  if (!opt) return;
-  applyTheme(opt.dataset.theme);
-  renderThemeMenu();
+  if (opt) { setTheme(opt.dataset.theme, themeMode); renderThemeMenu(); }
 });
 document.addEventListener("click", e => {
   if (!e.target.closest("#theme-ui")) closeThemeMenu();
