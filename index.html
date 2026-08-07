@@ -295,8 +295,38 @@
   .klabel { font-family: var(--mono); font-size: .66rem; letter-spacing: .09em;
             text-transform: uppercase; color: var(--muted); }
 
-  #albums-sec, #wiki-sec { display: none; }
-  #albums-sec.on, #wiki-sec.on { display: block; }
+  #albums-sec, #wiki-sec, #art-sec { display: none; }
+  #albums-sec.on, #wiki-sec.on, #art-sec.on { display: block; }
+
+  /* ------------------------------ artwork ------------------------------- */
+  .art-btn { display: block; width: 100%; padding: 0; margin: 0; border: none;
+             background: none; cursor: zoom-in; border-radius: .4rem; }
+  .art-img { display: block; width: 100%; border-radius: .4rem;
+             border: 1px solid var(--line); background: var(--hover); }
+  @media (prefers-reduced-motion: no-preference) {
+    .art-img { transition: transform .15s ease, box-shadow .15s ease; }
+  }
+  .art-btn:hover { background: none; }
+  .art-btn:hover .art-img, .art-btn:focus-visible .art-img {
+    transform: scale(1.01); box-shadow: 0 .35rem 1rem rgba(20, 24, 28, .35); }
+  .art-caption { margin-top: .65rem; }
+  .art-title { font-family: var(--display); font-size: 1.2rem; line-height: 1.3; }
+  .art-title a { color: var(--ink); text-decoration: none; }
+  .art-title a:hover { text-decoration: underline; text-underline-offset: 3px; }
+  .art-year { font-style: normal; font-size: .9rem; color: var(--muted); }
+  .art-byline { font-size: .84rem; color: var(--muted); margin-top: .15rem; }
+  .art-byline a { color: var(--muted); }
+  .art-byline a:hover { color: var(--ink); }
+  .art-extract { font-size: .88rem; line-height: 1.5; margin-top: .7rem;
+                 display: -webkit-box; -webkit-line-clamp: 6;
+                 -webkit-box-orient: vertical; overflow: hidden; }
+  .art-extract.artist { -webkit-line-clamp: 4; margin-top: .55rem; }
+  /* The section runs headerless: a quiet control row sits above the plate —
+     interest label, the date when it isn't today's, and the reroll die. */
+  .art-top { display: flex; align-items: center; gap: .75rem; margin: 2.4rem 0 .55rem; }
+  .art-top .reroll { margin-left: auto; }
+  .art-date { font-family: var(--mono); font-size: .72rem; letter-spacing: .04em;
+              color: var(--muted); }
 
   /* Each card sits on its category's colour; all type on it runs cream. */
   .albums { display: flex; flex-wrap: wrap; gap: 1.25rem; align-items: stretch; }
@@ -335,6 +365,9 @@
   #lightbox[hidden] { display: none; }
   #lightbox .lb-art { width: min(76vmin, 40rem); aspect-ratio: 1; border-radius: .5rem;
                       object-fit: cover; box-shadow: 0 1.5rem 4rem rgba(20, 24, 28, .5); }
+  /* Paintings aren't square: the artwork view keeps the true aspect ratio. */
+  #lightbox .lb-art.contain { width: auto; max-width: min(92vw, 62rem); max-height: 80vh;
+                              aspect-ratio: auto; object-fit: contain; }
   #lightbox figure, #lb-stage { display: contents; }
   #lightbox figcaption { font-family: var(--display); font-size: 1.05rem; color: #F7F3EB;
                          text-shadow: 0 1px 8px rgba(20, 24, 28, .6); text-align: center;
@@ -582,6 +615,7 @@
       <p id="status-line">Loading posts&hellip;</p>
     </div>
     <aside class="rail">
+      <section id="art-sec" aria-label="Artwork"></section>
       <section id="albums-sec" aria-label="Albums"></section>
     </aside>
   </div>
@@ -629,7 +663,7 @@
 </div>
 
 <script>
-const state = { blogroll: null, wikipedia: null, albums: null, weather: null };
+const state = { blogroll: null, wikipedia: null, albums: null, artwork: null, weather: null };
 const sectionNotes = {};   // ledger rows for the non-blogroll sections
 let activeTopic = "all";
 let postsShown = 15;       // "Show more" lifts this to everything
@@ -927,6 +961,173 @@ function closeLightbox() {
   document.body.style.overflow = "";
 }
 
+/* ------------------------------- artwork ------------------------------- */
+
+function renderArt() {
+  const a = state.artwork;
+  if (!a?.artwork) {
+    sectionNotes.artwork = a?.status === "pending"
+      ? { cls: "dim", text: "pending" }
+      : { cls: "fail", text: `failed — ${a?.error || "no data"}` };
+    return;
+  }
+  sectionNotes.artwork = { cls: a.stale ? "dim" : "ok", text: `${a.stale ? "stale · " : ""}${a.date}` };
+
+  const w = a.artwork, artist = a.artist;
+  const year = w.year != null ? ` <span class="art-year">(${esc(w.year)})</span>` : "";
+  const byName = artist?.url
+    ? `<a href="${esc(artist.url)}" target="_blank" rel="noopener">${esc(artist.name)}</a>`
+    : esc(artist?.name || "Unknown artist");
+  const artistBit = artist?.extract
+    ? `<p class="art-extract artist">${esc(artist.extract)}</p>` : "";
+  const dated = a.date && a.date !== TODAY_KEY
+    ? `<span class="art-date">${esc(prettyDate(a.date))}</span>` : "";
+  const die = a.interests?.length
+    ? `<button id="art-reroll" class="reroll" title="Another artwork"
+         aria-label="Show another artwork">${DICE}</button>` : "";
+
+  $("#art-sec").innerHTML = `
+    <div class="art-top"><span class="klabel">${esc(a.interestLabel || "Artwork")}</span>${dated}${die}</div>
+    <figure class="art">
+      <button class="art-btn" aria-label="View ${esc(w.title)} larger">
+        <img class="art-img" src="${esc(w.image)}" alt="${esc(w.title)}">
+      </button>
+      <figcaption class="art-caption">
+        <div class="art-title"><a href="${esc(w.url)}" target="_blank" rel="noopener"><i>${esc(w.title)}</i></a>${year}</div>
+        <div class="art-byline">${byName}${w.location ? ` &middot; ${esc(w.location)}` : ""}</div>
+      </figcaption>
+    </figure>
+    <p class="art-extract">${esc(w.extract)}</p>${artistBit}`;
+  $("#art-sec").classList.add("on");
+}
+
+function openArtLightbox() {
+  const a = state.artwork, w = a?.artwork;
+  if (!w) return;
+  const img = document.createElement("img");
+  img.className = "lb-art contain";
+  img.alt = w.title;
+  img.onerror = () => { if (img.src !== w.image) { img.onerror = null; img.src = w.image; } };
+  img.src = w.imageLarge || w.image;
+  $("#lb-stage").replaceChildren(img);
+  $("#lb-cap").textContent =
+    `${a.artist?.name ? `${a.artist.name} — ` : ""}${w.title}${w.year != null ? ` (${w.year})` : ""}`;
+  $("#lightbox").hidden = false;
+  document.body.style.overflow = "hidden";
+  $("#lb-close").focus();
+}
+
+/* The die: redo the day's draw client-side with a random seed and interest.
+   Both APIs answer anonymous CORS requests. This query MIRRORS sparqlFor()
+   in scripts/sections/artwork.mjs — a change there means a change here. */
+function artSparql(interest, seed) {
+  const ok = v => /^Q\d+$/.test(v || "");
+  const classes = (interest.classes?.length ? interest.classes : ["Q3305213"])
+    .filter(ok).map(q => `wd:${q}`).join(" ");
+  const facets = [
+    (interest.movements || []).filter(ok).map(q => `{ ?item wdt:P135 wd:${q} . }`),
+    (interest.genres || []).filter(ok).map(q => `{ ?item wdt:P136 wd:${q} . }`),
+  ].filter(list => list.length)
+   .map(list => `{ ${list.join(" UNION ")} }`).join("\n  ");
+  const from = interest.from != null ? Number(interest.from) : null;
+  const to = interest.to != null ? Number(interest.to) : null;
+  const inception = from != null || to != null
+    ? `?item wdt:P571 ?inc . BIND(YEAR(?inc) AS ?year)
+  ${from != null ? `FILTER(?year >= ${from})` : ""}
+  ${to != null ? `FILTER(?year <= ${to})` : ""}`
+    : `OPTIONAL { ?item wdt:P571 ?inc . BIND(YEAR(?inc) AS ?year) }`;
+  return `SELECT ?item ?year ?image ?article ?creatorArticle ?creatorLabel ?locationLabel WHERE {
+  VALUES ?class { ${classes} }
+  ?item wdt:P31 ?class ; wdt:P18 ?image .
+  ${facets}
+  ?article schema:about ?item ; schema:isPartOf <https://en.wikipedia.org/> .
+  ${inception}
+  OPTIONAL {
+    ?item wdt:P170 ?creator .
+    OPTIONAL { ?creatorArticle schema:about ?creator ;
+                               schema:isPartOf <https://en.wikipedia.org/> . }
+  }
+  OPTIONAL { ?item wdt:P276 ?location . }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+}
+ORDER BY MD5(CONCAT(STR(?item), "${seed}"))
+LIMIT 8`;
+}
+
+async function wikiSummary(articleUrl) {
+  const title = decodeURIComponent(new URL(articleUrl).pathname.replace("/wiki/", ""));
+  const s = await (await fetch(
+    `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(title)}`,
+    { signal: AbortSignal.timeout(10000) })).json();
+  return {
+    title: s?.titles?.normalized || title.replace(/_/g, " "),
+    description: s?.description || "",
+    extract: s?.extract || "",
+    url: s?.content_urls?.desktop?.page || articleUrl,
+  };
+}
+
+let artRerolling = false;
+
+async function rerollArt() {
+  const a = state.artwork;
+  if (!a?.interests?.length || artRerolling) return;
+  artRerolling = true;
+  $("#art-reroll")?.classList.add("spin");
+  try {
+    // Same weighting as the build's day-of-year rotation.
+    const pool = a.interests.flatMap(i => Array(Math.max(1, i.weight ?? 1)).fill(i));
+    const interest = pool[Math.floor(Math.random() * pool.length)];
+    const q = artSparql(interest, String(Math.random()));
+    const doc = await (await fetch(
+      `https://query.wikidata.org/sparql?query=${encodeURIComponent(q)}&format=json`,
+      { signal: AbortSignal.timeout(20000),
+        headers: { Accept: "application/sparql-results+json" } })).json();
+
+    const isQ = v => /^Q\d+$/.test(v || "");
+    const byItem = new Map();
+    for (const r of doc?.results?.bindings || []) {
+      const id = r.item?.value;
+      if (id && !byItem.has(id)) byItem.set(id, r);
+    }
+    const rows = [...byItem.values()];
+    const row = rows.find(r => r.item.value.split("/").pop() !== a.artwork?.wikidata) || rows[0];
+    if (!row) return;
+
+    const work = await wikiSummary(row.article.value);
+    const creatorName = isQ(row.creatorLabel?.value) ? "" : row.creatorLabel?.value || "";
+    let artist = creatorName ? { name: creatorName } : null;
+    if (row.creatorArticle?.value) {
+      try {
+        const s = await wikiSummary(row.creatorArticle.value);
+        artist = { name: creatorName || s.title, description: s.description,
+                   extract: s.extract, url: s.url };
+      } catch {}
+    }
+    const image = row.image.value.replace(/^http:/, "https:");
+    state.artwork = { ...a,
+      interestId: interest.id,
+      interestLabel: interest.label,
+      artwork: {
+        wikidata: row.item.value.split("/").pop(),
+        title: work.title,
+        description: work.description,
+        extract: work.extract,
+        url: work.url,
+        year: row.year?.value != null ? Number(row.year.value) : null,
+        location: isQ(row.locationLabel?.value) ? "" : row.locationLabel?.value || "",
+        image: `${image}?width=1100`,
+        imageLarge: `${image}?width=1800`,
+      },
+      artist,
+    };
+    renderArt();
+  } catch {} finally {
+    artRerolling = false;
+    $("#art-reroll")?.classList.remove("spin");
+  }
+}
+
 function renderAlbums() {
   const a = state.albums;
   if (!a?.albums?.length) {
@@ -1106,6 +1307,7 @@ function renderLedger() {
     `<div class="ledger-sections"><span class="klabel">Ledger</span>` + blogrollSeg +
     seg("Wikipedia", sectionNotes.wikipedia) +
     seg("Albums", sectionNotes.albums) +
+    seg("Artwork", sectionNotes.artwork) +
     seg("Weather", sectionNotes.weather) + `</div>` +
     (feedsOpen && feedRows ? `<div class="lfeeds">${feedRows}</div>` : "");
 
@@ -1193,13 +1395,15 @@ async function loadJson(name) {
 async function load() {
   $("#mast-date").textContent = prettyDate(TODAY_KEY);
 
-  const [b, w, a, wx] = await Promise.allSettled(
-    ["blogroll", "wikipedia", "albums", "weather"].map(loadJson));
+  const [b, w, a, art, wx] = await Promise.allSettled(
+    ["blogroll", "wikipedia", "albums", "artwork", "weather"].map(loadJson));
   state.blogroll = b.status === "fulfilled" ? b.value : { error: b.reason?.message };
   state.wikipedia = w.status === "fulfilled" ? w.value : { error: w.reason?.message };
   state.albums = a.status === "fulfilled" ? a.value : { error: a.reason?.message, status: "failed" };
+  state.artwork = art.status === "fulfilled" ? art.value : { error: art.reason?.message, status: "failed" };
   state.weather = wx.status === "fulfilled" ? wx.value : null;
 
+  renderArt();
   renderAlbums();
   renderWiki();
   renderBlogroll();
@@ -1243,6 +1447,10 @@ $("#albums-sec").addEventListener("click", e => {
 });
 $("#wiki-sec").addEventListener("click", e => {
   if (e.target.closest("#reroll")) rerollPicks();
+});
+$("#art-sec").addEventListener("click", e => {
+  if (e.target.closest("#art-reroll")) return rerollArt();
+  if (e.target.closest(".art-btn")) openArtLightbox();
 });
 $("#lightbox").addEventListener("click", e => {
   // The X, or anywhere that isn't the artwork itself, closes the view.

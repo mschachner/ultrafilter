@@ -33,8 +33,7 @@
       { "name": "Two Coats of Paint",       "author": "Sharon Butler",             "site": "https://twocoatsofpaint.com",                  "feed": "https://twocoatsofpaint.com/feed/",                      "topics": ["arts"] },
       { "name": "RealClimate",              "author": "Climate scientists",        "site": "https://www.realclimate.org",                  "feed": "https://www.realclimate.org/index.php/feed/",            "topics": ["climate"] },
       { "name": "Carbon Brief",             "author": "Carbon Brief staff",        "site": "https://www.carbonbrief.org",                  "feed": "https://www.carbonbrief.org/feed/",                      "topics": ["climate"] },
-      { "name": "Legal Planet",             "author": "UCLA/Berkeley law",         "site": "https://legal-planet.org",                     "feed": "https://legal-planet.org/feed/",                         "topics": ["climate"] },
-      { "name": "Left for the Reader", "author": "Left for the Reader", "site": "https://kkapulkin.github.io/blog/", "feed": "https://kkapulkin.github.io/feed.xml", "topics": ["math"] }
+      { "name": "Legal Planet",             "author": "UCLA/Berkeley law",         "site": "https://legal-planet.org",                     "feed": "https://legal-planet.org/feed/",                         "topics": ["climate"] }
     ]
   },
 
@@ -57,6 +56,20 @@
       { "id": "arthist", "label": "Art history", "articleTopics": ["visual-arts", "architecture"] },
       { "id": "arts",    "label": "Arts",        "articleTopics": ["performing-arts", "music"] },
       { "id": "climate", "label": "Climate",     "articleTopics": ["earth-and-environment"] }
+    ]
+  },
+
+  "artwork": {
+    "timezone": "America/New_York",
+    "interests": [
+      { "id": "modern",       "label": "Modern art",               "movements": ["Q38166"],  "weight": 3 },
+      { "id": "implandscape", "label": "Impressionist landscapes", "movements": ["Q40415"],  "genres": ["Q191163"] },
+      { "id": "abex",         "label": "Abstract Expressionism",   "movements": ["Q177725"] },
+      { "id": "surrealism",   "label": "Surrealism",               "movements": ["Q39427"] },
+      { "id": "ukiyoe",       "label": "Ukiyo-e",                  "movements": ["Q185905"], "classes": ["Q3305213", "Q11060274"] },
+      { "id": "popart",       "label": "Pop Art",                  "movements": ["Q134147"] },
+      { "id": "contemporary", "label": "Contemporary",             "movements": ["Q186030"], "from": 1960 },
+      { "id": "sculpture",    "label": "Sculpture",                "classes": ["Q860861"],   "from": 1900 }
     ]
   },
 

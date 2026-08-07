@@ -20,6 +20,7 @@ import * as blogroll from "./sections/blogroll.mjs";
 import * as wikipedia from "./sections/wikipedia.mjs";
 import * as albums from "./sections/albums.mjs";
 import * as archive from "./sections/archive.mjs";
+import * as artwork from "./sections/artwork.mjs";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const CONFIG_PATH = resolve(ROOT, "config.json");
@@ -30,6 +31,7 @@ const SECTIONS = [
   { name: "wikipedia", ...wikipedia },
   { name: "albums", ...albums },
   { name: "archive", ...archive },
+  { name: "artwork", ...artwork },
 ];
 
 export async function main() {
@@ -77,7 +79,9 @@ export async function main() {
         results.wikipedia?.date || results.wikipedia?.status || "?"
       }${results.wikipedia?.stale ? " [stale]" : ""}, albums ${
         results.albums?.date || results.albums?.status || "?"
-      }${results.albums?.stale ? " [stale]" : ""}`
+      }${results.albums?.stale ? " [stale]" : ""}, artwork ${
+        results.artwork?.date || results.artwork?.status || "?"
+      }${results.artwork?.stale ? " [stale]" : ""}`
   );
 
   // The blogroll is the page's backbone: with no posts at all (fresh build

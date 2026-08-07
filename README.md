@@ -1,9 +1,9 @@
 # Ultrafilter
 
-A personal daily feed on GitHub Pages, in four sections: a hand-picked
+A personal daily feed on GitHub Pages, in five sections: a hand-picked
 blogroll, the weather, Wikipedia (the day's featured article plus a few
-quality articles from chosen interest areas), and the day's three album
-picks.
+quality articles from chosen interest areas), the day's three album
+picks, and a daily artwork.
 
 The architecture is one-directional. A scheduled GitHub Action builds every
 section's data file and deploys the site (page + data) straight to Pages —
@@ -70,6 +70,51 @@ often the build runs.
 Each entry in `wikipedia.topics` maps an interest area to one or more
 [articletopic values](https://www.mediawiki.org/wiki/Help:CirrusSearch#articletopic);
 add or reweight areas there.
+
+### Artwork
+
+One work a day, picked from Wikidata and described with Wikipedia's own
+prose. Candidates are works matching the movements (`P135` values), genres
+(`P136` values), and optional inception window configured per interest
+area in `config.json` — and they must have both an image on Commons and an
+English Wikipedia article, which is what guarantees there's real text to
+show about the work. The article's lead paragraph (and the artist's, when
+the creator has an article) comes from the same REST summary endpoint the
+Wikipedia section uses. Which interest area supplies the day rotates with
+the day of the year; within it the pick is deterministic — candidates are
+ordered by a hash of the item and the date — so rebuilds on the same day
+agree without any stored state, and yesterday's work is avoided when
+there's a choice. The die beside the plate re-rolls client-side, exactly
+like the Wikipedia picks: a random interest area with a fresh seed,
+straight from the browser (both APIs answer anonymous CORS requests; the
+page carries a mirror of the builder's query, so changes to one mean
+changes to the other). Images hotlink from Commons through
+`Special:FilePath` at a bounded width, so the page never pulls a
+full-resolution scan; clicking the image opens a larger view.
+
+Each entry in `artwork.interests` looks like:
+
+```jsonc
+{
+  "id": "implandscape",
+  "label": "Impressionist landscapes",  // shown above the plate
+  "movements": ["Q40415"],              // P135 values — alternatives (OR)
+  "genres": ["Q191163"],                // P136 values — alternatives (OR)
+  "from": 1860, "to": 1930,             // optional inception window (P571)
+  "weight": 3,                          // optional slots in the rotation (default 1)
+  "classes": ["Q3305213", "Q11060274"]  // optional; the default is painting
+}
+```
+
+Within `movements` (and within `genres`) the values are alternatives, but
+listing *both* keys requires both to match — the example above means
+Impressionist landscapes, not either. `weight` gives favourite areas more
+days in the rotation (and more rolls of the die). To add an area, find the
+movement or genre on wikidata.org (search for "cubism", say — the Q-number
+is right in the page title) and list it. An interest whose tradition isn't
+mainly paintings can widen `classes`, as the ukiyo-e default does to
+include prints; a `classes`-only interest (no movements or genres) works
+too — the sculpture default is just every notable sculpture from 1900 on.
 
 ### Albums
 
@@ -183,7 +228,8 @@ Two caveats worth being clear about:
 ## Maintaining it
 
 Everything lives in `config.json`: the blogroll's topics and feeds, the
-weather location, the Wikipedia interest areas, and the albums data source.
+weather location, the Wikipedia interest areas, the artwork interest
+areas, and the albums data source.
 Adding a blogroll topic means adding an entry to `blogroll.topics` and
 referencing its `id` from any feed; the filter chips and dot colors follow
 automatically. `site` is the deployed URL, which the build uses to recover
