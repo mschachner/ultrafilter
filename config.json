@@ -33,7 +33,8 @@
       { "name": "Two Coats of Paint",       "author": "Sharon Butler",             "site": "https://twocoatsofpaint.com",                  "feed": "https://twocoatsofpaint.com/feed/",                      "topics": ["arts"] },
       { "name": "RealClimate",              "author": "Climate scientists",        "site": "https://www.realclimate.org",                  "feed": "https://www.realclimate.org/index.php/feed/",            "topics": ["climate"] },
       { "name": "Carbon Brief",             "author": "Carbon Brief staff",        "site": "https://www.carbonbrief.org",                  "feed": "https://www.carbonbrief.org/feed/",                      "topics": ["climate"] },
-      { "name": "Legal Planet",             "author": "UCLA/Berkeley law",         "site": "https://legal-planet.org",                     "feed": "https://legal-planet.org/feed/",                         "topics": ["climate"] }
+      { "name": "Legal Planet",             "author": "UCLA/Berkeley law",         "site": "https://legal-planet.org",                     "feed": "https://legal-planet.org/feed/",                         "topics": ["climate"] },
+      { "name": "Left for the Reader", "author": "Left for the Reader", "site": "https://kkapulkin.github.io/blog/", "feed": "https://kkapulkin.github.io/feed.xml", "topics": ["math"] }
     ]
   },
 
