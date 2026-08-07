@@ -299,9 +299,13 @@
   #albums-sec.on, #wiki-sec.on, #art-sec.on { display: block; }
 
   /* ------------------------------ artwork ------------------------------- */
-  .art-btn { display: block; width: 100%; padding: 0; margin: 0; border: none;
-             background: none; cursor: zoom-in; border-radius: .4rem; }
-  .art-img { display: block; width: 100%; border-radius: .4rem;
+  .art-btn { display: block; width: fit-content; max-width: 100%; padding: 0; margin: 0;
+             border: none; background: none; cursor: zoom-in; border-radius: .4rem; }
+  /* Bounded in both directions: a landscape stops at 34rem wide, a portrait
+     at 26rem tall, and either fits the rail on narrow screens. The full-size
+     view is one click away in the lightbox. */
+  .art-img { display: block; width: auto; height: auto;
+             max-width: min(100%, 34rem); max-height: 26rem; border-radius: .4rem;
              border: 1px solid var(--line); background: var(--hover); }
   @media (prefers-reduced-motion: no-preference) {
     .art-img { transition: transform .15s ease, box-shadow .15s ease; }
