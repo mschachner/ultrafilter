@@ -294,7 +294,8 @@
   .grid + .grid { margin-top: 1.1rem; }
   .tile { background: var(--acc, var(--hover)); color: #F0EBE1; border-radius: .5rem;
           padding: .9rem 1rem; cursor: pointer; border: none; text-align: left;
-          display: flex; align-items: center; gap: 1rem; }
+          display: flex; align-items: center; gap: 1rem; position: relative; }
+  .tile .ll-badges { position: absolute; top: .75rem; right: .85rem; }
   .tile:hover { background: var(--acc); transform: translateY(-2px);
                 box-shadow: 0 .45rem 1.1rem rgba(20, 24, 28, .3); }
   @media (prefers-reduced-motion: no-preference) {
@@ -445,6 +446,7 @@
 
 </div>
 
+<script src="listening.js"></script>
 <script>
 const $ = sel => document.querySelector(sel);
 function esc(s) {
@@ -630,6 +632,7 @@ function tile(e, i) {
       <span class="tile-album">${esc(e.album)}${e.year ? ` <span class="tile-year">(${esc(e.year)})</span>` : ""}</span>
       ${e.genres?.length ? `<span class="tile-genres">${esc(e.genres.join(" · "))}</span>` : ""}
     </span>
+    ${LL.badges(e.artist, e.album)}
   </button>`;
 }
 
@@ -732,6 +735,7 @@ function openDetail(i) {
       ${e.genres?.length ? `<div class="sleeve-genres">${esc(e.genres.join(" · "))}</div>` : ""}
       ${e.blurb ? `<p>${esc(e.blurb)}</p>` : ""}
       ${e.reception ? `<p class="reception">${esc(e.reception)}</p>` : ""}
+      ${LL.control(e.artist, e.album)}
     </div>`;
   $("#detail").hidden = false;
   document.body.style.overflow = "hidden";
@@ -765,6 +769,12 @@ async function load() {
     const data = await res.json();
     entries = data.entries || [];
     if (!entries.length) throw new Error(data.status === "pending" ? "no albums yet" : "no data");
+    // Listening log: marks made in the overlay re-badge the crate behind it,
+    // and a live copy of the log (when a token is present) restyles on arrival.
+    LL.seed(entries);
+    LL.bind($("#detail"));
+    LL.onChange = () => { render(); LL.syncCtls(); };
+    LL.refresh();
     // Genre list from the data, first-seen casing, alphabetical.
     const seen = new Map();
     for (const e of entries) for (const g of e.genres || []) {

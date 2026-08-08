@@ -140,6 +140,32 @@ uses the currently-published archive as a cache, so it only reads what's
 new. The two pages duplicate the theme CSS; a theme change means editing
 both.
 
+#### Listening log
+
+Every album card carries a "Listened" checkbox, and a checked card grows a
+heart for marking the album liked — on the daily cards, in the archive's
+detail overlay, and as small badges on the archive tiles. The marks live in
+`listening_log.csv` in the same private data repository
+(`artist,album,first_listened,liked`, one row per listened album), which
+makes them the one deliberate exception to the site's one-directional
+architecture: the page *writes* as well as reads. `listening.js` (shared by
+both pages) commits the file through the GitHub contents API using a
+fine-grained PAT with read-and-write **Contents** access to the data
+repository — offered for pasting on your first mark, reopenable by
+shift-clicking any checkbox, and kept in that browser's localStorage
+(separately from the add-a-blog dialog's token, though a single PAT granted
+access to both repositories can be pasted into both). The morning album
+task reads the same file and lets liked albums lightly tilt its picks.
+
+Marks work without a token too — they just stay in that browser. With one,
+state travels: the page reads the log live on load, the build bakes each
+entry's `listened`/`liked` flags into `albums.json` and `archive.json`
+(which are as public as the rest of the deployed site — bear that in mind),
+and a mark made anywhere shows up everywhere after the next build, or
+immediately on any browser holding a token. Local marks are kept until
+their commit succeeds, so an offline like isn't lost — it lands next time
+the page is open.
+
 The contract the task fulfills:
 
 ```jsonc
@@ -189,7 +215,9 @@ colour simply shows.
 3. **Add the albums token** (skip if you don't use the albums section):
    a fine-grained PAT with read-only **Contents** access to the data
    repository, saved as the `SPOTIFY_RECS_TOKEN` Actions secret
-   (Settings → Secrets and variables → Actions).
+   (Settings → Secrets and variables → Actions). The listening log's
+   write token is separate and never stored in the repo — the page asks
+   for it in the browser (see *Listening log* above).
 
 4. **Run it once by hand** (or just push). Actions tab → *Build and deploy* →
    *Run workflow*. Every run builds all sections and deploys the site with

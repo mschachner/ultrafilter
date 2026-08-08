@@ -14,6 +14,7 @@
  */
 
 import { fetchJson, fetchText } from "../lib.mjs";
+import { fetchListeningLog, applyLog, logKey } from "./listening-log.mjs";
 
 const CATEGORY_HEADERS = { focus: "Focus", familiar_artist: "Enjoy", new_artist: "Explore" };
 const CATEGORY_ORDER = { focus: 0, familiar_artist: 1, new_artist: 2 };
@@ -158,6 +159,14 @@ export async function build(config, { published } = {}) {
   for (const e of out) {
     if (!e.cover && !e.link_is_search) e.cover = await coverFor(e.spotify_url, knownCovers);
   }
+
+  // Listened/liked marks are re-applied to every entry on every build, so
+  // cached entries never carry stale state. A failed fetch (null) falls back
+  // to the currently-published marks rather than wiping them.
+  const log = await fetchListeningLog(cfg, token) ??
+    new Map((published?.entries || []).filter(e => e.listened)
+      .map(e => [logKey(e.artist, e.album), { listened: true, liked: Boolean(e.liked) }]));
+  out.forEach(e => applyLog(e, log));
 
   if (!out.length) return pending("history is empty");
   console.log(`ok    archive — ${out.length} entries (${out.filter(e => e.cover).length} covers, ${out.filter(e => e.blurb).length} with notes)`);

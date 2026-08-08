@@ -14,6 +14,7 @@
  */
 
 import { fetchJson } from "../lib.mjs";
+import { fetchListeningLog, applyLog, logKey } from "./listening-log.mjs";
 
 function pending(note) {
   console.log(`--    albums — ${note}`);
@@ -78,9 +79,15 @@ export async function build(config, { published } = {}) {
       .map(a => [a.spotify_url, a.cover])
   );
 
+  // A failed log fetch (null) falls back to the currently-published marks,
+  // so a flaky GitHub moment can't strip hearts from the live site.
+  const log = await fetchListeningLog(cfg, token) ??
+    new Map((published?.albums || []).filter(a => a.listened)
+      .map(a => [logKey(a.artist, a.album), { listened: true, liked: Boolean(a.liked) }]));
+
   const out = [];
   for (const a of complete) {
-    out.push({
+    out.push(applyLog({
       category: a.category || null,
       header: a.header || a.category || "",
       artist: a.artist,
@@ -92,7 +99,7 @@ export async function build(config, { published } = {}) {
       cover: a.link_is_search ? null : await coverFor(a.spotify_url, knownCovers),
       blurb: a.blurb,
       reception: a.reception || null,
-    });
+    }, log));
   }
 
   console.log(`ok    albums — ${out.length} picks for ${doc.date} (${out.filter(a => a.cover).length} covers)`);

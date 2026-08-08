@@ -553,6 +553,8 @@
     .album p { grid-column: 1 / -1; display: none; margin-top: .55rem; }
     .album.open p { display: block; }
     .album.open .reception { margin-top: .45rem; }
+    .album .ll-ctl { grid-column: 1 / -1; display: none; }
+    .album.open .ll-ctl { display: flex; }
     .album::after { content: "\25BE"; position: absolute; top: .85rem; right: .9rem;
                     font-size: .72rem; color: rgba(240, 235, 225, .65);
                     transition: transform .15s ease; }
@@ -666,6 +668,7 @@
 
 </div>
 
+<script src="listening.js"></script>
 <script>
 const state = { blogroll: null, wikipedia: null, albums: null, artwork: null, weather: null };
 const sectionNotes = {};   // ledger rows for the non-blogroll sections
@@ -1142,6 +1145,7 @@ function renderAlbums() {
   }
   sectionNotes.albums = { cls: a.stale ? "dim" : "ok", text: `${a.stale ? "stale · " : ""}${a.date}` };
 
+  LL.seed(a.albums);
   const cards = a.albums.map((al, i) => {
     const acc = ACCENTS[i % ACCENTS.length];
     const name = `<i>${esc(al.album)}</i>`;
@@ -1159,6 +1163,7 @@ function renderAlbums() {
       ${al.genres?.length ? `<div class="album-genres">${esc(al.genres.join(" · "))}</div>` : ""}
       <p>${esc(al.blurb)}</p>
       ${al.reception ? `<p class="reception">${esc(al.reception)}</p>` : ""}
+      ${LL.control(al.artist, al.album)}
     </article>`;
   }).join("");
 
@@ -1412,6 +1417,12 @@ async function load() {
   renderWiki();
   renderBlogroll();
   loadWeather();   // async; re-renders the ledger row when it settles
+
+  // Listening log: clicks are delegated, and a fresh copy of the log (when a
+  // token is configured) quietly restyles the controls once it arrives.
+  LL.bind($("#albums-sec"));
+  LL.onChange = () => LL.syncCtls();
+  LL.refresh();
 }
 
 /**
@@ -1438,6 +1449,7 @@ function maybeOpenInApp(e, href) {
 }
 
 $("#albums-sec").addEventListener("click", e => {
+  if (e.target.closest(".ll-ctl")) return;       // the listening log handles its own clicks
   const btn = e.target.closest(".cover-btn");
   if (btn) return openLightbox(Number(btn.dataset.i));
   const link = e.target.closest("a");
