@@ -76,9 +76,14 @@ add or reweight areas there.
 One work a day, picked from Wikidata and described with Wikipedia's own
 prose. Candidates are works matching the movements (`P135` values), genres
 (`P136` values), and optional inception window configured per interest
-area in `config.json` — and they must have both an image on Commons and an
-English Wikipedia article, which is what guarantees there's real text to
-show about the work. The article's lead paragraph (and the artist's, when
+area in `config.json` — and they must have an English Wikipedia article,
+which is what guarantees there's real text to show about the work. The
+image comes from Commons (`P18`) when the work has one; otherwise the
+article's own lead image is used — usually the fair-use reproduction,
+which is the only image that exists for movements whose works are still
+in copyright (Abstract Expressionism, Pop Art…), since those can never
+carry a free Commons image. A work with neither image is passed over for
+the next candidate in the day's order. The article's lead paragraph (and the artist's, when
 the creator has an article) comes from the same REST summary endpoint the
 Wikipedia section uses. Which interest area supplies the day rotates with
 the day of the year; within it the pick is deterministic — candidates are
@@ -88,9 +93,10 @@ there's a choice. The die beside the plate re-rolls client-side, exactly
 like the Wikipedia picks: a random interest area with a fresh seed,
 straight from the browser (both APIs answer anonymous CORS requests; the
 page carries a mirror of the builder's query, so changes to one mean
-changes to the other). Images hotlink from Commons through
-`Special:FilePath` at a bounded width, so the page never pulls a
-full-resolution scan; clicking the image opens a larger view.
+changes to the other). Commons images hotlink through `Special:FilePath`
+at a bounded width, so the page never pulls a full-resolution scan
+(fair-use images from Wikipedia are deliberately low-resolution to begin
+with and hotlink as-is); clicking the image opens a larger view.
 
 Each entry in `artwork.interests` looks like:
 

@@ -4,11 +4,18 @@
  *
  * Candidates come from the Wikidata Query Service, filtered by the movements
  * (P135), genres (P136), and inception window (P571) configured per interest
- * area in `config.json` — and required to have both an image on Commons (P18)
- * and an English Wikipedia article, which is what guarantees there is real
- * text to show about the work. The article's lead paragraph (and the
- * artist's, when the creator has an article too) comes from the Wikipedia
- * REST summary endpoint the Wikipedia section already uses.
+ * area in `config.json` — and required to have an English Wikipedia article,
+ * which is what guarantees there is real text to show about the work. The
+ * article's lead paragraph (and the artist's, when the creator has an
+ * article too) comes from the Wikipedia REST summary endpoint the Wikipedia
+ * section already uses.
+ *
+ * The image comes from Commons (P18) when the work has one; otherwise the
+ * article's own lead image is used. That fallback is what keeps interest
+ * areas whose works are still in copyright (Abstract Expressionism, Pop
+ * Art…) alive: those works can never have a free Commons image, but their
+ * Wikipedia articles carry a fair-use reproduction. A work with neither
+ * image is passed over for the next candidate in the day's order.
  *
  * Which interest area is drawn from rotates with the day of the year. Within
  * it, the pick is deterministic per day: candidates are ordered by
@@ -63,7 +70,8 @@ function sparqlFor(interest, dateKey) {
 
   return `SELECT ?item ?year ?image ?article ?creatorArticle ?creatorLabel ?locationLabel WHERE {
   VALUES ?class { ${classes} }
-  ?item wdt:P31 ?class ; wdt:P18 ?image .
+  ?item wdt:P31 ?class .
+  OPTIONAL { ?item wdt:P18 ?image . }
   ${facets.join("\n  ")}
   ?article schema:about ?item ; schema:isPartOf <https://en.wikipedia.org/> .
   ${inception}
@@ -89,6 +97,9 @@ async function summaryFor(articleUrl) {
     description: s?.description || "",
     extract: s?.extract || "",
     url: s?.content_urls?.desktop?.page || articleUrl,
+    // The article's lead image — for works with no free Commons image this
+    // is usually the fair-use reproduction, and the only image there is.
+    image: s?.originalimage?.source || s?.thumbnail?.source || null,
   };
 }
 
@@ -135,9 +146,21 @@ export async function build(config, { published }) {
   if (prev && candidates.length > 1) {
     candidates = candidates.filter(r => r.item.value.split("/").pop() !== prev);
   }
-  const row = candidates[0];
 
-  const work = await summaryFor(row.article.value);
+  // Walk the day's order until a work with a usable image: Commons (P18)
+  // when it exists, else the article's own lead image.
+  let row = null, work = null;
+  for (const cand of candidates) {
+    let s;
+    try {
+      s = await summaryFor(cand.article.value);
+    } catch (err) {
+      console.log(`--    artwork — summary failed for ${cand.article.value} (${err.message || err})`);
+      continue;
+    }
+    if (cand.image?.value || s.image) { row = cand; work = s; break; }
+  }
+  if (!row) throw new Error(`no candidates with a usable image for interest "${interest.id}"`);
 
   // The artist: their article's lead when they have one, else just the label.
   const creatorName = qid(row.creatorLabel?.value) ? "" : row.creatorLabel?.value || "";
@@ -153,8 +176,17 @@ export async function build(config, { published }) {
   }
 
   // P18 resolves through Special:FilePath, which honours a width parameter —
-  // so the page can hotlink a sane size instead of a 40 MB scan.
-  const image = row.image.value.replace(/^http:/, "https:");
+  // so the page can hotlink a sane size instead of a 40 MB scan. Fair-use
+  // uploads are deliberately low-resolution already; one size serves both.
+  let image, imageLarge;
+  if (row.image?.value) {
+    const base = row.image.value.replace(/^http:/, "https:");
+    image = `${base}?width=1100`;
+    imageLarge = `${base}?width=1800`;
+  } else {
+    image = work.image;
+    imageLarge = work.image;
+  }
   const location = qid(row.locationLabel?.value) ? "" : row.locationLabel?.value || "";
 
   console.log(`ok    artwork (${interest.id}) — ${work.title}${artist?.name ? ` · ${artist.name}` : ""}`);
@@ -172,8 +204,8 @@ export async function build(config, { published }) {
       url: work.url,
       year: row.year?.value != null ? Number(row.year.value) : null,
       location,
-      image: `${image}?width=1100`,
-      imageLarge: `${image}?width=1800`,
+      image,
+      imageLarge,
     },
     artist,
   };

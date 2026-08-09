@@ -1045,7 +1045,8 @@ function artSparql(interest, seed) {
     : `OPTIONAL { ?item wdt:P571 ?inc . BIND(YEAR(?inc) AS ?year) }`;
   return `SELECT ?item ?year ?image ?article ?creatorArticle ?creatorLabel ?locationLabel WHERE {
   VALUES ?class { ${classes} }
-  ?item wdt:P31 ?class ; wdt:P18 ?image .
+  ?item wdt:P31 ?class .
+  OPTIONAL { ?item wdt:P18 ?image . }
   ${facets}
   ?article schema:about ?item ; schema:isPartOf <https://en.wikipedia.org/> .
   ${inception}
@@ -1071,6 +1072,8 @@ async function wikiSummary(articleUrl) {
     description: s?.description || "",
     extract: s?.extract || "",
     url: s?.content_urls?.desktop?.page || articleUrl,
+    // Lead image — the fair-use reproduction when Commons has nothing free.
+    image: s?.originalimage?.source || s?.thumbnail?.source || null,
   };
 }
 
@@ -1098,10 +1101,19 @@ async function rerollArt() {
       if (id && !byItem.has(id)) byItem.set(id, r);
     }
     const rows = [...byItem.values()];
-    const row = rows.find(r => r.item.value.split("/").pop() !== a.artwork?.wikidata) || rows[0];
+    // Prefer not repeating what's on screen, then walk the order until a
+    // work with a usable image — Commons (P18) or the article's own lead
+    // image (mirrors the build's fallback for in-copyright movements).
+    const fresh = rows.filter(r => r.item.value.split("/").pop() !== a.artwork?.wikidata);
+    let row = null, work = null;
+    for (const cand of (fresh.length ? fresh : rows)) {
+      try {
+        const s = await wikiSummary(cand.article.value);
+        if (cand.image?.value || s.image) { row = cand; work = s; break; }
+      } catch {}
+    }
     if (!row) return;
 
-    const work = await wikiSummary(row.article.value);
     const creatorName = isQ(row.creatorLabel?.value) ? "" : row.creatorLabel?.value || "";
     let artist = creatorName ? { name: creatorName } : null;
     if (row.creatorArticle?.value) {
@@ -1111,7 +1123,15 @@ async function rerollArt() {
                    extract: s.extract, url: s.url };
       } catch {}
     }
-    const image = row.image.value.replace(/^http:/, "https:");
+    let image, imageLarge;
+    if (row.image?.value) {
+      const base = row.image.value.replace(/^http:/, "https:");
+      image = `${base}?width=1100`;
+      imageLarge = `${base}?width=1800`;
+    } else {
+      image = work.image;
+      imageLarge = work.image;
+    }
     state.artwork = { ...a,
       interestId: interest.id,
       interestLabel: interest.label,
@@ -1123,8 +1143,8 @@ async function rerollArt() {
         url: work.url,
         year: row.year?.value != null ? Number(row.year.value) : null,
         location: isQ(row.locationLabel?.value) ? "" : row.locationLabel?.value || "",
-        image: `${image}?width=1100`,
-        imageLarge: `${image}?width=1800`,
+        image,
+        imageLarge,
       },
       artist,
     };
