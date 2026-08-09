@@ -2,10 +2,10 @@ name: Build and deploy
 
 on:
   schedule:
-    # Every six hours, at :17 past (off-the-hour times get less contention
+    # Every two hours, at :17 past (off-the-hour times get less contention
     # on GitHub's shared scheduler, so runs start closer to on time).
-    - cron: "17 */6 * * *"
-    # Once more shortly after the album task's 9:04 UTC firing, so the day's
+    - cron: "17 */2 * * *"
+    # Once more shortly after the album task's morning firing, so the day's
     # picks are on the page by breakfast.
     - cron: "45 9 * * *"
   workflow_dispatch: # lets you trigger a refresh by hand from the Actions tab
@@ -72,3 +72,12 @@ jobs:
       - name: Deploy to Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      # Once a day (the 9:45 UTC run only), after the deploy: fail the run if
+      # a daily section had to fall back to stale data, so a broken query or
+      # dead token emails you instead of the page rotting quietly. The deploy
+      # has already happened by this point, so a red run never blocks the
+      # page from updating with whatever did build.
+      - name: Freshness check
+        if: github.event.schedule == '45 9 * * *'
+        run: node scripts/check-freshness.mjs

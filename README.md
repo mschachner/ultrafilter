@@ -223,7 +223,7 @@ colour simply shows.
    *Run workflow*. Every run builds all sections and deploys the site with
    fresh data; until the first one finishes there's nothing at the URL.
 
-After that it refreshes every six hours on its own, plus once at 9:45 UTC to
+After that it refreshes every two hours on its own, plus once at 9:45 UTC to
 pick up the morning's albums shortly after the Claude task lands them.
 
 ### Putting it inside an existing site instead
@@ -301,10 +301,18 @@ a feed fails, the error tells you what to do:
 | `stale · <date>` | That section's fresh build failed, so the previously published data is still being served. |
 | `pending` | The albums section has no token configured, or the task hasn't published a file yet. |
 
-The job fails loudly only if the blogroll ends up with no posts from any
-source — a couple of stubborn publishers won't turn the whole run red. A
-failed run deploys nothing, so the previously published site stays up
-untouched.
+During the build, the job fails loudly only if the blogroll ends up with no
+posts from any source — a couple of stubborn publishers won't turn the whole
+run red. A run that fails at that stage deploys nothing, so the previously
+published site stays up untouched.
+
+There is one deliberate exception: once a day, the 9:45 UTC run finishes
+with a freshness check (`scripts/check-freshness.mjs`) *after* the deploy.
+If the artwork or albums section had to fall back to stale data, that run is
+marked failed — the page has already updated with everything that did build;
+the red run exists purely so GitHub's run-failed email tells you a daily
+section is quietly stuck (a failing Wikidata query, an expired
+`SPOTIFY_RECS_TOKEN`) instead of it rotting unnoticed.
 
 ## Running it locally
 
