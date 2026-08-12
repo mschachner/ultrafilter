@@ -299,7 +299,12 @@
   #albums-sec.on, #wiki-sec.on, #art-sec.on { display: block; }
 
   /* ------------------------------ artwork ------------------------------- */
-  .art-btn { display: block; width: fit-content; max-width: 100%; padding: 0; margin: 0;
+  /* The 34rem cap mirrors .art-img's: as a flex item the button's
+     fit-content width is computed before the image's percentage max-width
+     can resolve, so without its own cap a wide landscape would leave the
+     button (and the row's wrap math) hundreds of pixels too wide. */
+  .art-btn { display: block; width: fit-content; max-width: min(100%, 34rem);
+             padding: 0; margin: 0;
              border: none; background: none; cursor: zoom-in; border-radius: .4rem; }
   /* Bounded in both directions: a landscape stops at 34rem wide, a portrait
      at 26rem tall, and either fits the rail on narrow screens. The full-size
@@ -313,7 +318,13 @@
   .art-btn:hover { background: none; }
   .art-btn:hover .art-img, .art-btn:focus-visible .art-img {
     transform: scale(1.01); box-shadow: 0 .35rem 1rem rgba(20, 24, 28, .35); }
-  .art-caption { margin-top: .65rem; }
+  /* The figure is a wrapping flex row, so the text places itself: when the
+     image leaves at least 14rem of the rail free — a portrait or square
+     work, or any work on a wide screen — the caption sits beside it like a
+     gallery label; otherwise it wraps to sit below the image, as before.
+     The max-width keeps the measure readable when the rail is very wide. */
+  .art { display: flex; flex-wrap: wrap; align-items: flex-start; gap: .65rem 1.9rem; }
+  .art-caption { flex: 1 1 14rem; min-width: 0; max-width: 34rem; }
   .art-title { font-family: var(--display); font-size: 1.2rem; line-height: 1.3; }
   .art-title a { color: var(--ink); text-decoration: none; }
   .art-title a:hover { text-decoration: underline; text-underline-offset: 3px; }
@@ -1002,9 +1013,9 @@ function renderArt() {
       <figcaption class="art-caption">
         <div class="art-title"><a href="${esc(w.url)}" target="_blank" rel="noopener"><i>${esc(w.title)}</i></a>${year}</div>
         <div class="art-byline">${byName}${w.location ? ` &middot; ${esc(w.location)}` : ""}</div>
+        <p class="art-extract">${esc(w.extract)}</p>${artistBit}
       </figcaption>
-    </figure>
-    <p class="art-extract">${esc(w.extract)}</p>${artistBit}`;
+    </figure>`;
   $("#art-sec").classList.add("on");
 }
 
