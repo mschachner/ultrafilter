@@ -63,13 +63,14 @@
   "artwork": {
     "timezone": "America/New_York",
     "interests": [
-      { "id": "modern",       "label": "Modern art",               "movements": ["Q38166"],  "weight": 3 },
-      { "id": "implandscape", "label": "Impressionist landscapes", "movements": ["Q40415"],  "genres": ["Q191163"] },
-      { "id": "abex",         "label": "Abstract Expressionism",   "movements": ["Q177725"] },
-      { "id": "surrealism",   "label": "Surrealism",               "movements": ["Q39427"] },
-      { "id": "ukiyoe",       "label": "Ukiyo-e",                  "movements": ["Q185905"], "classes": ["Q3305213", "Q11060274"] },
-      { "id": "popart",       "label": "Pop Art",                  "movements": ["Q134147"] },
-      { "id": "contemporary", "label": "Contemporary",             "movements": ["Q186030"], "from": 1960 },
+      { "id": "modern",       "label": "Modern art",               "movements": ["Q38166"],  "weight": 3, "viaCreator": true },
+      { "id": "implandscape", "label": "Impressionist landscapes", "movements": ["Q40415"],  "genres": ["Q191163"], "viaCreator": true },
+      { "id": "abex",         "label": "Abstract Expressionism",   "movements": ["Q177725"], "viaCreator": true },
+      { "id": "surrealism",   "label": "Surrealism",               "movements": ["Q39427"],  "viaCreator": true },
+      { "id": "ukiyoe",       "label": "Ukiyo-e",                  "genres": ["Q185905"],
+        "classes": ["Q3305213", "Q11060274", "Q28913685", "Q18219090", "Q19960510"] },
+      { "id": "popart",       "label": "Pop Art",                  "movements": ["Q134147"], "viaCreator": true },
+      { "id": "contemporary", "label": "Contemporary",             "movements": ["Q186030"], "from": 1960, "viaCreator": true },
       { "id": "sculpture",    "label": "Sculpture",                "classes": ["Q860861"],   "from": 1900 }
     ]
   },

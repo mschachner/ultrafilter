@@ -108,19 +108,34 @@ Each entry in `artwork.interests` looks like:
   "genres": ["Q191163"],                // P136 values — alternatives (OR)
   "from": 1860, "to": 1930,             // optional inception window (P571)
   "weight": 3,                          // optional slots in the rotation (default 1)
-  "classes": ["Q3305213", "Q11060274"]  // optional; the default is painting
+  "classes": ["Q3305213", "Q11060274"], // optional; the default is painting
+  "viaCreator": true                    // optional; movements also match through the artist
 }
 ```
+
+Wikidata tags far more artists with a movement than it tags individual
+works — Surrealism has around 55 paintings with an English article tagged
+directly, but around 280 by artists tagged as Surrealists. `viaCreator`
+accepts a work whose creator (P170) carries the movement too, which is
+what keeps small movements from repeating; the cost is a little precision
+(a late Picasso still life counts as Cubism because Picasso does). The
+published payload also remembers the last 20 picks and the day's draw
+skips them when it has a choice.
 
 Within `movements` (and within `genres`) the values are alternatives, but
 listing *both* keys requires both to match — the example above means
 Impressionist landscapes, not either. `weight` gives favourite areas more
 days in the rotation (and more rolls of the die). To add an area, find the
 movement or genre on wikidata.org (search for "cubism", say — the Q-number
-is right in the page title) and list it. An interest whose tradition isn't
-mainly paintings can widen `classes`, as the ukiyo-e default does to
-include prints; a `classes`-only interest (no movements or genres) works
-too — the sculpture default is just every notable sculpture from 1900 on.
+is right in the page title) and list it. Check which property Wikidata
+actually uses for it before deciding between `movements` and `genres`:
+ukiyo-e, for instance, is attached to works as a genre (P136), never as a
+movement, so listing it under `movements` matches nothing and the section
+goes stale on that day. An interest whose tradition isn't mainly paintings
+can widen `classes`, as the ukiyo-e default does to include prints,
+woodblock and woodcut prints, and print series; a `classes`-only interest
+(no movements or genres) works too — the sculpture default is just every
+notable sculpture from 1900 on.
 
 ### Albums
 

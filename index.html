@@ -1042,8 +1042,11 @@ function artSparql(interest, seed) {
   const ok = v => /^Q\d+$/.test(v || "");
   const classes = (interest.classes?.length ? interest.classes : ["Q3305213"])
     .filter(ok).map(q => `wd:${q}`).join(" ");
+  const movement = q => interest.viaCreator
+    ? `{ { ?item wdt:P135 wd:${q} . } UNION { ?item wdt:P170/wdt:P135 wd:${q} . } }`
+    : `{ ?item wdt:P135 wd:${q} . }`;
   const facets = [
-    (interest.movements || []).filter(ok).map(q => `{ ?item wdt:P135 wd:${q} . }`),
+    (interest.movements || []).filter(ok).map(movement),
     (interest.genres || []).filter(ok).map(q => `{ ?item wdt:P136 wd:${q} . }`),
   ].filter(list => list.length)
    .map(list => `{ ${list.join(" UNION ")} }`).join("\n  ");

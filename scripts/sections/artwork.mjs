@@ -17,12 +17,22 @@
  * Wikipedia articles carry a fair-use reproduction. A work with neither
  * image is passed over for the next candidate in the day's order.
  *
+ * Wikidata tags far more artists with a movement (P135) than it tags
+ * individual works: Surrealism has some 55 paintings with an English article
+ * tagged directly but around 280 by artists tagged as Surrealists. An
+ * interest with `viaCreator: true` therefore also accepts a work whose
+ * creator (P170) carries the movement, at the cost of some precision — a
+ * late Picasso still life counts as Cubism because Picasso does.
+ *
  * Which interest area is drawn from rotates with the day of the year. Within
  * it, the pick is deterministic per day: candidates are ordered by
  * MD5(item ‖ date), so every rebuild on the same day lands on the same work
- * without any stored state. As with the Wikipedia section, when the
- * currently-published payload already carries today's date it is reused
- * verbatim.
+ * without stored state beyond the published payload itself. That payload
+ * carries the Q-numbers of the last RECENT_PICKS works shown, and today's
+ * candidates are filtered against them, so a small pool cycles through its
+ * works rather than landing on the same few. As with the Wikipedia section,
+ * when the currently-published payload already carries today's date it is
+ * reused verbatim.
  *
  * The page's reroll die redoes this draw client-side with a random seed —
  * index.html carries a mirror of sparqlFor(), so a change here means
@@ -42,6 +52,13 @@ const REST = "https://en.wikipedia.org/api/rest_v1";
 // (painting + print) for print-heavy traditions like ukiyo-e.
 const DEFAULT_CLASSES = ["Q3305213"];
 
+// How many past picks the payload remembers and the draw avoids. The query
+// fetches enough rows that a pool larger than this still yields one — rows,
+// not works: an item with several creators or locations comes back as
+// several rows, so the margin is generous.
+const RECENT_PICKS = 20;
+const CANDIDATES = RECENT_PICKS + 20;
+
 const qid = v => /^Q\d+$/.test(v || "");
 
 function sparqlFor(interest, dateKey) {
@@ -49,9 +66,13 @@ function sparqlFor(interest, dateKey) {
     .filter(qid).map(q => `wd:${q}`).join(" ");
   // Within a list, values are alternatives (OR); listing both movements and
   // genres requires both — so movement: impressionism + genre: landscape
-  // means Impressionist landscapes, not either.
+  // means Impressionist landscapes, not either. With viaCreator, a movement
+  // also matches through the work's creator.
+  const movement = q => interest.viaCreator
+    ? `{ { ?item wdt:P135 wd:${q} . } UNION { ?item wdt:P170/wdt:P135 wd:${q} . } }`
+    : `{ ?item wdt:P135 wd:${q} . }`;
   const facets = [
-    (interest.movements || []).filter(qid).map(q => `{ ?item wdt:P135 wd:${q} . }`),
+    (interest.movements || []).filter(qid).map(movement),
     (interest.genres || []).filter(qid).map(q => `{ ?item wdt:P136 wd:${q} . }`),
   ].filter(list => list.length)
    .map(list => `{ ${list.join(" UNION ")} }`);
@@ -84,7 +105,7 @@ function sparqlFor(interest, dateKey) {
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
 }
 ORDER BY MD5(CONCAT(STR(?item), "${dateKey}"))
-LIMIT 8`;
+LIMIT ${CANDIDATES}`;
 }
 
 /** Wikipedia REST summary for an enwiki article URL. */
@@ -141,10 +162,13 @@ export async function build(config, { published }) {
   let candidates = [...byItem.values()];
   if (!candidates.length) throw new Error(`no candidates for interest "${interest.id}"`);
 
-  // Don't repeat yesterday's work when there's a choice.
-  const prev = published?.artwork?.wikidata;
-  if (prev && candidates.length > 1) {
-    candidates = candidates.filter(r => r.item.value.split("/").pop() !== prev);
+  // Don't repeat a recently shown work when there's a choice. Older payloads
+  // carry no `recent` list; yesterday's pick still counts.
+  const recent = [...(published?.recent || []), published?.artwork?.wikidata]
+    .filter(Boolean).slice(-RECENT_PICKS);
+  if (recent.length) {
+    const fresh = candidates.filter(r => !recent.includes(r.item.value.split("/").pop()));
+    if (fresh.length) candidates = fresh;
   }
 
   // Walk the day's order until a work with a usable image: Commons (P18)
@@ -196,6 +220,8 @@ export async function build(config, { published }) {
     interests: cfg.interests,   // the page's reroll die draws from these
     interestId: interest.id,
     interestLabel: interest.label,
+    // Q-numbers of the last picks, oldest first, for tomorrow's draw to avoid.
+    recent: [...recent, row.item.value.split("/").pop()].slice(-RECENT_PICKS),
     artwork: {
       wikidata: row.item.value.split("/").pop(),
       title: work.title,
