@@ -60,6 +60,17 @@
     ]
   },
 
+  "wikis": {
+    "timezone": "America/New_York",
+    "tabs": ["wikipedia", "nlab", "sep", "attic", "oeis", "mathoverflow", "arxiv"],
+    "nlab":         { "poolSize": 12 },
+    "sep":          { "poolSize": 9 },
+    "attic":        { "poolSize": 9 },
+    "oeis":         { "poolSize": 6, "maxNumber": 395000 },
+    "mathoverflow": { "tags": ["set-theory"], "days": 7, "count": 8 },
+    "arxiv":        { "categories": ["math.LO"], "count": 10 }
+  },
+
   "artwork": {
     "timezone": "America/New_York",
     "interests": [

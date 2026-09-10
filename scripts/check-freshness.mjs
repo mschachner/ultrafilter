@@ -42,10 +42,17 @@ await check("albums", d =>
       : null
 );
 
+await check("wikis", d => {
+  if (d.status === "failed") return `failed — ${d.error}`;
+  const bad = (d.order || []).filter(id => d.tabs?.[id]?.stale || d.tabs?.[id]?.status === "failed")
+    .map(id => `${id} (${d.tabs[id].error || "stale"})`);
+  return bad.length ? `tabs not built fresh: ${bad.join("; ")}` : null;
+});
+
 if (problems.length) {
   // ::error:: makes each problem a run annotation, which is what the
   // notification email surfaces.
   for (const p of problems) console.error(`::error::${p}`);
   process.exit(1);
 }
-console.log("Freshness check: artwork and albums built fresh.");
+console.log("Freshness check: artwork, albums, and every wikis tab built fresh.");

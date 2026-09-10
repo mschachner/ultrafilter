@@ -401,7 +401,22 @@
   }
   @keyframes dice-roll { to { transform: rotate(360deg); } }
 
+  /* The wikis section is one section with a tab strip: each tab is a lead
+     entry (title, one-line description, clamped extract) beside a short
+     column of further picks — the shape the Wikipedia section always had. */
+  .wtabs { display: flex; flex-wrap: wrap; gap: .1rem 1.2rem; margin: -.4rem 0 1rem;
+           font-family: var(--mono); font-size: .68rem; letter-spacing: .09em; text-transform: uppercase; }
+  .wtab { font: inherit; letter-spacing: inherit; text-transform: inherit; color: var(--muted);
+          border: none; border-bottom: 1px solid transparent; border-radius: 0;
+          background: none; padding: .25rem 0 .2rem; }
+  .wtab:hover { background: none; color: var(--ink); }
+  .wtab[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--ink); }
+  .wtab.off { color: var(--faint); }
+  .wtab.off[aria-selected="true"] { color: var(--muted); border-bottom-color: var(--muted); }
   .wiki { display: grid; grid-template-columns: minmax(0, 1fr) 17rem; gap: 2rem; }
+  .wiki-note { font-size: .85rem; color: var(--muted); margin: .25rem 0 0; }
+  .tfa-extract.mono { font-family: var(--mono); font-size: .8rem; line-height: 1.6;
+                      -webkit-line-clamp: 3; word-break: break-word; }
   .tfa-title { font-family: var(--display); font-size: 1.35rem; color: var(--ink);
                text-decoration: none; display: inline-block; margin: .3rem 0 .05rem; }
   .tfa-title:hover { text-decoration: underline; text-underline-offset: 3px; }
@@ -545,10 +560,14 @@
     .cols { flex-direction: column; gap: 0; }
     /* In a column, horizontal flex-bases would become minimum HEIGHTS —
        neutralize them so each block is only as tall as its content. */
-    .main { flex: none; max-width: none; }
+    .main { flex: none; max-width: none; width: 100%; }   /* .cols aligns to flex-start, so the width must be explicit */
     .rail { flex: none; width: auto; align-self: stretch; order: -1; }
     #weather { margin-left: 0; }
     .wiki { grid-template-columns: 1fr; gap: 1rem; }
+    /* The tab strip scrolls sideways rather than wrapping into a block. */
+    .wtabs { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin-bottom: .8rem; }
+    .wtabs::-webkit-scrollbar { display: none; }
+    .wtab { flex: none; }
 
     /* Stacked layouts get compact landscape album cards: thumbnail and
        title only, tapping the card unfolds the blurb. */
@@ -621,7 +640,7 @@
 
   <div class="cols">
     <div class="main">
-      <section id="wiki-sec" aria-label="Wikipedia"></section>
+      <section id="wiki-sec" aria-label="Wikis"></section>
       <h2 class="section-head">Blogroll<span class="dl-note"><button id="add-blog" class="reroll"
           title="Add a blog" aria-label="Add a blog to the blogroll">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
@@ -681,7 +700,7 @@
 
 <script src="listening.js"></script>
 <script>
-const state = { blogroll: null, wikipedia: null, albums: null, artwork: null, weather: null };
+const state = { blogroll: null, wikis: null, albums: null, artwork: null, weather: null };
 const sectionNotes = {};   // ledger rows for the non-blogroll sections
 let activeTopic = "all";
 let postsShown = 15;       // "Show more" lifts this to everything
@@ -814,6 +833,7 @@ const ICONS = {
   arthist: '<path d="M12 3 3 9.5h18L12 3zM5 12v6M9.7 12v6M14.3 12v6M19 12v6M4 21h16"/>',        // temple
   arts:    '<path d="M20 4l-9.5 9.5-3-3L17 1zM20 4l-3-3M8.5 12.5C6 13 4.5 14.5 4.5 17c0 1.5-1.5 2.5-1.5 2.5s4.5 1.5 6.5-.5c1.4-1.4 1.5-3.5 1.5-3.5z"/>', // brush
   climate: '<path d="M5 21C5 12 11 6 21 5c-1 10-7 16-16 16zM5 21c1-6 4-10 9-13"/>',             // leaf
+  dot:     '<circle cx="12" cy="12" r="3.5" fill="currentColor" stroke="none"/>',                    // wikis picks
 };
 
 function icon(id) {
@@ -1219,10 +1239,33 @@ const DICE = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-
 
 let rerolling = false;
 
+/* The wikis section: one payload (data/wikis.json) with a tab per source.
+   The active tab is remembered per browser. Wikipedia keeps its live
+   re-roll against Wikipedia's APIs; the other sources don't answer browser
+   requests, so their die pages through the pool the build fetched. */
+const WTAB_KEY = "ultrafilter:wikiTab";
+let wikiTab = null;
+try { wikiTab = localStorage.getItem(WTAB_KEY); } catch {}
+const wikiOffsets = {};   // per tab: where in the pool the die has got to
+
+function wikiTabs() {
+  const w = state.wikis;
+  return (w?.order || Object.keys(w?.tabs || {})).map(id => w.tabs[id]).filter(Boolean);
+}
+function activeWikiTab() {
+  const tabs = wikiTabs();
+  return tabs.find(t => t.id === wikiTab) || tabs.find(t => !t.status) || tabs[0] || null;
+}
+function selectWikiTab(id) {
+  wikiTab = id;
+  try { localStorage.setItem(WTAB_KEY, id); } catch {}
+  renderWiki();
+}
+
 // "Another three": redo the builder's random draw client-side. The topic map
-// ships in wikipedia.json; both Wikipedia APIs answer anonymous CORS requests.
+// ships in wikis.json; both Wikipedia APIs answer anonymous CORS requests.
 async function rerollPicks() {
-  const w = state.wikipedia;
+  const w = state.wikis?.tabs?.wikipedia;
   if (!w?.topics?.length || rerolling) return;
   rerolling = true;
   $("#reroll")?.classList.add("spin");
@@ -1254,7 +1297,7 @@ async function rerollPicks() {
       } catch {}
     }
     if (fresh.length) {
-      state.wikipedia = { ...w, picks: fresh };
+      state.wikis.tabs.wikipedia = { ...w, picks: fresh };
       renderWiki();
     }
   } finally {
@@ -1263,38 +1306,89 @@ async function rerollPicks() {
   }
 }
 
-function renderWiki() {
-  const w = state.wikipedia;
-  if (!w || (!w.tfa && !w.picks?.length)) {
-    sectionNotes.wikipedia = { cls: "fail", text: `failed — ${w?.error || "no data"}` };
-    return;
-  }
-  sectionNotes.wikipedia = { cls: w.stale ? "dim" : "ok", text: `${w.stale ? "stale · " : ""}${w.date}` };
+// The pool die: show the next slice of what the build fetched.
+function cyclePool(tab) {
+  const n = tab.items?.length || 0, per = tab.perPage || 3;
+  if (n <= per) return;
+  wikiOffsets[tab.id] = ((wikiOffsets[tab.id] || 0) + per) % n;
+  const die = $("#reroll");
+  die?.classList.add("spin");
+  setTimeout(() => { renderWiki(); }, 350);
+}
 
-  const tfa = w.tfa ? `<div class="tfa">
-      <span class="klabel">Featured article</span><br>
-      <a class="tfa-title" href="${esc(w.tfa.url)}" target="_blank" rel="noopener">${esc(w.tfa.title)}</a>
-      <span class="tfa-desc">${esc(w.tfa.description)}</span>
-      <p class="tfa-extract">${esc(w.tfa.extract)}</p>
-    </div>` : "<div></div>";
-
-  const picks = (w.picks || []).map(p => `
-    <div class="wpick" style="--dot:${topicColor(p.topicId)}">
-      ${icon(p.topicId)}
+function wikiLead(lead) {
+  if (!lead) return "<div></div>";
+  // Sources without a natural one-liner describe a pick by its first
+  // sentence; on the lead that would just repeat the extract's opening.
+  const desc = lead.description || "";
+  const dup = desc && (lead.extract || "").startsWith(desc.replace(/…$/, ""));
+  return `<div class="tfa">
+      <span class="klabel">${esc(lead.kicker || "")}</span><br>
+      <a class="tfa-title" href="${esc(lead.url)}" target="_blank" rel="noopener">${esc(lead.title)}</a>
+      ${dup ? "" : `<span class="tfa-desc">${esc(desc)}</span>`}
+      <p class="tfa-extract${lead.mono ? " mono" : ""}">${esc(lead.extract)}</p>
+    </div>`;
+}
+function wikiPickRow(p, dot, glyph) {
+  return `
+    <div class="wpick" style="--dot:${dot}">
+      ${glyph}
       <span class="wpick-main">
         <a class="wpick-title" href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.title)}</a>
         <span class="wpick-desc" title="${esc(p.description)}">${esc(p.description)}</span>
       </span>
-    </div>`).join("");
+    </div>`;
+}
 
-  const dated = w.date && w.date !== TODAY_KEY
-    ? `<span class="sh-date">&middot; ${esc(prettyDate(w.date))}</span>` : "";
-  const reroll = w.topics?.length
-    ? `<span class="dl-note"><button id="reroll" class="reroll" title="Another three"
-         aria-label="Show another three articles">${DICE}</button></span>` : "";
+// One tab's body: the lead beside its picks, plus whether a die applies.
+function wikiTabBody(tab) {
+  if (!tab || tab.status === "failed" || (!tab.items?.length && !tab.tfa && !tab.picks?.length)) {
+    return { html: `<p class="wiki-note">failed — ${esc(tab?.error || "no data")}</p>`, die: "" };
+  }
+  if (tab.id === "wikipedia") {
+    const lead = tab.tfa ? { ...tab.tfa, kicker: "Featured article" } : null;
+    const picks = (tab.picks || []).map(p => wikiPickRow(p, topicColor(p.topicId), icon(p.topicId))).join("");
+    const die = tab.topics?.length
+      ? `<button id="reroll" class="reroll" title="Another three" aria-label="Show another three articles">${DICE}</button>` : "";
+    return { html: `<div class="wiki">${wikiLead(lead)}<div class="wpicks">${picks}</div></div>`, die };
+  }
+  const per = tab.perPage || 3, n = tab.items.length;
+  const off = (wikiOffsets[tab.id] || 0) % n;
+  const slice = Array.from({ length: Math.min(per, n) }, (_, i) => tab.items[(off + i) % n]);
+  const lead = { ...slice[0], kicker: tab.label };
+  const picks = slice.slice(1).map(p => wikiPickRow(p, "var(--accent)", icon("dot"))).join("");
+  const die = n > per
+    ? `<button id="reroll" class="reroll" title="Another ${per}" aria-label="Show another ${per} entries">${DICE}</button>` : "";
+  return { html: `<div class="wiki">${wikiLead(lead)}<div class="wpicks">${picks}</div></div>`, die };
+}
+
+function renderWiki() {
+  const w = state.wikis;
+  const tabs = wikiTabs();
+  const ok = tabs.filter(t => t.status !== "failed" && (t.items?.length || t.tfa || t.picks?.length));
+  if (!w || !ok.length) {
+    sectionNotes.wikis = { cls: "fail", text: `failed — ${w?.error || "no data"}` };
+    return;
+  }
+  const off = tabs.filter(t => !ok.includes(t) || t.stale).map(t => t.id);
+  sectionNotes.wikis = {
+    cls: off.length ? "dim" : "ok",
+    text: `${w.date} · ${ok.filter(t => !t.stale).length}/${tabs.length} tabs${off.length ? ` (${off.join(", ")})` : ""}`,
+  };
+
+  const tab = activeWikiTab();
+  const strip = `<div class="wtabs" role="tablist" aria-label="Source">` + tabs.map(t =>
+    `<button class="wtab${ok.includes(t) ? "" : " off"}" role="tab" data-tab="${esc(t.id)}"
+       aria-selected="${t.id === tab.id}">${esc(t.label)}</button>`).join("") + `</div>`;
+
+  // Daily tabs carry their date in the heading when it isn't today's.
+  const dated = tab.date && tab.daily !== false && tab.date !== TODAY_KEY
+    ? `<span class="sh-date">&middot; ${esc(prettyDate(tab.date))}</span>` : "";
+  const stale = tab.stale ? `<span class="dl-note">stale</span>` : "";
+  const body = wikiTabBody(tab);
   $("#wiki-sec").innerHTML =
-    `<h2 class="section-head">Wikipedia${dated}${reroll}</h2>` +
-    `<div class="wiki">${tfa}<div class="wpicks">${picks}</div></div>`;
+    `<h2 class="section-head">Wikis${dated}${stale}${body.die ? `<span class="dl-note">${body.die}</span>` : ""}</h2>` +
+    strip + body.html;
   $("#wiki-sec").classList.add("on");
 }
 
@@ -1348,7 +1442,7 @@ function renderLedger() {
 
   $("#ledger").innerHTML =
     `<div class="ledger-sections"><span class="klabel">Ledger</span>` + blogrollSeg +
-    seg("Wikipedia", sectionNotes.wikipedia) +
+    seg("Wikis", sectionNotes.wikis) +
     seg("Albums", sectionNotes.albums) +
     seg("Artwork", sectionNotes.artwork) +
     seg("Weather", sectionNotes.weather) + `</div>` +
@@ -1439,9 +1533,9 @@ async function load() {
   $("#mast-date").textContent = prettyDate(TODAY_KEY);
 
   const [b, w, a, art, wx] = await Promise.allSettled(
-    ["blogroll", "wikipedia", "albums", "artwork", "weather"].map(loadJson));
+    ["blogroll", "wikis", "albums", "artwork", "weather"].map(loadJson));
   state.blogroll = b.status === "fulfilled" ? b.value : { error: b.reason?.message };
-  state.wikipedia = w.status === "fulfilled" ? w.value : { error: w.reason?.message };
+  state.wikis = w.status === "fulfilled" ? w.value : { error: w.reason?.message };
   state.albums = a.status === "fulfilled" ? a.value : { error: a.reason?.message, status: "failed" };
   state.artwork = art.status === "fulfilled" ? art.value : { error: art.reason?.message, status: "failed" };
   state.weather = wx.status === "fulfilled" ? wx.value : null;
@@ -1496,7 +1590,12 @@ $("#albums-sec").addEventListener("click", e => {
   }
 });
 $("#wiki-sec").addEventListener("click", e => {
-  if (e.target.closest("#reroll")) rerollPicks();
+  const t = e.target.closest(".wtab");
+  if (t) return selectWikiTab(t.dataset.tab);
+  if (e.target.closest("#reroll")) {
+    const tab = activeWikiTab();
+    return tab?.id === "wikipedia" ? rerollPicks() : cyclePool(tab);
+  }
 });
 $("#art-sec").addEventListener("click", e => {
   if (e.target.closest("#art-reroll")) return rerollArt();

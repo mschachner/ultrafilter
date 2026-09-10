@@ -1,9 +1,11 @@
 # Ultrafilter
 
 A personal daily feed on GitHub Pages, in five sections: a hand-picked
-blogroll, the weather, Wikipedia (the day's featured article plus a few
-quality articles from chosen interest areas), the day's three album
-picks, and a daily artwork.
+blogroll, the weather, a tabbed wikis section (Wikipedia's featured
+article and quality picks, and a few entries a day from the nLab, the
+Stanford Encyclopedia of Philosophy, Cantor's Attic, and the OEIS, plus the
+week's MathOverflow questions and the newest arXiv listings), the day's
+three album picks, and a daily artwork.
 
 The architecture is one-directional. A scheduled GitHub Action builds every
 section's data file and deploys the site (page + data) straight to Pages —
@@ -19,7 +21,7 @@ build-time.
 Each section's data is built independently, and a section whose build fails
 falls back to the copy currently published on the live site, so one flaky
 upstream can't blank the rest of the page. The same mechanism keeps the
-daily sections stable: a rebuild that finds today's Wikipedia payload
+daily sections stable: a rebuild that finds today's wikis payload
 already published reuses it instead of re-rolling the picks.
 
 ## Sections
@@ -58,18 +60,64 @@ name, coordinates, timezone, units (`temperatureUnit`, `windSpeedUnit`),
 forecast days. Note that the coordinates are readable by anyone who finds
 the page.
 
-### Wikipedia
+### Wikis
 
-The featured article comes from Wikimedia's featured-content API. The picks
-are random members of English Wikipedia's **Good articles** category,
-filtered by `articletopic:` (the ORES topic taxonomy) to the interest areas
-in `config.json`; which areas are drawn from rotates with the day of the
-year. Both are keyed to the local date and re-rolled once a day, however
-often the build runs.
+One section, several tabs — one per source — sharing a layout: a lead
+entry (title, a one-line description, the opening of the entry) beside a
+short column of further picks. The tab strip remembers the last tab chosen
+per browser (`ultrafilter:wikiTab`). All tabs are built into one file,
+`data/wikis.json`, but each tab builds and fails independently: a tab whose
+source is down keeps its previously published contents (marked `stale` in
+the heading and in the ledger, which counts fresh tabs and names the
+others), so one dead site never blanks the rest. The order of tabs, and
+which are built at all, is `wikis.tabs` in `config.json`; per-tab settings
+sit beside it under the tab's id.
 
-Each entry in `wikipedia.topics` maps an interest area to one or more
-[articletopic values](https://www.mediawiki.org/wiki/Help:CirrusSearch#articletopic);
-add or reweight areas there.
+The random-draw tabs are keyed to the local date and re-rolled once a day,
+however often the build runs. Only Wikipedia answers browser requests, so
+only its die fetches anew; the other sources' die pages through a pool
+the build fetched (`poolSize` entries per tab), three at a time.
+
+- **Wikipedia.** The featured article comes from Wikimedia's featured-content
+  API. The picks are random members of English Wikipedia's **Good articles**
+  category, filtered by `articletopic:` (the ORES topic taxonomy) to the
+  interest areas in `config.json`; which areas are drawn from rotates with
+  the day of the year. Each entry in `wikipedia.topics` maps an interest area
+  to one or more
+  [articletopic values](https://www.mediawiki.org/wiki/Help:CirrusSearch#articletopic);
+  add or reweight areas there. The die re-rolls three picks live.
+- **nLab.** The nLab has no random page and no API, but it does list every
+  page name at `/nlab/all_pages`. The build shuffles that list with a seed
+  fixed by the date, fetches pages in that order, and keeps the ones with a
+  real *Idea* section (falling back to *Definition*), skipping people,
+  reference, and meta pages. Formulas come through as their TeX, rendered
+  down to Unicode where it's just Greek letters and common symbols.
+- **SEP.** Entries from the Stanford Encyclopedia of Philosophy's table of
+  contents, shuffled the same way; the extract is the entry's preamble and
+  the description its publication line.
+- **Cantor's Attic.** The original wiki at cantorsattic.info now sits behind
+  a Cloudflare challenge; the maintained copy is a static site built from
+  [neugierde/cantors-attic](https://github.com/neugierde/cantors-attic), one
+  Markdown file per page. The build lists those through the GitHub tree API
+  and reads each page's raw Markdown (front matter for the title, first
+  paragraph for the extract); links go to the rendered site.
+- **OEIS.** Random A-numbers, looked up one at a time through the JSON search
+  API (anonymous search can't page past its first hundred hits, so there is
+  no other way to sample the whole database). Dead and trivial entries are
+  skipped and the draw prefers sequences the editors flagged `nice` or
+  `core`. `maxNumber` is the top of the range to draw from — nudge it up as
+  the OEIS grows. The extract is the first terms, in the monospace face.
+- **MathOverflow.** The most-voted questions of the past `days` under the
+  configured `tags`, via the Stack Exchange API; a quiet week widens the
+  window until there are at least `minimum` questions. Rebuilt every run.
+- **arXiv.** The newest submissions in `categories`, from the arXiv API's
+  Atom feed — sorted by submission date, so cross-lists and replacements
+  appear alongside genuinely new papers. Rebuilt every run.
+
+Adding a source means a small builder module in `scripts/sections/wikis/`
+returning `{ items: [{ title, description, extract, url }], perPage }`, an
+entry in the `TABS` table of `scripts/sections/wikis.mjs`, and its id in
+`wikis.tabs`; the page renders any tab of that shape without changes.
 
 ### Artwork
 
@@ -85,12 +133,12 @@ in copyright (Abstract Expressionism, Pop Art…), since those can never
 carry a free Commons image. A work with neither image is passed over for
 the next candidate in the day's order. The article's lead paragraph (and the artist's, when
 the creator has an article) comes from the same REST summary endpoint the
-Wikipedia section uses. Which interest area supplies the day rotates with
+Wikipedia tab uses. Which interest area supplies the day rotates with
 the day of the year; within it the pick is deterministic — candidates are
 ordered by a hash of the item and the date — so rebuilds on the same day
 agree without any stored state, and yesterday's work is avoided when
 there's a choice. The die beside the plate re-rolls client-side, exactly
-like the Wikipedia picks: a random interest area with a fresh seed,
+like the Wikipedia tab's picks: a random interest area with a fresh seed,
 straight from the browser (both APIs answer anonymous CORS requests; the
 page carries a mirror of the builder's query, so changes to one mean
 changes to the other). Commons images hotlink through `Special:FilePath`
@@ -277,8 +325,8 @@ Two caveats worth being clear about:
 ## Maintaining it
 
 Everything lives in `config.json`: the blogroll's topics and feeds, the
-weather location, the Wikipedia interest areas, the artwork interest
-areas, and the albums data source.
+weather location, the Wikipedia interest areas and the other wikis tabs'
+settings, the artwork interest areas, and the albums data source.
 Adding a blogroll topic means adding an entry to `blogroll.topics` and
 referencing its `id` from any feed; the filter chips and dot colors follow
 automatically. `site` is the deployed URL, which the build uses to recover
@@ -329,8 +377,8 @@ published site stays up untouched.
 
 There is one deliberate exception: once a day, the 9:45 UTC run finishes
 with a freshness check (`scripts/check-freshness.mjs`) *after* the deploy.
-If the artwork or albums section had to fall back to stale data, that run is
-marked failed — the page has already updated with everything that did build;
+If the artwork or albums section, or any wikis tab, had to fall back to
+stale data, that run is marked failed — the page has already updated with everything that did build;
 the red run exists purely so GitHub's run-failed email tells you a daily
 section is quietly stuck (a failing Wikidata query, an expired
 `SPOTIFY_RECS_TOKEN`) instead of it rotting unnoticed.

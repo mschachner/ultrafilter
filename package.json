@@ -2,7 +2,7 @@
   "name": "ultrafilter",
   "version": "2.0.0",
   "private": true,
-  "description": "A personal daily feed: blogroll, weather, Wikipedia, and album picks.",
+  "description": "A personal daily feed: blogroll, weather, wikis, album picks, and a daily artwork.",
   "type": "module",
   "scripts": {
     "build": "node scripts/build.mjs",

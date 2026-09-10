@@ -7,6 +7,9 @@
  * `status: "failed"` file, which the page shows as a quiet note in the
  * ledger.
  *
+ * The wikis section is built the same way one level down: each of its tabs
+ * falls back independently (see sections/wikis.mjs).
+ *
  * Weather is the exception: it is fetched client-side (so the temperature on
  * screen is current, not build-time), and its data file just carries the
  * config the page needs to make that call.
@@ -17,7 +20,7 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { loadPublished } from "./lib.mjs";
 import * as blogroll from "./sections/blogroll.mjs";
-import * as wikipedia from "./sections/wikipedia.mjs";
+import * as wikis from "./sections/wikis.mjs";
 import * as albums from "./sections/albums.mjs";
 import * as archive from "./sections/archive.mjs";
 import * as artwork from "./sections/artwork.mjs";
@@ -28,7 +31,7 @@ const DATA_DIR = resolve(ROOT, "data");
 
 const SECTIONS = [
   { name: "blogroll", ...blogroll },
-  { name: "wikipedia", ...wikipedia },
+  { name: "wikis", ...wikis },
   { name: "albums", ...albums },
   { name: "archive", ...archive },
   { name: "artwork", ...artwork },
@@ -71,13 +74,18 @@ export async function main() {
   );
 
   const posts = results.blogroll?.posts?.length ?? 0;
+  const wikisNote = w => {
+    const ids = w?.order || [];
+    const bad = ids.filter(id => w.tabs?.[id]?.stale || w.tabs?.[id]?.status === "failed");
+    return ids.length ? ` (${ids.length - bad.length}/${ids.length} tabs${bad.length ? `; ${bad.join(", ")}` : ""})` : "";
+  };
   console.log(
     `\nWrote data/: blogroll ${posts} posts (${results.blogroll?.feedsOk ?? 0}/${
       results.blogroll?.feedsTotal ?? 0
     } feeds)` +
-      `${results.blogroll?.stale ? " [stale]" : ""}, wikipedia ${
-        results.wikipedia?.date || results.wikipedia?.status || "?"
-      }${results.wikipedia?.stale ? " [stale]" : ""}, albums ${
+      `${results.blogroll?.stale ? " [stale]" : ""}, wikis ${
+        results.wikis?.date || results.wikis?.status || "?"
+      }${wikisNote(results.wikis)}, albums ${
         results.albums?.date || results.albums?.status || "?"
       }${results.albums?.stale ? " [stale]" : ""}, artwork ${
         results.artwork?.date || results.artwork?.status || "?"

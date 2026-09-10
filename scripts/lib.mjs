@@ -81,3 +81,114 @@ export function todayIn(timezone) {
     .format(new Date());
   return { key, day: Number(get("day")), month: Number(get("month")), monthName };
 }
+
+/* ------------------------- text helpers (wikis) ------------------------- */
+
+const ENTITIES = { amp: "&", lt: "<", gt: ">", quot: '"', apos: "'", nbsp: " ", ndash: "–", mdash: "—", hellip: "…" };
+
+/** Decodes the HTML entities that show up in page text and API strings. */
+export function decodeEntities(s) {
+  return String(s ?? "")
+    .replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCodePoint(parseInt(h, 16)))
+    .replace(/&#(\d+);/g, (_, d) => String.fromCodePoint(Number(d)))
+    .replace(/&([a-z]+);/gi, (m, n) => ENTITIES[n.toLowerCase()] ?? m);
+}
+
+/**
+ * Plain text from an HTML fragment. MathML is reduced to its TeX annotation
+ * (nLab's pages carry one per formula) so formulas read as `$Sh(X)$` rather
+ * than as the rendered tokens repeated twice; everything else is untagged.
+ */
+export function htmlToText(html) {
+  return decodeEntities(
+    String(html ?? "")
+      .replace(/<math[\s\S]*?<\/math>/g, m => {
+        const a = m.match(/<annotation[^>]*>([\s\S]*?)<\/annotation>/);
+        return a ? `$${a[1].trim()}$` : m.replace(/<[^>]+>/g, "");
+      })
+      .replace(/<(script|style)[\s\S]*?<\/\1>/g, "")
+      .replace(/<br\s*\/?>/g, " ")
+      .replace(/<[^>]+>/g, "")
+  ).replace(/\s+/g, " ").trim();
+}
+
+const GREEK = {
+  alpha: "α", beta: "β", gamma: "γ", delta: "δ", epsilon: "ε", varepsilon: "ε", zeta: "ζ", eta: "η",
+  theta: "θ", vartheta: "ϑ", iota: "ι", kappa: "κ", lambda: "λ", mu: "μ", nu: "ν", xi: "ξ", pi: "π",
+  rho: "ρ", varrho: "ϱ", sigma: "σ", tau: "τ", upsilon: "υ", phi: "φ", varphi: "φ", chi: "χ", psi: "ψ",
+  omega: "ω", Gamma: "Γ", Delta: "Δ", Theta: "Θ", Lambda: "Λ", Xi: "Ξ", Pi: "Π", Sigma: "Σ",
+  Upsilon: "Υ", Phi: "Φ", Psi: "Ψ", Omega: "Ω", aleph: "ℵ", beth: "ℶ", infty: "∞", in: "∈",
+  notin: "∉", subseteq: "⊆", subset: "⊂", supseteq: "⊇", cup: "∪", cap: "∩", setminus: "∖",
+  emptyset: "∅", varnothing: "∅", to: "→", rightarrow: "→", leftarrow: "←", Rightarrow: "⇒",
+  iff: "⇔", Leftrightarrow: "⇔", mapsto: "↦", leq: "≤", le: "≤", geq: "≥", ge: "≥", neq: "≠", ne: "≠",
+  times: "×", cdot: "·", circ: "∘", forall: "∀", exists: "∃", neg: "¬", lnot: "¬", wedge: "∧",
+  land: "∧", vee: "∨", lor: "∨", vdash: "⊢", models: "⊨", equiv: "≡", cong: "≅", simeq: "≃",
+  sim: "∼", approx: "≈", prec: "≺", succ: "≻", sum: "∑", prod: "∏", int: "∫", partial: "∂",
+  nabla: "∇", sqrt: "√", langle: "⟨", rangle: "⟩", ldots: "…", cdots: "⋯", dots: "…", pm: "±",
+  oplus: "⊕", otimes: "⊗", top: "⊤", bot: "⊥", ell: "ℓ", hbar: "ℏ", Box: "□", Diamond: "◇",
+  restriction: "↾", upharpoonright: "↾", bigcup: "⋃", bigcap: "⋂", prime: "′",
+};
+const BB = { N: "ℕ", Z: "ℤ", Q: "ℚ", R: "ℝ", C: "ℂ", P: "ℙ" };
+
+/**
+ * Readable plain text from light inline TeX — Greek letters and common
+ * symbols become Unicode, wrappers like \mathrm{} and \text{} are unwrapped,
+ * and the dollar signs go. Anything it doesn't know is left as written, so the
+ * worst case is a TeX command in the middle of a sentence rather than a hole.
+ */
+export function tex2text(s) {
+  return String(s ?? "")
+    .replace(/\\\\/g, "\\")
+    .replace(/\$\$?([^$]*)\$\$?/g, (_, t) => texInner(t))
+    .replace(/\\\(([\s\S]*?)\\\)/g, (_, t) => texInner(t));
+}
+
+function texInner(t) {
+  let out = t
+    .replace(/\\(mathbb|Bbb)\{([A-Z])\}/g, (_, __, l) => BB[l] || l)
+    .replace(/\\(mathrm|mathbf|mathit|mathsf|mathcal|mathfrak|text|textrm|textit|textbf|operatorname|mathscr)\{([^{}]*)\}/g, "$2")
+    .replace(/\\(left|right|,|;|!|quad|qquad|displaystyle)\b/g, "")
+    .replace(/\\colon\b/g, ":")
+    .replace(/\\([A-Za-z]+)/g, (m, n) => GREEK[n] ?? m)
+    .replace(/\^\{([^{}]*)\}/g, "^$1")
+    .replace(/_\{([^{}]*)\}/g, "_$1")
+    .replace(/[{}]/g, "")
+    .replace(/\s*([→←⇒⇔↦])\s*/g, " $1 ")
+    .replace(/\s+/g, " ")
+    .trim();
+  return out;
+}
+
+/** A 32-bit string hash and a seeded PRNG, for day-stable shuffles. */
+export function hashString(s) {
+  let h = 2166136261;
+  for (const ch of String(s)) { h ^= ch.codePointAt(0); h = Math.imul(h, 16777619) >>> 0; }
+  return h >>> 0;
+}
+export function seededRandom(seed) {
+  let a = hashString(seed) || 1;
+  return () => {
+    a = (a + 0x6D2B79F5) >>> 0;
+    let t = a;
+    t = Math.imul(t ^ (t >>> 15), t | 1);
+    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+export function shuffled(arr, seed) {
+  const rnd = seed == null ? Math.random : seededRandom(seed);
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(rnd() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+/** The first sentence or so of a passage, for one-line descriptions. */
+export function firstSentence(text, max = 140) {
+  const t = String(text ?? "").trim();
+  const m = t.match(/^[\s\S]{20,}?[.!?](?=\s|$)/);
+  const s = m ? m[0] : t;
+  return s.length > max ? s.slice(0, max - 1).replace(/\s+\S*$/, "") + "…" : s;
+}
