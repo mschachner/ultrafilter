@@ -1,20 +1,39 @@
 /**
- * OEIS tab: a few integer sequences a day. The OEIS has no random endpoint
- * and caps anonymous searches at their first hundred hits, so the build
- * draws random A-numbers (seeded by the date) and looks each one up by id
- * through the JSON search API, skipping dead or trivial entries and
- * preferring ones the editors flagged `nice` or `core`. The extract is the
- * sequence's first terms, rendered in the monospace face.
+ * OEIS tab: a few integer sequences a day. The OEIS has no random endpoint,
+ * caps anonymous searches at their first hundred hits, and returns 403 to
+ * oeis.org requests from GitHub's runners, so the build reads entries from
+ * the OEIS's own git mirror (github.com/oeis/oeisdata) instead: one file per
+ * sequence in the internal format (%S data, %N name, %K keywords, %A author).
+ * It draws random A-numbers (seeded by the date), skips missing, dead or
+ * trivial entries, and prefers ones the editors flagged `nice` or `core`.
+ * The extract is the sequence's first terms, rendered in the monospace face.
  */
 
-import { fetchJson, seededRandom, firstSentence } from "../../lib.mjs";
+import { fetchText, seededRandom } from "../../lib.mjs";
 
+const RAW = "https://raw.githubusercontent.com/oeis/oeisdata/HEAD/seq/";
 const SKIP_KW = /\b(dead|dumb|obsc|less|unkn|uned|allocated|recycled)\b/;
+
+/** Parses the internal format into { number, data, name, keyword, author, links }. */
+function parseSeq(text, number) {
+  const seq = { number, data: "", name: "", keyword: "", author: "", links: 0 };
+  for (const line of text.split("\n")) {
+    const m = /^%(\w) A\d+ ?(.*)$/.exec(line);
+    if (!m) continue;
+    const [, tag, rest] = m;
+    if (tag === "S" || tag === "T" || tag === "U") seq.data += rest.trim();
+    else if (tag === "N" && !seq.name) seq.name = rest.trim();
+    else if (tag === "K") seq.keyword = rest.trim();
+    else if (tag === "A" && !seq.author) seq.author = rest.trim();
+    else if (tag === "H") seq.links++;
+  }
+  return seq;
+}
 
 function score(seq) {
   const kw = seq.keyword || "";
   return (/\bnice\b/.test(kw) ? 4 : 0) + (/\bcore\b/.test(kw) ? 3 : 0) +
-    (/\beasy\b/.test(kw) ? 1 : 0) + Math.min(3, Math.log10(1 + (seq.references || 0)));
+    (/\beasy\b/.test(kw) ? 1 : 0) + Math.min(3, Math.log10(1 + (seq.links || 0)));
 }
 
 function item(seq) {
@@ -47,9 +66,9 @@ export async function build(cfg, { today }) {
     const n = 1 + Math.floor(rnd() * max);
     const id = `A${String(n).padStart(6, "0")}`;
     try {
-      const res = await fetchJson(`https://oeis.org/search?q=id:${id}&fmt=json`);
-      const seq = Array.isArray(res) ? res[0] : res?.results?.[0];
-      if (!seq || !seq.name || !seq.data || SKIP_KW.test(seq.keyword || "")) continue;
+      const text = await fetchText(`${RAW}${id.slice(0, 4)}/${id}.seq`);
+      const seq = parseSeq(text, n);
+      if (!seq.name || !seq.data || SKIP_KW.test(seq.keyword)) continue;
       found.push(seq);
     } catch (err) {
       console.log(`      oeis skip ${id} — ${err.message || err}`);
