@@ -145,11 +145,13 @@ export function tex2text(s) {
 
 function texInner(t) {
   let out = t
+    // Symbols first, so that unwrapping \mathsf{AC} can't glue "AC" onto a
+    // preceding \neg and hide it from the lookup below.
+    .replace(/\\([A-Za-z]+)/g, (m, n) => GREEK[n] ?? m)
     .replace(/\\(mathbb|Bbb)\{([A-Z])\}/g, (_, __, l) => BB[l] || l)
     .replace(/\\(mathrm|mathbf|mathit|mathsf|mathcal|mathfrak|text|textrm|textit|textbf|operatorname|mathscr)\{([^{}]*)\}/g, "$2")
     .replace(/\\(left|right|,|;|!|quad|qquad|displaystyle)\b/g, "")
     .replace(/\\colon\b/g, ":")
-    .replace(/\\([A-Za-z]+)/g, (m, n) => GREEK[n] ?? m)
     .replace(/\^\{([^{}]*)\}/g, "^$1")
     .replace(/_\{([^{}]*)\}/g, "_$1")
     .replace(/[{}]/g, "")
