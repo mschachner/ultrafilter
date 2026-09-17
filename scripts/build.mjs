@@ -10,6 +10,12 @@
  * The wikis section is built the same way one level down: each of its tabs
  * falls back independently (see sections/wikis.mjs).
  *
+ * Before the sections, two things are read once from the store (the `data`
+ * branch — see store.mjs) and handed to every builder: the likes, which the
+ * daily draws lean towards and which are published as data/likes.json for
+ * the page, and the morning task's picks for today, which the artwork and
+ * wikis builders honour when present.
+ *
  * Weather is the exception: it is fetched client-side (so the temperature on
  * screen is current, not build-time), and its data file just carries the
  * config the page needs to make that call.
@@ -18,7 +24,10 @@
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
-import { loadPublished } from "./lib.mjs";
+import { loadPublished, todayIn } from "./lib.mjs";
+import * as store from "./store.mjs";
+import * as likes from "./sections/likes.mjs";
+import * as picks from "./sections/picks.mjs";
 import * as blogroll from "./sections/blogroll.mjs";
 import * as wikis from "./sections/wikis.mjs";
 import * as albums from "./sections/albums.mjs";
@@ -37,9 +46,28 @@ const SECTIONS = [
   { name: "artwork", ...artwork },
 ];
 
+async function writeData(name, payload) {
+  await writeFile(resolve(DATA_DIR, `${name}.json`), JSON.stringify(payload, null, 1) + "\n", "utf8");
+}
+
 export async function main() {
   const config = JSON.parse(await readFile(CONFIG_PATH, "utf8"));
   await mkdir(DATA_DIR, { recursive: true });
+
+  // The store, read once. Likes: a failed read keeps the published copy so a
+  // GitHub blip can't blank the hearts. Picks: today's only.
+  console.log(`\n== store ==`);
+  const today = todayIn(config.artwork?.timezone || config.wikis?.timezone || "UTC");
+  const publishedLikes = await loadPublished(config.site, "likes");
+  const freshLikes = await likes.load(config);
+  const marks = freshLikes ?? likes.wrap(publishedLikes?.items || []);
+  const todaysPicks = await picks.load(config, today.key);
+  console.log(`      store — ${store.describe(config)}; ${marks.items.length} likes${freshLikes ? "" : " (published copy)"}; picks ${todaysPicks ? `for ${todaysPicks.date}` : "none for today"}`);
+  await writeData("likes", {
+    generated: new Date().toISOString(),
+    ...(freshLikes ? {} : { stale: true }),
+    items: marks.items,
+  });
 
   const results = {};
   for (const section of SECTIONS) {
@@ -47,7 +75,7 @@ export async function main() {
     const published = await loadPublished(config.site, section.name);
     let payload;
     try {
-      payload = await section.build(config, { published });
+      payload = await section.build(config, { published, likes: marks, picks: todaysPicks });
     } catch (err) {
       const msg = String(err?.message || err);
       if (published) {
@@ -59,19 +87,11 @@ export async function main() {
       }
     }
     results[section.name] = payload;
-    await writeFile(
-      resolve(DATA_DIR, `${section.name}.json`),
-      JSON.stringify(payload, null, 1) + "\n",
-      "utf8"
-    );
+    await writeData(section.name, payload);
   }
 
   // Weather: config passthrough only — the page fetches the forecast itself.
-  await writeFile(
-    resolve(DATA_DIR, "weather.json"),
-    JSON.stringify({ generated: new Date().toISOString(), config: config.weather }, null, 1) + "\n",
-    "utf8"
-  );
+  await writeData("weather", { generated: new Date().toISOString(), config: config.weather });
 
   const posts = results.blogroll?.posts?.length ?? 0;
   const wikisNote = w => {
@@ -89,7 +109,7 @@ export async function main() {
         results.albums?.date || results.albums?.status || "?"
       }${results.albums?.stale ? " [stale]" : ""}, artwork ${
         results.artwork?.date || results.artwork?.status || "?"
-      }${results.artwork?.stale ? " [stale]" : ""}`
+      }${results.artwork?.stale ? " [stale]" : ""}${results.artwork?.picked ? " (picked)" : ""}`
   );
 
   // The blogroll is the page's backbone: with no posts at all (fresh build

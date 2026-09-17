@@ -36,10 +36,14 @@ await check("artwork", d =>
 
 await check("albums", d =>
   d.stale
-    ? `stale — still showing picks from ${d.date}; the data-repo fetch is failing (check the SPOTIFY_RECS_TOKEN secret first)`
+    ? `stale — still showing picks from ${d.date}; the store read is failing (is the data branch checked out into store/?)`
     : d.status === "failed"
       ? `failed — ${d.error}`
       : null
+);
+
+await check("likes", d =>
+  d.stale ? "stale — likes.json couldn't be read from the store; the published copy is being served" : null
 );
 
 await check("wikis", d => {
@@ -55,4 +59,4 @@ if (problems.length) {
   for (const p of problems) console.error(`::error::${p}`);
   process.exit(1);
 }
-console.log("Freshness check: artwork, albums, and every wikis tab built fresh.");
+console.log("Freshness check: artwork, albums, likes, and every wikis tab built fresh.");

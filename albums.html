@@ -446,7 +446,7 @@
 
 </div>
 
-<script src="listening.js"></script>
+<script src="likes.js"></script>
 <script>
 const $ = sel => document.querySelector(sel);
 function esc(s) {
@@ -632,7 +632,7 @@ function tile(e, i) {
       <span class="tile-album">${esc(e.album)}${e.year ? ` <span class="tile-year">(${esc(e.year)})</span>` : ""}</span>
       ${e.genres?.length ? `<span class="tile-genres">${esc(e.genres.join(" · "))}</span>` : ""}
     </span>
-    ${LL.badges(e.artist, e.album)}
+    ${UF.badges(e.artist, e.album)}
   </button>`;
 }
 
@@ -735,7 +735,7 @@ function openDetail(i) {
       ${e.genres?.length ? `<div class="sleeve-genres">${esc(e.genres.join(" · "))}</div>` : ""}
       ${e.blurb ? `<p>${esc(e.blurb)}</p>` : ""}
       ${e.reception ? `<p class="reception">${esc(e.reception)}</p>` : ""}
-      ${LL.control(e.artist, e.album)}
+      ${UF.control(e.artist, e.album, { genres: e.genres || [] })}
     </div>`;
   $("#detail").hidden = false;
   document.body.style.overflow = "hidden";
@@ -769,12 +769,12 @@ async function load() {
     const data = await res.json();
     entries = data.entries || [];
     if (!entries.length) throw new Error(data.status === "pending" ? "no albums yet" : "no data");
-    // Listening log: marks made in the overlay re-badge the crate behind it,
-    // and a live copy of the log (when a token is present) restyles on arrival.
-    LL.seed(entries);
-    LL.bind($("#detail"));
-    LL.onChange = () => { render(); LL.syncCtls(); };
-    LL.refresh();
+    // Likes: marks made in the overlay re-badge the crate behind it, and a
+    // live copy of likes.json restyles on arrival.
+    UF.seedAlbums(entries);
+    UF.bind($("#detail"));
+    UF.onChange = () => { render(); UF.syncCtls(); };
+    UF.refresh();
     // Genre list from the data, first-seen casing, alphabetical.
     const seen = new Map();
     for (const e of entries) for (const g of e.genres || []) {

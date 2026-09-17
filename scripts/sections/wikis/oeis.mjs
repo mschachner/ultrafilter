@@ -7,6 +7,9 @@
  * It draws random A-numbers (seeded by the date), skips missing, dead or
  * trivial entries, and prefers ones the editors flagged `nice` or `core`.
  * The extract is the sequence's first terms, rendered in the monospace face.
+ *
+ * `resolve(url)` reads one sequence the morning task picked, by A-number;
+ * `candidates(n)` samples usable sequences for it to choose from.
  */
 
 import { fetchText, seededRandom } from "../../lib.mjs";
@@ -55,6 +58,38 @@ function item(seq) {
   };
 }
 
+async function fetchSeq(n) {
+  const id = `A${String(n).padStart(6, "0")}`;
+  const text = await fetchText(`${RAW}${id.slice(0, 4)}/${id}.seq`);
+  return parseSeq(text, n);
+}
+
+export async function resolve(url) {
+  const m = String(url).match(/oeis\.org\/A0*(\d+)/i);
+  if (!m) throw new Error(`not an OEIS sequence URL: ${url}`);
+  const seq = await fetchSeq(Number(m[1]));
+  if (!seq.name || !seq.data) throw new Error(`A${m[1]} has no name or data in the mirror`);
+  return item(seq);
+}
+
+/** `n` usable sequences at random (name and URL), for the morning task. */
+export async function candidates(n, seed, max = 395000) {
+  const rnd = seededRandom(seed);
+  const out = [];
+  let tried = 0;
+  while (out.length < n && tried < n * 4) {
+    tried++;
+    const k = 1 + Math.floor(rnd() * max);
+    try {
+      const seq = await fetchSeq(k);
+      if (!seq.name || !seq.data || SKIP_KW.test(seq.keyword)) continue;
+      const it = item(seq);
+      out.push({ title: it.title, url: it.url, description: it.description });
+    } catch {}
+  }
+  return out;
+}
+
 export async function build(cfg, { today }) {
   const want = cfg.poolSize ?? 6;
   const max = cfg.maxNumber ?? 395000;
@@ -64,14 +99,12 @@ export async function build(cfg, { today }) {
   while (found.length < want * 2 && tried < want * 5) {
     tried++;
     const n = 1 + Math.floor(rnd() * max);
-    const id = `A${String(n).padStart(6, "0")}`;
     try {
-      const text = await fetchText(`${RAW}${id.slice(0, 4)}/${id}.seq`);
-      const seq = parseSeq(text, n);
+      const seq = await fetchSeq(n);
       if (!seq.name || !seq.data || SKIP_KW.test(seq.keyword)) continue;
       found.push(seq);
     } catch (err) {
-      console.log(`      oeis skip ${id} — ${err.message || err}`);
+      console.log(`      oeis skip A${String(n).padStart(6, "0")} — ${err.message || err}`);
     }
   }
   if (found.length < 3) throw new Error(`only ${found.length} usable sequences after ${tried} lookups`);

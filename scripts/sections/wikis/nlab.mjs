@@ -8,7 +8,11 @@
  * fetches each page and keeps the ones that have a real Idea section and
  * aren't people, reference, or meta pages. ncatlab.org sends no CORS headers,
  * so the page can't re-roll against it: the build fetches a pool of several
- * entries and the die on the page cycles through that pool instead.
+ * entries and the die on the page draws from that pool instead.
+ *
+ * `resolve(url)` turns a page URL the morning task picked into the same
+ * item shape, through the same extractor; `candidates(n)` lists page names
+ * for the task to choose from.
  */
 
 import { fetchText, htmlToText, tex2text, shuffled, firstSentence } from "../../lib.mjs";
@@ -71,6 +75,33 @@ async function entry(name) {
   const titleMatch = html.match(/<title>\s*([\s\S]*?)\s+in nLab\s*<\/title>/);
   const title = tex2text(htmlToText(titleMatch ? titleMatch[1] : name));
   return { title, description: firstSentence(extract), extract, url };
+}
+
+/** The page name an nLab URL points at, or null. */
+function nameFromUrl(url) {
+  try {
+    const u = new URL(url);
+    if (u.hostname !== "ncatlab.org") return null;
+    const m = u.pathname.match(/^\/nlab\/show\/(.+)$/);
+    return m ? decodeURIComponent(m[1].replace(/\+/g, " ")) : null;
+  } catch { return null; }
+}
+
+export async function resolve(url) {
+  const name = nameFromUrl(url);
+  if (!name) throw new Error(`not an nLab page URL: ${url}`);
+  const e = await entry(name);
+  if (!e) throw new Error(`"${name}" has no usable Idea section (or is a redirect or meta page)`);
+  return e;
+}
+
+/** `n` random page names (with URLs), for the morning task to choose among. */
+export async function candidates(n, seed) {
+  const names = await allPages();
+  return shuffled(names, seed).slice(0, n).map(name => ({
+    title: name,
+    url: `${BASE}/nlab/show/${encodeURIComponent(name).replace(/%20/g, "+")}`,
+  }));
 }
 
 export async function build(cfg, { today }) {

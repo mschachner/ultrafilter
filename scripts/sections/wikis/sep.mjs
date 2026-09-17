@@ -5,6 +5,9 @@
  * each entry's title, the preamble (the untitled opening section before the
  * table of contents), and its publication line. plato.stanford.edu sends no
  * CORS headers, so the pool-and-die arrangement applies here too.
+ *
+ * `resolve(url)` turns an entry URL the morning task picked into the same
+ * item shape; `candidates(n)` lists entries for it to choose from.
  */
 
 import { fetchText, htmlToText, shuffled, firstSentence } from "../../lib.mjs";
@@ -47,6 +50,28 @@ async function entry({ slug, title }) {
     extract,
     url,
   };
+}
+
+function slugFromUrl(url) {
+  try {
+    const u = new URL(url);
+    if (u.hostname !== "plato.stanford.edu") return null;
+    const m = u.pathname.match(/^\/(?:archives\/[^/]+\/)?entries\/([^/]+)\/?$/);
+    return m ? m[1] : null;
+  } catch { return null; }
+}
+
+export async function resolve(url) {
+  const slug = slugFromUrl(url);
+  if (!slug) throw new Error(`not an SEP entry URL: ${url}`);
+  const e = await entry({ slug, title: slug });
+  if (!e) throw new Error(`entry "${slug}" has no preamble`);
+  return e;
+}
+
+export async function candidates(n, seed) {
+  const list = await contents();
+  return shuffled(list, seed).slice(0, n).map(e => ({ title: e.title, url: `${BASE}/entries/${e.slug}/` }));
 }
 
 export async function build(cfg, { today }) {

@@ -339,7 +339,7 @@
   /* The section runs headerless: a quiet control row sits above the plate —
      interest label, the date when it isn't today's, and the reroll die. */
   .art-top { display: flex; align-items: center; gap: .75rem; margin: 2.4rem 0 .55rem; }
-  .art-top .reroll { margin-left: auto; }
+  .art-ctls { margin-left: auto; display: inline-flex; align-items: center; gap: .3rem; }
   .art-date { font-family: var(--mono); font-size: .72rem; letter-spacing: .04em;
               color: var(--muted); }
 
@@ -417,8 +417,9 @@
   .wiki-note { font-size: .85rem; color: var(--muted); margin: .25rem 0 0; }
   .tfa-extract.mono { font-family: var(--mono); font-size: .8rem; line-height: 1.6;
                       -webkit-line-clamp: 3; word-break: break-word; }
+  .tfa-head { display: flex; align-items: center; gap: .45rem; margin: .3rem 0 .05rem; }
   .tfa-title { font-family: var(--display); font-size: 1.35rem; color: var(--ink);
-               text-decoration: none; display: inline-block; margin: .3rem 0 .05rem; }
+               text-decoration: none; display: inline-block; }
   .tfa-title:hover { text-decoration: underline; text-underline-offset: 3px; }
   .tfa-desc { font-size: .82rem; color: var(--muted); display: block; margin-bottom: .5rem; }
   .tfa-extract { font-size: .88rem; line-height: 1.5; display: -webkit-box;
@@ -427,7 +428,9 @@
            align-items: baseline; }
   .wpick:first-of-type { margin-top: .45rem; }
   .wpick .ticon { position: relative; top: .15rem; flex: none; }
-  .wpick-main { min-width: 0; }
+  .wpick-main { min-width: 0; flex: 1 1 auto; }
+  .wpick .uf-heart { align-self: center; opacity: 0; }
+  .wpick:hover .uf-heart, .wpick:focus-within .uf-heart, .wpick .uf-heart[aria-pressed="true"] { opacity: 1; }
   .wpick-title { font-family: var(--display); font-size: .98rem; color: var(--ink); text-decoration: none; }
   .wpick-title:hover { text-decoration: underline; text-underline-offset: 3px; }
   .wpick-desc { display: block; font-size: .74rem; color: var(--muted);
@@ -485,6 +488,8 @@
   .post .copy { flex: none; margin-left: auto; font-size: .7rem; padding: .15rem .6rem;
                 color: var(--muted); opacity: 0; }
   .post:hover .copy, .post:focus-within .copy { opacity: 1; }
+  .post .uf-heart { align-self: center; opacity: 0; }
+  .post:hover .uf-heart, .post:focus-within .uf-heart, .post .uf-heart[aria-pressed="true"] { opacity: 1; }
   .post-title { font-family: var(--display); font-size: 1.05rem; color: var(--ink); text-decoration: none; }
   .post-title:hover { text-decoration: underline; text-underline-offset: 3px; }
   .post-title:visited { color: var(--muted); }
@@ -555,7 +560,7 @@
 
   #status-line { margin-top: 2rem; color: var(--muted); font-size: .9rem; }
 
-  @media (prefers-reduced-motion: no-preference) { .post { transition: background .12s ease; } .post .copy { transition: opacity .12s ease; } }
+  @media (prefers-reduced-motion: no-preference) { .post { transition: background .12s ease; } .post .copy, .post .uf-heart, .wpick .uf-heart { transition: opacity .12s ease; } }
   @media (max-width: 64rem) {
     .cols { flex-direction: column; gap: 0; }
     /* In a column, horizontal flex-bases would become minimum HEIGHTS —
@@ -603,7 +608,7 @@
        the title — the same shape as the Wikipedia picks. */
     .post-main { flex: 1 1 0; }
     .post-src { display: block; margin: .1rem 0 0; white-space: normal; }
-    .post .copy { opacity: 1; }
+    .post .copy, .post .uf-heart, .wpick .uf-heart { opacity: 1; }
     .af-grid { grid-template-columns: 1fr; gap: 0; }
   }
 </style>
@@ -698,9 +703,9 @@
 
 </div>
 
-<script src="listening.js"></script>
+<script src="likes.js"></script>
 <script>
-const state = { blogroll: null, wikis: null, albums: null, artwork: null, weather: null };
+const state = { blogroll: null, wikis: null, albums: null, artwork: null, weather: null, likes: null };
 const sectionNotes = {};   // ledger rows for the non-blogroll sections
 let activeTopic = "all";
 let postsShown = 15;       // "Show more" lifts this to everything
@@ -1023,9 +1028,13 @@ function renderArt() {
   const die = a.interests?.length
     ? `<button id="art-reroll" class="reroll" title="Another artwork"
          aria-label="Show another artwork">${DICE}</button>` : "";
+  const heart = UF.heart("artwork", w.wikidata, {
+    title: w.title, url: w.url, artist: artist?.name || null, artistId: artist?.wikidata || null,
+    interest: a.interestId || null,
+  }, "lg");
 
   $("#art-sec").innerHTML = `
-    <div class="art-top"><span class="klabel">${esc(a.interestLabel || "Artwork")}</span>${dated}${die}</div>
+    <div class="art-top"><span class="klabel">${esc(a.interestLabel || "Artwork")}</span>${dated}<span class="art-ctls">${heart}${die}</span></div>
     <figure class="art">
       <button class="art-btn" aria-label="View ${esc(w.title)} larger">
         <img class="art-img" src="${esc(w.image)}" alt="${esc(w.title)}">
@@ -1068,6 +1077,7 @@ function artSparql(interest, seed) {
   const facets = [
     (interest.movements || []).filter(ok).map(movement),
     (interest.genres || []).filter(ok).map(q => `{ ?item wdt:P136 wd:${q} . }`),
+    (interest.creators || []).filter(ok).map(q => `{ ?item wdt:P170 wd:${q} . }`),
   ].filter(list => list.length)
    .map(list => `{ ${list.join(" UNION ")} }`).join("\n  ");
   const from = interest.from != null ? Number(interest.from) : null;
@@ -1077,7 +1087,7 @@ function artSparql(interest, seed) {
   ${from != null ? `FILTER(?year >= ${from})` : ""}
   ${to != null ? `FILTER(?year <= ${to})` : ""}`
     : `OPTIONAL { ?item wdt:P571 ?inc . BIND(YEAR(?inc) AS ?year) }`;
-  return `SELECT ?item ?year ?image ?article ?creatorArticle ?creatorLabel ?locationLabel WHERE {
+  return `SELECT ?item ?year ?image ?article ?creator ?creatorArticle ?creatorLabel ?locationLabel WHERE {
   VALUES ?class { ${classes} }
   ?item wdt:P31 ?class .
   OPTIONAL { ?item wdt:P18 ?image . }
@@ -1113,15 +1123,41 @@ async function wikiSummary(articleUrl) {
 
 let artRerolling = false;
 
+// What the die draws from: each interest area weighted by its configured
+// weight plus the liked works recorded against it, and each artist among the
+// liked works as an area of their own (works by that artist, in any of the
+// usual work classes), weighted by how many of their works are liked — so
+// hearts steer the die. Mirrors interestForDay() in the artwork builder,
+// plus the per-artist areas, which only the die has.
+const WORK_CLASSES = ["Q3305213", "Q860861", "Q11060274", "Q93184", "Q18219090", "Q28913685", "Q19960510"];
+function artDrawSpec(a) {
+  const liked = UF.of("artwork");
+  const specs = a.interests.map(i => ({
+    spec: i,
+    weight: Math.max(1, i.weight ?? 1) + liked.filter(l => l.interest === i.id).length,
+  }));
+  const byArtist = new Map();
+  for (const l of liked) {
+    if (!/^Q\d+$/.test(l.artistId || "")) continue;
+    const e = byArtist.get(l.artistId) || { id: `creator:${l.artistId}`, label: l.artist || "",
+      creators: [l.artistId], classes: WORK_CLASSES, n: 0 };
+    e.n++;
+    byArtist.set(l.artistId, e);
+  }
+  for (const e of byArtist.values()) specs.push({ spec: e, weight: e.n });
+  const total = specs.reduce((s, x) => s + x.weight, 0);
+  let r = Math.random() * total;
+  for (const x of specs) { r -= x.weight; if (r < 0) return x.spec; }
+  return specs[0].spec;
+}
+
 async function rerollArt() {
   const a = state.artwork;
   if (!a?.interests?.length || artRerolling) return;
   artRerolling = true;
   $("#art-reroll")?.classList.add("spin");
   try {
-    // Same weighting as the build's day-of-year rotation.
-    const pool = a.interests.flatMap(i => Array(Math.max(1, i.weight ?? 1)).fill(i));
-    const interest = pool[Math.floor(Math.random() * pool.length)];
+    const interest = artDrawSpec(a);
     const q = artSparql(interest, String(Math.random()));
     const doc = await (await fetch(
       `https://query.wikidata.org/sparql?query=${encodeURIComponent(q)}&format=json`,
@@ -1149,11 +1185,12 @@ async function rerollArt() {
     if (!row) return;
 
     const creatorName = isQ(row.creatorLabel?.value) ? "" : row.creatorLabel?.value || "";
-    let artist = creatorName ? { name: creatorName } : null;
+    const creatorId = row.creator?.value ? row.creator.value.split("/").pop() : null;
+    let artist = creatorName || creatorId ? { name: creatorName, wikidata: creatorId } : null;
     if (row.creatorArticle?.value) {
       try {
         const s = await wikiSummary(row.creatorArticle.value);
-        artist = { name: creatorName || s.title, description: s.description,
+        artist = { name: creatorName || s.title, wikidata: creatorId, description: s.description,
                    extract: s.extract, url: s.url };
       } catch {}
     }
@@ -1167,8 +1204,9 @@ async function rerollArt() {
       imageLarge = work.image;
     }
     state.artwork = { ...a,
-      interestId: interest.id,
-      interestLabel: interest.label,
+      interestId: interest.creators ? null : interest.id,     // a by-artist draw belongs to no area
+      interestLabel: interest.creators ? (interest.label || "Artwork") : interest.label,
+      picked: false,
       artwork: {
         wikidata: row.item.value.split("/").pop(),
         title: work.title,
@@ -1199,7 +1237,7 @@ function renderAlbums() {
   }
   sectionNotes.albums = { cls: a.stale ? "dim" : "ok", text: `${a.stale ? "stale · " : ""}${a.date}` };
 
-  LL.seed(a.albums);
+  UF.seedAlbums(a.albums);
   const cards = a.albums.map((al, i) => {
     const acc = ACCENTS[i % ACCENTS.length];
     const name = `<i>${esc(al.album)}</i>`;
@@ -1217,7 +1255,7 @@ function renderAlbums() {
       ${al.genres?.length ? `<div class="album-genres">${esc(al.genres.join(" · "))}</div>` : ""}
       <p>${esc(al.blurb)}</p>
       ${al.reception ? `<p class="reception">${esc(al.reception)}</p>` : ""}
-      ${LL.control(al.artist, al.album)}
+      ${UF.control(al.artist, al.album, { genres: al.genres || [] })}
     </article>`;
   }).join("");
 
@@ -1246,7 +1284,7 @@ let rerolling = false;
 const WTAB_KEY = "ultrafilter:wikiTab";
 let wikiTab = null;
 try { wikiTab = localStorage.getItem(WTAB_KEY); } catch {}
-const wikiOffsets = {};   // per tab: where in the pool the die has got to
+const wikiSides = {};     // per pool tab: which of the pool are the side picks on show
 
 function wikiTabs() {
   const w = state.wikis;
@@ -1262,15 +1300,33 @@ function selectWikiTab(id) {
   renderWiki();
 }
 
-// "Another three": redo the builder's random draw client-side. The topic map
-// ships in wikis.json; both Wikipedia APIs answer anonymous CORS requests.
+// "Another three": redo the builder's random draw client-side — the three
+// side picks only; the featured article stays. The topic map ships in
+// wikis.json; both Wikipedia APIs answer anonymous CORS requests. Topics are
+// drawn without replacement, each weighted 1 plus the number of liked
+// Wikipedia entries recorded against it (mirroring topicsForDay() in the
+// builder), so hearts steer the die.
+function weightedTopics(topics, count) {
+  const liked = UF.of("wiki").filter(l => l.source === "wikipedia");
+  let pool = topics.map(t => ({ t, weight: 1 + liked.filter(l => l.topic === t.id).length }));
+  const out = [];
+  while (out.length < count && pool.length) {
+    const total = pool.reduce((s, x) => s + x.weight, 0);
+    let r = Math.random() * total, hit = pool[pool.length - 1];
+    for (const x of pool) { r -= x.weight; if (r < 0) { hit = x; break; } }
+    out.push(hit.t);
+    pool = pool.filter(x => x !== hit);
+  }
+  return out;
+}
+
 async function rerollPicks() {
   const w = state.wikis?.tabs?.wikipedia;
   if (!w?.topics?.length || rerolling) return;
   rerolling = true;
   $("#reroll")?.classList.add("spin");
   try {
-    const pool = [...w.topics].sort(() => Math.random() - .5).slice(0, 3);
+    const pool = weightedTopics(w.topics, 3);
     const exclude = new Set([w.tfa?.title, ...(w.picks || []).map(p => p.title)].filter(Boolean));
     const fresh = [];
     for (const t of pool) {
@@ -1306,37 +1362,55 @@ async function rerollPicks() {
   }
 }
 
-// The pool die: show the next slice of what the build fetched.
-function cyclePool(tab) {
-  const n = tab.items?.length || 0, per = tab.perPage || 3;
-  if (n <= per) return;
-  wikiOffsets[tab.id] = ((wikiOffsets[tab.id] || 0) + per) % n;
-  const die = $("#reroll");
-  die?.classList.add("spin");
+// The pool die: the lead stays (the morning task's pick, or the day's first
+// draw); the side picks are redrawn at random from the rest of the pool the
+// build fetched, avoiding the ones on show when the pool allows.
+function poolSides(tab) {
+  const rest = (tab.items || []).slice(1);
+  const per = Math.min(tab.perPage || 3, rest.length);
+  let idx = wikiSides[tab.id];
+  if (!idx || idx.length !== per || idx.some(i => i >= rest.length)) {
+    idx = Array.from({ length: per }, (_, i) => i);   // the day's first slice
+    wikiSides[tab.id] = idx;
+  }
+  return { rest, per, idx };
+}
+function rerollSides(tab) {
+  const { rest, per, idx } = poolSides(tab);
+  if (rest.length <= per) return;
+  const cur = new Set(idx);
+  const order = rest.map((_, i) => i).sort(() => Math.random() - .5);
+  wikiSides[tab.id] = [...order.filter(i => !cur.has(i)), ...order.filter(i => cur.has(i))].slice(0, per);
+  $("#reroll")?.classList.add("spin");
   setTimeout(() => { renderWiki(); }, 350);
 }
 
-function wikiLead(lead) {
+function wikiLead(lead, tabId) {
   if (!lead) return "<div></div>";
   // Sources without a natural one-liner describe a pick by its first
   // sentence; on the lead that would just repeat the extract's opening.
   const desc = lead.description || "";
   const dup = desc && (lead.extract || "").startsWith(desc.replace(/…$/, ""));
+  const heart = UF.heart("wiki", lead.url,
+    { source: tabId, title: lead.title, url: lead.url, topic: lead.topicId || null }, "lg");
   return `<div class="tfa">
-      <span class="klabel">${esc(lead.kicker || "")}</span><br>
-      <a class="tfa-title" href="${esc(lead.url)}" target="_blank" rel="noopener">${esc(lead.title)}</a>
+      <span class="klabel">${esc(lead.kicker || "")}</span>
+      <span class="tfa-head"><a class="tfa-title" href="${esc(lead.url)}" target="_blank" rel="noopener">${esc(lead.title)}</a>${heart}</span>
       ${dup ? "" : `<span class="tfa-desc">${esc(desc)}</span>`}
       <p class="tfa-extract${lead.mono ? " mono" : ""}">${esc(lead.extract)}</p>
     </div>`;
 }
-function wikiPickRow(p, dot, glyph) {
+function wikiPickRow(p, dot, glyph, tabId) {
+  const heart = UF.heart("wiki", p.url,
+    { source: tabId, title: p.title, url: p.url, topic: p.topicId || null }, "sm");
   return `
-    <div class="wpick" style="--dot:${dot}">
+    <div class="wpick${p.picked ? " picked" : ""}" style="--dot:${dot}">
       ${glyph}
       <span class="wpick-main">
         <a class="wpick-title" href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.title)}</a>
         <span class="wpick-desc" title="${esc(p.description)}">${esc(p.description)}</span>
       </span>
+      ${heart}
     </div>`;
 }
 
@@ -1347,19 +1421,19 @@ function wikiTabBody(tab) {
   }
   if (tab.id === "wikipedia") {
     const lead = tab.tfa ? { ...tab.tfa, kicker: "Featured article" } : null;
-    const picks = (tab.picks || []).map(p => wikiPickRow(p, topicColor(p.topicId), icon(p.topicId))).join("");
+    const picks = (tab.picks || []).map(p =>
+      wikiPickRow(p, p.topicId ? topicColor(p.topicId) : "var(--accent)", icon(p.topicId || "dot"), "wikipedia")).join("");
     const die = tab.topics?.length
       ? `<button id="reroll" class="reroll" title="Another three" aria-label="Show another three articles">${DICE}</button>` : "";
-    return { html: `<div class="wiki">${wikiLead(lead)}<div class="wpicks">${picks}</div></div>`, die };
+    return { html: `<div class="wiki">${wikiLead(lead, "wikipedia")}<div class="wpicks">${picks}</div></div>`, die };
   }
-  const per = tab.perPage || 3, n = tab.items.length;
-  const off = (wikiOffsets[tab.id] || 0) % n;
-  const slice = Array.from({ length: Math.min(per, n) }, (_, i) => tab.items[(off + i) % n]);
-  const lead = { ...slice[0], kicker: tab.label };
-  const picks = slice.slice(1).map(p => wikiPickRow(p, "var(--accent)", icon("dot"))).join("");
-  const die = n > per
+  const { rest, per, idx } = poolSides(tab);
+  const first = tab.items[0];
+  const lead = { ...first, kicker: first.picked ? `${tab.label} · picked` : tab.label };
+  const picks = idx.map(i => rest[i]).map(p => wikiPickRow(p, "var(--accent)", icon("dot"), tab.id)).join("");
+  const die = rest.length > per
     ? `<button id="reroll" class="reroll" title="Another ${per}" aria-label="Show another ${per} entries">${DICE}</button>` : "";
-  return { html: `<div class="wiki">${wikiLead(lead)}<div class="wpicks">${picks}</div></div>`, die };
+  return { html: `<div class="wiki">${wikiLead(lead, tab.id)}<div class="wpicks">${picks}</div></div>`, die };
 }
 
 function renderWiki() {
@@ -1473,6 +1547,7 @@ function renderList() {
         <span class="post-src">${esc(p.feed)}</span>
       </span>
       <button class="copy" data-link="${esc(p.link)}">Copy link</button>
+      ${UF.heart("post", p.link, { title: p.title, url: p.link, feed: p.feed, topics: p.topics }, "sm")}
     </div>`;
   }
   if (all.length > posts.length) {
@@ -1532,8 +1607,10 @@ async function loadJson(name) {
 async function load() {
   $("#mast-date").textContent = prettyDate(TODAY_KEY);
 
-  const [b, w, a, art, wx] = await Promise.allSettled(
-    ["blogroll", "wikis", "albums", "artwork", "weather"].map(loadJson));
+  const [b, w, a, art, wx, lk] = await Promise.allSettled(
+    ["blogroll", "wikis", "albums", "artwork", "weather", "likes"].map(loadJson));
+  state.likes = lk.status === "fulfilled" ? lk.value : null;
+  UF.seed(state.likes?.items);   // baked marks, before anything renders a heart
   state.blogroll = b.status === "fulfilled" ? b.value : { error: b.reason?.message };
   state.wikis = w.status === "fulfilled" ? w.value : { error: w.reason?.message };
   state.albums = a.status === "fulfilled" ? a.value : { error: a.reason?.message, status: "failed" };
@@ -1546,11 +1623,11 @@ async function load() {
   renderBlogroll();
   loadWeather();   // async; re-renders the ledger row when it settles
 
-  // Listening log: clicks are delegated, and a fresh copy of the log (when a
-  // token is configured) quietly restyles the controls once it arrives.
-  LL.bind($("#albums-sec"));
-  LL.onChange = () => LL.syncCtls();
-  LL.refresh();
+  // Likes: clicks on every heart are delegated from the columns, and a fresh
+  // copy of likes.json quietly restyles the controls once it arrives.
+  UF.bind($(".cols"));
+  UF.onChange = () => UF.syncCtls();
+  UF.refresh();
 }
 
 /**
@@ -1577,7 +1654,7 @@ function maybeOpenInApp(e, href) {
 }
 
 $("#albums-sec").addEventListener("click", e => {
-  if (e.target.closest(".ll-ctl")) return;       // the listening log handles its own clicks
+  if (e.target.closest(".ll-ctl, .uf-heart")) return;   // likes.js handles its own clicks
   const btn = e.target.closest(".cover-btn");
   if (btn) return openLightbox(Number(btn.dataset.i));
   const link = e.target.closest("a");
@@ -1594,7 +1671,7 @@ $("#wiki-sec").addEventListener("click", e => {
   if (t) return selectWikiTab(t.dataset.tab);
   if (e.target.closest("#reroll")) {
     const tab = activeWikiTab();
-    return tab?.id === "wikipedia" ? rerollPicks() : cyclePool(tab);
+    return tab?.id === "wikipedia" ? rerollPicks() : rerollSides(tab);
   }
 });
 $("#art-sec").addEventListener("click", e => {

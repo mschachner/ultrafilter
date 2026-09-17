@@ -2,6 +2,16 @@
  * Artwork section: one work a day, drawn from Wikidata and described with
  * Wikipedia's own prose.
  *
+ * Where the day's work comes from, in order:
+ *   1. The morning task's pick (picks/latest.json in the store, `artwork.
+ *      wikidata`), when there is one for today. The task chooses by
+ *      judgment against the likes; this builder only resolves the Q-number
+ *      — image, prose, and artist all come from Wikidata and Wikipedia, so
+ *      the plate reads exactly as a random day's would.
+ *   2. Otherwise a draw: an interest area chosen for the day with weights
+ *      that lean towards liked areas (config `weight` plus the number of
+ *      liked works in that area), then a work from the area.
+ *
  * Candidates come from the Wikidata Query Service, filtered by the movements
  * (P135), genres (P136), and inception window (P571) configured per interest
  * area in `config.json` — and required to have an English Wikipedia article,
@@ -24,22 +34,23 @@
  * creator (P170) carries the movement, at the cost of some precision — a
  * late Picasso still life counts as Cubism because Picasso does.
  *
- * Which interest area is drawn from rotates with the day of the year. Within
- * it, the pick is deterministic per day: candidates are ordered by
- * MD5(item ‖ date), so every rebuild on the same day lands on the same work
- * without stored state beyond the published payload itself. That payload
- * carries the Q-numbers of the last RECENT_PICKS works shown, and today's
- * candidates are filtered against them, so a small pool cycles through its
- * works rather than landing on the same few. As with the Wikipedia section,
- * when the currently-published payload already carries today's date it is
- * reused verbatim.
+ * Within an area the pick is deterministic per day: candidates are ordered
+ * by MD5(item ‖ date), so every rebuild on the same day lands on the same
+ * work without stored state beyond the published payload itself. That
+ * payload carries the Q-numbers of the last RECENT_PICKS works shown, and
+ * today's candidates are filtered against them, so a small pool cycles
+ * through its works rather than landing on the same few. When the
+ * currently-published payload already carries today's date — and reflects
+ * the same pick — it is reused verbatim.
  *
- * The page's reroll die redoes this draw client-side with a random seed —
+ * The page's reroll die redoes the draw client-side with a random seed —
  * index.html carries a mirror of sparqlFor(), so a change here means
- * changing it there too.
+ * changing it there too. The candidates script (scripts/candidates.mjs) the
+ * morning task runs uses the exported functions below directly.
  */
 
-import { fetchJson, todayIn } from "../lib.mjs";
+import { fetchJson, todayIn, seededRandom } from "../lib.mjs";
+import { weightedPick } from "./likes.mjs";
 
 // Wikimedia asks API clients for an identifying User-Agent with contact info.
 const WIKI_UA = "UltrafilterBuild/1.0 (https://github.com/mschachner/ultrafilter)";
@@ -59,21 +70,34 @@ const DEFAULT_CLASSES = ["Q3305213"];
 const RECENT_PICKS = 20;
 const CANDIDATES = RECENT_PICKS + 20;
 
-const qid = v => /^Q\d+$/.test(v || "");
+export const qid = v => /^Q\d+$/.test(v || "");
 
-function sparqlFor(interest, dateKey) {
+const SELECT = "SELECT ?item ?year ?image ?article ?creator ?creatorArticle ?creatorLabel ?locationLabel WHERE {";
+const TAIL = `  ?article schema:about ?item ; schema:isPartOf <https://en.wikipedia.org/> .
+  OPTIONAL {
+    ?item wdt:P170 ?creator .
+    OPTIONAL { ?creatorArticle schema:about ?creator ;
+                               schema:isPartOf <https://en.wikipedia.org/> . }
+  }
+  OPTIONAL { ?item wdt:P276 ?location . }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+}`;
+
+export function sparqlFor(interest, dateKey, limit = CANDIDATES) {
   const classes = (interest.classes?.length ? interest.classes : DEFAULT_CLASSES)
     .filter(qid).map(q => `wd:${q}`).join(" ");
   // Within a list, values are alternatives (OR); listing both movements and
   // genres requires both — so movement: impressionism + genre: landscape
   // means Impressionist landscapes, not either. With viaCreator, a movement
-  // also matches through the work's creator.
+  // also matches through the work's creator. An interest can instead name
+  // `creators` (Q-numbers of artists): works by any of them.
   const movement = q => interest.viaCreator
     ? `{ { ?item wdt:P135 wd:${q} . } UNION { ?item wdt:P170/wdt:P135 wd:${q} . } }`
     : `{ ?item wdt:P135 wd:${q} . }`;
   const facets = [
     (interest.movements || []).filter(qid).map(movement),
     (interest.genres || []).filter(qid).map(q => `{ ?item wdt:P136 wd:${q} . }`),
+    (interest.creators || []).filter(qid).map(q => `{ ?item wdt:P170 wd:${q} . }`),
   ].filter(list => list.length)
    .map(list => `{ ${list.join(" UNION ")} }`);
   if (!classes) throw new Error(`interest ${interest.id}: no valid classes`);
@@ -89,24 +113,42 @@ function sparqlFor(interest, dateKey) {
   ${to != null ? `FILTER(?year <= ${to})` : ""}`
       : `OPTIONAL { ?item wdt:P571 ?inc . BIND(YEAR(?inc) AS ?year) }`;
 
-  return `SELECT ?item ?year ?image ?article ?creatorArticle ?creatorLabel ?locationLabel WHERE {
+  return `${SELECT}
   VALUES ?class { ${classes} }
   ?item wdt:P31 ?class .
   OPTIONAL { ?item wdt:P18 ?image . }
   ${facets.join("\n  ")}
-  ?article schema:about ?item ; schema:isPartOf <https://en.wikipedia.org/> .
   ${inception}
-  OPTIONAL {
-    ?item wdt:P170 ?creator .
-    OPTIONAL { ?creatorArticle schema:about ?creator ;
-                               schema:isPartOf <https://en.wikipedia.org/> . }
-  }
-  OPTIONAL { ?item wdt:P276 ?location . }
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
-}
+${TAIL}
 ORDER BY MD5(CONCAT(STR(?item), "${dateKey}"))
-LIMIT ${CANDIDATES}`;
+LIMIT ${limit}`;
 }
+
+/** The same columns for one known item, so a pick resolves like a draw. */
+export function sparqlForItem(q) {
+  if (!qid(q)) throw new Error(`not a Q-number: ${q}`);
+  return `${SELECT}
+  VALUES ?item { wd:${q} }
+  OPTIONAL { ?item wdt:P18 ?image . }
+  OPTIONAL { ?item wdt:P571 ?inc . BIND(YEAR(?inc) AS ?year) }
+${TAIL}
+LIMIT 8`;
+}
+
+export async function runSparql(query) {
+  const doc = await fetchJson(`${SPARQL}?query=${encodeURIComponent(query)}&format=json`,
+    { "User-Agent": WIKI_UA });
+  // One row per item, first-seen order (i.e. the daily shuffle) — items with
+  // several creators or locations come back as several rows.
+  const byItem = new Map();
+  for (const r of doc?.results?.bindings || []) {
+    const id = r.item?.value;
+    if (id && !byItem.has(id)) byItem.set(id, r);
+  }
+  return [...byItem.values()];
+}
+
+export const itemId = row => row.item.value.split("/").pop();
 
 /** Wikipedia REST summary for an enwiki article URL. */
 async function summaryFor(articleUrl) {
@@ -124,78 +166,37 @@ async function summaryFor(articleUrl) {
   };
 }
 
-export async function build(config, { published }) {
-  const cfg = config.artwork;
-  if (!cfg?.interests?.length) {
-    console.log("skip  artwork — no artwork config");
-    return { generated: new Date().toISOString(), status: "pending", error: "no artwork config" };
-  }
-  const today = todayIn(cfg.timezone || "UTC");
-
-  // Same local day, already built once — keep it (the pick is deterministic
-  // anyway, but reusing skips the queries on mid-day rebuilds). The interest
-  // map rides along so the page's reroll die always has the current config,
-  // even when the content itself is reused.
-  if (published?.date === today.key && published.artwork) {
-    console.log(`ok    artwork — reusing published payload for ${today.key}`);
-    return { ...published, interests: cfg.interests };
-  }
-
-  // Rotate which interest area is drawn from, by day of year. An interest
-  // can carry `weight` (default 1): it takes that many slots in the
-  // rotation, so favourites come up more often.
-  const doy = Math.floor(Date.parse(today.key) / 86400000);
-  const rotation = cfg.interests.flatMap(i => Array(Math.max(1, i.weight ?? 1)).fill(i));
-  const interest = rotation[doy % rotation.length];
-
-  const query = sparqlFor(interest, today.key);
-  const doc = await fetchJson(`${SPARQL}?query=${encodeURIComponent(query)}&format=json`,
-    { "User-Agent": WIKI_UA });
-
-  // One row per item, first-seen order (i.e. the daily shuffle) — items with
-  // several creators or locations come back as several rows.
-  const byItem = new Map();
-  for (const r of doc?.results?.bindings || []) {
-    const id = r.item?.value;
-    if (id && !byItem.has(id)) byItem.set(id, r);
-  }
-  let candidates = [...byItem.values()];
-  if (!candidates.length) throw new Error(`no candidates for interest "${interest.id}"`);
-
-  // Don't repeat a recently shown work when there's a choice. Older payloads
-  // carry no `recent` list; yesterday's pick still counts.
-  const recent = [...(published?.recent || []), published?.artwork?.wikidata]
-    .filter(Boolean).slice(-RECENT_PICKS);
-  if (recent.length) {
-    const fresh = candidates.filter(r => !recent.includes(r.item.value.split("/").pop()));
-    if (fresh.length) candidates = fresh;
-  }
-
-  // Walk the day's order until a work with a usable image: Commons (P18)
-  // when it exists, else the article's own lead image.
+/**
+ * Walks candidate rows in order until one has a usable image — Commons
+ * (P18) when it exists, else the article's own lead image — and returns the
+ * full plate: { artwork, artist }. Null when no candidate qualifies.
+ */
+export async function describeFirst(candidates, log = () => {}) {
   let row = null, work = null;
   for (const cand of candidates) {
     let s;
     try {
       s = await summaryFor(cand.article.value);
     } catch (err) {
-      console.log(`--    artwork — summary failed for ${cand.article.value} (${err.message || err})`);
+      log(`--    artwork — summary failed for ${cand.article.value} (${err.message || err})`);
       continue;
     }
     if (cand.image?.value || s.image) { row = cand; work = s; break; }
   }
-  if (!row) throw new Error(`no candidates with a usable image for interest "${interest.id}"`);
+  if (!row) return null;
 
-  // The artist: their article's lead when they have one, else just the label.
+  // The artist: their article's lead when they have one, else just the
+  // label. The Q-number rides along so a like can record who made the work.
   const creatorName = qid(row.creatorLabel?.value) ? "" : row.creatorLabel?.value || "";
-  let artist = creatorName ? { name: creatorName } : null;
+  const creatorId = row.creator?.value ? row.creator.value.split("/").pop() : null;
+  let artist = creatorName || creatorId ? { name: creatorName, wikidata: creatorId } : null;
   if (row.creatorArticle?.value) {
     try {
       const s = await summaryFor(row.creatorArticle.value);
-      artist = { name: creatorName || s.title, description: s.description,
+      artist = { name: creatorName || s.title, wikidata: creatorId, description: s.description,
                  extract: s.extract, url: s.url };
     } catch (err) {
-      console.log(`FAIL  artwork artist — ${err.message || err}`);
+      log(`FAIL  artwork artist — ${err.message || err}`);
     }
   }
 
@@ -213,17 +214,9 @@ export async function build(config, { published }) {
   }
   const location = qid(row.locationLabel?.value) ? "" : row.locationLabel?.value || "";
 
-  console.log(`ok    artwork (${interest.id}) — ${work.title}${artist?.name ? ` · ${artist.name}` : ""}`);
   return {
-    generated: new Date().toISOString(),
-    date: today.key,
-    interests: cfg.interests,   // the page's reroll die draws from these
-    interestId: interest.id,
-    interestLabel: interest.label,
-    // Q-numbers of the last picks, oldest first, for tomorrow's draw to avoid.
-    recent: [...recent, row.item.value.split("/").pop()].slice(-RECENT_PICKS),
     artwork: {
-      wikidata: row.item.value.split("/").pop(),
+      wikidata: itemId(row),
       title: work.title,
       description: work.description,
       extract: work.extract,
@@ -234,5 +227,83 @@ export async function build(config, { published }) {
       imageLarge,
     },
     artist,
+  };
+}
+
+/**
+ * The day's interest area. Each area's weight is its configured `weight`
+ * (default 1) plus the number of liked works recorded against it, so areas
+ * that keep earning hearts come up more often; the choice is seeded by the
+ * date so every rebuild agrees.
+ */
+export function interestForDay(interests, likes, dateKey) {
+  const weights = interests.map(i => ({
+    value: i,
+    weight: Math.max(1, i.weight ?? 1) + (likes?.count("artwork", it => it.interest === i.id) ?? 0),
+  }));
+  return weightedPick(weights, seededRandom(`artwork:${dateKey}`));
+}
+
+export async function build(config, { published, likes, picks }) {
+  const cfg = config.artwork;
+  if (!cfg?.interests?.length) {
+    console.log("skip  artwork — no artwork config");
+    return { generated: new Date().toISOString(), status: "pending", error: "no artwork config" };
+  }
+  const today = todayIn(cfg.timezone || "UTC");
+  const pick = picks?.artwork || null;
+  const pickKey = pick?.wikidata || "";
+
+  // Same local day, already built once, and built for the same pick (the
+  // 8:17 run precedes the morning task; the 9:45 run must not reuse its
+  // random draw once the task's pick exists) — keep it. The interest map
+  // rides along so the page's reroll die always has the current config.
+  if (published?.date === today.key && published.artwork && (published.pickKey || "") === pickKey) {
+    console.log(`ok    artwork — reusing published payload for ${today.key}`);
+    return { ...published, interests: cfg.interests };
+  }
+
+  // Don't repeat a recently shown work when there's a choice. Older payloads
+  // carry no `recent` list; yesterday's pick still counts.
+  const recent = [...(published?.recent || []), published?.artwork?.wikidata]
+    .filter(Boolean).slice(-RECENT_PICKS);
+
+  let plate = null, interest = null, picked = false;
+  if (pick) {
+    const rows = await runSparql(sparqlForItem(pick.wikidata));
+    plate = rows.length ? await describeFirst(rows, console.log) : null;
+    if (plate) {
+      picked = true;
+      interest = cfg.interests.find(i => i.id === pick.interest) || null;
+      console.log(`ok    artwork (picked) — ${plate.artwork.title}`);
+    } else {
+      console.log(`--    artwork — pick ${pick.wikidata} unusable (no article or image); drawing instead`);
+    }
+  }
+
+  if (!plate) {
+    interest = interestForDay(cfg.interests, likes, today.key);
+    let candidates = await runSparql(sparqlFor(interest, today.key));
+    if (!candidates.length) throw new Error(`no candidates for interest "${interest.id}"`);
+    if (recent.length) {
+      const fresh = candidates.filter(r => !recent.includes(itemId(r)));
+      if (fresh.length) candidates = fresh;
+    }
+    plate = await describeFirst(candidates, console.log);
+    if (!plate) throw new Error(`no candidates with a usable image for interest "${interest.id}"`);
+    console.log(`ok    artwork (${interest.id}) — ${plate.artwork.title}${plate.artist?.name ? ` · ${plate.artist.name}` : ""}`);
+  }
+
+  return {
+    generated: new Date().toISOString(),
+    date: today.key,
+    interests: cfg.interests,   // the page's reroll die draws from these
+    interestId: interest?.id || null,
+    interestLabel: interest?.label || (picked ? "Today's pick" : "Artwork"),
+    picked,
+    pickKey,
+    // Q-numbers of the last picks, oldest first, for tomorrow's draw to avoid.
+    recent: [...recent, plate.artwork.wikidata].slice(-RECENT_PICKS),
+    ...plate,
   };
 }

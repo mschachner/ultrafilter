@@ -66,7 +66,7 @@
     "nlab":         { "poolSize": 12 },
     "sep":          { "poolSize": 9 },
     "attic":        { "poolSize": 9 },
-    "oeis":         { "poolSize": 6, "maxNumber": 395000 },
+    "oeis":         { "poolSize": 8, "maxNumber": 395000 },
     "mathoverflow": { "tags": ["set-theory"], "days": 7, "count": 8 },
     "arxiv":        { "categories": ["math.LO"], "count": 10 }
   },
@@ -86,11 +86,15 @@
     ]
   },
 
+  "store": {
+    "repo": "mschachner/ultrafilter",
+    "branch": "data",
+    "dir": "store"
+  },
+
   "albums": {
-    "repo": "mschachner/spotify-recs",
     "path": "albums/latest.json",
     "dir": "albums",
-    "historyPath": "recommendation_history.csv",
-    "tokenEnv": "SPOTIFY_RECS_TOKEN"
+    "historyPath": "recommendation_history.csv"
   }
 }

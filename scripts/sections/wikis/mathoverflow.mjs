@@ -3,9 +3,11 @@
  * tags, via the Stack Exchange API (anonymous, 300 requests a day, more than
  * enough for a build every two hours). The window widens when a quiet week
  * yields too few questions. Not a daily section — it rebuilds every run.
+ *
+ * `resolve(url)` reads one question the morning task picked, by id.
  */
 
-import { fetchJson, htmlToText, tex2text, decodeEntities, firstSentence } from "../../lib.mjs";
+import { fetchJson, htmlToText, tex2text, decodeEntities } from "../../lib.mjs";
 
 const API = "https://api.stackexchange.com/2.3/questions";
 
@@ -29,6 +31,16 @@ function item(q, tags) {
     url: q.link,
     when: new Date(q.creation_date * 1000).toISOString().slice(0, 10),
   };
+}
+
+export async function resolve(url, cfg = {}) {
+  const m = String(url).match(/mathoverflow\.net\/(?:questions|q)\/(\d+)/);
+  if (!m) throw new Error(`not a MathOverflow question URL: ${url}`);
+  const doc = await fetchJson(`${API}/${m[1]}?site=mathoverflow&filter=withbody`);
+  if (doc.error_message) throw new Error(`SE API: ${doc.error_message}`);
+  const q = doc.items?.[0];
+  if (!q) throw new Error(`question ${m[1]} not found`);
+  return item(q, cfg.tags?.length ? cfg.tags : ["set-theory"]);
 }
 
 export async function build(cfg) {

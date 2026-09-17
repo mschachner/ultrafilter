@@ -9,6 +9,10 @@
  * (2026-09-12 to 14). The feed is built for polling and served separately.
  * The API remains as a fallback for a day the feed is missing or empty (it is
  * rewritten each announcement, so a brief gap is possible).
+ *
+ * `resolve(url)` reads one paper the morning task picked. It is found in
+ * the day's listing feed first (no API call at all); only a paper outside
+ * the listing costs one `id_list` API request.
  */
 
 import { XMLParser } from "fast-xml-parser";
@@ -92,6 +96,28 @@ function fromApi(xml, cats) {
       when,
     };
   });
+}
+
+const paperId = url => {
+  const m = String(url).match(/arxiv\.org\/(?:abs|pdf)\/([\w.\-/]+?)(?:v\d+)?(?:\.pdf)?$/);
+  return m ? m[1] : null;
+};
+
+export async function resolve(url, cfg = {}) {
+  const id = paperId(url);
+  if (!id) throw new Error(`not an arXiv paper URL: ${url}`);
+  const cats = cfg.categories?.length ? cfg.categories : ["math.LO"];
+  const inListing = items => items.find(i => paperId(i.url) === id);
+  try {
+    const xml = await fetchText(`${FEED}${cats.join("+")}`, { Accept: "application/atom+xml" });
+    const hit = inListing(fromFeed(xml, cats, 1000));
+    if (hit) return hit;
+  } catch {}
+  const xml = await fetchText(`${API}?id_list=${encodeURIComponent(id)}&max_results=1`,
+    { Accept: "application/atom+xml" });
+  const hit = fromApi(xml, cats)[0];
+  if (!hit?.title) throw new Error(`paper ${id} not found`);
+  return hit;
 }
 
 export async function build(cfg) {

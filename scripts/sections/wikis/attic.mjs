@@ -6,6 +6,10 @@
  * them with a date-fixed seed, and reads each page's raw Markdown: the front
  * matter gives the title and permalink, and the first paragraph is the
  * extract. Links point at the rendered site.
+ *
+ * `resolve(url)` turns a page URL the morning task picked into the same
+ * item shape (the URL's path is tried as the Markdown file name first, then
+ * matched against permalinks in the tree); `candidates(n)` lists pages.
  */
 
 import { fetchJson, fetchText, tex2text, shuffled, firstSentence, decodeEntities } from "../../lib.mjs";
@@ -73,6 +77,44 @@ async function entry(name) {
     extract: extract.length > 600 ? extract.slice(0, 599).replace(/\s+\S*$/, "") + "…" : extract,
     url: SITE + permalink,
   };
+}
+
+function pathFromUrl(url) {
+  try {
+    const u = new URL(url);
+    if (!url.startsWith(SITE) && u.hostname !== "cantorsattic.info") return null;
+    const rel = url.startsWith(SITE) ? url.slice(SITE.length) : u.pathname.replace(/^\/index\.php\//, "").replace(/^\//, "");
+    return decodeURIComponent(rel.replace(/[?#].*$/, "").replace(/\/$/, ""));
+  } catch { return null; }
+}
+
+export async function resolve(url) {
+  const path = pathFromUrl(url);
+  if (!path) throw new Error(`not a Cantor's Attic page URL: ${url}`);
+  // The Markdown file is usually named after the permalink; when it isn't,
+  // fall through to the rendered page's title and first paragraph.
+  try {
+    const e = await entry(path);
+    if (e) return { ...e, url: SITE + path };
+  } catch (err) {
+    if (err.status !== 404) throw err;
+  }
+  const html = await fetchText(url);
+  const h1 = html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/);
+  const paras = [...html.matchAll(/<p>([\s\S]*?)<\/p>/g)].map(p => mdToText(p[1])).filter(t => t.length > 40);
+  if (!h1 || !paras.length) throw new Error(`couldn't read a title and paragraph from ${url}`);
+  const extract = paras[0];
+  return {
+    title: tex2text(mdToText(h1[1])),
+    description: firstSentence(extract),
+    extract: extract.length > 600 ? extract.slice(0, 599).replace(/\s+\S*$/, "") + "…" : extract,
+    url,
+  };
+}
+
+export async function candidates(n, seed) {
+  const list = await pages();
+  return shuffled(list, seed).slice(0, n).map(name => ({ title: name.replace(/_/g, " "), url: SITE + name }));
 }
 
 export async function build(cfg, { today }) {
