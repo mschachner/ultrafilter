@@ -1,0 +1,618 @@
+{
+ "version": 1,
+ "updated": "2026-09-17T16:14:09.898Z",
+ "items": [
+  {
+   "kind": "album",
+   "key": "big star::#1 record",
+   "artist": "Big Star",
+   "album": "#1 Record",
+   "listened": "2026-08-08",
+   "liked": false,
+   "when": "2026-08-08"
+  },
+  {
+   "kind": "album",
+   "key": "thundercat::drunk",
+   "artist": "Thundercat",
+   "album": "Drunk",
+   "listened": "2026-08-08",
+   "liked": true,
+   "when": "2026-08-08"
+  },
+  {
+   "kind": "album",
+   "key": "casiopea::mint jams",
+   "artist": "CASIOPEA",
+   "album": "MINT JAMS",
+   "listened": "2026-08-08",
+   "liked": true,
+   "when": "2026-08-08"
+  },
+  {
+   "kind": "album",
+   "key": "cory wong::the optimist",
+   "artist": "Cory Wong",
+   "album": "The Optimist",
+   "listened": "2026-08-08",
+   "liked": false,
+   "when": "2026-08-08"
+  },
+  {
+   "kind": "album",
+   "key": "sudan archives::natural brown prom queen",
+   "artist": "Sudan Archives",
+   "album": "Natural Brown Prom Queen",
+   "listened": "2026-08-08",
+   "liked": true,
+   "when": "2026-08-08"
+  },
+  {
+   "kind": "album",
+   "key": "adrianne lenker::bright future",
+   "artist": "Adrianne Lenker",
+   "album": "Bright Future",
+   "listened": "2026-08-08",
+   "liked": true,
+   "when": "2026-08-08"
+  },
+  {
+   "kind": "album",
+   "key": "louis cole::quality over opinion",
+   "artist": "Louis Cole",
+   "album": "Quality Over Opinion",
+   "listened": "2026-08-08",
+   "liked": false,
+   "when": "2026-08-08"
+  },
+  {
+   "kind": "album",
+   "key": "the bad plus::these are the vistas",
+   "artist": "The Bad Plus",
+   "album": "These Are The Vistas",
+   "listened": "2026-08-08",
+   "liked": false,
+   "when": "2026-08-08"
+  },
+  {
+   "kind": "album",
+   "key": "nala sinephro::space 1.8",
+   "artist": "Nala Sinephro",
+   "album": "Space 1.8",
+   "listened": "2026-08-08",
+   "liked": false,
+   "when": "2026-08-08"
+  },
+  {
+   "kind": "album",
+   "key": "bruno pernadas::private reasons",
+   "artist": "Bruno Pernadas",
+   "album": "Private Reasons",
+   "listened": "2026-08-08",
+   "liked": true,
+   "when": "2026-08-08"
+  },
+  {
+   "kind": "album",
+   "key": "mdou moctar::afrique victime",
+   "artist": "Mdou Moctar",
+   "album": "Afrique Victime",
+   "listened": "2026-08-08",
+   "liked": false,
+   "when": "2026-08-08"
+  },
+  {
+   "kind": "album",
+   "key": "fleet foxes::crack-up",
+   "artist": "Fleet Foxes",
+   "album": "Crack-Up",
+   "listened": "2026-08-08",
+   "liked": false,
+   "when": "2026-08-08"
+  },
+  {
+   "kind": "album",
+   "key": "hiroshi yoshimura::green",
+   "artist": "Hiroshi Yoshimura",
+   "album": "GREEN",
+   "listened": "2026-08-08",
+   "liked": true,
+   "when": "2026-08-08"
+  },
+  {
+   "kind": "album",
+   "key": "little simz::sometimes i might be introvert",
+   "artist": "Little Simz",
+   "album": "Sometimes I Might Be Introvert",
+   "listened": "2026-08-08",
+   "liked": true,
+   "when": "2026-08-08"
+  },
+  {
+   "kind": "album",
+   "key": "madison cunningham::revealer",
+   "artist": "Madison Cunningham",
+   "album": "Revealer",
+   "listened": "2026-08-08",
+   "liked": true,
+   "when": "2026-08-08"
+  },
+  {
+   "kind": "album",
+   "key": "booker t. & the m.g.'s::green onions",
+   "artist": "Booker T. & the M.G.'s",
+   "album": "Green Onions",
+   "listened": "2026-08-08",
+   "liked": false,
+   "when": "2026-08-08"
+  },
+  {
+   "kind": "album",
+   "key": "the avalanches::wildflower",
+   "artist": "The Avalanches",
+   "album": "Wildflower",
+   "listened": "2026-08-08",
+   "liked": true,
+   "when": "2026-08-08"
+  },
+  {
+   "kind": "album",
+   "key": "sault::untitled (black is)",
+   "artist": "SAULT",
+   "album": "Untitled (Black Is)",
+   "listened": "2026-08-08",
+   "liked": true,
+   "when": "2026-08-08"
+  },
+  {
+   "kind": "album",
+   "key": "steely dan::aja",
+   "artist": "Steely Dan",
+   "album": "Aja",
+   "listened": "2026-08-08",
+   "liked": false,
+   "when": "2026-08-08"
+  },
+  {
+   "kind": "album",
+   "key": "tycho::epoch",
+   "artist": "Tycho",
+   "album": "Epoch",
+   "listened": "2026-08-08",
+   "liked": true,
+   "when": "2026-08-08"
+  },
+  {
+   "kind": "album",
+   "key": "d'angelo::voodoo",
+   "artist": "D'Angelo",
+   "album": "Voodoo",
+   "listened": "2026-08-08",
+   "liked": true,
+   "when": "2026-08-08"
+  },
+  {
+   "kind": "album",
+   "key": "michael kiwanuka::kiwanuka",
+   "artist": "Michael Kiwanuka",
+   "album": "KIWANUKA",
+   "listened": "2026-08-08",
+   "liked": true,
+   "when": "2026-08-08"
+  },
+  {
+   "kind": "album",
+   "key": "ernest ranglin::below the bassline",
+   "artist": "Ernest Ranglin",
+   "album": "Below the Bassline",
+   "listened": "2026-08-08",
+   "liked": true,
+   "when": "2026-08-08"
+  },
+  {
+   "kind": "album",
+   "key": "dorothy ashby::afro-harping",
+   "artist": "Dorothy Ashby",
+   "album": "Afro-Harping",
+   "listened": "2026-08-08",
+   "liked": true,
+   "when": "2026-08-08"
+  },
+  {
+   "kind": "album",
+   "key": "stan getz & charlie byrd::jazz samba",
+   "artist": "Stan Getz & Charlie Byrd",
+   "album": "Jazz Samba",
+   "listened": "2026-08-08",
+   "liked": true,
+   "when": "2026-08-08"
+  },
+  {
+   "kind": "album",
+   "key": "sven wunder::natura morta",
+   "artist": "Sven Wunder",
+   "album": "Natura Morta",
+   "listened": "2026-08-08",
+   "liked": true,
+   "when": "2026-08-08"
+  },
+  {
+   "kind": "album",
+   "key": "moses sumney::aromanticism",
+   "artist": "Moses Sumney",
+   "album": "Aromanticism",
+   "listened": "2026-08-08",
+   "liked": true,
+   "when": "2026-08-08"
+  },
+  {
+   "kind": "album",
+   "key": "jaga jazzist::a livingroom hush",
+   "artist": "Jaga Jazzist",
+   "album": "A Livingroom Hush",
+   "listened": "2026-08-08",
+   "liked": true,
+   "when": "2026-08-08"
+  },
+  {
+   "kind": "album",
+   "key": "laufey::bewitched",
+   "artist": "Laufey",
+   "album": "Bewitched",
+   "listened": "2026-08-08",
+   "liked": true,
+   "when": "2026-08-08"
+  },
+  {
+   "kind": "album",
+   "key": "erykah badu::mama's gun",
+   "artist": "Erykah Badu",
+   "album": "Mama's Gun",
+   "listened": "2026-08-08",
+   "liked": true,
+   "when": "2026-08-08"
+  },
+  {
+   "kind": "album",
+   "key": "men i trust::oncle jazz",
+   "artist": "Men I Trust",
+   "album": "Oncle Jazz",
+   "listened": "2026-08-08",
+   "liked": false,
+   "when": "2026-08-08"
+  },
+  {
+   "kind": "album",
+   "key": "stereolab::emperor tomato ketchup",
+   "artist": "Stereolab",
+   "album": "Emperor Tomato Ketchup",
+   "listened": "2026-08-08",
+   "liked": false,
+   "when": "2026-08-08"
+  },
+  {
+   "kind": "album",
+   "key": "fela kuti::zombie",
+   "artist": "Fela Kuti",
+   "album": "Zombie",
+   "listened": "2026-08-08",
+   "liked": true,
+   "when": "2026-08-08"
+  },
+  {
+   "kind": "album",
+   "key": "cocteau twins::heaven or las vegas",
+   "artist": "Cocteau Twins",
+   "album": "Heaven or Las Vegas",
+   "listened": "2026-08-08",
+   "liked": true,
+   "when": "2026-08-08"
+  },
+  {
+   "kind": "album",
+   "key": "crumb::jinx",
+   "artist": "Crumb",
+   "album": "Jinx",
+   "listened": "2026-08-08",
+   "liked": true,
+   "when": "2026-08-08"
+  },
+  {
+   "kind": "album",
+   "key": "kaytranada::99.9%",
+   "artist": "KAYTRANADA",
+   "album": "99.9%",
+   "listened": "2026-08-08",
+   "liked": true,
+   "when": "2026-08-08"
+  },
+  {
+   "kind": "album",
+   "key": "yasmin williams::urban driftwood",
+   "artist": "Yasmin Williams",
+   "album": "Urban Driftwood",
+   "listened": "2026-08-08",
+   "liked": true,
+   "when": "2026-08-08"
+  },
+  {
+   "kind": "album",
+   "key": "rodrigo amarante::drama",
+   "artist": "Rodrigo Amarante",
+   "album": "Drama",
+   "listened": "2026-08-08",
+   "liked": true,
+   "when": "2026-08-08"
+  },
+  {
+   "kind": "album",
+   "key": "daniel caesar::freudian",
+   "artist": "Daniel Caesar",
+   "album": "Freudian",
+   "listened": "2026-08-09",
+   "liked": true,
+   "when": "2026-08-09"
+  },
+  {
+   "kind": "album",
+   "key": "badbadnotgood::iii",
+   "artist": "BADBADNOTGOOD",
+   "album": "III",
+   "listened": "2026-08-10",
+   "liked": true,
+   "when": "2026-08-10"
+  },
+  {
+   "kind": "album",
+   "key": "anderson .paak::ventura",
+   "artist": "Anderson .Paak",
+   "album": "Ventura",
+   "listened": "2026-08-10",
+   "liked": true,
+   "when": "2026-08-10"
+  },
+  {
+   "kind": "album",
+   "key": "paco de lucía::fuente y caudal",
+   "artist": "Paco de Lucía",
+   "album": "Fuente y Caudal",
+   "listened": "2026-08-10",
+   "liked": true,
+   "when": "2026-08-10"
+  },
+  {
+   "kind": "album",
+   "key": "ahmad jamal trio::at the pershing: but not for me",
+   "artist": "Ahmad Jamal Trio",
+   "album": "At the Pershing: But Not for Me",
+   "listened": "2026-08-11",
+   "liked": false,
+   "when": "2026-08-11"
+  },
+  {
+   "kind": "album",
+   "key": "mac miller::circles",
+   "artist": "Mac Miller",
+   "album": "Circles",
+   "listened": "2026-08-11",
+   "liked": true,
+   "when": "2026-08-11"
+  },
+  {
+   "kind": "album",
+   "key": "sufjan stevens::illinois",
+   "artist": "Sufjan Stevens",
+   "album": "Illinois",
+   "listened": "2026-08-11",
+   "liked": true,
+   "when": "2026-08-11"
+  },
+  {
+   "kind": "album",
+   "key": "nils frahm::spaces",
+   "artist": "Nils Frahm",
+   "album": "Spaces",
+   "listened": "2026-08-11",
+   "liked": false,
+   "when": "2026-08-11"
+  },
+  {
+   "kind": "album",
+   "key": "mulatu astatke::mulatu of ethiopia",
+   "artist": "Mulatu Astatke",
+   "album": "Mulatu of Ethiopia",
+   "listened": "2026-08-12",
+   "liked": false,
+   "when": "2026-08-12"
+  },
+  {
+   "kind": "album",
+   "key": "weyes blood::titanic rising",
+   "artist": "Weyes Blood",
+   "album": "Titanic Rising",
+   "listened": "2026-08-12",
+   "liked": true,
+   "when": "2026-08-12"
+  },
+  {
+   "kind": "album",
+   "key": "natalia lafourcade::musas, vol. 1",
+   "artist": "Natalia Lafourcade",
+   "album": "Musas, Vol. 1",
+   "listened": "2026-08-12",
+   "liked": false,
+   "when": "2026-08-12"
+  },
+  {
+   "kind": "album",
+   "key": "leo kottke::6- and 12-string guitar",
+   "artist": "Leo Kottke",
+   "album": "6- and 12-String Guitar",
+   "listened": "2026-08-19",
+   "liked": true,
+   "when": "2026-08-19"
+  },
+  {
+   "kind": "album",
+   "key": "the meters::the meters",
+   "artist": "The Meters",
+   "album": "The Meters",
+   "listened": "2026-08-19",
+   "liked": false,
+   "when": "2026-08-19"
+  },
+  {
+   "kind": "album",
+   "key": "kiefer::happysad",
+   "artist": "Kiefer",
+   "album": "Happysad",
+   "listened": "2026-08-19",
+   "liked": true,
+   "when": "2026-08-19"
+  },
+  {
+   "kind": "album",
+   "key": "pat metheny::bright size life",
+   "artist": "Pat Metheny",
+   "album": "Bright Size Life",
+   "listened": "2026-08-19",
+   "liked": false,
+   "when": "2026-08-19"
+  },
+  {
+   "kind": "album",
+   "key": "digable planets::reachin' (a new refutation of time and space)",
+   "artist": "Digable Planets",
+   "album": "Reachin' (A New Refutation of Time and Space)",
+   "listened": "2026-08-19",
+   "liked": true,
+   "when": "2026-08-19"
+  },
+  {
+   "kind": "album",
+   "key": "cymande::cymande",
+   "artist": "Cymande",
+   "album": "Cymande",
+   "listened": "2026-08-19",
+   "liked": false,
+   "when": "2026-08-19"
+  },
+  {
+   "kind": "album",
+   "key": "vince guaraldi trio::jazz impressions of black orpheus",
+   "artist": "Vince Guaraldi Trio",
+   "album": "Jazz Impressions of Black Orpheus",
+   "listened": "2026-08-19",
+   "liked": true,
+   "when": "2026-08-19"
+  },
+  {
+   "kind": "album",
+   "key": "bill withers::still bill",
+   "artist": "Bill Withers",
+   "album": "Still Bill",
+   "listened": "2026-08-19",
+   "liked": true,
+   "when": "2026-08-19"
+  },
+  {
+   "kind": "album",
+   "key": "mary lattimore::silver ladders",
+   "artist": "Mary Lattimore",
+   "album": "Silver Ladders",
+   "listened": "2026-08-22",
+   "liked": true,
+   "when": "2026-08-22"
+  },
+  {
+   "kind": "album",
+   "key": "portico quartet::knee-deep in the north sea",
+   "artist": "Portico Quartet",
+   "album": "Knee-Deep in the North Sea",
+   "listened": "2026-08-22",
+   "liked": true,
+   "when": "2026-08-22"
+  },
+  {
+   "kind": "album",
+   "key": "mort garson::mother earth's plantasia",
+   "artist": "Mort Garson",
+   "album": "Mother Earth's Plantasia",
+   "listened": "2026-09-08",
+   "liked": true,
+   "when": "2026-09-08"
+  },
+  {
+   "kind": "album",
+   "key": "return to forever::romantic warrior",
+   "artist": "Return To Forever",
+   "album": "Romantic Warrior",
+   "listened": "2026-09-08",
+   "liked": false,
+   "when": "2026-09-08"
+  },
+  {
+   "kind": "album",
+   "key": "el michels affair::sounding out the city",
+   "artist": "El Michels Affair",
+   "album": "Sounding Out the City",
+   "listened": "2026-09-11",
+   "liked": false,
+   "when": "2026-09-11"
+  },
+  {
+   "kind": "album",
+   "key": "walter wanderley::rain forest",
+   "artist": "Walter Wanderley",
+   "album": "Rain Forest",
+   "listened": "2026-09-11",
+   "liked": false,
+   "when": "2026-09-11"
+  },
+  {
+   "kind": "album",
+   "key": "beach house::teen dream",
+   "artist": "Beach House",
+   "album": "Teen Dream",
+   "listened": "2026-09-11",
+   "liked": true,
+   "when": "2026-09-11"
+  },
+  {
+   "kind": "album",
+   "key": "mk.gee::two star & the dream police",
+   "artist": "Mk.gee",
+   "album": "Two Star & The Dream Police",
+   "listened": "2026-09-11",
+   "liked": true,
+   "when": "2026-09-11"
+  },
+  {
+   "kind": "album",
+   "key": "andy shauf::the party",
+   "artist": "Andy Shauf",
+   "album": "The Party",
+   "listened": "2026-09-11",
+   "liked": false,
+   "when": "2026-09-11"
+  },
+  {
+   "kind": "album",
+   "key": "mahavishnu orchestra::birds of fire",
+   "artist": "Mahavishnu Orchestra",
+   "album": "Birds of Fire",
+   "listened": "2026-09-14",
+   "liked": false,
+   "when": "2026-09-14"
+  },
+  {
+   "kind": "album",
+   "key": "ravyn lenae::bird's eye",
+   "artist": "Ravyn Lenae",
+   "album": "Bird's Eye",
+   "listened": "2026-09-17",
+   "liked": true,
+   "when": "2026-09-17"
+  }
+ ]
+}
