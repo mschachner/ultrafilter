@@ -11,6 +11,7 @@
 # untouched — archive or delete it once the scheduled task has been
 # repointed at this repository and has run successfully.
 set -euo pipefail
+cd "$(dirname "$0")/.."   # always run from the repository root, wherever invoked from
 
 SRC=${1:-https://github.com/mschachner/spotify-recs.git}
 
