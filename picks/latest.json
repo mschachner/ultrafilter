@@ -1,0 +1,9 @@
+{
+  "date": "2026-09-18",
+  "wikis": {
+    "oeis": {
+      "url": "https://oeis.org/A247241",
+      "title": "A247241: In base 2, smallest positive integer k such that k contains all possible strings of n binary digits."
+    }
+  }
+}
