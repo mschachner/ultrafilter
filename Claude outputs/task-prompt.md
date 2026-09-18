@@ -1,4 +1,4 @@
-Create Mark's daily album recommendations and today's artwork and wiki picks for his Ultrafilter site. Your final response must be the finished bulletin described in step 6 — it is delivered to Mark, so do not pad it with process narration.
+Create Mark's daily album recommendations and today's artwork and wiki picks for his Ultrafilter site. Your final response must be the finished bulletin described in step 7 — it is delivered to Mark, so do not pad it with process narration.
 
 DATA STORE — this session's repository, mschachner/ultrafilter, is already cloned into the working directory on its main branch (the site's code). Everything editorial lives on its orphan `data` branch, the store. Set it up first, without re-cloning:
 
@@ -11,10 +11,11 @@ Then every data file is under store/ and every commit is made there (cd store). 
 - store/recommendation_history.csv — the full recommendation history, one row per pick: date,category,artist,album,release_year,spotify_url, category values focus | familiar_artist | new_artist.
 - store/taste_profile.md — a genre and decade summary of the library.
 - store/likes.json — everything Mark has marked on the site: { "version": 1, "items": [ ... ] }, each item with a "kind" and "key". kind "album" items are the listening log (artist, album, genres, listened date, liked true/false); kind "artwork" items record liked works (title, artist, artistId as a Wikidata Q-number, interest area id); kind "wiki" items record liked wiki entries (source tab id, title, url, topic for Wikipedia); kind "post" items record liked blogroll posts (title, feed, topics). The file may not exist yet; treat absence as empty.
+- store/blogroll.json — the roll: which blogs the site's blogroll fetches, each with a status (pinned, active, or archived). Only scripts/roll-cli.mjs touches it (step 6).
 - store/albums/ and store/picks/ — what this task has published before (dated JSON files plus latest.json in each).
   `node scripts/candidates.mjs likes` (run from the repository root, not store/) prints a digest of likes.json — counts per interest area, artist, topic, feed and liked-album genre, every liked item, and everything already picked — which is the quickest way to read it.
 
-If the repository contents are missing or unreadable, deliver the bulletin anyway using your best judgment of Mark's taste from taste_profile.md if available, lean away from flagship albums of well-known artists, skip steps 5 and 7, and append this warning as the bulletin's final line: "⚠ The data repo was unreadable this run: repeat-prevention was not checked and today's picks were not recorded."
+If the repository contents are missing or unreadable, deliver the bulletin anyway using your best judgment of Mark's taste from taste_profile.md if available, lean away from flagship albums of well-known artists, skip steps 5, 6 and 8, and append this warning as the bulletin's final line: "⚠ The data repo was unreadable this run: repeat-prevention was not checked and today's picks were not recorded."
 
 On every run:
 
@@ -36,7 +37,15 @@ On every run:
    - Artwork: `node scripts/candidates.mjs artwork --interest <id>` lists works with an English Wikipedia article in one interest area from config.json (ids: modern, implandscape, abex, surrealism, ukiyoe, popart, contemporary, sculpture), in a fresh random order, excluding works picked before; `--creator Q…` lists works by one artist. Choose which area or artist to draw from by judgment against the likes digest — lean toward areas and artists Mark has liked, but keep rotating so every area comes up and no artist dominates; on a day with no artwork likes, rotate areas. Prefer candidates with hasImage true. Pick one work.
    - Wikis: `node scripts/candidates.mjs wikis --count 10` lists random entries for the wikipedia, nlab, sep, attic and oeis tabs (title and URL; for Wikipedia, Good articles per interest area with a topic id). Pick three Wikipedia articles (three different topics unless the likes clearly favour one) and one lead entry each for nlab, sep, attic and oeis, judged against the likes: liked wiki entries show which sources and topics Mark responds to. Set theory, mathematical logic, category theory, philosophy of mathematics and art history are safe bets when the likes say nothing. Skip a tab whose candidates all fail to load rather than inventing a URL. MathOverflow and arXiv leads are optional: include one only if you happen to know of a clearly relevant current question or paper, with its real URL.
 
-6. Output a compact editorial bulletin headed "Three albums for [D Month]" (today's date). Use the section headers exactly "Focus", "Enjoy", and "Explore", in that order. For each section, include:
+6. Maintain the blogroll. The roll — which blogs the site's blogroll fetches — is store/blogroll.json, and scripts/roll-cli.mjs (run from the repository root) is the only way you change it. Every entry has a status: pinned (Mark's choice, permanent), active (on trial), or archived (rotated out, or removed by Mark — never propose an archived blog again).
+
+   a. `node scripts/roll-cli.mjs status` prints the roll as JSON: the policy (targetSize, trialDays), the free slots, every blog with its days in the roll, liked posts and last build result, the blogs due for rotation, and the archive.
+   b. `node scripts/roll-cli.mjs rotate` archives every active blog that has been in the roll for trialDays with no liked post. This is mechanical: run it every time, and never archive or un-archive a blog any other way.
+   c. If slotsFree is above zero after rotating, add exactly one blog. Use web research to find a blog with a working RSS or Atom feed that fits Mark's interests as the likes show them — the feeds and topics of liked posts, the sources and topics of liked wiki entries, and the roll's topic ids from config.json (math, sci, arthist, arts, climate), spread across the topics over the weeks rather than clustering on one. Prefer blogs that are still posting (something within the last few months), written by a person or a small group rather than an institution's press feed, and not already in the roll or the archive. Verify it: run `npm ci` once (the feed parser), then `node scripts/roll-cli.mjs check <blog or feed URL>` — it must print a parsed feed with recent entries and `duplicateOf: null`. If it fails, try a different blog (up to three) rather than adding one unverified. Then `node scripts/roll-cli.mjs add <url> --topics <ids> --by task --note "<one plain line on why this blog>"`, passing --name and --author when the feed's own are poor. Never add more than one blog per run; when the roll is full, add none.
+   d. Nothing here needs judgment about Mark's existing blogs: do not pin, unpin or remove anything.
+   e. If scripts/roll-cli.mjs is missing from the checkout or `status` reports the roll's source is not "store", the roll has not been set up yet: skip this step and report "Blogroll: not set up yet" in the bulletin.
+
+7. Output a compact editorial bulletin headed "Three albums for [D Month]" (today's date). Use the section headers exactly "Focus", "Enjoy", and "Explore", in that order. For each section, include:
 
    - Artist — Album (release year)
    - One or two accurate genre labels
@@ -44,9 +53,9 @@ On every run:
    - A concise paragraph of useful information, not a recommendation rationale: introduce the artist when Mark is unlikely to know them, explain the album's place in the artist's discography, and add historical context when genuinely relevant
    - One verified sentence about the album's critical and/or commercial reception. Prefer a concrete fact such as a contemporary review assessment, a year-end-list placement, an award or nomination, chart performance, sales milestone, breakout status, or a sourced comparison with adjacent albums. Do not call an album "acclaimed" or make comparative claims without evidence.
      Do not append explanatory qualifiers to the three section headers. Do not include a starter track. Do not explain why Mark will like the album. Do not add extra recommendations.
-   After the three sections, add one short line "Also today:" naming the artwork (title, artist) and the wiki leads (tab: title) you picked — titles only, no commentary.
+   After the three sections, add one short line "Also today:" naming the artwork (title, artist) and the wiki leads (tab: title) you picked — titles only, no commentary — and then "Blogroll: added <name> (<topics>); rotated out <names>", or "Blogroll: no change", as the case may be.
 
-7. After finalizing the selections, record them in the store (all paths relative to store/):
+8. After finalizing the selections, record them in the store (all paths relative to store/):
    a. Append exactly three rows for today to recommendation_history.csv (columns date,category,artist,album,release_year,spotify_url; category values focus, familiar_artist, new_artist for the Focus, Enjoy, Explore sections respectively). Quote CSV fields correctly when they contain commas or quotation marks. Do not rewrite or delete prior rows.
    b. Write the day's album content as JSON to albums/<today YYYY-MM-DD>.json and copy that same file to albums/latest.json (latest.json must be an exact copy of the dated file). The site build consumes albums/latest.json, so follow this schema exactly:
    {
@@ -86,7 +95,7 @@ On every run:
    Validate that both files parse as JSON (e.g. with python3 -m json.tool) before committing. Then, inside store/, commit directly on the data branch — do not create a claude/ branch — and push:
 
    cd store
-   git add recommendation_history.csv albums/ picks/
+   git add recommendation_history.csv albums/ picks/ blogroll.json
    git commit -m "Add picks for <today YYYY-MM-DD>"
    git push origin data
 

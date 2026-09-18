@@ -83,6 +83,23 @@ export async function list(config, dir) {
   }
 }
 
+/**
+ * Writes a file into the local checkout — the CLI's path for the roll. Only
+ * a checkout can be written: raw.githubusercontent.com is read-only, and
+ * the page writes through the contents API on its own.
+ */
+export async function write(config, path, text) {
+  const s = settings(config);
+  if (!(await hasLocal(s.dir))) {
+    throw new Error(`no local store checkout at ${s.dir} — run \`git fetch origin ${s.branch} && git worktree add store ${s.branch}\` first`);
+  }
+  const { writeFile, mkdir } = await import("node:fs/promises");
+  const full = resolve(s.dir, path);
+  await mkdir(dirname(full), { recursive: true });
+  await writeFile(full, text, "utf8");
+  return full;
+}
+
 /** Where the store is being read from, for the build log. */
 export function describe(config) {
   const s = settings(config);

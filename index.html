@@ -558,6 +558,46 @@
                min-height: 1.1em; word-break: break-word; }
   .af-actions { display: flex; justify-content: flex-end; gap: .6rem; margin-top: 1rem; }
 
+  /* ---------------------------- blogroll menu ---------------------------- */
+  /* Same panel as the theme picker, anchored under the heading's button:
+     the roll on one tab, the archive on the other. */
+  #blogroll-head { position: relative; }   /* the menu hangs from the heading, not the button */
+  #roll-ui { display: inline-flex; align-items: center; }
+  #roll-btn[aria-expanded="true"] { color: var(--ink); background: var(--hover); }
+  #roll-menu { position: absolute; left: 0; top: calc(100% + .35rem); z-index: 40;
+               width: 27rem; max-width: min(27rem, calc(100vw - 2.2rem));
+               max-height: min(75vh, 36rem); overflow: auto; overscroll-behavior: contain;
+               background: var(--bg); background-image: var(--texture);
+               border: 1px solid var(--line); border-radius: .7rem; padding: .55rem;
+               box-shadow: 0 .6rem 1.8rem rgba(20, 24, 28, .28);
+               font-family: var(--body); font-size: .84rem; letter-spacing: 0;
+               color: var(--ink); text-align: left; cursor: default; }
+  #roll-menu .mode-btn .n { font-family: var(--mono); font-size: .68rem; opacity: .75; margin-left: .35rem; }
+  .roll-row { display: flex; align-items: center; gap: .6rem; padding: .4rem .45rem; border-radius: .5rem; }
+  .roll-row:hover { background: var(--hover); }
+  .roll-row .ticon { flex: none; }
+  .roll-main { flex: 1 1 auto; min-width: 0; line-height: 1.25; }
+  .roll-name { color: var(--ink); text-decoration: none; font-family: var(--display); font-size: .95rem; }
+  .roll-name:hover { text-decoration: underline; text-underline-offset: 3px; }
+  .roll-meta { display: block; font-family: var(--mono); font-size: .64rem; letter-spacing: .03em;
+               color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .roll-meta .due { color: var(--fail); }
+  .roll-meta .liked { color: #E8788A; }
+  .roll-acts { display: inline-flex; gap: .15rem; flex: none; }
+  .roll-act { border: none; background: none; padding: .2rem; border-radius: .35rem; color: var(--faint);
+              line-height: 0; }
+  .roll-act:hover { color: var(--ink); background: color-mix(in srgb, var(--ink) 10%, var(--bg)); }
+  .roll-act svg { width: 1rem; height: 1rem; }
+  .roll-act[data-act="pin"][aria-pressed="true"] { color: var(--accent); }
+  .roll-act[data-act="pin"][aria-pressed="true"] svg { fill: currentColor; }
+  .roll-act.txt { font-family: var(--body); font-size: .76rem; line-height: 1; padding: .3rem .55rem; color: var(--muted); }
+  .roll-empty { padding: 1rem .45rem; color: var(--muted); font-size: .8rem; }
+  .roll-foot { display: flex; align-items: center; justify-content: space-between; gap: .75rem;
+               margin-top: .5rem; padding: .55rem .45rem 0; border-top: 1px dotted var(--line); }
+  .roll-foot .roll-note { font-family: var(--mono); font-size: .66rem; letter-spacing: .04em; color: var(--muted); }
+  .roll-foot .roll-note.fail { color: var(--fail); }
+  #roll-add { font-size: .78rem; padding: .3rem .8rem; }
+
   #status-line { margin-top: 2rem; color: var(--muted); font-size: .9rem; }
 
   @media (prefers-reduced-motion: no-preference) { .post { transition: background .12s ease; } .post .copy, .post .uf-heart, .wpick .uf-heart { transition: opacity .12s ease; } }
@@ -646,11 +686,12 @@
   <div class="cols">
     <div class="main">
       <section id="wiki-sec" aria-label="Wikis"></section>
-      <h2 class="section-head">Blogroll<span class="dl-note"><button id="add-blog" class="reroll"
-          title="Add a blog" aria-label="Add a blog to the blogroll">
+      <h2 class="section-head" id="blogroll-head">Blogroll<span class="dl-note" id="roll-ui"><button id="roll-btn" class="reroll"
+          title="The roll" aria-label="Manage the blogroll" aria-haspopup="true" aria-expanded="false">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-            stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
-        </button></span><span class="dl-note" id="feeds-note"></span></h2>
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 6h16M4 12h10M4 18h7"/><path d="M17.5 14.5l2 2 3-4"/></svg>
+        </button><div id="roll-menu" hidden></div></span><span class="dl-note" id="feeds-note"></span></h2>
       <div class="chips" id="chips" role="group" aria-label="Filter by topic"></div>
       <main id="list" aria-live="polite"></main>
       <p id="status-line">Loading posts&hellip;</p>
@@ -664,8 +705,8 @@
   <dialog id="add-dialog" aria-labelledby="af-title">
     <h2 id="af-title">Add a blog</h2>
     <p class="af-hint">Paste the blog's address and look it up — the feed, name, and site
-      fill themselves in. Adding commits the entry to <code>config.json</code>, which
-      rebuilds and redeploys the site.</p>
+      fill themselves in. Adding commits the entry to <code>blogroll.json</code> on the
+      <code>data</code> branch; the blog's posts arrive with the next build.</p>
     <form id="add-form" novalidate>
       <div class="af-row">
         <label for="af-url">Blog address</label>
@@ -705,11 +746,13 @@
 
 <script src="likes.js"></script>
 <script>
-const state = { blogroll: null, wikis: null, albums: null, artwork: null, weather: null, likes: null };
+const state = { blogroll: null, wikis: null, albums: null, artwork: null, weather: null, likes: null,
+                roll: null };   // the live blogroll.json, once fetched; the baked copy rides in blogroll.roll
 const sectionNotes = {};   // ledger rows for the non-blogroll sections
 let activeTopic = "all";
 let postsShown = 15;       // "Show more" lifts this to everything
 let feedsOpen = false;     // per-feed detail in the footer ledger
+let rollTab = "roll";      // the blogroll menu's open tab: "roll" or "archive"
 
 const $ = sel => document.querySelector(sel);
 
@@ -1468,8 +1511,24 @@ function renderWiki() {
 
 /* ------------------------------ blogroll ------------------------------- */
 
+/* The roll: which blogs are in the blogroll, pinned, or archived. The live
+   copy (blogroll.json on the data branch) wins once fetched; until then the
+   build's copy in data/blogroll.json stands. A blog removed here disappears
+   from the list at once — its posts are filtered out client-side — while a
+   blog added shows up with the next build. */
+function rollDoc() { return state.roll || state.blogroll?.roll || null; }
+function rollFeeds() { return rollDoc()?.feeds || []; }
+function archivedFeeds() {
+  return new Set(rollFeeds().filter(f => f.status === "archived").map(f => f.name));
+}
+/** The posts of blogs currently in the roll. */
+function livePosts() {
+  const gone = archivedFeeds();
+  return (state.blogroll?.posts || []).filter(p => !gone.has(p.feed));
+}
+
 function visibleCount(topicId) {
-  const posts = state.blogroll?.posts || [];
+  const posts = livePosts();
   return topicId === "all" ? posts.length : posts.filter(p => p.topics.includes(topicId)).length;
 }
 
@@ -1529,7 +1588,7 @@ function renderLedger() {
 }
 
 function renderList() {
-  const all = (state.blogroll?.posts || [])
+  const all = livePosts()
     .filter(p => activeTopic === "all" || p.topics.includes(activeTopic));
 
   if (!all.length) { $("#list").innerHTML = ""; return; }
@@ -1577,7 +1636,7 @@ function renderStatus() {
   $("#feeds-note").textContent = `${b.feedsOk} of ${b.feedsTotal} feeds` + (failed ? ` (${failed} failed)` : "");
   const when = b.generated ? new Date(b.generated) : null;
   $("#status-line").textContent =
-    `${(b.posts || []).length} posts · updated ${when ? relativeTime(when) : "unknown"}.`;
+    `${livePosts().length} posts · updated ${when ? relativeTime(when) : "unknown"}.`;
 }
 
 function relativeTime(then) {
@@ -1595,6 +1654,7 @@ function renderBlogroll() {
   renderLedger();
   renderList();
   renderStatus();
+  if (!$("#roll-menu").hidden) renderRollMenu();
 }
 
 async function loadJson(name) {
@@ -1622,6 +1682,7 @@ async function load() {
   renderWiki();
   renderBlogroll();
   loadWeather();   // async; re-renders the ledger row when it settles
+  loadRoll();      // async; the live roll replaces the baked one when it lands
 
   // Likes: clicks on every heart are delegated from the columns, and a fresh
   // copy of likes.json quietly restyles the controls once it arrives.
@@ -1685,7 +1746,7 @@ $("#lightbox").addEventListener("click", e => {
 document.addEventListener("keydown", e => {
   if (e.key !== "Escape") return;
   if (!$("#lightbox").hidden) closeLightbox();
-  else closeThemeMenu();
+  else { closeThemeMenu(); closeRollMenu(); }
 });
 
 $("#theme-btn").addEventListener("click", e => {
@@ -1706,6 +1767,7 @@ $("#theme-menu").addEventListener("click", e => {
 });
 document.addEventListener("click", e => {
   if (!e.target.closest("#theme-ui")) closeThemeMenu();
+  if (!e.target.closest("#roll-ui")) closeRollMenu();
 });
 
 $("#list").addEventListener("click", async e => {
@@ -1727,12 +1789,12 @@ $("#list").addEventListener("click", async e => {
 
 /* ------------------------------ add a blog ------------------------------ */
 
-/* The "+" by the Blogroll heading. Discovery and verification run in the
-   browser — through the same read-through proxies the build uses, since most
-   blogs don't send CORS headers — and the commit goes through the GitHub
-   contents API with a fine-grained PAT kept in this browser's localStorage.
-   The push to main then triggers the normal build-and-deploy workflow, so
-   the new blog appears on the next deploy, a few minutes later. */
+/* "Add a blog…" in the blogroll menu. Discovery and verification run in
+   the browser — through the same read-through proxies the build uses, since
+   most blogs don't send CORS headers — and the entry joins blogroll.json on
+   the data branch through commitRoll above. A push to data doesn't deploy,
+   so the dialog also asks Actions for a build (which needs a token with
+   Actions write); otherwise the posts arrive with the next scheduled one. */
 
 const LS_TOKEN = "ultrafilter:ghToken", LS_REPO = "ultrafilter:ghRepo";
 const lsGet = k => { try { return localStorage.getItem(k) || ""; } catch { return ""; } };
@@ -1832,36 +1894,6 @@ async function discoverFeed(input) {
   throw new Error("no feed found at that address — paste the feed URL directly if you know it");
 }
 
-/* Text-level insertion into config.json, so the file's hand formatting
-   survives — JSON.stringify would reflow the whole thing. Finds the feeds
-   array by bracket-matching (string-aware) and slots the new entry in
-   before the closing bracket, matching the last entry's indentation. */
-function insertFeedEntry(text, entryLine) {
-  const key = text.indexOf('"feeds"');
-  if (key < 0) throw new Error('no "feeds" key in config.json');
-  const open = text.indexOf("[", key);
-  if (open < 0) throw new Error('no array after "feeds"');
-  let depth = 0, inStr = false, escNext = false, close = -1;
-  for (let i = open; i < text.length; i++) {
-    const ch = text[i];
-    if (inStr) {
-      if (escNext) escNext = false;
-      else if (ch === "\\") escNext = true;
-      else if (ch === '"') inStr = false;
-      continue;
-    }
-    if (ch === '"') inStr = true;
-    else if (ch === "[") depth++;
-    else if (ch === "]" && !--depth) { close = i; break; }
-  }
-  if (close < 0) throw new Error("couldn't find the end of the feeds array");
-  let end = close;                          // walk back over the ] line's whitespace
-  while (end > open && /\s/.test(text[end - 1])) end--;
-  const lastLine = text.slice(text.lastIndexOf("\n", end - 1) + 1, end);
-  const indent = (lastLine.match(/^\s*/) || ["      "])[0];
-  return text.slice(0, end) + ",\n" + indent + entryLine + text.slice(end, close) + text.slice(close);
-}
-
 function b64encode(s) {
   let bin = "";
   for (const b of new TextEncoder().encode(s)) bin += String.fromCharCode(b);
@@ -1873,36 +1905,261 @@ function b64decode(s) {
 const ghHeaders = t => ({ Authorization: `Bearer ${t}`, Accept: "application/vnd.github+json",
                           "X-GitHub-Api-Version": "2022-11-28" });
 
-async function commitFeed(entry) {
-  const repo = currentRepo(), token = lsGet(LS_TOKEN);
-  const url = `https://api.github.com/repos/${repo}/contents/config.json`;
-  const got = await fetch(url, { headers: ghHeaders(token) });
-  if (got.status === 401) throw new Error("GitHub rejected the token — paste a fresh one");
-  if (got.status === 404) throw new Error(`GitHub can't see ${repo} — check the token's repository access`);
-  if (!got.ok) throw new Error(`GitHub HTTP ${got.status}`);
-  const file = await got.json();
-  const cfgText = b64decode(file.content);
-  const cfg = JSON.parse(cfgText);
+/* ------------------------------ the roll ------------------------------- */
 
-  const norm = u => String(u || "").replace(/^https?:\/\//, "").replace(/\/+$/, "").toLowerCase();
-  const dupe = (cfg.blogroll?.feeds || []).find(f =>
-    norm(f.feed) === norm(entry.feed) || norm(f.site) === norm(entry.site));
-  if (dupe) throw new Error(`already on the blogroll as “${dupe.name}”`);
+/* blogroll.json on the data branch, read and written through the contents
+   API with the same token as the likes. Every change is a read-modify-write
+   of the whole file (the task and other browsers write it too), serialized
+   here and retried when the file moves underneath us. */
 
-  const line = `{ "name": ${JSON.stringify(entry.name)}, "author": ${JSON.stringify(entry.author)}, ` +
-    `"site": ${JSON.stringify(entry.site)}, "feed": ${JSON.stringify(entry.feed)}, ` +
-    `"topics": ${JSON.stringify(entry.topics)} }`;
-  const next = insertFeedEntry(cfgText, line);
-  JSON.parse(next);   // the spliced file must still parse before it ships
+const ROLL_PATH = "blogroll.json", ROLL_BRANCH = "data";
+const WORKFLOW_FILE = "refresh-feeds.yml";
+const rollApi = () => `https://api.github.com/repos/${currentRepo()}/contents/${ROLL_PATH}`;
+const normUrl = u => String(u || "").trim().replace(/^https?:\/\//i, "").replace(/^www\./i, "").replace(/\/+$/, "").toLowerCase();
 
-  const put = await fetch(url, {
+let rollWrite = Promise.resolve();
+function commitRoll(mutate, message) {
+  const run = () => commitRollNow(mutate, message);
+  rollWrite = rollWrite.then(run, run);
+  return rollWrite;
+}
+
+async function commitRollNow(mutate, message, attempt = 1) {
+  const token = lsGet(LS_TOKEN);
+  if (!token) throw new Error("paste a GitHub token first");
+  if (!currentRepo()) throw new Error("can't tell which repository this is");
+
+  const got = await fetch(`${rollApi()}?ref=${ROLL_BRANCH}&t=${Date.now()}`, { headers: ghHeaders(token) });
+  let sha = null, doc;
+  if (got.ok) {
+    const file = await got.json();
+    sha = file.sha;
+    doc = JSON.parse(b64decode(file.content));
+  } else if (got.status === 401 || got.status === 403) {
+    throw new Error("GitHub rejected the token — paste a fresh one");
+  } else if (got.status === 404) {
+    // No roll in the store yet: start from what the build published.
+    doc = { version: 1, feeds: rollFeeds().map(f => ({ ...f })) };
+  } else {
+    throw new Error(`GitHub HTTP ${got.status}`);
+  }
+  if (!Array.isArray(doc.feeds)) doc.feeds = [];
+
+  mutate(doc);   // throws to refuse (a duplicate, a name that isn't there)
+  doc.version = 1;
+  doc.updated = new Date().toISOString();
+
+  const put = await fetch(rollApi(), {
     method: "PUT",
     headers: { ...ghHeaders(token), "Content-Type": "application/json" },
-    body: JSON.stringify({ message: `Blogroll: add ${entry.name}`,
-                           content: b64encode(next), sha: file.sha, branch: "main" }),
+    body: JSON.stringify({ message, content: b64encode(JSON.stringify(doc, null, 1) + "\n"),
+                           branch: ROLL_BRANCH, ...(sha ? { sha } : {}) }),
   });
-  if (put.status === 409) throw new Error("config.json changed while we worked — try again");
+  if (put.status === 409 || put.status === 422) {
+    if (attempt < 3) return commitRollNow(mutate, message, attempt + 1);   // raced another writer
+    throw new Error(`${ROLL_PATH} changed underneath us — try again`);
+  }
+  if (put.status === 401 || put.status === 403) throw new Error("GitHub rejected the token — paste a fresh one");
+  if (put.status === 404) throw new Error(`GitHub can't see ${currentRepo()}'s ${ROLL_BRANCH} branch — check the token's repository access`);
   if (!put.ok) throw new Error(`commit failed — GitHub HTTP ${put.status}`);
+
+  state.roll = { feeds: doc.feeds, updated: doc.updated, source: "live" };
+  return doc;
+}
+
+/** The live roll, on load: through the API with a token, else raw. */
+async function loadRoll() {
+  const repo = currentRepo();
+  if (!repo) return;
+  const token = lsGet(LS_TOKEN);
+  try {
+    const res = token
+      ? await fetch(`${rollApi()}?ref=${ROLL_BRANCH}&t=${Date.now()}`,
+          { headers: { ...ghHeaders(token), Accept: "application/vnd.github.raw+json" } })
+      : await fetch(`https://raw.githubusercontent.com/${repo}/${ROLL_BRANCH}/${ROLL_PATH}?t=${Date.now()}`, { cache: "no-store" });
+    if (!res.ok) return;
+    const doc = await res.json();
+    if (!Array.isArray(doc.feeds)) return;
+    if (state.roll?.source === "live") return;   // a write landed meanwhile; it is fresher
+    state.roll = { feeds: doc.feeds, updated: doc.updated, source: "live" };
+    renderBlogroll();
+  } catch { /* offline is fine; the baked roll stands */ }
+}
+
+/** Kicks off a build so a new blog's posts don't wait for the schedule.
+ *  Needs Actions write on the token; without it this quietly does nothing. */
+async function triggerRebuild() {
+  try {
+    const res = await fetch(`https://api.github.com/repos/${currentRepo()}/actions/workflows/${WORKFLOW_FILE}/dispatches`, {
+      method: "POST",
+      headers: { ...ghHeaders(lsGet(LS_TOKEN)), "Content-Type": "application/json" },
+      body: JSON.stringify({ ref: "main" }),
+    });
+    return res.status === 204;
+  } catch { return false; }
+}
+
+/* The menu. */
+
+function shortDate(key) {
+  const d = new Date(`${key}T12:00:00`);
+  if (isNaN(d)) return key || "";
+  const s = d.toLocaleDateString("en-GB", { day: "numeric", month: "short" });
+  return d.getFullYear() === new Date().getFullYear() ? s : `${s} ${d.getFullYear()}`;
+}
+const daysSince = key => Math.floor((Date.parse(`${TODAY_KEY}T00:00:00Z`) - Date.parse(`${key}T00:00:00Z`)) / 86400000);
+
+const PIN_ICON = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6l-1 6 3 3v2H7v-2l3-3-1-6z"/><path d="M12 14v7"/></svg>`;
+const X_ICON = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>`;
+
+function rollLikes() {
+  const counts = new Map();
+  for (const p of UF.of("post")) counts.set(p.feed, (counts.get(p.feed) || 0) + 1);
+  return counts;
+}
+
+function renderRollMenu() {
+  const menu = $("#roll-menu");
+  const feeds = rollFeeds();
+  const policy = state.blogroll?.policy || { targetSize: 40, trialDays: 42 };
+  const likes = rollLikes();
+  const byName = (a, b) => a.name.localeCompare(b.name);
+  const inRoll = [...feeds.filter(f => f.status === "pinned").sort(byName),
+                  ...feeds.filter(f => f.status !== "pinned" && f.status !== "archived").sort(byName)];
+  const archive = feeds.filter(f => f.status === "archived")
+    .sort((a, b) => String(b.archived || "").localeCompare(String(a.archived || "")) || byName(a, b));
+
+  const who = by => by === "task" ? " by the task" : "";
+  const row = f => {
+    const n = likes.get(f.name) || 0;
+    const bits = [];
+    if (f.author && f.author !== f.name) bits.push(esc(f.author));
+    if (f.status === "pinned") bits.push("pinned");
+    else if (f.added) {
+      bits.push(`added ${esc(shortDate(f.added))}${who(f.addedBy)}`);
+      if (!n) {
+        const left = policy.trialDays - daysSince(f.added);
+        bits.push(left > 0 ? `${left} day${left === 1 ? "" : "s"} left` : `<span class="due">due for rotation</span>`);
+      }
+    }
+    if (n) bits.push(`<span class="liked">${n} liked</span>`);
+    return `<div class="roll-row" style="--dot:${topicColor(f.topics?.[0])}">
+      ${icon(f.topics?.[0])}
+      <span class="roll-main">
+        <a class="roll-name" href="${esc(f.site)}" target="_blank" rel="noopener"${f.note ? ` title="${esc(f.note)}"` : ""}>${esc(f.name)}</a>
+        <span class="roll-meta">${bits.join(" · ")}</span>
+      </span>
+      <span class="roll-acts">
+        <button class="roll-act" data-act="${f.status === "pinned" ? "unpin" : "pin"}" data-name="${esc(f.name)}"
+          aria-pressed="${f.status === "pinned"}" title="${f.status === "pinned" ? "Unpin" : "Pin"}"
+          aria-label="${f.status === "pinned" ? "Unpin" : "Pin"} ${esc(f.name)}">${PIN_ICON}</button>
+        <button class="roll-act" data-act="remove" data-name="${esc(f.name)}" title="Remove"
+          aria-label="Remove ${esc(f.name)}">${X_ICON}</button>
+      </span>
+    </div>`;
+  };
+  const arow = f => `<div class="roll-row" style="--dot:${topicColor(f.topics?.[0])}">
+      ${icon(f.topics?.[0])}
+      <span class="roll-main">
+        <a class="roll-name" href="${esc(f.site)}" target="_blank" rel="noopener">${esc(f.name)}</a>
+        <span class="roll-meta">${[f.archived ? `archived ${esc(shortDate(f.archived))}${who(f.archivedBy)}` : "archived",
+                                    f.reason ? esc(f.reason) : ""].filter(Boolean).join(" · ")}</span>
+      </span>
+      <span class="roll-acts">
+        <button class="roll-act txt" data-act="restore" data-name="${esc(f.name)}"
+          aria-label="Restore ${esc(f.name)}">Restore</button>
+      </span>
+    </div>`;
+
+  const list = rollTab === "archive" ? archive.map(arow) : inRoll.map(row);
+  const pinned = feeds.filter(f => f.status === "pinned").length;
+  const note = rollMsg.text
+    ? `<span class="roll-note ${rollMsg.cls}">${esc(rollMsg.text)}</span>`
+    : `<span class="roll-note">${inRoll.length} of ${policy.targetSize}${pinned ? ` · ${pinned} pinned` : ""}${
+        rollDoc()?.source === "live" ? "" : " · as built"}</span>`;
+  menu.innerHTML = `
+    <div class="mode-row" role="tablist" aria-label="Roll or archive">
+      <button class="mode-btn" role="tab" data-rtab="roll" aria-pressed="${rollTab === "roll"}">In the roll<span class="n">${inRoll.length}</span></button>
+      <button class="mode-btn" role="tab" data-rtab="archive" aria-pressed="${rollTab === "archive"}">Archive<span class="n">${archive.length}</span></button>
+    </div>
+    <div class="roll-list">${list.join("") || `<div class="roll-empty" hidden><!-- nothing on this tab --></div>`}</div>
+    <div class="roll-foot">${note}<button id="roll-add">Add a blog…</button></div>`;
+}
+
+let rollMsg = { text: "", cls: "" };   // the footer line while a change is saving, or its error
+function rollNote(text, cls) {
+  rollMsg = { text: text || "", cls: cls || "" };
+  if (!$("#roll-menu").hidden) renderRollMenu();
+}
+
+function openRollMenu() {
+  renderRollMenu();
+  $("#roll-menu").hidden = false;
+  $("#roll-btn").setAttribute("aria-expanded", "true");
+}
+function closeRollMenu() {
+  $("#roll-menu").hidden = true;
+  $("#roll-btn").setAttribute("aria-expanded", "false");
+}
+
+function rollMutation(act, name) {
+  return doc => {
+    const f = doc.feeds.find(f => f.name === name);
+    if (!f) throw new Error(`“${name}” isn't in ${ROLL_PATH}`);
+    if (act === "pin") f.status = "pinned";
+    if (act === "unpin") f.status = "active";
+    if (act === "remove") { f.status = "archived"; f.archived = TODAY_KEY; f.archivedBy = "mark"; f.reason = "removed"; }
+    if (act === "restore") {
+      f.status = "active"; f.added = TODAY_KEY; f.addedBy = "mark";
+      delete f.archived; delete f.archivedBy; delete f.reason;
+    }
+  };
+}
+
+async function rollAction(act, name) {
+  if (!lsGet(LS_TOKEN)) return UF.openDialog();   // the shared token panel
+  // Locally first, so the list answers at once; the commit then confirms.
+  const local = rollDoc();
+  if (!local) return;
+  const copy = { ...local, feeds: local.feeds.map(f => ({ ...f })) };
+  try { rollMutation(act, name)(copy); } catch (err) { return rollNote(String(err.message || err), "fail"); }
+  state.roll = copy;
+  renderBlogroll();
+  rollNote("saving…");
+  try {
+    await commitRoll(rollMutation(act, name), `Blogroll: ${act} ${name}`);
+    rollNote("");
+  } catch (err) {
+    rollNote(String(err.message || err), "fail");
+    state.roll = null;
+    loadRoll();
+  }
+  renderBlogroll();
+}
+
+$("#roll-btn").addEventListener("click", e => {
+  e.stopPropagation();
+  if ($("#roll-menu").hidden) openRollMenu(); else closeRollMenu();
+});
+$("#roll-menu").addEventListener("click", e => {
+  e.stopPropagation();   // see the theme menu: re-rendering detaches the clicked node
+  const tab = e.target.closest("[data-rtab]");
+  if (tab) { rollTab = tab.dataset.rtab; renderRollMenu(); return; }
+  if (e.target.closest("#roll-add")) { closeRollMenu(); openAddDialog(); return; }
+  const act = e.target.closest(".roll-act");
+  if (act) rollAction(act.dataset.act, act.dataset.name);
+});
+
+/* ------------------------------ add a blog ------------------------------ */
+
+async function commitFeed(entry) {
+  await commitRoll(doc => {
+    const dupe = doc.feeds.find(f => normUrl(f.feed) === normUrl(entry.feed) || (normUrl(f.site) && normUrl(f.site) === normUrl(entry.site)));
+    if (dupe) throw new Error(`already ${dupe.status === "archived" ? "in the archive" : "on the blogroll"} as “${dupe.name}”`);
+    doc.feeds.push({ name: entry.name, author: entry.author, site: entry.site, feed: entry.feed,
+                     topics: entry.topics, status: "active", added: TODAY_KEY, addedBy: "mark" });
+  }, `Blogroll: add ${entry.name}`);
+  renderBlogroll();
 }
 
 function afStatus(msg, cls) {
@@ -1973,9 +2230,12 @@ async function afSubmit(e) {
       const { text, source } = await fetchFeedText(feed);
       afVerified = { url: feed, count: parseFeed(text).count, source };
     }
-    afStatus("committing to config.json…", "dim");
+    afStatus(`committing to ${ROLL_PATH}…`, "dim");
     await commitFeed({ name, author, site, feed, topics });
-    afStatus("committed — the site rebuilds and redeploys in a few minutes, and the new blog appears then", "ok");
+    const kicked = await triggerRebuild();
+    afStatus(kicked
+      ? "committed — a build is running; the blog's posts appear in a few minutes"
+      : "committed — the blog's posts appear with the next scheduled build (within two hours)", "ok");
     $("#af-cancel").textContent = "Close";
   } catch (err) {
     afStatus(String(err.message || err), "fail");
@@ -1984,7 +2244,6 @@ async function afSubmit(e) {
   afBusy = false;
 }
 
-$("#add-blog").addEventListener("click", openAddDialog);
 $("#af-lookup").addEventListener("click", afLookup);
 $("#af-url").addEventListener("keydown", e => {
   if (e.key === "Enter") { e.preventDefault(); afLookup(); }

@@ -1,12 +1,19 @@
 /**
- * Blogroll section: fetches every feed in the config and produces the posts
+ * Blogroll section: fetches every feed in the roll and produces the posts
  * payload. Runs on a server (GitHub Actions), so there is no CORS problem and
  * we can send a real browser User-Agent — which is what gets us past the
  * publishers that reject anonymous fetchers.
+ *
+ * The roll — which blogs, and whether each is pinned, on trial, or archived
+ * — is blogroll.json in the store (see ../roll.mjs); config.json keeps the
+ * topics and the fetch and rotation settings. The payload republishes the
+ * whole roll, archive included, so the page's blogroll menu has it even
+ * when the live copy can't be fetched.
  */
 
 import { XMLParser } from "fast-xml-parser";
 import { fetchText } from "../lib.mjs";
+import * as roll from "../roll.mjs";
 
 const FEED_ACCEPT =
   "application/rss+xml, application/atom+xml, application/xml;q=0.9, text/xml;q=0.9, */*;q=0.8";
@@ -128,6 +135,74 @@ export function parseFeedXml(xml) {
 }
 
 /**
+ * What a feed says about itself — title, site, author — for prefilling a
+ * roll entry. Tolerant: any field may come back empty.
+ */
+export function feedInfo(xml) {
+  const doc = parser.parse(xml);
+  const channel = doc?.rss?.channel ?? doc?.["rdf:RDF"]?.channel ?? null;
+  const atom = doc?.feed ?? null;
+  const top = channel || atom || {};
+  const title = stripTags(text(top.title));
+  let site = "";
+  if (channel) site = text(channel.link);
+  else if (atom) site = atomLink(atom);
+  let author = "";
+  const editor = text(top.managingEditor);          // RSS: "mail@x.org (Name)"
+  if (editor) author = (editor.match(/\(([^)]+)\)/) || [])[1] || "";
+  if (!author && top.author) author = text(arr(top.author)[0]?.name) || text(arr(top.author)[0]);
+  if (!author) author = text(top["dc:creator"]);
+  return { title, site: String(site || "").trim(), author: stripTags(author) };
+}
+
+/**
+ * Fetches and parses one feed URL exactly as the build would — direct, then
+ * the proxies. Resolves to { entries, source, info }; rejects with every
+ * source's failure joined by " | ".
+ */
+export async function probe(url, { proxies = true } = {}) {
+  const { entries, source, body } = await fetchAnySource({ feed: url, proxyFallback: proxies });
+  let info = { title: "", site: "", author: "" };
+  if (body) { try { info = feedInfo(body); } catch {} }
+  return { entries, source, info };
+}
+
+/**
+ * The address may be the feed itself, or a page that links to one, or a
+ * site that keeps its feed at a well-known path. Resolves to
+ * { feed, entries, source, info } for the first candidate that parses.
+ */
+export async function discover(input) {
+  const problems = [];
+  try { return { feed: input, ...(await probe(input)) }; }
+  catch (err) { problems.push(`${shortUrl(input)}: ${err.message || err}`); }
+  // Not a feed: a page, then. Its <link rel="alternate"> candidates come
+  // first; the well-known paths are tried even when the page won't load.
+  let page = "";
+  try { page = await fetchText(input, { Accept: "text/html,*/*;q=0.8" }); }
+  catch (err) { problems.push(`page: ${err.message || err}`); }
+  // Declared feeds get the full treatment (proxies included); the guessed
+  // paths are tried directly only, or a blog with no feed would take minutes.
+  const cands = [];
+  for (const m of page.matchAll(/<link\b[^>]*>/gi)) {
+    const tag = m[0];
+    if (!/rel\s*=\s*["']?alternate/i.test(tag) || !/(rss|atom)\+xml/i.test(tag)) continue;
+    const href = (tag.match(/href\s*=\s*["']([^"']+)/i) || [])[1];
+    if (href) { try { cands.push({ url: new URL(href, input).href, proxies: true }); } catch {} }
+  }
+  const root = input.endsWith("/") ? input : input + "/";
+  for (const g of ["feed/", "feed.xml", "rss", "rss.xml", "atom.xml", "index.xml", "feed"]) cands.push({ url: root + g, proxies: false });
+  const seen = new Set([input]);
+  for (const c of cands) {
+    if (seen.has(c.url)) continue;
+    seen.add(c.url);
+    try { return { feed: c.url, ...(await probe(c.url, { proxies: c.proxies })) }; }
+    catch (err) { problems.push(`${shortUrl(c.url)}: ${err.message || err}`); }
+  }
+  throw new Error(`no feed found at ${input} (${problems.join(" | ")})`);
+}
+
+/**
  * Tries, in order: the primary feed URL, any altFeeds, and finally
  * read-through proxies. The proxies exist for publishers that reject this
  * runner outright — a 403 with a browser User-Agent usually means the block
@@ -182,7 +257,7 @@ async function fetchAnySource(feed) {
   for (const c of candidates) {
     try {
       const body = await fetchText(c.url, { Accept: FEED_ACCEPT, ...(c.headers || {}) });
-      return { entries: (c.parse || parseFeedXml)(body), source: c.source };
+      return { entries: (c.parse || parseFeedXml)(body), source: c.source, body: c.parse ? null : body };
     } catch (err) {
       problems.push(`${c.label}: ${err.message || err}`);
     }
@@ -224,24 +299,34 @@ function meta(feed) {
     author: feed.author,
     site: feed.site,
     topics: feed.topics,
+    rollStatus: feed.status,
+    added: feed.added || null,
+    addedBy: feed.addedBy || null,
   };
 }
 
 /* --------------------------------- build ------------------------------- */
 
 /**
- * Builds the blogroll payload. Throws only if every feed failed — a couple
- * of stubborn publishers shouldn't take the section down.
+ * Builds the blogroll payload. Throws if the roll can't be read (so the
+ * published copy is kept) or if every feed failed — a couple of stubborn
+ * publishers shouldn't take the section down.
  */
 export async function build(config) {
   const cfg = config.blogroll;
   const perFeed = cfg.itemsPerFeed ?? 8;
   const cutoff = cfg.maxAgeDays ? Date.now() - cfg.maxAgeDays * 86400000 : null;
 
+  const { roll: theRoll, source: rollSource } = await roll.load(config);
+  const feeds = theRoll.feeds.filter(roll.inRoll);
+  const archived = theRoll.feeds.length - feeds.length;
+  console.log(`      roll — ${feeds.length} in the roll (${theRoll.feeds.filter(f => f.status === "pinned").length} pinned), ${archived} archived; from ${rollSource}`);
+  if (!feeds.length) throw new Error(`the roll is empty (no ${roll.policy(config).path} in the store and no feeds in config.json)`);
+
   const report = [];
   const posts = [];
 
-  for (const feed of cfg.feeds) {
+  for (const feed of feeds) {
     try {
       const { entries: parsed, source } = await fetchAnySource(feed);
       const entries = parsed.slice(0, perFeed);
@@ -278,9 +363,12 @@ export async function build(config) {
   const okCount = report.filter(r => r.status === "ok").length;
   if (okCount === 0) throw new Error("every feed failed");
 
+  const p = roll.policy(config);
   return {
     generated: new Date().toISOString(),
     topics: cfg.topics,
+    policy: { targetSize: p.targetSize, trialDays: p.trialDays },
+    roll: { updated: theRoll.updated, source: rollSource, feeds: theRoll.feeds },
     feedsTotal: report.length,
     feedsOk: okCount,
     feeds: report,

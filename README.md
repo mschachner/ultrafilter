@@ -38,7 +38,11 @@ solves two problems a browser version would have: no CORS restrictions, and
 requests can carry a normal browser `User-Agent`, which gets past publishers
 that reject anonymous fetchers.
 
-Two optional per-feed keys in `config.json` help with awkward publishers:
+Which blogs are fetched is the *roll* — `blogroll.json` in the store
+(see [The roll](#the-roll) below), not `config.json`, which keeps only the
+topics, the fetch settings, and the rotation policy.
+
+Two optional per-feed keys in the roll help with awkward publishers:
 
 - `"altFeeds": ["https://example.org/?feed=rss2"]` — other URLs to try if the
   primary one fails. Useful when a site exposes the same feed at more than one
@@ -245,6 +249,7 @@ config:
 | `recommendation_history.csv` | the morning task | the archive builder, and the task itself (repeat prevention) |
 | `picks/YYYY-MM-DD.json`, `picks/latest.json` | the morning task | the artwork and wikis builders |
 | `likes.json` | the page (`likes.js`) | the build (every section), the morning task |
+| `blogroll.json` | the page (the blogroll menu), the morning task | the blogroll builder |
 | `Liked_Songs.csv`, `library_albums.csv`, `taste_profile.md` | you | the morning task |
 
 The workflow checks the branch out into `store/` beside the code
@@ -305,6 +310,69 @@ areas and liked artists; the Wikipedia draw and die lean towards liked
 topics; the archive and daily cards show your marks; and the morning task
 reads the whole file when it chooses the day's albums, artwork, and wiki
 picks.
+
+### The roll
+
+`blogroll.json` is the list of blogs, with a status on each:
+
+```jsonc
+{ "version": 1, "updated": "…", "feeds": [
+  { "name": "Joel David Hamkins", "author": "Joel David Hamkins", "site": "https://jdh.hamkins.org",
+    "feed": "https://jdh.hamkins.org/feed/", "topics": ["math"],
+    "status": "pinned",                                   // pinned | active | archived
+    "added": "2026-09-18", "addedBy": "mark" },           // addedBy: mark | task
+  { "name": "…", "…": "…", "status": "active", "added": "2026-10-02", "addedBy": "task",
+    "note": "one line from the task on why it chose the blog" },
+  { "name": "…", "…": "…", "status": "archived", "added": "…", "addedBy": "task",
+    "archived": "2026-11-13", "archivedBy": "task", "reason": "no liked posts in 42 days" }
+] }
+```
+
+`pinned` and `active` feeds are fetched; `archived` ones are kept so they
+are never proposed again and can be restored. The blogroll is curated the
+way the other sections are, and the status is the whole model:
+
+- **Pinned** means permanent — a blog stays until you unpin or remove it.
+- **Active** means on trial. `blogroll.trialDays` in `config.json` (42) is
+  how long a blog gets: once it has been in the roll that long with no
+  liked post, the morning task archives it. One liked post keeps it for
+  good (until you remove it). Every blog that was in the roll when it moved
+  to the store started a trial on that day, so pin the ones you mean to
+  keep.
+- **Archived** blogs sit on the menu's Archive tab. Restoring one starts a
+  fresh trial from that day.
+
+`blogroll.targetSize` (40) is how large the task keeps the roll: while the
+roll holds fewer blogs than that, each run may add one verified feed, so
+rotations free slots that new blogs fill.
+
+**The menu.** The button by the Blogroll heading opens the roll: every blog
+with its status, when it was added and by whom, how many of its posts you
+have liked, and — for a blog on trial — how many days it has left. Pin,
+unpin, remove, and (on the Archive tab) restore commit straight to
+`blogroll.json` on the `data` branch through the contents API, with the
+same token as the likes; without a token the menu still shows the roll,
+and an action offers the token panel. A removal takes effect at once —
+the page filters the archived blog's posts out itself — while a blog added
+or restored appears with the next build. *Add a blog…* at the bottom opens
+the add dialog (below).
+
+**From the command line** the same operations are `scripts/roll-cli.mjs`,
+run from a checkout of `main` with the store checked out beside it:
+
+```sh
+node scripts/roll-cli.mjs status                 # the digest the task reads: counts, free slots, each blog's trial and likes, the archive
+node scripts/roll-cli.mjs rotate [--dry-run]     # archive the blogs whose trial ran out
+node scripts/roll-cli.mjs check https://…        # find and verify the feed at an address (needs npm ci)
+node scripts/roll-cli.mjs add https://… --topics math --note "…" [--by task|mark] [--pinned]
+node scripts/roll-cli.mjs pin|unpin|remove|restore "Blog name"
+node scripts/roll-cli.mjs init --from old-config.json   # first-time migration of a config.json feed list
+```
+
+They write `store/blogroll.json`; committing on `data` and pushing is up
+to you (or the task). Pushes to `data` don't deploy, so a change shows on
+the page after the next scheduled build — or run the workflow from the
+Actions tab.
 
 ### The morning task
 
@@ -377,6 +445,13 @@ likes, then writes the two files. MathOverflow and arXiv leads are optional
 because those tabs are listing-driven — the task can name one from the
 current listing when something clearly fits.
 
+**The roll** — the task also maintains the blogroll on every run: it runs
+`roll-cli.mjs rotate` (mechanical: the policy above, no judgment), and
+then, if the roll has room, looks for one blog with a working feed that
+fits what the likes show, verifies it with `roll-cli.mjs check`, and adds
+it with `roll-cli.mjs add --by task`, with a one-line note on why. The
+bulletin's *Also today* line reports what it added and rotated out.
+
 ## Themes
 
 Fourteen theme families ship in `index.html`, each in a light *and* a dark
@@ -412,6 +487,13 @@ colour simply shows.
    secret is needed: the job reads its own repository. The likes' write
    token is never stored in the repo — the page asks for it in the browser
    (see *Likes* above).
+
+   Seed the roll while you're there: with the branch checked out into
+   `store/` (`git worktree add store data`), `node scripts/roll-cli.mjs init
+   --from <a JSON file with a blogroll.feeds list>` writes `blogroll.json`;
+   commit and push it on `data`. A build with no roll in the store falls
+   back to `blogroll.feeds` in `config.json` if you put a list there, and
+   fails the section otherwise.
 
 4. **Run it once by hand** (or just push). Actions tab → *Build and deploy* →
    *Run workflow*. Every run builds all sections and deploys the site with
@@ -449,31 +531,35 @@ Two caveats worth being clear about:
 
 ## Maintaining it
 
-Everything lives in `config.json`: the blogroll's topics and feeds, the
-weather location, the Wikipedia interest areas and the other wikis tabs'
-settings, the artwork interest areas, the store's branch, and the albums
-file paths within it.
-Adding a blogroll topic means adding an entry to `blogroll.topics` and
-referencing its `id` from any feed; the filter chips and dot colors follow
-automatically. `site` is the deployed URL, which the build uses to recover
-the currently-published data when a section's fresh build fails.
+Everything but the roll lives in `config.json`: the blogroll's topics and
+policy (`targetSize`, `trialDays`, `rollPath`), the weather location, the
+Wikipedia interest areas and the other wikis tabs' settings, the artwork
+interest areas, the store's branch, and the albums file paths within it.
+The blogs themselves are `blogroll.json` in the store — see [The
+roll](#the-roll). Adding a blogroll topic means adding an entry to
+`blogroll.topics` and referencing its `id` from any feed; the filter chips
+and dot colors follow automatically. `site` is the deployed URL, which the
+build uses to recover the currently-published data when a section's fresh
+build fails.
 
 Any push to `main` redeploys the site with freshly built data, so a config
 change takes effect as soon as its push lands.
 
 ### Adding a blog from the page
 
-The **+** button next to the Blogroll heading adds a feed without leaving the
-site. Paste the blog's address and the dialog finds the feed itself — as the
+*Add a blog…* in the blogroll menu adds a feed without leaving the site.
+Paste the blog's address and the dialog finds the feed itself — as the
 feed URL directly, via the page's `<link rel="alternate">`, or by probing
 common paths (`/feed/`, `/atom.xml`, …), falling back to the same
 read-through proxies the build uses when the publisher doesn't send CORS
 headers. A source only counts once it actually parses as a feed, and the
 name, author, and site prefill from it. Committing goes through the GitHub
-contents API: the entry is spliced into `config.json` textually (so the
-file's hand formatting survives), and the push triggers the normal
-build-and-deploy — the new blog is on the page a few minutes later.
-Duplicates are refused by feed or site URL.
+contents API: the entry joins `blogroll.json` on the `data` branch as an
+active blog added by you. Duplicates — including archived blogs, which you
+restore from the menu instead — are refused by feed or site URL. Since a
+push to `data` doesn't deploy, the dialog then asks Actions to run the
+build; that needs the token to have **Actions** read-and-write as well,
+and without it the blog's posts arrive with the next scheduled build.
 
 One-time setup per browser: the dialog asks for a fine-grained PAT with
 read-and-write **Contents** permission on this repository only, kept in
