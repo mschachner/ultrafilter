@@ -2,17 +2,19 @@
  * Cantor's Attic tab. The original MediaWiki at cantorsattic.info now sits
  * behind a Cloudflare challenge; the maintained copy is a Jekyll site built
  * from github.com/neugierde/cantors-attic, one Markdown file per page under
- * docs/. The build lists those files through the GitHub tree API, shuffles
- * them with a date-fixed seed, and reads each page's raw Markdown: the front
- * matter gives the title and permalink, and the first paragraph is the
- * extract. Links point at the rendered site.
+ * docs/. The build lists pages by scraping the rendered site's section
+ * indexes (the GitHub tree API needs authenticated, repo-scoped access in
+ * some environments, so it is avoided), shuffles them with a date-fixed
+ * seed, and reads each page's raw Markdown: the front matter gives the
+ * title and permalink, and the first paragraph is the extract. Links point
+ * at the rendered site.
  *
  * `resolve(url)` turns a page URL the morning task picked into the same
  * item shape (the URL's path is tried as the Markdown file name first, then
  * matched against permalinks in the tree); `candidates(n)` lists pages.
  */
 
-import { fetchJson, fetchText, tex2text, shuffled, firstSentence, decodeEntities } from "../../lib.mjs";
+import { fetchText, tex2text, shuffled, firstSentence, decodeEntities } from "../../lib.mjs";
 
 const REPO = "neugierde/cantors-attic";
 const SITE = "https://neugierde.github.io/cantors-attic/";
@@ -21,14 +23,20 @@ const RAW = `https://raw.githubusercontent.com/${REPO}/HEAD/`;
 // Section indexes and housekeeping pages, not entries.
 const SKIP = /^(Upper_attic|Middle_attic|Lower_attic|Parlour|Playroom|Library|Cellar|Cantor's_Attic|Community_portal|index|README|Main_Page|Help|Sandbox)/i;
 
+const SECTIONS = ["Upper_attic", "Middle_attic", "Lower_attic", "Parlour", "Playroom", "Library", "Cellar"];
+
 async function pages() {
-  const tree = await fetchJson(`https://api.github.com/repos/${REPO}/git/trees/HEAD?recursive=1`, {
-    Accept: "application/vnd.github+json",
-  });
-  return (tree.tree || [])
-    .map(e => e.path)
-    .filter(p => /^docs\/[^/]+\.md$/.test(p) && !SKIP.test(p.slice(5)))
-    .map(p => p.slice(5, -3));
+  const names = new Set();
+  for (const section of SECTIONS) {
+    const html = await fetchText(SITE + section);
+    // Entry links are relative hrefs ("Measurable", "Con_ZFC#..."); absolute
+    // paths and full URLs are assets, navigation, or external links.
+    for (const m of html.matchAll(/href="([^"/:#?][^":]*)"/g)) {
+      const name = decodeURIComponent(m[1].replace(/[?#].*$/, ""));
+      if (name && !SKIP.test(name)) names.add(name);
+    }
+  }
+  return [...names];
 }
 
 function frontMatter(md) {
