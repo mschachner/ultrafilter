@@ -82,7 +82,7 @@ async function entry(name) {
   return {
     title: tex2text(meta.title || name.replace(/_/g, " ")),
     description: firstSentence(extract),
-    extract: extract.length > 600 ? extract.slice(0, 599).replace(/\s+\S*$/, "") + "…" : extract,
+    extract,
     url: SITE + permalink,
   };
 }
@@ -115,7 +115,7 @@ export async function resolve(url) {
   return {
     title: tex2text(mdToText(h1[1])),
     description: firstSentence(extract),
-    extract: extract.length > 600 ? extract.slice(0, 599).replace(/\s+\S*$/, "") + "…" : extract,
+    extract,
     url,
   };
 }

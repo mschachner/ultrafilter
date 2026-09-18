@@ -44,17 +44,13 @@ function accents(s) {
 }
 const clean = s => tex2text(accents(squash(s)));
 
-function clip(extract) {
-  return extract.length > 480 ? extract.slice(0, 479).replace(/\s+\S*$/, "") + "…" : extract;
-}
-
 function fromFeed(xml, cats, count) {
   const entries = entriesOf(parse(xml));
   if (!entries.length) throw new Error("no entries in the arXiv listing feed");
   const KIND = { new: "", cross: "cross-list", replace: "replacement", "replace-cross": "replacement" };
   return entries.slice(0, count).map(e => {
     const authors = squash(e["dc:creator"]).split(/,\s*/).map(accents).filter(Boolean);
-    const who = authors.length > 3 ? `${authors.slice(0, 3).join(", ")} et al.` : authors.join(", ");
+    const who = authors.join(", ");
     const links = [].concat(e.link || []);
     const abs = links.find(l => l["@_rel"] === "alternate")?.["@_href"] ||
       `https://arxiv.org/abs/${String(e.id || "").replace(/^oai:arXiv\.org:/, "").replace(/v\d+$/, "")}`;
@@ -70,7 +66,7 @@ function fromFeed(xml, cats, count) {
     return {
       title: clean(e.title),
       description: [who, when, notes].filter(Boolean).join(" · "),
-      extract: clip(clean(summary)),
+      extract: clean(summary),
       url: abs.replace(/^http:/, "https:"),
       when,
     };
@@ -82,7 +78,7 @@ function fromApi(xml, cats) {
   if (!entries.length) throw new Error("no entries in the arXiv API feed");
   return entries.map(e => {
     const authors = [].concat(e.author || []).map(a => accents(squash(a.name))).filter(Boolean);
-    const who = authors.length > 3 ? `${authors.slice(0, 3).join(", ")} et al.` : authors.join(", ");
+    const who = authors.join(", ");
     const links = [].concat(e.link || []);
     const abs = links.find(l => l["@_rel"] === "alternate")?.["@_href"] || String(e.id || "");
     const primary = e["arxiv:primary_category"]?.["@_term"];
@@ -91,7 +87,7 @@ function fromApi(xml, cats) {
     return {
       title: clean(e.title),
       description: [who, when, other].filter(Boolean).join(" · "),
-      extract: clip(clean(e.summary)),
+      extract: clean(e.summary),
       url: abs.replace(/^http:/, "https:"),
       when,
     };

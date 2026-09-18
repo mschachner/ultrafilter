@@ -27,7 +27,7 @@ function item(q, tags) {
   return {
     title: tex2text(decodeEntities(q.title || "")),
     description: [`▲ ${q.score}`, q.is_answered ? `${answers} ✓` : answers, extra].filter(Boolean).join(" · "),
-    extract: extract.length > 480 ? extract.slice(0, 479).replace(/\s+\S*$/, "") + "…" : extract,
+    extract,
     url: q.link,
     when: new Date(q.creation_date * 1000).toISOString().slice(0, 10),
   };

@@ -294,6 +294,15 @@
   /* --------------------------- daily sections --------------------------- */
   .klabel { font-family: var(--mono); font-size: .66rem; letter-spacing: .09em;
             text-transform: uppercase; color: var(--muted); }
+  /* Long extracts are folded to --lines lines, never cut: when one overflows,
+     fitClamps() adds a "show more" toggle after it so the whole text is
+     readable in place. Nothing is ellipsized. */
+  .clamp { max-height: calc(var(--lines, 5) * 1lh); overflow: hidden; }   /* a clean cut at a line, no ellipsis */
+  .clamp.open { max-height: none; overflow: visible; }
+  .more { display: inline-block; font-family: var(--mono); font-size: .66rem; letter-spacing: .09em;
+          text-transform: uppercase; color: var(--muted); background: none; border: none;
+          border-bottom: 1px solid transparent; border-radius: 0; padding: 0; margin-top: .3rem; }
+  .more:hover { background: none; color: var(--ink); border-bottom-color: var(--ink); }
 
   #albums-sec, #wiki-sec, #art-sec { display: none; }
   #albums-sec.on, #wiki-sec.on, #art-sec.on { display: block; }
@@ -332,10 +341,8 @@
   .art-byline { font-size: .84rem; color: var(--muted); margin-top: .15rem; }
   .art-byline a { color: var(--muted); }
   .art-byline a:hover { color: var(--ink); }
-  .art-extract { font-size: .88rem; line-height: 1.5; margin-top: .7rem;
-                 display: -webkit-box; -webkit-line-clamp: 6;
-                 -webkit-box-orient: vertical; overflow: hidden; }
-  .art-extract.artist { -webkit-line-clamp: 4; margin-top: .55rem; }
+  .art-extract { font-size: .88rem; line-height: 1.5; margin-top: .7rem; --lines: 6; }
+  .art-extract.artist { --lines: 4; margin-top: .55rem; }
   /* The section runs headerless: a quiet control row sits above the plate —
      interest label, the date when it isn't today's, and the reroll die. */
   .art-top { display: flex; align-items: center; gap: .75rem; margin: 2.4rem 0 .55rem; }
@@ -402,7 +409,7 @@
   @keyframes dice-roll { to { transform: rotate(360deg); } }
 
   /* The wikis section is one section with a tab strip: each tab is a lead
-     entry (title, one-line description, clamped extract) beside a short
+     entry (title, one-line description, folded extract) beside a short
      column of further picks — the shape the Wikipedia section always had. */
   .wtabs { display: flex; flex-wrap: wrap; gap: .1rem 1.2rem; margin: -.4rem 0 1rem;
            font-family: var(--mono); font-size: .68rem; letter-spacing: .09em; text-transform: uppercase; }
@@ -416,14 +423,13 @@
   .wiki { display: grid; grid-template-columns: minmax(0, 1fr) 17rem; gap: 2rem; }
   .wiki-note { font-size: .85rem; color: var(--muted); margin: .25rem 0 0; }
   .tfa-extract.mono { font-family: var(--mono); font-size: .8rem; line-height: 1.6;
-                      -webkit-line-clamp: 3; word-break: break-word; }
+                      --lines: 3; word-break: break-word; }
   .tfa-head { display: flex; align-items: center; gap: .45rem; margin: .3rem 0 .05rem; }
   .tfa-title { font-family: var(--display); font-size: 1.35rem; color: var(--ink);
                text-decoration: none; display: inline-block; }
   .tfa-title:hover { text-decoration: underline; text-underline-offset: 3px; }
   .tfa-desc { font-size: .82rem; color: var(--muted); display: block; margin-bottom: .5rem; }
-  .tfa-extract { font-size: .88rem; line-height: 1.5; display: -webkit-box;
-                 -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden; }
+  .tfa-extract { font-size: .88rem; line-height: 1.5; --lines: 5; }
   .wpick { display: flex; gap: .6rem; padding: .45rem 0; border-top: 1px dotted var(--line);
            align-items: baseline; }
   .wpick:first-of-type { margin-top: .45rem; }
@@ -433,8 +439,7 @@
   .wpick:hover .uf-heart, .wpick:focus-within .uf-heart, .wpick .uf-heart[aria-pressed="true"] { opacity: 1; }
   .wpick-title { font-family: var(--display); font-size: .98rem; color: var(--ink); text-decoration: none; }
   .wpick-title:hover { text-decoration: underline; text-underline-offset: 3px; }
-  .wpick-desc { display: block; font-size: .74rem; color: var(--muted);
-                white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .wpick-desc { display: block; font-size: .74rem; line-height: 1.4; color: var(--muted); }
 
   /* ------------------------------ blogroll ------------------------------ */
   .chips { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1rem 0 0; }
@@ -559,28 +564,42 @@
   .af-actions { display: flex; justify-content: flex-end; gap: .6rem; margin-top: 1rem; }
 
   /* ---------------------------- blogroll menu ---------------------------- */
-  /* Same panel as the theme picker, anchored under the heading's button:
-     the roll on one tab, the archive on the other. */
-  #blogroll-head { position: relative; }   /* the menu hangs from the heading, not the button */
+  /* A centered modal (the same dialog shell as "Add a blog"): the roll on
+     one tab, the archive on the other. Only the list scrolls; the tabs and
+     the footer stay put. */
   #roll-ui { display: inline-flex; align-items: center; }
   #roll-btn[aria-expanded="true"] { color: var(--ink); background: var(--hover); }
-  #roll-menu { position: absolute; left: 0; top: calc(100% + .35rem); z-index: 40;
-               width: 27rem; max-width: min(27rem, calc(100vw - 2.2rem));
-               max-height: min(75vh, 36rem); overflow: auto; overscroll-behavior: contain;
-               background: var(--bg); background-image: var(--texture);
-               border: 1px solid var(--line); border-radius: .7rem; padding: .55rem;
+  #roll-menu { margin: auto; padding: 0; width: min(32rem, 92vw); max-height: min(82vh, 44rem);
+               background: var(--bg); background-image: var(--texture); color: var(--ink);
+               border: 1px solid var(--line); border-radius: .7rem;
                box-shadow: 0 .6rem 1.8rem rgba(20, 24, 28, .28);
-               font-family: var(--body); font-size: .84rem; letter-spacing: 0;
-               color: var(--ink); text-align: left; cursor: default; }
+               font-family: var(--body); font-size: .84rem; letter-spacing: 0; text-align: left; }
+  #roll-menu::backdrop { background: rgba(32, 38, 43, .35);
+                         -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+  #roll-menu[open] { display: flex; }   /* the panel fills the dialog so a backdrop click is unambiguous */
+  .roll-panel { display: flex; flex-direction: column; min-height: 0; flex: 1 1 auto; width: 100%;
+                padding: 1rem 1.1rem 1rem; }
+  .roll-head { display: flex; align-items: center; gap: .6rem; margin-bottom: .6rem; }
+  .roll-head h2 { font-family: var(--display); font-weight: 400; font-size: 1.35rem; flex: 1 1 auto; }
+  .roll-close { border: none; background: none; padding: .25rem; border-radius: .35rem; color: var(--muted);
+                line-height: 0; }
+  .roll-close:hover { color: var(--ink); background: var(--hover); }
+  .roll-close svg { width: 1.1rem; height: 1.1rem; }
+  #roll-menu .mode-row { flex: none; }
   #roll-menu .mode-btn .n { font-family: var(--mono); font-size: .68rem; opacity: .75; margin-left: .35rem; }
+  .roll-list { flex: 1 1 auto; min-height: 0; overflow: auto; overscroll-behavior: contain;
+               display: flex; flex-direction: column; gap: .12rem; margin: 0 -.35rem; padding: 0 .35rem; }
   .roll-row { display: flex; align-items: center; gap: .6rem; padding: .4rem .45rem; border-radius: .5rem; }
   .roll-row:hover { background: var(--hover); }
+  /* Pinned blogs sit at the top on a tinted ground instead of carrying a label. */
+  .roll-row.pinned { background: color-mix(in srgb, var(--accent) 13%, var(--bg)); }
+  .roll-row.pinned:hover { background: color-mix(in srgb, var(--accent) 20%, var(--bg)); }
   .roll-row .ticon { flex: none; }
   .roll-main { flex: 1 1 auto; min-width: 0; line-height: 1.25; }
   .roll-name { color: var(--ink); text-decoration: none; font-family: var(--display); font-size: .95rem; }
   .roll-name:hover { text-decoration: underline; text-underline-offset: 3px; }
   .roll-meta { display: block; font-family: var(--mono); font-size: .64rem; letter-spacing: .03em;
-               color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+               color: var(--muted); line-height: 1.5; }
   .roll-meta .due { color: var(--fail); }
   .roll-meta .liked { color: #E8788A; }
   .roll-acts { display: inline-flex; gap: .15rem; flex: none; }
@@ -592,7 +611,7 @@
   .roll-act[data-act="pin"][aria-pressed="true"] svg { fill: currentColor; }
   .roll-act.txt { font-family: var(--body); font-size: .76rem; line-height: 1; padding: .3rem .55rem; color: var(--muted); }
   .roll-empty { padding: 1rem .45rem; color: var(--muted); font-size: .8rem; }
-  .roll-foot { display: flex; align-items: center; justify-content: space-between; gap: .75rem;
+  .roll-foot { flex: none; display: flex; align-items: center; justify-content: space-between; gap: .75rem;
                margin-top: .5rem; padding: .55rem .45rem 0; border-top: 1px dotted var(--line); }
   .roll-foot .roll-note { font-family: var(--mono); font-size: .66rem; letter-spacing: .04em; color: var(--muted); }
   .roll-foot .roll-note.fail { color: var(--fail); }
@@ -687,11 +706,11 @@
     <div class="main">
       <section id="wiki-sec" aria-label="Wikis"></section>
       <h2 class="section-head" id="blogroll-head">Blogroll<span class="dl-note" id="roll-ui"><button id="roll-btn" class="reroll"
-          title="The roll" aria-label="Manage the blogroll" aria-haspopup="true" aria-expanded="false">
+          title="The roll" aria-label="Manage the blogroll" aria-haspopup="dialog" aria-expanded="false">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M4 6h16M4 12h10M4 18h7"/><path d="M17.5 14.5l2 2 3-4"/></svg>
-        </button><div id="roll-menu" hidden></div></span><span class="dl-note" id="feeds-note"></span></h2>
+        </button></span><span class="dl-note" id="feeds-note"></span></h2>
       <div class="chips" id="chips" role="group" aria-label="Filter by topic"></div>
       <main id="list" aria-live="polite"></main>
       <p id="status-line">Loading posts&hellip;</p>
@@ -701,6 +720,8 @@
       <section id="albums-sec" aria-label="Albums"></section>
     </aside>
   </div>
+
+  <dialog id="roll-menu" aria-labelledby="roll-title"></dialog>
 
   <dialog id="add-dialog" aria-labelledby="af-title">
     <h2 id="af-title">Add a blog</h2>
@@ -761,6 +782,39 @@ function esc(s) {
   d.textContent = s == null ? "" : s;
   return d.innerHTML;
 }
+
+/* Folded text. Any element rendered with class "clamp" is cut to --lines
+   lines by CSS; once it is in the document this checks whether it actually
+   overflows and, if so, puts a "show more" toggle after it. A MutationObserver
+   runs it after every render, and a resize re-checks, so a fold that stops
+   overflowing at a wider viewport loses its toggle again. The fold is a
+   max-height in line units, so the cut lands between lines. */
+function fitClamps(root = document) {
+  for (const el of root.querySelectorAll(".clamp")) {
+    let btn = el.nextElementSibling?.classList.contains("more") ? el.nextElementSibling : null;
+    const over = el.classList.contains("open") || el.scrollHeight > el.clientHeight + 1;
+    if (over && !btn) {
+      btn = document.createElement("button");
+      btn.className = "more";
+      btn.type = "button";
+      btn.textContent = "show more";
+      btn.setAttribute("aria-expanded", "false");
+      btn.addEventListener("click", () => {
+        const open = el.classList.toggle("open");
+        btn.textContent = open ? "show less" : "show more";
+        btn.setAttribute("aria-expanded", String(open));
+      });
+      el.after(btn);
+    } else if (!over && btn) {
+      btn.remove();
+    }
+  }
+}
+new MutationObserver(muts => {
+  if (muts.some(m => m.addedNodes.length)) fitClamps();
+}).observe(document.documentElement, { childList: true, subtree: true });
+let clampTimer = 0;
+addEventListener("resize", () => { clearTimeout(clampTimer); clampTimer = setTimeout(() => fitClamps(), 120); });
 
 /* -------------------------------- themes -------------------------------- */
 
@@ -1065,7 +1119,7 @@ function renderArt() {
     ? `<a href="${esc(artist.url)}" target="_blank" rel="noopener">${esc(artist.name)}</a>`
     : esc(artist?.name || "Unknown artist");
   const artistBit = artist?.extract
-    ? `<p class="art-extract artist">${esc(artist.extract)}</p>` : "";
+    ? `<p class="art-extract artist clamp">${esc(artist.extract)}</p>` : "";
   const dated = a.date && a.date !== TODAY_KEY
     ? `<span class="art-date">${esc(prettyDate(a.date))}</span>` : "";
   const die = a.interests?.length
@@ -1085,7 +1139,7 @@ function renderArt() {
       <figcaption class="art-caption">
         <div class="art-title"><a href="${esc(w.url)}" target="_blank" rel="noopener"><i>${esc(w.title)}</i></a>${year}</div>
         <div class="art-byline">${byName}${w.location ? ` &middot; ${esc(w.location)}` : ""}</div>
-        <p class="art-extract">${esc(w.extract)}</p>${artistBit}
+        <p class="art-extract clamp">${esc(w.extract)}</p>${artistBit}
       </figcaption>
     </figure>`;
   $("#art-sec").classList.add("on");
@@ -1440,7 +1494,7 @@ function wikiLead(lead, tabId) {
       <span class="klabel">${esc(lead.kicker || "")}</span>
       <span class="tfa-head"><a class="tfa-title" href="${esc(lead.url)}" target="_blank" rel="noopener">${esc(lead.title)}</a>${heart}</span>
       ${dup ? "" : `<span class="tfa-desc">${esc(desc)}</span>`}
-      <p class="tfa-extract${lead.mono ? " mono" : ""}">${esc(lead.extract)}</p>
+      <p class="tfa-extract clamp${lead.mono ? " mono" : ""}">${esc(lead.extract)}</p>
     </div>`;
 }
 function wikiPickRow(p, dot, glyph, tabId) {
@@ -1451,7 +1505,7 @@ function wikiPickRow(p, dot, glyph, tabId) {
       ${glyph}
       <span class="wpick-main">
         <a class="wpick-title" href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.title)}</a>
-        <span class="wpick-desc" title="${esc(p.description)}">${esc(p.description)}</span>
+        <span class="wpick-desc">${esc(p.description)}</span>
       </span>
       ${heart}
     </div>`;
@@ -1654,7 +1708,7 @@ function renderBlogroll() {
   renderLedger();
   renderList();
   renderStatus();
-  if (!$("#roll-menu").hidden) renderRollMenu();
+  if ($("#roll-menu").open) renderRollMenu();
 }
 
 async function loadJson(name) {
@@ -1746,7 +1800,7 @@ $("#lightbox").addEventListener("click", e => {
 document.addEventListener("keydown", e => {
   if (e.key !== "Escape") return;
   if (!$("#lightbox").hidden) closeLightbox();
-  else { closeThemeMenu(); closeRollMenu(); }
+  else closeThemeMenu();
 });
 
 $("#theme-btn").addEventListener("click", e => {
@@ -1767,7 +1821,6 @@ $("#theme-menu").addEventListener("click", e => {
 });
 document.addEventListener("click", e => {
   if (!e.target.closest("#theme-ui")) closeThemeMenu();
-  if (!e.target.closest("#roll-ui")) closeRollMenu();
 });
 
 $("#list").addEventListener("click", async e => {
@@ -2034,16 +2087,15 @@ function renderRollMenu() {
     const n = likes.get(f.name) || 0;
     const bits = [];
     if (f.author && f.author !== f.name) bits.push(esc(f.author));
-    if (f.status === "pinned") bits.push("pinned");
     else if (f.added) {
       bits.push(`added ${esc(shortDate(f.added))}${who(f.addedBy)}`);
-      if (!n) {
+      if (!n && f.status !== "pinned") {   // pinned blogs never rotate out
         const left = policy.trialDays - daysSince(f.added);
         bits.push(left > 0 ? `${left} day${left === 1 ? "" : "s"} left` : `<span class="due">due for rotation</span>`);
       }
     }
     if (n) bits.push(`<span class="liked">${n} liked</span>`);
-    return `<div class="roll-row" style="--dot:${topicColor(f.topics?.[0])}">
+    return `<div class="roll-row${f.status === "pinned" ? " pinned" : ""}" style="--dot:${topicColor(f.topics?.[0])}">
       ${icon(f.topics?.[0])}
       <span class="roll-main">
         <a class="roll-name" href="${esc(f.site)}" target="_blank" rel="noopener"${f.note ? ` title="${esc(f.note)}"` : ""}>${esc(f.name)}</a>
@@ -2077,30 +2129,36 @@ function renderRollMenu() {
     ? `<span class="roll-note ${rollMsg.cls}">${esc(rollMsg.text)}</span>`
     : `<span class="roll-note">${inRoll.length} of ${policy.targetSize}${pinned ? ` · ${pinned} pinned` : ""}${
         rollDoc()?.source === "live" ? "" : " · as built"}</span>`;
-  menu.innerHTML = `
+  // Keep the list's scroll position across the re-render a click causes.
+  const scrolled = menu.querySelector(".roll-list")?.scrollTop || 0;
+  menu.innerHTML = `<div class="roll-panel">
+    <div class="roll-head"><h2 id="roll-title">Blogroll</h2>
+      <button class="roll-close" type="button" aria-label="Close">${X_ICON}</button></div>
     <div class="mode-row" role="tablist" aria-label="Roll or archive">
       <button class="mode-btn" role="tab" data-rtab="roll" aria-pressed="${rollTab === "roll"}">In the roll<span class="n">${inRoll.length}</span></button>
       <button class="mode-btn" role="tab" data-rtab="archive" aria-pressed="${rollTab === "archive"}">Archive<span class="n">${archive.length}</span></button>
     </div>
     <div class="roll-list">${list.join("") || `<div class="roll-empty" hidden><!-- nothing on this tab --></div>`}</div>
-    <div class="roll-foot">${note}<button id="roll-add">Add a blog…</button></div>`;
+    <div class="roll-foot">${note}<button id="roll-add">Add a blog…</button></div>
+  </div>`;
+  menu.querySelector(".roll-list").scrollTop = scrolled;
 }
 
 let rollMsg = { text: "", cls: "" };   // the footer line while a change is saving, or its error
 function rollNote(text, cls) {
   rollMsg = { text: text || "", cls: cls || "" };
-  if (!$("#roll-menu").hidden) renderRollMenu();
+  if ($("#roll-menu").open) renderRollMenu();
 }
 
 function openRollMenu() {
   renderRollMenu();
-  $("#roll-menu").hidden = false;
+  $("#roll-menu").showModal();
   $("#roll-btn").setAttribute("aria-expanded", "true");
 }
 function closeRollMenu() {
-  $("#roll-menu").hidden = true;
-  $("#roll-btn").setAttribute("aria-expanded", "false");
+  if ($("#roll-menu").open) $("#roll-menu").close();
 }
+$("#roll-menu").addEventListener("close", () => $("#roll-btn").setAttribute("aria-expanded", "false"));
 
 function rollMutation(act, name) {
   return doc => {
@@ -2137,12 +2195,11 @@ async function rollAction(act, name) {
   renderBlogroll();
 }
 
-$("#roll-btn").addEventListener("click", e => {
-  e.stopPropagation();
-  if ($("#roll-menu").hidden) openRollMenu(); else closeRollMenu();
-});
+$("#roll-btn").addEventListener("click", () => openRollMenu());
 $("#roll-menu").addEventListener("click", e => {
-  e.stopPropagation();   // see the theme menu: re-rendering detaches the clicked node
+  // The dialog element itself is only hit through the backdrop (the panel
+  // fills it), so that click, like the X and Esc, closes the modal.
+  if (e.target === $("#roll-menu") || e.target.closest(".roll-close")) { closeRollMenu(); return; }
   const tab = e.target.closest("[data-rtab]");
   if (tab) { rollTab = tab.dataset.rtab; renderRollMenu(); return; }
   if (e.target.closest("#roll-add")) { closeRollMenu(); openAddDialog(); return; }

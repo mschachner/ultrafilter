@@ -41,12 +41,8 @@ function score(seq) {
 
 function item(seq) {
   const num = String(seq.number).padStart(6, "0");
-  const terms = (seq.data || "").split(",").filter(Boolean);
-  let shown = "";
-  for (const t of terms) {
-    if (shown.length + t.length > 110) { shown += ", …"; break; }
-    shown += (shown ? ", " : "") + t;
-  }
+  // Every term the entry's data lines give (the page folds long runs).
+  const shown = (seq.data || "").split(",").filter(Boolean).join(", ");
   const kw = (seq.keyword || "").split(",").filter(k => /^(nice|core|easy|hard|hear|look|fini|full|tabl|walk|word)$/.test(k));
   const author = (seq.author || "").replace(/_/g, "").replace(/,.*$/, "").trim();
   return {

@@ -188,9 +188,12 @@ export function shuffled(arr, seed) {
 }
 
 /** The first sentence or so of a passage, for one-line descriptions. */
-export function firstSentence(text, max = 140) {
+/** The first sentence of `text`, whole. Only text with no sentence boundary
+ *  at all is cut, at `max` characters, since it would otherwise run on
+ *  indefinitely; the page wraps long one-liners rather than ellipsizing them. */
+export function firstSentence(text, max = 400) {
   const t = String(text ?? "").trim();
   const m = t.match(/^[\s\S]{20,}?[.!?](?=\s|$)/);
-  const s = m ? m[0] : t;
-  return s.length > max ? s.slice(0, max - 1).replace(/\s+\S*$/, "") + "…" : s;
+  if (m) return m[0];
+  return t.length > max ? t.slice(0, max - 1).replace(/\s+\S*$/, "") + "…" : t;
 }
