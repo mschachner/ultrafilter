@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-20T13:27:03.580Z",
+ "updated": "2026-09-20T13:27:04.987Z",
  "items": [
   {
    "kind": "album",
@@ -622,7 +622,7 @@
     "hard bop"
    ],
    "listened": "2026-09-20",
-   "liked": false,
+   "liked": true,
    "kind": "album",
    "key": "yusef lateef::eastern sounds",
    "when": "2026-09-20"
