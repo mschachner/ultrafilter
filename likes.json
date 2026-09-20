@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-20T12:38:25.229Z",
+ "updated": "2026-09-20T12:38:40.018Z",
  "items": [
   {
    "kind": "album",
@@ -650,6 +650,15 @@
    "topic": null,
    "kind": "wiki",
    "key": "https://en.wikipedia.org/wiki/Misti",
+   "when": "2026-09-20"
+  },
+  {
+   "source": "attic",
+   "title": "Jónsson cardinal",
+   "url": "https://neugierde.github.io/cantors-attic/Jonsson",
+   "topic": null,
+   "kind": "wiki",
+   "key": "https://neugierde.github.io/cantors-attic/Jonsson",
    "when": "2026-09-20"
   }
  ]
