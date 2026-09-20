@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-20T13:27:04.987Z",
+ "updated": "2026-09-20T14:31:17.032Z",
  "items": [
   {
    "kind": "album",
@@ -613,6 +613,19 @@
    "listened": "2026-09-17",
    "liked": true,
    "when": "2026-09-17"
+  },
+  {
+   "artist": "Explosions in the Sky",
+   "album": "The Earth Is Not a Cold Dead Place",
+   "genres": [
+    "post-rock",
+    "instrumental rock"
+   ],
+   "listened": "2026-09-20",
+   "liked": false,
+   "kind": "album",
+   "key": "explosions in the sky::the earth is not a cold dead place",
+   "when": "2026-09-20"
   },
   {
    "artist": "Yusef Lateef",
