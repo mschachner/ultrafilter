@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-18T18:38:22.651Z",
+ "updated": "2026-09-20T09:21:31.445Z",
  "feeds": [
   {
    "name": "Joel David Hamkins",
@@ -282,6 +282,20 @@
    "status": "active",
    "added": "2026-09-18",
    "addedBy": "mark"
+  },
+  {
+   "name": "Spoon & Tamago",
+   "author": "Johnny Waldman",
+   "site": "https://www.spoon-tamago.com/",
+   "feed": "https://spoon-tamago.com/feed/",
+   "topics": [
+    "arts",
+    "arthist"
+   ],
+   "status": "active",
+   "added": "2026-09-20",
+   "addedBy": "task",
+   "note": "Long-running personal blog on Japanese art, design and craft - fits the ukiyo-e and Japanese-culture thread in the likes"
   }
  ]
 }
