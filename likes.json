@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-20T14:31:17.032Z",
+ "updated": "2026-09-20T14:31:18.199Z",
  "items": [
   {
    "kind": "album",
@@ -622,7 +622,7 @@
     "instrumental rock"
    ],
    "listened": "2026-09-20",
-   "liked": false,
+   "liked": true,
    "kind": "album",
    "key": "explosions in the sky::the earth is not a cold dead place",
    "when": "2026-09-20"
