@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-21T21:21:08.058Z",
+ "updated": "2026-09-21T21:21:09.202Z",
  "items": [
   {
    "kind": "album",
@@ -713,6 +713,15 @@
    "topic": "math",
    "kind": "wiki",
    "key": "https://en.wikipedia.org/wiki/Keller's_conjecture",
+   "when": "2026-09-21"
+  },
+  {
+   "source": "nlab",
+   "title": "Haag-Kastler axioms",
+   "url": "https://ncatlab.org/nlab/show/Haag-Kastler+axioms",
+   "topic": null,
+   "kind": "wiki",
+   "key": "https://ncatlab.org/nlab/show/Haag-Kastler+axioms",
    "when": "2026-09-21"
   },
   {
