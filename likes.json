@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-21T18:36:16.285Z",
+ "updated": "2026-09-21T18:36:17.415Z",
  "items": [
   {
    "kind": "album",
@@ -645,7 +645,7 @@
    "album": "Walk Through Fire",
    "genres": [],
    "listened": "2026-09-21",
-   "liked": false,
+   "liked": true,
    "kind": "album",
    "key": "yola::walk through fire",
    "when": "2026-09-21"
