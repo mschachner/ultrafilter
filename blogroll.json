@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-20T09:21:31.445Z",
+ "updated": "2026-09-21T09:16:38.587Z",
  "feeds": [
   {
    "name": "Joel David Hamkins",
@@ -296,6 +296,20 @@
    "added": "2026-09-20",
    "addedBy": "task",
    "note": "Long-running personal blog on Japanese art, design and craft - fits the ukiyo-e and Japanese-culture thread in the likes"
+  },
+  {
+   "name": "Shtetl-Optimized",
+   "author": "Scott Aaronson",
+   "site": "https://scottaaronson.blog",
+   "feed": "https://scottaaronson.blog/?feed=rss2",
+   "topics": [
+    "math",
+    "sci"
+   ],
+   "status": "active",
+   "added": "2026-09-21",
+   "addedBy": "task",
+   "note": "Scott Aaronson's long-running personal blog on quantum computing, complexity theory and math - matches the logic-leaning wiki likes"
   }
  ]
 }
