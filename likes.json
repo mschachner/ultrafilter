@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-21T21:21:09.202Z",
+ "updated": "2026-09-21T21:21:13.860Z",
  "items": [
   {
    "kind": "album",
@@ -731,6 +731,15 @@
    "topic": null,
    "kind": "wiki",
    "key": "https://ncatlab.org/nlab/show/statistical+significance",
+   "when": "2026-09-21"
+  },
+  {
+   "source": "sep",
+   "title": "Imre Lakatos",
+   "url": "https://plato.stanford.edu/entries/lakatos/",
+   "topic": null,
+   "kind": "wiki",
+   "key": "https://plato.stanford.edu/entries/lakatos/",
    "when": "2026-09-21"
   }
  ]
