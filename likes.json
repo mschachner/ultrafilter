@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-20T14:31:18.199Z",
+ "updated": "2026-09-21T18:36:16.285Z",
  "items": [
   {
    "kind": "album",
@@ -639,6 +639,16 @@
    "kind": "album",
    "key": "yusef lateef::eastern sounds",
    "when": "2026-09-20"
+  },
+  {
+   "artist": "Yola",
+   "album": "Walk Through Fire",
+   "genres": [],
+   "listened": "2026-09-21",
+   "liked": false,
+   "kind": "album",
+   "key": "yola::walk through fire",
+   "when": "2026-09-21"
   },
   {
    "title": "The Poppy Field near Argenteuil",
