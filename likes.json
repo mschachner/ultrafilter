@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-22T13:27:57.865Z",
+ "updated": "2026-09-22T13:28:03.465Z",
  "items": [
   {
    "kind": "album",
@@ -777,6 +777,15 @@
    "kind": "wiki",
    "key": "https://plato.stanford.edu/entries/lakatos/",
    "when": "2026-09-21"
+  },
+  {
+   "source": "wikipedia",
+   "title": "Alison Frantz",
+   "url": "https://en.wikipedia.org/wiki/Alison_Frantz",
+   "topic": null,
+   "kind": "wiki",
+   "key": "https://en.wikipedia.org/wiki/Alison_Frantz",
+   "when": "2026-09-22"
   },
   {
    "source": "wikipedia",
