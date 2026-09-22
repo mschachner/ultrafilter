@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-22T13:40:45.749Z",
+ "updated": "2026-09-22T14:24:42.431Z",
  "items": [
   {
    "kind": "album",
@@ -687,6 +687,19 @@
    "liked": false,
    "kind": "album",
    "key": "tangerine dream::phaedra",
+   "when": "2026-09-22"
+  },
+  {
+   "artist": "Tommy Guerrero",
+   "album": "A Little Bit of Somethin'",
+   "genres": [
+    "instrumental lo-fi funk",
+    "downtempo"
+   ],
+   "listened": "2026-09-22",
+   "liked": false,
+   "kind": "album",
+   "key": "tommy guerrero::a little bit of somethin'",
    "when": "2026-09-22"
   },
   {
