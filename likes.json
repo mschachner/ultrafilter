@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-22T13:28:03.465Z",
+ "updated": "2026-09-22T13:28:10.422Z",
  "items": [
   {
    "kind": "album",
@@ -794,6 +794,15 @@
    "topic": "math",
    "kind": "wiki",
    "key": "https://en.wikipedia.org/wiki/Ordered_Bell_number",
+   "when": "2026-09-22"
+  },
+  {
+   "source": "sep",
+   "title": "Sorites Paradox",
+   "url": "https://plato.stanford.edu/entries/sorites-paradox/",
+   "topic": null,
+   "kind": "wiki",
+   "key": "https://plato.stanford.edu/entries/sorites-paradox/",
    "when": "2026-09-22"
   }
  ]
