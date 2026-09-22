@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-22T09:14:00.313Z",
+ "updated": "2026-09-22T13:28:51.665Z",
  "feeds": [
   {
    "name": "Joel David Hamkins",
@@ -306,7 +306,7 @@
     "math",
     "sci"
    ],
-   "status": "active",
+   "status": "pinned",
    "added": "2026-09-21",
    "addedBy": "task",
    "note": "Scott Aaronson's long-running personal blog on quantum computing, complexity theory and math - matches the logic-leaning wiki likes"
