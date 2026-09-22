@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-22T13:26:56.158Z",
+ "updated": "2026-09-22T13:26:57.384Z",
  "items": [
   {
    "kind": "album",
@@ -671,7 +671,7 @@
     "art pop"
    ],
    "listened": "2026-09-22",
-   "liked": false,
+   "liked": true,
    "kind": "album",
    "key": "frank ocean::blonde",
    "when": "2026-09-22"
