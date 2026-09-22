@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-21T09:16:38.587Z",
+ "updated": "2026-09-22T09:14:00.313Z",
  "feeds": [
   {
    "name": "Joel David Hamkins",
@@ -310,6 +310,19 @@
    "added": "2026-09-21",
    "addedBy": "task",
    "note": "Scott Aaronson's long-running personal blog on quantum computing, complexity theory and math - matches the logic-leaning wiki likes"
+  },
+  {
+   "name": "The Climate Brink",
+   "author": "Zeke Hausfather & Andrew Dessler",
+   "site": "https://www.theclimatebrink.com",
+   "feed": "https://www.theclimatebrink.com/feed",
+   "topics": [
+    "climate"
+   ],
+   "status": "active",
+   "added": "2026-09-22",
+   "addedBy": "task",
+   "note": "Two climate scientists writing plainly about warming trends and climate risk, posting steadily"
   }
  ]
 }
