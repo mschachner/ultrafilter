@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-22T14:24:42.431Z",
+ "updated": "2026-09-22T14:24:43.520Z",
  "items": [
   {
    "kind": "album",
@@ -697,7 +697,7 @@
     "downtempo"
    ],
    "listened": "2026-09-22",
-   "liked": false,
+   "liked": true,
    "kind": "album",
    "key": "tommy guerrero::a little bit of somethin'",
    "when": "2026-09-22"
