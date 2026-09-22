@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-22T13:28:13.462Z",
+ "updated": "2026-09-22T13:28:18.756Z",
  "items": [
   {
    "kind": "album",
@@ -794,6 +794,15 @@
    "topic": "math",
    "kind": "wiki",
    "key": "https://en.wikipedia.org/wiki/Ordered_Bell_number",
+   "when": "2026-09-22"
+  },
+  {
+   "source": "attic",
+   "title": "Erdős cardinals",
+   "url": "https://neugierde.github.io/cantors-attic/Erdos",
+   "topic": null,
+   "kind": "wiki",
+   "key": "https://neugierde.github.io/cantors-attic/Erdos",
    "when": "2026-09-22"
   },
   {
