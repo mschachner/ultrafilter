@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-22T15:14:08.811Z",
+ "updated": "2026-09-22T16:09:21.820Z",
  "items": [
   {
    "kind": "album",
@@ -687,6 +687,19 @@
    "liked": false,
    "kind": "album",
    "key": "laraaji::ambient 3: day of radiance",
+   "when": "2026-09-22"
+  },
+  {
+   "artist": "Medeski Martin & Wood",
+   "album": "Shack-man",
+   "genres": [
+    "soul jazz",
+    "avant-funk"
+   ],
+   "listened": "2026-09-22",
+   "liked": false,
+   "kind": "album",
+   "key": "medeski martin & wood::shack-man",
    "when": "2026-09-22"
   },
   {
