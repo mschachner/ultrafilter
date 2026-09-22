@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-22T13:26:57.384Z",
+ "updated": "2026-09-22T13:27:57.865Z",
  "items": [
   {
    "kind": "album",
@@ -777,6 +777,15 @@
    "kind": "wiki",
    "key": "https://plato.stanford.edu/entries/lakatos/",
    "when": "2026-09-21"
+  },
+  {
+   "source": "wikipedia",
+   "title": "Ordered Bell number",
+   "url": "https://en.wikipedia.org/wiki/Ordered_Bell_number",
+   "topic": "math",
+   "kind": "wiki",
+   "key": "https://en.wikipedia.org/wiki/Ordered_Bell_number",
+   "when": "2026-09-22"
   }
  ]
 }
