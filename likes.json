@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-22T14:24:43.520Z",
+ "updated": "2026-09-22T15:14:08.811Z",
  "items": [
   {
    "kind": "album",
@@ -674,6 +674,19 @@
    "liked": true,
    "kind": "album",
    "key": "frank ocean::blonde",
+   "when": "2026-09-22"
+  },
+  {
+   "artist": "Laraaji",
+   "album": "Ambient 3: Day of Radiance",
+   "genres": [
+    "ambient",
+    "new age"
+   ],
+   "listened": "2026-09-22",
+   "liked": false,
+   "kind": "album",
+   "key": "laraaji::ambient 3: day of radiance",
    "when": "2026-09-22"
   },
   {
