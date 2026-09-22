@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-22T13:28:10.422Z",
+ "updated": "2026-09-22T13:28:13.462Z",
  "items": [
   {
    "kind": "album",
@@ -803,6 +803,15 @@
    "topic": null,
    "kind": "wiki",
    "key": "https://plato.stanford.edu/entries/sorites-paradox/",
+   "when": "2026-09-22"
+  },
+  {
+   "source": "sep",
+   "title": "Alan Turing",
+   "url": "https://plato.stanford.edu/entries/turing/",
+   "topic": null,
+   "kind": "wiki",
+   "key": "https://plato.stanford.edu/entries/turing/",
    "when": "2026-09-22"
   }
  ]
