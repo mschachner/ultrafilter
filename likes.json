@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-22T13:26:51.703Z",
+ "updated": "2026-09-22T13:26:56.158Z",
  "items": [
   {
    "kind": "album",
@@ -662,6 +662,19 @@
    "kind": "album",
    "key": "yola::walk through fire",
    "when": "2026-09-21"
+  },
+  {
+   "artist": "Frank Ocean",
+   "album": "Blonde",
+   "genres": [
+    "alternative R&B",
+    "art pop"
+   ],
+   "listened": "2026-09-22",
+   "liked": false,
+   "kind": "album",
+   "key": "frank ocean::blonde",
+   "when": "2026-09-22"
   },
   {
    "title": "The Poppy Field near Argenteuil",
