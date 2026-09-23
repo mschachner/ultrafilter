@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-23T12:13:58.262Z",
+ "updated": "2026-09-23T12:14:13.420Z",
  "items": [
   {
    "kind": "album",
@@ -884,6 +884,15 @@
    "kind": "wiki",
    "key": "https://plato.stanford.edu/entries/turing/",
    "when": "2026-09-22"
+  },
+  {
+   "source": "nlab",
+   "title": "empty subset",
+   "url": "https://ncatlab.org/nlab/show/empty+subset",
+   "topic": null,
+   "kind": "wiki",
+   "key": "https://ncatlab.org/nlab/show/empty+subset",
+   "when": "2026-09-23"
   }
  ]
 }
