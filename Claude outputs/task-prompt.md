@@ -100,3 +100,5 @@ On every run:
    git push origin data
 
    If the push is rejected (non-fast-forward), run git pull --rebase origin data and push again. If pushing still fails after 3 further attempts spaced about a minute apart, deliver the bulletin anyway but clearly warn at the end that repeat prevention was not recorded and that today's picks will not appear on the site. Never commit or push to main.
+
+9. Once the push in step 8 has succeeded, start a site rebuild so today's picks go live right away instead of waiting for the next scheduled build (GitHub's scheduler often runs late or skips runs). Use the GitHub tools to run the "Build and deploy" workflow — workflow file refresh-feeds.yml in mschachner/ultrafilter, on ref main (with the GitHub MCP server: actions_run_trigger, method run_workflow). This only starts a build; it pushes nothing to main. Skip this step if the push in step 8 failed or steps 5, 6 and 8 were skipped. If starting the workflow fails, retry once; if it still fails, append this line to the bulletin: "⚠ The site rebuild could not be started: today's picks will appear after the next scheduled build."
