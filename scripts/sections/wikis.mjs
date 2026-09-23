@@ -22,8 +22,12 @@
  * and the picks are its side picks (see wikipedia.mjs).
  *
  * Tab payload contract (the page renders all of them the same way):
- *   { id, label, date, generated, stale?, pickKey?, items: [ { title,
+ *   { id, label, date, generated, stale?, pickKey?, math?, items: [ { title,
  *     description, extract, url, mono?, picked? } ], perPage }
+ *
+ * `math` marks a tab whose text carries TeX ($…$, $$…$$, \(…\)) as its
+ * source wrote it; the page typesets those tabs with KaTeX. Other tabs are
+ * plain text, where a dollar sign is just a dollar sign.
  */
 
 import { todayIn } from "../lib.mjs";
@@ -39,12 +43,12 @@ import * as arxiv from "./wikis/arxiv.mjs";
 export const TABS = {
   wikipedia:    { label: "Wikipedia", daily: true, module: wikipedia,
                   build: (cfg, ctx) => wikipedia.build(ctx.config, ctx) },
-  nlab:         { label: "nLab",      daily: true,  module: nlab, build: nlab.build },
+  nlab:         { label: "nLab",      daily: true,  math: true, module: nlab, build: nlab.build },
   sep:          { label: "SEP",       daily: true,  module: sep, build: sep.build },
-  attic:        { label: "Cantor's Attic", daily: true, module: attic, build: attic.build },
+  attic:        { label: "Cantor's Attic", daily: true, math: true, module: attic, build: attic.build },
   oeis:         { label: "OEIS",      daily: true,  module: oeis, build: oeis.build },
-  mathoverflow: { label: "MathOverflow", daily: false, module: mathoverflow, build: mathoverflow.build },
-  arxiv:        { label: "arXiv",     daily: false, module: arxiv, build: arxiv.build },
+  mathoverflow: { label: "MathOverflow", daily: false, math: true, module: mathoverflow, build: mathoverflow.build },
+  arxiv:        { label: "arXiv",     daily: false, math: true, module: arxiv, build: arxiv.build },
 };
 
 const usable = t => t && (t.items?.length || t.tfa || t.picks?.length);
@@ -110,6 +114,7 @@ export async function build(config, { published, likes, picks }) {
     }
   }
 
+  for (const id of order) if (TABS[id].math && usable(tabs[id])) tabs[id].math = true;
   if (!order.some(id => usable(tabs[id]))) throw new Error("every tab failed");
   return { generated: new Date().toISOString(), date: today.key, order, tabs };
 }

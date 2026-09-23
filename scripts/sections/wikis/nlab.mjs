@@ -15,7 +15,7 @@
  * for the task to choose from.
  */
 
-import { fetchText, htmlToText, tex2text, shuffled, firstSentence } from "../../lib.mjs";
+import { fetchText, htmlToText, shuffled, firstSentence } from "../../lib.mjs";
 
 const BASE = "https://ncatlab.org";
 const UA = "UltrafilterBuild/1.0 (https://github.com/mschachner/ultrafilter)";
@@ -36,7 +36,8 @@ async function allPages() {
   return [...new Set(names)];
 }
 
-/** The Idea section (falling back to Definition) as plain text, or null. */
+/** The Idea section (falling back to Definition) as text, or null. Its
+ *  <math> elements become $…$ TeX (see htmlToText), which the page typesets. */
 function ideaText(page) {
   // The context sidebar carries its own h2s; the article proper starts at
   // the "Contents" heading when the page has one.
@@ -53,7 +54,7 @@ function ideaText(page) {
     .replace(/<table[\s\S]*?<\/table>/g, "");
   // Paragraph by paragraph, so the extract stops at a sensible boundary.
   const paras = [...seg.matchAll(/<p>([\s\S]*?)<\/p>/g)]
-    .map(p => tex2text(htmlToText(p[1])))
+    .map(p => htmlToText(p[1]))
     .filter(t => t.length > 30);
   if (!paras.length) return null;
   let text = "";
@@ -73,7 +74,7 @@ async function entry(name) {
   const extract = ideaText(html);
   if (!extract || extract.length < 80) return null;
   const titleMatch = html.match(/<title>\s*([\s\S]*?)\s+in nLab\s*<\/title>/);
-  const title = tex2text(htmlToText(titleMatch ? titleMatch[1] : name));
+  const title = htmlToText(titleMatch ? titleMatch[1] : name);
   return { title, description: firstSentence(extract), extract, url };
 }
 

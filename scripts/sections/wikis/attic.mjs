@@ -14,7 +14,7 @@
  * matched against permalinks in the tree); `candidates(n)` lists pages.
  */
 
-import { fetchText, tex2text, shuffled, firstSentence, decodeEntities } from "../../lib.mjs";
+import { fetchText, shuffled, firstSentence, decodeEntities } from "../../lib.mjs";
 
 const REPO = "neugierde/cantors-attic";
 const SITE = "https://neugierde.github.io/cantors-attic/";
@@ -49,16 +49,22 @@ function frontMatter(md) {
   return { meta: out, body: m ? md.slice(m[0].length) : md };
 }
 
-/** Markdown + leftover wiki HTML to plain text. */
+// The Markdown was converted from MediaWiki with every backslash doubled
+// ($\\kappa$ for $\kappa$); this undoes that, leaving TeX the page can typeset.
+const untex = s => String(s ?? "").replace(/\\\\/g, "\\");
+
+/** Markdown + leftover wiki HTML to text, with its $…$ TeX kept. Emphasis,
+ *  link and code marks come off outside math only: inside $…$ an asterisk
+ *  is TeX. */
 function mdToText(s) {
-  return tex2text(decodeEntities(
-    s.replace(/<a [^>]*>([\s\S]*?)<\/a>/g, "$1")
-      .replace(/<[^>]+>/g, "")
+  const text = untex(decodeEntities(
+    s.replace(/<a [^>]*>([\s\S]*?)<\/a>/g, "$1").replace(/<[^>]+>/g, "")));
+  return text.split(/(\$\$?[^$]*\$\$?)/).map((part, i) => i % 2 ? part : part
       .replace(/\[([^\]]+)\]\([^)]*\)/g, "$1")
       .replace(/\*\*([^*]+)\*\*/g, "$1")
       .replace(/\*([^*]+)\*/g, "$1")
-      .replace(/`([^`]+)`/g, "$1")
-  )).replace(/\s+/g, " ").trim();
+      .replace(/`([^`]+)`/g, "$1"))
+    .join("").replace(/\s+/g, " ").trim();
 }
 
 function firstParagraph(body) {
@@ -80,7 +86,7 @@ async function entry(name) {
   if (!extract) return null;
   const permalink = meta.permalink || name;
   return {
-    title: tex2text(meta.title || name.replace(/_/g, " ")),
+    title: untex(meta.title || name.replace(/_/g, " ")),
     description: firstSentence(extract),
     extract,
     url: SITE + permalink,
@@ -113,7 +119,7 @@ export async function resolve(url) {
   if (!h1 || !paras.length) throw new Error(`couldn't read a title and paragraph from ${url}`);
   const extract = paras[0];
   return {
-    title: tex2text(mdToText(h1[1])),
+    title: mdToText(h1[1]),
     description: firstSentence(extract),
     extract,
     url,

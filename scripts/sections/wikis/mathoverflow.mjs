@@ -5,9 +5,12 @@
  * yields too few questions. Not a daily section — it rebuilds every run.
  *
  * `resolve(url)` reads one question the morning task picked, by id.
+ *
+ * Titles and extracts keep their TeX ($…$, $$…$$) as written; the page
+ * typesets it (the tab is flagged `math` in wikis.mjs).
  */
 
-import { fetchJson, htmlToText, tex2text, decodeEntities } from "../../lib.mjs";
+import { fetchJson, htmlToText, decodeEntities } from "../../lib.mjs";
 
 const API = "https://api.stackexchange.com/2.3/questions";
 
@@ -21,11 +24,11 @@ async function questions(tags, days, count) {
 }
 
 function item(q, tags) {
-  const extract = tex2text(htmlToText(q.body || ""));
+  const extract = htmlToText(q.body || "");
   const answers = q.answer_count === 1 ? "1 answer" : `${q.answer_count} answers`;
   const extra = (q.tags || []).filter(t => !tags.includes(t)).slice(0, 3).join(", ");
   return {
-    title: tex2text(decodeEntities(q.title || "")),
+    title: decodeEntities(q.title || ""),
     description: [`▲ ${q.score}`, q.is_answered ? `${answers} ✓` : answers, extra].filter(Boolean).join(" · "),
     extract,
     url: q.link,

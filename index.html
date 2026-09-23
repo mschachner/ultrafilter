@@ -13,6 +13,17 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<!-- KaTeX typesets the TeX in the wiki tabs whose sources write it (wikis.json
+     flags them `math`). Deferred: the page renders without it, showing the
+     TeX source, and ufMathReady() renders the wiki section again once the
+     auto-render script has run. -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.18.7/dist/katex.min.css"
+      integrity="sha384-JctiRyLzXCrSoOOzFlSoWLdyzQl7OrrRnhyeBmzB6ZWtcjccUyc8lCQJqIbs3uQX" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.18.7/dist/katex.min.js"
+        integrity="sha384-+7Keh381hSkXmXqnjC0JBM/kzsN6TFj+wMKychSLjTvJ8/0ElMde2uKl8i6p6Buj" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.18.7/dist/contrib/auto-render.min.js"
+        integrity="sha384-bjyGPfbij8/NDKJhSGZNP/khQVgtHUE5exjm4Ydllo42FwIgYsdLO2lXGmRBf5Mz" crossorigin="anonymous"
+        onload="window.ufMathReady && window.ufMathReady()"></script>
 <script>
   // Apply the stored theme before first paint so there is no flash. Values
   // saved by the old single-mode themes ("slate", ...) map onto the same
@@ -303,6 +314,17 @@
           text-transform: uppercase; color: var(--muted); background: none; border: none;
           border-bottom: 1px solid transparent; border-radius: 0; padding: 0; margin-top: .3rem; }
   .more:hover { background: none; color: var(--ink); border-bottom-color: var(--ink); }
+
+  /* Typeset TeX. KaTeX's default 1.21em is matched to Computer Modern body
+     text and runs large against these faces. Display math wider than its
+     column scrolls sideways rather than overflowing the page. */
+  .katex { font-size: 1.1em; }
+  .katex-display { margin: .35em 0; overflow-x: auto; overflow-y: hidden; }
+  /* In a folded extract, display math runs inline, so the fold still cuts
+     between lines; opened, it is set on its own line as the source wrote it. */
+  .clamp:not(.open) .katex-display { display: inline; margin: 0; overflow: visible; }
+  .clamp:not(.open) .katex-display > .katex,
+  .clamp:not(.open) .katex-display > .katex > .katex-html { display: inline; }
 
   #albums-sec, #wiki-sec, #art-sec { display: none; }
   #albums-sec.on, #wiki-sec.on, #art-sec.on { display: block; }
@@ -815,6 +837,8 @@ new MutationObserver(muts => {
 }).observe(document.documentElement, { childList: true, subtree: true });
 let clampTimer = 0;
 addEventListener("resize", () => { clearTimeout(clampTimer); clampTimer = setTimeout(() => fitClamps(), 120); });
+// Late-loading fonts (KaTeX's among them) change line heights after a render.
+document.fonts?.addEventListener?.("loadingdone", () => fitClamps());
 
 /* -------------------------------- themes -------------------------------- */
 
@@ -1533,6 +1557,34 @@ function wikiTabBody(tab) {
   return { html: `<div class="wiki">${wikiLead(lead, tab.id)}<div class="wpicks">${picks}</div></div>`, die };
 }
 
+/* TeX in the tabs flagged `math` is typeset by KaTeX's auto-render, which
+   replaces the $…$, $$…$$, \(…\) and \[…\] spans in the rendered text.
+   Each entry is typeset on its own, with its own macro table, so a
+   \newcommand in one question applies to that question's title and extract
+   and not to its neighbours'. MathJax's \require{…} is dropped (KaTeX has
+   its extensions built in); TeX KaTeX still can't parse stays as source, in
+   the text colour. Before the deferred script has loaded this does nothing. */
+const MATH_DELIMITERS = [
+  { left: "$$", right: "$$", display: true },
+  { left: "\\[", right: "\\]", display: true },
+  { left: "$", right: "$", display: false },
+  { left: "\\(", right: "\\)", display: false },
+];
+function typeset(root) {
+  if (!root || typeof window.renderMathInElement !== "function") return;
+  for (const el of root.querySelectorAll(".tfa, .wpick")) {
+    window.renderMathInElement(el, {
+      delimiters: MATH_DELIMITERS, macros: {}, globalGroup: true,
+      throwOnError: false, errorColor: "inherit", strict: "ignore",
+      preProcess: tex => tex.replace(/\\require\{[^{}]*\}/g, ""),   // MathJax's extension loader
+      ignoredClasses: ["klabel", "uf-heart"],
+    });
+  }
+}
+window.ufMathReady = () => {
+  if ($("#wiki-sec").classList.contains("on") && activeWikiTab()?.math) renderWiki();
+};
+
 function renderWiki() {
   const w = state.wikis;
   const tabs = wikiTabs();
@@ -1560,6 +1612,7 @@ function renderWiki() {
   $("#wiki-sec").innerHTML =
     `<h2 class="section-head">Wikis${dated}${stale}${body.die ? `<span class="dl-note">${body.die}</span>` : ""}</h2>` +
     strip + body.html;
+  if (tab.math) typeset($("#wiki-sec .wiki"));
   $("#wiki-sec").classList.add("on");
 }
 

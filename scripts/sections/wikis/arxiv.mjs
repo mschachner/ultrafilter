@@ -16,7 +16,7 @@
  */
 
 import { XMLParser } from "fast-xml-parser";
-import { fetchText, tex2text } from "../../lib.mjs";
+import { fetchText } from "../../lib.mjs";
 
 const FEED = "https://rss.arxiv.org/atom/";
 const API = "https://export.arxiv.org/api/query";
@@ -30,8 +30,8 @@ const entriesOf = doc => {
 };
 
 // LaTeX accent commands that appear in arXiv metadata outside math
-// (Fra\"iss\'e, G\"odel, \v{C}ech). Applied before tex2text, which handles
-// the math-mode symbols.
+// (Fra\"iss\'e, G\"odel, \v{C}ech). Math is left as TeX for the page to
+// typeset.
 const ACCENTS = {
   "'": "́", "`": "̀", "^": "̂", '"': "̈", "~": "̃",
   "=": "̄", ".": "̇", u: "̆", v: "̌", H: "̋", c: "̧", k: "̨",
@@ -42,7 +42,7 @@ function accents(s) {
     .replace(/\\(ss|o|O|l|L|ae|AE|oe|OE|aa|AA)\b\{?\}?/g, (_, n) =>
       ({ ss: "ß", o: "ø", O: "Ø", l: "ł", L: "Ł", ae: "æ", AE: "Æ", oe: "œ", OE: "Œ", aa: "å", AA: "Å" })[n]);
 }
-const clean = s => tex2text(accents(squash(s)));
+const clean = s => accents(squash(s));
 
 function fromFeed(xml, cats, count) {
   const entries = entriesOf(parse(xml));
