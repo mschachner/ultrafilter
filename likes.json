@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-23T12:14:15.199Z",
+ "updated": "2026-09-23T12:14:22.582Z",
  "items": [
   {
    "kind": "album",
@@ -901,6 +901,15 @@
    "topic": null,
    "kind": "wiki",
    "key": "https://ncatlab.org/nlab/show/empty+subset",
+   "when": "2026-09-23"
+  },
+  {
+   "source": "sep",
+   "title": "Feminist Ethics",
+   "url": "https://plato.stanford.edu/entries/feminism-ethics/",
+   "topic": null,
+   "kind": "wiki",
+   "key": "https://plato.stanford.edu/entries/feminism-ethics/",
    "when": "2026-09-23"
   }
  ]
