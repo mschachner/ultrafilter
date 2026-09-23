@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-23T12:14:27.832Z",
+ "updated": "2026-09-23T12:14:33.913Z",
  "items": [
   {
    "kind": "album",
@@ -919,6 +919,15 @@
    "topic": null,
    "kind": "wiki",
    "key": "https://neugierde.github.io/cantors-attic/Small_countable_ordinals",
+   "when": "2026-09-23"
+  },
+  {
+   "source": "oeis",
+   "title": "Decimal representation of the diagonal from the corner to the origin of the n-th stage of growth of the two-dimensional cellular automaton defined by \"Rule 485\", based on the 5-celled von Neumann neighborhood.",
+   "url": "https://oeis.org/A288594",
+   "topic": null,
+   "kind": "wiki",
+   "key": "https://oeis.org/A288594",
    "when": "2026-09-23"
   },
   {
