@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-24T12:51:58.675Z",
+ "updated": "2026-09-24T12:51:59.774Z",
  "items": [
   {
    "kind": "album",
@@ -1046,6 +1046,15 @@
    "topic": null,
    "kind": "wiki",
    "key": "https://neugierde.github.io/cantors-attic/Ineffable",
+   "when": "2026-09-24"
+  },
+  {
+   "source": "attic",
+   "title": "Reinhardt",
+   "url": "https://neugierde.github.io/cantors-attic/Reinhardt",
+   "topic": null,
+   "kind": "wiki",
+   "key": "https://neugierde.github.io/cantors-attic/Reinhardt",
    "when": "2026-09-24"
   }
  ]
