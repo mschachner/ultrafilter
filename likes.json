@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-24T13:01:56.523Z",
+ "updated": "2026-09-24T16:14:30.708Z",
  "items": [
   {
    "kind": "album",
@@ -727,6 +727,19 @@
    "kind": "album",
    "key": "tommy guerrero::a little bit of somethin'",
    "when": "2026-09-22"
+  },
+  {
+   "artist": "Oscar Peterson Trio",
+   "album": "Night Train",
+   "genres": [
+    "jazz",
+    "piano trio"
+   ],
+   "listened": "2026-09-24",
+   "liked": false,
+   "kind": "album",
+   "key": "oscar peterson trio::night train",
+   "when": "2026-09-24"
   },
   {
    "title": "The Poppy Field near Argenteuil",
