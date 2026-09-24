@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-23T09:13:08.789Z",
+ "updated": "2026-09-24T09:18:02.128Z",
  "feeds": [
   {
    "name": "Joel David Hamkins",
@@ -337,6 +337,20 @@
    "added": "2026-09-23",
    "addedBy": "task",
    "note": "Daily short essays on applied math, probability and computation from a consultant mathematician, posting for nearly two decades"
+  },
+  {
+   "name": "Lines and Colors",
+   "author": "Charley Parker",
+   "site": "https://linesandcolors.com/",
+   "feed": "https://linesandcolors.com/feed/",
+   "topics": [
+    "arthist",
+    "arts"
+   ],
+   "status": "active",
+   "added": "2026-09-24",
+   "addedBy": "task",
+   "note": "Charley Parker's long-running blog on painting, drawing and illustration, one artwork at a time - fits the Impressionist likes"
   }
  ]
 }
