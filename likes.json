@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-24T03:38:51.034Z",
+ "updated": "2026-09-24T03:38:52.956Z",
  "items": [
   {
    "kind": "album",
@@ -884,6 +884,15 @@
    "kind": "wiki",
    "key": "https://plato.stanford.edu/entries/turing/",
    "when": "2026-09-22"
+  },
+  {
+   "source": "wikipedia",
+   "title": "Arrangement of lines",
+   "url": "https://en.wikipedia.org/wiki/Arrangement_of_lines",
+   "topic": "math",
+   "kind": "wiki",
+   "key": "https://en.wikipedia.org/wiki/Arrangement_of_lines",
+   "when": "2026-09-23"
   },
   {
    "source": "wikipedia",
