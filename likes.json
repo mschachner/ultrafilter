@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-24T03:39:03.208Z",
+ "updated": "2026-09-24T12:51:01.721Z",
  "items": [
   {
    "kind": "album",
@@ -974,6 +974,15 @@
    "kind": "wiki",
    "key": "https://plato.stanford.edu/entries/feminism-ethics/",
    "when": "2026-09-23"
+  },
+  {
+   "source": "wikipedia",
+   "title": "Dynamism of a Dog on a Leash",
+   "url": "https://en.wikipedia.org/wiki/Dynamism_of_a_Dog_on_a_Leash",
+   "topic": "arthist",
+   "kind": "wiki",
+   "key": "https://en.wikipedia.org/wiki/Dynamism_of_a_Dog_on_a_Leash",
+   "when": "2026-09-24"
   }
  ]
 }
