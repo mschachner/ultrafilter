@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-24T12:51:55.203Z",
+ "updated": "2026-09-24T12:51:58.675Z",
  "items": [
   {
    "kind": "album",
@@ -1028,6 +1028,15 @@
    "topic": null,
    "kind": "wiki",
    "key": "https://ncatlab.org/nlab/show/point+of+a+topos",
+   "when": "2026-09-24"
+  },
+  {
+   "source": "attic",
+   "title": "Cardinal characteristics of the continuum",
+   "url": "https://neugierde.github.io/cantors-attic/Cardinal_characteristics",
+   "topic": null,
+   "kind": "wiki",
+   "key": "https://neugierde.github.io/cantors-attic/Cardinal_characteristics",
    "when": "2026-09-24"
   },
   {
