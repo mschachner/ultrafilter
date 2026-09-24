@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-24T12:51:06.130Z",
+ "updated": "2026-09-24T12:51:16.812Z",
  "items": [
   {
    "kind": "album",
@@ -991,6 +991,15 @@
    "topic": "arthist",
    "kind": "wiki",
    "key": "https://en.wikipedia.org/wiki/Dynamism_of_a_Dog_on_a_Leash",
+   "when": "2026-09-24"
+  },
+  {
+   "source": "nlab",
+   "title": "boxed knot",
+   "url": "https://ncatlab.org/nlab/show/boxed+knot",
+   "topic": null,
+   "kind": "wiki",
+   "key": "https://ncatlab.org/nlab/show/boxed+knot",
    "when": "2026-09-24"
   },
   {
