@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-24T12:51:02.922Z",
+ "updated": "2026-09-24T12:51:06.130Z",
  "items": [
   {
    "kind": "album",
@@ -991,6 +991,15 @@
    "topic": "arthist",
    "kind": "wiki",
    "key": "https://en.wikipedia.org/wiki/Dynamism_of_a_Dog_on_a_Leash",
+   "when": "2026-09-24"
+  },
+  {
+   "source": "nlab",
+   "title": "point of a topos",
+   "url": "https://ncatlab.org/nlab/show/point+of+a+topos",
+   "topic": null,
+   "kind": "wiki",
+   "key": "https://ncatlab.org/nlab/show/point+of+a+topos",
    "when": "2026-09-24"
   }
  ]
