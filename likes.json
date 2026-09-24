@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-24T12:51:59.774Z",
+ "updated": "2026-09-24T12:52:03.824Z",
  "items": [
   {
    "kind": "album",
@@ -1055,6 +1055,15 @@
    "topic": null,
    "kind": "wiki",
    "key": "https://neugierde.github.io/cantors-attic/Reinhardt",
+   "when": "2026-09-24"
+  },
+  {
+   "source": "oeis",
+   "title": "Least k such that more than half the permutations of n elements have longest cycle <= k.",
+   "url": "https://oeis.org/A389262",
+   "topic": null,
+   "kind": "wiki",
+   "key": "https://oeis.org/A389262",
    "when": "2026-09-24"
   }
  ]
