@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-24T12:54:39.569Z",
+ "updated": "2026-09-25T09:12:06.564Z",
  "feeds": [
   {
    "name": "Joel David Hamkins",
@@ -354,6 +354,20 @@
    "added": "2026-09-24",
    "addedBy": "task",
    "note": "Charley Parker's long-running blog on painting, drawing and illustration, one artwork at a time - fits the Impressionist likes"
+  },
+  {
+   "name": "The Renaissance Mathematicus",
+   "author": "Thony Christie",
+   "site": "https://thonyc.wordpress.com",
+   "feed": "https://thonyc.wordpress.com/feed/",
+   "topics": [
+    "math",
+    "sci"
+   ],
+   "status": "active",
+   "added": "2026-09-25",
+   "addedBy": "task",
+   "note": "Thony Christie's long-running history of mathematics and science blog - fits the Lakatos/Turing history-of-ideas thread in the likes"
   }
  ]
 }
