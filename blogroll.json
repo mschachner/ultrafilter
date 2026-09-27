@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-25T09:12:06.564Z",
+ "updated": "2026-09-27T09:15:33.077Z",
  "feeds": [
   {
    "name": "Joel David Hamkins",
@@ -368,6 +368,19 @@
    "added": "2026-09-25",
    "addedBy": "task",
    "note": "Thony Christie's long-running history of mathematics and science blog - fits the Lakatos/Turing history-of-ideas thread in the likes"
+  },
+  {
+   "name": "Logic Matters",
+   "author": "Peter Smith",
+   "site": "https://www.logicmatters.net/blog/",
+   "feed": "https://www.logicmatters.net/blog/index.xml",
+   "topics": [
+    "math"
+   ],
+   "status": "active",
+   "added": "2026-09-27",
+   "addedBy": "task",
+   "note": "Peter Smith's logic blog - proof theory, Godel and philosophy of logic, matching the set-theory and logic likes"
   }
  ]
 }
