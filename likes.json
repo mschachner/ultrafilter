@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-28T14:03:38.823Z",
+ "updated": "2026-09-28T14:03:40.810Z",
  "items": [
   {
    "kind": "album",
@@ -1086,6 +1086,15 @@
    "topic": "math",
    "kind": "wiki",
    "key": "https://en.wikipedia.org/wiki/Constructible_number",
+   "when": "2026-09-28"
+  },
+  {
+   "source": "wikipedia",
+   "title": "Tardigrade",
+   "url": "https://en.wikipedia.org/wiki/Tardigrade",
+   "topic": "sci",
+   "kind": "wiki",
+   "key": "https://en.wikipedia.org/wiki/Tardigrade",
    "when": "2026-09-28"
   },
   {
