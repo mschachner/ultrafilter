@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-27T09:15:33.077Z",
+ "updated": "2026-09-28T09:14:02.918Z",
  "feeds": [
   {
    "name": "Joel David Hamkins",
@@ -381,6 +381,19 @@
    "added": "2026-09-27",
    "addedBy": "task",
    "note": "Peter Smith's logic blog - proof theory, Godel and philosophy of logic, matching the set-theory and logic likes"
+  },
+  {
+   "name": "In the Dark",
+   "author": "Peter Coles",
+   "site": "https://telescoper.blog/",
+   "feed": "https://telescoper.blog/feed/",
+   "topics": [
+    "sci"
+   ],
+   "status": "active",
+   "added": "2026-09-28",
+   "addedBy": "task",
+   "note": "Peter Coles's daily astrophysics-and-everything blog, posting since 2008 - cosmology, open-access publishing, music and mathematics on the side"
   }
  ]
 }
