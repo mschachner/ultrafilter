@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-28T14:03:40.810Z",
+ "updated": "2026-09-28T14:03:42.461Z",
  "items": [
   {
    "kind": "album",
@@ -1095,6 +1095,15 @@
    "topic": "sci",
    "kind": "wiki",
    "key": "https://en.wikipedia.org/wiki/Tardigrade",
+   "when": "2026-09-28"
+  },
+  {
+   "source": "wikipedia",
+   "title": "Witch of Agnesi",
+   "url": "https://en.wikipedia.org/wiki/Witch_of_Agnesi",
+   "topic": "math",
+   "kind": "wiki",
+   "key": "https://en.wikipedia.org/wiki/Witch_of_Agnesi",
    "when": "2026-09-28"
   },
   {
