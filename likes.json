@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-24T16:14:30.708Z",
+ "updated": "2026-09-28T14:03:38.823Z",
  "items": [
   {
    "kind": "album",
@@ -1078,6 +1078,15 @@
    "kind": "wiki",
    "key": "https://oeis.org/A389262",
    "when": "2026-09-24"
+  },
+  {
+   "source": "wikipedia",
+   "title": "Constructible number",
+   "url": "https://en.wikipedia.org/wiki/Constructible_number",
+   "topic": "math",
+   "kind": "wiki",
+   "key": "https://en.wikipedia.org/wiki/Constructible_number",
+   "when": "2026-09-28"
   },
   {
    "title": "Eye Candy for Today: M.J. Galt pencil portrait",
