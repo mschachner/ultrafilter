@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-28T09:14:02.918Z",
+ "updated": "2026-09-29T09:13:59.676Z",
  "feeds": [
   {
    "name": "Joel David Hamkins",
@@ -394,6 +394,20 @@
    "added": "2026-09-28",
    "addedBy": "task",
    "note": "Peter Coles's daily astrophysics-and-everything blog, posting since 2008 - cosmology, open-access publishing, music and mathematics on the side"
+  },
+  {
+   "name": "Sustainability by Numbers",
+   "author": "Hannah Ritchie",
+   "site": "https://hannahritchie.substack.com",
+   "feed": "https://www.sustainabilitybynumbers.com/feed",
+   "topics": [
+    "climate",
+    "sci"
+   ],
+   "status": "active",
+   "added": "2026-09-29",
+   "addedBy": "task",
+   "note": "Hannah Ritchie's data-driven essays on climate, energy and environment - concrete numbers over doom, posting steadily"
   }
  ]
 }
