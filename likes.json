@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-28T14:03:45.264Z",
+ "updated": "2026-09-29T14:03:51.334Z",
  "items": [
   {
    "kind": "album",
@@ -740,6 +740,19 @@
    "kind": "album",
    "key": "oscar peterson trio::night train",
    "when": "2026-09-24"
+  },
+  {
+   "artist": "Joe Pass",
+   "album": "Virtuoso",
+   "genres": [
+    "jazz",
+    "solo guitar"
+   ],
+   "listened": "2026-09-29",
+   "liked": false,
+   "kind": "album",
+   "key": "joe pass::virtuoso",
+   "when": "2026-09-29"
   },
   {
    "title": "The Poppy Field near Argenteuil",
