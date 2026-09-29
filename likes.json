@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-29T14:03:52.742Z",
+ "updated": "2026-09-29T15:34:31.411Z",
  "items": [
   {
    "kind": "album",
@@ -740,6 +740,19 @@
    "kind": "album",
    "key": "oscar peterson trio::night train",
    "when": "2026-09-24"
+  },
+  {
+   "artist": "Jeff Beck",
+   "album": "Blow by Blow",
+   "genres": [
+    "jazz fusion",
+    "funk rock"
+   ],
+   "listened": "2026-09-29",
+   "liked": false,
+   "kind": "album",
+   "key": "jeff beck::blow by blow",
+   "when": "2026-09-29"
   },
   {
    "artist": "Joe Pass",
