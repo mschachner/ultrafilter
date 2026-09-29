@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-29T14:03:51.334Z",
+ "updated": "2026-09-29T14:03:52.742Z",
  "items": [
   {
    "kind": "album",
@@ -749,7 +749,7 @@
     "solo guitar"
    ],
    "listened": "2026-09-29",
-   "liked": false,
+   "liked": true,
    "kind": "album",
    "key": "joe pass::virtuoso",
    "when": "2026-09-29"
