@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-29T15:34:31.411Z",
+ "updated": "2026-09-29T17:09:01.843Z",
  "items": [
   {
    "kind": "album",
@@ -740,6 +740,18 @@
    "kind": "album",
    "key": "oscar peterson trio::night train",
    "when": "2026-09-24"
+  },
+  {
+   "artist": "Dexter Gordon",
+   "album": "Go!",
+   "genres": [
+    "hard bop"
+   ],
+   "listened": "2026-09-29",
+   "liked": false,
+   "kind": "album",
+   "key": "dexter gordon::go!",
+   "when": "2026-09-29"
   },
   {
    "artist": "Jeff Beck",
