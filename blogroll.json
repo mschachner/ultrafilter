@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-29T09:13:59.676Z",
+ "updated": "2026-09-30T09:11:28.444Z",
  "feeds": [
   {
    "name": "Joel David Hamkins",
@@ -408,6 +408,19 @@
    "added": "2026-09-29",
    "addedBy": "task",
    "note": "Hannah Ritchie's data-driven essays on climate, energy and environment - concrete numbers over doom, posting steadily"
+  },
+  {
+   "name": "The Honest Broker",
+   "author": "Ted Gioia",
+   "site": "https://www.honest-broker.com",
+   "feed": "https://www.honest-broker.com/feed",
+   "topics": [
+    "arts"
+   ],
+   "status": "active",
+   "added": "2026-09-30",
+   "addedBy": "task",
+   "note": "Ted Gioia, the jazz critic and music historian, on music, culture and the state of the arts - fits the daily-jazz-album habit"
   }
  ]
 }
