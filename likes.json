@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-30T14:27:15.033Z",
+ "updated": "2026-09-30T14:27:20.617Z",
  "items": [
   {
    "kind": "album",
@@ -1207,6 +1207,15 @@
    "topic": null,
    "kind": "wiki",
    "key": "https://neugierde.github.io/cantors-attic/Ultrapower",
+   "when": "2026-09-30"
+  },
+  {
+   "source": "oeis",
+   "title": "a(n) = 7^n mod 36.",
+   "url": "https://oeis.org/A070419",
+   "topic": null,
+   "kind": "wiki",
+   "key": "https://oeis.org/A070419",
    "when": "2026-09-30"
   },
   {
