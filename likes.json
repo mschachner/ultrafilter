@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-30T14:26:37.567Z",
+ "updated": "2026-09-30T14:26:38.714Z",
  "items": [
   {
    "kind": "album",
@@ -1153,6 +1153,15 @@
    "kind": "wiki",
    "key": "https://en.wikipedia.org/wiki/Witch_of_Agnesi",
    "when": "2026-09-28"
+  },
+  {
+   "source": "wikipedia",
+   "title": "Circle packing theorem",
+   "url": "https://en.wikipedia.org/wiki/Circle_packing_theorem",
+   "topic": "math",
+   "kind": "wiki",
+   "key": "https://en.wikipedia.org/wiki/Circle_packing_theorem",
+   "when": "2026-09-30"
   },
   {
    "source": "wikipedia",
