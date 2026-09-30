@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-30T14:27:20.617Z",
+ "updated": "2026-09-30T14:27:23.943Z",
  "items": [
   {
    "kind": "album",
@@ -1180,6 +1180,15 @@
    "topic": "math",
    "kind": "wiki",
    "key": "https://en.wikipedia.org/wiki/Pseudoforest",
+   "when": "2026-09-30"
+  },
+  {
+   "source": "mathoverflow",
+   "title": "Is $(\\text{Rel}(\\omega), \\circ)$ embeddable into $({}^\\omega\\omega,\\circ)$?",
+   "url": "https://mathoverflow.net/questions/515597/is-textrel-omega-circ-embeddable-into-omega-omega-circ",
+   "topic": null,
+   "kind": "wiki",
+   "key": "https://mathoverflow.net/questions/515597/is-textrel-omega-circ-embeddable-into-omega-omega-circ",
    "when": "2026-09-30"
   },
   {
