@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-30T14:27:13.576Z",
+ "updated": "2026-09-30T14:27:15.033Z",
  "items": [
   {
    "kind": "album",
@@ -1189,6 +1189,15 @@
    "topic": null,
    "kind": "wiki",
    "key": "https://neugierde.github.io/cantors-attic/Knuth's_up-arrow_notation",
+   "when": "2026-09-30"
+  },
+  {
+   "source": "attic",
+   "title": "Slow-growing hierarchy",
+   "url": "https://neugierde.github.io/cantors-attic/Slow-growing_hierarchy",
+   "topic": null,
+   "kind": "wiki",
+   "key": "https://neugierde.github.io/cantors-attic/Slow-growing_hierarchy",
    "when": "2026-09-30"
   },
   {
