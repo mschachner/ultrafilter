@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-29T17:09:01.843Z",
+ "updated": "2026-09-30T14:26:37.567Z",
  "items": [
   {
    "kind": "album",
@@ -1153,6 +1153,15 @@
    "kind": "wiki",
    "key": "https://en.wikipedia.org/wiki/Witch_of_Agnesi",
    "when": "2026-09-28"
+  },
+  {
+   "source": "wikipedia",
+   "title": "Pseudoforest",
+   "url": "https://en.wikipedia.org/wiki/Pseudoforest",
+   "topic": "math",
+   "kind": "wiki",
+   "key": "https://en.wikipedia.org/wiki/Pseudoforest",
+   "when": "2026-09-30"
   },
   {
    "title": "Eye Candy for Today: M.J. Galt pencil portrait",
