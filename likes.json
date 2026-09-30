@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-30T14:27:12.143Z",
+ "updated": "2026-09-30T14:27:13.576Z",
  "items": [
   {
    "kind": "album",
@@ -1180,6 +1180,15 @@
    "topic": "math",
    "kind": "wiki",
    "key": "https://en.wikipedia.org/wiki/Pseudoforest",
+   "when": "2026-09-30"
+  },
+  {
+   "source": "attic",
+   "title": "Knuth's up-arrow notation",
+   "url": "https://neugierde.github.io/cantors-attic/Knuth's_up-arrow_notation",
+   "topic": null,
+   "kind": "wiki",
+   "key": "https://neugierde.github.io/cantors-attic/Knuth's_up-arrow_notation",
    "when": "2026-09-30"
   },
   {
