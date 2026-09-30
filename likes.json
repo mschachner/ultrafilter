@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-30T14:26:38.714Z",
+ "updated": "2026-09-30T14:26:55.277Z",
  "items": [
   {
    "kind": "album",
@@ -838,6 +838,16 @@
    "kind": "artwork",
    "key": "Q115802146",
    "when": "2026-09-28"
+  },
+  {
+   "title": "Swamp Legend",
+   "url": "https://en.wikipedia.org/wiki/Swamp_Legend",
+   "artist": "Paul Klee",
+   "artistId": "Q44007",
+   "interest": "surrealism",
+   "kind": "artwork",
+   "key": "Q2365608",
+   "when": "2026-09-30"
   },
   {
    "source": "wikipedia",
