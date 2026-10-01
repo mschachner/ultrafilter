@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-30T09:11:28.444Z",
+ "updated": "2026-10-01T09:17:46.008Z",
  "feeds": [
   {
    "name": "Joel David Hamkins",
@@ -421,6 +421,19 @@
    "added": "2026-09-30",
    "addedBy": "task",
    "note": "Ted Gioia, the jazz critic and music historian, on music, culture and the state of the arts - fits the daily-jazz-album habit"
+  },
+  {
+   "name": "The Frame Blog",
+   "author": "Lynn Roberts",
+   "site": "https://theframeblog.com/",
+   "feed": "https://theframeblog.com/feed/",
+   "topics": [
+    "arthist"
+   ],
+   "status": "active",
+   "added": "2026-10-01",
+   "addedBy": "task",
+   "note": "Lynn Roberts's specialist online magazine on the history of picture frames, 13th century to today - active, scholarly and visual, in research partnership with the National Gallery"
   }
  ]
 }
