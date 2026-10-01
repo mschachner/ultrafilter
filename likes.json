@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-09-30T14:27:23.943Z",
+ "updated": "2026-10-01T19:23:24.857Z",
  "items": [
   {
    "kind": "album",
@@ -1226,6 +1226,15 @@
    "kind": "wiki",
    "key": "https://oeis.org/A070419",
    "when": "2026-09-30"
+  },
+  {
+   "source": "nlab",
+   "title": "weak homotopy equivalence",
+   "url": "https://ncatlab.org/nlab/show/weak+homotopy+equivalence",
+   "topic": null,
+   "kind": "wiki",
+   "key": "https://ncatlab.org/nlab/show/weak+homotopy+equivalence",
+   "when": "2026-10-01"
   },
   {
    "title": "Eye Candy for Today: M.J. Galt pencil portrait",
