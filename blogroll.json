@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-01T09:17:46.008Z",
+ "updated": "2026-10-02T09:13:48.596Z",
  "feeds": [
   {
    "name": "Joel David Hamkins",
@@ -434,6 +434,19 @@
    "added": "2026-10-01",
    "addedBy": "task",
    "note": "Lynn Roberts's specialist online magazine on the history of picture frames, 13th century to today - active, scholarly and visual, in research partnership with the National Gallery"
+  },
+  {
+   "name": "11011110",
+   "author": "David Eppstein",
+   "site": "https://11011110.github.io/blog/",
+   "feed": "https://11011110.github.io/blog/feed.xml",
+   "topics": [
+    "math"
+   ],
+   "status": "active",
+   "added": "2026-10-02",
+   "addedBy": "task",
+   "note": "David Eppstein's combinatorics and computational geometry blog - matches the liked graph-theory articles (circle packing, pseudoforest, Keller's conjecture)"
   }
  ]
 }
