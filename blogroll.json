@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-04T09:14:28.063Z",
+ "updated": "2026-10-05T09:12:06.920Z",
  "feeds": [
   {
    "name": "Joel David Hamkins",
@@ -460,6 +460,19 @@
    "added": "2026-10-04",
    "addedBy": "task",
    "note": "Small-group volcanology blog, active weekly - ties to the liked Misti article and the earth-science thread in the wiki likes"
+  },
+  {
+   "name": "Volts",
+   "author": "David Roberts",
+   "site": "https://www.volts.wtf",
+   "feed": "https://www.volts.wtf/feed",
+   "topics": [
+    "climate"
+   ],
+   "status": "active",
+   "added": "2026-10-05",
+   "addedBy": "task",
+   "note": "David Roberts's clean-energy and climate-politics newsletter - deep, plainspoken explainers on decarbonization, posting weekly"
   }
  ]
 }
