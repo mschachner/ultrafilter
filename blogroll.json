@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-05T09:12:06.920Z",
+ "updated": "2026-10-06T09:20:56.990Z",
  "feeds": [
   {
    "name": "Joel David Hamkins",
@@ -473,6 +473,20 @@
    "added": "2026-10-05",
    "addedBy": "task",
    "note": "David Roberts's clean-energy and climate-politics newsletter - deep, plainspoken explainers on decarbonization, posting weekly"
+  },
+  {
+   "name": "Paint Here",
+   "author": "James Gurney",
+   "site": "https://jamesgurney.substack.com",
+   "feed": "https://jamesgurney.substack.com/feed",
+   "topics": [
+    "arts",
+    "arthist"
+   ],
+   "status": "active",
+   "added": "2026-10-06",
+   "addedBy": "task",
+   "note": "James Gurney, the Dinotopia painter, writing weekly on painting practice, light and art history - continues his long-running Gurney Journey blog"
   }
  ]
 }
