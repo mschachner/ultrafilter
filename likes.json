@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-06T19:33:19.532Z",
+ "updated": "2026-10-06T19:33:21.319Z",
  "items": [
   {
    "kind": "album",
@@ -800,7 +800,7 @@
     "film score"
    ],
    "listened": "2026-10-06",
-   "liked": false,
+   "liked": true,
    "kind": "album",
    "key": "dungen::häxan",
    "when": "2026-10-06"
