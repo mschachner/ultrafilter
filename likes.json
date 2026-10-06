@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-01T19:23:24.857Z",
+ "updated": "2026-10-06T13:50:54.516Z",
  "items": [
   {
    "kind": "album",
@@ -778,6 +778,19 @@
    "kind": "album",
    "key": "joe pass::virtuoso",
    "when": "2026-09-29"
+  },
+  {
+   "artist": "Bobby Hutcherson",
+   "album": "Happenings",
+   "genres": [
+    "post-bop",
+    "modal jazz"
+   ],
+   "listened": "2026-10-06",
+   "liked": false,
+   "kind": "album",
+   "key": "bobby hutcherson::happenings",
+   "when": "2026-10-06"
   },
   {
    "title": "The Poppy Field near Argenteuil",
