@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-06T13:51:00.424Z",
+ "updated": "2026-10-06T19:33:19.532Z",
  "items": [
   {
    "kind": "album",
@@ -790,6 +790,19 @@
    "liked": false,
    "kind": "album",
    "key": "bobby hutcherson::happenings",
+   "when": "2026-10-06"
+  },
+  {
+   "artist": "Dungen",
+   "album": "Häxan",
+   "genres": [
+    "instrumental psychedelic rock",
+    "film score"
+   ],
+   "listened": "2026-10-06",
+   "liked": false,
+   "kind": "album",
+   "key": "dungen::häxan",
    "when": "2026-10-06"
   },
   {
