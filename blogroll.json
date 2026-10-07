@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-06T09:20:56.990Z",
+ "updated": "2026-10-07T09:21:27.690Z",
  "feeds": [
   {
    "name": "Joel David Hamkins",
@@ -487,6 +487,19 @@
    "added": "2026-10-06",
    "addedBy": "task",
    "note": "James Gurney, the Dinotopia painter, writing weekly on painting practice, light and art history - continues his long-running Gurney Journey blog"
+  },
+  {
+   "name": "Computational Complexity",
+   "author": "Lance Fortnow & Bill Gasarch",
+   "site": "https://blog.computationalcomplexity.org/",
+   "feed": "https://blog.computationalcomplexity.org/feeds/posts/default",
+   "topics": [
+    "math"
+   ],
+   "status": "active",
+   "added": "2026-10-07",
+   "addedBy": "task",
+   "note": "Fortnow and Gasarch's long-running computational complexity blog, posting weekly - matches the logic and combinatorics thread in the wiki likes"
   }
  ]
 }
