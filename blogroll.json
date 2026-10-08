@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-07T09:21:27.690Z",
+ "updated": "2026-10-08T09:26:17.199Z",
  "feeds": [
   {
    "name": "Joel David Hamkins",
@@ -500,6 +500,19 @@
    "added": "2026-10-07",
    "addedBy": "task",
    "note": "Fortnow and Gasarch's long-running computational complexity blog, posting weekly - matches the logic and combinatorics thread in the wiki likes"
+  },
+  {
+   "name": "Tetrapod Zoology",
+   "author": "Darren Naish",
+   "site": "https://tetzoo.com/",
+   "feed": "https://tetzoo.com/blog?format=rss",
+   "topics": [
+    "sci"
+   ],
+   "status": "active",
+   "added": "2026-10-08",
+   "addedBy": "task",
+   "note": "Darren Naish's long-running zoology blog - vertebrate natural history and palaeontology, matching the tardigrade and microbiology likes"
   }
  ]
 }
