@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-06T19:33:21.319Z",
+ "updated": "2026-10-09T16:36:14.238Z",
  "items": [
   {
    "kind": "album",
@@ -1274,6 +1274,15 @@
    "kind": "wiki",
    "key": "https://ncatlab.org/nlab/show/weak+homotopy+equivalence",
    "when": "2026-10-01"
+  },
+  {
+   "source": "arxiv",
+   "title": "Condensed Whitehead Problem",
+   "url": "https://arxiv.org/abs/2610.11078",
+   "topic": null,
+   "kind": "wiki",
+   "key": "https://arxiv.org/abs/2610.11078",
+   "when": "2026-10-09"
   },
   {
    "title": "Eye Candy for Today: M.J. Galt pencil portrait",
