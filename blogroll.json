@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-08T09:26:17.199Z",
+ "updated": "2026-10-09T09:19:48.973Z",
  "feeds": [
   {
    "name": "Joel David Hamkins",
@@ -513,6 +513,19 @@
    "added": "2026-10-08",
    "addedBy": "task",
    "note": "Darren Naish's long-running zoology blog - vertebrate natural history and palaeontology, matching the tardigrade and microbiology likes"
+  },
+  {
+   "name": "Art Herstory",
+   "author": "Erika Gaffney & guest scholars",
+   "site": "https://artherstory.net/",
+   "feed": "https://artherstory.net/feed/",
+   "topics": [
+    "arthist"
+   ],
+   "status": "active",
+   "added": "2026-10-09",
+   "addedBy": "task",
+   "note": "Erika Gaffney's blog on early modern women artists, with guest essays by scholars - active monthly and adjacent to the liked art-history reading"
   }
  ]
 }
