@@ -54,11 +54,11 @@ export const TABS = {
 const usable = t => t && (t.items?.length || t.tfa || t.picks?.length);
 
 /** The task's lead for a tab, resolved; null when there is none or it fails. */
-async function resolveLead(id, def, tabCfg, picks) {
+async function resolveLead(id, def, tabCfg, picks, prev) {
   const [pick] = picksFile.forTab(picks, id);
   if (!pick || typeof def.module.resolve !== "function") return null;
   try {
-    const item = await def.module.resolve(pick.url, tabCfg);
+    const item = await def.module.resolve(pick.url, tabCfg, prev);
     console.log(`ok    wikis/${id} lead (picked) — ${item.title}`);
     return { ...item, picked: true };
   } catch (err) {
@@ -95,7 +95,7 @@ export async function build(config, { published, likes, picks }) {
     try {
       const built = await def.build(tabCfg, ctx);
       if (id !== "wikipedia") {
-        const lead = await resolveLead(id, def, tabCfg, picks);
+        const lead = await resolveLead(id, def, tabCfg, picks, prev);
         if (lead) built.items = [lead, ...(built.items || []).filter(i => i.url !== lead.url)];
       }
       tabs[id] = { ...built, id, label, pickKey, date: built.date || today.key, generated: new Date().toISOString() };

@@ -7,18 +7,31 @@
  * at export.arxiv.org. The API rate-limits by IP, and GitHub's runners share
  * theirs, so from Actions it answered 429 or hung for days at a stretch
  * (2026-09-12 to 14). The feed is built for polling and served separately.
- * The API remains as a fallback for a day the feed is missing or empty (it is
- * rewritten each announcement, so a brief gap is possible).
+ *
+ * The feed is empty on days with no announcement. arXiv announces Sunday
+ * through Thursday evenings, so Saturday's and Sunday's feeds are empty, as
+ * are holidays'. An empty feed is not a failure: the latest announcement is
+ * still the listing already published, so the tab carries that listing
+ * forward (as a fresh build) for up to CARRY_DAYS after it was fetched. Every
+ * weekend run used to fall back to the API instead, and the API timed out
+ * from Actions on 2026-10-11. The API is now used only when the feed fails
+ * outright, or is empty with no recent listing to carry.
+ *
+ * `listed` on the payload records when its items were fetched from arXiv; a
+ * carried listing keeps the original time.
  *
  * `resolve(url)` reads one paper the morning task picked. It is found in
- * the day's listing feed first (no API call at all); only a paper outside
- * the listing costs one `id_list` API request.
+ * the day's listing feed first, then in the published listing (no API call
+ * at all); only a paper in neither costs one `id_list` API request.
  */
 
 import { XMLParser } from "fast-xml-parser";
 import { fetchText } from "../../lib.mjs";
 
 const FEED = "https://rss.arxiv.org/atom/";
+// How long an empty feed may carry the published listing forward: a weekend
+// plus a holiday or two.
+const CARRY_DAYS = 5;
 const API = "https://export.arxiv.org/api/query";
 
 const squash = s => String(s ?? "").replace(/\s+/g, " ").trim();
@@ -44,9 +57,9 @@ function accents(s) {
 }
 const clean = s => accents(squash(s));
 
+/** The feed's entries as tab items; [] on a day with no announcement. */
 function fromFeed(xml, cats, count) {
   const entries = entriesOf(parse(xml));
-  if (!entries.length) throw new Error("no entries in the arXiv listing feed");
   const KIND = { new: "", cross: "cross-list", replace: "replacement", "replace-cross": "replacement" };
   return entries.slice(0, count).map(e => {
     const authors = squash(e["dc:creator"]).split(/,\s*/).map(accents).filter(Boolean);
@@ -99,7 +112,15 @@ const paperId = url => {
   return m ? m[1] : null;
 };
 
-export async function resolve(url, cfg = {}) {
+/** The published listing, if it is recent enough to carry forward. */
+function carried(prev) {
+  const items = (prev?.items || []).map(({ picked, ...item }) => item);
+  const listed = prev?.listed || prev?.generated;
+  if (!items.length || !(Date.now() - Date.parse(listed) < CARRY_DAYS * 864e5)) return null;
+  return { items, listed };
+}
+
+export async function resolve(url, cfg = {}, published = null) {
   const id = paperId(url);
   if (!id) throw new Error(`not an arXiv paper URL: ${url}`);
   const cats = cfg.categories?.length ? cfg.categories : ["math.LO"];
@@ -109,6 +130,8 @@ export async function resolve(url, cfg = {}) {
     const hit = inListing(fromFeed(xml, cats, 1000));
     if (hit) return hit;
   } catch {}
+  const kept = inListing((published?.items || []).map(({ picked, ...item }) => item));
+  if (kept) return kept;
   const xml = await fetchText(`${API}?id_list=${encodeURIComponent(id)}&max_results=1`,
     { Accept: "application/atom+xml" });
   const hit = fromApi(xml, cats)[0];
@@ -116,30 +139,36 @@ export async function resolve(url, cfg = {}) {
   return hit;
 }
 
-export async function build(cfg) {
+export async function build(cfg, { published } = {}) {
   const cats = cfg.categories?.length ? cfg.categories : ["math.LO"];
   const count = cfg.count ?? 10;
+  const tab = (items, listed) => ({ items, perPage: 5, daily: false, listed });
 
-  let items, feedErr;
+  let feedErr;
   try {
     const xml = await fetchText(`${FEED}${cats.join("+")}`, { Accept: "application/atom+xml" });
-    items = fromFeed(xml, cats, count);
+    const items = fromFeed(xml, cats, count);
+    if (items.length) return tab(items, new Date().toISOString());
+    const last = carried(published);
+    if (last) {
+      console.log(`      wikis/arxiv — no announcement today; keeping the listing fetched ${last.listed}`);
+      return tab(last.items, last.listed);
+    }
+    feedErr = new Error(`no entries in the arXiv listing feed, and no listing from the last ${CARRY_DAYS} days to keep`);
   } catch (err) {
     feedErr = err;
-    console.log(`      wikis/arxiv — listing feed failed (${err?.message || err}); trying the API`);
   }
+  console.log(`      wikis/arxiv — listing feed failed (${feedErr?.message || feedErr}); trying the API`);
 
-  if (!items) {
-    const query = cats.map(c => `cat:${c}`).join("+OR+");
-    try {
-      const xml = await fetchText(
-        `${API}?search_query=${query}&sortBy=submittedDate&sortOrder=descending&max_results=${count}`,
-        { Accept: "application/atom+xml" }
-      );
-      items = fromApi(xml, cats);
-    } catch (err) {
-      throw new Error(`listing feed: ${feedErr?.message || feedErr}; API: ${err?.message || err}`);
-    }
+  const query = cats.map(c => `cat:${c}`).join("+OR+");
+  try {
+    const xml = await fetchText(
+      `${API}?search_query=${query}&sortBy=submittedDate&sortOrder=descending&max_results=${count}`,
+      { Accept: "application/atom+xml" }
+    );
+    const items = fromApi(xml, cats);
+    return tab(items, new Date().toISOString());
+  } catch (err) {
+    throw new Error(`listing feed: ${feedErr?.message || feedErr}; API: ${err?.message || err}`);
   }
-  return { items, perPage: 5, daily: false };
 }
