@@ -1,51 +1,42 @@
 {
-  "date": "2026-10-09",
-  "title": "Three albums for 9 October",
+  "date": "2026-10-11",
+  "title": "Three albums for 11 October",
   "albums": [
     {
       "category": "focus",
       "header": "Focus",
-      "artist": "Satoshi Ashikawa",
-      "album": "Still Way (Wave Notation 2)",
-      "year": 1982,
-      "genres": [
-        "ambient",
-        "kankyō ongaku"
-      ],
-      "spotify_url": "https://open.spotify.com/album/2kxWdAN5jIbHnnJ9VhJYqg",
+      "artist": "Emahoy Tsegué-Maryam Guèbrou",
+      "album": "Éthiopiques 21: Emahoy (Piano Solo)",
+      "year": 2006,
+      "genres": ["Ethiopian classical", "solo piano"],
+      "spotify_url": "https://open.spotify.com/album/4OYhJgrDTR74Yo4SE8Exdk",
       "link_is_search": false,
-      "blurb": "Satoshi Ashikawa was a Tokyo composer and sound designer who founded the Sound Process label and its Wave Notation series to document Japan's then-new kankyō ongaku, or environmental music, publishing Hiroshi Yoshimura's Music for Nine Post Cards before this, his only album; he died in a car accident in 1983 at age thirty. Its six unhurried pieces for harp, piano, flute and vibraphone — the vibraphone handled in part by percussionist Midori Takada — follow Erik Satie's furniture-music idea: Ashikawa intended the record to be heard casually, \"as a musical landscape or a sound object.\"",
-      "reception": "The original 1982 LP became one of the most sought-after Japanese ambient records before WRWTFWW Records gave it its first-ever reissue in 2019, and Ashikawa's \"Still Space\" opens Light in the Attic's Kankyō Ongaku compilation, which was Grammy-nominated for Best Historical Album."
+      "blurb": "Emahoy Tsegué-Maryam Guèbrou (1923–2023) was an Ethiopian nun, pianist and composer who spent most of her life in monasteries in Ethiopia and, from the mid-1980s, Jerusalem. Her solo piano pieces fold Ethiopian pentatonic modes and Orthodox liturgical melody into a rubato, Chopin-and-Satie-tinged romanticism that sits in no genre comfortably. She originally self-released these recordings, made from 1963 onward, to raise money for charity; this 2006 volume of Buda Musique's Éthiopiques series collected sixteen of them and introduced her music to the wider world. The whole record is unaccompanied piano, with no vocals of any kind.",
+      "reception": "The collection brought her international recognition late in life: Norah Jones told The New York Times in 2020 that it was \"one of the most beautiful things I've ever heard,\" and her recordings went on to score Garrett Bradley's Oscar-nominated documentary Time."
     },
     {
       "category": "familiar_artist",
       "header": "Enjoy",
-      "artist": "Doechii",
-      "album": "Alligator Bites Never Heal",
+      "artist": "Kate Bollinger",
+      "album": "Songs from a Thousand Frames of Mind",
       "year": 2024,
-      "genres": [
-        "hip-hop",
-        "boom bap"
-      ],
-      "spotify_url": "https://open.spotify.com/album/60UzB8mOCMpc7xkuJE6Bwc",
+      "genres": ["indie pop", "folk-pop"],
+      "spotify_url": "https://open.spotify.com/album/0D0cJqtudEFf6rpe3RJsgS",
       "link_is_search": false,
-      "blurb": "Doechii is Jaylah Hickmon, a Tampa rapper who in 2022 became the first female rapper signed to Top Dawg Entertainment, the Los Angeles label behind Kendrick Lamar and SZA. Alligator Bites Never Heal, her third mixtape, arrived in August 2024 after years of viral singles and stretches her agile, theatrically versatile rapping across nineteen tracks of jazz- and boom-bap-leaning production, led by the singles \"Nissan Altima\", \"Boom Bap\" and \"Denial Is a River\".",
-      "reception": "It won Best Rap Album at the 2025 Grammys — making Doechii only the third woman to take the category, after Lauryn Hill with the Fugees and Cardi B — and later climbed to No. 10 on the Billboard 200."
+      "blurb": "Kate Bollinger is a songwriter from Charlottesville, Virginia, who built a following through a run of EPs — most recently Look at it in the Light (2022) — before releasing this debut full-length on Ghostly International in September 2024. The record is sequenced to feel like a mixtape, moving through 1960s-leaning pop, soft rock and folk in eleven short songs, polished on the surface but scrappy underneath.",
+      "reception": "Northern Transmissions scored the album 8.1, calling it \"an exciting and delightful treat.\""
     },
     {
       "category": "new_artist",
       "header": "Explore",
-      "artist": "Nilüfer Yanya",
-      "album": "PAINLESS",
-      "year": 2022,
-      "genres": [
-        "indie rock",
-        "art pop"
-      ],
-      "spotify_url": "https://open.spotify.com/album/6nA31S4tEamZaWmvIA0qae",
+      "artist": "Nourished by Time",
+      "album": "Erotic Probiotic 2",
+      "year": 2023,
+      "genres": ["alternative R&B", "synth-soul"],
+      "spotify_url": "https://open.spotify.com/album/6HPNCXxhRfj8tus7gw0dDI",
       "link_is_search": false,
-      "blurb": "Nilüfer Yanya is a West London singer and guitarist of Turkish, Irish and Barbadian descent who broke through with her eclectic 2019 debut Miss Universe. PAINLESS, her second album, released on ATO Records in March 2022, narrows that record's stylistic sprawl into twelve taut songs of wiry guitar, drum machines and close-mic'd vocals, made largely with Wilma Archer, who also produced the debut, alongside Bullion, Andrew Sarlo and her bandmate Jazzi Bobbi.",
-      "reception": "Pitchfork scored it 8.4, making it her second consecutive album to earn the site's Best New Music designation, and later placed it on its 100 Best Albums of 2022 list."
+      "blurb": "Nourished by Time is the project of Baltimore songwriter and producer Marcus Brown, who wrote, performed and produced this debut album himself and released it on Scenic Route Records in April 2023. It runs 1980s R&B, new jack swing and freestyle through a lo-fi DIY filter, with Brown's baritone carrying songs about love and precarity. The album's breakout led to a deal with XL Recordings, which released the follow-up EP Catching Chickens in 2024 and the album The Passionate Ones in 2025.",
+      "reception": "Pitchfork designated the album Best New Music, and it was widely placed on year-end lists of the best albums of 2023."
     }
   ]
 }

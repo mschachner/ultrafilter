@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-11",
+  "artwork": { "wikidata": "Q3204212", "title": "Flooding at Port-Marly", "interest": "implandscape" },
+  "wikis": {
+    "wikipedia": [
+      { "url": "https://en.wikipedia.org/wiki/Three_utilities_problem", "title": "Three utilities problem", "topic": "math" },
+      { "url": "https://en.wikipedia.org/wiki/Group_testing", "title": "Group testing", "topic": "math" },
+      { "url": "https://en.wikipedia.org/wiki/Barbeyella_minutissima", "title": "Barbeyella minutissima", "topic": "sci" }
+    ],
+    "nlab": { "url": "https://ncatlab.org/nlab/show/knot+invariant", "title": "knot invariant" },
+    "sep": { "url": "https://plato.stanford.edu/entries/prior/", "title": "Arthur Prior" },
+    "attic": { "url": "https://neugierde.github.io/cantors-attic/Kripke-Platek", "title": "Kripke-Platek" },
+    "oeis": { "url": "https://oeis.org/A022803", "title": "Numbers that reach ...,7,8,4,2,1 under the mapping: if n is even divide by 2 else add 1." }
+  }
+}
