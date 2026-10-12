@@ -1,42 +1,51 @@
 {
-  "date": "2026-10-11",
-  "title": "Three albums for 11 October",
-  "albums": [
-    {
-      "category": "focus",
-      "header": "Focus",
-      "artist": "Emahoy Tsegué-Maryam Guèbrou",
-      "album": "Éthiopiques 21: Emahoy (Piano Solo)",
-      "year": 2006,
-      "genres": ["Ethiopian classical", "solo piano"],
-      "spotify_url": "https://open.spotify.com/album/4OYhJgrDTR74Yo4SE8Exdk",
-      "link_is_search": false,
-      "blurb": "Emahoy Tsegué-Maryam Guèbrou (1923–2023) was an Ethiopian nun, pianist and composer who spent most of her life in monasteries in Ethiopia and, from the mid-1980s, Jerusalem. Her solo piano pieces fold Ethiopian pentatonic modes and Orthodox liturgical melody into a rubato, Chopin-and-Satie-tinged romanticism that sits in no genre comfortably. She originally self-released these recordings, made from 1963 onward, to raise money for charity; this 2006 volume of Buda Musique's Éthiopiques series collected sixteen of them and introduced her music to the wider world. The whole record is unaccompanied piano, with no vocals of any kind.",
-      "reception": "The collection brought her international recognition late in life: Norah Jones told The New York Times in 2020 that it was \"one of the most beautiful things I've ever heard,\" and her recordings went on to score Garrett Bradley's Oscar-nominated documentary Time."
-    },
-    {
-      "category": "familiar_artist",
-      "header": "Enjoy",
-      "artist": "Kate Bollinger",
-      "album": "Songs from a Thousand Frames of Mind",
-      "year": 2024,
-      "genres": ["indie pop", "folk-pop"],
-      "spotify_url": "https://open.spotify.com/album/0D0cJqtudEFf6rpe3RJsgS",
-      "link_is_search": false,
-      "blurb": "Kate Bollinger is a songwriter from Charlottesville, Virginia, who built a following through a run of EPs — most recently Look at it in the Light (2022) — before releasing this debut full-length on Ghostly International in September 2024. The record is sequenced to feel like a mixtape, moving through 1960s-leaning pop, soft rock and folk in eleven short songs, polished on the surface but scrappy underneath.",
-      "reception": "Northern Transmissions scored the album 8.1, calling it \"an exciting and delightful treat.\""
-    },
-    {
-      "category": "new_artist",
-      "header": "Explore",
-      "artist": "Nourished by Time",
-      "album": "Erotic Probiotic 2",
-      "year": 2023,
-      "genres": ["alternative R&B", "synth-soul"],
-      "spotify_url": "https://open.spotify.com/album/6HPNCXxhRfj8tus7gw0dDI",
-      "link_is_search": false,
-      "blurb": "Nourished by Time is the project of Baltimore songwriter and producer Marcus Brown, who wrote, performed and produced this debut album himself and released it on Scenic Route Records in April 2023. It runs 1980s R&B, new jack swing and freestyle through a lo-fi DIY filter, with Brown's baritone carrying songs about love and precarity. The album's breakout led to a deal with XL Recordings, which released the follow-up EP Catching Chickens in 2024 and the album The Passionate Ones in 2025.",
-      "reception": "Pitchfork designated the album Best New Music, and it was widely placed on year-end lists of the best albums of 2023."
-    }
-  ]
+ "date": "2026-10-12",
+ "title": "Three albums for 12 October",
+ "albums": [
+  {
+   "category": "focus",
+   "header": "Focus",
+   "artist": "MONO",
+   "album": "Hymn to the Immortal Wind",
+   "year": 2009,
+   "genres": [
+    "post-rock",
+    "orchestral rock"
+   ],
+   "spotify_url": "https://open.spotify.com/album/3N6gzgDqwqJ1025MtA43ru",
+   "link_is_search": false,
+   "blurb": "MONO are a Tokyo instrumental rock quartet formed in 1999, known for pairing towering guitar crescendos with classical orchestration. Hymn to the Immortal Wind, their fifth album, was recorded and mixed by Steve Albini at Electrical Audio in Chicago with a string orchestra roughly two dozen strong, and it is a concept album: the CD shipped with a short story written to accompany the music. Released in March 2009 on Temporary Residence, it remains the fullest statement of the band's orchestral side, with no vocals anywhere on its seven long tracks.",
+   "reception": "It holds a Metacritic score of 75/100, with AllMusic rating it 4.5 out of 5 stars and NME scoring it 8/10."
+  },
+  {
+   "category": "familiar_artist",
+   "header": "Enjoy",
+   "artist": "Parcels",
+   "album": "LOVED",
+   "year": 2025,
+   "genres": [
+    "disco-funk",
+    "electropop"
+   ],
+   "spotify_url": "https://open.spotify.com/album/1rSbjr5U9J9rQ9sE7RxHFl",
+   "link_is_search": false,
+   "blurb": "LOVED is the third studio album from Parcels, the Byron Bay-formed, Berlin-based five-piece, released in September 2025 on Because Music. Written and recorded across Berlin, Sydney, Byron Bay, Oaxaca and Mexico City after a six-month hiatus, it follows the 2021 double album Day/Night and compresses that record's sprawl into twelve tracks of sunlit disco-funk, produced within the band by Jules Crommelin and Patrick Hetherington.",
+   "reception": "It reached No. 24 on the ARIA Albums Chart in Australia and charted across Europe, with AllMusic and Dork each rating it 4 out of 5."
+  },
+  {
+   "category": "new_artist",
+   "header": "Explore",
+   "artist": "Margo Guryan",
+   "album": "Take a Picture",
+   "year": 1968,
+   "genres": [
+    "sunshine pop",
+    "baroque pop"
+   ],
+   "spotify_url": "https://open.spotify.com/album/2Tx4Ho95SCtVWMat9Wx3Rq",
+   "link_is_search": false,
+   "blurb": "Margo Guryan was a jazz-trained New York songwriter best known for writing \"Sunday Morning\", a 1968 hit for Spanky and Our Gang, and Take a Picture, made for Bell Records that October, is the only album she ever released. She refused to tour or promote it, having seen how performers of the day were managed, so Bell withdrew its support and the record disappeared almost immediately; Japanese bootlegs and a 2001 reissue later established it as a cornerstone of the sunshine-pop canon.",
+   "reception": "Billboard predicted strong sales on release, but the unpromoted album sold poorly; in retrospective reviews AllMusic rates it 4.5 stars and Rolling Stone called it \"an early prototype\" for lounge and dream-pop, bridging Burt Bacharach and Belle & Sebastian."
+  }
+ ]
 }

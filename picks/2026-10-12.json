@@ -1,0 +1,43 @@
+{
+ "date": "2026-10-12",
+ "artwork": {
+  "wikidata": "Q49829654",
+  "title": "Mirror Piece",
+  "interest": "contemporary"
+ },
+ "wikis": {
+  "wikipedia": [
+   {
+    "url": "https://en.wikipedia.org/wiki/Kawasaki's_theorem",
+    "title": "Kawasaki's theorem",
+    "topic": "math"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Myxogastria",
+    "title": "Myxogastria",
+    "topic": "sci"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Paleotempestology",
+    "title": "Paleotempestology",
+    "topic": "climate"
+   }
+  ],
+  "nlab": {
+   "url": "https://ncatlab.org/nlab/show/Pontryagin's+theorem",
+   "title": "Pontryagin's theorem"
+  },
+  "sep": {
+   "url": "https://plato.stanford.edu/entries/paradox-simpson/",
+   "title": "Simpson's paradox"
+  },
+  "attic": {
+   "url": "https://neugierde.github.io/cantors-attic/Extendible",
+   "title": "Extendible"
+  },
+  "oeis": {
+   "url": "https://oeis.org/A124982",
+   "title": "Nonprime numbers with a unique partition as a sum of 2 squares x^2 + y^2."
+  }
+ }
+}
