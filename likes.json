@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-12T15:01:40.503Z",
+ "updated": "2026-10-12T15:02:14.655Z",
  "items": [
   {
    "kind": "album",
@@ -1318,6 +1318,15 @@
    "topic": null,
    "kind": "wiki",
    "key": "https://ncatlab.org/nlab/show/Pontryagin's+theorem",
+   "when": "2026-10-12"
+  },
+  {
+   "source": "oeis",
+   "title": "Summarize the previous term (digits in increasing order), starting with a(1) = 1.",
+   "url": "https://oeis.org/A005151",
+   "topic": null,
+   "kind": "wiki",
+   "key": "https://oeis.org/A005151",
    "when": "2026-10-12"
   },
   {
