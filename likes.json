@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-12T15:01:30.785Z",
+ "updated": "2026-10-12T15:01:35.719Z",
  "items": [
   {
    "kind": "album",
@@ -1309,6 +1309,15 @@
    "topic": "climate",
    "kind": "wiki",
    "key": "https://en.wikipedia.org/wiki/Paleotempestology",
+   "when": "2026-10-12"
+  },
+  {
+   "source": "nlab",
+   "title": "Pontryagin's theorem",
+   "url": "https://ncatlab.org/nlab/show/Pontryagin's+theorem",
+   "topic": null,
+   "kind": "wiki",
+   "key": "https://ncatlab.org/nlab/show/Pontryagin's+theorem",
    "when": "2026-10-12"
   },
   {
