@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-12T15:01:35.719Z",
+ "updated": "2026-10-12T15:01:40.503Z",
  "items": [
   {
    "kind": "album",
@@ -1318,6 +1318,15 @@
    "topic": null,
    "kind": "wiki",
    "key": "https://ncatlab.org/nlab/show/Pontryagin's+theorem",
+   "when": "2026-10-12"
+  },
+  {
+   "source": "sep",
+   "title": "Simpson’s Paradox",
+   "url": "https://plato.stanford.edu/entries/paradox-simpson/",
+   "topic": null,
+   "kind": "wiki",
+   "key": "https://plato.stanford.edu/entries/paradox-simpson/",
    "when": "2026-10-12"
   },
   {
