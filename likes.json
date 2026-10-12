@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-12T15:02:14.655Z",
+ "updated": "2026-10-12T18:09:25.647Z",
  "items": [
   {
    "kind": "album",
@@ -817,6 +817,19 @@
    "kind": "album",
    "key": "penguin cafe orchestra::penguin cafe orchestra",
    "when": "2026-10-06"
+  },
+  {
+   "artist": "MONO",
+   "album": "Hymn to the Immortal Wind",
+   "genres": [
+    "post-rock",
+    "orchestral rock"
+   ],
+   "listened": "2026-10-12",
+   "liked": false,
+   "kind": "album",
+   "key": "mono::hymn to the immortal wind",
+   "when": "2026-10-12"
   },
   {
    "title": "The Poppy Field near Argenteuil",
