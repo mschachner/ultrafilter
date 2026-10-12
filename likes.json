@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-12T18:09:25.647Z",
+ "updated": "2026-10-12T18:09:27.149Z",
  "items": [
   {
    "kind": "album",
@@ -826,7 +826,7 @@
     "orchestral rock"
    ],
    "listened": "2026-10-12",
-   "liked": false,
+   "liked": true,
    "kind": "album",
    "key": "mono::hymn to the immortal wind",
    "when": "2026-10-12"
