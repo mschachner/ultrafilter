@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-12T14:58:14.942Z",
+ "updated": "2026-10-12T14:58:16.132Z",
  "items": [
   {
    "kind": "album",
@@ -1283,6 +1283,15 @@
    "kind": "wiki",
    "key": "https://arxiv.org/abs/2610.11078",
    "when": "2026-10-09"
+  },
+  {
+   "source": "wikipedia",
+   "title": "Kawasaki's theorem",
+   "url": "https://en.wikipedia.org/wiki/Kawasaki's_theorem",
+   "topic": "math",
+   "kind": "wiki",
+   "key": "https://en.wikipedia.org/wiki/Kawasaki's_theorem",
+   "when": "2026-10-12"
   },
   {
    "source": "wikipedia",
