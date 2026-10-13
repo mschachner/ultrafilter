@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-13",
+  "title": "Three albums for 13 October",
+  "albums": [
+    {
+      "category": "focus",
+      "header": "Focus",
+      "artist": "Charles Earland",
+      "album": "Black Talk!",
+      "year": 1970,
+      "genres": [
+        "soul jazz",
+        "jazz-funk"
+      ],
+      "spotify_url": "https://open.spotify.com/album/7fAuLTLytkoN4kETaQJzIq",
+      "link_is_search": false,
+      "blurb": "Charles Earland was a Philadelphia Hammond B-3 organist nicknamed “the Mighty Burner” for his hard-driving bass lines, who started on saxophone and switched to organ before a stint in Lou Donaldson's band. Black Talk!, cut in a single December 1969 session at Rudy Van Gelder's New Jersey studio with Houston Person on tenor sax, Virgil Jones on trumpet, Melvin Sparks on guitar and Idris Muhammad on drums, was his Prestige debut and the record that made his name; alongside originals like “The Mighty Burner” it turns “Aquarius” and “More Today Than Yesterday” into churning instrumental organ grooves, and the title track later turned up in the 1972 film Fritz the Cat.",
+      "reception": "It became a best-selling soul-jazz classic, crossing over to Billboard's Top LPs chart for a nineteen-week run that peaked at No. 108, and AllMusic's Scott Yanow rates it five stars."
+    },
+    {
+      "category": "familiar_artist",
+      "header": "Enjoy",
+      "artist": "JMSN",
+      "album": "Whatever Makes U Happy",
+      "year": 2017,
+      "genres": [
+        "alternative R&B",
+        "neo-soul"
+      ],
+      "spotify_url": "https://open.spotify.com/album/6XeECOSp47GN1kMUya6LUJ",
+      "link_is_search": false,
+      "blurb": "JMSN is Christian Berishaj, a Detroit-raised singer, multi-instrumentalist and producer who, after a brief major-label stint, writes, records, produces and releases everything himself on his White Room Records label. Whatever Makes U Happy, released in April 2017, is a compact eight-track set recorded in Los Angeles that leans into live-sounding 1990s neo-soul, dressing songs like “Drinkin'” and “Where Do U Go” in strings and brass.",
+      "reception": "A Johns Hopkins News-Letter review at release called the album JMSN's strongest work, while Exclaim! described its sound as “new wave R&B, Prince-influenced rock and odd-metered blues.”"
+    },
+    {
+      "category": "new_artist",
+      "header": "Explore",
+      "artist": "Tim Maia",
+      "album": "Racional Vol. 1",
+      "year": 1975,
+      "genres": [
+        "Brazilian soul",
+        "funk"
+      ],
+      "spotify_url": "https://open.spotify.com/album/2lRhEHwcphLMhfEeyNM7ST",
+      "link_is_search": false,
+      "blurb": "Tim Maia was the volcanic Rio singer who effectively invented Brazilian soul, fusing American funk and R&B with Brazilian rhythms from 1970 on. Racional Vol. 1 began as a double album for RCA, but mid-sessions Maia converted to Cultura Racional, a UFO-tinged doctrine built around the book Universo em Desencanto, rewrote his lyrics as tributes to it, and put the record out himself on his Seroma label in early 1975. When he quit the sect months later he pulled the albums from circulation and banned reissues, so the heavy, horn-driven funk underneath stayed officially unavailable until a 2006 CD reissue, reaching streaming only in 2019.",
+      "reception": "Largely ignored by critics on release and later a prized collectors' rarity, it was ranked together with Vol. 2 at No. 17 on Rolling Stone Brasil's 2007 list of the 100 greatest Brazilian albums."
+    }
+  ]
+}

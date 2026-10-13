@@ -1,43 +1,43 @@
 {
- "date": "2026-10-12",
- "artwork": {
-  "wikidata": "Q49829654",
-  "title": "Mirror Piece",
-  "interest": "contemporary"
- },
- "wikis": {
-  "wikipedia": [
-   {
-    "url": "https://en.wikipedia.org/wiki/Kawasaki's_theorem",
-    "title": "Kawasaki's theorem",
-    "topic": "math"
-   },
-   {
-    "url": "https://en.wikipedia.org/wiki/Myxogastria",
-    "title": "Myxogastria",
-    "topic": "sci"
-   },
-   {
-    "url": "https://en.wikipedia.org/wiki/Paleotempestology",
-    "title": "Paleotempestology",
-    "topic": "climate"
-   }
-  ],
-  "nlab": {
-   "url": "https://ncatlab.org/nlab/show/Pontryagin's+theorem",
-   "title": "Pontryagin's theorem"
+  "date": "2026-10-13",
+  "artwork": {
+    "wikidata": "Q21743163",
+    "title": "Four Element Composition",
+    "interest": "modern"
   },
-  "sep": {
-   "url": "https://plato.stanford.edu/entries/paradox-simpson/",
-   "title": "Simpson's paradox"
-  },
-  "attic": {
-   "url": "https://neugierde.github.io/cantors-attic/Extendible",
-   "title": "Extendible"
-  },
-  "oeis": {
-   "url": "https://oeis.org/A124982",
-   "title": "Nonprime numbers with a unique partition as a sum of 2 squares x^2 + y^2."
+  "wikis": {
+    "wikipedia": [
+      {
+        "url": "https://en.wikipedia.org/wiki/No-three-in-line_problem",
+        "title": "No-three-in-line problem",
+        "topic": "math"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Paddlefish",
+        "title": "Paddlefish",
+        "topic": "sci"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Lastarria",
+        "title": "Lastarria",
+        "topic": "climate"
+      }
+    ],
+    "nlab": {
+      "url": "https://ncatlab.org/nlab/show/adjoint+monad",
+      "title": "Adjoint monad"
+    },
+    "sep": {
+      "url": "https://plato.stanford.edu/entries/independence-large-cardinals/",
+      "title": "Independence and Large Cardinals"
+    },
+    "attic": {
+      "url": "https://neugierde.github.io/cantors-attic/Subcompact",
+      "title": "Subcompact cardinal"
+    },
+    "oeis": {
+      "url": "https://oeis.org/A005889",
+      "title": "A005889: Theta series of hexagonal close-packing with respect to triangle between octahedra"
+    }
   }
- }
 }
