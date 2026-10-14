@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-14",
+  "artwork": { "wikidata": "Q85769566", "title": "Insula dulcamara", "interest": "surrealism" },
+  "wikis": {
+    "wikipedia": [
+      { "url": "https://en.wikipedia.org/wiki/YBC_7289", "title": "YBC 7289", "topic": "math" },
+      { "url": "https://en.wikipedia.org/wiki/Frog_battery", "title": "Frog battery", "topic": "sci" },
+      { "url": "https://en.wikipedia.org/wiki/Hoodoo_Butte", "title": "Hoodoo Butte", "topic": "climate" }
+    ],
+    "nlab": { "url": "https://ncatlab.org/nlab/show/bifibration", "title": "bifibration" },
+    "sep": { "url": "https://plato.stanford.edu/entries/stebbing/", "title": "Stebbing, Susan" },
+    "attic": { "url": "https://neugierde.github.io/cantors-attic/Dominating_number", "title": "Dominating number" },
+    "oeis": { "url": "https://oeis.org/A061918", "title": "A list of equal temperaments (equal divisions of the octave) whose nearest scale steps are closer and closer approximations to the pair of ratios 5/4 and 8/5 which generate two complementary tones of musical harmony, the Major 3rd (5/4) and the Minor 6th (8/5)." }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-14",
+  "title": "Three albums for 14 October",
+  "albums": [
+    {
+      "category": "focus",
+      "header": "Focus",
+      "artist": "Rodrigo y Gabriela",
+      "album": "Rodrigo y Gabriela",
+      "year": 2006,
+      "genres": ["instrumental acoustic guitar", "flamenco rock"],
+      "spotify_url": "https://open.spotify.com/album/0OJA0WEHoOoTF6D8pGRDlv",
+      "link_is_search": false,
+      "blurb": "Rodrigo Sánchez and Gabriela Quintero are a Mexico City duo who started out in a thrash-metal band before moving to Dublin to busk, and this self-titled record — produced by John Leckie and released on Rubyworks in February 2006 — was their studio breakthrough. It is nine entirely instrumental tracks for two acoustic guitars, with Gabriela's percussive strumming doing the work of a rhythm section, and it closes with covers of Led Zeppelin's \"Stairway to Heaven\" and Metallica's \"Orion\".",
+      "reception": "The album debuted at number one on the Irish Albums Chart — reportedly the first instrumental album to go straight to the top there — ahead of Arctic Monkeys and Johnny Cash."
+    },
+    {
+      "category": "familiar_artist",
+      "header": "Enjoy",
+      "artist": "Beirut",
+      "album": "The Flying Club Cup",
+      "year": 2007,
+      "genres": ["indie folk", "baroque pop"],
+      "spotify_url": "https://open.spotify.com/album/71udkw2yxFqNK4SNSYcCce",
+      "link_is_search": false,
+      "blurb": "Beirut is the project of Zach Condon, the Santa Fe songwriter who broke through at twenty with the Balkan-brass debut Gulag Orkestar. This second album, released in October 2007, swaps the Balkans for France — accordion, strings and flugelhorn in a chanson mode, with most of its thirteen songs named for or set in French towns. It was recorded largely in a makeshift Albuquerque studio and finished at Arcade Fire's church studio in Quebec.",
+      "reception": "It holds a Metacritic score of 80 out of 100, with Pitchfork rating it 8.0."
+    },
+    {
+      "category": "new_artist",
+      "header": "Explore",
+      "artist": "Young Marble Giants",
+      "album": "Colossal Youth",
+      "year": 1980,
+      "genres": ["post-punk", "minimal pop"],
+      "spotify_url": "https://open.spotify.com/album/3a6CNDNbGTUnHkeBskWpBM",
+      "link_is_search": false,
+      "blurb": "Young Marble Giants were a Cardiff trio: Alison Statton's hushed, unaffected vocals over Stuart Moxham's choppy guitar and organ and Philip Moxham's melodic bass, with pre-recorded beats from a homemade drum machine in place of a kit. Colossal Youth, released on Rough Trade in February 1980, was their only studio album — a deliberate whisper against post-punk's noise — and the band split up the following year. The Spotify link is the 40th-anniversary edition, which carries the original album up front.",
+      "reception": "It peaked at number three on the UK Independent Albums chart, and Kurt Cobain later named it one of the ten most influential records he had ever heard."
+    }
+  ]
+}
