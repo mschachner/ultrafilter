@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-15",
+  "artwork": {
+    "wikidata": "Q17019441",
+    "title": "Fan print with two bugaku dancers",
+    "interest": "ukiyoe"
+  },
+  "wikis": {
+    "wikipedia": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Jessen's_icosahedron",
+        "title": "Jessen's icosahedron",
+        "topic": "math"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Ethiopian_bushcrow",
+        "title": "Ethiopian bushcrow",
+        "topic": "sci"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Johnson_Wax_Headquarters",
+        "title": "Johnson Wax Headquarters",
+        "topic": "arthist"
+      }
+    ],
+    "nlab": {
+      "url": "https://ncatlab.org/nlab/show/Gruppenpest",
+      "title": "Gruppenpest"
+    },
+    "sep": {
+      "url": "https://plato.stanford.edu/entries/anselm/",
+      "title": "Anselm of Canterbury [Anselm of Bec]"
+    },
+    "attic": {
+      "url": "https://neugierde.github.io/cantors-attic/Stationary",
+      "title": "Stationary"
+    },
+    "oeis": {
+      "url": "https://oeis.org/A198387",
+      "title": "Common differences in triples of squares in arithmetic progression."
+    }
+  }
+}
