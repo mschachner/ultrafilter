@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-16",
+  "artwork": {
+    "wikidata": "Q1325290",
+    "title": "Angel of the North",
+    "interest": "sculpture"
+  },
+  "wikis": {
+    "wikipedia": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Cardinality",
+        "title": "Cardinality",
+        "topic": "math"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Equality_(mathematics)",
+        "title": "Equality (mathematics)",
+        "topic": "math"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Enhydriodon",
+        "title": "Enhydriodon",
+        "topic": "sci"
+      }
+    ],
+    "nlab": {
+      "url": "https://ncatlab.org/nlab/show/companion+pair",
+      "title": "companion pair"
+    },
+    "sep": {
+      "url": "https://plato.stanford.edu/entries/natural-deduction/",
+      "title": "Natural deduction systems in logic"
+    },
+    "attic": {
+      "url": "https://neugierde.github.io/cantors-attic/Busy_beaver_function",
+      "title": "Busy beaver function"
+    },
+    "oeis": {
+      "url": "https://oeis.org/A243552",
+      "title": "A243552: Number of simple connected graphs with n nodes that have no subgraph isomorphic to the bowtie graph or bull graph"
+    }
+  }
+}

@@ -1,51 +1,51 @@
 {
-  "date": "2026-10-15",
-  "title": "Three albums for 15 October",
+  "date": "2026-10-16",
+  "title": "Three albums for 16 October",
   "albums": [
     {
       "category": "focus",
       "header": "Focus",
-      "artist": "Billy Cobham",
-      "album": "Spectrum",
-      "year": 1973,
+      "artist": "Miles Davis",
+      "album": "Ascenseur pour l'échafaud",
+      "year": 1958,
       "genres": [
-        "jazz fusion",
-        "jazz-funk"
+        "modal jazz",
+        "film score"
       ],
-      "spotify_url": "https://open.spotify.com/album/4Wv9TlDbBn7iaAVyc92Ez5",
+      "spotify_url": "https://open.spotify.com/album/6j9tREI9uVqQsc3k8VoaQc",
       "link_is_search": false,
-      "blurb": "Cobham was the drummer of the Mahavishnu Orchestra, and he cut Spectrum, his solo debut, in three days at Electric Lady Studios in May 1973 as that band was coming apart. Jan Hammer's Moog and the 22-year-old rock guitarist Tommy Bolin handle most of the soloing on the heavy side of the record, while Ron Carter, Joe Farrell and Ray Barretto appear on its jazzier interludes; the whole album is instrumental, and \"Stratus\" later became the backbone sample of Massive Attack's \"Safe from Harm.\"",
-      "reception": "Spectrum reached No. 1 on Billboard's jazz albums chart and No. 26 on the Billboard 200, and AllMusic's Scott Yanow has retrospectively called it Cobham's best album."
+      "blurb": "Recorded in Paris over two nights in December 1957, this is the score Miles Davis improvised for Louis Malle's debut feature Elevator to the Gallows, leading a quintet of Barney Wilen, René Urtreger, Pierre Michelot and Kenny Clarke while loops of the film were projected in the studio. Sitting between Relaxin' and Milestones in his discography, its sparse, scale-based brooding is often heard as a dry run for the modal turn that produced Kind of Blue the following year, and the whole record is instrumental small-group jazz.",
+      "reception": "AllMusic's retrospective review rates it four and a half stars, and its American release as side one of the 1959 Columbia LP Jazz Track brought Davis a 1960 Grammy nomination for Best Jazz Performance, Solo or Small Group."
     },
     {
       "category": "familiar_artist",
       "header": "Enjoy",
-      "artist": "Sammy Rae & The Friends",
-      "album": "Something for Everybody",
-      "year": 2024,
+      "artist": "Big Thief",
+      "album": "Dragon New Warm Mountain I Believe in You",
+      "year": 2022,
       "genres": [
-        "jazz-pop",
-        "funk-pop"
+        "indie folk",
+        "folk rock"
       ],
-      "spotify_url": "https://open.spotify.com/album/0t0hNxHpqtvn7dT3YO18ma",
+      "spotify_url": "https://open.spotify.com/album/7Ln81p86r5cCsesd3KBWIY",
       "link_is_search": false,
-      "blurb": "The Brooklyn band around singer-songwriter Samantha \"Sammy Rae\" Bowers formed in 2016 and spent nearly a decade as a touring act with only EPs to its name (The Good Life, Let's Throw a Party) before releasing this debut studio album on Nettwerk in September 2024: thirteen tracks of horn-driven, big-ensemble pop that pulls from funk, jazz and classic rock.",
-      "reception": "Its single \"Thieves\" reached No. 34 on Billboard's Adult Alternative Airplay chart, the band's first chart entry."
+      "blurb": "Big Thief's fifth studio album and their most expansive: a twenty-track double LP on 4AD, assembled from five 2020 sessions in Westhampton, upstate New York, Topanga Canyon, the Colorado Rockies and Tucson, each with a different engineer. Adrianne Lenker's songwriting ranges from hushed acoustic folk to country stomps and crunchy full-band rock, with drummer James Krivchenia producing.",
+      "reception": "It reached number 31 on the Billboard 200 and number 15 on the UK albums chart, and was nominated for Best Alternative Music Album at the 65th Grammy Awards, where its single \"Certainty\" was also nominated for Best Alternative Music Performance."
     },
     {
       "category": "new_artist",
       "header": "Explore",
-      "artist": "The Pharcyde",
-      "album": "Bizarre Ride II the Pharcyde",
-      "year": 1992,
+      "artist": "Vanishing Twin",
+      "album": "Ookii Gekkou",
+      "year": 2021,
       "genres": [
-        "jazz rap",
-        "alternative hip hop"
+        "neo-psychedelia",
+        "art pop"
       ],
-      "spotify_url": "https://open.spotify.com/album/7DYY6GQoJnCYXf6KYAi8ir",
+      "spotify_url": "https://open.spotify.com/album/11MIPinn4hd7yrNsL7tOtG",
       "link_is_search": false,
-      "blurb": "The Pharcyde were four dancers-turned-MCs from South Central Los Angeles whose debut for Delicious Vinyl, produced almost entirely by J-Swift, offered a playful, self-deprecating, jazz-sampling counterpoint to the gangsta rap that dominated West Coast hip hop in 1992. The group never repeated its lineup or sound quite the same way again; the mellower follow-up Labcabincalifornia (1995) featured early production by J Dilla.",
-      "reception": "The album was certified gold by the RIAA in 1996, its single \"Passin' Me By\" topped Billboard's Hot Rap Singles chart and reached No. 52 on the Hot 100, and Rolling Stone placed it at No. 482 on its 2020 list of the 500 Greatest Albums of All Time."
+      "blurb": "Vanishing Twin are a London ensemble led by singer and multi-instrumentalist Cathy Lucas, formerly of Fanfarlo, with bassist Susumu Mukai (alias Zongamin) and Italian percussionist Valentina Magaletti. Ookii Gekkou — Japanese for \"big moonlight\" — is their third album, written and recorded during lockdown and released on Fire Records, folding exotica, library music, afrofunk and Stereolab-style motorik pop into their most rhythm-forward record.",
+      "reception": "BrooklynVegan named it an Album of the Week, hearing the band trade the sharper edges of 2019's The Age of Immunology for a funkier, more danceable sound, and Norman Records' staff review scored it 8/10."
     }
   ]
 }
