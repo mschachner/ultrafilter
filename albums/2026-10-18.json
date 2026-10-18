@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-18",
+  "title": "Three albums for 18 October",
+  "albums": [
+    {
+      "category": "focus",
+      "header": "Focus",
+      "artist": "Abdullah Ibrahim",
+      "album": "Water from an Ancient Well",
+      "year": 1986,
+      "genres": [
+        "Cape jazz",
+        "post-bop"
+      ],
+      "spotify_url": "https://open.spotify.com/album/5EQkSknw8twG8oiukc55la",
+      "link_is_search": false,
+      "blurb": "Abdullah Ibrahim, the Cape Town pianist formerly known as Dollar Brand, was championed by Duke Ellington in the early 1960s and spent much of the apartheid era in exile, where his 1974 recording “Mannenberg” became an unofficial anthem of the resistance back home. This 1986 set, recorded at Rudy Van Gelder’s studio with Ekaya, his seven-piece band of piano, horns, bass and drums, is built on hymn-like Ibrahim melodies — “Mandela,” “The Wedding,” a revisited “Mannenberg” — voiced by a four-horn front line over his gospel-tinged piano, instrumental end to end.",
+      "reception": "Scott Yanow’s five-star AllMusic review singled out “Mandela,” “Song for Sathima,” “Water from an Ancient Well” and “The Wedding” as being among Ibrahim’s finest compositions, and the album was later included in 1001 Albums You Must Hear Before You Die."
+    },
+    {
+      "category": "familiar_artist",
+      "header": "Enjoy",
+      "artist": "Arthur Verocai",
+      "album": "Arthur Verocai",
+      "year": 1972,
+      "genres": [
+        "MPB",
+        "orchestral soul-funk"
+      ],
+      "spotify_url": "https://open.spotify.com/album/4yv17Q486G8QoqM001kFKO",
+      "link_is_search": false,
+      "blurb": "Verocai was a jobbing arranger in early-1970s Rio — writing charts for Ivan Lins, Jorge Ben and Gal Costa — when the Continental label gave him one shot at a record of his own, and he spent it on a half-hour fusion of MPB songcraft, a soul-funk rhythm section and widescreen string writing. After it sank without trace he spent decades composing advertising music; half a century later he returned to view arranging strings on Hiatus Kaiyote’s Mood Valiant, including the single “Get Sun,” which credits him as a featured artist.",
+      "reception": "Largely ignored by critics and a commercial failure on release, the album was rediscovered by crate-diggers and sampled by MF DOOM, Ludacris and Common, and original Continental pressings now change hands for upwards of £2,000."
+    },
+    {
+      "category": "new_artist",
+      "header": "Explore",
+      "artist": "Lee Fields & The Expressions",
+      "album": "Faithful Man",
+      "year": 2012,
+      "genres": [
+        "retro soul",
+        "southern soul"
+      ],
+      "spotify_url": "https://open.spotify.com/album/5VegLOVJhzLHjKYwHkHUJF",
+      "link_is_search": false,
+      "blurb": "Lee Fields is a North Carolina soul singer who cut his first single in 1969 and worked through the funk era with a rasp so close to James Brown’s that he was nicknamed “Little JB.” Faithful Man is his second album with the Expressions, the Brooklyn house band of the Truth & Soul label, whose co-founder Leon Michels also leads El Michels Affair; it sets Fields’s raw-throated ballads against orchestral early-1970s-style sweet-soul arrangements.",
+      "reception": "The A.V. Club called it Fields’s most fully realized LP yet, and PopMatters described the record as a lost gem of smooth soul balladry."
+    }
+  ]
+}

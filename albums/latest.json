@@ -1,51 +1,51 @@
 {
-  "date": "2026-10-16",
-  "title": "Three albums for 16 October",
+  "date": "2026-10-18",
+  "title": "Three albums for 18 October",
   "albums": [
     {
       "category": "focus",
       "header": "Focus",
-      "artist": "Miles Davis",
-      "album": "Ascenseur pour l'échafaud",
-      "year": 1958,
+      "artist": "Abdullah Ibrahim",
+      "album": "Water from an Ancient Well",
+      "year": 1986,
       "genres": [
-        "modal jazz",
-        "film score"
+        "Cape jazz",
+        "post-bop"
       ],
-      "spotify_url": "https://open.spotify.com/album/6j9tREI9uVqQsc3k8VoaQc",
+      "spotify_url": "https://open.spotify.com/album/5EQkSknw8twG8oiukc55la",
       "link_is_search": false,
-      "blurb": "Recorded in Paris over two nights in December 1957, this is the score Miles Davis improvised for Louis Malle's debut feature Elevator to the Gallows, leading a quintet of Barney Wilen, René Urtreger, Pierre Michelot and Kenny Clarke while loops of the film were projected in the studio. Sitting between Relaxin' and Milestones in his discography, its sparse, scale-based brooding is often heard as a dry run for the modal turn that produced Kind of Blue the following year, and the whole record is instrumental small-group jazz.",
-      "reception": "AllMusic's retrospective review rates it four and a half stars, and its American release as side one of the 1959 Columbia LP Jazz Track brought Davis a 1960 Grammy nomination for Best Jazz Performance, Solo or Small Group."
+      "blurb": "Abdullah Ibrahim, the Cape Town pianist formerly known as Dollar Brand, was championed by Duke Ellington in the early 1960s and spent much of the apartheid era in exile, where his 1974 recording “Mannenberg” became an unofficial anthem of the resistance back home. This 1986 set, recorded at Rudy Van Gelder’s studio with Ekaya, his seven-piece band of piano, horns, bass and drums, is built on hymn-like Ibrahim melodies — “Mandela,” “The Wedding,” a revisited “Mannenberg” — voiced by a four-horn front line over his gospel-tinged piano, instrumental end to end.",
+      "reception": "Scott Yanow’s five-star AllMusic review singled out “Mandela,” “Song for Sathima,” “Water from an Ancient Well” and “The Wedding” as being among Ibrahim’s finest compositions, and the album was later included in 1001 Albums You Must Hear Before You Die."
     },
     {
       "category": "familiar_artist",
       "header": "Enjoy",
-      "artist": "Big Thief",
-      "album": "Dragon New Warm Mountain I Believe in You",
-      "year": 2022,
+      "artist": "Arthur Verocai",
+      "album": "Arthur Verocai",
+      "year": 1972,
       "genres": [
-        "indie folk",
-        "folk rock"
+        "MPB",
+        "orchestral soul-funk"
       ],
-      "spotify_url": "https://open.spotify.com/album/7Ln81p86r5cCsesd3KBWIY",
+      "spotify_url": "https://open.spotify.com/album/4yv17Q486G8QoqM001kFKO",
       "link_is_search": false,
-      "blurb": "Big Thief's fifth studio album and their most expansive: a twenty-track double LP on 4AD, assembled from five 2020 sessions in Westhampton, upstate New York, Topanga Canyon, the Colorado Rockies and Tucson, each with a different engineer. Adrianne Lenker's songwriting ranges from hushed acoustic folk to country stomps and crunchy full-band rock, with drummer James Krivchenia producing.",
-      "reception": "It reached number 31 on the Billboard 200 and number 15 on the UK albums chart, and was nominated for Best Alternative Music Album at the 65th Grammy Awards, where its single \"Certainty\" was also nominated for Best Alternative Music Performance."
+      "blurb": "Verocai was a jobbing arranger in early-1970s Rio — writing charts for Ivan Lins, Jorge Ben and Gal Costa — when the Continental label gave him one shot at a record of his own, and he spent it on a half-hour fusion of MPB songcraft, a soul-funk rhythm section and widescreen string writing. After it sank without trace he spent decades composing advertising music; half a century later he returned to view arranging strings on Hiatus Kaiyote’s Mood Valiant, including the single “Get Sun,” which credits him as a featured artist.",
+      "reception": "Largely ignored by critics and a commercial failure on release, the album was rediscovered by crate-diggers and sampled by MF DOOM, Ludacris and Common, and original Continental pressings now change hands for upwards of £2,000."
     },
     {
       "category": "new_artist",
       "header": "Explore",
-      "artist": "Vanishing Twin",
-      "album": "Ookii Gekkou",
-      "year": 2021,
+      "artist": "Lee Fields & The Expressions",
+      "album": "Faithful Man",
+      "year": 2012,
       "genres": [
-        "neo-psychedelia",
-        "art pop"
+        "retro soul",
+        "southern soul"
       ],
-      "spotify_url": "https://open.spotify.com/album/11MIPinn4hd7yrNsL7tOtG",
+      "spotify_url": "https://open.spotify.com/album/5VegLOVJhzLHjKYwHkHUJF",
       "link_is_search": false,
-      "blurb": "Vanishing Twin are a London ensemble led by singer and multi-instrumentalist Cathy Lucas, formerly of Fanfarlo, with bassist Susumu Mukai (alias Zongamin) and Italian percussionist Valentina Magaletti. Ookii Gekkou — Japanese for \"big moonlight\" — is their third album, written and recorded during lockdown and released on Fire Records, folding exotica, library music, afrofunk and Stereolab-style motorik pop into their most rhythm-forward record.",
-      "reception": "BrooklynVegan named it an Album of the Week, hearing the band trade the sharper edges of 2019's The Age of Immunology for a funkier, more danceable sound, and Norman Records' staff review scored it 8/10."
+      "blurb": "Lee Fields is a North Carolina soul singer who cut his first single in 1969 and worked through the funk era with a rasp so close to James Brown’s that he was nicknamed “Little JB.” Faithful Man is his second album with the Expressions, the Brooklyn house band of the Truth & Soul label, whose co-founder Leon Michels also leads El Michels Affair; it sets Fields’s raw-throated ballads against orchestral early-1970s-style sweet-soul arrangements.",
+      "reception": "The A.V. Club called it Fields’s most fully realized LP yet, and PopMatters described the record as a lost gem of smooth soul balladry."
     }
   ]
 }

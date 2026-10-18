@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-18",
+  "artwork": {
+    "wikidata": "Q18085208",
+    "title": "Summer Evening on Skagen's Southern Beach",
+    "interest": "implandscape"
+  },
+  "wikis": {
+    "wikipedia": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Cantor's_first_set_theory_article",
+        "title": "Cantor's first set theory article",
+        "topic": "math"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Voyager_2",
+        "title": "Voyager 2",
+        "topic": "sci"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Joan_Mitchell",
+        "title": "Joan Mitchell",
+        "topic": "arthist"
+      }
+    ],
+    "nlab": {
+      "url": "https://ncatlab.org/nlab/show/locally+regular+category",
+      "title": "locally regular category"
+    },
+    "sep": {
+      "url": "https://plato.stanford.edu/entries/bohr-correspondence/",
+      "title": "correspondence principle"
+    },
+    "attic": {
+      "url": "https://neugierde.github.io/cantors-attic/Woodin",
+      "title": "Woodin"
+    },
+    "oeis": {
+      "url": "https://oeis.org/A179165",
+      "title": "Numbers k such that Mordell's equation y^2 = x^3 - k has exactly 4 integral solutions."
+    }
+  }
+}
