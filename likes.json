@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-19T13:51:59.565Z",
+ "updated": "2026-10-19T13:52:05.068Z",
  "items": [
   {
    "kind": "album",
@@ -1376,6 +1376,15 @@
    "topic": null,
    "kind": "wiki",
    "key": "https://neugierde.github.io/cantors-attic/Vopenka",
+   "when": "2026-10-19"
+  },
+  {
+   "source": "oeis",
+   "title": "A self-describing sequence: when the sequence is read as a string of decimal digits, a(n) can be read from position n (ignoring leading zeros). This sequence is the lexicographically earliest sequence of distinct terms with this property.",
+   "url": "https://oeis.org/A263563",
+   "topic": null,
+   "kind": "wiki",
+   "key": "https://oeis.org/A263563",
    "when": "2026-10-19"
   },
   {
