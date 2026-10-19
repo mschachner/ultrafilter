@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-19T13:51:46.784Z",
+ "updated": "2026-10-19T13:51:59.565Z",
  "items": [
   {
    "kind": "album",
@@ -1367,6 +1367,15 @@
    "topic": null,
    "kind": "wiki",
    "key": "https://ncatlab.org/nlab/show/p-adic+number",
+   "when": "2026-10-19"
+  },
+  {
+   "source": "attic",
+   "title": "Vopěnka's principle and Vopěnka cardinals",
+   "url": "https://neugierde.github.io/cantors-attic/Vopenka",
+   "topic": null,
+   "kind": "wiki",
+   "key": "https://neugierde.github.io/cantors-attic/Vopenka",
    "when": "2026-10-19"
   },
   {
