@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-19T13:51:42.983Z",
+ "updated": "2026-10-19T13:51:46.784Z",
  "items": [
   {
    "kind": "album",
@@ -1350,6 +1350,15 @@
    "kind": "wiki",
    "key": "https://plato.stanford.edu/entries/paradox-simpson/",
    "when": "2026-10-12"
+  },
+  {
+   "source": "nlab",
+   "title": "curl",
+   "url": "https://ncatlab.org/nlab/show/curl",
+   "topic": null,
+   "kind": "wiki",
+   "key": "https://ncatlab.org/nlab/show/curl",
+   "when": "2026-10-19"
   },
   {
    "source": "nlab",
