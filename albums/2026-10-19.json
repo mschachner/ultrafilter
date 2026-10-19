@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-19",
+  "title": "Three albums for 19 October",
+  "albums": [
+    {
+      "category": "focus",
+      "header": "Focus",
+      "artist": "Strength in Numbers",
+      "album": "The Telluride Sessions",
+      "year": 1989,
+      "genres": [
+        "progressive bluegrass",
+        "newgrass"
+      ],
+      "spotify_url": "https://open.spotify.com/album/280qrGpx4WYkwsL7lMKarM",
+      "link_is_search": false,
+      "blurb": "Strength in Numbers was a five-man acoustic supergroup — Sam Bush (mandolin), Béla Fleck (banjo), Jerry Douglas (dobro), Mark O'Connor (violin), and Edgar Meyer (double bass) — that grew out of the Telluride Bluegrass Festival and recorded this one album for MCA Nashville. Each of the ten instrumentals was written by a different pairing of the five players, which is where the band's name comes from, and the music runs from newgrass into chamber-jazz territory.",
+      "reception": "AllMusic rates the album four and a half stars, and Britannica's entry on Béla Fleck calls it a landmark bluegrass album."
+    },
+    {
+      "category": "familiar_artist",
+      "header": "Enjoy",
+      "artist": "Louis Cole",
+      "album": "nothing",
+      "year": 2024,
+      "genres": [
+        "orchestral funk",
+        "jazz-pop"
+      ],
+      "spotify_url": "https://open.spotify.com/album/1hD0obPJIc7yi3RwwREblP",
+      "link_is_search": false,
+      "blurb": "Louis Cole is the Los Angeles drummer and songwriter behind the duo Knower, long adjacent to the Vulfpeck orbit. nothing, his fifth album and third for Brainfeeder, was recorded with the Dutch Metropole Orkest conducted by Jules Buckley during a sold-out European tour; fifteen of its seventeen tracks are new compositions, alongside a couple of pieces from Quality Over Opinion (2022) rearranged for full orchestra.",
+      "reception": "PopMatters' review called it arguably his most ambitious and wide-ranging album yet."
+    },
+    {
+      "category": "new_artist",
+      "header": "Explore",
+      "artist": "Lhasa de Sela",
+      "album": "La Llorona",
+      "year": 1997,
+      "genres": [
+        "Latin folk",
+        "world"
+      ],
+      "spotify_url": "https://open.spotify.com/album/7J8k8Y7zfCFKMPWzUPGVuP",
+      "link_is_search": false,
+      "blurb": "Lhasa de Sela was an American-born singer, raised between the United States and Mexico, who settled in Montreal and made just three albums before her death in 2010 at age 37. La Llorona, her Spanish-language debut made with arranger-guitarist Yves Desrosiers, mixes original songs with the spirit of 1930s and 1940s Latin American music, and takes its title from the Mexican legend of the weeping woman that her father taught her.",
+      "reception": "The album was certified platinum in Canada and won Lhasa the 1998 Juno Award for Best Global Album."
+    }
+  ]
+}
