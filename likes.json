@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-12T18:09:27.149Z",
+ "updated": "2026-10-19T13:51:42.983Z",
  "items": [
   {
    "kind": "album",
@@ -1350,6 +1350,15 @@
    "kind": "wiki",
    "key": "https://plato.stanford.edu/entries/paradox-simpson/",
    "when": "2026-10-12"
+  },
+  {
+   "source": "nlab",
+   "title": "p-adic number",
+   "url": "https://ncatlab.org/nlab/show/p-adic+number",
+   "topic": null,
+   "kind": "wiki",
+   "key": "https://ncatlab.org/nlab/show/p-adic+number",
+   "when": "2026-10-19"
   },
   {
    "title": "Eye Candy for Today: M.J. Galt pencil portrait",
