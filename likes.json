@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-19T13:52:05.068Z",
+ "updated": "2026-10-20T13:26:28.068Z",
  "items": [
   {
    "kind": "album",
@@ -900,6 +900,16 @@
    "kind": "artwork",
    "key": "Q2365608",
    "when": "2026-09-30"
+  },
+  {
+   "title": "The Magpie (Monet)",
+   "url": "https://en.wikipedia.org/wiki/The_Magpie_(Monet)",
+   "artist": "Claude Monet",
+   "artistId": "Q296",
+   "interest": "implandscape",
+   "kind": "artwork",
+   "key": "Q4429116",
+   "when": "2026-10-20"
   },
   {
    "source": "wikipedia",
