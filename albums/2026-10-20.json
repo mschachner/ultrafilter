@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-20",
+  "title": "Three albums for 20 October",
+  "albums": [
+    {
+      "category": "focus",
+      "header": "Focus",
+      "artist": "Hiromi",
+      "album": "Spark",
+      "year": 2016,
+      "genres": [
+        "jazz fusion",
+        "post-bop"
+      ],
+      "spotify_url": "https://open.spotify.com/album/7KBqCSKifD2EacrwgUN1gH",
+      "link_is_search": false,
+      "blurb": "Hiromi Uehara is a Japanese pianist whose playing runs from post-bop into fusion and progressive rock. Spark (Telarc, 2016) is the fourth and final studio album by her Trio Project with contrabass guitarist Anthony Jackson and drummer Simon Phillips, closing the run that began with Voice in 2011. It is a fully instrumental piano-trio record, nine originals that move between hushed ballad playing and high-velocity odd-meter workouts.",
+      "reception": "Spark reached No. 1 on the Billboard Jazz Albums chart in the week of April 23, 2016, and AllMusic's Thom Jurek rated it four and a half stars."
+    },
+    {
+      "category": "familiar_artist",
+      "header": "Enjoy",
+      "artist": "Hiatus Kaiyote",
+      "album": "Choose Your Weapon",
+      "year": 2015,
+      "genres": [
+        "neo-soul",
+        "future soul"
+      ],
+      "spotify_url": "https://open.spotify.com/album/3qzmmmRmVBiOuMvrerfW4z",
+      "link_is_search": false,
+      "blurb": "Melbourne's Hiatus Kaiyote, fronted by singer-guitarist Nai Palm, made their name with the self-described \"future soul\" of Tawk Tomahawk; Choose Your Weapon (Flying Buddha/Sony, 2015) is the second album, an eighteen-track, seventy-minute set that folds jazz, progressive rock, West African funk and samba into its neo-soul base. It sits between the scrappy debut and the lusher Mood Valiant from 2021.",
+      "reception": "The album holds a Metacritic score of 87/100 (\"universal acclaim\"), and its lead single \"Breathing Underwater\" was nominated for Best R&B Performance at the 58th Grammy Awards."
+    },
+    {
+      "category": "new_artist",
+      "header": "Explore",
+      "artist": "The Congos",
+      "album": "Heart of the Congos",
+      "year": 1977,
+      "genres": [
+        "roots reggae"
+      ],
+      "spotify_url": "https://open.spotify.com/album/6S82ZOCSc0qdvbPVoaHu4f",
+      "link_is_search": false,
+      "blurb": "The Congos are the Jamaican vocal duo of Cedric Myton (falsetto) and Roydel \"Ashanti\" Johnson, joined on record by Watty Burnett's baritone. Their debut was cut in 1976-77 at Lee \"Scratch\" Perry's Black Ark studio, with Perry's densely layered production over a session band that included Boris Gardiner on bass, Sly Dunbar on drums and Ernest Ranglin on lead guitar. The original Jamaican pressing ran to only a few hundred copies, and the album circulated mainly through reissues, most notably Blood and Fire's 1996 remaster.",
+      "reception": "Pitchfork placed it at No. 46 on its Top 100 Albums of the 1970s, and NME ranked it No. 99 in its 2003 list of the 100 best albums of all time."
+    }
+  ]
+}
