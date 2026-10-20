@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-20",
+  "artwork": {
+    "wikidata": "Q4429116",
+    "title": "The Magpie (Monet)",
+    "interest": "implandscape"
+  },
+  "wikis": {
+    "wikipedia": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Reuleaux_triangle",
+        "title": "Reuleaux triangle",
+        "topic": "math"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Gharial",
+        "title": "Gharial",
+        "topic": "sci"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Typhoon_Wayne_(1986)",
+        "title": "Typhoon Wayne (1986)",
+        "topic": "climate"
+      }
+    ],
+    "nlab": {
+      "url": "https://ncatlab.org/nlab/show/Cat",
+      "title": "Cat"
+    },
+    "sep": {
+      "url": "https://plato.stanford.edu/entries/mathematics-constructive/",
+      "title": "constructive"
+    },
+    "attic": {
+      "url": "https://neugierde.github.io/cantors-attic/Erdos",
+      "title": "Erdos"
+    },
+    "oeis": {
+      "url": "https://oeis.org/A065001",
+      "title": "a(n) = (presumed) number of palindromes in the 'Reverse and Add!' trajectory of n, or -1 if this number is not finite."
+    }
+  }
+}
