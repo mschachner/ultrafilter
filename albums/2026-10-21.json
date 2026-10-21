@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-21",
+  "title": "Three albums for 21 October",
+  "albums": [
+    {
+      "category": "focus",
+      "header": "Focus",
+      "artist": "Tim Hecker",
+      "album": "Ravedeath, 1972",
+      "year": 2011,
+      "genres": [
+        "ambient",
+        "drone"
+      ],
+      "spotify_url": "https://open.spotify.com/album/6cbCvUzsawFcG0aZVCJyzt",
+      "link_is_search": false,
+      "blurb": "Tim Hecker is a Montreal-based Canadian electronic composer who has recorded for Kranky and 4AD. Ravedeath, 1972, his sixth studio album, was built from a pipe organ session recorded in the Fríkirkjan church in Reykjavík with Ben Frost engineering, then heavily processed into dense, slowly shifting drones; the title and the opening track \"The Piano Drop\" refer to a 1972 MIT stunt in which students pushed a piano off a roof. It sits at the center of his discography, bridging the digital haze of his 2000s records and the darker Virgins that followed.",
+      "reception": "Ravedeath, 1972 won the 2012 Juno Award for Electronic Album of the Year and was a nominee for the 2011 Polaris Music Prize."
+    },
+    {
+      "category": "familiar_artist",
+      "header": "Enjoy",
+      "artist": "Fleet Foxes",
+      "album": "Helplessness Blues",
+      "year": 2011,
+      "genres": [
+        "indie folk",
+        "folk rock"
+      ],
+      "spotify_url": "https://open.spotify.com/album/7D0rCfJjFj9x0bdgRKtvzb",
+      "link_is_search": false,
+      "blurb": "Helplessness Blues is the second Fleet Foxes album, released on Sub Pop in May 2011 after a year of sessions with producer Phil Ek in Seattle and at Dreamland Recording in upstate New York. It extends the Seattle band's baroque folk-rock toward longer, more restless songs about work and purpose, and it was the last album the band made with drummer Josh Tillman, who left the following year to record as Father John Misty; a six-year hiatus preceded the follow-up, Crack-Up.",
+      "reception": "The album debuted at number 4 on the Billboard 200, the band's highest chart position to date, and was nominated for Best Folk Album at the 54th Grammy Awards."
+    },
+    {
+      "category": "new_artist",
+      "header": "Explore",
+      "artist": "Tinariwen",
+      "album": "Aman Iman: Water Is Life",
+      "year": 2007,
+      "genres": [
+        "desert blues",
+        "tishoumaren"
+      ],
+      "spotify_url": "https://open.spotify.com/album/6dLmHUagERrqOv8Z1ulgPQ",
+      "link_is_search": false,
+      "blurb": "Tinariwen are a collective of Tuareg musicians from the southern Sahara who formed in exile camps in Algeria around 1979, trading traditional instrumentation for electric guitars. Aman Iman: Water Is Life, their third studio album, was recorded in Bamako, Mali, with producer Justin Adams, Robert Plant's guitarist, and is the record that carried their hypnotic, call-and-response desert blues (tishoumaren) to an international audience; the title is Tamashek for \"water is life.\"",
+      "reception": "Pitchfork scored the album 8.1 and called it \"the most powerful statement they've issued so far,\" while Robert Christgau graded it an A−."
+    }
+  ]
+}
