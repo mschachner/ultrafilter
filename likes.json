@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-22T16:32:11.070Z",
+ "updated": "2026-10-22T16:32:16.348Z",
  "items": [
   {
    "kind": "album",
@@ -1413,6 +1413,15 @@
    "topic": null,
    "kind": "wiki",
    "key": "https://neugierde.github.io/cantors-attic/Buchholz's_ψ_functions",
+   "when": "2026-10-22"
+  },
+  {
+   "source": "oeis",
+   "title": "a(0)=0; a(1)=2. Slowest increasing sequence where every digit \"d\" has a copy of itself in a(n+d).",
+   "url": "https://oeis.org/A102150",
+   "topic": null,
+   "kind": "wiki",
+   "key": "https://oeis.org/A102150",
    "when": "2026-10-22"
   },
   {
