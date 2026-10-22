@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-22",
+  "artwork": {
+    "wikidata": "Q106158825",
+    "title": "Jeanne Hébuterne with Hat and Necklace",
+    "interest": "modern"
+  },
+  "wikis": {
+    "wikipedia": [
+      { "url": "https://en.wikipedia.org/wiki/Herschel_graph", "title": "Herschel graph", "topic": "math" },
+      { "url": "https://en.wikipedia.org/wiki/Syssomonas", "title": "Syssomonas", "topic": "sci" },
+      { "url": "https://en.wikipedia.org/wiki/Via_Giulia", "title": "Via Giulia", "topic": "arthist" }
+    ],
+    "nlab": { "url": "https://ncatlab.org/nlab/show/Serre's+theorem+on+Proj", "title": "Serre's theorem on Proj" },
+    "sep": { "url": "https://plato.stanford.edu/entries/algebra-logic-tradition/", "title": "algebra of logic tradition" },
+    "attic": { "url": "https://neugierde.github.io/cantors-attic/Buchholz's_ψ_functions", "title": "Buchholz's ψ functions" },
+    "oeis": { "url": "https://oeis.org/A102150", "title": "a(0)=0; a(1)=2. Slowest increasing sequence where every digit \"d\" has a copy of itself in a(n+d)." }
+  }
+}

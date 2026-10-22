@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-22",
+  "title": "Three albums for 22 October",
+  "albums": [
+    {
+      "category": "focus",
+      "header": "Focus",
+      "artist": "Julian Lage",
+      "album": "View with a Room",
+      "year": 2022,
+      "genres": ["jazz", "jazz guitar"],
+      "spotify_url": "https://open.spotify.com/album/0bxXAO9Vxpx20fidIJc4va",
+      "link_is_search": false,
+      "blurb": "Julian Lage's second album for Blue Note pairs his longtime trio — bassist Jorge Roeder and drummer Dave King — with guest guitarist Bill Frisell, who appears on seven of the ten original compositions. Produced by singer-songwriter Margaret Glaspy, the record explores how lush, orchestrated textures can coexist with small-group improvisation, with Frisell mostly adding chordal color and atmosphere behind Lage's lead lines. The entire set is instrumental.",
+      "reception": "Jazzwise named it an Editor's Choice, and AllMusic and All About Jazz each rated it four stars out of five."
+    },
+    {
+      "category": "familiar_artist",
+      "header": "Enjoy",
+      "artist": "The Avalanches",
+      "album": "Since I Left You",
+      "year": 2000,
+      "genres": ["plunderphonics", "dance"],
+      "spotify_url": "https://open.spotify.com/album/3GBnNRYsxBfEeMSMmTpJ25",
+      "link_is_search": false,
+      "blurb": "The debut album by the Melbourne group The Avalanches, released on Modular Recordings in November 2000 and assembled from an estimated 3,500 vinyl samples into one continuous, woozy dance suite. Clearing those samples delayed the international release until 2001 and forced small alterations to some overseas editions, and the group took sixteen years to follow it up with Wildflower. Its singles included \"Frontier Psychiatrist\" and the title track.",
+      "reception": "It won four ARIA Awards in 2001, including Best Dance Release, and Pitchfork later placed it in the top ten of its 200 best albums of the 2000s."
+    },
+    {
+      "category": "new_artist",
+      "header": "Explore",
+      "artist": "Fishmans",
+      "album": "Long Season",
+      "year": 1996,
+      "genres": ["dream pop", "dub"],
+      "spotify_url": "https://open.spotify.com/album/4EX1fAypgQC9wDjGI5QzbZ",
+      "link_is_search": false,
+      "blurb": "Fishmans were a Tokyo band led by singer Shinji Sato who drifted from reggae-pop toward something slower and stranger over the 1990s. Long Season, their sixth studio album, is a single 35-minute composition expanded from their earlier single \"Season,\" built on a looping piano-and-bass figure that dissolves into dub space and returns. Scarcely known outside Japan on release, it became the band's signature work, and they performed it whole at their final concert in December 1998, a few months before Sato's death.",
+      "reception": "In a 2024 retrospective review, Pitchfork scored the album 9.3 out of 10."
+    }
+  ]
+}
