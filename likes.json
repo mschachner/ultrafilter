@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-20T13:26:28.068Z",
+ "updated": "2026-10-22T16:32:01.981Z",
  "items": [
   {
    "kind": "album",
@@ -1396,6 +1396,15 @@
    "kind": "wiki",
    "key": "https://oeis.org/A263563",
    "when": "2026-10-19"
+  },
+  {
+   "source": "nlab",
+   "title": "shelf",
+   "url": "https://ncatlab.org/nlab/show/shelf",
+   "topic": null,
+   "kind": "wiki",
+   "key": "https://ncatlab.org/nlab/show/shelf",
+   "when": "2026-10-22"
   },
   {
    "title": "Eye Candy for Today: M.J. Galt pencil portrait",
