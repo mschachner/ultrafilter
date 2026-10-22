@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-22T16:32:01.981Z",
+ "updated": "2026-10-22T16:32:11.070Z",
  "items": [
   {
    "kind": "album",
@@ -1404,6 +1404,15 @@
    "topic": null,
    "kind": "wiki",
    "key": "https://ncatlab.org/nlab/show/shelf",
+   "when": "2026-10-22"
+  },
+  {
+   "source": "attic",
+   "title": "Buchholz's ψ functions",
+   "url": "https://neugierde.github.io/cantors-attic/Buchholz's_ψ_functions",
+   "topic": null,
+   "kind": "wiki",
+   "key": "https://neugierde.github.io/cantors-attic/Buchholz's_ψ_functions",
    "when": "2026-10-22"
   },
   {
