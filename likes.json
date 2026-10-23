@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-23T12:19:07.515Z",
+ "updated": "2026-10-23T12:19:15.139Z",
  "items": [
   {
    "kind": "album",
@@ -1441,6 +1441,15 @@
    "topic": null,
    "kind": "wiki",
    "key": "https://neugierde.github.io/cantors-attic/ORD_is_Mahlo",
+   "when": "2026-10-23"
+  },
+  {
+   "source": "oeis",
+   "title": "a(n) is the least nonnegative number whose digits do not appear in order (not necessarily consecutively) in the concatenation of all previous terms.",
+   "url": "https://oeis.org/A308540",
+   "topic": null,
+   "kind": "wiki",
+   "key": "https://oeis.org/A308540",
    "when": "2026-10-23"
   },
   {
