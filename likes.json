@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-22T16:32:16.348Z",
+ "updated": "2026-10-23T12:18:40.896Z",
  "items": [
   {
    "kind": "album",
@@ -910,6 +910,16 @@
    "kind": "artwork",
    "key": "Q4429116",
    "when": "2026-10-20"
+  },
+  {
+   "title": "Fish Magic",
+   "url": "https://en.wikipedia.org/wiki/Fish_Magic",
+   "artist": "Paul Klee",
+   "artistId": "Q44007",
+   "interest": null,
+   "kind": "artwork",
+   "key": "Q20816550",
+   "when": "2026-10-23"
   },
   {
    "source": "wikipedia",
