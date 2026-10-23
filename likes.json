@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-23T12:18:40.896Z",
+ "updated": "2026-10-23T12:19:07.515Z",
  "items": [
   {
    "kind": "album",
@@ -1433,6 +1433,15 @@
    "kind": "wiki",
    "key": "https://oeis.org/A102150",
    "when": "2026-10-22"
+  },
+  {
+   "source": "attic",
+   "title": "$\\text{Ord}$ is Mahlo",
+   "url": "https://neugierde.github.io/cantors-attic/ORD_is_Mahlo",
+   "topic": null,
+   "kind": "wiki",
+   "key": "https://neugierde.github.io/cantors-attic/ORD_is_Mahlo",
+   "when": "2026-10-23"
   },
   {
    "title": "Eye Candy for Today: M.J. Galt pencil portrait",
