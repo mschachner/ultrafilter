@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-23",
+  "artwork": {
+    "wikidata": "Q20816550",
+    "title": "Fish Magic"
+  },
+  "wikis": {
+    "wikipedia": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93Straus_conjecture",
+        "title": "Erdős–Straus conjecture",
+        "topic": "math"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Chelicerata",
+        "title": "Chelicerata",
+        "topic": "sci"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Collyer_Monument",
+        "title": "Collyer Monument",
+        "topic": "arthist"
+      }
+    ],
+    "nlab": {
+      "url": "https://ncatlab.org/nlab/show/accessible+(infinity%2C1)-functor",
+      "title": "accessible (infinity,1)-functor"
+    },
+    "sep": {
+      "url": "https://plato.stanford.edu/entries/pm-notation/",
+      "title": "The Notation in Principia Mathematica"
+    },
+    "attic": {
+      "url": "https://neugierde.github.io/cantors-attic/Jäger's_collapsing_functions_and_ρ-inaccessible_ordinals",
+      "title": "Jäger's collapsing functions and ρ-inaccessible ordinals"
+    },
+    "oeis": {
+      "url": "https://oeis.org/A308540",
+      "title": "a(n) is the least nonnegative number whose digits do not appear in order (not necessarily consecutively) in the concatenation of all previous terms."
+    }
+  }
+}

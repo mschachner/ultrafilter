@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-23",
+  "title": "Three albums for 23 October",
+  "albums": [
+    {
+      "category": "focus",
+      "header": "Focus",
+      "artist": "Lindstrøm",
+      "album": "Where You Go I Go Too",
+      "year": 2008,
+      "genres": [
+        "space disco",
+        "electronic"
+      ],
+      "spotify_url": "https://open.spotify.com/album/3OzqekjEsZjA5pHxMIKhLG",
+      "link_is_search": false,
+      "blurb": "Hans-Peter Lindstrøm is a Norwegian producer at the center of Oslo's mid-2000s space disco scene, first known for singles like \"I Feel Space\" and his duo records with Prins Thomas. Where You Go I Go Too, released on Smalltown Supersound in 2008, was his first proper studio album: three long instrumental synthesizer pieces — the title track alone runs nearly 29 minutes — that unfold as one continuous cosmic suite, folding krautrock pulse and Giorgio Moroder-style sequencers into a steady four-on-the-floor glide.",
+      "reception": "It won the 2009 Spellemann Award (Norway's national music prize) for best electronica album, and Pitchfork ranked it 12th on its list of the top 50 albums of 2008."
+    },
+    {
+      "category": "familiar_artist",
+      "header": "Enjoy",
+      "artist": "Real Estate",
+      "album": "Days",
+      "year": 2011,
+      "genres": [
+        "jangle pop",
+        "indie rock"
+      ],
+      "spotify_url": "https://open.spotify.com/album/7e6bDoD8VD0549bu69UTEF",
+      "link_is_search": false,
+      "blurb": "Real Estate formed in suburban Ridgewood, New Jersey, around singer-guitarist Martin Courtney and lead guitarist Matt Mondanile. Days is their second album and their first for Domino, and it marks the moment the band cleaned the lo-fi haze off their 2009 debut: ten tracks of patient, interlocking guitar lines and unhurried melodies about commutes, seasons, and suburban aimlessness, with \"It's Real\" and \"Green Aisles\" at its core.",
+      "reception": "Pitchfork named Days Best New Music with a score of 8.7 on its release in October 2011."
+    },
+    {
+      "category": "new_artist",
+      "header": "Explore",
+      "artist": "Rodriguez",
+      "album": "Cold Fact",
+      "year": 1970,
+      "genres": [
+        "psychedelic folk",
+        "folk soul"
+      ],
+      "spotify_url": "https://open.spotify.com/album/3q90UAYeHLvAtnowiQlmgp",
+      "link_is_search": false,
+      "blurb": "Sixto Rodriguez was a Detroit singer-songwriter who cut two albums for Sussex Records around 1970 and then disappeared into demolition and construction work. Cold Fact is the debut: street-level, Dylan-leaning lyrics over psychedelic soul arrangements by Motown session men Dennis Coffey and Mike Theodore, opening with \"Sugar Man\" and \"Only Good for Conversation.\" Unnoticed at home, the record spread through bootlegs and imports in apartheid-era South Africa, where Rodriguez became an arena-scale star without knowing it — the story later told in the documentary Searching for Sugar Man and behind Light in the Attic's 2008 reissue.",
+      "reception": "Commercially stillborn in the United States, Cold Fact was certified platinum in South Africa in 1998 and multi-platinum in Australia, and the 2012 documentary it anchors, Searching for Sugar Man, won the Academy Award for Best Documentary Feature."
+    }
+  ]
+}

@@ -1,42 +1,51 @@
 {
-  "date": "2026-10-22",
-  "title": "Three albums for 22 October",
+  "date": "2026-10-23",
+  "title": "Three albums for 23 October",
   "albums": [
     {
       "category": "focus",
       "header": "Focus",
-      "artist": "Julian Lage",
-      "album": "View with a Room",
-      "year": 2022,
-      "genres": ["jazz", "jazz guitar"],
-      "spotify_url": "https://open.spotify.com/album/0bxXAO9Vxpx20fidIJc4va",
+      "artist": "Lindstrøm",
+      "album": "Where You Go I Go Too",
+      "year": 2008,
+      "genres": [
+        "space disco",
+        "electronic"
+      ],
+      "spotify_url": "https://open.spotify.com/album/3OzqekjEsZjA5pHxMIKhLG",
       "link_is_search": false,
-      "blurb": "Julian Lage's second album for Blue Note pairs his longtime trio — bassist Jorge Roeder and drummer Dave King — with guest guitarist Bill Frisell, who appears on seven of the ten original compositions. Produced by singer-songwriter Margaret Glaspy, the record explores how lush, orchestrated textures can coexist with small-group improvisation, with Frisell mostly adding chordal color and atmosphere behind Lage's lead lines. The entire set is instrumental.",
-      "reception": "Jazzwise named it an Editor's Choice, and AllMusic and All About Jazz each rated it four stars out of five."
+      "blurb": "Hans-Peter Lindstrøm is a Norwegian producer at the center of Oslo's mid-2000s space disco scene, first known for singles like \"I Feel Space\" and his duo records with Prins Thomas. Where You Go I Go Too, released on Smalltown Supersound in 2008, was his first proper studio album: three long instrumental synthesizer pieces — the title track alone runs nearly 29 minutes — that unfold as one continuous cosmic suite, folding krautrock pulse and Giorgio Moroder-style sequencers into a steady four-on-the-floor glide.",
+      "reception": "It won the 2009 Spellemann Award (Norway's national music prize) for best electronica album, and Pitchfork ranked it 12th on its list of the top 50 albums of 2008."
     },
     {
       "category": "familiar_artist",
       "header": "Enjoy",
-      "artist": "The Avalanches",
-      "album": "Since I Left You",
-      "year": 2000,
-      "genres": ["plunderphonics", "dance"],
-      "spotify_url": "https://open.spotify.com/album/3GBnNRYsxBfEeMSMmTpJ25",
+      "artist": "Real Estate",
+      "album": "Days",
+      "year": 2011,
+      "genres": [
+        "jangle pop",
+        "indie rock"
+      ],
+      "spotify_url": "https://open.spotify.com/album/7e6bDoD8VD0549bu69UTEF",
       "link_is_search": false,
-      "blurb": "The debut album by the Melbourne group The Avalanches, released on Modular Recordings in November 2000 and assembled from an estimated 3,500 vinyl samples into one continuous, woozy dance suite. Clearing those samples delayed the international release until 2001 and forced small alterations to some overseas editions, and the group took sixteen years to follow it up with Wildflower. Its singles included \"Frontier Psychiatrist\" and the title track.",
-      "reception": "It won four ARIA Awards in 2001, including Best Dance Release, and Pitchfork later placed it in the top ten of its 200 best albums of the 2000s."
+      "blurb": "Real Estate formed in suburban Ridgewood, New Jersey, around singer-guitarist Martin Courtney and lead guitarist Matt Mondanile. Days is their second album and their first for Domino, and it marks the moment the band cleaned the lo-fi haze off their 2009 debut: ten tracks of patient, interlocking guitar lines and unhurried melodies about commutes, seasons, and suburban aimlessness, with \"It's Real\" and \"Green Aisles\" at its core.",
+      "reception": "Pitchfork named Days Best New Music with a score of 8.7 on its release in October 2011."
     },
     {
       "category": "new_artist",
       "header": "Explore",
-      "artist": "Fishmans",
-      "album": "Long Season",
-      "year": 1996,
-      "genres": ["dream pop", "dub"],
-      "spotify_url": "https://open.spotify.com/album/4EX1fAypgQC9wDjGI5QzbZ",
+      "artist": "Rodriguez",
+      "album": "Cold Fact",
+      "year": 1970,
+      "genres": [
+        "psychedelic folk",
+        "folk soul"
+      ],
+      "spotify_url": "https://open.spotify.com/album/3q90UAYeHLvAtnowiQlmgp",
       "link_is_search": false,
-      "blurb": "Fishmans were a Tokyo band led by singer Shinji Sato who drifted from reggae-pop toward something slower and stranger over the 1990s. Long Season, their sixth studio album, is a single 35-minute composition expanded from their earlier single \"Season,\" built on a looping piano-and-bass figure that dissolves into dub space and returns. Scarcely known outside Japan on release, it became the band's signature work, and they performed it whole at their final concert in December 1998, a few months before Sato's death.",
-      "reception": "In a 2024 retrospective review, Pitchfork scored the album 9.3 out of 10."
+      "blurb": "Sixto Rodriguez was a Detroit singer-songwriter who cut two albums for Sussex Records around 1970 and then disappeared into demolition and construction work. Cold Fact is the debut: street-level, Dylan-leaning lyrics over psychedelic soul arrangements by Motown session men Dennis Coffey and Mike Theodore, opening with \"Sugar Man\" and \"Only Good for Conversation.\" Unnoticed at home, the record spread through bootlegs and imports in apartheid-era South Africa, where Rodriguez became an arena-scale star without knowing it — the story later told in the documentary Searching for Sugar Man and behind Light in the Attic's 2008 reissue.",
+      "reception": "Commercially stillborn in the United States, Cold Fact was certified platinum in South Africa in 1998 and multi-platinum in Australia, and the 2012 documentary it anchors, Searching for Sugar Man, won the Academy Award for Best Documentary Feature."
     }
   ]
 }
