@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-23T12:19:15.139Z",
+ "updated": "2026-10-25T13:55:42.645Z",
  "items": [
   {
    "kind": "album",
@@ -1451,6 +1451,15 @@
    "kind": "wiki",
    "key": "https://oeis.org/A308540",
    "when": "2026-10-23"
+  },
+  {
+   "source": "wikipedia",
+   "title": "Turán's brick factory problem",
+   "url": "https://en.wikipedia.org/wiki/Tur%C3%A1n's_brick_factory_problem",
+   "topic": "math",
+   "kind": "wiki",
+   "key": "https://en.wikipedia.org/wiki/Tur%C3%A1n's_brick_factory_problem",
+   "when": "2026-10-25"
   },
   {
    "title": "Eye Candy for Today: M.J. Galt pencil portrait",
