@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-25T13:55:42.645Z",
+ "updated": "2026-10-25T13:56:00.638Z",
  "items": [
   {
    "kind": "album",
@@ -1459,6 +1459,15 @@
    "topic": "math",
    "kind": "wiki",
    "key": "https://en.wikipedia.org/wiki/Tur%C3%A1n's_brick_factory_problem",
+   "when": "2026-10-25"
+  },
+  {
+   "source": "nlab",
+   "title": "adjoint functor",
+   "url": "https://ncatlab.org/nlab/show/adjoint+functor",
+   "topic": null,
+   "kind": "wiki",
+   "key": "https://ncatlab.org/nlab/show/adjoint+functor",
    "when": "2026-10-25"
   },
   {
