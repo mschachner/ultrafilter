@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-25",
+  "title": "Three albums for 25 October",
+  "albums": [
+    {
+      "category": "focus",
+      "header": "Focus",
+      "artist": "Víkingur Ólafsson",
+      "album": "Johann Sebastian Bach",
+      "year": 2018,
+      "genres": [
+        "classical",
+        "solo piano"
+      ],
+      "spotify_url": "https://open.spotify.com/album/55XdhiY6nd3iij8msqiagR",
+      "link_is_search": false,
+      "blurb": "Víkingur Ólafsson is an Icelandic pianist who had swept his country's classical prizes before Deutsche Grammophon signed him; this was his second album for the label, after a 2017 Philip Glass set. Across 35 short tracks he interleaves Bach originals — Well-Tempered Clavier preludes and fugues, the keyboard arrangement of Alessandro Marcello's oboe concerto — with Romantic-era piano transcriptions by Busoni, Kempff, Stradal, Siloti and Rachmaninoff, sequencing the whole program as one continuous arc.",
+      "reception": "The album won both Album of the Year and the instrumental award at the 2019 BBC Music Magazine Awards — the first international prizes of Ólafsson's career."
+    },
+    {
+      "category": "familiar_artist",
+      "header": "Enjoy",
+      "artist": "Silk Sonic",
+      "album": "An Evening with Silk Sonic",
+      "year": 2021,
+      "genres": [
+        "retro soul",
+        "funk"
+      ],
+      "spotify_url": "https://open.spotify.com/album/0S0r2RFucaW9kVjBtcBOV1",
+      "link_is_search": false,
+      "blurb": "Silk Sonic is the one-off duo of Bruno Mars and Anderson .Paak, formed after .Paak opened Mars's 24K Magic tour in 2017, with Bootsy Collins serving as the record's 'host' and the man who named the band. Their only album to date is a nine-track homage to early-1970s soul and funk — Philadelphia strings, Motown harmonies and slow-jam balladry — cut live-to-tape-style at Shampoo Press & Curl studios.",
+      "reception": "It debuted at No. 2 on the Billboard 200 with 104,000 first-week units, and its lead single 'Leave the Door Open' swept four Grammys, including Record of the Year and Song of the Year."
+    },
+    {
+      "category": "new_artist",
+      "header": "Explore",
+      "artist": "Alvvays",
+      "album": "Antisocialites",
+      "year": 2017,
+      "genres": [
+        "jangle pop",
+        "dream pop"
+      ],
+      "spotify_url": "https://open.spotify.com/album/2Yy84EeclNVwFDem6yIB2s",
+      "link_is_search": false,
+      "blurb": "Alvvays are a Toronto indie band fronted by songwriter Molly Rankin, who emerged from Cape Breton's Rankin folk-music family before turning to fuzzy guitar pop. Antisocialites is their second album, following the 2014 self-titled debut that produced 'Archie, Marry Me'; it sharpens that record's jangle into ten brisk songs — a loose narrative of a breakup and its aftermath — in just over half an hour.",
+      "reception": "The album won Alternative Album of the Year at the 2018 Juno Awards and was shortlisted for the 2018 Polaris Music Prize."
+    }
+  ]
+}
