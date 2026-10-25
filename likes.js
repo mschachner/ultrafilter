@@ -448,6 +448,8 @@ const UF = (() => {
       <input type="password" id="ll-token" placeholder="github_pat_…" autocomplete="off"
         value="${esc(store.token)}">
       <div class="ll-row">
+        <!-- Hidden until GitHub accepts the token in the field above. -->
+        <button type="button" id="ll-copy" hidden>Copy token</button>
         <button type="button" id="ll-save">Save</button>
         <button type="button" id="ll-skip">${store.token ? "Forget token" : "Keep it local"}</button>
       </div>
@@ -466,7 +468,39 @@ const UF = (() => {
       if (store.token) store.token = ""; else store.optout = true;
       close();
     });
-    div.querySelector("#ll-token").focus();
+    const input = div.querySelector("#ll-token");
+    const copy = div.querySelector("#ll-copy");
+    let checked = "", checkGen = 0, checkTimer;
+    // Ask GitHub whether the token in the field is accepted for the repository;
+    // the copy button is shown only for a token that passed.
+    async function check() {
+      const v = input.value.trim();
+      const r = div.querySelector("#ll-repo")?.value.trim() || repo;
+      const gen = ++checkGen;
+      copy.hidden = true;
+      checked = "";
+      if (!v || !r) return;
+      try {
+        const res = await fetch(`https://api.github.com/repos/${r}`, { headers: gh(v) });
+        if (gen !== checkGen || !res.ok) return;
+        checked = v;
+        copy.hidden = false;
+      } catch { /* offline: leave the button hidden */ }
+    }
+    const recheck = () => { clearTimeout(checkTimer); checkTimer = setTimeout(check, 400); };
+    input.addEventListener("input", recheck);
+    div.querySelector("#ll-repo")?.addEventListener("input", recheck);
+    copy.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(checked);
+        copy.textContent = "Copied";
+      } catch {
+        copy.textContent = "Copy failed";
+      }
+      setTimeout(() => { copy.textContent = "Copy token"; }, 1500);
+    });
+    check();
+    input.focus();
   }
 
   let toastTimer;
@@ -554,6 +588,8 @@ const UF = (() => {
     font-family: var(--mono, monospace); font-size: .8rem; color: var(--ink, #20262B);
     background: transparent; border: 1px solid var(--line, #E0D9CB); border-radius: .35rem; }
   .ll-row { display: flex; gap: .6rem; justify-content: flex-end; margin-top: .5rem; }
+  .ll-row #ll-copy { margin-right: auto; }
+  .ll-row button[hidden] { display: none; }
   .ll-row button { font: inherit; font-size: .82rem; padding: .35rem .8rem; cursor: pointer;
     border-radius: .35rem; border: 1px solid var(--line, #E0D9CB);
     background: transparent; color: var(--ink, #20262B); }
