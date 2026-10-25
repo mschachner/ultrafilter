@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-25",
+  "artwork": {
+    "wikidata": "Q2838937",
+    "title": "Avenue of Poplars near Moret-sur-Loing",
+    "interest": "implandscape"
+  },
+  "wikis": {
+    "wikipedia": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Tur%C3%A1n's_brick_factory_problem",
+        "title": "Turán's brick factory problem",
+        "topic": "math"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Sylvester%E2%80%93Gallai_theorem",
+        "title": "Sylvester–Gallai theorem",
+        "topic": "math"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Parinacota_(volcano)",
+        "title": "Parinacota (volcano)",
+        "topic": "climate"
+      }
+    ],
+    "nlab": {
+      "url": "https://ncatlab.org/nlab/show/adjoint+functor",
+      "title": "adjoint functor"
+    },
+    "sep": {
+      "url": "https://plato.stanford.edu/entries/pythagoras/",
+      "title": "Pythagoras"
+    },
+    "attic": {
+      "url": "https://neugierde.github.io/cantors-attic/Completely_ineffable",
+      "title": "Completely ineffable"
+    },
+    "oeis": {
+      "url": "https://oeis.org/A134954",
+      "title": "Number of \"hyperforests\" on n labeled nodes, i.e., hypergraphs that have no cycles, assuming that each edge contains at least two vertices."
+    }
+  }
+}

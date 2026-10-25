@@ -1,42 +1,43 @@
 {
-  "date": "2026-10-23",
+  "date": "2026-10-25",
   "artwork": {
-    "wikidata": "Q20816550",
-    "title": "Fish Magic"
+    "wikidata": "Q2838937",
+    "title": "Avenue of Poplars near Moret-sur-Loing",
+    "interest": "implandscape"
   },
   "wikis": {
     "wikipedia": [
       {
-        "url": "https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93Straus_conjecture",
-        "title": "Erdős–Straus conjecture",
+        "url": "https://en.wikipedia.org/wiki/Tur%C3%A1n's_brick_factory_problem",
+        "title": "Turán's brick factory problem",
         "topic": "math"
       },
       {
-        "url": "https://en.wikipedia.org/wiki/Chelicerata",
-        "title": "Chelicerata",
-        "topic": "sci"
+        "url": "https://en.wikipedia.org/wiki/Sylvester%E2%80%93Gallai_theorem",
+        "title": "Sylvester–Gallai theorem",
+        "topic": "math"
       },
       {
-        "url": "https://en.wikipedia.org/wiki/Collyer_Monument",
-        "title": "Collyer Monument",
-        "topic": "arthist"
+        "url": "https://en.wikipedia.org/wiki/Parinacota_(volcano)",
+        "title": "Parinacota (volcano)",
+        "topic": "climate"
       }
     ],
     "nlab": {
-      "url": "https://ncatlab.org/nlab/show/accessible+(infinity%2C1)-functor",
-      "title": "accessible (infinity,1)-functor"
+      "url": "https://ncatlab.org/nlab/show/adjoint+functor",
+      "title": "adjoint functor"
     },
     "sep": {
-      "url": "https://plato.stanford.edu/entries/pm-notation/",
-      "title": "The Notation in Principia Mathematica"
+      "url": "https://plato.stanford.edu/entries/pythagoras/",
+      "title": "Pythagoras"
     },
     "attic": {
-      "url": "https://neugierde.github.io/cantors-attic/Jäger's_collapsing_functions_and_ρ-inaccessible_ordinals",
-      "title": "Jäger's collapsing functions and ρ-inaccessible ordinals"
+      "url": "https://neugierde.github.io/cantors-attic/Completely_ineffable",
+      "title": "Completely ineffable"
     },
     "oeis": {
-      "url": "https://oeis.org/A308540",
-      "title": "a(n) is the least nonnegative number whose digits do not appear in order (not necessarily consecutively) in the concatenation of all previous terms."
+      "url": "https://oeis.org/A134954",
+      "title": "Number of \"hyperforests\" on n labeled nodes, i.e., hypergraphs that have no cycles, assuming that each edge contains at least two vertices."
     }
   }
 }
