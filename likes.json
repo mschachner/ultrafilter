@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-25T13:56:00.638Z",
+ "updated": "2026-10-26T21:20:21.568Z",
  "items": [
   {
    "kind": "album",
@@ -830,6 +830,19 @@
    "kind": "album",
    "key": "mono::hymn to the immortal wind",
    "when": "2026-10-12"
+  },
+  {
+   "artist": "Julian Lage",
+   "album": "View with a Room",
+   "genres": [
+    "jazz",
+    "jazz guitar"
+   ],
+   "listened": "2026-10-26",
+   "liked": false,
+   "kind": "album",
+   "key": "julian lage::view with a room",
+   "when": "2026-10-26"
   },
   {
    "title": "The Poppy Field near Argenteuil",
