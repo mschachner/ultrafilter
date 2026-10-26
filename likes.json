@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-26T22:08:30.287Z",
+ "updated": "2026-10-26T23:13:57.579Z",
  "items": [
   {
    "kind": "album",
@@ -842,6 +842,19 @@
    "liked": false,
    "kind": "album",
    "key": "abdullah ibrahim::water from an ancient well",
+   "when": "2026-10-26"
+  },
+  {
+   "artist": "Billy Cobham",
+   "album": "Spectrum",
+   "genres": [
+    "jazz fusion",
+    "jazz-funk"
+   ],
+   "listened": "2026-10-26",
+   "liked": false,
+   "kind": "album",
+   "key": "billy cobham::spectrum",
    "when": "2026-10-26"
   },
   {
