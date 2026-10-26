@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-26T21:20:23.277Z",
+ "updated": "2026-10-26T22:00:18.104Z",
  "items": [
   {
    "kind": "album",
@@ -830,6 +830,19 @@
    "kind": "album",
    "key": "mono::hymn to the immortal wind",
    "when": "2026-10-12"
+  },
+  {
+   "artist": "Abdullah Ibrahim",
+   "album": "Water from an Ancient Well",
+   "genres": [
+    "Cape jazz",
+    "post-bop"
+   ],
+   "listened": "2026-10-26",
+   "liked": false,
+   "kind": "album",
+   "key": "abdullah ibrahim::water from an ancient well",
+   "when": "2026-10-26"
   },
   {
    "artist": "Julian Lage",
