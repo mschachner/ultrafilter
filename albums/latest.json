@@ -1,51 +1,51 @@
 {
-  "date": "2026-10-25",
-  "title": "Three albums for 25 October",
+  "date": "2026-10-26",
+  "title": "Three albums for 26 October",
   "albums": [
     {
       "category": "focus",
       "header": "Focus",
-      "artist": "Víkingur Ólafsson",
-      "album": "Johann Sebastian Bach",
-      "year": 2018,
+      "artist": "David Axelrod",
+      "album": "Song of Innocence",
+      "year": 1968,
       "genres": [
-        "classical",
-        "solo piano"
+        "jazz fusion",
+        "psychedelic soul"
       ],
-      "spotify_url": "https://open.spotify.com/album/55XdhiY6nd3iij8msqiagR",
+      "spotify_url": "https://open.spotify.com/album/7cILxV3NtqDMfjQ0VD8tcs",
       "link_is_search": false,
-      "blurb": "Víkingur Ólafsson is an Icelandic pianist who had swept his country's classical prizes before Deutsche Grammophon signed him; this was his second album for the label, after a 2017 Philip Glass set. Across 35 short tracks he interleaves Bach originals — Well-Tempered Clavier preludes and fugues, the keyboard arrangement of Alessandro Marcello's oboe concerto — with Romantic-era piano transcriptions by Busoni, Kempff, Stradal, Siloti and Rachmaninoff, sequencing the whole program as one continuous arc.",
-      "reception": "The album won both Album of the Year and the instrumental award at the 2019 BBC Music Magazine Awards — the first international prizes of Ólafsson's career."
+      "blurb": "David Axelrod was a staff producer at Capitol Records — behind Lou Rawls's mid-sixties hits and Cannonball Adderley's \"Mercy, Mercy, Mercy!\" — before stepping out under his own name with this debut, a seven-part instrumental suite inspired by William Blake's 1789 poetry collection. Recorded with Wrecking Crew session players including bassist Carol Kaye and drummer Earl Palmer, it fuses heavy breakbeat drums, baroque strings and psychedelic guitar into something between jazz fusion and orchestral pop, and its tracks — \"Holy Thursday\" above all — became bedrock sampling material for DJ Shadow, UNKLE and Swizz Beatz.",
+      "reception": "The album sold only about 75,000 copies in its first year and drew mixed contemporary reviews, but critics reassessed it as a classic in the 1990s and Pitchfork ranked it No. 144 on its 2017 list of the 200 best albums of the 1960s."
     },
     {
       "category": "familiar_artist",
       "header": "Enjoy",
-      "artist": "Silk Sonic",
-      "album": "An Evening with Silk Sonic",
-      "year": 2021,
+      "artist": "Feist",
+      "album": "The Reminder",
+      "year": 2007,
       "genres": [
-        "retro soul",
-        "funk"
+        "indie pop",
+        "folk-pop"
       ],
-      "spotify_url": "https://open.spotify.com/album/0S0r2RFucaW9kVjBtcBOV1",
+      "spotify_url": "https://open.spotify.com/album/7bTdGfczXffzzNE9ssJj4Z",
       "link_is_search": false,
-      "blurb": "Silk Sonic is the one-off duo of Bruno Mars and Anderson .Paak, formed after .Paak opened Mars's 24K Magic tour in 2017, with Bootsy Collins serving as the record's 'host' and the man who named the band. Their only album to date is a nine-track homage to early-1970s soul and funk — Philadelphia strings, Motown harmonies and slow-jam balladry — cut live-to-tape-style at Shampoo Press & Curl studios.",
-      "reception": "It debuted at No. 2 on the Billboard 200 with 104,000 first-week units, and its lead single 'Leave the Door Open' swept four Grammys, including Record of the Year and Song of the Year."
+      "blurb": "Leslie Feist made her name in Toronto's Broken Social Scene collective before breaking out solo with Let It Die; The Reminder is its follow-up, recorded largely live with her band in a manor house outside Paris. It balances hushed ballads against buoyant, handclap-driven pop — \"I Feel It All\" and \"My Moon My Man\" among them — and its single \"1234\" became ubiquitous after soundtracking Apple's iPod nano commercial that fall.",
+      "reception": "The Reminder won Album of the Year and Pop Album of the Year at the 2008 Juno Awards and brought Feist four nominations at the 2008 Grammys, including Best Pop Vocal Album."
     },
     {
       "category": "new_artist",
       "header": "Explore",
-      "artist": "Alvvays",
-      "album": "Antisocialites",
-      "year": 2017,
+      "artist": "Portishead",
+      "album": "Dummy",
+      "year": 1994,
       "genres": [
-        "jangle pop",
-        "dream pop"
+        "trip-hop",
+        "downtempo"
       ],
-      "spotify_url": "https://open.spotify.com/album/2Yy84EeclNVwFDem6yIB2s",
+      "spotify_url": "https://open.spotify.com/album/3539EbNgIdEDGBKkUf4wno",
       "link_is_search": false,
-      "blurb": "Alvvays are a Toronto indie band fronted by songwriter Molly Rankin, who emerged from Cape Breton's Rankin folk-music family before turning to fuzzy guitar pop. Antisocialites is their second album, following the 2014 self-titled debut that produced 'Archie, Marry Me'; it sharpens that record's jangle into ten brisk songs — a loose narrative of a breakup and its aftermath — in just over half an hour.",
-      "reception": "The album won Alternative Album of the Year at the 2018 Juno Awards and was shortlisted for the 2018 Polaris Music Prize."
+      "blurb": "Portishead formed in Bristol around vocalist Beth Gibbons, producer Geoff Barrow and guitarist Adrian Utley, and Dummy is their debut — alongside Massive Attack's Blue Lines, the record that defined the Bristol trip-hop sound. Built from slowed hip-hop breaks, vinyl crackle, spy-film guitar and samples of Lalo Schifrin and Isaac Hayes, it sets Gibbons's spectral torch singing in noir atmosphere; the band has released only two further studio albums in the three decades since.",
+      "reception": "Dummy won the 1995 Mercury Music Prize, the UK's album-of-the-year award, on the strength of its debut-year acclaim."
     }
   ]
 }

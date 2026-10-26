@@ -1,43 +1,43 @@
 {
-  "date": "2026-10-25",
+  "date": "2026-10-26",
   "artwork": {
-    "wikidata": "Q2838937",
-    "title": "Avenue of Poplars near Moret-sur-Loing",
-    "interest": "implandscape"
+    "wikidata": "Q16988858",
+    "title": "The Kelpies",
+    "interest": "sculpture"
   },
   "wikis": {
     "wikipedia": [
       {
-        "url": "https://en.wikipedia.org/wiki/Tur%C3%A1n's_brick_factory_problem",
-        "title": "Turán's brick factory problem",
+        "url": "https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93Anning_theorem",
+        "title": "Erdős–Anning theorem",
         "topic": "math"
       },
       {
-        "url": "https://en.wikipedia.org/wiki/Sylvester%E2%80%93Gallai_theorem",
-        "title": "Sylvester–Gallai theorem",
-        "topic": "math"
+        "url": "https://en.wikipedia.org/wiki/Clavaria_fragilis",
+        "title": "Clavaria fragilis",
+        "topic": "sci"
       },
       {
-        "url": "https://en.wikipedia.org/wiki/Parinacota_(volcano)",
-        "title": "Parinacota (volcano)",
-        "topic": "climate"
+        "url": "https://en.wikipedia.org/wiki/The_Castle_of_Cagliostro",
+        "title": "The Castle of Cagliostro",
+        "topic": "arthist"
       }
     ],
     "nlab": {
-      "url": "https://ncatlab.org/nlab/show/adjoint+functor",
-      "title": "adjoint functor"
+      "url": "https://ncatlab.org/nlab/show/Higman's+embedding+theorem",
+      "title": "Higman's embedding theorem"
     },
     "sep": {
-      "url": "https://plato.stanford.edu/entries/pythagoras/",
-      "title": "Pythagoras"
+      "url": "https://plato.stanford.edu/entries/truth/",
+      "title": "Truth"
     },
     "attic": {
-      "url": "https://neugierde.github.io/cantors-attic/Completely_ineffable",
-      "title": "Completely ineffable"
+      "url": "https://neugierde.github.io/cantors-attic/Tall",
+      "title": "Tall cardinal"
     },
     "oeis": {
-      "url": "https://oeis.org/A134954",
-      "title": "Number of \"hyperforests\" on n labeled nodes, i.e., hypergraphs that have no cycles, assuming that each edge contains at least two vertices."
+      "url": "https://oeis.org/A003288",
+      "title": "Number of n-step self-avoiding walks on f.c.c. lattice from (0,0,0) to (0,0,2)"
     }
   }
 }

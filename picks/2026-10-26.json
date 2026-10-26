@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-26",
+  "artwork": {
+    "wikidata": "Q16988858",
+    "title": "The Kelpies",
+    "interest": "sculpture"
+  },
+  "wikis": {
+    "wikipedia": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93Anning_theorem",
+        "title": "Erdős–Anning theorem",
+        "topic": "math"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Clavaria_fragilis",
+        "title": "Clavaria fragilis",
+        "topic": "sci"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/The_Castle_of_Cagliostro",
+        "title": "The Castle of Cagliostro",
+        "topic": "arthist"
+      }
+    ],
+    "nlab": {
+      "url": "https://ncatlab.org/nlab/show/Higman's+embedding+theorem",
+      "title": "Higman's embedding theorem"
+    },
+    "sep": {
+      "url": "https://plato.stanford.edu/entries/truth/",
+      "title": "Truth"
+    },
+    "attic": {
+      "url": "https://neugierde.github.io/cantors-attic/Tall",
+      "title": "Tall cardinal"
+    },
+    "oeis": {
+      "url": "https://oeis.org/A003288",
+      "title": "Number of n-step self-avoiding walks on f.c.c. lattice from (0,0,0) to (0,0,2)"
+    }
+  }
+}
