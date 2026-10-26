@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-26T21:20:21.568Z",
+ "updated": "2026-10-26T21:20:23.277Z",
  "items": [
   {
    "kind": "album",
@@ -839,7 +839,7 @@
     "jazz guitar"
    ],
    "listened": "2026-10-26",
-   "liked": false,
+   "liked": true,
    "kind": "album",
    "key": "julian lage::view with a room",
    "when": "2026-10-26"
