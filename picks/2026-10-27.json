@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-27",
+  "artwork": {
+    "wikidata": "Q119362783",
+    "title": "The Double World (Picabia)",
+    "interest": "surrealism"
+  },
+  "wikis": {
+    "wikipedia": [
+      { "url": "https://en.wikipedia.org/wiki/Dual_graph", "title": "Dual graph", "topic": "math" },
+      { "url": "https://en.wikipedia.org/wiki/Matrix_(mathematics)", "title": "Matrix (mathematics)", "topic": "math" },
+      { "url": "https://en.wikipedia.org/wiki/Euthymides", "title": "Euthymides", "topic": "arthist" }
+    ],
+    "nlab": { "url": "https://ncatlab.org/nlab/show/localization+of+a+ring", "title": "localization of a ring" },
+    "sep": { "url": "https://plato.stanford.edu/entries/recursive-functions/", "title": "recursive functions" },
+    "attic": { "url": "https://neugierde.github.io/cantors-attic/Feferman-Schütte", "title": "Feferman-Schütte" },
+    "oeis": { "url": "https://oeis.org/A173546", "title": "Number of 3 X 3 semimagic squares with distinct positive values < n." }
+  }
+}

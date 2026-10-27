@@ -1,51 +1,42 @@
 {
-  "date": "2026-10-26",
-  "title": "Three albums for 26 October",
+  "date": "2026-10-27",
+  "title": "Three albums for 27 October",
   "albums": [
     {
       "category": "focus",
       "header": "Focus",
-      "artist": "David Axelrod",
-      "album": "Song of Innocence",
-      "year": 1968,
-      "genres": [
-        "jazz fusion",
-        "psychedelic soul"
-      ],
-      "spotify_url": "https://open.spotify.com/album/7cILxV3NtqDMfjQ0VD8tcs",
+      "artist": "Terry Riley",
+      "album": "A Rainbow in Curved Air",
+      "year": 1969,
+      "genres": ["minimalism", "electronic"],
+      "spotify_url": "https://open.spotify.com/album/6mJBD78Ohy7Ch8VVcniS10",
       "link_is_search": false,
-      "blurb": "David Axelrod was a staff producer at Capitol Records — behind Lou Rawls's mid-sixties hits and Cannonball Adderley's \"Mercy, Mercy, Mercy!\" — before stepping out under his own name with this debut, a seven-part instrumental suite inspired by William Blake's 1789 poetry collection. Recorded with Wrecking Crew session players including bassist Carol Kaye and drummer Earl Palmer, it fuses heavy breakbeat drums, baroque strings and psychedelic guitar into something between jazz fusion and orchestral pop, and its tracks — \"Holy Thursday\" above all — became bedrock sampling material for DJ Shadow, UNKLE and Swizz Beatz.",
-      "reception": "The album sold only about 75,000 copies in its first year and drew mixed contemporary reviews, but critics reassessed it as a classic in the 1990s and Pitchfork ranked it No. 144 on its 2017 list of the 200 best albums of the 1960s."
+      "blurb": "Terry Riley is the Californian composer whose 1964 piece In C helped launch musical minimalism. This 1969 Columbia Masterworks LP holds two side-long pieces: the title track layers overdubbed electric organ, electric harpsichord and dumbec percussion into fast interlocking patterns, while \"Poppy Nogood and the Phantom Band\" sets soprano saxophone against tape-delay loops. Both pieces are entirely instrumental, and Columbia packaged the record for rock audiences rather than the classical bin, which is how it reached a generation of rock and electronic musicians.",
+      "reception": "Pete Townshend credited the album as the inspiration for the organ part of \"Baba O'Riley\", whose title is partly a tribute to Riley, and the progressive rock band Curved Air took their name from it."
     },
     {
       "category": "familiar_artist",
       "header": "Enjoy",
-      "artist": "Feist",
-      "album": "The Reminder",
-      "year": 2007,
-      "genres": [
-        "indie pop",
-        "folk-pop"
-      ],
-      "spotify_url": "https://open.spotify.com/album/7bTdGfczXffzzNE9ssJj4Z",
+      "artist": "The Shins",
+      "album": "Chutes Too Narrow",
+      "year": 2003,
+      "genres": ["indie rock", "indie pop"],
+      "spotify_url": "https://open.spotify.com/album/6VVLUOWDHodYKY3jDh8Sck",
       "link_is_search": false,
-      "blurb": "Leslie Feist made her name in Toronto's Broken Social Scene collective before breaking out solo with Let It Die; The Reminder is its follow-up, recorded largely live with her band in a manor house outside Paris. It balances hushed ballads against buoyant, handclap-driven pop — \"I Feel It All\" and \"My Moon My Man\" among them — and its single \"1234\" became ubiquitous after soundtracking Apple's iPod nano commercial that fall.",
-      "reception": "The Reminder won Album of the Year and Pop Album of the Year at the 2008 Juno Awards and brought Feist four nominations at the 2008 Grammys, including Best Pop Vocal Album."
+      "blurb": "The second album by James Mercer's Albuquerque-formed band, released on Sub Pop in October 2003, recorded largely in the basement of Mercer's Portland house and mixed by Phil Ek. Where the debut Oh, Inverted World was hazy and reverb-washed, this one is drier and sharper: ten songs in thirty-four minutes that swing between garage-pop, country-tinged balladry and Mercer's knotty melodic writing.",
+      "reception": "It holds a Metacritic score of 88, posted what was then the best first-week sales in Sub Pop's history, and was later certified gold by the RIAA."
     },
     {
       "category": "new_artist",
       "header": "Explore",
-      "artist": "Portishead",
-      "album": "Dummy",
-      "year": 1994,
-      "genres": [
-        "trip-hop",
-        "downtempo"
-      ],
-      "spotify_url": "https://open.spotify.com/album/3539EbNgIdEDGBKkUf4wno",
+      "artist": "Novos Baianos",
+      "album": "Acabou Chorare",
+      "year": 1972,
+      "genres": ["MPB", "samba-rock"],
+      "spotify_url": "https://open.spotify.com/album/5pIlMNPZh4D9iJSoCfMzGi",
       "link_is_search": false,
-      "blurb": "Portishead formed in Bristol around vocalist Beth Gibbons, producer Geoff Barrow and guitarist Adrian Utley, and Dummy is their debut — alongside Massive Attack's Blue Lines, the record that defined the Bristol trip-hop sound. Built from slowed hip-hop breaks, vinyl crackle, spy-film guitar and samples of Lalo Schifrin and Isaac Hayes, it sets Gibbons's spectral torch singing in noir atmosphere; the band has released only two further studio albums in the three decades since.",
-      "reception": "Dummy won the 1995 Mercury Music Prize, the UK's album-of-the-year award, on the strength of its debut-year acclaim."
+      "blurb": "Novos Baianos were a communal band from Bahia — singer Baby Consuelo, guitarist Pepeu Gomes and songwriters Moraes Moreira and Paulinho Boca de Cantor — who lived, rehearsed and played football together outside Rio. Their second album grew out of a friendship with João Gilberto, who steered them back toward samba and bossa nova; the record folds those traditions into electric, guitar-driven rock, with the Assis Valente cover \"Brasil Pandeiro\" and the hit \"Preta Pretinha\" at its center.",
+      "reception": "Rolling Stone Brasil ranked it first on its 2007 expert poll of the 100 greatest Brazilian albums of all time."
     }
   ]
 }
