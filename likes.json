@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-26T23:13:57.579Z",
+ "updated": "2026-10-28T13:38:50.890Z",
  "items": [
   {
    "kind": "album",
@@ -882,6 +882,19 @@
    "kind": "album",
    "key": "tim hecker::ravedeath, 1972",
    "when": "2026-10-26"
+  },
+  {
+   "artist": "Jean-Michel Jarre",
+   "album": "Oxygène",
+   "genres": [
+    "electronic",
+    "ambient"
+   ],
+   "listened": "2026-10-28",
+   "liked": false,
+   "kind": "album",
+   "key": "jean-michel jarre::oxygène",
+   "when": "2026-10-28"
   },
   {
    "title": "The Poppy Field near Argenteuil",
