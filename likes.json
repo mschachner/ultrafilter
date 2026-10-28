@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-28T18:26:54.948Z",
+ "updated": "2026-10-28T18:26:59.672Z",
  "items": [
   {
    "kind": "album",
@@ -1542,6 +1542,15 @@
    "topic": "sci",
    "kind": "wiki",
    "key": "https://en.wikipedia.org/wiki/Peter_II_(cat)",
+   "when": "2026-10-28"
+  },
+  {
+   "source": "oeis",
+   "title": "Numbers n for which there is a unique k such that n = k + reverse(k).",
+   "url": "https://oeis.org/A072427",
+   "topic": null,
+   "kind": "wiki",
+   "key": "https://oeis.org/A072427",
    "when": "2026-10-28"
   },
   {
