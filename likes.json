@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-28T13:38:50.890Z",
+ "updated": "2026-10-28T13:38:53.717Z",
  "items": [
   {
    "kind": "album",
@@ -891,7 +891,7 @@
     "ambient"
    ],
    "listened": "2026-10-28",
-   "liked": false,
+   "liked": true,
    "kind": "album",
    "key": "jean-michel jarre::oxygène",
    "when": "2026-10-28"
