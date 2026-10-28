@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-28T13:38:53.717Z",
+ "updated": "2026-10-28T18:26:32.113Z",
  "items": [
   {
    "kind": "album",
@@ -1534,6 +1534,15 @@
    "kind": "wiki",
    "key": "https://ncatlab.org/nlab/show/adjoint+functor",
    "when": "2026-10-25"
+  },
+  {
+   "source": "wikipedia",
+   "title": "Peter II (cat)",
+   "url": "https://en.wikipedia.org/wiki/Peter_II_(cat)",
+   "topic": "sci",
+   "kind": "wiki",
+   "key": "https://en.wikipedia.org/wiki/Peter_II_(cat)",
+   "when": "2026-10-28"
   },
   {
    "title": "Eye Candy for Today: M.J. Galt pencil portrait",
