@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-28T18:26:32.113Z",
+ "updated": "2026-10-28T18:26:54.948Z",
  "items": [
   {
    "kind": "album",
@@ -1542,6 +1542,15 @@
    "topic": "sci",
    "kind": "wiki",
    "key": "https://en.wikipedia.org/wiki/Peter_II_(cat)",
+   "when": "2026-10-28"
+  },
+  {
+   "source": "oeis",
+   "title": "Number of permutations p of [n] with no fixed points and displacement of elements restricted by five: 1 <= |p(i)-i| <= 5.",
+   "url": "https://oeis.org/A259778",
+   "topic": null,
+   "kind": "wiki",
+   "key": "https://oeis.org/A259778",
    "when": "2026-10-28"
   },
   {
