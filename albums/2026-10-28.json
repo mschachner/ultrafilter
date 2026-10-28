@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-28",
+  "title": "Three albums for 28 October",
+  "albums": [
+    {
+      "category": "focus",
+      "header": "Focus",
+      "artist": "Jean-Michel Jarre",
+      "album": "Oxygène",
+      "year": 1976,
+      "genres": [
+        "electronic",
+        "ambient"
+      ],
+      "spotify_url": "https://open.spotify.com/album/3e7TxckusgnC1AYnAqbl2z",
+      "link_is_search": false,
+      "blurb": "Jarre recorded Oxygène almost single-handedly in a makeshift studio in his Paris apartment, layering analog synthesizers (ARP 2600, EMS VCS3, Eminent 310) and Mellotron into a continuous six-part suite with no vocals of any kind. Released in December 1976 on Disques Motors after several labels had turned it down as unmarketable, it became the record that carried French electronic music to a mass audience, and Jarre returned to the concept decades later with Oxygène 7–13 (1997) and Oxygène 3 (2016).",
+      "reception": "It reached No. 1 on the French albums chart and No. 2 in the UK, and its worldwide sales are commonly estimated between 12 and 18 million copies, making it one of the best-selling French-produced albums ever."
+    },
+    {
+      "category": "familiar_artist",
+      "header": "Enjoy",
+      "artist": "Madison Cunningham",
+      "album": "Ace",
+      "year": 2025,
+      "genres": [
+        "art folk",
+        "chamber pop"
+      ],
+      "spotify_url": "https://open.spotify.com/album/1A8y28WkLlz79cpf843cWV",
+      "link_is_search": false,
+      "blurb": "Cunningham's third studio album, released in October 2025 on Verve Forecast and co-produced with Robbie Lackritz, was written in the aftermath of her divorce. It marks a deliberate shift from the knotty electric-guitar writing of Revealer, which won the 2023 Grammy for Best Folk Album, to piano as the record's main instrument, dressed in woodwind and string arrangements across its fourteen tracks; Fleet Foxes guest on the single \"Wake.\"",
+      "reception": "Far Out Magazine rated it four stars out of five, calling it a masterclass and drawing comparisons to Joni Mitchell and Adrianne Lenker."
+    },
+    {
+      "category": "new_artist",
+      "header": "Explore",
+      "artist": "Juana Molina",
+      "album": "Un día",
+      "year": 2008,
+      "genres": [
+        "folktronica",
+        "experimental pop"
+      ],
+      "spotify_url": "https://open.spotify.com/album/7s1SJJVXM27pcwawLuVOkm",
+      "link_is_search": false,
+      "blurb": "Molina was one of Argentina's most famous television comedians before she walked away from her hit sketch show in the mid-1990s to make music. Un día, her fifth album, released on Domino in October 2008, was recorded almost entirely alone at her home outside Buenos Aires: eight long tracks that build hypnotic loops from acoustic guitar, analog synthesizer and layer upon layer of her own chanted voice, with Gareth Dickson the lone guest on guitar.",
+      "reception": "The album holds a Metacritic score of 77/100, with PopMatters rating it 8/10 and Pitchfork 7.5."
+    }
+  ]
+}

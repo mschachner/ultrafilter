@@ -1,42 +1,51 @@
 {
-  "date": "2026-10-27",
-  "title": "Three albums for 27 October",
+  "date": "2026-10-28",
+  "title": "Three albums for 28 October",
   "albums": [
     {
       "category": "focus",
       "header": "Focus",
-      "artist": "Terry Riley",
-      "album": "A Rainbow in Curved Air",
-      "year": 1969,
-      "genres": ["minimalism", "electronic"],
-      "spotify_url": "https://open.spotify.com/album/6mJBD78Ohy7Ch8VVcniS10",
+      "artist": "Jean-Michel Jarre",
+      "album": "Oxygène",
+      "year": 1976,
+      "genres": [
+        "electronic",
+        "ambient"
+      ],
+      "spotify_url": "https://open.spotify.com/album/3e7TxckusgnC1AYnAqbl2z",
       "link_is_search": false,
-      "blurb": "Terry Riley is the Californian composer whose 1964 piece In C helped launch musical minimalism. This 1969 Columbia Masterworks LP holds two side-long pieces: the title track layers overdubbed electric organ, electric harpsichord and dumbec percussion into fast interlocking patterns, while \"Poppy Nogood and the Phantom Band\" sets soprano saxophone against tape-delay loops. Both pieces are entirely instrumental, and Columbia packaged the record for rock audiences rather than the classical bin, which is how it reached a generation of rock and electronic musicians.",
-      "reception": "Pete Townshend credited the album as the inspiration for the organ part of \"Baba O'Riley\", whose title is partly a tribute to Riley, and the progressive rock band Curved Air took their name from it."
+      "blurb": "Jarre recorded Oxygène almost single-handedly in a makeshift studio in his Paris apartment, layering analog synthesizers (ARP 2600, EMS VCS3, Eminent 310) and Mellotron into a continuous six-part suite with no vocals of any kind. Released in December 1976 on Disques Motors after several labels had turned it down as unmarketable, it became the record that carried French electronic music to a mass audience, and Jarre returned to the concept decades later with Oxygène 7–13 (1997) and Oxygène 3 (2016).",
+      "reception": "It reached No. 1 on the French albums chart and No. 2 in the UK, and its worldwide sales are commonly estimated between 12 and 18 million copies, making it one of the best-selling French-produced albums ever."
     },
     {
       "category": "familiar_artist",
       "header": "Enjoy",
-      "artist": "The Shins",
-      "album": "Chutes Too Narrow",
-      "year": 2003,
-      "genres": ["indie rock", "indie pop"],
-      "spotify_url": "https://open.spotify.com/album/6VVLUOWDHodYKY3jDh8Sck",
+      "artist": "Madison Cunningham",
+      "album": "Ace",
+      "year": 2025,
+      "genres": [
+        "art folk",
+        "chamber pop"
+      ],
+      "spotify_url": "https://open.spotify.com/album/1A8y28WkLlz79cpf843cWV",
       "link_is_search": false,
-      "blurb": "The second album by James Mercer's Albuquerque-formed band, released on Sub Pop in October 2003, recorded largely in the basement of Mercer's Portland house and mixed by Phil Ek. Where the debut Oh, Inverted World was hazy and reverb-washed, this one is drier and sharper: ten songs in thirty-four minutes that swing between garage-pop, country-tinged balladry and Mercer's knotty melodic writing.",
-      "reception": "It holds a Metacritic score of 88, posted what was then the best first-week sales in Sub Pop's history, and was later certified gold by the RIAA."
+      "blurb": "Cunningham's third studio album, released in October 2025 on Verve Forecast and co-produced with Robbie Lackritz, was written in the aftermath of her divorce. It marks a deliberate shift from the knotty electric-guitar writing of Revealer, which won the 2023 Grammy for Best Folk Album, to piano as the record's main instrument, dressed in woodwind and string arrangements across its fourteen tracks; Fleet Foxes guest on the single \"Wake.\"",
+      "reception": "Far Out Magazine rated it four stars out of five, calling it a masterclass and drawing comparisons to Joni Mitchell and Adrianne Lenker."
     },
     {
       "category": "new_artist",
       "header": "Explore",
-      "artist": "Novos Baianos",
-      "album": "Acabou Chorare",
-      "year": 1972,
-      "genres": ["MPB", "samba-rock"],
-      "spotify_url": "https://open.spotify.com/album/5pIlMNPZh4D9iJSoCfMzGi",
+      "artist": "Juana Molina",
+      "album": "Un día",
+      "year": 2008,
+      "genres": [
+        "folktronica",
+        "experimental pop"
+      ],
+      "spotify_url": "https://open.spotify.com/album/7s1SJJVXM27pcwawLuVOkm",
       "link_is_search": false,
-      "blurb": "Novos Baianos were a communal band from Bahia — singer Baby Consuelo, guitarist Pepeu Gomes and songwriters Moraes Moreira and Paulinho Boca de Cantor — who lived, rehearsed and played football together outside Rio. Their second album grew out of a friendship with João Gilberto, who steered them back toward samba and bossa nova; the record folds those traditions into electric, guitar-driven rock, with the Assis Valente cover \"Brasil Pandeiro\" and the hit \"Preta Pretinha\" at its center.",
-      "reception": "Rolling Stone Brasil ranked it first on its 2007 expert poll of the 100 greatest Brazilian albums of all time."
+      "blurb": "Molina was one of Argentina's most famous television comedians before she walked away from her hit sketch show in the mid-1990s to make music. Un día, her fifth album, released on Domino in October 2008, was recorded almost entirely alone at her home outside Buenos Aires: eight long tracks that build hypnotic loops from acoustic guitar, analog synthesizer and layer upon layer of her own chanted voice, with Gareth Dickson the lone guest on guitar.",
+      "reception": "The album holds a Metacritic score of 77/100, with PopMatters rating it 8/10 and Pitchfork 7.5."
     }
   ]
 }
