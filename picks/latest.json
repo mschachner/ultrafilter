@@ -1,43 +1,43 @@
 {
-  "date": "2026-10-28",
-  "artwork": {
-    "wikidata": "Q3569753",
-    "title": "Woman I",
-    "interest": "abex"
+ "date": "2026-10-29",
+ "artwork": {
+  "wikidata": "Q55525580",
+  "title": "Propellerfrau",
+  "interest": "popart"
+ },
+ "wikis": {
+  "wikipedia": [
+   {
+    "url": "https://en.wikipedia.org/wiki/Rule_of_inference",
+    "title": "Rule of inference",
+    "topic": "math"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Hammond_organ",
+    "title": "Hammond organ",
+    "topic": "arts"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Anahim_hotspot",
+    "title": "Anahim hotspot",
+    "topic": "climate"
+   }
+  ],
+  "nlab": {
+   "url": "https://ncatlab.org/nlab/show/Martin-L%C3%B6f+dependent+type+theory",
+   "title": "Martin-Löf dependent type theory"
   },
-  "wikis": {
-    "wikipedia": [
-      {
-        "url": "https://en.wikipedia.org/wiki/Cistercian_numerals",
-        "title": "Cistercian numerals",
-        "topic": "math"
-      },
-      {
-        "url": "https://en.wikipedia.org/wiki/Peter_II_(cat)",
-        "title": "Peter II (cat)",
-        "topic": "sci"
-      },
-      {
-        "url": "https://en.wikipedia.org/wiki/Medieval_stained_glass_in_Sweden",
-        "title": "Medieval stained glass in Sweden",
-        "topic": "arthist"
-      }
-    ],
-    "nlab": {
-      "url": "https://ncatlab.org/nlab/show/omega-category",
-      "title": "omega-category"
-    },
-    "sep": {
-      "url": "https://plato.stanford.edu/entries/aesthetic-judgment/",
-      "title": "aesthetic judgment"
-    },
-    "attic": {
-      "url": "https://neugierde.github.io/cantors-attic/Inaccessible",
-      "title": "Inaccessible"
-    },
-    "oeis": {
-      "url": "https://oeis.org/A240969",
-      "title": "Decimal expansion of the breadth of the \"caliper\", the broadest worm of unit length."
-    }
+  "sep": {
+   "url": "https://plato.stanford.edu/entries/logic-paraconsistent/",
+   "title": "Paraconsistent Logic"
+  },
+  "attic": {
+   "url": "https://neugierde.github.io/cantors-attic/Omega_one_chess",
+   "title": "Omega one chess"
+  },
+  "oeis": {
+   "url": "https://oeis.org/A193239",
+   "title": "Number of \"Reverse and Add\" steps needed to reach a palindrome using the complex base -1+i, or -1 if a palindrome is never reached."
   }
+ }
 }

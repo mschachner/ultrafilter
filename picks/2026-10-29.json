@@ -1,0 +1,43 @@
+{
+ "date": "2026-10-29",
+ "artwork": {
+  "wikidata": "Q55525580",
+  "title": "Propellerfrau",
+  "interest": "popart"
+ },
+ "wikis": {
+  "wikipedia": [
+   {
+    "url": "https://en.wikipedia.org/wiki/Rule_of_inference",
+    "title": "Rule of inference",
+    "topic": "math"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Hammond_organ",
+    "title": "Hammond organ",
+    "topic": "arts"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Anahim_hotspot",
+    "title": "Anahim hotspot",
+    "topic": "climate"
+   }
+  ],
+  "nlab": {
+   "url": "https://ncatlab.org/nlab/show/Martin-L%C3%B6f+dependent+type+theory",
+   "title": "Martin-Löf dependent type theory"
+  },
+  "sep": {
+   "url": "https://plato.stanford.edu/entries/logic-paraconsistent/",
+   "title": "Paraconsistent Logic"
+  },
+  "attic": {
+   "url": "https://neugierde.github.io/cantors-attic/Omega_one_chess",
+   "title": "Omega one chess"
+  },
+  "oeis": {
+   "url": "https://oeis.org/A193239",
+   "title": "Number of \"Reverse and Add\" steps needed to reach a palindrome using the complex base -1+i, or -1 if a palindrome is never reached."
+  }
+ }
+}
