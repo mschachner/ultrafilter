@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-29T15:43:07.202Z",
+ "updated": "2026-10-29T15:43:10.957Z",
  "items": [
   {
    "kind": "album",
@@ -1561,6 +1561,15 @@
    "kind": "wiki",
    "key": "https://oeis.org/A259778",
    "when": "2026-10-28"
+  },
+  {
+   "source": "attic",
+   "title": "The omega one of chess",
+   "url": "https://neugierde.github.io/cantors-attic/Omega_one_chess",
+   "topic": null,
+   "kind": "wiki",
+   "key": "https://neugierde.github.io/cantors-attic/Omega_one_chess",
+   "when": "2026-10-29"
   },
   {
    "source": "oeis",
