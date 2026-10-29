@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-29T15:43:02.290Z",
+ "updated": "2026-10-29T15:43:07.202Z",
  "items": [
   {
    "kind": "album",
@@ -1561,6 +1561,15 @@
    "kind": "wiki",
    "key": "https://oeis.org/A259778",
    "when": "2026-10-28"
+  },
+  {
+   "source": "oeis",
+   "title": "Numbers k such that k^3 has only odd digits.",
+   "url": "https://oeis.org/A030099",
+   "topic": null,
+   "kind": "wiki",
+   "key": "https://oeis.org/A030099",
+   "when": "2026-10-29"
   },
   {
    "source": "oeis",
