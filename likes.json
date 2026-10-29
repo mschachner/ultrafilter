@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-28T18:26:59.672Z",
+ "updated": "2026-10-29T15:43:02.290Z",
  "items": [
   {
    "kind": "album",
@@ -1561,6 +1561,15 @@
    "kind": "wiki",
    "key": "https://oeis.org/A259778",
    "when": "2026-10-28"
+  },
+  {
+   "source": "oeis",
+   "title": "Number of \"Reverse and Add\" steps needed to reach a palindrome using the complex base -1+i, or -1 if a palindrome is never reached.",
+   "url": "https://oeis.org/A193239",
+   "topic": null,
+   "kind": "wiki",
+   "key": "https://oeis.org/A193239",
+   "when": "2026-10-29"
   },
   {
    "title": "Eye Candy for Today: M.J. Galt pencil portrait",
