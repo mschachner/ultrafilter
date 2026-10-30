@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-30",
+  "artwork": {
+    "wikidata": "Q3541645",
+    "title": "One Hundred Aspects of the Moon",
+    "interest": "ukiyoe"
+  },
+  "wikis": {
+    "wikipedia": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Cantor's_isomorphism_theorem",
+        "title": "Cantor's isomorphism theorem",
+        "topic": "math"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Porpoise",
+        "title": "Porpoise",
+        "topic": "sci"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Hamidou_Maiga",
+        "title": "Hamidou Maiga",
+        "topic": "arthist"
+      }
+    ],
+    "nlab": {
+      "url": "https://ncatlab.org/nlab/show/nCob",
+      "title": "nCob"
+    },
+    "sep": {
+      "url": "https://plato.stanford.edu/entries/dedekind-foundations/",
+      "title": "Dedekind's Contributions to the Foundations of Mathematics"
+    },
+    "attic": {
+      "url": "https://neugierde.github.io/cantors-attic/Cardinal_characteristics",
+      "title": "Cardinal characteristics"
+    },
+    "oeis": {
+      "url": "https://oeis.org/A271985",
+      "title": "G_9(n), where G is the Goodstein function defined in A266201."
+    }
+  }
+}

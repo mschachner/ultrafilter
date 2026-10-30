@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-30",
+  "title": "Three albums for 30 October",
+  "albums": [
+    {
+      "category": "focus",
+      "header": "Focus",
+      "artist": "Tortoise",
+      "album": "Millions Now Living Will Never Die",
+      "year": 1996,
+      "genres": ["post-rock", "instrumental"],
+      "spotify_url": "https://open.spotify.com/album/3X20tXW0zsl5imVzETPhQh",
+      "link_is_search": false,
+      "blurb": "Tortoise is a Chicago group of drummers and multi-instrumentalists — John McEntire, Dan Bitney, John Herndon, Doug McCombs and, at this point, Slint guitarist David Pajo — who swap instruments freely across bass, vibraphone, synthesizers and percussion. This second album, released on Thrill Jockey in January 1996, opens with the 21-minute \"Djed,\" a spliced-together suite of dub bass, krautrock motorik and mallet patterns that takes up half the record; the remaining five tracks are shorter studies in the same vocabulary. The whole album is instrumental.",
+      "reception": "Uncut has called the album a \"post-rock touchstone,\" and a 25th-anniversary retrospective in Rock and Roll Globe credited it with making Tortoise icons of the genre."
+    },
+    {
+      "category": "familiar_artist",
+      "header": "Enjoy",
+      "artist": "Moses Sumney",
+      "album": "græ",
+      "year": 2020,
+      "genres": ["art pop", "alternative R&B"],
+      "spotify_url": "https://open.spotify.com/album/35CHoLB0GEwYlOomriifC6",
+      "link_is_search": false,
+      "blurb": "Sumney's second album, released on Jagjaguwar in two parts — twelve songs in February 2020 and the remaining eight that May — is a double album built around his multi-octave falsetto and the idea of greyness: living between fixed categories of genre, race and romantic identity. Where his 2017 debut Aromanticism was spare and hushed, græ layers chamber strings, jazz horns, synthesizers and spoken-word interludes, with contributors including Thundercat, Jill Scott and author Michael Chabon.",
+      "reception": "The album holds a Metacritic score of 90 from 17 reviews, indicating universal acclaim, and The A.V. Club ranked it ninth among its 20 best albums of 2020."
+    },
+    {
+      "category": "new_artist",
+      "header": "Explore",
+      "artist": "Sly & The Family Stone",
+      "album": "Stand!",
+      "year": 1969,
+      "genres": ["funk", "psychedelic soul"],
+      "spotify_url": "https://open.spotify.com/album/7iwS1r6JHYJe9xpPjzmWqD",
+      "link_is_search": false,
+      "blurb": "Sly Stone led the first major American band that was integrated across both race and gender, and Stand!, their fourth album, released on Epic in May 1969, is where the San Francisco group's utopian psychedelic pop and hard funk fused completely. It holds \"Everyday People,\" \"Sing a Simple Song,\" \"I Want to Take You Higher\" and the thirteen-minute groove \"Sex Machine,\" and came out three months before the band's star-making 3 a.m. set at Woodstock. Larry Graham's slap bass on this record became a foundation of funk technique.",
+      "reception": "Stand! peaked at No. 13 on the Billboard pop albums chart and No. 3 on the R&B albums chart, was certified gold by the RIAA in December 1969, and \"Everyday People\" had already topped the Hot 100 that February."
+    }
+  ]
+}

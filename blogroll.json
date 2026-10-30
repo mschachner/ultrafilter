@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-09T09:19:48.973Z",
+ "updated": "2026-10-30T09:15:36.568Z",
  "feeds": [
   {
    "name": "Joel David Hamkins",
@@ -72,9 +72,12 @@
     "math",
     "sci"
    ],
-   "status": "active",
+   "status": "archived",
    "added": "2026-09-18",
-   "addedBy": "mark"
+   "addedBy": "mark",
+   "archived": "2026-10-30",
+   "archivedBy": "task",
+   "reason": "no liked posts in 42 days"
   },
   {
    "name": "Peter Cameron's Blog",
@@ -84,9 +87,12 @@
    "topics": [
     "math"
    ],
-   "status": "active",
+   "status": "archived",
    "added": "2026-09-18",
-   "addedBy": "mark"
+   "addedBy": "mark",
+   "archived": "2026-10-30",
+   "archivedBy": "task",
+   "reason": "no liked posts in 42 days"
   },
   {
    "name": "In the Pipeline",
@@ -96,9 +102,12 @@
    "topics": [
     "sci"
    ],
-   "status": "active",
+   "status": "archived",
    "added": "2026-09-18",
-   "addedBy": "mark"
+   "addedBy": "mark",
+   "archived": "2026-10-30",
+   "archivedBy": "task",
+   "reason": "no liked posts in 42 days"
   },
   {
    "name": "Of Particular Significance",
@@ -108,9 +117,12 @@
    "topics": [
     "sci"
    ],
-   "status": "active",
+   "status": "archived",
    "added": "2026-09-18",
-   "addedBy": "mark"
+   "addedBy": "mark",
+   "archived": "2026-10-30",
+   "archivedBy": "task",
+   "reason": "no liked posts in 42 days"
   },
   {
    "name": "Small Things Considered",
@@ -132,9 +144,12 @@
    "topics": [
     "sci"
    ],
-   "status": "active",
+   "status": "archived",
    "added": "2026-09-18",
-   "addedBy": "mark"
+   "addedBy": "mark",
+   "archived": "2026-10-30",
+   "archivedBy": "task",
+   "reason": "no liked posts in 42 days"
   },
   {
    "name": "Smarthistory",
@@ -147,9 +162,12 @@
    "topics": [
     "arthist"
    ],
-   "status": "active",
+   "status": "archived",
    "added": "2026-09-18",
-   "addedBy": "mark"
+   "addedBy": "mark",
+   "archived": "2026-10-30",
+   "archivedBy": "task",
+   "reason": "no liked posts in 42 days"
   },
   {
    "name": "Art History News",
@@ -159,9 +177,12 @@
    "topics": [
     "arthist"
    ],
-   "status": "active",
+   "status": "archived",
    "added": "2026-09-18",
-   "addedBy": "mark"
+   "addedBy": "mark",
+   "archived": "2026-10-30",
+   "archivedBy": "task",
+   "reason": "no liked posts in 42 days"
   },
   {
    "name": "Journal18",
@@ -171,9 +192,12 @@
    "topics": [
     "arthist"
    ],
-   "status": "active",
+   "status": "archived",
    "added": "2026-09-18",
-   "addedBy": "mark"
+   "addedBy": "mark",
+   "archived": "2026-10-30",
+   "archivedBy": "task",
+   "reason": "no liked posts in 42 days"
   },
   {
    "name": "Observations on Film Art",
@@ -183,9 +207,12 @@
    "topics": [
     "arts"
    ],
-   "status": "active",
+   "status": "archived",
    "added": "2026-09-18",
-   "addedBy": "mark"
+   "addedBy": "mark",
+   "archived": "2026-10-30",
+   "archivedBy": "task",
+   "reason": "no liked posts in 42 days"
   },
   {
    "name": "The Rest Is Noise",
@@ -195,9 +222,12 @@
    "topics": [
     "arts"
    ],
-   "status": "active",
+   "status": "archived",
    "added": "2026-09-18",
-   "addedBy": "mark"
+   "addedBy": "mark",
+   "archived": "2026-10-30",
+   "archivedBy": "task",
+   "reason": "no liked posts in 42 days"
   },
   {
    "name": "HowlRound",
@@ -207,9 +237,12 @@
    "topics": [
     "arts"
    ],
-   "status": "active",
+   "status": "archived",
    "added": "2026-09-18",
-   "addedBy": "mark"
+   "addedBy": "mark",
+   "archived": "2026-10-30",
+   "archivedBy": "task",
+   "reason": "no liked posts in 42 days"
   },
   {
    "name": "DanceViewTimes",
@@ -219,9 +252,12 @@
    "topics": [
     "arts"
    ],
-   "status": "active",
+   "status": "archived",
    "added": "2026-09-18",
-   "addedBy": "mark"
+   "addedBy": "mark",
+   "archived": "2026-10-30",
+   "archivedBy": "task",
+   "reason": "no liked posts in 42 days"
   },
   {
    "name": "Two Coats of Paint",
@@ -231,9 +267,12 @@
    "topics": [
     "arts"
    ],
-   "status": "active",
+   "status": "archived",
    "added": "2026-09-18",
-   "addedBy": "mark"
+   "addedBy": "mark",
+   "archived": "2026-10-30",
+   "archivedBy": "task",
+   "reason": "no liked posts in 42 days"
   },
   {
    "name": "RealClimate",
@@ -243,9 +282,12 @@
    "topics": [
     "climate"
    ],
-   "status": "active",
+   "status": "archived",
    "added": "2026-09-18",
-   "addedBy": "mark"
+   "addedBy": "mark",
+   "archived": "2026-10-30",
+   "archivedBy": "task",
+   "reason": "no liked posts in 42 days"
   },
   {
    "name": "Carbon Brief",
@@ -255,9 +297,12 @@
    "topics": [
     "climate"
    ],
-   "status": "active",
+   "status": "archived",
    "added": "2026-09-18",
-   "addedBy": "mark"
+   "addedBy": "mark",
+   "archived": "2026-10-30",
+   "archivedBy": "task",
+   "reason": "no liked posts in 42 days"
   },
   {
    "name": "Legal Planet",
@@ -267,9 +312,12 @@
    "topics": [
     "climate"
    ],
-   "status": "active",
+   "status": "archived",
    "added": "2026-09-18",
-   "addedBy": "mark"
+   "addedBy": "mark",
+   "archived": "2026-10-30",
+   "archivedBy": "task",
+   "reason": "no liked posts in 42 days"
   },
   {
    "name": "Left for the Reader",
@@ -279,9 +327,12 @@
    "topics": [
     "math"
    ],
-   "status": "active",
+   "status": "archived",
    "added": "2026-09-18",
-   "addedBy": "mark"
+   "addedBy": "mark",
+   "archived": "2026-10-30",
+   "archivedBy": "task",
+   "reason": "no liked posts in 42 days"
   },
   {
    "name": "Spoon & Tamago",
@@ -526,6 +577,19 @@
    "added": "2026-10-09",
    "addedBy": "task",
    "note": "Erika Gaffney's blog on early modern women artists, with guest essays by scholars - active monthly and adjacent to the liked art-history reading"
+  },
+  {
+   "name": "Transitional Technology",
+   "author": "Ethan Iverson",
+   "site": "https://iverson.substack.com/",
+   "feed": "https://iverson.substack.com/feed",
+   "topics": [
+    "arts"
+   ],
+   "status": "active",
+   "added": "2026-10-30",
+   "addedBy": "task",
+   "note": "Ethan Iverson, pianist formerly of The Bad Plus, writing deeply on jazz and classical music - continues his Do the Math blog, fits the daily-album habit"
   }
  ]
 }

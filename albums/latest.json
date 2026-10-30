@@ -1,51 +1,42 @@
 {
- "date": "2026-10-29",
- "title": "Three albums for 29 October",
- "albums": [
-  {
-   "category": "focus",
-   "header": "Focus",
-   "artist": "The Dave Brubeck Quartet",
-   "album": "Time Out",
-   "year": 1959,
-   "genres": [
-    "cool jazz",
-    "West Coast jazz"
-   ],
-   "spotify_url": "https://open.spotify.com/album/0nTTEAhCZsbbeplyDMIFuA",
-   "link_is_search": false,
-   "blurb": "Recorded at Columbia's 30th Street Studio in New York over three sessions in the summer of 1959, Time Out was the Brubeck quartet's experiment in time signatures from outside the jazz mainstream: “Blue Rondo à la Turk” adapts a 9/8 Turkish aksak rhythm the band encountered on a State Department tour, and Paul Desmond's “Take Five” swings entirely in 5/4. It is the defining statement of the classic lineup — Brubeck on piano, Desmond on alto saxophone, Eugene Wright on bass and Joe Morello on drums — and the whole record is instrumental quartet jazz.",
-   "reception": "The album reached No. 2 on the Billboard albums chart and became the first jazz album to sell a million copies, while “Take Five” reached No. 25 on the pop singles chart in 1961 on its way to becoming the first million-selling jazz single."
-  },
-  {
-   "category": "familiar_artist",
-   "header": "Enjoy",
-   "artist": "Cibo Matto",
-   "album": "Viva! La Woman",
-   "year": 1996,
-   "genres": [
-    "trip hop",
-    "art pop"
-   ],
-   "spotify_url": "https://open.spotify.com/album/1Sha7blBHJ2ZBK5FjVXU9W",
-   "link_is_search": false,
-   "blurb": "Cibo Matto were Yuka Honda and Miho Hatori, two Japanese-born musicians working in New York's downtown scene: Hatori sang while Honda built the tracks from keyboards, samples and sound collages. Viva! La Woman, their 1996 debut for Warner Bros., was produced with Mitchell Froom and Tchad Blake and recorded partly at Electric Lady Studios, and nearly every song is named for food — “Apple,” “Beef Jerky,” “Birthday Cake,” “Artichoke” — delivered over loops that swerve between hip-hop, bossa nova and lounge pop.",
-   "reception": "Spin ranked it the 10th-best album of 1996 and it placed 27th in that year's Village Voice Pazz & Jop critics' poll, while spending six weeks at No. 1 on CMJ's college radio chart."
-  },
-  {
-   "category": "new_artist",
-   "header": "Explore",
-   "artist": "Gillian Welch",
-   "album": "Time (The Revelator)",
-   "year": 2001,
-   "genres": [
-    "Americana",
-    "folk"
-   ],
-   "spotify_url": "https://open.spotify.com/album/55FP2ypQcghszSqylyBRbp",
-   "link_is_search": false,
-   "blurb": "Gillian Welch records as a duo with guitarist David Rawlings, singing spare, close-harmony Americana rooted in Appalachian balladry, old-time and bluegrass. Time (The Revelator), her third album and the first released on the pair's own Acony label, was produced by Rawlings and cut largely live at Nashville's historic RCA Studio B; its songs turn the old-time palette toward slow meditations on American myth — Lincoln, the Titanic, John Henry, Elvis — and close with the fourteen-minute “I Dream a Highway.”",
-   "reception": "The album was nominated for Best Contemporary Folk Album at the 2002 Grammy Awards, and Paste later ranked it No. 7 on its list of the 50 best albums of the 2000s."
-  }
- ]
+  "date": "2026-10-30",
+  "title": "Three albums for 30 October",
+  "albums": [
+    {
+      "category": "focus",
+      "header": "Focus",
+      "artist": "Tortoise",
+      "album": "Millions Now Living Will Never Die",
+      "year": 1996,
+      "genres": ["post-rock", "instrumental"],
+      "spotify_url": "https://open.spotify.com/album/3X20tXW0zsl5imVzETPhQh",
+      "link_is_search": false,
+      "blurb": "Tortoise is a Chicago group of drummers and multi-instrumentalists — John McEntire, Dan Bitney, John Herndon, Doug McCombs and, at this point, Slint guitarist David Pajo — who swap instruments freely across bass, vibraphone, synthesizers and percussion. This second album, released on Thrill Jockey in January 1996, opens with the 21-minute \"Djed,\" a spliced-together suite of dub bass, krautrock motorik and mallet patterns that takes up half the record; the remaining five tracks are shorter studies in the same vocabulary. The whole album is instrumental.",
+      "reception": "Uncut has called the album a \"post-rock touchstone,\" and a 25th-anniversary retrospective in Rock and Roll Globe credited it with making Tortoise icons of the genre."
+    },
+    {
+      "category": "familiar_artist",
+      "header": "Enjoy",
+      "artist": "Moses Sumney",
+      "album": "græ",
+      "year": 2020,
+      "genres": ["art pop", "alternative R&B"],
+      "spotify_url": "https://open.spotify.com/album/35CHoLB0GEwYlOomriifC6",
+      "link_is_search": false,
+      "blurb": "Sumney's second album, released on Jagjaguwar in two parts — twelve songs in February 2020 and the remaining eight that May — is a double album built around his multi-octave falsetto and the idea of greyness: living between fixed categories of genre, race and romantic identity. Where his 2017 debut Aromanticism was spare and hushed, græ layers chamber strings, jazz horns, synthesizers and spoken-word interludes, with contributors including Thundercat, Jill Scott and author Michael Chabon.",
+      "reception": "The album holds a Metacritic score of 90 from 17 reviews, indicating universal acclaim, and The A.V. Club ranked it ninth among its 20 best albums of 2020."
+    },
+    {
+      "category": "new_artist",
+      "header": "Explore",
+      "artist": "Sly & The Family Stone",
+      "album": "Stand!",
+      "year": 1969,
+      "genres": ["funk", "psychedelic soul"],
+      "spotify_url": "https://open.spotify.com/album/7iwS1r6JHYJe9xpPjzmWqD",
+      "link_is_search": false,
+      "blurb": "Sly Stone led the first major American band that was integrated across both race and gender, and Stand!, their fourth album, released on Epic in May 1969, is where the San Francisco group's utopian psychedelic pop and hard funk fused completely. It holds \"Everyday People,\" \"Sing a Simple Song,\" \"I Want to Take You Higher\" and the thirteen-minute groove \"Sex Machine,\" and came out three months before the band's star-making 3 a.m. set at Woodstock. Larry Graham's slap bass on this record became a foundation of funk technique.",
+      "reception": "Stand! peaked at No. 13 on the Billboard pop albums chart and No. 3 on the R&B albums chart, was certified gold by the RIAA in December 1969, and \"Everyday People\" had already topped the Hot 100 that February."
+    }
+  ]
 }
