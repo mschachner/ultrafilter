@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-01T14:45:44.444Z",
+ "updated": "2026-11-01T14:45:45.963Z",
  "items": [
   {
    "kind": "album",
@@ -904,7 +904,7 @@
     "electronic"
    ],
    "listened": "2026-11-01",
-   "liked": false,
+   "liked": true,
    "kind": "album",
    "key": "lindstrøm::where you go i go too",
    "when": "2026-11-01"
