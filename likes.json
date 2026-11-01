@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-29T15:43:10.957Z",
+ "updated": "2026-11-01T14:45:44.444Z",
  "items": [
   {
    "kind": "album",
@@ -895,6 +895,19 @@
    "kind": "album",
    "key": "jean-michel jarre::oxygène",
    "when": "2026-10-28"
+  },
+  {
+   "artist": "Lindstrøm",
+   "album": "Where You Go I Go Too",
+   "genres": [
+    "space disco",
+    "electronic"
+   ],
+   "listened": "2026-11-01",
+   "liked": false,
+   "kind": "album",
+   "key": "lindstrøm::where you go i go too",
+   "when": "2026-11-01"
   },
   {
    "title": "The Poppy Field near Argenteuil",
