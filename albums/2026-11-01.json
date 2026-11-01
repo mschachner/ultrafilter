@@ -1,0 +1,51 @@
+{
+  "date": "2026-11-01",
+  "title": "Three albums for 1 November",
+  "albums": [
+    {
+      "category": "focus",
+      "header": "Focus",
+      "artist": "Mustafa Özkent",
+      "album": "Gençlik İle Elele",
+      "year": 1973,
+      "genres": [
+        "Anatolian funk",
+        "instrumental psychedelia"
+      ],
+      "spotify_url": "https://open.spotify.com/album/3bnqPaNk1lbje5XwhZuPwz",
+      "link_is_search": false,
+      "blurb": "Mustafa Özkent is a guitarist and arranger from Ankara who has worked in Turkish pop as a session player and studio hand since 1960. Gençlik İle Elele, recorded in 1972 at Istanbul's Grafson Studios for Evren Records, reworks Turkish folk tunes as tight, break-heavy instrumental funk — ten tracks of guitar, organ and drums in barely half an hour, with no vocals anywhere on the record.",
+      "reception": "Largely unnoticed on release, it became a crate-digger holy grail and found belated critical and commercial success in the West when the British label Finders Keepers reissued it in 2006, with PopMatters describing it as \"half an hour of wordless Turkish psychedelica.\""
+    },
+    {
+      "category": "familiar_artist",
+      "header": "Enjoy",
+      "artist": "D'Angelo",
+      "album": "Brown Sugar",
+      "year": 1995,
+      "genres": [
+        "neo-soul",
+        "R&B"
+      ],
+      "spotify_url": "https://open.spotify.com/album/4HTVABUq8amDUxBv3zJbX4",
+      "link_is_search": false,
+      "blurb": "D'Angelo's debut, released in July 1995 on EMI, was written and produced largely by the Richmond, Virginia singer and multi-instrumentalist himself, blending 1970s soul songcraft with gospel keyboard chops and a hip-hop rhythmic feel. It is the album that effectively announced the neo-soul movement, five years before his long-gestating follow-up Voodoo.",
+      "reception": "It peaked at No. 4 on Billboard's Top R&B Albums chart and was certified platinum by the RIAA in February 1996, seven months after release."
+    },
+    {
+      "category": "new_artist",
+      "header": "Explore",
+      "artist": "Yo La Tengo",
+      "album": "I Can Hear the Heart Beating as One",
+      "year": 1997,
+      "genres": [
+        "indie rock",
+        "dream pop"
+      ],
+      "spotify_url": "https://open.spotify.com/album/0BpCcCe0SbfFybKzo6mGOF",
+      "link_is_search": false,
+      "blurb": "Yo La Tengo are the Hoboken trio of Ira Kaplan, Georgia Hubley and James McNew, together since the mid-1980s. Their eighth album, produced by Roger Moutenot in Nashville for Matador, is the band's most expansive: hushed organ ballads, bossa nova, krautrock drones and noise-pop sit side by side across sixteen tracks.",
+      "reception": "It ranked No. 5 in the Village Voice's 1997 Pazz & Jop critics' poll — the band's highest placement — and No. 423 on Rolling Stone's 2020 edition of the 500 Greatest Albums of All Time."
+    }
+  ]
+}

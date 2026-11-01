@@ -1,0 +1,43 @@
+{
+  "date": "2026-11-01",
+  "artwork": {
+    "wikidata": "Q19917658",
+    "title": "Reclining Nude (Modigliani)",
+    "interest": "modern"
+  },
+  "wikis": {
+    "wikipedia": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Wieferich_prime",
+        "title": "Wieferich prime",
+        "topic": "math"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/28978_Ixion",
+        "title": "28978 Ixion",
+        "topic": "sci"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Pine_Island_Glacier",
+        "title": "Pine Island Glacier",
+        "topic": "climate"
+      }
+    ],
+    "nlab": {
+      "url": "https://ncatlab.org/nlab/show/cohomological+functor",
+      "title": "cohomological functor"
+    },
+    "sep": {
+      "url": "https://plato.stanford.edu/entries/temporal-parts/",
+      "title": "temporal parts"
+    },
+    "attic": {
+      "url": "https://neugierde.github.io/cantors-attic/Madore's_ψ_function",
+      "title": "Madore's ψ function"
+    },
+    "oeis": {
+      "url": "https://oeis.org/A104801",
+      "title": "Numbers n such that the string n0123456789 is prime."
+    }
+  }
+}

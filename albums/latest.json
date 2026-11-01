@@ -1,42 +1,51 @@
 {
-  "date": "2026-10-30",
-  "title": "Three albums for 30 October",
+  "date": "2026-11-01",
+  "title": "Three albums for 1 November",
   "albums": [
     {
       "category": "focus",
       "header": "Focus",
-      "artist": "Tortoise",
-      "album": "Millions Now Living Will Never Die",
-      "year": 1996,
-      "genres": ["post-rock", "instrumental"],
-      "spotify_url": "https://open.spotify.com/album/3X20tXW0zsl5imVzETPhQh",
+      "artist": "Mustafa Özkent",
+      "album": "Gençlik İle Elele",
+      "year": 1973,
+      "genres": [
+        "Anatolian funk",
+        "instrumental psychedelia"
+      ],
+      "spotify_url": "https://open.spotify.com/album/3bnqPaNk1lbje5XwhZuPwz",
       "link_is_search": false,
-      "blurb": "Tortoise is a Chicago group of drummers and multi-instrumentalists — John McEntire, Dan Bitney, John Herndon, Doug McCombs and, at this point, Slint guitarist David Pajo — who swap instruments freely across bass, vibraphone, synthesizers and percussion. This second album, released on Thrill Jockey in January 1996, opens with the 21-minute \"Djed,\" a spliced-together suite of dub bass, krautrock motorik and mallet patterns that takes up half the record; the remaining five tracks are shorter studies in the same vocabulary. The whole album is instrumental.",
-      "reception": "Uncut has called the album a \"post-rock touchstone,\" and a 25th-anniversary retrospective in Rock and Roll Globe credited it with making Tortoise icons of the genre."
+      "blurb": "Mustafa Özkent is a guitarist and arranger from Ankara who has worked in Turkish pop as a session player and studio hand since 1960. Gençlik İle Elele, recorded in 1972 at Istanbul's Grafson Studios for Evren Records, reworks Turkish folk tunes as tight, break-heavy instrumental funk — ten tracks of guitar, organ and drums in barely half an hour, with no vocals anywhere on the record.",
+      "reception": "Largely unnoticed on release, it became a crate-digger holy grail and found belated critical and commercial success in the West when the British label Finders Keepers reissued it in 2006, with PopMatters describing it as \"half an hour of wordless Turkish psychedelica.\""
     },
     {
       "category": "familiar_artist",
       "header": "Enjoy",
-      "artist": "Moses Sumney",
-      "album": "græ",
-      "year": 2020,
-      "genres": ["art pop", "alternative R&B"],
-      "spotify_url": "https://open.spotify.com/album/35CHoLB0GEwYlOomriifC6",
+      "artist": "D'Angelo",
+      "album": "Brown Sugar",
+      "year": 1995,
+      "genres": [
+        "neo-soul",
+        "R&B"
+      ],
+      "spotify_url": "https://open.spotify.com/album/4HTVABUq8amDUxBv3zJbX4",
       "link_is_search": false,
-      "blurb": "Sumney's second album, released on Jagjaguwar in two parts — twelve songs in February 2020 and the remaining eight that May — is a double album built around his multi-octave falsetto and the idea of greyness: living between fixed categories of genre, race and romantic identity. Where his 2017 debut Aromanticism was spare and hushed, græ layers chamber strings, jazz horns, synthesizers and spoken-word interludes, with contributors including Thundercat, Jill Scott and author Michael Chabon.",
-      "reception": "The album holds a Metacritic score of 90 from 17 reviews, indicating universal acclaim, and The A.V. Club ranked it ninth among its 20 best albums of 2020."
+      "blurb": "D'Angelo's debut, released in July 1995 on EMI, was written and produced largely by the Richmond, Virginia singer and multi-instrumentalist himself, blending 1970s soul songcraft with gospel keyboard chops and a hip-hop rhythmic feel. It is the album that effectively announced the neo-soul movement, five years before his long-gestating follow-up Voodoo.",
+      "reception": "It peaked at No. 4 on Billboard's Top R&B Albums chart and was certified platinum by the RIAA in February 1996, seven months after release."
     },
     {
       "category": "new_artist",
       "header": "Explore",
-      "artist": "Sly & The Family Stone",
-      "album": "Stand!",
-      "year": 1969,
-      "genres": ["funk", "psychedelic soul"],
-      "spotify_url": "https://open.spotify.com/album/7iwS1r6JHYJe9xpPjzmWqD",
+      "artist": "Yo La Tengo",
+      "album": "I Can Hear the Heart Beating as One",
+      "year": 1997,
+      "genres": [
+        "indie rock",
+        "dream pop"
+      ],
+      "spotify_url": "https://open.spotify.com/album/0BpCcCe0SbfFybKzo6mGOF",
       "link_is_search": false,
-      "blurb": "Sly Stone led the first major American band that was integrated across both race and gender, and Stand!, their fourth album, released on Epic in May 1969, is where the San Francisco group's utopian psychedelic pop and hard funk fused completely. It holds \"Everyday People,\" \"Sing a Simple Song,\" \"I Want to Take You Higher\" and the thirteen-minute groove \"Sex Machine,\" and came out three months before the band's star-making 3 a.m. set at Woodstock. Larry Graham's slap bass on this record became a foundation of funk technique.",
-      "reception": "Stand! peaked at No. 13 on the Billboard pop albums chart and No. 3 on the R&B albums chart, was certified gold by the RIAA in December 1969, and \"Everyday People\" had already topped the Hot 100 that February."
+      "blurb": "Yo La Tengo are the Hoboken trio of Ira Kaplan, Georgia Hubley and James McNew, together since the mid-1980s. Their eighth album, produced by Roger Moutenot in Nashville for Matador, is the band's most expansive: hushed organ ballads, bossa nova, krautrock drones and noise-pop sit side by side across sixteen tracks.",
+      "reception": "It ranked No. 5 in the Village Voice's 1997 Pazz & Jop critics' poll — the band's highest placement — and No. 423 on Rolling Stone's 2020 edition of the 500 Greatest Albums of All Time."
     }
   ]
 }

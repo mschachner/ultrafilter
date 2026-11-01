@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-10-30T09:15:36.568Z",
+ "updated": "2026-11-01T09:17:26.172Z",
  "feeds": [
   {
    "name": "Joel David Hamkins",
@@ -343,10 +343,13 @@
     "arts",
     "arthist"
    ],
-   "status": "active",
+   "status": "archived",
    "added": "2026-09-20",
    "addedBy": "task",
-   "note": "Long-running personal blog on Japanese art, design and craft - fits the ukiyo-e and Japanese-culture thread in the likes"
+   "note": "Long-running personal blog on Japanese art, design and craft - fits the ukiyo-e and Japanese-culture thread in the likes",
+   "archived": "2026-11-01",
+   "archivedBy": "task",
+   "reason": "no liked posts in 42 days"
   },
   {
    "name": "Shtetl-Optimized",
@@ -590,6 +593,19 @@
    "added": "2026-10-30",
    "addedBy": "task",
    "note": "Ethan Iverson, pianist formerly of The Bad Plus, writing deeply on jazz and classical music - continues his Do the Math blog, fits the daily-album habit"
+  },
+  {
+   "name": "Tanya Khovanova's Math Blog",
+   "author": "Tanya Khovanova",
+   "site": "https://blog.tanyakhovanova.com/",
+   "feed": "https://blog.tanyakhovanova.com/feed/",
+   "topics": [
+    "math"
+   ],
+   "status": "active",
+   "added": "2026-11-01",
+   "addedBy": "task",
+   "note": "Tanya Khovanova's long-running recreational math blog - puzzles, integer sequences and OEIS curiosities, matching the liked OEIS and puzzle-flavored wiki entries"
   }
  ]
 }
