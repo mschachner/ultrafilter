@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-02T14:27:10.995Z",
+ "updated": "2026-11-02T14:27:12.553Z",
  "items": [
   {
    "kind": "album",
@@ -917,7 +917,7 @@
     "ambient guitar"
    ],
    "listened": "2026-11-02",
-   "liked": false,
+   "liked": true,
    "kind": "album",
    "key": "the durutti column::the return of the durutti column",
    "when": "2026-11-02"
