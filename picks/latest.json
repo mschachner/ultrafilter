@@ -1,43 +1,43 @@
 {
-  "date": "2026-11-01",
+  "date": "2026-11-02",
   "artwork": {
-    "wikidata": "Q19917658",
-    "title": "Reclining Nude (Modigliani)",
-    "interest": "modern"
+    "wikidata": "Q2339059",
+    "title": "Rain, Steam and Speed – The Great Western Railway",
+    "interest": "implandscape"
   },
   "wikis": {
     "wikipedia": [
       {
-        "url": "https://en.wikipedia.org/wiki/Wieferich_prime",
-        "title": "Wieferich prime",
+        "url": "https://en.wikipedia.org/wiki/John_von_Neumann",
+        "title": "John von Neumann",
         "topic": "math"
       },
       {
-        "url": "https://en.wikipedia.org/wiki/28978_Ixion",
-        "title": "28978 Ixion",
-        "topic": "sci"
+        "url": "https://en.wikipedia.org/wiki/Steinitz's_theorem",
+        "title": "Steinitz's theorem",
+        "topic": "math"
       },
       {
-        "url": "https://en.wikipedia.org/wiki/Pine_Island_Glacier",
-        "title": "Pine Island Glacier",
-        "topic": "climate"
+        "url": "https://en.wikipedia.org/wiki/Cold_spot_(astronomy)",
+        "title": "Cold spot (astronomy)",
+        "topic": "sci"
       }
     ],
     "nlab": {
-      "url": "https://ncatlab.org/nlab/show/cohomological+functor",
-      "title": "cohomological functor"
+      "url": "https://ncatlab.org/nlab/show/continuous+logic",
+      "title": "continuous logic"
     },
     "sep": {
-      "url": "https://plato.stanford.edu/entries/temporal-parts/",
-      "title": "temporal parts"
+      "url": "https://plato.stanford.edu/entries/computational-complexity/",
+      "title": "computational complexity theory"
     },
     "attic": {
-      "url": "https://neugierde.github.io/cantors-attic/Madore's_ψ_function",
-      "title": "Madore's ψ function"
+      "url": "https://neugierde.github.io/cantors-attic/Proper_forcing_axiom",
+      "title": "Proper forcing axiom"
     },
     "oeis": {
-      "url": "https://oeis.org/A104801",
-      "title": "Numbers n such that the string n0123456789 is prime."
+      "url": "https://oeis.org/A022327",
+      "title": "Least k such that the first k terms of the Kolakoski sequence (A000002) contain n more 1's than 2's."
     }
   }
 }

@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-01T09:17:26.172Z",
+ "updated": "2026-11-02T09:20:58.574Z",
  "feeds": [
   {
    "name": "Joel David Hamkins",
@@ -606,6 +606,20 @@
    "added": "2026-11-01",
    "addedBy": "task",
    "note": "Tanya Khovanova's long-running recreational math blog - puzzles, integer sequences and OEIS curiosities, matching the liked OEIS and puzzle-flavored wiki entries"
+  },
+  {
+   "name": "The Public Domain Review",
+   "author": "Adam Green et al.",
+   "site": "",
+   "feed": "https://publicdomainreview.org/rss.xml",
+   "topics": [
+    "arthist",
+    "arts"
+   ],
+   "status": "active",
+   "added": "2026-11-02",
+   "addedBy": "task",
+   "note": "Small editorial team publishing essays and curiosities from the history of art, literature and ideas - fits the Lines and Colors likes and the art-history thread"
   }
  ]
 }

@@ -1,0 +1,51 @@
+{
+  "date": "2026-11-02",
+  "title": "Three albums for 2 November",
+  "albums": [
+    {
+      "category": "focus",
+      "header": "Focus",
+      "artist": "The Durutti Column",
+      "album": "The Return of the Durutti Column",
+      "year": 1980,
+      "genres": [
+        "instrumental post-punk",
+        "ambient guitar"
+      ],
+      "spotify_url": "https://open.spotify.com/album/6ANCHHVpcvjCqQFUDUvDOW",
+      "link_is_search": false,
+      "blurb": "The Durutti Column is essentially one man, Manchester guitarist Vini Reilly, whose delicate, reverb-laden playing made this the gentlest thing on Factory Records. Released in January 1980 as FACT 14 and produced by Martin Hannett, this debut is entirely instrumental — nine short pieces of melodic, echo-washed guitar over minimal bass and drums. The original sleeve was faced with sandpaper, an homage to the Situationist book Mémoires, reportedly assembled by Joy Division; a remaster from the original tapes followed in 2025.",
+      "reception": "AllMusic's Ned Raggett rated it four and a half stars and called it a \"quietly stunning debut, as influential down the road as his labelmates in Joy Division's effort with Unknown Pleasures.\""
+    },
+    {
+      "category": "familiar_artist",
+      "header": "Enjoy",
+      "artist": "Harry Nilsson",
+      "album": "Nilsson Schmilsson",
+      "year": 1971,
+      "genres": [
+        "pop rock",
+        "soft rock"
+      ],
+      "spotify_url": "https://open.spotify.com/album/3EfpOFKjotrMQTFTnxrXaB",
+      "link_is_search": false,
+      "blurb": "Nilsson's seventh album, cut in London with producer Richard Perry, was the commercial peak of a career that had until then run on songwriting royalties and critical admiration — The Beatles famously named him their favorite American artist. It swings from the groggy morning shuffle of \"Gotta Get Up\" to the calypso novelty \"Coconut\" and the proto-hard-rock \"Jump into the Fire,\" anchored by his towering cover of Badfinger's \"Without You.\" Two follow-ups mined the same vein before Nilsson swerved back into eccentricity.",
+      "reception": "The album reached No. 3 on the Billboard 200 and was nominated for the Album of the Year Grammy, while \"Without You\" spent four weeks at No. 1 on the Hot 100 and won Nilsson the 1973 Grammy for Best Male Pop Vocal Performance."
+    },
+    {
+      "category": "new_artist",
+      "header": "Explore",
+      "artist": "Café Tacvba",
+      "album": "Re",
+      "year": 1994,
+      "genres": [
+        "rock en español",
+        "Latin alternative"
+      ],
+      "spotify_url": "https://open.spotify.com/album/7EJ5pXrSqqfybKyfbvlz84",
+      "link_is_search": false,
+      "blurb": "Café Tacvba formed in the Mexico City suburb of Ciudad Satélite in 1989, fronted by the protean singer Rubén Albarrán, and became the defining band of Mexico's rock en español movement. Re, their second album, produced by Gustavo Santaolalla, packs twenty songs that leap between son jarocho, bolero, norteño, punk, funk and electronic pop — a deliberate tour of Mexican popular music refracted through alternative rock, often compared to the Beatles' White Album for its sprawl.",
+      "reception": "In 2012 Rolling Stone named Re the greatest Latin American rock album of all time."
+    }
+  ]
+}

@@ -1,51 +1,51 @@
 {
-  "date": "2026-11-01",
-  "title": "Three albums for 1 November",
+  "date": "2026-11-02",
+  "title": "Three albums for 2 November",
   "albums": [
     {
       "category": "focus",
       "header": "Focus",
-      "artist": "Mustafa Özkent",
-      "album": "Gençlik İle Elele",
-      "year": 1973,
+      "artist": "The Durutti Column",
+      "album": "The Return of the Durutti Column",
+      "year": 1980,
       "genres": [
-        "Anatolian funk",
-        "instrumental psychedelia"
+        "instrumental post-punk",
+        "ambient guitar"
       ],
-      "spotify_url": "https://open.spotify.com/album/3bnqPaNk1lbje5XwhZuPwz",
+      "spotify_url": "https://open.spotify.com/album/6ANCHHVpcvjCqQFUDUvDOW",
       "link_is_search": false,
-      "blurb": "Mustafa Özkent is a guitarist and arranger from Ankara who has worked in Turkish pop as a session player and studio hand since 1960. Gençlik İle Elele, recorded in 1972 at Istanbul's Grafson Studios for Evren Records, reworks Turkish folk tunes as tight, break-heavy instrumental funk — ten tracks of guitar, organ and drums in barely half an hour, with no vocals anywhere on the record.",
-      "reception": "Largely unnoticed on release, it became a crate-digger holy grail and found belated critical and commercial success in the West when the British label Finders Keepers reissued it in 2006, with PopMatters describing it as \"half an hour of wordless Turkish psychedelica.\""
+      "blurb": "The Durutti Column is essentially one man, Manchester guitarist Vini Reilly, whose delicate, reverb-laden playing made this the gentlest thing on Factory Records. Released in January 1980 as FACT 14 and produced by Martin Hannett, this debut is entirely instrumental — nine short pieces of melodic, echo-washed guitar over minimal bass and drums. The original sleeve was faced with sandpaper, an homage to the Situationist book Mémoires, reportedly assembled by Joy Division; a remaster from the original tapes followed in 2025.",
+      "reception": "AllMusic's Ned Raggett rated it four and a half stars and called it a \"quietly stunning debut, as influential down the road as his labelmates in Joy Division's effort with Unknown Pleasures.\""
     },
     {
       "category": "familiar_artist",
       "header": "Enjoy",
-      "artist": "D'Angelo",
-      "album": "Brown Sugar",
-      "year": 1995,
+      "artist": "Harry Nilsson",
+      "album": "Nilsson Schmilsson",
+      "year": 1971,
       "genres": [
-        "neo-soul",
-        "R&B"
+        "pop rock",
+        "soft rock"
       ],
-      "spotify_url": "https://open.spotify.com/album/4HTVABUq8amDUxBv3zJbX4",
+      "spotify_url": "https://open.spotify.com/album/3EfpOFKjotrMQTFTnxrXaB",
       "link_is_search": false,
-      "blurb": "D'Angelo's debut, released in July 1995 on EMI, was written and produced largely by the Richmond, Virginia singer and multi-instrumentalist himself, blending 1970s soul songcraft with gospel keyboard chops and a hip-hop rhythmic feel. It is the album that effectively announced the neo-soul movement, five years before his long-gestating follow-up Voodoo.",
-      "reception": "It peaked at No. 4 on Billboard's Top R&B Albums chart and was certified platinum by the RIAA in February 1996, seven months after release."
+      "blurb": "Nilsson's seventh album, cut in London with producer Richard Perry, was the commercial peak of a career that had until then run on songwriting royalties and critical admiration — The Beatles famously named him their favorite American artist. It swings from the groggy morning shuffle of \"Gotta Get Up\" to the calypso novelty \"Coconut\" and the proto-hard-rock \"Jump into the Fire,\" anchored by his towering cover of Badfinger's \"Without You.\" Two follow-ups mined the same vein before Nilsson swerved back into eccentricity.",
+      "reception": "The album reached No. 3 on the Billboard 200 and was nominated for the Album of the Year Grammy, while \"Without You\" spent four weeks at No. 1 on the Hot 100 and won Nilsson the 1973 Grammy for Best Male Pop Vocal Performance."
     },
     {
       "category": "new_artist",
       "header": "Explore",
-      "artist": "Yo La Tengo",
-      "album": "I Can Hear the Heart Beating as One",
-      "year": 1997,
+      "artist": "Café Tacvba",
+      "album": "Re",
+      "year": 1994,
       "genres": [
-        "indie rock",
-        "dream pop"
+        "rock en español",
+        "Latin alternative"
       ],
-      "spotify_url": "https://open.spotify.com/album/0BpCcCe0SbfFybKzo6mGOF",
+      "spotify_url": "https://open.spotify.com/album/7EJ5pXrSqqfybKyfbvlz84",
       "link_is_search": false,
-      "blurb": "Yo La Tengo are the Hoboken trio of Ira Kaplan, Georgia Hubley and James McNew, together since the mid-1980s. Their eighth album, produced by Roger Moutenot in Nashville for Matador, is the band's most expansive: hushed organ ballads, bossa nova, krautrock drones and noise-pop sit side by side across sixteen tracks.",
-      "reception": "It ranked No. 5 in the Village Voice's 1997 Pazz & Jop critics' poll — the band's highest placement — and No. 423 on Rolling Stone's 2020 edition of the 500 Greatest Albums of All Time."
+      "blurb": "Café Tacvba formed in the Mexico City suburb of Ciudad Satélite in 1989, fronted by the protean singer Rubén Albarrán, and became the defining band of Mexico's rock en español movement. Re, their second album, produced by Gustavo Santaolalla, packs twenty songs that leap between son jarocho, bolero, norteño, punk, funk and electronic pop — a deliberate tour of Mexican popular music refracted through alternative rock, often compared to the Beatles' White Album for its sprawl.",
+      "reception": "In 2012 Rolling Stone named Re the greatest Latin American rock album of all time."
     }
   ]
 }
