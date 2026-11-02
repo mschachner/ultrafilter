@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-01T14:45:45.963Z",
+ "updated": "2026-11-02T14:27:10.995Z",
  "items": [
   {
    "kind": "album",
@@ -908,6 +908,19 @@
    "kind": "album",
    "key": "lindstrøm::where you go i go too",
    "when": "2026-11-01"
+  },
+  {
+   "artist": "The Durutti Column",
+   "album": "The Return of the Durutti Column",
+   "genres": [
+    "instrumental post-punk",
+    "ambient guitar"
+   ],
+   "listened": "2026-11-02",
+   "liked": false,
+   "kind": "album",
+   "key": "the durutti column::the return of the durutti column",
+   "when": "2026-11-02"
   },
   {
    "title": "The Poppy Field near Argenteuil",
