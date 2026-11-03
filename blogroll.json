@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-02T09:20:58.574Z",
+ "updated": "2026-11-03T09:22:06.384Z",
  "feeds": [
   {
    "name": "Joel David Hamkins",
@@ -373,10 +373,13 @@
    "topics": [
     "climate"
    ],
-   "status": "active",
+   "status": "archived",
    "added": "2026-09-22",
    "addedBy": "task",
-   "note": "Two climate scientists writing plainly about warming trends and climate risk, posting steadily"
+   "note": "Two climate scientists writing plainly about warming trends and climate risk, posting steadily",
+   "archived": "2026-11-03",
+   "archivedBy": "task",
+   "reason": "no liked posts in 42 days"
   },
   {
    "name": "John D. Cook",
@@ -620,6 +623,19 @@
    "added": "2026-11-02",
    "addedBy": "task",
    "note": "Small editorial team publishing essays and curiosities from the history of art, literature and ideas - fits the Lines and Colors likes and the art-history thread"
+  },
+  {
+   "name": "Bad Astronomy",
+   "author": "Phil Plait",
+   "site": "https://badastronomy.beehiiv.com/",
+   "feed": "https://rss.beehiiv.com/feeds/t0Uscv6JDz.xml",
+   "topics": [
+    "sci"
+   ],
+   "status": "active",
+   "added": "2026-11-03",
+   "addedBy": "task",
+   "note": "Phil Plait's long-running astronomy newsletter, posting several times a week - approachable deep dives on planets, comets and the night sky"
   }
  ]
 }

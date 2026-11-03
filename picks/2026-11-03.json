@@ -1,0 +1,43 @@
+{
+  "date": "2026-11-03",
+  "artwork": {
+    "wikidata": "Q20190808",
+    "title": "One Third of a Nation",
+    "interest": "surrealism"
+  },
+  "wikis": {
+    "wikipedia": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Penrose_tiling",
+        "title": "Penrose tiling",
+        "topic": "math"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Ytterbium",
+        "title": "Ytterbium",
+        "topic": "sci"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Stuckism",
+        "title": "Stuckism",
+        "topic": "arthist"
+      }
+    ],
+    "nlab": {
+      "url": "https://ncatlab.org/nlab/show/Segal+condition",
+      "title": "Segal condition"
+    },
+    "sep": {
+      "url": "https://plato.stanford.edu/entries/boundary/",
+      "title": "Boundary"
+    },
+    "attic": {
+      "url": "https://neugierde.github.io/cantors-attic/Silver_cardinal",
+      "title": "Silver cardinal"
+    },
+    "oeis": {
+      "url": "https://oeis.org/A002468",
+      "title": "A002468: The game of Mousetrap with n cards"
+    }
+  }
+}

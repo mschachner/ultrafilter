@@ -1,43 +1,43 @@
 {
-  "date": "2026-11-02",
+  "date": "2026-11-03",
   "artwork": {
-    "wikidata": "Q2339059",
-    "title": "Rain, Steam and Speed – The Great Western Railway",
-    "interest": "implandscape"
+    "wikidata": "Q20190808",
+    "title": "One Third of a Nation",
+    "interest": "surrealism"
   },
   "wikis": {
     "wikipedia": [
       {
-        "url": "https://en.wikipedia.org/wiki/John_von_Neumann",
-        "title": "John von Neumann",
+        "url": "https://en.wikipedia.org/wiki/Penrose_tiling",
+        "title": "Penrose tiling",
         "topic": "math"
       },
       {
-        "url": "https://en.wikipedia.org/wiki/Steinitz's_theorem",
-        "title": "Steinitz's theorem",
-        "topic": "math"
-      },
-      {
-        "url": "https://en.wikipedia.org/wiki/Cold_spot_(astronomy)",
-        "title": "Cold spot (astronomy)",
+        "url": "https://en.wikipedia.org/wiki/Ytterbium",
+        "title": "Ytterbium",
         "topic": "sci"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Stuckism",
+        "title": "Stuckism",
+        "topic": "arthist"
       }
     ],
     "nlab": {
-      "url": "https://ncatlab.org/nlab/show/continuous+logic",
-      "title": "continuous logic"
+      "url": "https://ncatlab.org/nlab/show/Segal+condition",
+      "title": "Segal condition"
     },
     "sep": {
-      "url": "https://plato.stanford.edu/entries/computational-complexity/",
-      "title": "computational complexity theory"
+      "url": "https://plato.stanford.edu/entries/boundary/",
+      "title": "Boundary"
     },
     "attic": {
-      "url": "https://neugierde.github.io/cantors-attic/Proper_forcing_axiom",
-      "title": "Proper forcing axiom"
+      "url": "https://neugierde.github.io/cantors-attic/Silver_cardinal",
+      "title": "Silver cardinal"
     },
     "oeis": {
-      "url": "https://oeis.org/A022327",
-      "title": "Least k such that the first k terms of the Kolakoski sequence (A000002) contain n more 1's than 2's."
+      "url": "https://oeis.org/A002468",
+      "title": "A002468: The game of Mousetrap with n cards"
     }
   }
 }

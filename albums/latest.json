@@ -1,51 +1,51 @@
 {
-  "date": "2026-11-02",
-  "title": "Three albums for 2 November",
+  "date": "2026-11-03",
+  "title": "Three albums for 3 November",
   "albums": [
     {
       "category": "focus",
       "header": "Focus",
-      "artist": "The Durutti Column",
-      "album": "The Return of the Durutti Column",
-      "year": 1980,
+      "artist": "Art Blakey & The Jazz Messengers",
+      "album": "Moanin'",
+      "year": 1958,
       "genres": [
-        "instrumental post-punk",
-        "ambient guitar"
+        "hard bop",
+        "jazz"
       ],
-      "spotify_url": "https://open.spotify.com/album/6ANCHHVpcvjCqQFUDUvDOW",
+      "spotify_url": "https://open.spotify.com/album/2D4kqfmUPMNlVSGpYmNx5X",
       "link_is_search": false,
-      "blurb": "The Durutti Column is essentially one man, Manchester guitarist Vini Reilly, whose delicate, reverb-laden playing made this the gentlest thing on Factory Records. Released in January 1980 as FACT 14 and produced by Martin Hannett, this debut is entirely instrumental — nine short pieces of melodic, echo-washed guitar over minimal bass and drums. The original sleeve was faced with sandpaper, an homage to the Situationist book Mémoires, reportedly assembled by Joy Division; a remaster from the original tapes followed in 2025.",
-      "reception": "AllMusic's Ned Raggett rated it four and a half stars and called it a \"quietly stunning debut, as influential down the road as his labelmates in Joy Division's effort with Unknown Pleasures.\""
+      "blurb": "Recorded in a single October 1958 session at Rudy Van Gelder's Hackensack studio, this album marked drummer Art Blakey's return to Blue Note and introduced the classic Jazz Messengers lineup of Lee Morgan on trumpet, Benny Golson on tenor saxophone, Bobby Timmons on piano and Jymie Merritt on bass. Originally self-titled, it was soon renamed after Timmons's gospel-inflected opening tune, and Golson wrote most of the rest of the program, including “Along Came Betty” and “Blues March.” All six tracks are instrumental quintet performances.",
+      "reception": "Moanin' was inducted into the Grammy Hall of Fame, holds a five-star AllMusic rating, and was named by critic Scott Yanow as one of his seventeen essential hard bop recordings."
     },
     {
       "category": "familiar_artist",
       "header": "Enjoy",
-      "artist": "Harry Nilsson",
-      "album": "Nilsson Schmilsson",
-      "year": 1971,
+      "artist": "Alice Phoebe Lou",
+      "album": "Glow",
+      "year": 2021,
       "genres": [
-        "pop rock",
-        "soft rock"
+        "indie pop",
+        "soul"
       ],
-      "spotify_url": "https://open.spotify.com/album/3EfpOFKjotrMQTFTnxrXaB",
+      "spotify_url": "https://open.spotify.com/album/1RoIHIiNyuMrxTtWh6AaNS",
       "link_is_search": false,
-      "blurb": "Nilsson's seventh album, cut in London with producer Richard Perry, was the commercial peak of a career that had until then run on songwriting royalties and critical admiration — The Beatles famously named him their favorite American artist. It swings from the groggy morning shuffle of \"Gotta Get Up\" to the calypso novelty \"Coconut\" and the proto-hard-rock \"Jump into the Fire,\" anchored by his towering cover of Badfinger's \"Without You.\" Two follow-ups mined the same vein before Nilsson swerved back into eccentricity.",
-      "reception": "The album reached No. 3 on the Billboard 200 and was nominated for the Album of the Year Grammy, while \"Without You\" spent four weeks at No. 1 on the Hot 100 and won Nilsson the 1973 Grammy for Best Male Pop Vocal Performance."
+      "blurb": "Alice Phoebe Lou is a South African-born singer-songwriter based in Berlin, where she began her career busking and has stayed fiercely independent, releasing music through her own imprint. Glow, released in March 2021, is her third studio album, following Paper Castles (2019): a loose, warm set of love songs cut largely live to tape with producer David Parry, and the first of two records she put out that year, with the companion album Child's Play arriving a few months later.",
+      "reception": "The Harvard Crimson gave Glow a 4.5-star review, calling it “a gorgeous, introspective look at love's complexities,” and college station WKNC rated it 9/10."
     },
     {
       "category": "new_artist",
       "header": "Explore",
-      "artist": "Café Tacvba",
-      "album": "Re",
-      "year": 1994,
+      "artist": "Antena",
+      "album": "Camino del Sol",
+      "year": 1982,
       "genres": [
-        "rock en español",
-        "Latin alternative"
+        "synth-pop",
+        "bossa nova"
       ],
-      "spotify_url": "https://open.spotify.com/album/7EJ5pXrSqqfybKyfbvlz84",
+      "spotify_url": "https://open.spotify.com/album/1QZl61Loloh8DhwkxQsYAL",
       "link_is_search": false,
-      "blurb": "Café Tacvba formed in the Mexico City suburb of Ciudad Satélite in 1989, fronted by the protean singer Rubén Albarrán, and became the defining band of Mexico's rock en español movement. Re, their second album, produced by Gustavo Santaolalla, packs twenty songs that leap between son jarocho, bolero, norteño, punk, funk and electronic pop — a deliberate tour of Mexican popular music refracted through alternative rock, often compared to the Beatles' White Album for its sprawl.",
-      "reception": "In 2012 Rolling Stone named Re the greatest Latin American rock album of all time."
+      "blurb": "Antena were a French trio fronted by Isabelle Powaga, signed to the Brussels label Les Disques du Crépuscule, and Camino del Sol was their September 1982 mini-album: bossa nova rhythms — including a chilly, drum-machine cover of “The Boy From Ipanema” — stripped down and crossed with minimal synths and post-punk austerity. Little noticed on release, it became a cult record among DJs and collectors, and Chicago archival label Numero Group made an expanded edition one of its first releases in 2004; the 16-track Spotify edition linked here is that expansion.",
+      "reception": "Pitchfork scored the Numero Group reissue of Camino del Sol 9.0/10, and Resident Advisor revisited the album with a 40th-anniversary retrospective review in 2022."
     }
   ]
 }

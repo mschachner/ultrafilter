@@ -1,0 +1,51 @@
+{
+  "date": "2026-11-03",
+  "title": "Three albums for 3 November",
+  "albums": [
+    {
+      "category": "focus",
+      "header": "Focus",
+      "artist": "Art Blakey & The Jazz Messengers",
+      "album": "Moanin'",
+      "year": 1958,
+      "genres": [
+        "hard bop",
+        "jazz"
+      ],
+      "spotify_url": "https://open.spotify.com/album/2D4kqfmUPMNlVSGpYmNx5X",
+      "link_is_search": false,
+      "blurb": "Recorded in a single October 1958 session at Rudy Van Gelder's Hackensack studio, this album marked drummer Art Blakey's return to Blue Note and introduced the classic Jazz Messengers lineup of Lee Morgan on trumpet, Benny Golson on tenor saxophone, Bobby Timmons on piano and Jymie Merritt on bass. Originally self-titled, it was soon renamed after Timmons's gospel-inflected opening tune, and Golson wrote most of the rest of the program, including “Along Came Betty” and “Blues March.” All six tracks are instrumental quintet performances.",
+      "reception": "Moanin' was inducted into the Grammy Hall of Fame, holds a five-star AllMusic rating, and was named by critic Scott Yanow as one of his seventeen essential hard bop recordings."
+    },
+    {
+      "category": "familiar_artist",
+      "header": "Enjoy",
+      "artist": "Alice Phoebe Lou",
+      "album": "Glow",
+      "year": 2021,
+      "genres": [
+        "indie pop",
+        "soul"
+      ],
+      "spotify_url": "https://open.spotify.com/album/1RoIHIiNyuMrxTtWh6AaNS",
+      "link_is_search": false,
+      "blurb": "Alice Phoebe Lou is a South African-born singer-songwriter based in Berlin, where she began her career busking and has stayed fiercely independent, releasing music through her own imprint. Glow, released in March 2021, is her third studio album, following Paper Castles (2019): a loose, warm set of love songs cut largely live to tape with producer David Parry, and the first of two records she put out that year, with the companion album Child's Play arriving a few months later.",
+      "reception": "The Harvard Crimson gave Glow a 4.5-star review, calling it “a gorgeous, introspective look at love's complexities,” and college station WKNC rated it 9/10."
+    },
+    {
+      "category": "new_artist",
+      "header": "Explore",
+      "artist": "Antena",
+      "album": "Camino del Sol",
+      "year": 1982,
+      "genres": [
+        "synth-pop",
+        "bossa nova"
+      ],
+      "spotify_url": "https://open.spotify.com/album/1QZl61Loloh8DhwkxQsYAL",
+      "link_is_search": false,
+      "blurb": "Antena were a French trio fronted by Isabelle Powaga, signed to the Brussels label Les Disques du Crépuscule, and Camino del Sol was their September 1982 mini-album: bossa nova rhythms — including a chilly, drum-machine cover of “The Boy From Ipanema” — stripped down and crossed with minimal synths and post-punk austerity. Little noticed on release, it became a cult record among DJs and collectors, and Chicago archival label Numero Group made an expanded edition one of its first releases in 2004; the 16-track Spotify edition linked here is that expansion.",
+      "reception": "Pitchfork scored the Numero Group reissue of Camino del Sol 9.0/10, and Resident Advisor revisited the album with a 40th-anniversary retrospective review in 2022."
+    }
+  ]
+}
