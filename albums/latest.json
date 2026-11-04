@@ -1,51 +1,42 @@
 {
-  "date": "2026-11-03",
-  "title": "Three albums for 3 November",
+  "date": "2026-11-04",
+  "title": "Three albums for 4 November",
   "albums": [
     {
       "category": "focus",
       "header": "Focus",
-      "artist": "Art Blakey & The Jazz Messengers",
-      "album": "Moanin'",
-      "year": 1958,
-      "genres": [
-        "hard bop",
-        "jazz"
-      ],
-      "spotify_url": "https://open.spotify.com/album/2D4kqfmUPMNlVSGpYmNx5X",
+      "artist": "Surprise Chef",
+      "album": "Daylight Savings",
+      "year": 2020,
+      "genres": ["cinematic soul", "instrumental jazz-funk"],
+      "spotify_url": "https://open.spotify.com/album/1E9SICnrGwZ2oO1oPPssTa",
       "link_is_search": false,
-      "blurb": "Recorded in a single October 1958 session at Rudy Van Gelder's Hackensack studio, this album marked drummer Art Blakey's return to Blue Note and introduced the classic Jazz Messengers lineup of Lee Morgan on trumpet, Benny Golson on tenor saxophone, Bobby Timmons on piano and Jymie Merritt on bass. Originally self-titled, it was soon renamed after Timmons's gospel-inflected opening tune, and Golson wrote most of the rest of the program, including “Along Came Betty” and “Blues March.” All six tracks are instrumental quintet performances.",
-      "reception": "Moanin' was inducted into the Grammy Hall of Fame, holds a five-star AllMusic rating, and was named by critic Scott Yanow as one of his seventeen essential hard bop recordings."
+      "blurb": "Surprise Chef are a Melbourne outfit who record moody, entirely instrumental soul-funk in the lineage of David Axelrod and the CTI catalogue, all vintage keys, clipped drums and reverb-heavy guitar. Daylight Savings is their second album, cut in the band's home studio with engineer Henry Jenkins and released in October 2020 on Mr Bongo with their own College of Knowledge imprint; they have since signed to New York's Big Crown Records, home of the stylistically kindred El Michels Affair.",
+      "reception": "NME's review called it \"an album teeming with movie magic,\" and Presto Music selected it as a Recording of the Week."
     },
     {
       "category": "familiar_artist",
       "header": "Enjoy",
-      "artist": "Alice Phoebe Lou",
-      "album": "Glow",
-      "year": 2021,
-      "genres": [
-        "indie pop",
-        "soul"
-      ],
-      "spotify_url": "https://open.spotify.com/album/1RoIHIiNyuMrxTtWh6AaNS",
+      "artist": "Faye Webster",
+      "album": "Atlanta Millionaires Club",
+      "year": 2019,
+      "genres": ["indie pop", "alt-country soul"],
+      "spotify_url": "https://open.spotify.com/album/7jXmmQ1gNTXHyTF7uvH4Tn",
       "link_is_search": false,
-      "blurb": "Alice Phoebe Lou is a South African-born singer-songwriter based in Berlin, where she began her career busking and has stayed fiercely independent, releasing music through her own imprint. Glow, released in March 2021, is her third studio album, following Paper Castles (2019): a loose, warm set of love songs cut largely live to tape with producer David Parry, and the first of two records she put out that year, with the companion album Child's Play arriving a few months later.",
-      "reception": "The Harvard Crimson gave Glow a 4.5-star review, calling it “a gorgeous, introspective look at love's complexities,” and college station WKNC rated it 9/10."
+      "blurb": "Webster's third album and her first for Secretly Canadian, made at 21, is where her signature sound locked into place: languid songs that run pedal steel through Atlanta R&B, with a rap verse from Father of Awful Records — the hip-hop collective she photographed professionally — sitting naturally beside saxophone and lap steel. \"Room Temperature\" and \"Kingston\" from this record became her breakout songs.",
+      "reception": "The album holds a Metacritic score of 81 out of 100 from fifteen critics, with Pitchfork rating it 7.8 and Consequence of Sound grading it A−."
     },
     {
       "category": "new_artist",
       "header": "Explore",
-      "artist": "Antena",
-      "album": "Camino del Sol",
-      "year": 1982,
-      "genres": [
-        "synth-pop",
-        "bossa nova"
-      ],
-      "spotify_url": "https://open.spotify.com/album/1QZl61Loloh8DhwkxQsYAL",
+      "artist": "Pentangle",
+      "album": "Basket of Light",
+      "year": 1969,
+      "genres": ["British folk-jazz", "folk rock"],
+      "spotify_url": "https://open.spotify.com/album/6C22QvOc4ombgUjY1M1ASN",
       "link_is_search": false,
-      "blurb": "Antena were a French trio fronted by Isabelle Powaga, signed to the Brussels label Les Disques du Crépuscule, and Camino del Sol was their September 1982 mini-album: bossa nova rhythms — including a chilly, drum-machine cover of “The Boy From Ipanema” — stripped down and crossed with minimal synths and post-punk austerity. Little noticed on release, it became a cult record among DJs and collectors, and Chicago archival label Numero Group made an expanded edition one of its first releases in 2004; the 16-track Spotify edition linked here is that expansion.",
-      "reception": "Pitchfork scored the Numero Group reissue of Camino del Sol 9.0/10, and Resident Advisor revisited the album with a 40th-anniversary retrospective review in 2022."
+      "blurb": "Pentangle joined two of the great British acoustic guitarists, Bert Jansch and John Renbourn, with Jacqui McShee's clear-toned singing and the jazz rhythm section of Danny Thompson (double bass) and Terry Cox (drums). Basket of Light, their third album for Transatlantic, is the group's high-water mark: traditional ballads like \"Once I Had a Sweetheart\" set against originals such as \"Light Flight,\" the theme to the BBC drama Take Three Girls, with the interplay swinging more than folk of the era usually dared.",
+      "reception": "It became the band's commercial peak, reaching No. 5 on the UK Albums Chart, and is included in 1001 Albums You Must Hear Before You Die."
     }
   ]
 }

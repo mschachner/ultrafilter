@@ -1,43 +1,43 @@
 {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "artwork": {
-    "wikidata": "Q20190808",
-    "title": "One Third of a Nation",
-    "interest": "surrealism"
+    "wikidata": "Q5196072",
+    "title": "Curved Form (Bryher)",
+    "interest": "sculpture"
   },
   "wikis": {
     "wikipedia": [
       {
-        "url": "https://en.wikipedia.org/wiki/Penrose_tiling",
-        "title": "Penrose tiling",
+        "url": "https://en.wikipedia.org/wiki/Tur%C3%A1n%27s_brick_factory_problem",
+        "title": "Turán's brick factory problem",
         "topic": "math"
       },
       {
-        "url": "https://en.wikipedia.org/wiki/Ytterbium",
-        "title": "Ytterbium",
+        "url": "https://en.wikipedia.org/wiki/Nyala",
+        "title": "Nyala",
         "topic": "sci"
       },
       {
-        "url": "https://en.wikipedia.org/wiki/Stuckism",
-        "title": "Stuckism",
+        "url": "https://en.wikipedia.org/wiki/Ethel_Sands",
+        "title": "Ethel Sands",
         "topic": "arthist"
       }
     ],
     "nlab": {
-      "url": "https://ncatlab.org/nlab/show/Segal+condition",
-      "title": "Segal condition"
+      "url": "https://ncatlab.org/nlab/show/compactly+generated+topological+space",
+      "title": "compactly generated topological space"
     },
     "sep": {
-      "url": "https://plato.stanford.edu/entries/boundary/",
-      "title": "Boundary"
+      "url": "https://plato.stanford.edu/entries/logic-probability/",
+      "title": "Logic and Probability"
     },
     "attic": {
-      "url": "https://neugierde.github.io/cantors-attic/Silver_cardinal",
-      "title": "Silver cardinal"
+      "url": "https://neugierde.github.io/cantors-attic/Reinhardt",
+      "title": "Reinhardt cardinal"
     },
     "oeis": {
-      "url": "https://oeis.org/A002468",
-      "title": "A002468: The game of Mousetrap with n cards"
+      "url": "https://oeis.org/A114591",
+      "title": "A114591: a composite analog of the Möbius function"
     }
   }
 }

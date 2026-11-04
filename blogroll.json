@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-03T09:22:06.384Z",
+ "updated": "2026-11-04T09:11:13.592Z",
  "feeds": [
   {
    "name": "Joel David Hamkins",
@@ -636,6 +636,19 @@
    "added": "2026-11-03",
    "addedBy": "task",
    "note": "Phil Plait's long-running astronomy newsletter, posting several times a week - approachable deep dives on planets, comets and the night sky"
+  },
+  {
+   "name": "The Crucial Years",
+   "author": "Bill McKibben",
+   "site": "https://billmckibben.substack.com",
+   "feed": "https://billmckibben.substack.com/feed",
+   "topics": [
+    "climate"
+   ],
+   "status": "active",
+   "added": "2026-11-04",
+   "addedBy": "task",
+   "note": "Bill McKibben's weekly newsletter on the climate fight and clean energy - a veteran voice, posting steadily"
   }
  ]
 }
