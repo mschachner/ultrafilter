@@ -1,42 +1,51 @@
 {
-  "date": "2026-11-04",
-  "title": "Three albums for 4 November",
+  "date": "2026-11-05",
+  "title": "Three albums for 5 November",
   "albums": [
     {
       "category": "focus",
       "header": "Focus",
-      "artist": "Surprise Chef",
-      "album": "Daylight Savings",
-      "year": 2020,
-      "genres": ["cinematic soul", "instrumental jazz-funk"],
-      "spotify_url": "https://open.spotify.com/album/1E9SICnrGwZ2oO1oPPssTa",
+      "artist": "Tycho",
+      "album": "Dive",
+      "year": 2011,
+      "genres": [
+        "ambient electronic",
+        "chillwave"
+      ],
+      "spotify_url": "https://open.spotify.com/album/3I3PmRvn5iFY8i6zzvEcci",
       "link_is_search": false,
-      "blurb": "Surprise Chef are a Melbourne outfit who record moody, entirely instrumental soul-funk in the lineage of David Axelrod and the CTI catalogue, all vintage keys, clipped drums and reverb-heavy guitar. Daylight Savings is their second album, cut in the band's home studio with engineer Henry Jenkins and released in October 2020 on Mr Bongo with their own College of Knowledge imprint; they have since signed to New York's Big Crown Records, home of the stylistically kindred El Michels Affair.",
-      "reception": "NME's review called it \"an album teeming with movie magic,\" and Presto Music selected it as a Recording of the Week."
+      "blurb": "Tycho is the one-man project of San Francisco producer Scott Hansen, who is equally known as the graphic designer ISO50 and whose sunset-hued album art is as much a signature as his sound. Dive, released on Ghostly International in November 2011, is his second studio album and the record that fixed the Tycho template: warm analog synthesizers and hardware sound generators layered with guitar and bass into unhurried, fully instrumental pieces, a sound reviewers often place next to Boards of Canada. He later toured it front to back for its tenth anniversary.",
+      "reception": "The album holds a Metacritic score of 80, denoting generally favorable reviews, and PopMatters rated it 8/10 and called it one of the best electronic releases of 2011."
     },
     {
       "category": "familiar_artist",
       "header": "Enjoy",
-      "artist": "Faye Webster",
-      "album": "Atlanta Millionaires Club",
-      "year": 2019,
-      "genres": ["indie pop", "alt-country soul"],
-      "spotify_url": "https://open.spotify.com/album/7jXmmQ1gNTXHyTF7uvH4Tn",
+      "artist": "Men I Trust",
+      "album": "Equus Caballus",
+      "year": 2025,
+      "genres": [
+        "dream pop",
+        "indie pop"
+      ],
+      "spotify_url": "https://open.spotify.com/album/7dJPDPUi94jA91VxG4vZb3",
       "link_is_search": false,
-      "blurb": "Webster's third album and her first for Secretly Canadian, made at 21, is where her signature sound locked into place: languid songs that run pedal steel through Atlanta R&B, with a rap verse from Father of Awful Records — the hip-hop collective she photographed professionally — sitting naturally beside saxophone and lap steel. \"Room Temperature\" and \"Kingston\" from this record became her breakout songs.",
-      "reception": "The album holds a Metacritic score of 81 out of 100 from fifteen critics, with Pitchfork rating it 7.8 and Consequence of Sound grading it A−."
+      "blurb": "The self-produced Montreal trio of Emmanuelle Proulx, Jessy Caron and Dragos Chiriac released Equus Caballus independently in May 2025, two months after its quieter companion Equus Asinus; the two horse-named records form a deliberate pair and together mark the band's most prolific year. Caballus is the livelier half, folding the murmured vocals and liquid bass of their earlier records into brisker, occasionally post-punk-tinged songs like the single \"Billy Toppy\".",
+      "reception": "The Daily Californian's review rated it 4.0/5, writing that the album traces its themes of devotion and dread with grace."
     },
     {
       "category": "new_artist",
       "header": "Explore",
-      "artist": "Pentangle",
-      "album": "Basket of Light",
-      "year": 1969,
-      "genres": ["British folk-jazz", "folk rock"],
-      "spotify_url": "https://open.spotify.com/album/6C22QvOc4ombgUjY1M1ASN",
+      "artist": "Nina Simone",
+      "album": "Pastel Blues",
+      "year": 1965,
+      "genres": [
+        "vocal jazz",
+        "blues"
+      ],
+      "spotify_url": "https://open.spotify.com/album/31pd81sWDaK2pP3ok5892z",
       "link_is_search": false,
-      "blurb": "Pentangle joined two of the great British acoustic guitarists, Bert Jansch and John Renbourn, with Jacqui McShee's clear-toned singing and the jazz rhythm section of Danny Thompson (double bass) and Terry Cox (drums). Basket of Light, their third album for Transatlantic, is the group's high-water mark: traditional ballads like \"Once I Had a Sweetheart\" set against originals such as \"Light Flight,\" the theme to the BBC drama Take Three Girls, with the interplay swinging more than folk of the era usually dared.",
-      "reception": "It became the band's commercial peak, reaching No. 5 on the UK Albums Chart, and is included in 1001 Albums You Must Hear Before You Die."
+      "blurb": "One of two albums Simone released for Philips in 1965 alongside the big-band-leaning I Put a Spell on You, Pastel Blues is the stripped-down, blues-rooted half of that year's work, cut with her touring band and reaching from \"Trouble in Mind\" to a harrowing \"Strange Fruit\". It closes with the ten-minute \"Sinnerman\", the traditional spiritual whose arrangement here became one of her defining recordings and, decades later, a fixture of film and television.",
+      "reception": "The album reached No. 8 on Billboard's R&B albums chart and No. 139 on the Billboard 200, and a retrospective Pitchfork review scored it 8.7/10."
     }
   ]
 }

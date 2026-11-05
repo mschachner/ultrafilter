@@ -1,43 +1,43 @@
 {
-  "date": "2026-11-04",
+  "date": "2026-11-05",
   "artwork": {
-    "wikidata": "Q5196072",
-    "title": "Curved Form (Bryher)",
-    "interest": "sculpture"
+    "wikidata": "Q16162353",
+    "title": "Mr and Mrs Clark and Percy",
+    "interest": "contemporary"
   },
   "wikis": {
     "wikipedia": [
       {
-        "url": "https://en.wikipedia.org/wiki/Tur%C3%A1n%27s_brick_factory_problem",
-        "title": "Turán's brick factory problem",
+        "url": "https://en.wikipedia.org/wiki/Pell's_equation",
+        "title": "Pell's equation",
         "topic": "math"
       },
       {
-        "url": "https://en.wikipedia.org/wiki/Nyala",
-        "title": "Nyala",
+        "url": "https://en.wikipedia.org/wiki/James_Clerk_Maxwell",
+        "title": "James Clerk Maxwell",
         "topic": "sci"
       },
       {
-        "url": "https://en.wikipedia.org/wiki/Ethel_Sands",
-        "title": "Ethel Sands",
+        "url": "https://en.wikipedia.org/wiki/Still_Life_with_Books",
+        "title": "Still Life with Books",
         "topic": "arthist"
       }
     ],
     "nlab": {
-      "url": "https://ncatlab.org/nlab/show/compactly+generated+topological+space",
-      "title": "compactly generated topological space"
+      "url": "https://ncatlab.org/nlab/show/closed+monoidal+structure+on+presheaves",
+      "title": "closed monoidal structure on presheaves"
     },
     "sep": {
-      "url": "https://plato.stanford.edu/entries/logic-probability/",
-      "title": "Logic and Probability"
+      "url": "https://plato.stanford.edu/entries/mathematics-nondeductive/",
+      "title": "Non-Deductive Methods in Mathematics"
     },
     "attic": {
-      "url": "https://neugierde.github.io/cantors-attic/Reinhardt",
-      "title": "Reinhardt cardinal"
+      "url": "https://neugierde.github.io/cantors-attic/Small_countable_ordinals",
+      "title": "Small countable ordinals"
     },
     "oeis": {
-      "url": "https://oeis.org/A114591",
-      "title": "A114591: a composite analog of the Möbius function"
+      "url": "https://oeis.org/A060463",
+      "title": "Number of open positions in the game Fair Share and Varied Pairs starting with n tokens."
     }
   }
 }

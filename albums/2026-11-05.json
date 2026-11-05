@@ -1,0 +1,51 @@
+{
+  "date": "2026-11-05",
+  "title": "Three albums for 5 November",
+  "albums": [
+    {
+      "category": "focus",
+      "header": "Focus",
+      "artist": "Tycho",
+      "album": "Dive",
+      "year": 2011,
+      "genres": [
+        "ambient electronic",
+        "chillwave"
+      ],
+      "spotify_url": "https://open.spotify.com/album/3I3PmRvn5iFY8i6zzvEcci",
+      "link_is_search": false,
+      "blurb": "Tycho is the one-man project of San Francisco producer Scott Hansen, who is equally known as the graphic designer ISO50 and whose sunset-hued album art is as much a signature as his sound. Dive, released on Ghostly International in November 2011, is his second studio album and the record that fixed the Tycho template: warm analog synthesizers and hardware sound generators layered with guitar and bass into unhurried, fully instrumental pieces, a sound reviewers often place next to Boards of Canada. He later toured it front to back for its tenth anniversary.",
+      "reception": "The album holds a Metacritic score of 80, denoting generally favorable reviews, and PopMatters rated it 8/10 and called it one of the best electronic releases of 2011."
+    },
+    {
+      "category": "familiar_artist",
+      "header": "Enjoy",
+      "artist": "Men I Trust",
+      "album": "Equus Caballus",
+      "year": 2025,
+      "genres": [
+        "dream pop",
+        "indie pop"
+      ],
+      "spotify_url": "https://open.spotify.com/album/7dJPDPUi94jA91VxG4vZb3",
+      "link_is_search": false,
+      "blurb": "The self-produced Montreal trio of Emmanuelle Proulx, Jessy Caron and Dragos Chiriac released Equus Caballus independently in May 2025, two months after its quieter companion Equus Asinus; the two horse-named records form a deliberate pair and together mark the band's most prolific year. Caballus is the livelier half, folding the murmured vocals and liquid bass of their earlier records into brisker, occasionally post-punk-tinged songs like the single \"Billy Toppy\".",
+      "reception": "The Daily Californian's review rated it 4.0/5, writing that the album traces its themes of devotion and dread with grace."
+    },
+    {
+      "category": "new_artist",
+      "header": "Explore",
+      "artist": "Nina Simone",
+      "album": "Pastel Blues",
+      "year": 1965,
+      "genres": [
+        "vocal jazz",
+        "blues"
+      ],
+      "spotify_url": "https://open.spotify.com/album/31pd81sWDaK2pP3ok5892z",
+      "link_is_search": false,
+      "blurb": "One of two albums Simone released for Philips in 1965 alongside the big-band-leaning I Put a Spell on You, Pastel Blues is the stripped-down, blues-rooted half of that year's work, cut with her touring band and reaching from \"Trouble in Mind\" to a harrowing \"Strange Fruit\". It closes with the ten-minute \"Sinnerman\", the traditional spiritual whose arrangement here became one of her defining recordings and, decades later, a fixture of film and television.",
+      "reception": "The album reached No. 8 on Billboard's R&B albums chart and No. 139 on the Billboard 200, and a retrospective Pitchfork review scored it 8.7/10."
+    }
+  ]
+}
