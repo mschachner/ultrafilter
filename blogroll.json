@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-05T09:14:48.769Z",
+ "updated": "2026-11-09T10:14:25.904Z",
  "feeds": [
   {
    "name": "Joel David Hamkins",
@@ -421,10 +421,13 @@
     "math",
     "sci"
    ],
-   "status": "active",
+   "status": "archived",
    "added": "2026-09-25",
    "addedBy": "task",
-   "note": "Thony Christie's long-running history of mathematics and science blog - fits the Lakatos/Turing history-of-ideas thread in the likes"
+   "note": "Thony Christie's long-running history of mathematics and science blog - fits the Lakatos/Turing history-of-ideas thread in the likes",
+   "archived": "2026-11-09",
+   "archivedBy": "task",
+   "reason": "no liked posts in 42 days"
   },
   {
    "name": "Logic Matters",
@@ -434,10 +437,13 @@
    "topics": [
     "math"
    ],
-   "status": "active",
+   "status": "archived",
    "added": "2026-09-27",
    "addedBy": "task",
-   "note": "Peter Smith's logic blog - proof theory, Godel and philosophy of logic, matching the set-theory and logic likes"
+   "note": "Peter Smith's logic blog - proof theory, Godel and philosophy of logic, matching the set-theory and logic likes",
+   "archived": "2026-11-09",
+   "archivedBy": "task",
+   "reason": "no liked posts in 42 days"
   },
   {
    "name": "In the Dark",
@@ -447,10 +453,13 @@
    "topics": [
     "sci"
    ],
-   "status": "active",
+   "status": "archived",
    "added": "2026-09-28",
    "addedBy": "task",
-   "note": "Peter Coles's daily astrophysics-and-everything blog, posting since 2008 - cosmology, open-access publishing, music and mathematics on the side"
+   "note": "Peter Coles's daily astrophysics-and-everything blog, posting since 2008 - cosmology, open-access publishing, music and mathematics on the side",
+   "archived": "2026-11-09",
+   "archivedBy": "task",
+   "reason": "no liked posts in 42 days"
   },
   {
    "name": "Sustainability by Numbers",
@@ -663,6 +672,19 @@
    "added": "2026-11-05",
    "addedBy": "task",
    "note": "Group blog by working illustrators on craft, process and picture-making - fits the liked Lines and Colors drawing posts"
+  },
+  {
+   "name": "The Universe of Discourse",
+   "author": "Mark Dominus",
+   "site": "https://blog.plover.com/",
+   "feed": "https://blog.plover.com/index.rss",
+   "topics": [
+    "math"
+   ],
+   "status": "active",
+   "added": "2026-11-09",
+   "addedBy": "task",
+   "note": "Mark Dominus's long-running math-and-everything blog - combinatorics, number curiosities and etymology, matching the OEIS and puzzle likes"
   }
  ]
 }

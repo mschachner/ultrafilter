@@ -1,43 +1,15 @@
 {
-  "date": "2026-11-05",
-  "artwork": {
-    "wikidata": "Q16162353",
-    "title": "Mr and Mrs Clark and Percy",
-    "interest": "contemporary"
-  },
+  "date": "2026-11-09",
+  "artwork": { "wikidata": "Q21552822", "title": "Ploughed Fields", "interest": "implandscape" },
   "wikis": {
     "wikipedia": [
-      {
-        "url": "https://en.wikipedia.org/wiki/Pell's_equation",
-        "title": "Pell's equation",
-        "topic": "math"
-      },
-      {
-        "url": "https://en.wikipedia.org/wiki/James_Clerk_Maxwell",
-        "title": "James Clerk Maxwell",
-        "topic": "sci"
-      },
-      {
-        "url": "https://en.wikipedia.org/wiki/Still_Life_with_Books",
-        "title": "Still Life with Books",
-        "topic": "arthist"
-      }
+      { "url": "https://en.wikipedia.org/wiki/Alhazen's_problem", "title": "Alhazen's problem", "topic": "math" },
+      { "url": "https://en.wikipedia.org/wiki/Mole_cricket", "title": "Mole cricket", "topic": "sci" },
+      { "url": "https://en.wikipedia.org/wiki/Yabu_Meizan", "title": "Yabu Meizan", "topic": "arthist" }
     ],
-    "nlab": {
-      "url": "https://ncatlab.org/nlab/show/closed+monoidal+structure+on+presheaves",
-      "title": "closed monoidal structure on presheaves"
-    },
-    "sep": {
-      "url": "https://plato.stanford.edu/entries/mathematics-nondeductive/",
-      "title": "Non-Deductive Methods in Mathematics"
-    },
-    "attic": {
-      "url": "https://neugierde.github.io/cantors-attic/Small_countable_ordinals",
-      "title": "Small countable ordinals"
-    },
-    "oeis": {
-      "url": "https://oeis.org/A060463",
-      "title": "Number of open positions in the game Fair Share and Varied Pairs starting with n tokens."
-    }
+    "nlab":  { "url": "https://ncatlab.org/nlab/show/poset+of+subobjects", "title": "poset of subobjects" },
+    "sep":   { "url": "https://plato.stanford.edu/entries/logic-classical/", "title": "Classical Logic" },
+    "attic": { "url": "https://neugierde.github.io/cantors-attic/ZFC", "title": "ZFC" },
+    "oeis":  { "url": "https://oeis.org/A054361", "title": "A054361: polyominoes without holes that do not tile the plane" }
   }
 }

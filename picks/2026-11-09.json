@@ -1,0 +1,15 @@
+{
+  "date": "2026-11-09",
+  "artwork": { "wikidata": "Q21552822", "title": "Ploughed Fields", "interest": "implandscape" },
+  "wikis": {
+    "wikipedia": [
+      { "url": "https://en.wikipedia.org/wiki/Alhazen's_problem", "title": "Alhazen's problem", "topic": "math" },
+      { "url": "https://en.wikipedia.org/wiki/Mole_cricket", "title": "Mole cricket", "topic": "sci" },
+      { "url": "https://en.wikipedia.org/wiki/Yabu_Meizan", "title": "Yabu Meizan", "topic": "arthist" }
+    ],
+    "nlab":  { "url": "https://ncatlab.org/nlab/show/poset+of+subobjects", "title": "poset of subobjects" },
+    "sep":   { "url": "https://plato.stanford.edu/entries/logic-classical/", "title": "Classical Logic" },
+    "attic": { "url": "https://neugierde.github.io/cantors-attic/ZFC", "title": "ZFC" },
+    "oeis":  { "url": "https://oeis.org/A054361", "title": "A054361: polyominoes without holes that do not tile the plane" }
+  }
+}

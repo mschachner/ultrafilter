@@ -1,51 +1,42 @@
 {
-  "date": "2026-11-05",
-  "title": "Three albums for 5 November",
+  "date": "2026-11-09",
+  "title": "Three albums for 9 November",
   "albums": [
     {
       "category": "focus",
       "header": "Focus",
-      "artist": "Tycho",
-      "album": "Dive",
-      "year": 2011,
-      "genres": [
-        "ambient electronic",
-        "chillwave"
-      ],
-      "spotify_url": "https://open.spotify.com/album/3I3PmRvn5iFY8i6zzvEcci",
+      "artist": "Weather Report",
+      "album": "Black Market",
+      "year": 1976,
+      "genres": ["jazz fusion"],
+      "spotify_url": "https://open.spotify.com/album/5354mOnKAQxDZx4MR7en0h",
       "link_is_search": false,
-      "blurb": "Tycho is the one-man project of San Francisco producer Scott Hansen, who is equally known as the graphic designer ISO50 and whose sunset-hued album art is as much a signature as his sound. Dive, released on Ghostly International in November 2011, is his second studio album and the record that fixed the Tycho template: warm analog synthesizers and hardware sound generators layered with guitar and bass into unhurried, fully instrumental pieces, a sound reviewers often place next to Boards of Canada. He later toured it front to back for its tenth anniversary.",
-      "reception": "The album holds a Metacritic score of 80, denoting generally favorable reviews, and PopMatters rated it 8/10 and called it one of the best electronic releases of 2011."
+      "blurb": "Weather Report was the fusion group co-led by keyboardist Joe Zawinul and saxophonist Wayne Shorter, both Miles Davis alumni. Black Market, their sixth studio album, catches the band mid-handover: Alphonso Johnson plays bass on most of the record while a young Jaco Pastorius makes his recorded debut with the group on two tracks, a year before Heavy Weather made them fusion's biggest act. The writing leans into the West African and Latin colors that defined their late-'70s sound, and the whole record is instrumental.",
+      "reception": "AllMusic rates it four and a half stars, and The Rolling Stone Jazz Record Guide gave it four."
     },
     {
       "category": "familiar_artist",
       "header": "Enjoy",
-      "artist": "Men I Trust",
-      "album": "Equus Caballus",
-      "year": 2025,
-      "genres": [
-        "dream pop",
-        "indie pop"
-      ],
-      "spotify_url": "https://open.spotify.com/album/7dJPDPUi94jA91VxG4vZb3",
+      "artist": "Erykah Badu",
+      "album": "Baduizm",
+      "year": 1997,
+      "genres": ["neo-soul"],
+      "spotify_url": "https://open.spotify.com/album/3qr4pTBWEU1SVf01j6RAx3",
       "link_is_search": false,
-      "blurb": "The self-produced Montreal trio of Emmanuelle Proulx, Jessy Caron and Dragos Chiriac released Equus Caballus independently in May 2025, two months after its quieter companion Equus Asinus; the two horse-named records form a deliberate pair and together mark the band's most prolific year. Caballus is the livelier half, folding the murmured vocals and liquid bass of their earlier records into brisker, occasionally post-punk-tinged songs like the single \"Billy Toppy\".",
-      "reception": "The Daily Californian's review rated it 4.0/5, writing that the album traces its themes of devotion and dread with grace."
+      "blurb": "Baduizm is Erykah Badu's February 1997 debut, released on Kedar/Universal and recorded between New York, Philadelphia and her hometown of Dallas. Built on live-feeling grooves and jazz-inflected phrasing, it arrived alongside D'Angelo's early work as a founding document of neo-soul and is credited with raising the genre's commercial profile; singles included \"On & On\" and \"Next Lifetime\".",
+      "reception": "The album peaked at No. 2 on the Billboard 200, was certified triple platinum by the RIAA, and won Best R&B Album at the 1998 Grammys, where \"On & On\" also took Best Female R&B Vocal Performance."
     },
     {
       "category": "new_artist",
       "header": "Explore",
-      "artist": "Nina Simone",
-      "album": "Pastel Blues",
-      "year": 1965,
-      "genres": [
-        "vocal jazz",
-        "blues"
-      ],
-      "spotify_url": "https://open.spotify.com/album/31pd81sWDaK2pP3ok5892z",
+      "artist": "Arthur Russell",
+      "album": "World of Echo",
+      "year": 1986,
+      "genres": ["avant-garde pop", "ambient"],
+      "spotify_url": "https://open.spotify.com/album/7hodLjVNQZSsNEqvG77ZkI",
       "link_is_search": false,
-      "blurb": "One of two albums Simone released for Philips in 1965 alongside the big-band-leaning I Put a Spell on You, Pastel Blues is the stripped-down, blues-rooted half of that year's work, cut with her touring band and reaching from \"Trouble in Mind\" to a harrowing \"Strange Fruit\". It closes with the ten-minute \"Sinnerman\", the traditional spiritual whose arrangement here became one of her defining recordings and, decades later, a fixture of film and television.",
-      "reception": "The album reached No. 8 on Billboard's R&B albums chart and No. 139 on the Billboard 200, and a retrospective Pitchfork review scored it 8.7/10."
+      "blurb": "Arthur Russell was an Iowa-born cellist and composer at the center of downtown New York's 1970s-80s scene, equally at home writing leftfield disco under names like Dinosaur L and Loose Joints. World of Echo, his second studio album and the last released before his death in 1992, strips everything down to his voice, cello and a bath of delay and reverb — songs dissolved into texture, somewhere between pop, ambient and chamber music.",
+      "reception": "Little noticed on release, it was later ranked No. 25 on Pitchfork's list of the best albums of the 1980s, and Fact magazine named it the best album of that decade in 2013."
     }
   ]
 }

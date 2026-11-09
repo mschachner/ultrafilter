@@ -1,0 +1,42 @@
+{
+  "date": "2026-11-09",
+  "title": "Three albums for 9 November",
+  "albums": [
+    {
+      "category": "focus",
+      "header": "Focus",
+      "artist": "Weather Report",
+      "album": "Black Market",
+      "year": 1976,
+      "genres": ["jazz fusion"],
+      "spotify_url": "https://open.spotify.com/album/5354mOnKAQxDZx4MR7en0h",
+      "link_is_search": false,
+      "blurb": "Weather Report was the fusion group co-led by keyboardist Joe Zawinul and saxophonist Wayne Shorter, both Miles Davis alumni. Black Market, their sixth studio album, catches the band mid-handover: Alphonso Johnson plays bass on most of the record while a young Jaco Pastorius makes his recorded debut with the group on two tracks, a year before Heavy Weather made them fusion's biggest act. The writing leans into the West African and Latin colors that defined their late-'70s sound, and the whole record is instrumental.",
+      "reception": "AllMusic rates it four and a half stars, and The Rolling Stone Jazz Record Guide gave it four."
+    },
+    {
+      "category": "familiar_artist",
+      "header": "Enjoy",
+      "artist": "Erykah Badu",
+      "album": "Baduizm",
+      "year": 1997,
+      "genres": ["neo-soul"],
+      "spotify_url": "https://open.spotify.com/album/3qr4pTBWEU1SVf01j6RAx3",
+      "link_is_search": false,
+      "blurb": "Baduizm is Erykah Badu's February 1997 debut, released on Kedar/Universal and recorded between New York, Philadelphia and her hometown of Dallas. Built on live-feeling grooves and jazz-inflected phrasing, it arrived alongside D'Angelo's early work as a founding document of neo-soul and is credited with raising the genre's commercial profile; singles included \"On & On\" and \"Next Lifetime\".",
+      "reception": "The album peaked at No. 2 on the Billboard 200, was certified triple platinum by the RIAA, and won Best R&B Album at the 1998 Grammys, where \"On & On\" also took Best Female R&B Vocal Performance."
+    },
+    {
+      "category": "new_artist",
+      "header": "Explore",
+      "artist": "Arthur Russell",
+      "album": "World of Echo",
+      "year": 1986,
+      "genres": ["avant-garde pop", "ambient"],
+      "spotify_url": "https://open.spotify.com/album/7hodLjVNQZSsNEqvG77ZkI",
+      "link_is_search": false,
+      "blurb": "Arthur Russell was an Iowa-born cellist and composer at the center of downtown New York's 1970s-80s scene, equally at home writing leftfield disco under names like Dinosaur L and Loose Joints. World of Echo, his second studio album and the last released before his death in 1992, strips everything down to his voice, cello and a bath of delay and reverb — songs dissolved into texture, somewhere between pop, ambient and chamber music.",
+      "reception": "Little noticed on release, it was later ranked No. 25 on Pitchfork's list of the best albums of the 1980s, and Fact magazine named it the best album of that decade in 2013."
+    }
+  ]
+}
