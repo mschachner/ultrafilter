@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-02T14:27:12.553Z",
+ "updated": "2026-11-09T13:26:18.646Z",
  "items": [
   {
    "kind": "album",
@@ -1614,6 +1614,15 @@
    "kind": "wiki",
    "key": "https://oeis.org/A193239",
    "when": "2026-10-29"
+  },
+  {
+   "source": "nlab",
+   "title": "poset of subobjects",
+   "url": "https://ncatlab.org/nlab/show/poset+of+subobjects",
+   "topic": null,
+   "kind": "wiki",
+   "key": "https://ncatlab.org/nlab/show/poset+of+subobjects",
+   "when": "2026-11-09"
   },
   {
    "title": "Eye Candy for Today: M.J. Galt pencil portrait",
