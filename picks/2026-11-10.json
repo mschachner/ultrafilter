@@ -1,0 +1,43 @@
+{
+  "date": "2026-11-10",
+  "artwork": {
+    "wikidata": "Q109621099",
+    "title": "Tiger in the Snow",
+    "interest": "ukiyoe"
+  },
+  "wikis": {
+    "wikipedia": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Kepler_triangle",
+        "title": "Kepler triangle",
+        "topic": "math"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Worker_policing",
+        "title": "Worker policing",
+        "topic": "sci"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Rockefeller_Center",
+        "title": "Rockefeller Center",
+        "topic": "arthist"
+      }
+    ],
+    "nlab": {
+      "url": "https://ncatlab.org/nlab/show/elementary+(infinity%2C1)-topos",
+      "title": "elementary (infinity,1)-topos"
+    },
+    "sep": {
+      "url": "https://plato.stanford.edu/entries/logic-hybrid/",
+      "title": "logic: hybrid"
+    },
+    "attic": {
+      "url": "https://neugierde.github.io/cantors-attic/Knuth's_up-arrow_notation",
+      "title": "Knuth's up-arrow notation"
+    },
+    "oeis": {
+      "url": "https://oeis.org/A023790",
+      "title": "Katadromes: digits in base 8 are in strict descending order."
+    }
+  }
+}

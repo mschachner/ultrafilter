@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-09T10:14:25.904Z",
+ "updated": "2026-11-10T10:12:05.089Z",
  "feeds": [
   {
    "name": "Joel David Hamkins",
@@ -470,10 +470,13 @@
     "climate",
     "sci"
    ],
-   "status": "active",
+   "status": "archived",
    "added": "2026-09-29",
    "addedBy": "task",
-   "note": "Hannah Ritchie's data-driven essays on climate, energy and environment - concrete numbers over doom, posting steadily"
+   "note": "Hannah Ritchie's data-driven essays on climate, energy and environment - concrete numbers over doom, posting steadily",
+   "archived": "2026-11-10",
+   "archivedBy": "task",
+   "reason": "no liked posts in 42 days"
   },
   {
    "name": "The Honest Broker",
@@ -685,6 +688,19 @@
    "added": "2026-11-09",
    "addedBy": "task",
    "note": "Mark Dominus's long-running math-and-everything blog - combinatorics, number curiosities and etymology, matching the OEIS and puzzle likes"
+  },
+  {
+   "name": "Scientist Sees Squirrel",
+   "author": "Stephen Heard",
+   "site": "https://scientistseessquirrel.wordpress.com",
+   "feed": "https://scientistseessquirrel.wordpress.com/feed/",
+   "topics": [
+    "sci"
+   ],
+   "status": "active",
+   "added": "2026-11-10",
+   "addedBy": "task",
+   "note": "Stephen Heard, an evolutionary ecologist, writing weekly on ecology, insects and the practice of science - fits the natural-history likes alongside Small Things Considered"
   }
  ]
 }

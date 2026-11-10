@@ -1,0 +1,51 @@
+{
+  "date": "2026-11-10",
+  "title": "Three albums for 10 November",
+  "albums": [
+    {
+      "category": "focus",
+      "header": "Focus",
+      "artist": "Ryuichi Sakamoto",
+      "album": "BTTB",
+      "year": 1999,
+      "genres": [
+        "solo piano",
+        "minimalism"
+      ],
+      "spotify_url": "https://open.spotify.com/album/4MI7PELbBbWJrTgAX1nbKR",
+      "link_is_search": false,
+      "blurb": "Ryuichi Sakamoto came to fame as a third of Yellow Magic Orchestra and later won an Oscar for scoring The Last Emperor; BTTB — short for “Back to the Basics” — is the solo piano album he made after a decade of dense orchestral and electronic work, a set of short, Satie-leaning pieces played alone at the keyboard. Long a rarity outside Japan, it only reached streaming services with the 20th-anniversary edition in 2019, which is the version linked here.",
+      "reception": "Its companion single “Energy Flow” topped Japan’s Oricon chart — widely reported as the first instrumental single ever to reach number one there — and ranked among Japan’s best-selling singles of 1999."
+    },
+    {
+      "category": "familiar_artist",
+      "header": "Enjoy",
+      "artist": "Sufjan Stevens",
+      "album": "The Age of Adz",
+      "year": 2010,
+      "genres": [
+        "electronic",
+        "art pop"
+      ],
+      "spotify_url": "https://open.spotify.com/album/4kRMCapj9nEyBWnM0kc9OX",
+      "link_is_search": false,
+      "blurb": "Released five years after Illinois, The Age of Adz was Stevens’s first full-length collection of original songs since that album, and it trades the banjos and marching-band orchestration for drum machines, analog synthesizers and processed strings. The songs draw on the apocalyptic sign paintings of Louisiana outsider artist Royal Robertson, whose work appears on the cover, and the record closes with the 25-minute “Impossible Soul.”",
+      "reception": "It debuted at number seven on the Billboard 200 — Stevens’s highest chart position at the time, in his best sales week to that point — with generally favorable reviews and a Metacritic score of 80."
+    },
+    {
+      "category": "new_artist",
+      "header": "Explore",
+      "artist": "CAN",
+      "album": "Ege Bamyasi",
+      "year": 1972,
+      "genres": [
+        "krautrock",
+        "experimental rock"
+      ],
+      "spotify_url": "https://open.spotify.com/album/3Qa2CdymyGvXkqoqIZykmT",
+      "link_is_search": false,
+      "blurb": "Can were the Cologne experimental rock band built around bassist-engineer Holger Czukay, keyboardist Irmin Schmidt, guitarist Michael Karoli and drummer Jaki Liebezeit, fronted in this period by Japanese singer Damo Suzuki. Ege Bamyasi, their third studio album, was recorded at their own Inner Space studio after the surprise German Top 10 success of the single “Spoon” — included here as the closer — and compresses their long-form grooves into tighter, funkier songs.",
+      "reception": "Pitchfork placed it at number 19 on its Top 100 Albums of the 1970s, and its influence runs wide — the Texas band Spoon took their name from the album’s hit single."
+    }
+  ]
+}
