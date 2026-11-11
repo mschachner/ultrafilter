@@ -1,43 +1,43 @@
 {
-  "date": "2026-11-10",
+  "date": "2026-11-11",
   "artwork": {
-    "wikidata": "Q109621099",
-    "title": "Tiger in the Snow",
-    "interest": "ukiyoe"
+    "wikidata": "Q28532596",
+    "title": "Totes Meer",
+    "interest": "surrealism"
   },
   "wikis": {
     "wikipedia": [
       {
-        "url": "https://en.wikipedia.org/wiki/Kepler_triangle",
-        "title": "Kepler triangle",
+        "url": "https://en.wikipedia.org/wiki/Mutilated_chessboard_problem",
+        "title": "Mutilated chessboard problem",
         "topic": "math"
       },
       {
-        "url": "https://en.wikipedia.org/wiki/Worker_policing",
-        "title": "Worker policing",
-        "topic": "sci"
+        "url": "https://en.wikipedia.org/wiki/Lise_with_a_Parasol",
+        "title": "Lise with a Parasol",
+        "topic": "arthist"
       },
       {
-        "url": "https://en.wikipedia.org/wiki/Rockefeller_Center",
-        "title": "Rockefeller Center",
-        "topic": "arthist"
+        "url": "https://en.wikipedia.org/wiki/Longfin_mako_shark",
+        "title": "Longfin mako shark",
+        "topic": "sci"
       }
     ],
     "nlab": {
-      "url": "https://ncatlab.org/nlab/show/elementary+(infinity%2C1)-topos",
-      "title": "elementary (infinity,1)-topos"
+      "url": "https://ncatlab.org/nlab/show/decidable+equality",
+      "title": "decidable equality"
     },
     "sep": {
-      "url": "https://plato.stanford.edu/entries/logic-hybrid/",
-      "title": "logic: hybrid"
+      "url": "https://plato.stanford.edu/entries/qt-entangle/",
+      "title": "quantum theory: quantum entanglement and information"
     },
     "attic": {
-      "url": "https://neugierde.github.io/cantors-attic/Knuth's_up-arrow_notation",
-      "title": "Knuth's up-arrow notation"
+      "url": "https://neugierde.github.io/cantors-attic/Constructible_universe",
+      "title": "Constructible universe"
     },
     "oeis": {
-      "url": "https://oeis.org/A023790",
-      "title": "Katadromes: digits in base 8 are in strict descending order."
+      "url": "https://oeis.org/A102364",
+      "title": "Number of terms in Fibonacci sequence less than n not used in Zeckendorf representation of n"
     }
   }
 }

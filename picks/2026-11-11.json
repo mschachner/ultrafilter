@@ -1,0 +1,43 @@
+{
+  "date": "2026-11-11",
+  "artwork": {
+    "wikidata": "Q28532596",
+    "title": "Totes Meer",
+    "interest": "surrealism"
+  },
+  "wikis": {
+    "wikipedia": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Mutilated_chessboard_problem",
+        "title": "Mutilated chessboard problem",
+        "topic": "math"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Lise_with_a_Parasol",
+        "title": "Lise with a Parasol",
+        "topic": "arthist"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Longfin_mako_shark",
+        "title": "Longfin mako shark",
+        "topic": "sci"
+      }
+    ],
+    "nlab": {
+      "url": "https://ncatlab.org/nlab/show/decidable+equality",
+      "title": "decidable equality"
+    },
+    "sep": {
+      "url": "https://plato.stanford.edu/entries/qt-entangle/",
+      "title": "quantum theory: quantum entanglement and information"
+    },
+    "attic": {
+      "url": "https://neugierde.github.io/cantors-attic/Constructible_universe",
+      "title": "Constructible universe"
+    },
+    "oeis": {
+      "url": "https://oeis.org/A102364",
+      "title": "Number of terms in Fibonacci sequence less than n not used in Zeckendorf representation of n"
+    }
+  }
+}

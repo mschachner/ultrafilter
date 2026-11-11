@@ -1,51 +1,51 @@
 {
-  "date": "2026-11-10",
-  "title": "Three albums for 10 November",
+  "date": "2026-11-11",
+  "title": "Three albums for 11 November",
   "albums": [
     {
       "category": "focus",
       "header": "Focus",
-      "artist": "Ryuichi Sakamoto",
-      "album": "BTTB",
-      "year": 1999,
+      "artist": "Gustavo Santaolalla",
+      "album": "Ronroco",
+      "year": 1998,
       "genres": [
-        "solo piano",
-        "minimalism"
+        "Andean folk",
+        "acoustic instrumental"
       ],
-      "spotify_url": "https://open.spotify.com/album/4MI7PELbBbWJrTgAX1nbKR",
+      "spotify_url": "https://open.spotify.com/album/2wXkcCpf4OwYvPDVkswpV9",
       "link_is_search": false,
-      "blurb": "Ryuichi Sakamoto came to fame as a third of Yellow Magic Orchestra and later won an Oscar for scoring The Last Emperor; BTTB — short for “Back to the Basics” — is the solo piano album he made after a decade of dense orchestral and electronic work, a set of short, Satie-leaning pieces played alone at the keyboard. Long a rarity outside Japan, it only reached streaming services with the 20th-anniversary edition in 2019, which is the version linked here.",
-      "reception": "Its companion single “Energy Flow” topped Japan’s Oricon chart — widely reported as the first instrumental single ever to reach number one there — and ranked among Japan’s best-selling singles of 1999."
+      "blurb": "Santaolalla is the Argentine producer and composer who went on to win back-to-back Oscars for the Brokeback Mountain and Babel scores; in the 1990s he was best known for producing Latin rock records, including Café Tacvba's Re. Ronroco, released on Nonesuch in 1998, was his turn from the mixing desk to his own music: twelve quiet solo pieces on the ronroco, a deeper-voiced cousin of the Andean charango, with Aníbal Kerpel adding touches of vibraphone and melodica. There are no vocals anywhere on the record.",
+      "reception": "Michael Mann licensed its track \"Iguazu\" for The Insider in 1999 after hearing the album, which effectively launched Santaolalla's film-scoring career, and Nonesuch gave the record its first vinyl issue as a remaster in 2024."
     },
     {
       "category": "familiar_artist",
       "header": "Enjoy",
-      "artist": "Sufjan Stevens",
-      "album": "The Age of Adz",
-      "year": 2010,
+      "artist": "Unknown Mortal Orchestra",
+      "album": "II",
+      "year": 2013,
       "genres": [
-        "electronic",
-        "art pop"
+        "psychedelic rock",
+        "lo-fi indie"
       ],
-      "spotify_url": "https://open.spotify.com/album/4kRMCapj9nEyBWnM0kc9OX",
+      "spotify_url": "https://open.spotify.com/album/6ULZg9jfTYgi41HmrRww24",
       "link_is_search": false,
-      "blurb": "Released five years after Illinois, The Age of Adz was Stevens’s first full-length collection of original songs since that album, and it trades the banjos and marching-band orchestration for drum machines, analog synthesizers and processed strings. The songs draw on the apocalyptic sign paintings of Louisiana outsider artist Royal Robertson, whose work appears on the cover, and the record closes with the 25-minute “Impossible Soul.”",
-      "reception": "It debuted at number seven on the Billboard 200 — Stevens’s highest chart position at the time, in his best sales week to that point — with generally favorable reviews and a Metacritic score of 80."
+      "blurb": "Ruban Nielson's Portland-based project released II on Jagjaguwar in February 2013, between the scuzzy self-titled debut and the funkier Multi-Love. Recorded and produced by Nielson himself, it keeps the warped, home-taped guitar sound but opens it out into road-weary songwriting — \"So Good at Being in Trouble\" and \"Swim and Sleep (Like a Shark)\" are its center of gravity. The Spotify link is the deluxe edition, which carries the full original album plus a handful of extras.",
+      "reception": "II holds a 78/100 on Metacritic, indicating generally favorable reviews, with Pitchfork scoring it 7.3 and critics widely noting it as a lonelier, more refined record than the band's debut."
     },
     {
       "category": "new_artist",
       "header": "Explore",
-      "artist": "CAN",
-      "album": "Ege Bamyasi",
-      "year": 1972,
+      "artist": "Bobby Caldwell",
+      "album": "Bobby Caldwell",
+      "year": 1978,
       "genres": [
-        "krautrock",
-        "experimental rock"
+        "blue-eyed soul",
+        "smooth R&B"
       ],
-      "spotify_url": "https://open.spotify.com/album/3Qa2CdymyGvXkqoqIZykmT",
+      "spotify_url": "https://open.spotify.com/album/6F5At9Oj2P7LwE8lCLJG2B",
       "link_is_search": false,
-      "blurb": "Can were the Cologne experimental rock band built around bassist-engineer Holger Czukay, keyboardist Irmin Schmidt, guitarist Michael Karoli and drummer Jaki Liebezeit, fronted in this period by Japanese singer Damo Suzuki. Ege Bamyasi, their third studio album, was recorded at their own Inner Space studio after the surprise German Top 10 success of the single “Spoon” — included here as the closer — and compresses their long-form grooves into tighter, funkier songs.",
-      "reception": "Pitchfork placed it at number 19 on its Top 100 Albums of the 1970s, and its influence runs wide — the Texas band Spoon took their name from the album’s hit single."
+      "blurb": "Caldwell was a Miami singer-songwriter whose self-titled 1978 debut came out on Clouds, an imprint of the disco powerhouse TK Records. The label famously kept his face off the cover — a silhouette on a park bench — so R&B radio and audiences wouldn't know he was white, and the record's smooth, jazz-chorded soul made him a lasting favorite with that audience. Later reissues retitled the album What You Won't Do for Love after its hit, which is how Spotify lists it; it has since become a yacht-rock touchstone and a staple sample source, most famously in 2Pac's \"Do for Love\".",
+      "reception": "The album reached No. 21 on the Billboard 200, while the title single hit No. 9 on the Hot 100 and No. 6 on the R&B chart."
     }
   ]
 }

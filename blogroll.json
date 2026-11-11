@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-10T10:12:05.089Z",
+ "updated": "2026-11-11T10:18:41.826Z",
  "feeds": [
   {
    "name": "Joel David Hamkins",
@@ -486,10 +486,13 @@
    "topics": [
     "arts"
    ],
-   "status": "active",
+   "status": "archived",
    "added": "2026-09-30",
    "addedBy": "task",
-   "note": "Ted Gioia, the jazz critic and music historian, on music, culture and the state of the arts - fits the daily-jazz-album habit"
+   "note": "Ted Gioia, the jazz critic and music historian, on music, culture and the state of the arts - fits the daily-jazz-album habit",
+   "archived": "2026-11-11",
+   "archivedBy": "task",
+   "reason": "no liked posts in 42 days"
   },
   {
    "name": "The Frame Blog",
@@ -701,6 +704,19 @@
    "added": "2026-11-10",
    "addedBy": "task",
    "note": "Stephen Heard, an evolutionary ecologist, writing weekly on ecology, insects and the practice of science - fits the natural-history likes alongside Small Things Considered"
+  },
+  {
+   "name": "A Closer Listen",
+   "author": "Richard Allen et al.",
+   "site": "https://acloserlisten.com/",
+   "feed": "https://acloserlisten.com/feed/",
+   "topics": [
+    "arts"
+   ],
+   "status": "active",
+   "added": "2026-11-11",
+   "addedBy": "task",
+   "note": "Small-team review site for instrumental and experimental music - ambient, modern composition, field recordings - posting daily, squarely in the focus-album lane"
   }
  ]
 }
