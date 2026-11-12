@@ -1,51 +1,50 @@
 {
-  "date": "2026-11-11",
-  "title": "Three albums for 11 November",
+  "date": "2026-11-12",
+  "title": "Three albums for 12 November",
   "albums": [
     {
       "category": "focus",
       "header": "Focus",
-      "artist": "Gustavo Santaolalla",
-      "album": "Ronroco",
-      "year": 1998,
+      "artist": "Jim Hall",
+      "album": "Concierto",
+      "year": 1975,
       "genres": [
-        "Andean folk",
-        "acoustic instrumental"
+        "jazz",
+        "jazz guitar"
       ],
-      "spotify_url": "https://open.spotify.com/album/2wXkcCpf4OwYvPDVkswpV9",
+      "spotify_url": "https://open.spotify.com/album/104g5VLtuvctk0lxXHokNy",
       "link_is_search": false,
-      "blurb": "Santaolalla is the Argentine producer and composer who went on to win back-to-back Oscars for the Brokeback Mountain and Babel scores; in the 1990s he was best known for producing Latin rock records, including Café Tacvba's Re. Ronroco, released on Nonesuch in 1998, was his turn from the mixing desk to his own music: twelve quiet solo pieces on the ronroco, a deeper-voiced cousin of the Andean charango, with Aníbal Kerpel adding touches of vibraphone and melodica. There are no vocals anywhere on the record.",
-      "reception": "Michael Mann licensed its track \"Iguazu\" for The Insider in 1999 after hearing the album, which effectively launched Santaolalla's film-scoring career, and Nonesuch gave the record its first vinyl issue as a remaster in 2024."
+      "blurb": "Jim Hall was jazz's great understated guitarist, a favorite of Sonny Rollins and Bill Evans who valued space and tone over speed. Concierto, recorded in April 1975 at Van Gelder Studio for Creed Taylor's CTI label, sets him in an all-star sextet with Paul Desmond, Chet Baker, Roland Hanna, Ron Carter and Steve Gadd, with arrangements by Don Sebesky. Its centerpiece is a nineteen-minute reading of Rodrigo's Concierto de Aranjuez that filled the whole second side of the original LP.",
+      "reception": "AllMusic's Ken Dryden called it \"arguably the greatest LP in CTI's history,\" and All About Jazz has described it as a high watermark for both the label and Hall."
     },
     {
       "category": "familiar_artist",
       "header": "Enjoy",
-      "artist": "Unknown Mortal Orchestra",
-      "album": "II",
-      "year": 2013,
+      "artist": "Mac Miller",
+      "album": "Swimming",
+      "year": 2018,
       "genres": [
-        "psychedelic rock",
-        "lo-fi indie"
+        "hip-hop",
+        "neo-soul"
       ],
-      "spotify_url": "https://open.spotify.com/album/6ULZg9jfTYgi41HmrRww24",
+      "spotify_url": "https://open.spotify.com/album/5wtE5aLX5r7jOosmPhJhhk",
       "link_is_search": false,
-      "blurb": "Ruban Nielson's Portland-based project released II on Jagjaguwar in February 2013, between the scuzzy self-titled debut and the funkier Multi-Love. Recorded and produced by Nielson himself, it keeps the warped, home-taped guitar sound but opens it out into road-weary songwriting — \"So Good at Being in Trouble\" and \"Swim and Sleep (Like a Shark)\" are its center of gravity. The Spotify link is the deluxe edition, which carries the full original album plus a handful of extras.",
-      "reception": "II holds a 78/100 on Metacritic, indicating generally favorable reviews, with Pitchfork scoring it 7.3 and critics widely noting it as a lonelier, more refined record than the band's debut."
+      "blurb": "Swimming is the Pittsburgh rapper's fifth studio album and the last released in his lifetime, arriving on REMember/Warner in August 2018, five weeks before his death at 26. It completes his turn from party rap toward sung, live-band soul and funk, with Thundercat's bass threaded through its warmest moments, and it forms a deliberate pair with Circles, the companion album finished posthumously by producer Jon Brion in 2020.",
+      "reception": "It debuted at number three on the Billboard 200, earned a posthumous Grammy nomination for Best Rap Album at the 2019 ceremony, and was certified platinum by the RIAA in 2021."
     },
     {
       "category": "new_artist",
       "header": "Explore",
-      "artist": "Bobby Caldwell",
-      "album": "Bobby Caldwell",
-      "year": 1978,
+      "artist": "Betty Davis",
+      "album": "They Say I'm Different",
+      "year": 1974,
       "genres": [
-        "blue-eyed soul",
-        "smooth R&B"
+        "funk"
       ],
-      "spotify_url": "https://open.spotify.com/album/6F5At9Oj2P7LwE8lCLJG2B",
+      "spotify_url": "https://open.spotify.com/album/6cnH06Wxjb2QqUHFa8PEwc",
       "link_is_search": false,
-      "blurb": "Caldwell was a Miami singer-songwriter whose self-titled 1978 debut came out on Clouds, an imprint of the disco powerhouse TK Records. The label famously kept his face off the cover — a silhouette on a park bench — so R&B radio and audiences wouldn't know he was white, and the record's smooth, jazz-chorded soul made him a lasting favorite with that audience. Later reissues retitled the album What You Won't Do for Love after its hit, which is how Spotify lists it; it has since become a yacht-rock touchstone and a staple sample source, most famously in 2Pac's \"Do for Love\".",
-      "reception": "The album reached No. 21 on the Billboard 200, while the title single hit No. 9 on the Hot 100 and No. 6 on the R&B chart."
+      "blurb": "Betty Davis was a funk singer and songwriter — briefly married to Miles Davis, whose electric turn she helped catalyze — and one of the first Black women to write and produce her own records. They Say I'm Different, her second album, came out in 1974 on the Just Sunshine label and is her rawest, most snarling statement; radio largely refused to play her, and she left the industry by 1980. The album circulated as a collector's secret until Light in the Attic's 2007 remastered reissue brought it back into print.",
+      "reception": "It reached number 46 on Billboard's R&B albums chart, and The Wire later included it in its list \"100 Records That Set the World on Fire (While No One Was Listening).\""
     }
   ]
 }

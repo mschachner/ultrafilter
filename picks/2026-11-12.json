@@ -1,0 +1,43 @@
+{
+  "date": "2026-11-12",
+  "artwork": {
+    "wikidata": "Q133810183",
+    "title": "Iva (painting)",
+    "interest": "abex"
+  },
+  "wikis": {
+    "wikipedia": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Hyperbolic_spiral",
+        "title": "Hyperbolic spiral",
+        "topic": "math"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Small_shelly_fauna",
+        "title": "Small shelly fauna",
+        "topic": "sci"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Bronx_General_Post_Office",
+        "title": "Bronx General Post Office",
+        "topic": "arthist"
+      }
+    ],
+    "nlab": {
+      "url": "https://ncatlab.org/nlab/show/sober+topological+space",
+      "title": "sober topological space"
+    },
+    "sep": {
+      "url": "https://plato.stanford.edu/entries/logical-form/",
+      "title": "logical form"
+    },
+    "attic": {
+      "url": "https://neugierde.github.io/cantors-attic/Forcing",
+      "title": "Forcing"
+    },
+    "oeis": {
+      "url": "https://oeis.org/A001331",
+      "title": "Number of n-element algebras with 1 ternary operation."
+    }
+  }
+}

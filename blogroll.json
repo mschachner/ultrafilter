@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-11T10:18:41.826Z",
+ "updated": "2026-11-12T10:13:18.014Z",
  "feeds": [
   {
    "name": "Joel David Hamkins",
@@ -502,10 +502,13 @@
    "topics": [
     "arthist"
    ],
-   "status": "active",
+   "status": "archived",
    "added": "2026-10-01",
    "addedBy": "task",
-   "note": "Lynn Roberts's specialist online magazine on the history of picture frames, 13th century to today - active, scholarly and visual, in research partnership with the National Gallery"
+   "note": "Lynn Roberts's specialist online magazine on the history of picture frames, 13th century to today - active, scholarly and visual, in research partnership with the National Gallery",
+   "archived": "2026-11-12",
+   "archivedBy": "task",
+   "reason": "no liked posts in 42 days"
   },
   {
    "name": "11011110",
@@ -717,6 +720,20 @@
    "added": "2026-11-11",
    "addedBy": "task",
    "note": "Small-team review site for instrumental and experimental music - ambient, modern composition, field recordings - posting daily, squarely in the focus-album lane"
+  },
+  {
+   "name": "Making A Mark",
+   "author": "Katherine Tyrrell",
+   "site": "https://makingamark.blogspot.com/",
+   "feed": "https://makingamark.blogspot.com/feeds/posts/default",
+   "topics": [
+    "arts",
+    "arthist"
+   ],
+   "status": "active",
+   "added": "2026-11-12",
+   "addedBy": "task",
+   "note": "Katherine Tyrrell's long-running blog on drawing, painting and the art world - practical and review-driven, next to the liked Lines and Colors posts"
   }
  ]
 }
