@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-12T13:19:05.964Z",
+ "updated": "2026-11-12T13:19:07.479Z",
  "items": [
   {
    "kind": "album",
@@ -1640,6 +1640,15 @@
    "topic": null,
    "kind": "wiki",
    "key": "https://oeis.org/A001331",
+   "when": "2026-11-12"
+  },
+  {
+   "source": "oeis",
+   "title": "Almost-squares: m such that m/p(m) >= k/p(k) for all k<m, where p(m) is the least perimeter of a rectangle with integer side lengths and area m.",
+   "url": "https://oeis.org/A033501",
+   "topic": null,
+   "kind": "wiki",
+   "key": "https://oeis.org/A033501",
    "when": "2026-11-12"
   },
   {
