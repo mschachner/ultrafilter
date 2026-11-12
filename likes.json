@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-09T13:26:30.405Z",
+ "updated": "2026-11-12T13:19:05.964Z",
  "items": [
   {
    "kind": "album",
@@ -1632,6 +1632,15 @@
    "kind": "wiki",
    "key": "https://oeis.org/A054361",
    "when": "2026-11-09"
+  },
+  {
+   "source": "oeis",
+   "title": "Number of n-element algebras with 1 ternary operation.",
+   "url": "https://oeis.org/A001331",
+   "topic": null,
+   "kind": "wiki",
+   "key": "https://oeis.org/A001331",
+   "when": "2026-11-12"
   },
   {
    "title": "Eye Candy for Today: M.J. Galt pencil portrait",
