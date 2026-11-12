@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-12T17:33:57.412Z",
+ "updated": "2026-11-12T22:46:50.656Z",
  "items": [
   {
    "kind": "album",
@@ -933,6 +933,19 @@
    "liked": true,
    "kind": "album",
    "key": "gustavo santaolalla::ronroco",
+   "when": "2026-11-12"
+  },
+  {
+   "artist": "Jim Hall",
+   "album": "Concierto",
+   "genres": [
+    "jazz",
+    "jazz guitar"
+   ],
+   "listened": "2026-11-12",
+   "liked": false,
+   "kind": "album",
+   "key": "jim hall::concierto",
    "when": "2026-11-12"
   },
   {
