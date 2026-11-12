@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-12T17:33:55.513Z",
+ "updated": "2026-11-12T17:33:57.412Z",
  "items": [
   {
    "kind": "album",
@@ -930,7 +930,7 @@
     "acoustic instrumental"
    ],
    "listened": "2026-11-12",
-   "liked": false,
+   "liked": true,
    "kind": "album",
    "key": "gustavo santaolalla::ronroco",
    "when": "2026-11-12"
