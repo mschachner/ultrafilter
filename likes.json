@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-12T13:19:15.510Z",
+ "updated": "2026-11-12T13:19:20.867Z",
  "items": [
   {
    "kind": "album",
@@ -1632,6 +1632,15 @@
    "kind": "wiki",
    "key": "https://oeis.org/A054361",
    "when": "2026-11-09"
+  },
+  {
+   "source": "nlab",
+   "title": "inert morphism",
+   "url": "https://ncatlab.org/nlab/show/inert+morphism",
+   "topic": null,
+   "kind": "wiki",
+   "key": "https://ncatlab.org/nlab/show/inert+morphism",
+   "when": "2026-11-12"
   },
   {
    "source": "nlab",
