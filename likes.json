@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-13T00:07:48.083Z",
+ "updated": "2026-11-13T00:49:44.606Z",
  "items": [
   {
    "kind": "album",
@@ -959,6 +959,18 @@
    "liked": true,
    "kind": "album",
    "key": "ryuichi sakamoto::bttb",
+   "when": "2026-11-12"
+  },
+  {
+   "artist": "Weather Report",
+   "album": "Black Market",
+   "genres": [
+    "jazz fusion"
+   ],
+   "listened": "2026-11-12",
+   "liked": false,
+   "kind": "album",
+   "key": "weather report::black market",
    "when": "2026-11-12"
   },
   {
