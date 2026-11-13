@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-12T22:46:50.656Z",
+ "updated": "2026-11-13T00:07:46.075Z",
  "items": [
   {
    "kind": "album",
@@ -946,6 +946,19 @@
    "liked": false,
    "kind": "album",
    "key": "jim hall::concierto",
+   "when": "2026-11-12"
+  },
+  {
+   "artist": "Ryuichi Sakamoto",
+   "album": "BTTB",
+   "genres": [
+    "solo piano",
+    "minimalism"
+   ],
+   "listened": "2026-11-12",
+   "liked": false,
+   "kind": "album",
+   "key": "ryuichi sakamoto::bttb",
    "when": "2026-11-12"
   },
   {
