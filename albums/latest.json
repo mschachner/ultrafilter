@@ -1,50 +1,51 @@
 {
-  "date": "2026-11-12",
-  "title": "Three albums for 12 November",
+  "date": "2026-11-15",
+  "title": "Three albums for 15 November",
   "albums": [
     {
       "category": "focus",
       "header": "Focus",
-      "artist": "Jim Hall",
-      "album": "Concierto",
-      "year": 1975,
+      "artist": "Fennesz",
+      "album": "Endless Summer",
+      "year": 2001,
       "genres": [
-        "jazz",
-        "jazz guitar"
+        "ambient",
+        "glitch"
       ],
-      "spotify_url": "https://open.spotify.com/album/104g5VLtuvctk0lxXHokNy",
+      "spotify_url": "https://open.spotify.com/album/0xnL6goTzcRFKzbrleXfpF",
       "link_is_search": false,
-      "blurb": "Jim Hall was jazz's great understated guitarist, a favorite of Sonny Rollins and Bill Evans who valued space and tone over speed. Concierto, recorded in April 1975 at Van Gelder Studio for Creed Taylor's CTI label, sets him in an all-star sextet with Paul Desmond, Chet Baker, Roland Hanna, Ron Carter and Steve Gadd, with arrangements by Don Sebesky. Its centerpiece is a nineteen-minute reading of Rodrigo's Concierto de Aranjuez that filled the whole second side of the original LP.",
-      "reception": "AllMusic's Ken Dryden called it \"arguably the greatest LP in CTI's history,\" and All About Jazz has described it as a high watermark for both the label and Hall."
+      "blurb": "Christian Fennesz is an Austrian guitarist and laptop composer, the best-known artist on Vienna's Mego label, who later recorded duo albums with Ryuichi Sakamoto. Endless Summer (2001) is his third album and the center of his catalogue: electric guitar processed through granular software into a warm haze, with surf- and pop-inflected melodies surfacing through the static — a deliberate melodic turn after the harsher Hotel Paral.lel. All ten tracks are instrumental, and Editions Mego reissued the album in 2006 with additional material.",
+      "reception": "Pitchfork rated it 9.4/10 on release, and Exclaim! called it the electronic album of the year for 2001."
     },
     {
       "category": "familiar_artist",
       "header": "Enjoy",
-      "artist": "Mac Miller",
-      "album": "Swimming",
-      "year": 2018,
+      "artist": "Jungle",
+      "album": "Jungle",
+      "year": 2014,
       "genres": [
-        "hip-hop",
-        "neo-soul"
+        "neo-soul",
+        "modern funk"
       ],
-      "spotify_url": "https://open.spotify.com/album/5wtE5aLX5r7jOosmPhJhhk",
+      "spotify_url": "https://open.spotify.com/album/6IH6co1QUS7uXoyPDv0rIr",
       "link_is_search": false,
-      "blurb": "Swimming is the Pittsburgh rapper's fifth studio album and the last released in his lifetime, arriving on REMember/Warner in August 2018, five weeks before his death at 26. It completes his turn from party rap toward sung, live-band soul and funk, with Thundercat's bass threaded through its warmest moments, and it forms a deliberate pair with Circles, the companion album finished posthumously by producer Jon Brion in 2020.",
-      "reception": "It debuted at number three on the Billboard 200, earned a posthumous Grammy nomination for Best Rap Album at the 2019 ceremony, and was certified platinum by the RIAA in 2021."
+      "blurb": "Before Loving in Stereo, the London production duo of Josh Lloyd-Watson and Tom McFarland released this self-titled debut on XL Recordings in July 2014, back when they kept their identities hidden behind the initials J and T. Its twelve tracks of falsetto-led, midtempo 1970s-styled funk and soul — including the early singles Busy Earnin' and The Heat — set the template the band has elaborated on every record since.",
+      "reception": "The album was shortlisted for the 2014 Mercury Prize and reached No. 7 on the UK Albums Chart."
     },
     {
       "category": "new_artist",
       "header": "Explore",
-      "artist": "Betty Davis",
-      "album": "They Say I'm Different",
-      "year": 1974,
+      "artist": "Duster",
+      "album": "Stratosphere",
+      "year": 1998,
       "genres": [
-        "funk"
+        "slowcore",
+        "space rock"
       ],
-      "spotify_url": "https://open.spotify.com/album/6cnH06Wxjb2QqUHFa8PEwc",
+      "spotify_url": "https://open.spotify.com/album/35QrvQ2SlbEwZD8oq2yxBH",
       "link_is_search": false,
-      "blurb": "Betty Davis was a funk singer and songwriter — briefly married to Miles Davis, whose electric turn she helped catalyze — and one of the first Black women to write and produce her own records. They Say I'm Different, her second album, came out in 1974 on the Just Sunshine label and is her rawest, most snarling statement; radio largely refused to play her, and she left the industry by 1980. The album circulated as a collector's secret until Light in the Attic's 2007 remastered reissue brought it back into print.",
-      "reception": "It reached number 46 on Billboard's R&B albums chart, and The Wire later included it in its list \"100 Records That Set the World on Fire (While No One Was Listening).\""
+      "blurb": "Duster are a San Jose trio — Clay Parton, Canaan Dove Amber and Jason Albertini — who recorded this debut for Up Records on cheap four-track equipment in 1998. Its seventeen short pieces drift between slow, murmured songs and hazy instrumentals, a sound since filed under slowcore and space rock. The band released one more album, Contemporary Movement (2000), then went quiet for nearly two decades before a 2019 reunion.",
+      "reception": "Largely unnoticed on release, it became a collector's item — original vinyl copies traded for over $400 — and Pitchfork gave it a retrospective 8.6 around Numero Group's 2019 reissue of the band's catalogue."
     }
   ]
 }

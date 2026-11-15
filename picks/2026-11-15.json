@@ -1,0 +1,43 @@
+{
+  "date": "2026-11-15",
+  "artwork": {
+    "wikidata": "Q3877556",
+    "title": "Nu couché",
+    "interest": "modern"
+  },
+  "wikis": {
+    "wikipedia": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Square",
+        "title": "Square",
+        "topic": "math"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/HD_2039",
+        "title": "HD 2039",
+        "topic": "sci"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Pruitt%E2%80%93Igoe",
+        "title": "Pruitt–Igoe",
+        "topic": "arthist"
+      }
+    ],
+    "nlab": {
+      "url": "https://ncatlab.org/nlab/show/transcendental+number",
+      "title": "transcendental number"
+    },
+    "sep": {
+      "url": "https://plato.stanford.edu/entries/closure-epistemic/",
+      "title": "epistemic closure"
+    },
+    "attic": {
+      "url": "https://neugierde.github.io/cantors-attic/Weakly_ineffable",
+      "title": "Weakly ineffable"
+    },
+    "oeis": {
+      "url": "https://oeis.org/A303931",
+      "title": "A303931: noncrossing partitions of an n-set up to rotation and reflection, without singleton blocks"
+    }
+  }
+}

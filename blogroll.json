@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-12T10:13:18.014Z",
+ "updated": "2026-11-15T10:14:16.645Z",
  "feeds": [
   {
    "name": "Joel David Hamkins",
@@ -518,10 +518,13 @@
    "topics": [
     "math"
    ],
-   "status": "active",
+   "status": "archived",
    "added": "2026-10-02",
    "addedBy": "task",
-   "note": "David Eppstein's combinatorics and computational geometry blog - matches the liked graph-theory articles (circle packing, pseudoforest, Keller's conjecture)"
+   "note": "David Eppstein's combinatorics and computational geometry blog - matches the liked graph-theory articles (circle packing, pseudoforest, Keller's conjecture)",
+   "archived": "2026-11-15",
+   "archivedBy": "task",
+   "reason": "no liked posts in 42 days"
   },
   {
    "name": "VolcanoCafe",
@@ -531,10 +534,13 @@
    "topics": [
     "sci"
    ],
-   "status": "active",
+   "status": "archived",
    "added": "2026-10-04",
    "addedBy": "task",
-   "note": "Small-group volcanology blog, active weekly - ties to the liked Misti article and the earth-science thread in the wiki likes"
+   "note": "Small-group volcanology blog, active weekly - ties to the liked Misti article and the earth-science thread in the wiki likes",
+   "archived": "2026-11-15",
+   "archivedBy": "task",
+   "reason": "no liked posts in 42 days"
   },
   {
    "name": "Volts",
@@ -734,6 +740,20 @@
    "added": "2026-11-12",
    "addedBy": "task",
    "note": "Katherine Tyrrell's long-running blog on drawing, painting and the art world - practical and review-driven, next to the liked Lines and Colors posts"
+  },
+  {
+   "name": "The Eyewall",
+   "author": "Eric Berger & Matt Lanza",
+   "site": "https://theeyewall.com/",
+   "feed": "https://theeyewall.com/feed/",
+   "topics": [
+    "climate",
+    "sci"
+   ],
+   "status": "active",
+   "added": "2026-11-15",
+   "addedBy": "task",
+   "note": "Eric Berger and Matt Lanza's hurricane and extreme-weather blog, posting weekly - pairs with the liked hurricane-season wiki reading"
   }
  ]
 }

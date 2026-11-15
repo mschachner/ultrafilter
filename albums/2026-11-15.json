@@ -1,0 +1,51 @@
+{
+  "date": "2026-11-15",
+  "title": "Three albums for 15 November",
+  "albums": [
+    {
+      "category": "focus",
+      "header": "Focus",
+      "artist": "Fennesz",
+      "album": "Endless Summer",
+      "year": 2001,
+      "genres": [
+        "ambient",
+        "glitch"
+      ],
+      "spotify_url": "https://open.spotify.com/album/0xnL6goTzcRFKzbrleXfpF",
+      "link_is_search": false,
+      "blurb": "Christian Fennesz is an Austrian guitarist and laptop composer, the best-known artist on Vienna's Mego label, who later recorded duo albums with Ryuichi Sakamoto. Endless Summer (2001) is his third album and the center of his catalogue: electric guitar processed through granular software into a warm haze, with surf- and pop-inflected melodies surfacing through the static — a deliberate melodic turn after the harsher Hotel Paral.lel. All ten tracks are instrumental, and Editions Mego reissued the album in 2006 with additional material.",
+      "reception": "Pitchfork rated it 9.4/10 on release, and Exclaim! called it the electronic album of the year for 2001."
+    },
+    {
+      "category": "familiar_artist",
+      "header": "Enjoy",
+      "artist": "Jungle",
+      "album": "Jungle",
+      "year": 2014,
+      "genres": [
+        "neo-soul",
+        "modern funk"
+      ],
+      "spotify_url": "https://open.spotify.com/album/6IH6co1QUS7uXoyPDv0rIr",
+      "link_is_search": false,
+      "blurb": "Before Loving in Stereo, the London production duo of Josh Lloyd-Watson and Tom McFarland released this self-titled debut on XL Recordings in July 2014, back when they kept their identities hidden behind the initials J and T. Its twelve tracks of falsetto-led, midtempo 1970s-styled funk and soul — including the early singles Busy Earnin' and The Heat — set the template the band has elaborated on every record since.",
+      "reception": "The album was shortlisted for the 2014 Mercury Prize and reached No. 7 on the UK Albums Chart."
+    },
+    {
+      "category": "new_artist",
+      "header": "Explore",
+      "artist": "Duster",
+      "album": "Stratosphere",
+      "year": 1998,
+      "genres": [
+        "slowcore",
+        "space rock"
+      ],
+      "spotify_url": "https://open.spotify.com/album/35QrvQ2SlbEwZD8oq2yxBH",
+      "link_is_search": false,
+      "blurb": "Duster are a San Jose trio — Clay Parton, Canaan Dove Amber and Jason Albertini — who recorded this debut for Up Records on cheap four-track equipment in 1998. Its seventeen short pieces drift between slow, murmured songs and hazy instrumentals, a sound since filed under slowcore and space rock. The band released one more album, Contemporary Movement (2000), then went quiet for nearly two decades before a 2019 reunion.",
+      "reception": "Largely unnoticed on release, it became a collector's item — original vinyl copies traded for over $400 — and Pitchfork gave it a retrospective 8.6 around Numero Group's 2019 reissue of the band's catalogue."
+    }
+  ]
+}
