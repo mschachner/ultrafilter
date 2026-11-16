@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-15T10:14:16.645Z",
+ "updated": "2026-11-16T10:12:29.136Z",
  "feeds": [
   {
    "name": "Joel David Hamkins",
@@ -550,10 +550,13 @@
    "topics": [
     "climate"
    ],
-   "status": "active",
+   "status": "archived",
    "added": "2026-10-05",
    "addedBy": "task",
-   "note": "David Roberts's clean-energy and climate-politics newsletter - deep, plainspoken explainers on decarbonization, posting weekly"
+   "note": "David Roberts's clean-energy and climate-politics newsletter - deep, plainspoken explainers on decarbonization, posting weekly",
+   "archived": "2026-11-16",
+   "archivedBy": "task",
+   "reason": "no liked posts in 42 days"
   },
   {
    "name": "Paint Here",
@@ -754,6 +757,19 @@
    "added": "2026-11-15",
    "addedBy": "task",
    "note": "Eric Berger and Matt Lanza's hurricane and extreme-weather blog, posting weekly - pairs with the liked hurricane-season wiki reading"
+  },
+  {
+   "name": "The Eclectic Light Company",
+   "author": "Howard Oakley",
+   "site": "https://eclecticlight.co",
+   "feed": "https://eclecticlight.co/feed/",
+   "topics": [
+    "arthist"
+   ],
+   "status": "active",
+   "added": "2026-11-16",
+   "addedBy": "task",
+   "note": "Howard Oakley's daily blog - his painting series on Impressionists and narrative art sits right next to the liked Lines and Colors posts"
   }
  ]
 }

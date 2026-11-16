@@ -1,0 +1,43 @@
+{
+  "date": "2026-11-16",
+  "artwork": {
+    "wikidata": "Q6382435",
+    "title": "The Bridge at Villeneuve-la-Garenne",
+    "interest": "implandscape"
+  },
+  "wikis": {
+    "wikipedia": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Regular_number",
+        "title": "Regular number",
+        "topic": "math"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Dulles_International_Airport_Main_Terminal",
+        "title": "Dulles International Airport Main Terminal",
+        "topic": "arthist"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Castorocauda",
+        "title": "Castorocauda",
+        "topic": "sci"
+      }
+    ],
+    "nlab": {
+      "url": "https://ncatlab.org/nlab/show/proof+theory",
+      "title": "proof theory"
+    },
+    "sep": {
+      "url": "https://plato.stanford.edu/entries/truth-values/",
+      "title": "truth values"
+    },
+    "attic": {
+      "url": "https://neugierde.github.io/cantors-attic/Mitchell_rank",
+      "title": "Mitchell rank"
+    },
+    "oeis": {
+      "url": "https://oeis.org/A371358",
+      "title": "Number of binary strings of length n which have more 00 than 01 substrings."
+    }
+  }
+}
