@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-16T21:51:11.550Z",
+ "updated": "2026-11-17T14:04:10.521Z",
  "items": [
   {
    "kind": "album",
@@ -1062,6 +1062,16 @@
    "kind": "artwork",
    "key": "Q20816550",
    "when": "2026-10-23"
+  },
+  {
+   "title": "Lobster Telephone",
+   "url": "https://en.wikipedia.org/wiki/Lobster_Telephone",
+   "artist": "Salvador Dalí",
+   "artistId": "Q5577",
+   "interest": "sculpture",
+   "kind": "artwork",
+   "key": "Q2990594",
+   "when": "2026-11-17"
   },
   {
    "source": "wikipedia",
