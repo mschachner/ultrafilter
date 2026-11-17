@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-17T14:04:37.906Z",
+ "updated": "2026-11-17T14:08:13.622Z",
  "items": [
   {
    "kind": "album",
@@ -1782,6 +1782,17 @@
    "kind": "post",
    "key": "https://linesandcolors.com/2026/10/10/eye-candy-for-today-rembrandts-sleeping-puppy-etching/",
    "when": "2026-10-12"
+  },
+  {
+   "title": "I can’t believe it’s 1!",
+   "url": "https://aperiodical.com/2026/11/i-cant-believe-its-1/",
+   "feed": "The Aperiodical",
+   "topics": [
+    "math"
+   ],
+   "kind": "post",
+   "key": "https://aperiodical.com/2026/11/i-cant-believe-its-1/",
+   "when": "2026-11-17"
   }
  ]
 }
