@@ -1,0 +1,43 @@
+{
+  "date": "2026-11-17",
+  "artwork": {
+    "wikidata": "Q2990594",
+    "title": "Lobster Telephone",
+    "interest": "sculpture"
+  },
+  "wikis": {
+    "wikipedia": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Parallelohedron",
+        "title": "Parallelohedron",
+        "topic": "math"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Rhinogradentia",
+        "title": "Rhinogradentia",
+        "topic": "sci"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Evening_Bells_(painting)",
+        "title": "Evening Bells (painting)",
+        "topic": "arthist"
+      }
+    ],
+    "nlab": {
+      "url": "https://ncatlab.org/nlab/show/catamorphism",
+      "title": "catamorphism"
+    },
+    "sep": {
+      "url": "https://plato.stanford.edu/entries/lukasiewicz/",
+      "title": "Łukasiewicz, Jan"
+    },
+    "attic": {
+      "url": "https://neugierde.github.io/cantors-attic/Chang's_conjecture",
+      "title": "Chang's conjecture"
+    },
+    "oeis": {
+      "url": "https://oeis.org/A347403",
+      "title": "Step at which n is removed by the sieve of Eratosthenes or 0 if n is prime."
+    }
+  }
+}

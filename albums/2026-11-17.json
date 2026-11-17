@@ -1,0 +1,50 @@
+{
+  "date": "2026-11-17",
+  "title": "Three albums for 17 November",
+  "albums": [
+    {
+      "category": "focus",
+      "header": "Focus",
+      "artist": "Ahmad Jamal",
+      "album": "The Awakening",
+      "year": 1970,
+      "genres": [
+        "jazz",
+        "post-bop"
+      ],
+      "spotify_url": "https://open.spotify.com/search/Ahmad%20Jamal%20The%20Awakening/albums",
+      "link_is_search": true,
+      "blurb": "Pittsburgh-born pianist Ahmad Jamal became famous with 1958's live At the Pershing: But Not for Me and was repeatedly cited by Miles Davis as an influence for his use of space. The Awakening, recorded for Impulse! in February 1970 with Jamil Nasser on bass and Frank Gant on drums, marks his turn toward a denser, more adventurous trio sound, setting his own originals beside covers of Herbie Hancock's \"Dolphin Dance\" and Oliver Nelson's \"Stolen Moments.\"",
+      "reception": "AllMusic's Scott Yanow rated it four stars, and its piano riffs were later sampled by 1990s hip-hop artists including Nas and Common."
+    },
+    {
+      "category": "familiar_artist",
+      "header": "Enjoy",
+      "artist": "Tom Misch & Yussef Dayes",
+      "album": "What Kinda Music",
+      "year": 2020,
+      "genres": [
+        "jazz fusion",
+        "alternative R&B"
+      ],
+      "spotify_url": "https://open.spotify.com/album/6iOCv7oGL5sGi2aVnRz2BI",
+      "link_is_search": false,
+      "blurb": "A collaboration between two South Londoners: guitarist-producer Tom Misch, whose beat-driven 2018 debut Geography reached No. 18 in the UK, and drummer Yussef Dayes, previously half of the jazz duo Yussef Kamaal. Built partly from improvised jam sessions and released on Blue Note, it drifts from moody trip-hop into loose-limbed jazz fusion, with guest spots from rapper Freddie Gibbs and bassist Rocco Palladino.",
+      "reception": "The album debuted at No. 4 on the UK Albums Chart, Misch's highest placement and Dayes's first chart appearance."
+    },
+    {
+      "category": "new_artist",
+      "header": "Explore",
+      "artist": "Rotary Connection",
+      "album": "Rotary Connection",
+      "year": 1968,
+      "genres": [
+        "psychedelic soul"
+      ],
+      "spotify_url": "https://open.spotify.com/search/Rotary%20Connection%20Rotary%20Connection/albums",
+      "link_is_search": true,
+      "blurb": "Rotary Connection were a Chicago ensemble assembled in 1967 by Marshall Chess to launch Cadet Concept, the psychedelic imprint of his family's Chess Records, with arranger Charles Stepney - later the architect of Earth, Wind & Fire's orchestral sound - directing the music. Their debut wraps sitar, strings and massed voices around radical remakes of the Rolling Stones' \"Lady Jane\" and \"Ruby Tuesday,\" and gave the young Minnie Riperton, then a Chess Records receptionist turned session singer, an early lead showcase on \"Memory Band.\"",
+      "reception": "The album reached No. 37 on the Billboard 200 and drew a favorable review from Billboard on release."
+    }
+  ]
+}

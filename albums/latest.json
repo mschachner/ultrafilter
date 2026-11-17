@@ -1,50 +1,50 @@
 {
-  "date": "2026-11-16",
-  "title": "Three albums for 16 November",
+  "date": "2026-11-17",
+  "title": "Three albums for 17 November",
   "albums": [
     {
       "category": "focus",
       "header": "Focus",
-      "artist": "Freddie Hubbard",
-      "album": "Red Clay",
+      "artist": "Ahmad Jamal",
+      "album": "The Awakening",
       "year": 1970,
       "genres": [
-        "jazz-funk",
-        "hard bop"
+        "jazz",
+        "post-bop"
       ],
-      "spotify_url": "https://open.spotify.com/album/1EKOKpUcbqvwxFcmek60Za",
-      "link_is_search": false,
-      "blurb": "Hubbard was one of the defining hard-bop trumpeters of the 1960s, with a run of Blue Note and Atlantic records behind him when producer Creed Taylor made him the flagship artist of the newly founded CTI label. Red Clay, cut at Van Gelder Studio in January 1970 with Joe Henderson on tenor saxophone, Herbie Hancock on electric piano, Ron Carter on bass and Lenny White on drums, is the record where his hard-bop language takes on electric soul-funk grooves, and it set the tone for CTI's crossover jazz of the 1970s. The whole session is instrumental, and the title track became a standard Hubbard played for the rest of his career.",
-      "reception": "It entered Billboard's Top 20 Best Selling Jazz LPs chart at No. 20 in June 1970, and AllMusic's Thom Jurek has called it possibly Hubbard's finest moment as a leader."
+      "spotify_url": "https://open.spotify.com/search/Ahmad%20Jamal%20The%20Awakening/albums",
+      "link_is_search": true,
+      "blurb": "Pittsburgh-born pianist Ahmad Jamal became famous with 1958's live At the Pershing: But Not for Me and was repeatedly cited by Miles Davis as an influence for his use of space. The Awakening, recorded for Impulse! in February 1970 with Jamil Nasser on bass and Frank Gant on drums, marks his turn toward a denser, more adventurous trio sound, setting his own originals beside covers of Herbie Hancock's \"Dolphin Dance\" and Oliver Nelson's \"Stolen Moments.\"",
+      "reception": "AllMusic's Scott Yanow rated it four stars, and its piano riffs were later sampled by 1990s hip-hop artists including Nas and Common."
     },
     {
       "category": "familiar_artist",
       "header": "Enjoy",
-      "artist": "Dan Reeder",
-      "album": "Dan Reeder",
-      "year": 2004,
+      "artist": "Tom Misch & Yussef Dayes",
+      "album": "What Kinda Music",
+      "year": 2020,
       "genres": [
-        "outsider folk",
-        "lo-fi folk"
+        "jazz fusion",
+        "alternative R&B"
       ],
-      "spotify_url": "https://open.spotify.com/album/52kfpOzb9M3gAl6oIqJmle",
+      "spotify_url": "https://open.spotify.com/album/6iOCv7oGL5sGi2aVnRz2BI",
       "link_is_search": false,
-      "blurb": "Reeder is an American painter who has lived in Nuremberg, Germany since the 1980s, recording at home and playing instruments he builds himself, including his own guitars. He mailed a homemade CD of songs to John Prine, who liked it enough to sign him to Oh Boy Records, making Reeder one of the handful of artists ever on Prine's label. This self-titled debut collects eighteen short, deadpan songs, most of them little more than Reeder's multi-tracked voice over homemade instruments and clapped or tapped rhythm.",
-      "reception": "NPR's Weekend Edition profiled Reeder and the album in 2006, and its “Work Song” was used in the first season of Showtime's Weeds."
+      "blurb": "A collaboration between two South Londoners: guitarist-producer Tom Misch, whose beat-driven 2018 debut Geography reached No. 18 in the UK, and drummer Yussef Dayes, previously half of the jazz duo Yussef Kamaal. Built partly from improvised jam sessions and released on Blue Note, it drifts from moody trip-hop into loose-limbed jazz fusion, with guest spots from rapper Freddie Gibbs and bassist Rocco Palladino.",
+      "reception": "The album debuted at No. 4 on the UK Albums Chart, Misch's highest placement and Dayes's first chart appearance."
     },
     {
       "category": "new_artist",
       "header": "Explore",
-      "artist": "Caroline Polachek",
-      "album": "Desire, I Want to Turn Into You",
-      "year": 2023,
+      "artist": "Rotary Connection",
+      "album": "Rotary Connection",
+      "year": 1968,
       "genres": [
-        "art pop"
+        "psychedelic soul"
       ],
-      "spotify_url": "https://open.spotify.com/album/22PkV1Le9P3X4RY4xtmK0q",
-      "link_is_search": false,
-      "blurb": "Polachek spent a decade fronting the Brooklyn synth-pop band Chairlift before going solo, and this is her second album under her own name (her fourth overall), released on her own Perpetual Novice label on Valentine's Day 2023 and co-produced with Danny L Harle of the PC Music circle. It pulls her elastic, operatic voice through flamenco guitar, trip-hop breakbeats, bagpipes and Y2K pop, pushing further from conventional song shapes than 2019's Pang.",
-      "reception": "Pitchfork gave it Best New Music and ranked it No. 2 on its 50 best albums of 2023, and it finished at No. 1 in The Line of Best Fit's aggregate of publications' year-end lists."
+      "spotify_url": "https://open.spotify.com/search/Rotary%20Connection%20Rotary%20Connection/albums",
+      "link_is_search": true,
+      "blurb": "Rotary Connection were a Chicago ensemble assembled in 1967 by Marshall Chess to launch Cadet Concept, the psychedelic imprint of his family's Chess Records, with arranger Charles Stepney - later the architect of Earth, Wind & Fire's orchestral sound - directing the music. Their debut wraps sitar, strings and massed voices around radical remakes of the Rolling Stones' \"Lady Jane\" and \"Ruby Tuesday,\" and gave the young Minnie Riperton, then a Chess Records receptionist turned session singer, an early lead showcase on \"Memory Band.\"",
+      "reception": "The album reached No. 37 on the Billboard 200 and drew a favorable review from Billboard on release."
     }
   ]
 }

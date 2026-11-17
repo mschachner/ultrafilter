@@ -1,43 +1,43 @@
 {
-  "date": "2026-11-16",
+  "date": "2026-11-17",
   "artwork": {
-    "wikidata": "Q6382435",
-    "title": "The Bridge at Villeneuve-la-Garenne",
-    "interest": "implandscape"
+    "wikidata": "Q2990594",
+    "title": "Lobster Telephone",
+    "interest": "sculpture"
   },
   "wikis": {
     "wikipedia": [
       {
-        "url": "https://en.wikipedia.org/wiki/Regular_number",
-        "title": "Regular number",
+        "url": "https://en.wikipedia.org/wiki/Parallelohedron",
+        "title": "Parallelohedron",
         "topic": "math"
       },
       {
-        "url": "https://en.wikipedia.org/wiki/Dulles_International_Airport_Main_Terminal",
-        "title": "Dulles International Airport Main Terminal",
-        "topic": "arthist"
+        "url": "https://en.wikipedia.org/wiki/Rhinogradentia",
+        "title": "Rhinogradentia",
+        "topic": "sci"
       },
       {
-        "url": "https://en.wikipedia.org/wiki/Castorocauda",
-        "title": "Castorocauda",
-        "topic": "sci"
+        "url": "https://en.wikipedia.org/wiki/Evening_Bells_(painting)",
+        "title": "Evening Bells (painting)",
+        "topic": "arthist"
       }
     ],
     "nlab": {
-      "url": "https://ncatlab.org/nlab/show/proof+theory",
-      "title": "proof theory"
+      "url": "https://ncatlab.org/nlab/show/catamorphism",
+      "title": "catamorphism"
     },
     "sep": {
-      "url": "https://plato.stanford.edu/entries/truth-values/",
-      "title": "truth values"
+      "url": "https://plato.stanford.edu/entries/lukasiewicz/",
+      "title": "Łukasiewicz, Jan"
     },
     "attic": {
-      "url": "https://neugierde.github.io/cantors-attic/Mitchell_rank",
-      "title": "Mitchell rank"
+      "url": "https://neugierde.github.io/cantors-attic/Chang's_conjecture",
+      "title": "Chang's conjecture"
     },
     "oeis": {
-      "url": "https://oeis.org/A371358",
-      "title": "Number of binary strings of length n which have more 00 than 01 substrings."
+      "url": "https://oeis.org/A347403",
+      "title": "Step at which n is removed by the sieve of Eratosthenes or 0 if n is prime."
     }
   }
 }
