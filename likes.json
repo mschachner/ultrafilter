@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-17T14:08:13.622Z",
+ "updated": "2026-11-17T14:08:31.175Z",
  "items": [
   {
    "kind": "album",
@@ -1746,6 +1746,15 @@
    "topic": null,
    "kind": "wiki",
    "key": "https://en.wikipedia.org/wiki/Islands%3A_Non-Places",
+   "when": "2026-11-17"
+  },
+  {
+   "source": "nlab",
+   "title": "power set",
+   "url": "https://ncatlab.org/nlab/show/power+set",
+   "topic": null,
+   "kind": "wiki",
+   "key": "https://ncatlab.org/nlab/show/power+set",
    "when": "2026-11-17"
   },
   {
