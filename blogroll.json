@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-17T10:16:46.418Z",
+ "updated": "2026-11-18T10:23:54.931Z",
  "feeds": [
   {
    "name": "Joel David Hamkins",
@@ -583,10 +583,13 @@
    "topics": [
     "math"
    ],
-   "status": "active",
+   "status": "archived",
    "added": "2026-10-07",
    "addedBy": "task",
-   "note": "Fortnow and Gasarch's long-running computational complexity blog, posting weekly - matches the logic and combinatorics thread in the wiki likes"
+   "note": "Fortnow and Gasarch's long-running computational complexity blog, posting weekly - matches the logic and combinatorics thread in the wiki likes",
+   "archived": "2026-11-18",
+   "archivedBy": "task",
+   "reason": "no liked posts in 42 days"
   },
   {
    "name": "Tetrapod Zoology",
@@ -786,6 +789,19 @@
    "added": "2026-11-17",
    "addedBy": "task",
    "note": "Small-team recreational maths blog, posting weekly - puzzles, sequences and mathsy ephemera, matching the OEIS and puzzle-flavored likes"
+  },
+  {
+   "name": "Colossal",
+   "author": "Christopher Jobson et al.",
+   "site": "https://www.thisiscolossal.com/",
+   "feed": "https://www.thisiscolossal.com/feed/",
+   "topics": [
+    "arts"
+   ],
+   "status": "active",
+   "added": "2026-11-18",
+   "addedBy": "task",
+   "note": "Small-team daily blog on contemporary art, craft and visual culture - one striking project at a time, next to the liked Lines and Colors posts"
   }
  ]
 }

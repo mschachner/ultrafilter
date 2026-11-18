@@ -1,50 +1,42 @@
 {
-  "date": "2026-11-17",
-  "title": "Three albums for 17 November",
+  "date": "2026-11-18",
+  "title": "Three albums for 18 November",
   "albums": [
     {
       "category": "focus",
       "header": "Focus",
-      "artist": "Ahmad Jamal",
-      "album": "The Awakening",
-      "year": 1970,
-      "genres": [
-        "jazz",
-        "post-bop"
-      ],
-      "spotify_url": "https://open.spotify.com/search/Ahmad%20Jamal%20The%20Awakening/albums",
-      "link_is_search": true,
-      "blurb": "Pittsburgh-born pianist Ahmad Jamal became famous with 1958's live At the Pershing: But Not for Me and was repeatedly cited by Miles Davis as an influence for his use of space. The Awakening, recorded for Impulse! in February 1970 with Jamil Nasser on bass and Frank Gant on drums, marks his turn toward a denser, more adventurous trio sound, setting his own originals beside covers of Herbie Hancock's \"Dolphin Dance\" and Oliver Nelson's \"Stolen Moments.\"",
-      "reception": "AllMusic's Scott Yanow rated it four stars, and its piano riffs were later sampled by 1990s hip-hop artists including Nas and Common."
+      "artist": "Duke Ellington",
+      "album": "Far East Suite",
+      "year": 1967,
+      "genres": ["big band jazz"],
+      "spotify_url": "https://open.spotify.com/album/1JJIAHF3S3R7j6OzVw3fsw",
+      "link_is_search": false,
+      "blurb": "Ellington and Billy Strayhorn wrote this nine-part suite after the orchestra's 1963 State Department tour of the Middle East and South Asia and a 1964 visit to Japan, and recorded it in New York in December 1966. It was one of the last major Ellington–Strayhorn collaborations — Strayhorn died five months after the sessions — and it filters the tour's impressions through the band's own language rather than pastiche: Johnny Hodges's alto feature \"Isfahan\" and the clarinet birdsong of \"Bluebird of Delhi\" are the best-known movements. The whole record is instrumental big-band writing from the band's late golden period.",
+      "reception": "It won the Grammy for Best Instrumental Jazz Performance by a Large Group at the 1968 ceremony, and a 1995 remastered reissue later brought it back into print with alternate takes."
     },
     {
       "category": "familiar_artist",
       "header": "Enjoy",
-      "artist": "Tom Misch & Yussef Dayes",
-      "album": "What Kinda Music",
-      "year": 2020,
-      "genres": [
-        "jazz fusion",
-        "alternative R&B"
-      ],
-      "spotify_url": "https://open.spotify.com/album/6iOCv7oGL5sGi2aVnRz2BI",
+      "artist": "Maya Delilah",
+      "album": "The Long Way Round",
+      "year": 2025,
+      "genres": ["soul-pop", "R&B"],
+      "spotify_url": "https://open.spotify.com/album/3P2S6dILjqropRqOGrMIcB",
       "link_is_search": false,
-      "blurb": "A collaboration between two South Londoners: guitarist-producer Tom Misch, whose beat-driven 2018 debut Geography reached No. 18 in the UK, and drummer Yussef Dayes, previously half of the jazz duo Yussef Kamaal. Built partly from improvised jam sessions and released on Blue Note, it drifts from moody trip-hop into loose-limbed jazz fusion, with guest spots from rapper Freddie Gibbs and bassist Rocco Palladino.",
-      "reception": "The album debuted at No. 4 on the UK Albums Chart, Misch's highest placement and Dayes's first chart appearance."
+      "blurb": "Maya Delilah is a London singer, songwriter and guitarist in her mid-twenties who built an audience through guitar-led covers and a string of EPs before signing to Blue Note. The Long Way Round, released 28 March 2025 on Blue Note/Capitol, is her twelve-track full-length debut, moving between breezy soul-pop, soft funk and jazz-tinged balladry with her Stratocaster playing kept front and center.",
+      "reception": "Spotify named Delilah a 2025 Artist to Watch ahead of the album's release, and AllMusic's review characterized the record as emotionally resonant coffeehouse soul."
     },
     {
       "category": "new_artist",
       "header": "Explore",
-      "artist": "Rotary Connection",
-      "album": "Rotary Connection",
-      "year": 1968,
-      "genres": [
-        "psychedelic soul"
-      ],
-      "spotify_url": "https://open.spotify.com/search/Rotary%20Connection%20Rotary%20Connection/albums",
-      "link_is_search": true,
-      "blurb": "Rotary Connection were a Chicago ensemble assembled in 1967 by Marshall Chess to launch Cadet Concept, the psychedelic imprint of his family's Chess Records, with arranger Charles Stepney - later the architect of Earth, Wind & Fire's orchestral sound - directing the music. Their debut wraps sitar, strings and massed voices around radical remakes of the Rolling Stones' \"Lady Jane\" and \"Ruby Tuesday,\" and gave the young Minnie Riperton, then a Chess Records receptionist turned session singer, an early lead showcase on \"Memory Band.\"",
-      "reception": "The album reached No. 37 on the Billboard 200 and drew a favorable review from Billboard on release."
+      "artist": "Television",
+      "album": "Marquee Moon",
+      "year": 1977,
+      "genres": ["art punk", "post-punk"],
+      "spotify_url": "https://open.spotify.com/album/630o1rKTDsLeIPreOY1jqP",
+      "link_is_search": false,
+      "blurb": "Television were fixtures of the mid-70s CBGB scene in New York — they talked the club into booking rock bands in the first place — but their debut has little to do with punk's two-minute rush. Tom Verlaine and Richard Lloyd's interlocking lead guitars stretch the title track past ten minutes, closer to cool-toned improvisation than power chords. Released on Elektra in February 1977, it was the band's first of two albums before splitting in 1978, and its clean, angular guitar language became a reference point for post-punk and indie rock that followed.",
+      "reception": "Championed in a two-page NME rave by Nick Kent, it reached No. 28 on the UK Albums Chart and spent 13 weeks in the Top 75, while failing to reach the Billboard 200 at home."
     }
   ]
 }

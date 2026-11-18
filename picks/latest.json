@@ -1,43 +1,43 @@
 {
-  "date": "2026-11-17",
+  "date": "2026-11-18",
   "artwork": {
-    "wikidata": "Q2990594",
-    "title": "Lobster Telephone",
-    "interest": "sculpture"
+    "wikidata": "Q21127606",
+    "title": "Plum Park in Kameido",
+    "interest": "ukiyoe"
   },
   "wikis": {
     "wikipedia": [
       {
-        "url": "https://en.wikipedia.org/wiki/Parallelohedron",
-        "title": "Parallelohedron",
+        "url": "https://en.wikipedia.org/wiki/Malfatti_circles",
+        "title": "Malfatti circles",
         "topic": "math"
       },
       {
-        "url": "https://en.wikipedia.org/wiki/Rhinogradentia",
-        "title": "Rhinogradentia",
-        "topic": "sci"
+        "url": "https://en.wikipedia.org/wiki/Sun_in_an_Empty_Room",
+        "title": "Sun in an Empty Room",
+        "topic": "arthist"
       },
       {
-        "url": "https://en.wikipedia.org/wiki/Evening_Bells_(painting)",
-        "title": "Evening Bells (painting)",
-        "topic": "arthist"
+        "url": "https://en.wikipedia.org/wiki/Titanokorys",
+        "title": "Titanokorys",
+        "topic": "sci"
       }
     ],
     "nlab": {
-      "url": "https://ncatlab.org/nlab/show/catamorphism",
-      "title": "catamorphism"
+      "url": "https://ncatlab.org/nlab/show/premonoidal+category",
+      "title": "premonoidal category"
     },
     "sep": {
-      "url": "https://plato.stanford.edu/entries/lukasiewicz/",
-      "title": "Łukasiewicz, Jan"
+      "url": "https://plato.stanford.edu/entries/problem-of-many/",
+      "title": "The Problem of the Many"
     },
     "attic": {
-      "url": "https://neugierde.github.io/cantors-attic/Chang's_conjecture",
-      "title": "Chang's conjecture"
+      "url": "https://neugierde.github.io/cantors-attic/Totally_indescribable",
+      "title": "Totally indescribable"
     },
     "oeis": {
-      "url": "https://oeis.org/A347403",
-      "title": "Step at which n is removed by the sieve of Eratosthenes or 0 if n is prime."
+      "url": "https://oeis.org/A365097",
+      "title": "Smallest k > 1 such that the total number of digits \"1\" required to write the numbers 1..k in base n is equal to k."
     }
   }
 }
