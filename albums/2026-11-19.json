@@ -1,0 +1,51 @@
+{
+  "date": "2026-11-19",
+  "title": "Three albums for 19 November",
+  "albums": [
+    {
+      "category": "focus",
+      "header": "Focus",
+      "artist": "BADBADNOTGOOD",
+      "album": "Talk Memory",
+      "year": 2021,
+      "genres": [
+        "instrumental jazz",
+        "jazz fusion"
+      ],
+      "spotify_url": "https://open.spotify.com/album/594yqwr1MOvVX0UBnOWftY",
+      "link_is_search": false,
+      "blurb": "BADBADNOTGOOD formed in Toronto in 2010 as jazz students reworking hip-hop material, and spent their first decade as collaborators to Ghostface Killah, Kendrick Lamar and others. Talk Memory, their fifth album, marks a deliberate return to long-form instrumental playing after the guest-heavy IV: the nine-minute opener \"Signal from the Noise\" was produced with Floating Points, Brazilian arranger Arthur Verocai wrote the string charts, and Laraaji (electric zither), Terrace Martin (alto saxophone), Brandee Younger (harp) and Karriem Riggins (percussion) all sit in.",
+      "reception": "Talk Memory holds a Metacritic score of 80/100, topped Billboard's Top Contemporary Jazz Albums chart, and was longlisted for the 2022 Polaris Music Prize."
+    },
+    {
+      "category": "familiar_artist",
+      "header": "Enjoy",
+      "artist": "Billy Joel",
+      "album": "The Stranger",
+      "year": 1977,
+      "genres": [
+        "pop rock",
+        "singer-songwriter"
+      ],
+      "spotify_url": "https://open.spotify.com/album/3IILMjMMnoN2sKzgesX8KV",
+      "link_is_search": false,
+      "blurb": "The Stranger is Billy Joel's fifth studio album and the first of his long run with producer Phil Ramone, released on Columbia in September 1977 after the modest showing of Turnstiles. Its nine songs pack in a remarkable share of his catalogue — \"Movin' Out (Anthony's Song)\", \"Just the Way You Are\", \"Scenes from an Italian Restaurant\", \"Only the Good Die Young\" and \"She's Always a Woman\" — and it stands as the record that turned a journeyman piano man into one of the biggest American songwriters of the era.",
+      "reception": "The album spent six weeks at No. 2 on the Billboard 200, \"Just the Way You Are\" won Record of the Year and Song of the Year at the 1979 Grammy Awards, and it has since been certified Diamond by the RIAA."
+    },
+    {
+      "category": "new_artist",
+      "header": "Explore",
+      "artist": "Jamie xx",
+      "album": "In Colour",
+      "year": 2015,
+      "genres": [
+        "electronic",
+        "UK dance"
+      ],
+      "spotify_url": "https://open.spotify.com/album/04Duapg2mNlVykd895xcfZ",
+      "link_is_search": false,
+      "blurb": "Jamie Smith is the producer and beatmaker behind London trio The xx, and In Colour, released on Young Turks in 2015, is the debut solo album he assembled over six years between band commitments. It is a studio reflection on the UK rave and pirate-radio culture he grew up just too late for, built from archival vocal samples, breakbeats and steel drums, with his bandmates Romy and Oliver Sim guesting alongside Young Thug and Popcaan on \"I Know There's Gonna Be (Good Times)\".",
+      "reception": "In Colour was shortlisted for the 2015 Mercury Prize, nominated for Best Dance/Electronic Album at the 2016 Grammy Awards, and ranked No. 2 on Pitchfork's 50 Best Albums of 2015."
+    }
+  ]
+}

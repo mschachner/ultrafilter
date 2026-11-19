@@ -1,42 +1,51 @@
 {
-  "date": "2026-11-18",
-  "title": "Three albums for 18 November",
+  "date": "2026-11-19",
+  "title": "Three albums for 19 November",
   "albums": [
     {
       "category": "focus",
       "header": "Focus",
-      "artist": "Duke Ellington",
-      "album": "Far East Suite",
-      "year": 1967,
-      "genres": ["big band jazz"],
-      "spotify_url": "https://open.spotify.com/album/1JJIAHF3S3R7j6OzVw3fsw",
+      "artist": "BADBADNOTGOOD",
+      "album": "Talk Memory",
+      "year": 2021,
+      "genres": [
+        "instrumental jazz",
+        "jazz fusion"
+      ],
+      "spotify_url": "https://open.spotify.com/album/594yqwr1MOvVX0UBnOWftY",
       "link_is_search": false,
-      "blurb": "Ellington and Billy Strayhorn wrote this nine-part suite after the orchestra's 1963 State Department tour of the Middle East and South Asia and a 1964 visit to Japan, and recorded it in New York in December 1966. It was one of the last major Ellington–Strayhorn collaborations — Strayhorn died five months after the sessions — and it filters the tour's impressions through the band's own language rather than pastiche: Johnny Hodges's alto feature \"Isfahan\" and the clarinet birdsong of \"Bluebird of Delhi\" are the best-known movements. The whole record is instrumental big-band writing from the band's late golden period.",
-      "reception": "It won the Grammy for Best Instrumental Jazz Performance by a Large Group at the 1968 ceremony, and a 1995 remastered reissue later brought it back into print with alternate takes."
+      "blurb": "BADBADNOTGOOD formed in Toronto in 2010 as jazz students reworking hip-hop material, and spent their first decade as collaborators to Ghostface Killah, Kendrick Lamar and others. Talk Memory, their fifth album, marks a deliberate return to long-form instrumental playing after the guest-heavy IV: the nine-minute opener \"Signal from the Noise\" was produced with Floating Points, Brazilian arranger Arthur Verocai wrote the string charts, and Laraaji (electric zither), Terrace Martin (alto saxophone), Brandee Younger (harp) and Karriem Riggins (percussion) all sit in.",
+      "reception": "Talk Memory holds a Metacritic score of 80/100, topped Billboard's Top Contemporary Jazz Albums chart, and was longlisted for the 2022 Polaris Music Prize."
     },
     {
       "category": "familiar_artist",
       "header": "Enjoy",
-      "artist": "Maya Delilah",
-      "album": "The Long Way Round",
-      "year": 2025,
-      "genres": ["soul-pop", "R&B"],
-      "spotify_url": "https://open.spotify.com/album/3P2S6dILjqropRqOGrMIcB",
+      "artist": "Billy Joel",
+      "album": "The Stranger",
+      "year": 1977,
+      "genres": [
+        "pop rock",
+        "singer-songwriter"
+      ],
+      "spotify_url": "https://open.spotify.com/album/3IILMjMMnoN2sKzgesX8KV",
       "link_is_search": false,
-      "blurb": "Maya Delilah is a London singer, songwriter and guitarist in her mid-twenties who built an audience through guitar-led covers and a string of EPs before signing to Blue Note. The Long Way Round, released 28 March 2025 on Blue Note/Capitol, is her twelve-track full-length debut, moving between breezy soul-pop, soft funk and jazz-tinged balladry with her Stratocaster playing kept front and center.",
-      "reception": "Spotify named Delilah a 2025 Artist to Watch ahead of the album's release, and AllMusic's review characterized the record as emotionally resonant coffeehouse soul."
+      "blurb": "The Stranger is Billy Joel's fifth studio album and the first of his long run with producer Phil Ramone, released on Columbia in September 1977 after the modest showing of Turnstiles. Its nine songs pack in a remarkable share of his catalogue — \"Movin' Out (Anthony's Song)\", \"Just the Way You Are\", \"Scenes from an Italian Restaurant\", \"Only the Good Die Young\" and \"She's Always a Woman\" — and it stands as the record that turned a journeyman piano man into one of the biggest American songwriters of the era.",
+      "reception": "The album spent six weeks at No. 2 on the Billboard 200, \"Just the Way You Are\" won Record of the Year and Song of the Year at the 1979 Grammy Awards, and it has since been certified Diamond by the RIAA."
     },
     {
       "category": "new_artist",
       "header": "Explore",
-      "artist": "Television",
-      "album": "Marquee Moon",
-      "year": 1977,
-      "genres": ["art punk", "post-punk"],
-      "spotify_url": "https://open.spotify.com/album/630o1rKTDsLeIPreOY1jqP",
+      "artist": "Jamie xx",
+      "album": "In Colour",
+      "year": 2015,
+      "genres": [
+        "electronic",
+        "UK dance"
+      ],
+      "spotify_url": "https://open.spotify.com/album/04Duapg2mNlVykd895xcfZ",
       "link_is_search": false,
-      "blurb": "Television were fixtures of the mid-70s CBGB scene in New York — they talked the club into booking rock bands in the first place — but their debut has little to do with punk's two-minute rush. Tom Verlaine and Richard Lloyd's interlocking lead guitars stretch the title track past ten minutes, closer to cool-toned improvisation than power chords. Released on Elektra in February 1977, it was the band's first of two albums before splitting in 1978, and its clean, angular guitar language became a reference point for post-punk and indie rock that followed.",
-      "reception": "Championed in a two-page NME rave by Nick Kent, it reached No. 28 on the UK Albums Chart and spent 13 weeks in the Top 75, while failing to reach the Billboard 200 at home."
+      "blurb": "Jamie Smith is the producer and beatmaker behind London trio The xx, and In Colour, released on Young Turks in 2015, is the debut solo album he assembled over six years between band commitments. It is a studio reflection on the UK rave and pirate-radio culture he grew up just too late for, built from archival vocal samples, breakbeats and steel drums, with his bandmates Romy and Oliver Sim guesting alongside Young Thug and Popcaan on \"I Know There's Gonna Be (Good Times)\".",
+      "reception": "In Colour was shortlisted for the 2015 Mercury Prize, nominated for Best Dance/Electronic Album at the 2016 Grammy Awards, and ranked No. 2 on Pitchfork's 50 Best Albums of 2015."
     }
   ]
 }

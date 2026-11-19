@@ -1,43 +1,43 @@
 {
-  "date": "2026-11-18",
+  "date": "2026-11-19",
   "artwork": {
-    "wikidata": "Q21127606",
-    "title": "Plum Park in Kameido",
-    "interest": "ukiyoe"
+    "wikidata": "Q2697937",
+    "title": "Campbell's Soup Cans",
+    "interest": "popart"
   },
   "wikis": {
     "wikipedia": [
       {
-        "url": "https://en.wikipedia.org/wiki/Malfatti_circles",
-        "title": "Malfatti circles",
+        "url": "https://en.wikipedia.org/wiki/Borromean_rings",
+        "title": "Borromean rings",
         "topic": "math"
       },
       {
-        "url": "https://en.wikipedia.org/wiki/Sun_in_an_Empty_Room",
-        "title": "Sun in an Empty Room",
-        "topic": "arthist"
+        "url": "https://en.wikipedia.org/wiki/Rule_90",
+        "title": "Rule 90",
+        "topic": "math"
       },
       {
-        "url": "https://en.wikipedia.org/wiki/Titanokorys",
-        "title": "Titanokorys",
+        "url": "https://en.wikipedia.org/wiki/Tunicate",
+        "title": "Tunicate",
         "topic": "sci"
       }
     ],
     "nlab": {
-      "url": "https://ncatlab.org/nlab/show/premonoidal+category",
-      "title": "premonoidal category"
+      "url": "https://ncatlab.org/nlab/show/Verdier-Grothendieck+context",
+      "title": "Verdier-Grothendieck context"
     },
     "sep": {
-      "url": "https://plato.stanford.edu/entries/problem-of-many/",
-      "title": "The Problem of the Many"
+      "url": "https://plato.stanford.edu/entries/leibniz-causation/",
+      "title": "Leibniz on Causation"
     },
     "attic": {
-      "url": "https://neugierde.github.io/cantors-attic/Totally_indescribable",
-      "title": "Totally indescribable"
+      "url": "https://neugierde.github.io/cantors-attic/Worldly",
+      "title": "Worldly"
     },
     "oeis": {
-      "url": "https://oeis.org/A365097",
-      "title": "Smallest k > 1 such that the total number of digits \"1\" required to write the numbers 1..k in base n is equal to k."
+      "url": "https://oeis.org/A212708",
+      "title": "Decimal expansion of the \"I Love You\" constant."
     }
   }
 }
