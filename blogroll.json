@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-19T10:14:26.804Z",
+ "updated": "2026-11-20T10:11:50.935Z",
  "feeds": [
   {
    "name": "Joel David Hamkins",
@@ -615,10 +615,13 @@
    "topics": [
     "arthist"
    ],
-   "status": "active",
+   "status": "archived",
    "added": "2026-10-09",
    "addedBy": "task",
-   "note": "Erika Gaffney's blog on early modern women artists, with guest essays by scholars - active monthly and adjacent to the liked art-history reading"
+   "note": "Erika Gaffney's blog on early modern women artists, with guest essays by scholars - active monthly and adjacent to the liked art-history reading",
+   "archived": "2026-11-20",
+   "archivedBy": "task",
+   "reason": "no liked posts in 42 days"
   },
   {
    "name": "Transitional Technology",
@@ -818,6 +821,19 @@
    "added": "2026-11-19",
    "addedBy": "task",
    "note": "Group blog by a rotating cast of veteran science writers - short personal essays on nature and the practice of science, posting several times a week"
+  },
+  {
+   "name": "Machine Logic",
+   "author": "Lawrence C. Paulson",
+   "site": "",
+   "feed": "https://lawrencecpaulson.github.io/feed.xml",
+   "topics": [
+    "math"
+   ],
+   "status": "active",
+   "added": "2026-11-20",
+   "addedBy": "task",
+   "note": "Lawrence Paulson, creator of Isabelle, writing weekly on logic, formal proof and foundations - matches the set-theory and logic likes"
   }
  ]
 }

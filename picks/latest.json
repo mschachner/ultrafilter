@@ -1,43 +1,43 @@
 {
-  "date": "2026-11-19",
-  "artwork": {
-    "wikidata": "Q2697937",
-    "title": "Campbell's Soup Cans",
-    "interest": "popart"
+ "date": "2026-11-20",
+ "artwork": {
+  "wikidata": "Q29654799",
+  "title": "The Road in Front of Saint-Simeon Farm in Winter",
+  "interest": "implandscape"
+ },
+ "wikis": {
+  "wikipedia": [
+   {
+    "url": "https://en.wikipedia.org/wiki/Dyadic_rational",
+    "title": "Dyadic rational",
+    "topic": "math"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Peppered_moth_evolution",
+    "title": "Peppered moth evolution",
+    "topic": "sci"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Landscape_painting_in_Scotland",
+    "title": "Landscape painting in Scotland",
+    "topic": "arthist"
+   }
+  ],
+  "nlab": {
+   "url": "https://ncatlab.org/nlab/show/convergence+space",
+   "title": "convergence space"
   },
-  "wikis": {
-    "wikipedia": [
-      {
-        "url": "https://en.wikipedia.org/wiki/Borromean_rings",
-        "title": "Borromean rings",
-        "topic": "math"
-      },
-      {
-        "url": "https://en.wikipedia.org/wiki/Rule_90",
-        "title": "Rule 90",
-        "topic": "math"
-      },
-      {
-        "url": "https://en.wikipedia.org/wiki/Tunicate",
-        "title": "Tunicate",
-        "topic": "sci"
-      }
-    ],
-    "nlab": {
-      "url": "https://ncatlab.org/nlab/show/Verdier-Grothendieck+context",
-      "title": "Verdier-Grothendieck context"
-    },
-    "sep": {
-      "url": "https://plato.stanford.edu/entries/leibniz-causation/",
-      "title": "Leibniz on Causation"
-    },
-    "attic": {
-      "url": "https://neugierde.github.io/cantors-attic/Worldly",
-      "title": "Worldly"
-    },
-    "oeis": {
-      "url": "https://oeis.org/A212708",
-      "title": "Decimal expansion of the \"I Love You\" constant."
-    }
+  "sep": {
+   "url": "https://plato.stanford.edu/entries/church/",
+   "title": "Church, Alonzo"
+  },
+  "attic": {
+   "url": "https://neugierde.github.io/cantors-attic/Wholeness_axioms",
+   "title": "Wholeness axioms"
+  },
+  "oeis": {
+   "url": "https://oeis.org/A248425",
+   "title": "Number of \"squares\" (repeated identical blocks) in the n-th Fibonacci word."
   }
+ }
 }

@@ -1,0 +1,51 @@
+{
+ "date": "2026-11-20",
+ "title": "Three albums for 20 November",
+ "albums": [
+  {
+   "category": "focus",
+   "header": "Focus",
+   "artist": "Hermanos Gutiérrez",
+   "album": "Sonido Cósmico",
+   "year": 2024,
+   "genres": [
+    "instrumental Latin guitar",
+    "desert psychedelia"
+   ],
+   "spotify_url": "https://open.spotify.com/album/0FI8JaUH7kqtvM6EkmCm7t",
+   "link_is_search": false,
+   "blurb": "Hermanos Gutiérrez are the Ecuadorian-Swiss brothers Estevan and Alejandro Gutiérrez, who play dusty two-guitar instrumentals somewhere between Latin American folk and spaghetti-western atmosphere. Sonido Cósmico, released in June 2024, is their sixth album and their second made with Dan Auerbach of the Black Keys, who produced it at his Easy Eye Sound studio in Nashville; alongside their usual desert-noir duets it works cumbia rhythms and spacier, cosmic textures into the palette, with light percussion behind the guitars and no vocals anywhere on the record.",
+   "reception": "The album holds a Metacritic score of 87 out of 100 from four reviews, and it reached number 6 on the Swiss albums chart and number 193 on the US Billboard 200."
+  },
+  {
+   "category": "familiar_artist",
+   "header": "Enjoy",
+   "artist": "Daniel Caesar",
+   "album": "NEVER ENOUGH",
+   "year": 2023,
+   "genres": [
+    "R&B",
+    "neo-soul"
+   ],
+   "spotify_url": "https://open.spotify.com/album/6K8iyA4nnaFgQ1XGHB56An",
+   "link_is_search": false,
+   "blurb": "Daniel Caesar is a Toronto singer who broke out of the city's independent R&B scene with the self-released Freudian in 2017. NEVER ENOUGH, from April 2023, is his third album and his first for Republic Records after years as a flagship independent artist; it folds gospel harmony, folk-leaning guitar and psychedelic production into his falsetto-led R&B, with guest turns from Omar Apollo, Ty Dolla $ign, serpentwithfeet, Mustafa and Summer Walker.",
+   "reception": "NEVER ENOUGH debuted at number 14 on the Billboard 200 and was shortlisted for the 2023 Polaris Music Prize."
+  },
+  {
+   "category": "new_artist",
+   "header": "Explore",
+   "artist": "Os Mutantes",
+   "album": "Os Mutantes",
+   "year": 1968,
+   "genres": [
+    "tropicália",
+    "psychedelic rock"
+   ],
+   "spotify_url": "https://open.spotify.com/album/0gUoiZk9aWpg3HXaygDNp6",
+   "link_is_search": false,
+   "blurb": "Os Mutantes were teenagers from São Paulo — Rita Lee and the brothers Arnaldo Baptista and Sérgio Dias — when they cut this 1968 debut for Polydor, with homemade fuzz boxes and effects built by a fourth brother, Cláudio César. It is a founding document of Tropicália, the Brazilian movement that spliced bossa nova and samba with psychedelic rock under the military dictatorship: it opens with the Caetano Veloso/Gilberto Gil song \"Panis et Circenses\", and the band served as the house group on the movement's manifesto compilation Tropicália: ou Panis et Circencis the same year.",
+   "reception": "The album was ranked ninth on Rolling Stone Brasil's list of the 100 greatest Brazilian albums of all time, and Mojo included it among its \"50 Most Out-There Albums of All Time\"."
+  }
+ ]
+}

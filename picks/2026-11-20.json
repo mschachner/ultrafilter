@@ -1,0 +1,43 @@
+{
+ "date": "2026-11-20",
+ "artwork": {
+  "wikidata": "Q29654799",
+  "title": "The Road in Front of Saint-Simeon Farm in Winter",
+  "interest": "implandscape"
+ },
+ "wikis": {
+  "wikipedia": [
+   {
+    "url": "https://en.wikipedia.org/wiki/Dyadic_rational",
+    "title": "Dyadic rational",
+    "topic": "math"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Peppered_moth_evolution",
+    "title": "Peppered moth evolution",
+    "topic": "sci"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Landscape_painting_in_Scotland",
+    "title": "Landscape painting in Scotland",
+    "topic": "arthist"
+   }
+  ],
+  "nlab": {
+   "url": "https://ncatlab.org/nlab/show/convergence+space",
+   "title": "convergence space"
+  },
+  "sep": {
+   "url": "https://plato.stanford.edu/entries/church/",
+   "title": "Church, Alonzo"
+  },
+  "attic": {
+   "url": "https://neugierde.github.io/cantors-attic/Wholeness_axioms",
+   "title": "Wholeness axioms"
+  },
+  "oeis": {
+   "url": "https://oeis.org/A248425",
+   "title": "Number of \"squares\" (repeated identical blocks) in the n-th Fibonacci word."
+  }
+ }
+}

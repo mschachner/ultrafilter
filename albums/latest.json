@@ -1,51 +1,51 @@
 {
-  "date": "2026-11-19",
-  "title": "Three albums for 19 November",
-  "albums": [
-    {
-      "category": "focus",
-      "header": "Focus",
-      "artist": "BADBADNOTGOOD",
-      "album": "Talk Memory",
-      "year": 2021,
-      "genres": [
-        "instrumental jazz",
-        "jazz fusion"
-      ],
-      "spotify_url": "https://open.spotify.com/album/594yqwr1MOvVX0UBnOWftY",
-      "link_is_search": false,
-      "blurb": "BADBADNOTGOOD formed in Toronto in 2010 as jazz students reworking hip-hop material, and spent their first decade as collaborators to Ghostface Killah, Kendrick Lamar and others. Talk Memory, their fifth album, marks a deliberate return to long-form instrumental playing after the guest-heavy IV: the nine-minute opener \"Signal from the Noise\" was produced with Floating Points, Brazilian arranger Arthur Verocai wrote the string charts, and Laraaji (electric zither), Terrace Martin (alto saxophone), Brandee Younger (harp) and Karriem Riggins (percussion) all sit in.",
-      "reception": "Talk Memory holds a Metacritic score of 80/100, topped Billboard's Top Contemporary Jazz Albums chart, and was longlisted for the 2022 Polaris Music Prize."
-    },
-    {
-      "category": "familiar_artist",
-      "header": "Enjoy",
-      "artist": "Billy Joel",
-      "album": "The Stranger",
-      "year": 1977,
-      "genres": [
-        "pop rock",
-        "singer-songwriter"
-      ],
-      "spotify_url": "https://open.spotify.com/album/3IILMjMMnoN2sKzgesX8KV",
-      "link_is_search": false,
-      "blurb": "The Stranger is Billy Joel's fifth studio album and the first of his long run with producer Phil Ramone, released on Columbia in September 1977 after the modest showing of Turnstiles. Its nine songs pack in a remarkable share of his catalogue — \"Movin' Out (Anthony's Song)\", \"Just the Way You Are\", \"Scenes from an Italian Restaurant\", \"Only the Good Die Young\" and \"She's Always a Woman\" — and it stands as the record that turned a journeyman piano man into one of the biggest American songwriters of the era.",
-      "reception": "The album spent six weeks at No. 2 on the Billboard 200, \"Just the Way You Are\" won Record of the Year and Song of the Year at the 1979 Grammy Awards, and it has since been certified Diamond by the RIAA."
-    },
-    {
-      "category": "new_artist",
-      "header": "Explore",
-      "artist": "Jamie xx",
-      "album": "In Colour",
-      "year": 2015,
-      "genres": [
-        "electronic",
-        "UK dance"
-      ],
-      "spotify_url": "https://open.spotify.com/album/04Duapg2mNlVykd895xcfZ",
-      "link_is_search": false,
-      "blurb": "Jamie Smith is the producer and beatmaker behind London trio The xx, and In Colour, released on Young Turks in 2015, is the debut solo album he assembled over six years between band commitments. It is a studio reflection on the UK rave and pirate-radio culture he grew up just too late for, built from archival vocal samples, breakbeats and steel drums, with his bandmates Romy and Oliver Sim guesting alongside Young Thug and Popcaan on \"I Know There's Gonna Be (Good Times)\".",
-      "reception": "In Colour was shortlisted for the 2015 Mercury Prize, nominated for Best Dance/Electronic Album at the 2016 Grammy Awards, and ranked No. 2 on Pitchfork's 50 Best Albums of 2015."
-    }
-  ]
+ "date": "2026-11-20",
+ "title": "Three albums for 20 November",
+ "albums": [
+  {
+   "category": "focus",
+   "header": "Focus",
+   "artist": "Hermanos Gutiérrez",
+   "album": "Sonido Cósmico",
+   "year": 2024,
+   "genres": [
+    "instrumental Latin guitar",
+    "desert psychedelia"
+   ],
+   "spotify_url": "https://open.spotify.com/album/0FI8JaUH7kqtvM6EkmCm7t",
+   "link_is_search": false,
+   "blurb": "Hermanos Gutiérrez are the Ecuadorian-Swiss brothers Estevan and Alejandro Gutiérrez, who play dusty two-guitar instrumentals somewhere between Latin American folk and spaghetti-western atmosphere. Sonido Cósmico, released in June 2024, is their sixth album and their second made with Dan Auerbach of the Black Keys, who produced it at his Easy Eye Sound studio in Nashville; alongside their usual desert-noir duets it works cumbia rhythms and spacier, cosmic textures into the palette, with light percussion behind the guitars and no vocals anywhere on the record.",
+   "reception": "The album holds a Metacritic score of 87 out of 100 from four reviews, and it reached number 6 on the Swiss albums chart and number 193 on the US Billboard 200."
+  },
+  {
+   "category": "familiar_artist",
+   "header": "Enjoy",
+   "artist": "Daniel Caesar",
+   "album": "NEVER ENOUGH",
+   "year": 2023,
+   "genres": [
+    "R&B",
+    "neo-soul"
+   ],
+   "spotify_url": "https://open.spotify.com/album/6K8iyA4nnaFgQ1XGHB56An",
+   "link_is_search": false,
+   "blurb": "Daniel Caesar is a Toronto singer who broke out of the city's independent R&B scene with the self-released Freudian in 2017. NEVER ENOUGH, from April 2023, is his third album and his first for Republic Records after years as a flagship independent artist; it folds gospel harmony, folk-leaning guitar and psychedelic production into his falsetto-led R&B, with guest turns from Omar Apollo, Ty Dolla $ign, serpentwithfeet, Mustafa and Summer Walker.",
+   "reception": "NEVER ENOUGH debuted at number 14 on the Billboard 200 and was shortlisted for the 2023 Polaris Music Prize."
+  },
+  {
+   "category": "new_artist",
+   "header": "Explore",
+   "artist": "Os Mutantes",
+   "album": "Os Mutantes",
+   "year": 1968,
+   "genres": [
+    "tropicália",
+    "psychedelic rock"
+   ],
+   "spotify_url": "https://open.spotify.com/album/0gUoiZk9aWpg3HXaygDNp6",
+   "link_is_search": false,
+   "blurb": "Os Mutantes were teenagers from São Paulo — Rita Lee and the brothers Arnaldo Baptista and Sérgio Dias — when they cut this 1968 debut for Polydor, with homemade fuzz boxes and effects built by a fourth brother, Cláudio César. It is a founding document of Tropicália, the Brazilian movement that spliced bossa nova and samba with psychedelic rock under the military dictatorship: it opens with the Caetano Veloso/Gilberto Gil song \"Panis et Circenses\", and the band served as the house group on the movement's manifesto compilation Tropicália: ou Panis et Circencis the same year.",
+   "reception": "The album was ranked ninth on Rolling Stone Brasil's list of the 100 greatest Brazilian albums of all time, and Mojo included it among its \"50 Most Out-There Albums of All Time\"."
+  }
+ ]
 }
