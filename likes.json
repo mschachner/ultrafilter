@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-17T14:08:31.175Z",
+ "updated": "2026-11-20T00:37:00.113Z",
  "items": [
   {
    "kind": "album",
@@ -972,6 +972,19 @@
    "kind": "album",
    "key": "weather report::black market",
    "when": "2026-11-12"
+  },
+  {
+   "artist": "Billy Joel",
+   "album": "The Stranger",
+   "genres": [
+    "pop rock",
+    "singer-songwriter"
+   ],
+   "listened": "2026-11-19",
+   "liked": false,
+   "kind": "album",
+   "key": "billy joel::the stranger",
+   "when": "2026-11-19"
   },
   {
    "title": "The Poppy Field near Argenteuil",
