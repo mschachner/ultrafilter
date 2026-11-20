@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-20T00:37:00.113Z",
+ "updated": "2026-11-20T00:37:01.914Z",
  "items": [
   {
    "kind": "album",
@@ -981,7 +981,7 @@
     "singer-songwriter"
    ],
    "listened": "2026-11-19",
-   "liked": false,
+   "liked": true,
    "kind": "album",
    "key": "billy joel::the stranger",
    "when": "2026-11-19"
