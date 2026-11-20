@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-20T02:06:09.098Z",
+ "updated": "2026-11-20T18:24:59.753Z",
  "items": [
   {
    "kind": "album",
@@ -1795,6 +1795,15 @@
    "kind": "wiki",
    "key": "https://ncatlab.org/nlab/show/power+set",
    "when": "2026-11-17"
+  },
+  {
+   "source": "nlab",
+   "title": "convergence space",
+   "url": "https://ncatlab.org/nlab/show/convergence+space",
+   "topic": null,
+   "kind": "wiki",
+   "key": "https://ncatlab.org/nlab/show/convergence+space",
+   "when": "2026-11-20"
   },
   {
    "title": "Eye Candy for Today: M.J. Galt pencil portrait",
