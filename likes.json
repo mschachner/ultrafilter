@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-20T18:25:04.751Z",
+ "updated": "2026-11-20T22:14:17.635Z",
  "items": [
   {
    "kind": "album",
@@ -1011,6 +1011,19 @@
    "kind": "album",
    "key": "jamie xx::in colour",
    "when": "2026-11-19"
+  },
+  {
+   "artist": "Hermanos Gutiérrez",
+   "album": "Sonido Cósmico",
+   "genres": [
+    "instrumental Latin guitar",
+    "desert psychedelia"
+   ],
+   "listened": "2026-11-20",
+   "liked": false,
+   "kind": "album",
+   "key": "hermanos gutiérrez::sonido cósmico",
+   "when": "2026-11-20"
   },
   {
    "title": "The Poppy Field near Argenteuil",
