@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-20T18:24:59.753Z",
+ "updated": "2026-11-20T18:25:04.751Z",
  "items": [
   {
    "kind": "album",
@@ -1803,6 +1803,15 @@
    "topic": null,
    "kind": "wiki",
    "key": "https://ncatlab.org/nlab/show/convergence+space",
+   "when": "2026-11-20"
+  },
+  {
+   "source": "sep",
+   "title": "Alonzo Church",
+   "url": "https://plato.stanford.edu/entries/church/",
+   "topic": null,
+   "kind": "wiki",
+   "key": "https://plato.stanford.edu/entries/church/",
    "when": "2026-11-20"
   },
   {
