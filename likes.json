@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-20T00:37:01.914Z",
+ "updated": "2026-11-20T01:20:36.430Z",
  "items": [
   {
    "kind": "album",
@@ -972,6 +972,19 @@
    "kind": "album",
    "key": "weather report::black market",
    "when": "2026-11-12"
+  },
+  {
+   "artist": "BADBADNOTGOOD",
+   "album": "Talk Memory",
+   "genres": [
+    "instrumental jazz",
+    "jazz fusion"
+   ],
+   "listened": "2026-11-19",
+   "liked": false,
+   "kind": "album",
+   "key": "badbadnotgood::talk memory",
+   "when": "2026-11-19"
   },
   {
    "artist": "Billy Joel",
