@@ -1,0 +1,51 @@
+{
+  "date": "2026-11-22",
+  "title": "Three albums for 22 November",
+  "albums": [
+    {
+      "category": "focus",
+      "header": "Focus",
+      "artist": "El Ten Eleven",
+      "album": "El Ten Eleven",
+      "year": 2004,
+      "genres": [
+        "post-rock",
+        "instrumental rock"
+      ],
+      "spotify_url": "https://open.spotify.com/album/6bv070I2PgzwGLgYGBxaJW",
+      "link_is_search": false,
+      "blurb": "El Ten Eleven are a Los Angeles duo — Kristian Dunn on a double-neck guitar/bass run through live looping pedals, and Tim Fogarty on drums — who build their layered pieces in real time with no backing tracks. This self-titled debut appeared on the tiny Fake Record Label in August 2004 and was reissued by Bar/None the following year; opener \"My Only Swerving\" remains their signature piece, and the duo's music later ran through Gary Hustwit's design documentaries Helvetica, Objectified and Urbanized.",
+      "reception": "Spin described the debut as \"experimental instrumental music that's both highly skilled and deeply felt,\" likening the duo to \"a sort of Silverlake-style Sigur Rós.\""
+    },
+    {
+      "category": "familiar_artist",
+      "header": "Enjoy",
+      "artist": "Jack Stauber",
+      "album": "Pop Food",
+      "year": 2017,
+      "genres": [
+        "bedroom pop",
+        "hypnagogic pop"
+      ],
+      "spotify_url": "https://open.spotify.com/album/1RHa1VdX6lsLbeedgsV1cb",
+      "link_is_search": false,
+      "blurb": "Jack Stauber is an Erie, Pennsylvania songwriter and animator whose warped, VHS-grained stop-motion videos are inseparable from his songs. Pop Food, released in March 2017 on his own Plopscotch Records imprint, is his third album, a set of short synth-and-sample bedroom pop pieces with a 1980s home-video sheen; its first two tracks, \"Buttercup\" and \"Oh Klahoma,\" are the ones that escaped into the wider internet.",
+      "reception": "\"Buttercup\" became a viral TikTok phenomenon and had passed 470 million Spotify streams as of March 2026."
+    },
+    {
+      "category": "new_artist",
+      "header": "Explore",
+      "artist": "Kings of Convenience",
+      "album": "Quiet Is the New Loud",
+      "year": 2001,
+      "genres": [
+        "indie folk",
+        "acoustic pop"
+      ],
+      "spotify_url": "https://open.spotify.com/album/4hUevKZdIe9SCLneuunJZz",
+      "link_is_search": false,
+      "blurb": "Kings of Convenience are the Bergen, Norway duo of Eirik Glambek Bøe and Erlend Øye, who sing in close two-part harmony over interlocking acoustic guitars. Quiet Is the New Loud, released on Astralwerks in January 2001, was their breakthrough: its title doubled as a manifesto for hushed chamber pop, and contemporary reviews reached repeatedly for Simon & Garfunkel comparisons. Øye later fronted The Whitest Boy Alive, and the duo followed with Riot on an Empty Street in 2004.",
+      "reception": "The album reached No. 1 in Norway, where it is certified Gold (it holds a Silver certification in the UK), and lent its name to the British music press's \"New Acoustic Movement.\""
+    }
+  ]
+}

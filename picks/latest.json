@@ -1,43 +1,43 @@
 {
- "date": "2026-11-20",
- "artwork": {
-  "wikidata": "Q29654799",
-  "title": "The Road in Front of Saint-Simeon Farm in Winter",
-  "interest": "implandscape"
- },
- "wikis": {
-  "wikipedia": [
-   {
-    "url": "https://en.wikipedia.org/wiki/Dyadic_rational",
-    "title": "Dyadic rational",
-    "topic": "math"
-   },
-   {
-    "url": "https://en.wikipedia.org/wiki/Peppered_moth_evolution",
-    "title": "Peppered moth evolution",
-    "topic": "sci"
-   },
-   {
-    "url": "https://en.wikipedia.org/wiki/Landscape_painting_in_Scotland",
-    "title": "Landscape painting in Scotland",
-    "topic": "arthist"
-   }
-  ],
-  "nlab": {
-   "url": "https://ncatlab.org/nlab/show/convergence+space",
-   "title": "convergence space"
+  "date": "2026-11-22",
+  "artwork": {
+    "wikidata": "Q28064679",
+    "title": "Pays interdit",
+    "interest": "surrealism"
   },
-  "sep": {
-   "url": "https://plato.stanford.edu/entries/church/",
-   "title": "Church, Alonzo"
-  },
-  "attic": {
-   "url": "https://neugierde.github.io/cantors-attic/Wholeness_axioms",
-   "title": "Wholeness axioms"
-  },
-  "oeis": {
-   "url": "https://oeis.org/A248425",
-   "title": "Number of \"squares\" (repeated identical blocks) in the n-th Fibonacci word."
+  "wikis": {
+    "wikipedia": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Three-gap_theorem",
+        "title": "Three-gap theorem",
+        "topic": "math"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Pythagorean_addition",
+        "title": "Pythagorean addition",
+        "topic": "math"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Highland_cattle",
+        "title": "Highland cattle",
+        "topic": "sci"
+      }
+    ],
+    "nlab": {
+      "url": "https://ncatlab.org/nlab/show/direct+image",
+      "title": "direct image"
+    },
+    "sep": {
+      "url": "https://plato.stanford.edu/entries/fallacies/",
+      "title": "fallacies"
+    },
+    "attic": {
+      "url": "https://neugierde.github.io/cantors-attic/Epsilon_naught",
+      "title": "Epsilon naught"
+    },
+    "oeis": {
+      "url": "https://oeis.org/A131851",
+      "title": "Real part of the function z(n)=Sum(d(k)*i^k: d as in n=Sum(d(k)*2^k), i=sqrt(-1))."
+    }
   }
- }
 }

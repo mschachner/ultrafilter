@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-20T10:11:50.935Z",
+ "updated": "2026-11-22T10:16:19.399Z",
  "feeds": [
   {
    "name": "Joel David Hamkins",
@@ -834,6 +834,19 @@
    "added": "2026-11-20",
    "addedBy": "task",
    "note": "Lawrence Paulson, creator of Isabelle, writing weekly on logic, formal proof and foundations - matches the set-theory and logic likes"
+  },
+  {
+   "name": "Talking Climate",
+   "author": "Katharine Hayhoe",
+   "site": "https://www.talkingclimate.ca/",
+   "feed": "https://www.talkingclimate.ca/feed",
+   "topics": [
+    "climate"
+   ],
+   "status": "active",
+   "added": "2026-11-22",
+   "addedBy": "task",
+   "note": "Katharine Hayhoe's weekly newsletter pairing climate science with practical hope - good news, hard news and what to do, posting every week"
   }
  ]
 }
