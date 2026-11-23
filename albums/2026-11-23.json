@@ -1,0 +1,51 @@
+{
+  "date": "2026-11-23",
+  "title": "Three albums for 23 November",
+  "albums": [
+    {
+      "category": "focus",
+      "header": "Focus",
+      "artist": "Nala Sinephro",
+      "album": "Endlessness",
+      "year": 2024,
+      "genres": [
+        "ambient jazz",
+        "electronic"
+      ],
+      "spotify_url": "https://open.spotify.com/album/51CQQ3tQLRZlZJZ5jcpoGE",
+      "link_is_search": false,
+      "blurb": "Nala Sinephro is a Caribbean-Belgian composer and harpist based in London, working with pedal harp, piano and modular synthesizers. Endlessness, her second album and the follow-up to 2021's Space 1.8 on Warp, is a 45-minute suite of ten pieces titled \"Continuum 1\" through \"Continuum 10\", all grown from a single recurring arpeggio and recorded with London jazz players including saxophonists Nubya Garcia and James Mollison, trumpeter Sheila Maurice-Grey and black midi drummer Morgan Simpson.",
+      "reception": "It holds a Metacritic score of 83 (\"universal acclaim\"), placed fifth on Pitchfork's albums-of-2024 list, and co-won Best Jazz Record at the 2025 Libera Awards."
+    },
+    {
+      "category": "familiar_artist",
+      "header": "Enjoy",
+      "artist": "Gorillaz",
+      "album": "Plastic Beach",
+      "year": 2010,
+      "genres": [
+        "art pop",
+        "alternative hip hop"
+      ],
+      "spotify_url": "https://open.spotify.com/album/2dIGnmEIy1WZIcZCFSj6i8",
+      "link_is_search": false,
+      "blurb": "The third Gorillaz album and the most sprawling production of Damon Albarn and Jamie Hewlett's animated band: a loose environmental concept record set on an island of accumulated ocean plastic, built partly from Albarn's abandoned \"Carousel\" project. Its guest list is the widest in the band's catalogue, with Snoop Dogg, Mos Def, Bobby Womack, Lou Reed, De La Soul and Mark E. Smith appearing alongside orchestral and Arabic-ensemble arrangements.",
+      "reception": "It debuted at number two on both the UK Albums Chart and the US Billboard 200 — then the band's highest US chart position — selling around 112,000 US copies in its first week."
+    },
+    {
+      "category": "new_artist",
+      "header": "Explore",
+      "artist": "Caribou",
+      "album": "Andorra",
+      "year": 2007,
+      "genres": [
+        "psychedelic pop",
+        "electronic"
+      ],
+      "spotify_url": "https://open.spotify.com/album/2I8E9pOldPmtjf3xWYhMhU",
+      "link_is_search": false,
+      "blurb": "Caribou is Dan Snaith, a Canadian electronic musician who holds a PhD in mathematics from Imperial College London and recorded as Manitoba until a trademark dispute forced the name change. Andorra, his fourth album, trades sampled collage for densely overdubbed 1960s-style psychedelic pop — opener \"Melody Day\" is the signature piece — and closes the songwriterly chapter of his catalogue before 2010's Swim turned him toward the dancefloor.",
+      "reception": "Andorra won the 2008 Polaris Music Prize, awarded to the best Canadian album of the year."
+    }
+  ]
+}

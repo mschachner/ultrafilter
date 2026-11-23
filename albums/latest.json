@@ -1,51 +1,51 @@
 {
-  "date": "2026-11-22",
-  "title": "Three albums for 22 November",
+  "date": "2026-11-23",
+  "title": "Three albums for 23 November",
   "albums": [
     {
       "category": "focus",
       "header": "Focus",
-      "artist": "El Ten Eleven",
-      "album": "El Ten Eleven",
-      "year": 2004,
+      "artist": "Nala Sinephro",
+      "album": "Endlessness",
+      "year": 2024,
       "genres": [
-        "post-rock",
-        "instrumental rock"
+        "ambient jazz",
+        "electronic"
       ],
-      "spotify_url": "https://open.spotify.com/album/6bv070I2PgzwGLgYGBxaJW",
+      "spotify_url": "https://open.spotify.com/album/51CQQ3tQLRZlZJZ5jcpoGE",
       "link_is_search": false,
-      "blurb": "El Ten Eleven are a Los Angeles duo — Kristian Dunn on a double-neck guitar/bass run through live looping pedals, and Tim Fogarty on drums — who build their layered pieces in real time with no backing tracks. This self-titled debut appeared on the tiny Fake Record Label in August 2004 and was reissued by Bar/None the following year; opener \"My Only Swerving\" remains their signature piece, and the duo's music later ran through Gary Hustwit's design documentaries Helvetica, Objectified and Urbanized.",
-      "reception": "Spin described the debut as \"experimental instrumental music that's both highly skilled and deeply felt,\" likening the duo to \"a sort of Silverlake-style Sigur Rós.\""
+      "blurb": "Nala Sinephro is a Caribbean-Belgian composer and harpist based in London, working with pedal harp, piano and modular synthesizers. Endlessness, her second album and the follow-up to 2021's Space 1.8 on Warp, is a 45-minute suite of ten pieces titled \"Continuum 1\" through \"Continuum 10\", all grown from a single recurring arpeggio and recorded with London jazz players including saxophonists Nubya Garcia and James Mollison, trumpeter Sheila Maurice-Grey and black midi drummer Morgan Simpson.",
+      "reception": "It holds a Metacritic score of 83 (\"universal acclaim\"), placed fifth on Pitchfork's albums-of-2024 list, and co-won Best Jazz Record at the 2025 Libera Awards."
     },
     {
       "category": "familiar_artist",
       "header": "Enjoy",
-      "artist": "Jack Stauber",
-      "album": "Pop Food",
-      "year": 2017,
+      "artist": "Gorillaz",
+      "album": "Plastic Beach",
+      "year": 2010,
       "genres": [
-        "bedroom pop",
-        "hypnagogic pop"
+        "art pop",
+        "alternative hip hop"
       ],
-      "spotify_url": "https://open.spotify.com/album/1RHa1VdX6lsLbeedgsV1cb",
+      "spotify_url": "https://open.spotify.com/album/2dIGnmEIy1WZIcZCFSj6i8",
       "link_is_search": false,
-      "blurb": "Jack Stauber is an Erie, Pennsylvania songwriter and animator whose warped, VHS-grained stop-motion videos are inseparable from his songs. Pop Food, released in March 2017 on his own Plopscotch Records imprint, is his third album, a set of short synth-and-sample bedroom pop pieces with a 1980s home-video sheen; its first two tracks, \"Buttercup\" and \"Oh Klahoma,\" are the ones that escaped into the wider internet.",
-      "reception": "\"Buttercup\" became a viral TikTok phenomenon and had passed 470 million Spotify streams as of March 2026."
+      "blurb": "The third Gorillaz album and the most sprawling production of Damon Albarn and Jamie Hewlett's animated band: a loose environmental concept record set on an island of accumulated ocean plastic, built partly from Albarn's abandoned \"Carousel\" project. Its guest list is the widest in the band's catalogue, with Snoop Dogg, Mos Def, Bobby Womack, Lou Reed, De La Soul and Mark E. Smith appearing alongside orchestral and Arabic-ensemble arrangements.",
+      "reception": "It debuted at number two on both the UK Albums Chart and the US Billboard 200 — then the band's highest US chart position — selling around 112,000 US copies in its first week."
     },
     {
       "category": "new_artist",
       "header": "Explore",
-      "artist": "Kings of Convenience",
-      "album": "Quiet Is the New Loud",
-      "year": 2001,
+      "artist": "Caribou",
+      "album": "Andorra",
+      "year": 2007,
       "genres": [
-        "indie folk",
-        "acoustic pop"
+        "psychedelic pop",
+        "electronic"
       ],
-      "spotify_url": "https://open.spotify.com/album/4hUevKZdIe9SCLneuunJZz",
+      "spotify_url": "https://open.spotify.com/album/2I8E9pOldPmtjf3xWYhMhU",
       "link_is_search": false,
-      "blurb": "Kings of Convenience are the Bergen, Norway duo of Eirik Glambek Bøe and Erlend Øye, who sing in close two-part harmony over interlocking acoustic guitars. Quiet Is the New Loud, released on Astralwerks in January 2001, was their breakthrough: its title doubled as a manifesto for hushed chamber pop, and contemporary reviews reached repeatedly for Simon & Garfunkel comparisons. Øye later fronted The Whitest Boy Alive, and the duo followed with Riot on an Empty Street in 2004.",
-      "reception": "The album reached No. 1 in Norway, where it is certified Gold (it holds a Silver certification in the UK), and lent its name to the British music press's \"New Acoustic Movement.\""
+      "blurb": "Caribou is Dan Snaith, a Canadian electronic musician who holds a PhD in mathematics from Imperial College London and recorded as Manitoba until a trademark dispute forced the name change. Andorra, his fourth album, trades sampled collage for densely overdubbed 1960s-style psychedelic pop — opener \"Melody Day\" is the signature piece — and closes the songwriterly chapter of his catalogue before 2010's Swim turned him toward the dancefloor.",
+      "reception": "Andorra won the 2008 Polaris Music Prize, awarded to the best Canadian album of the year."
     }
   ]
 }

@@ -1,0 +1,43 @@
+{
+  "date": "2026-11-23",
+  "artwork": {
+    "wikidata": "Q1763620",
+    "title": "Le Défenseur du Temps",
+    "interest": "sculpture"
+  },
+  "wikis": {
+    "wikipedia": [
+      {
+        "url": "https://en.wikipedia.org/wiki/17-animal_inheritance_puzzle",
+        "title": "17-animal inheritance puzzle",
+        "topic": "math"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Al-Battani",
+        "title": "Al-Battani",
+        "topic": "sci"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Franz_Schubert",
+        "title": "Franz Schubert",
+        "topic": "arts"
+      }
+    ],
+    "nlab": {
+      "url": "https://ncatlab.org/nlab/show/quantum+group",
+      "title": "quantum group"
+    },
+    "sep": {
+      "url": "https://plato.stanford.edu/entries/umar-khayyam/",
+      "title": "Umar Khayyam"
+    },
+    "attic": {
+      "url": "https://neugierde.github.io/cantors-attic/Rowbottom",
+      "title": "Rowbottom"
+    },
+    "oeis": {
+      "url": "https://oeis.org/A171676",
+      "title": "Ordered list in binary of the subwords (with leading zeros omitted) appearing in the infinite Fibonacci word."
+    }
+  }
+}
