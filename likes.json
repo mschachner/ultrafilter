@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-23T22:17:17.364Z",
+ "updated": "2026-11-23T22:17:19.171Z",
  "items": [
   {
    "kind": "album",
@@ -1033,7 +1033,7 @@
     "electronic"
    ],
    "listened": "2026-11-23",
-   "liked": false,
+   "liked": true,
    "kind": "album",
    "key": "nala sinephro::endlessness",
    "when": "2026-11-23"
