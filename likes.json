@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-20T22:14:19.846Z",
+ "updated": "2026-11-23T22:17:17.364Z",
  "items": [
   {
    "kind": "album",
@@ -1024,6 +1024,19 @@
    "kind": "album",
    "key": "hermanos gutiérrez::sonido cósmico",
    "when": "2026-11-20"
+  },
+  {
+   "artist": "Nala Sinephro",
+   "album": "Endlessness",
+   "genres": [
+    "ambient jazz",
+    "electronic"
+   ],
+   "listened": "2026-11-23",
+   "liked": false,
+   "kind": "album",
+   "key": "nala sinephro::endlessness",
+   "when": "2026-11-23"
   },
   {
    "title": "The Poppy Field near Argenteuil",
