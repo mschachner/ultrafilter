@@ -26,12 +26,9 @@ permissions:
   id-token: write
 
 jobs:
-  refresh:
+  build:
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Check out the repository
@@ -74,15 +71,51 @@ jobs:
         with:
           path: _site
 
+  # Deploying from its own job (GitHub's Pages template) rather than right
+  # after the upload in the same job: deploy-pages looks the artifact up by
+  # name, and a lookup a fraction of a second after the upload can come back
+  # empty ("No artifacts named github-pages"). By the time a new job starts,
+  # the artifact is listed.
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
       - name: Deploy to Pages
         id: deployment
         uses: actions/deploy-pages@v4
 
-      # Once a day (the 9:45 UTC run only), after the deploy: fail the run if
-      # a daily section had to fall back to stale data, so a broken query or
-      # dead token emails you instead of the page rotting quietly. The deploy
-      # has already happened by this point, so a red run never blocks the
-      # page from updating with whatever did build.
+  # Once a day (the 9:45 UTC run only), after the deploy: fail the run if
+  # a daily section had to fall back to stale data, so a broken query or
+  # dead token emails you instead of the page rotting quietly. The deploy
+  # has already happened by this point, so a red run never blocks the
+  # page from updating with whatever did build.
+  freshness:
+    needs: deploy
+    if: github.event.schedule == '45 9 * * *'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      # The check reads exactly what was deployed: the Pages artifact is a
+      # tarball of _site inside the github-pages artifact.
+      - name: Fetch the deployed site
+        uses: actions/download-artifact@v4
+        with:
+          name: github-pages
+          path: _pages
+
+      - name: Unpack the site
+        run: |
+          mkdir _site
+          tar -xf _pages/artifact.tar -C _site
+
       - name: Freshness check
-        if: github.event.schedule == '45 9 * * *'
         run: node scripts/check-freshness.mjs
