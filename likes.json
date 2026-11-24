@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-23T22:17:19.171Z",
+ "updated": "2026-11-24T00:31:02.436Z",
  "items": [
   {
    "kind": "album",
@@ -1024,6 +1024,19 @@
    "kind": "album",
    "key": "hermanos gutiérrez::sonido cósmico",
    "when": "2026-11-20"
+  },
+  {
+   "artist": "Caribou",
+   "album": "Andorra",
+   "genres": [
+    "psychedelic pop",
+    "electronic"
+   ],
+   "listened": "2026-11-23",
+   "liked": false,
+   "kind": "album",
+   "key": "caribou::andorra",
+   "when": "2026-11-23"
   },
   {
    "artist": "Nala Sinephro",
