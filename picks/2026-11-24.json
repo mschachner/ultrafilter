@@ -1,0 +1,43 @@
+{
+  "date": "2026-11-24",
+  "artwork": {
+    "wikidata": "Q3879263",
+    "title": "Reclining Nude (On the Left Side)",
+    "interest": "modern"
+  },
+  "wikis": {
+    "wikipedia": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Square_pyramidal_number",
+        "title": "Square pyramidal number",
+        "topic": "math"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Pyjama_shark",
+        "title": "Pyjama shark",
+        "topic": "sci"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1875_Indianola_hurricane",
+        "title": "1875 Indianola hurricane",
+        "topic": "climate"
+      }
+    ],
+    "nlab": {
+      "url": "https://ncatlab.org/nlab/show/sphere+eversion",
+      "title": "sphere eversion"
+    },
+    "sep": {
+      "url": "https://plato.stanford.edu/entries/logic-provability/",
+      "title": "provability"
+    },
+    "attic": {
+      "url": "https://neugierde.github.io/cantors-attic/Descriptive_set_theory",
+      "title": "Descriptive set theory"
+    },
+    "oeis": {
+      "url": "https://oeis.org/A046110",
+      "title": "Number of lattice points on circumference of a circle of radius (2n+1)/2 with center at (1/2,0)."
+    }
+  }
+}

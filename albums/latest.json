@@ -1,51 +1,51 @@
 {
-  "date": "2026-11-23",
-  "title": "Three albums for 23 November",
+  "date": "2026-11-24",
+  "title": "Three albums for 24 November",
   "albums": [
     {
       "category": "focus",
       "header": "Focus",
-      "artist": "Nala Sinephro",
-      "album": "Endlessness",
-      "year": 2024,
+      "artist": "Azymuth",
+      "album": "Light as a Feather",
+      "year": 1979,
       "genres": [
-        "ambient jazz",
-        "electronic"
+        "Brazilian jazz-funk",
+        "fusion"
       ],
-      "spotify_url": "https://open.spotify.com/album/51CQQ3tQLRZlZJZ5jcpoGE",
+      "spotify_url": "https://open.spotify.com/album/4BgDlU1O4OrFIOq3VIoBWl",
       "link_is_search": false,
-      "blurb": "Nala Sinephro is a Caribbean-Belgian composer and harpist based in London, working with pedal harp, piano and modular synthesizers. Endlessness, her second album and the follow-up to 2021's Space 1.8 on Warp, is a 45-minute suite of ten pieces titled \"Continuum 1\" through \"Continuum 10\", all grown from a single recurring arpeggio and recorded with London jazz players including saxophonists Nubya Garcia and James Mollison, trumpeter Sheila Maurice-Grey and black midi drummer Morgan Simpson.",
-      "reception": "It holds a Metacritic score of 83 (\"universal acclaim\"), placed fifth on Pitchfork's albums-of-2024 list, and co-won Best Jazz Record at the 2025 Libera Awards."
+      "blurb": "Azymuth are a Rio de Janeiro trio — José Roberto Bertrami on keyboards, Alex Malheiros on bass and Ivan Conti on drums — who described their blend of samba, jazz and funk as \"samba doido\" (crazy samba). Light as a Feather was their 1979 debut for the American jazz label Milestone and the record that carried them to an international audience, all Fender Rhodes, analog synths and samba-rooted grooves, capped by the nine-minute spacey dancefloor cut \"Jazz Carnival\".",
+      "reception": "Its single \"Jazz Carnival\" became a surprise overseas hit, reaching No. 19 on the UK Singles Chart in early 1980."
     },
     {
       "category": "familiar_artist",
       "header": "Enjoy",
-      "artist": "Gorillaz",
-      "album": "Plastic Beach",
-      "year": 2010,
+      "artist": "Lianne La Havas",
+      "album": "Blood",
+      "year": 2015,
       "genres": [
-        "art pop",
-        "alternative hip hop"
+        "neo soul",
+        "soul-folk"
       ],
-      "spotify_url": "https://open.spotify.com/album/2dIGnmEIy1WZIcZCFSj6i8",
+      "spotify_url": "https://open.spotify.com/album/1Fh5Y8ldo4PIW8Ija51BRK",
       "link_is_search": false,
-      "blurb": "The third Gorillaz album and the most sprawling production of Damon Albarn and Jamie Hewlett's animated band: a loose environmental concept record set on an island of accumulated ocean plastic, built partly from Albarn's abandoned \"Carousel\" project. Its guest list is the widest in the band's catalogue, with Snoop Dogg, Mos Def, Bobby Womack, Lou Reed, De La Soul and Mark E. Smith appearing alongside orchestral and Arabic-ensemble arrangements.",
-      "reception": "It debuted at number two on both the UK Albums Chart and the US Billboard 200 — then the band's highest US chart position — selling around 112,000 US copies in its first week."
+      "blurb": "The second album from the London singer and guitarist, released on Warner Bros. three years after her debut Is Your Love Big Enough?. It grew out of a trip to Jamaica, where her mother's family is from, and folds that heritage into a fuller, groove-leaning soul sound than the sparse guitar settings of the debut, led by the singles \"Unstoppable\" and \"What You Don't Do\".",
+      "reception": "Blood entered the UK Albums Chart at No. 2 — still her career-best chart position — and drew generally favorable reviews, with a Metacritic score of 72."
     },
     {
       "category": "new_artist",
       "header": "Explore",
-      "artist": "Caribou",
-      "album": "Andorra",
-      "year": 2007,
+      "artist": "Yellow Magic Orchestra",
+      "album": "Solid State Survivor",
+      "year": 1979,
       "genres": [
-        "psychedelic pop",
+        "synth-pop",
         "electronic"
       ],
-      "spotify_url": "https://open.spotify.com/album/2I8E9pOldPmtjf3xWYhMhU",
+      "spotify_url": "https://open.spotify.com/album/5z480Ywi9Hn3EQV8N4UwEN",
       "link_is_search": false,
-      "blurb": "Caribou is Dan Snaith, a Canadian electronic musician who holds a PhD in mathematics from Imperial College London and recorded as Manitoba until a trademark dispute forced the name change. Andorra, his fourth album, trades sampled collage for densely overdubbed 1960s-style psychedelic pop — opener \"Melody Day\" is the signature piece — and closes the songwriterly chapter of his catalogue before 2010's Swim turned him toward the dancefloor.",
-      "reception": "Andorra won the 2008 Polaris Music Prize, awarded to the best Canadian album of the year."
+      "blurb": "The second album by the Tokyo trio of Haruomi Hosono, Ryuichi Sakamoto and Yukihiro Takahashi, built on synthesizers and sequencers at a time when almost no pop records were. It holds their signature pieces \"Technopolis\", \"Rydeen\" and \"Behind the Mask\" — the last later given new lyrics and recorded by Michael Jackson and covered by Eric Clapton — and it helped set the template for the synth-pop, techno and video-game music that followed.",
+      "reception": "It topped Japan's Oricon album chart, sold over a million copies to become the country's best-selling album of 1980, and won Best Album at the 1980 Japan Record Awards."
     }
   ]
 }

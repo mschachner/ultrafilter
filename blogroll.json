@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-23T10:21:25.925Z",
+ "updated": "2026-11-24T10:15:30.144Z",
  "feeds": [
   {
    "name": "Joel David Hamkins",
@@ -860,6 +860,19 @@
    "added": "2026-11-23",
    "addedBy": "task",
    "note": "One-person daily blog on art and archaeology finds - a new discovery, artifact or restoration each day, next to the liked Lines and Colors posts"
+  },
+  {
+   "name": "The Prairie Ecologist",
+   "author": "Chris Helzer",
+   "site": "https://prairieecologist.com/",
+   "feed": "https://prairieecologist.com/feed/",
+   "topics": [
+    "sci"
+   ],
+   "status": "active",
+   "added": "2026-11-24",
+   "addedBy": "task",
+   "note": "Chris Helzer's weekly prairie ecology blog - essays and photography on grassland plants, insects and land stewardship, beside the liked natural-history posts"
   }
  ]
 }

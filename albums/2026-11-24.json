@@ -1,0 +1,51 @@
+{
+  "date": "2026-11-24",
+  "title": "Three albums for 24 November",
+  "albums": [
+    {
+      "category": "focus",
+      "header": "Focus",
+      "artist": "Azymuth",
+      "album": "Light as a Feather",
+      "year": 1979,
+      "genres": [
+        "Brazilian jazz-funk",
+        "fusion"
+      ],
+      "spotify_url": "https://open.spotify.com/album/4BgDlU1O4OrFIOq3VIoBWl",
+      "link_is_search": false,
+      "blurb": "Azymuth are a Rio de Janeiro trio — José Roberto Bertrami on keyboards, Alex Malheiros on bass and Ivan Conti on drums — who described their blend of samba, jazz and funk as \"samba doido\" (crazy samba). Light as a Feather was their 1979 debut for the American jazz label Milestone and the record that carried them to an international audience, all Fender Rhodes, analog synths and samba-rooted grooves, capped by the nine-minute spacey dancefloor cut \"Jazz Carnival\".",
+      "reception": "Its single \"Jazz Carnival\" became a surprise overseas hit, reaching No. 19 on the UK Singles Chart in early 1980."
+    },
+    {
+      "category": "familiar_artist",
+      "header": "Enjoy",
+      "artist": "Lianne La Havas",
+      "album": "Blood",
+      "year": 2015,
+      "genres": [
+        "neo soul",
+        "soul-folk"
+      ],
+      "spotify_url": "https://open.spotify.com/album/1Fh5Y8ldo4PIW8Ija51BRK",
+      "link_is_search": false,
+      "blurb": "The second album from the London singer and guitarist, released on Warner Bros. three years after her debut Is Your Love Big Enough?. It grew out of a trip to Jamaica, where her mother's family is from, and folds that heritage into a fuller, groove-leaning soul sound than the sparse guitar settings of the debut, led by the singles \"Unstoppable\" and \"What You Don't Do\".",
+      "reception": "Blood entered the UK Albums Chart at No. 2 — still her career-best chart position — and drew generally favorable reviews, with a Metacritic score of 72."
+    },
+    {
+      "category": "new_artist",
+      "header": "Explore",
+      "artist": "Yellow Magic Orchestra",
+      "album": "Solid State Survivor",
+      "year": 1979,
+      "genres": [
+        "synth-pop",
+        "electronic"
+      ],
+      "spotify_url": "https://open.spotify.com/album/5z480Ywi9Hn3EQV8N4UwEN",
+      "link_is_search": false,
+      "blurb": "The second album by the Tokyo trio of Haruomi Hosono, Ryuichi Sakamoto and Yukihiro Takahashi, built on synthesizers and sequencers at a time when almost no pop records were. It holds their signature pieces \"Technopolis\", \"Rydeen\" and \"Behind the Mask\" — the last later given new lyrics and recorded by Michael Jackson and covered by Eric Clapton — and it helped set the template for the synth-pop, techno and video-game music that followed.",
+      "reception": "It topped Japan's Oricon album chart, sold over a million copies to become the country's best-selling album of 1980, and won Best Album at the 1980 Japan Record Awards."
+    }
+  ]
+}
