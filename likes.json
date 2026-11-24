@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-24T00:31:03.966Z",
+ "updated": "2026-11-24T22:32:06.963Z",
  "items": [
   {
    "kind": "album",
@@ -1050,6 +1050,19 @@
    "kind": "album",
    "key": "nala sinephro::endlessness",
    "when": "2026-11-23"
+  },
+  {
+   "artist": "Azymuth",
+   "album": "Light as a Feather",
+   "genres": [
+    "Brazilian jazz-funk",
+    "fusion"
+   ],
+   "listened": "2026-11-24",
+   "liked": false,
+   "kind": "album",
+   "key": "azymuth::light as a feather",
+   "when": "2026-11-24"
   },
   {
    "title": "The Poppy Field near Argenteuil",
