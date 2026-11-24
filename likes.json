@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-24T00:31:02.436Z",
+ "updated": "2026-11-24T00:31:03.966Z",
  "items": [
   {
    "kind": "album",
@@ -1033,7 +1033,7 @@
     "electronic"
    ],
    "listened": "2026-11-23",
-   "liked": false,
+   "liked": true,
    "kind": "album",
    "key": "caribou::andorra",
    "when": "2026-11-23"
