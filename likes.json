@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-24T22:32:12.166Z",
+ "updated": "2026-11-24T22:32:13.742Z",
  "items": [
   {
    "kind": "album",
@@ -1072,7 +1072,7 @@
     "instrumental rock"
    ],
    "listened": "2026-11-24",
-   "liked": false,
+   "liked": true,
    "kind": "album",
    "key": "el ten eleven::el ten eleven",
    "when": "2026-11-24"
