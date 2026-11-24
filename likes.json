@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-24T22:32:13.742Z",
+ "updated": "2026-11-24T23:23:46.574Z",
  "items": [
   {
    "kind": "album",
@@ -1062,6 +1062,18 @@
    "liked": true,
    "kind": "album",
    "key": "azymuth::light as a feather",
+   "when": "2026-11-24"
+  },
+  {
+   "artist": "Duke Ellington",
+   "album": "Far East Suite",
+   "genres": [
+    "big band jazz"
+   ],
+   "listened": "2026-11-24",
+   "liked": false,
+   "kind": "album",
+   "key": "duke ellington::far east suite",
    "when": "2026-11-24"
   },
   {
