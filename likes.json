@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-25T00:05:19.648Z",
+ "updated": "2026-11-25T00:05:21.103Z",
  "items": [
   {
    "kind": "album",
@@ -1059,7 +1059,7 @@
     "post-bop"
    ],
    "listened": "2026-11-24",
-   "liked": false,
+   "liked": true,
    "kind": "album",
    "key": "ahmad jamal::the awakening",
    "when": "2026-11-24"
