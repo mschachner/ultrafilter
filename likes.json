@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-24T23:23:46.574Z",
+ "updated": "2026-11-25T00:05:19.648Z",
  "items": [
   {
    "kind": "album",
@@ -1050,6 +1050,19 @@
    "kind": "album",
    "key": "nala sinephro::endlessness",
    "when": "2026-11-23"
+  },
+  {
+   "artist": "Ahmad Jamal",
+   "album": "The Awakening",
+   "genres": [
+    "jazz",
+    "post-bop"
+   ],
+   "listened": "2026-11-24",
+   "liked": false,
+   "kind": "album",
+   "key": "ahmad jamal::the awakening",
+   "when": "2026-11-24"
   },
   {
    "artist": "Azymuth",
