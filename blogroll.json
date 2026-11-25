@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-24T10:15:30.144Z",
+ "updated": "2026-11-25T10:13:17.994Z",
  "feeds": [
   {
    "name": "Joel David Hamkins",
@@ -873,6 +873,19 @@
    "added": "2026-11-24",
    "addedBy": "task",
    "note": "Chris Helzer's weekly prairie ecology blog - essays and photography on grassland plants, insects and land stewardship, beside the liked natural-history posts"
+  },
+  {
+   "name": "Igor Pak's blog",
+   "author": "Igor Pak",
+   "site": "https://igorpak.wordpress.com/",
+   "feed": "https://igorpak.wordpress.com/feed/",
+   "topics": [
+    "math"
+   ],
+   "status": "active",
+   "added": "2026-11-25",
+   "addedBy": "task",
+   "note": "Igor Pak, UCLA combinatorialist, writing essays on combinatorics, conjectures and mathematical life - matches the liked combinatorics and Erdos-flavored wiki entries"
   }
  ]
 }

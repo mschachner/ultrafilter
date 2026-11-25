@@ -1,0 +1,43 @@
+{
+  "date": "2026-11-25",
+  "artwork": {
+    "wikidata": "Q18173384",
+    "title": "Thunderstorm Beneath the Summit",
+    "interest": "ukiyoe"
+  },
+  "wikis": {
+    "wikipedia": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Sch%C3%B6nhardt_polyhedron",
+        "title": "Schönhardt polyhedron",
+        "topic": "math"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Automimicry",
+        "title": "Automimicry",
+        "topic": "sci"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/1852_Atlantic_hurricane_season",
+        "title": "1852 Atlantic hurricane season",
+        "topic": "climate"
+      }
+    ],
+    "nlab": {
+      "url": "https://ncatlab.org/nlab/show/examples+of+adjoint+functors",
+      "title": "examples of adjoint functors"
+    },
+    "sep": {
+      "url": "https://plato.stanford.edu/entries/type-theory-church/",
+      "title": "Church's type theory"
+    },
+    "attic": {
+      "url": "https://neugierde.github.io/cantors-attic/Zero_dagger",
+      "title": "Zero dagger"
+    },
+    "oeis": {
+      "url": "https://oeis.org/A209880",
+      "title": "RATS: Reverse Add Then Sort the digits applied to previous term, starting with 29."
+    }
+  }
+}
