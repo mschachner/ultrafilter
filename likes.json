@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-25T01:19:40.736Z",
+ "updated": "2026-11-25T02:16:28.531Z",
  "items": [
   {
    "kind": "album",
@@ -1100,6 +1100,19 @@
    "liked": true,
    "kind": "album",
    "key": "el ten eleven::el ten eleven",
+   "when": "2026-11-24"
+  },
+  {
+   "artist": "Fennesz",
+   "album": "Endless Summer",
+   "genres": [
+    "ambient",
+    "glitch"
+   ],
+   "listened": "2026-11-24",
+   "liked": false,
+   "kind": "album",
+   "key": "fennesz::endless summer",
    "when": "2026-11-24"
   },
   {
