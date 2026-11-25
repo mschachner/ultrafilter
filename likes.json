@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-25T02:16:30.031Z",
+ "updated": "2026-11-25T14:29:48.005Z",
  "items": [
   {
    "kind": "album",
@@ -1929,6 +1929,15 @@
    "kind": "wiki",
    "key": "https://plato.stanford.edu/entries/church/",
    "when": "2026-11-20"
+  },
+  {
+   "source": "nlab",
+   "title": "composite knot",
+   "url": "https://ncatlab.org/nlab/show/composite+knot",
+   "topic": null,
+   "kind": "wiki",
+   "key": "https://ncatlab.org/nlab/show/composite+knot",
+   "when": "2026-11-25"
   },
   {
    "title": "Eye Candy for Today: M.J. Galt pencil portrait",
