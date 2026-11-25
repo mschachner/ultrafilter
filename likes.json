@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-25T02:16:28.531Z",
+ "updated": "2026-11-25T02:16:30.031Z",
  "items": [
   {
    "kind": "album",
@@ -1110,7 +1110,7 @@
     "glitch"
    ],
    "listened": "2026-11-24",
-   "liked": false,
+   "liked": true,
    "kind": "album",
    "key": "fennesz::endless summer",
    "when": "2026-11-24"
