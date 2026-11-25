@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-25T00:05:21.103Z",
+ "updated": "2026-11-25T01:19:40.736Z",
  "items": [
   {
    "kind": "album",
@@ -1100,6 +1100,19 @@
    "liked": true,
    "kind": "album",
    "key": "el ten eleven::el ten eleven",
+   "when": "2026-11-24"
+  },
+  {
+   "artist": "Freddie Hubbard",
+   "album": "Red Clay",
+   "genres": [
+    "jazz-funk",
+    "hard bop"
+   ],
+   "listened": "2026-11-24",
+   "liked": false,
+   "kind": "album",
+   "key": "freddie hubbard::red clay",
    "when": "2026-11-24"
   },
   {
