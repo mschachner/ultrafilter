@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-25T10:13:17.994Z",
+ "updated": "2026-11-26T10:12:03.725Z",
  "feeds": [
   {
    "name": "Joel David Hamkins",
@@ -886,6 +886,20 @@
    "added": "2026-11-25",
    "addedBy": "task",
    "note": "Igor Pak, UCLA combinatorialist, writing essays on combinatorics, conjectures and mathematical life - matches the liked combinatorics and Erdos-flavored wiki entries"
+  },
+  {
+   "name": "The Marginalian",
+   "author": "Maria Popova",
+   "site": "https://www.themarginalian.org",
+   "feed": "https://www.themarginalian.org/feed/",
+   "topics": [
+    "arts",
+    "arthist"
+   ],
+   "status": "active",
+   "added": "2026-11-26",
+   "addedBy": "task",
+   "note": "Maria Popova's long-running one-person blog of essays drawing on literature, art and science - sits beside the liked Public Domain Review-style art and ideas reading"
   }
  ]
 }

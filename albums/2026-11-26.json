@@ -1,0 +1,51 @@
+{
+  "date": "2026-11-26",
+  "title": "Three albums for 26 November",
+  "albums": [
+    {
+      "category": "focus",
+      "header": "Focus",
+      "artist": "Esbjörn Svensson Trio",
+      "album": "From Gagarin's Point of View",
+      "year": 1999,
+      "genres": [
+        "jazz",
+        "piano trio"
+      ],
+      "spotify_url": "https://open.spotify.com/album/4jM7MG25QkVfp0SSkQ6138",
+      "link_is_search": false,
+      "blurb": "e.s.t. — the Swedish trio of pianist Esbjörn Svensson, bassist Dan Berglund and drummer Magnus Öström — spent the 1990s building a following at home before this, their first album released internationally on Munich's ACT label. It set the template the group refined until Svensson's death in 2008: acoustic piano-trio jazz shaped by pop structures, rock dynamics and discreet electronics, all of it instrumental, with the closer \"Dodge the Dodo\" becoming the band's signature piece.",
+      "reception": "The album was e.s.t.'s international breakthrough: Süddeutsche Zeitung called it \"a little miracle\", and ACT credits its sessions with producing the first Swedish jazz video shown on MTV."
+    },
+    {
+      "category": "familiar_artist",
+      "header": "Enjoy",
+      "artist": "Kendrick Lamar",
+      "album": "good kid, m.A.A.d city",
+      "year": 2012,
+      "genres": [
+        "west coast hip hop",
+        "conscious rap"
+      ],
+      "spotify_url": "https://open.spotify.com/album/748dZDqSZy6aPXKcI9H80u",
+      "link_is_search": false,
+      "blurb": "Kendrick Lamar's second studio album and his major-label debut on Top Dawg/Aftermath/Interscope, subtitled \"a short film by Kendrick Lamar\". It is a concept record following one day in his teenage life in Compton — cruising in his mother's van, peer pressure, a robbery gone wrong — told out of sequence and stitched together with voicemail skits, and it sits between the independent Section.80 and the jazz-saturated To Pimp a Butterfly in his discography.",
+      "reception": "It debuted at No. 2 on the Billboard 200 with about 242,000 first-week sales, the biggest debut for a new artist in 2012 at the time, and later became the first hip-hop studio album to spend ten years on that chart."
+    },
+    {
+      "category": "new_artist",
+      "header": "Explore",
+      "artist": "Phoenix",
+      "album": "Wolfgang Amadeus Phoenix",
+      "year": 2009,
+      "genres": [
+        "indie pop",
+        "synth-pop"
+      ],
+      "spotify_url": "https://open.spotify.com/album/0xG5b9nkWxKc5VTpo6Fq5I",
+      "link_is_search": false,
+      "blurb": "Phoenix formed in Versailles in the 1990s, part of the same suburban scene that produced Air and Daft Punk — guitarist Laurent Brancowitz played alongside the future Daft Punk duo in the band Darlin' before joining. Wolfgang Amadeus Phoenix is their fourth album, the record that turned a decade-old cult band into an arena act on the back of the singles \"1901\" and \"Lisztomania\" and Thomas Mars's clipped, bright vocal delivery.",
+      "reception": "The album won the 2010 Grammy Award for Best Alternative Music Album, and \"1901\" reached No. 1 on Billboard's Alternative Songs chart."
+    }
+  ]
+}

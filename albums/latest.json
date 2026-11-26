@@ -1,51 +1,51 @@
 {
-  "date": "2026-11-25",
-  "title": "Three albums for 25 November",
+  "date": "2026-11-26",
+  "title": "Three albums for 26 November",
   "albums": [
     {
       "category": "focus",
       "header": "Focus",
-      "artist": "Manuel Göttsching",
-      "album": "E2-E4",
-      "year": 1984,
+      "artist": "Esbjörn Svensson Trio",
+      "album": "From Gagarin's Point of View",
+      "year": 1999,
       "genres": [
-        "electronic",
-        "minimalism"
+        "jazz",
+        "piano trio"
       ],
-      "spotify_url": "https://open.spotify.com/album/64UtnfSDLV1OLvhyqfmO8o",
+      "spotify_url": "https://open.spotify.com/album/4jM7MG25QkVfp0SSkQ6138",
       "link_is_search": false,
-      "blurb": "Manuel Göttsching co-founded the Berlin cosmic-rock group Ash Ra Tempel before turning to solo electronic work. E2-E4 is a single hour-long piece he recorded in one take in his home studio in December 1981, layering improvised electric guitar over a two-chord sequencer pulse; it sat on the shelf until Klaus Schulze's Inteam label released it in 1984. The title comes from the standard chess opening move, and Spotify carries it as \"E2-E4 (Mixed)\", indexed into thirteen continuous sections.",
-      "reception": "Larry Levan made it a Paradise Garage staple, the 1989 Italo-house hit \"Sueño Latino\" was built on it, and Pitchfork and The Guardian have both named it among the best albums of the 1980s for its role in the development of house and techno."
+      "blurb": "e.s.t. — the Swedish trio of pianist Esbjörn Svensson, bassist Dan Berglund and drummer Magnus Öström — spent the 1990s building a following at home before this, their first album released internationally on Munich's ACT label. It set the template the group refined until Svensson's death in 2008: acoustic piano-trio jazz shaped by pop structures, rock dynamics and discreet electronics, all of it instrumental, with the closer \"Dodge the Dodo\" becoming the band's signature piece.",
+      "reception": "The album was e.s.t.'s international breakthrough: Süddeutsche Zeitung called it \"a little miracle\", and ACT credits its sessions with producing the first Swedish jazz video shown on MTV."
     },
     {
       "category": "familiar_artist",
       "header": "Enjoy",
-      "artist": "Steely Dan",
-      "album": "Pretzel Logic",
-      "year": 1974,
+      "artist": "Kendrick Lamar",
+      "album": "good kid, m.A.A.d city",
+      "year": 2012,
       "genres": [
-        "jazz-rock",
-        "pop rock"
+        "west coast hip hop",
+        "conscious rap"
       ],
-      "spotify_url": "https://open.spotify.com/album/2OUYJtDV6EmLkVyoHSuGIp",
+      "spotify_url": "https://open.spotify.com/album/748dZDqSZy6aPXKcI9H80u",
       "link_is_search": false,
-      "blurb": "Pretzel Logic is Steely Dan's third album and the last recorded with the full original five-piece band before Walter Becker and Donald Fagen retired the group to the studio. It compresses their jazz-leaning harmony into eleven short songs, among them a faithful cover of Duke Ellington's \"East St. Louis Toodle-Oo\", and its session-player polish points toward the way they would work for the rest of the decade.",
-      "reception": "The album reached number eight on the Billboard 200, while \"Rikki Don't Lose That Number\" peaked at number four on the Hot 100, the biggest hit single of the band's career."
+      "blurb": "Kendrick Lamar's second studio album and his major-label debut on Top Dawg/Aftermath/Interscope, subtitled \"a short film by Kendrick Lamar\". It is a concept record following one day in his teenage life in Compton — cruising in his mother's van, peer pressure, a robbery gone wrong — told out of sequence and stitched together with voicemail skits, and it sits between the independent Section.80 and the jazz-saturated To Pimp a Butterfly in his discography.",
+      "reception": "It debuted at No. 2 on the Billboard 200 with about 242,000 first-week sales, the biggest debut for a new artist in 2012 at the time, and later became the first hip-hop studio album to spend ten years on that chart."
     },
     {
       "category": "new_artist",
       "header": "Explore",
-      "artist": "Kokoroko",
-      "album": "Could We Be More",
-      "year": 2022,
+      "artist": "Phoenix",
+      "album": "Wolfgang Amadeus Phoenix",
+      "year": 2009,
       "genres": [
-        "afrobeat",
-        "jazz"
+        "indie pop",
+        "synth-pop"
       ],
-      "spotify_url": "https://open.spotify.com/album/48e8LFqiVUxumlXDIVyNYl",
+      "spotify_url": "https://open.spotify.com/album/0xG5b9nkWxKc5VTpo6Fq5I",
       "link_is_search": false,
-      "blurb": "Kokoroko are an eight-piece London band led by trumpeter Sheila Maurice-Grey, part of the UK jazz circle around Gilles Peterson's Brownswood label; they first drew wide attention when \"Abusey Junction\", their contribution to the 2018 We Out Here compilation, went viral. Could We Be More is their debut full-length, following a 2019 self-titled EP, and folds afrobeat, highlife guitar and soul harmonies into a horn-led band sound.",
-      "reception": "It reached number 30 on the UK Albums Chart, and Jazzwise gave it four stars as an Editor's Choice while The Guardian called it \"a debut of easy-going beauty\"."
+      "blurb": "Phoenix formed in Versailles in the 1990s, part of the same suburban scene that produced Air and Daft Punk — guitarist Laurent Brancowitz played alongside the future Daft Punk duo in the band Darlin' before joining. Wolfgang Amadeus Phoenix is their fourth album, the record that turned a decade-old cult band into an arena act on the back of the singles \"1901\" and \"Lisztomania\" and Thomas Mars's clipped, bright vocal delivery.",
+      "reception": "The album won the 2010 Grammy Award for Best Alternative Music Album, and \"1901\" reached No. 1 on Billboard's Alternative Songs chart."
     }
   ]
 }
