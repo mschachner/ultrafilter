@@ -1,47 +1,43 @@
 {
-  "date": "2026-11-26",
+  "date": "2026-11-27",
   "artwork": {
-    "wikidata": "Q2974978",
-    "title": "The Port of Boulogne by Moonlight",
-    "interest": "implandscape"
+    "wikidata": "Q60497141",
+    "title": "Senecio (Klee)",
+    "interest": "surrealism"
   },
   "wikis": {
     "wikipedia": [
       {
-        "url": "https://en.wikipedia.org/wiki/Directed_acyclic_graph",
-        "title": "Directed acyclic graph",
+        "url": "https://en.wikipedia.org/wiki/Intersection_number_(graph_theory)",
+        "title": "Intersection number (graph theory)",
         "topic": "math"
       },
       {
-        "url": "https://en.wikipedia.org/wiki/Caddisfly",
-        "title": "Caddisfly",
+        "url": "https://en.wikipedia.org/wiki/Liverwort",
+        "title": "Liverwort",
         "topic": "sci"
       },
       {
-        "url": "https://en.wikipedia.org/wiki/Minoan_eruption",
-        "title": "Minoan eruption",
-        "topic": "climate"
+        "url": "https://en.wikipedia.org/wiki/Daniel_Vangarde",
+        "title": "Daniel Vangarde",
+        "topic": "arts"
       }
     ],
     "nlab": {
-      "url": "https://ncatlab.org/nlab/show/line+bundle",
-      "title": "line bundle"
+      "url": "https://ncatlab.org/nlab/show/Samuel+compactification",
+      "title": "Samuel compactification"
     },
     "sep": {
-      "url": "https://plato.stanford.edu/entries/facts/",
-      "title": "Facts"
+      "url": "https://plato.stanford.edu/entries/tarski/",
+      "title": "Tarski, Alfred"
     },
     "attic": {
-      "url": "https://neugierde.github.io/cantors-attic/Extended_Veblen_function",
-      "title": "Extended Veblen function"
+      "url": "https://neugierde.github.io/cantors-attic/Subtle",
+      "title": "Subtle"
     },
     "oeis": {
-      "url": "https://oeis.org/A242386",
-      "title": "Lesser of consecutive primes whose sum is a palindromic number."
-    },
-    "arxiv": {
-      "url": "https://arxiv.org/abs/2611.34850",
-      "title": "Well-foundedness of the strict Lipschitz order on countably complete filters"
+      "url": "https://oeis.org/A342246",
+      "title": "Numbers k such that k-1, k and k+1 are all composite with four, five and six (not necessarily distinct) prime factors respectively."
     }
   }
 }

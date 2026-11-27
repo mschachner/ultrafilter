@@ -1,6 +1,6 @@
 {
  "version": 1,
- "updated": "2026-11-26T10:12:03.725Z",
+ "updated": "2026-11-27T10:12:53.121Z",
  "feeds": [
   {
    "name": "Joel David Hamkins",
@@ -900,6 +900,19 @@
    "added": "2026-11-26",
    "addedBy": "task",
    "note": "Maria Popova's long-running one-person blog of essays drawing on literature, art and science - sits beside the liked Public Domain Review-style art and ideas reading"
+  },
+  {
+   "name": "Asaf Karagila",
+   "author": "Asaf Karagila",
+   "site": "https://karagila.org/",
+   "feed": "http://karagila.org/feed.xml",
+   "topics": [
+    "math"
+   ],
+   "status": "active",
+   "added": "2026-11-27",
+   "addedBy": "task",
+   "note": "Asaf Karagila, set theorist, blogging on set theory, choice and the maths world - squarely matching the Cantor's Attic and set-theory likes"
   }
  ]
 }

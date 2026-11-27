@@ -1,0 +1,51 @@
+{
+  "date": "2026-11-27",
+  "title": "Three albums for 27 November",
+  "albums": [
+    {
+      "category": "focus",
+      "header": "Focus",
+      "artist": "Horace Silver",
+      "album": "Song for My Father",
+      "year": 1965,
+      "genres": [
+        "hard bop",
+        "latin jazz"
+      ],
+      "spotify_url": "https://open.spotify.com/album/4LEnATSqKeANOJ0mLUAuCE",
+      "link_is_search": false,
+      "blurb": "Pianist Horace Silver was one of hard bop's chief architects, and this Blue Note set is his signature statement, recorded with two editions of his quintet between 1963 and 1964. The title track's bossa-tinged vamp — written after a trip to Brazil and dedicated to his Cape Verdean father — became his best-known composition, and its opening bass figure was later echoed almost note-for-note in the intro of Steely Dan's \"Rikki Don't Lose That Number.\"",
+      "reception": "AllMusic's Steve Huey awarded it five stars and called it \"one of Blue Note's greatest mainstream hard bop dates.\""
+    },
+    {
+      "category": "familiar_artist",
+      "header": "Enjoy",
+      "artist": "Ichiko Aoba",
+      "album": "Windswept Adan",
+      "year": 2020,
+      "genres": [
+        "ambient folk",
+        "chamber folk"
+      ],
+      "spotify_url": "https://open.spotify.com/album/0LxeUCxtPfUtnHTKbW52MB",
+      "link_is_search": false,
+      "blurb": "Ichiko Aoba is a Kyoto-born singer, guitarist and composer who spent a decade making sparse classical-guitar-and-voice records before this seventh album, the first released on her own hermine label and her international breakthrough. Conceived as the soundtrack to an imaginary film, it follows a girl sent away to a fictional island of adan trees, wrapping Aoba's fingerpicking and whispered vocals in strings, flute and field recordings arranged with composer Taro Umebayashi.",
+      "reception": "Pitchfork scored the album 8.0, and it holds a Metacritic rating of 82 out of 100 from reviews including Mojo and The Guardian."
+    },
+    {
+      "category": "new_artist",
+      "header": "Explore",
+      "artist": "The Internet",
+      "album": "Ego Death",
+      "year": 2015,
+      "genres": [
+        "neo-soul",
+        "alternative r&b"
+      ],
+      "spotify_url": "https://open.spotify.com/album/69g3CtOVg98TPOwqmI2K7Q",
+      "link_is_search": false,
+      "blurb": "The Internet grew out of the Odd Future collective, led by vocalist Syd and producer Matt Martians, with a teenage Steve Lacy joining the lineup in time for this, their third album. Ego Death is where the group tightened from loose bedroom funk into a sleek live-band neo-soul unit, with guest turns from Janelle Monáe and Tyler, the Creator, and it launched the members' parallel solo careers.",
+      "reception": "It earned the band their first Grammy nomination, for Best Urban Contemporary Album at the 2016 awards, and debuted at number 89 on the Billboard 200."
+    }
+  ]
+}

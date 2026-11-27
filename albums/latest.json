@@ -1,51 +1,51 @@
 {
-  "date": "2026-11-26",
-  "title": "Three albums for 26 November",
+  "date": "2026-11-27",
+  "title": "Three albums for 27 November",
   "albums": [
     {
       "category": "focus",
       "header": "Focus",
-      "artist": "Esbjörn Svensson Trio",
-      "album": "From Gagarin's Point of View",
-      "year": 1999,
+      "artist": "Horace Silver",
+      "album": "Song for My Father",
+      "year": 1965,
       "genres": [
-        "jazz",
-        "piano trio"
+        "hard bop",
+        "latin jazz"
       ],
-      "spotify_url": "https://open.spotify.com/album/4jM7MG25QkVfp0SSkQ6138",
+      "spotify_url": "https://open.spotify.com/album/4LEnATSqKeANOJ0mLUAuCE",
       "link_is_search": false,
-      "blurb": "e.s.t. — the Swedish trio of pianist Esbjörn Svensson, bassist Dan Berglund and drummer Magnus Öström — spent the 1990s building a following at home before this, their first album released internationally on Munich's ACT label. It set the template the group refined until Svensson's death in 2008: acoustic piano-trio jazz shaped by pop structures, rock dynamics and discreet electronics, all of it instrumental, with the closer \"Dodge the Dodo\" becoming the band's signature piece.",
-      "reception": "The album was e.s.t.'s international breakthrough: Süddeutsche Zeitung called it \"a little miracle\", and ACT credits its sessions with producing the first Swedish jazz video shown on MTV."
+      "blurb": "Pianist Horace Silver was one of hard bop's chief architects, and this Blue Note set is his signature statement, recorded with two editions of his quintet between 1963 and 1964. The title track's bossa-tinged vamp — written after a trip to Brazil and dedicated to his Cape Verdean father — became his best-known composition, and its opening bass figure was later echoed almost note-for-note in the intro of Steely Dan's \"Rikki Don't Lose That Number.\"",
+      "reception": "AllMusic's Steve Huey awarded it five stars and called it \"one of Blue Note's greatest mainstream hard bop dates.\""
     },
     {
       "category": "familiar_artist",
       "header": "Enjoy",
-      "artist": "Kendrick Lamar",
-      "album": "good kid, m.A.A.d city",
-      "year": 2012,
+      "artist": "Ichiko Aoba",
+      "album": "Windswept Adan",
+      "year": 2020,
       "genres": [
-        "west coast hip hop",
-        "conscious rap"
+        "ambient folk",
+        "chamber folk"
       ],
-      "spotify_url": "https://open.spotify.com/album/748dZDqSZy6aPXKcI9H80u",
+      "spotify_url": "https://open.spotify.com/album/0LxeUCxtPfUtnHTKbW52MB",
       "link_is_search": false,
-      "blurb": "Kendrick Lamar's second studio album and his major-label debut on Top Dawg/Aftermath/Interscope, subtitled \"a short film by Kendrick Lamar\". It is a concept record following one day in his teenage life in Compton — cruising in his mother's van, peer pressure, a robbery gone wrong — told out of sequence and stitched together with voicemail skits, and it sits between the independent Section.80 and the jazz-saturated To Pimp a Butterfly in his discography.",
-      "reception": "It debuted at No. 2 on the Billboard 200 with about 242,000 first-week sales, the biggest debut for a new artist in 2012 at the time, and later became the first hip-hop studio album to spend ten years on that chart."
+      "blurb": "Ichiko Aoba is a Kyoto-born singer, guitarist and composer who spent a decade making sparse classical-guitar-and-voice records before this seventh album, the first released on her own hermine label and her international breakthrough. Conceived as the soundtrack to an imaginary film, it follows a girl sent away to a fictional island of adan trees, wrapping Aoba's fingerpicking and whispered vocals in strings, flute and field recordings arranged with composer Taro Umebayashi.",
+      "reception": "Pitchfork scored the album 8.0, and it holds a Metacritic rating of 82 out of 100 from reviews including Mojo and The Guardian."
     },
     {
       "category": "new_artist",
       "header": "Explore",
-      "artist": "Phoenix",
-      "album": "Wolfgang Amadeus Phoenix",
-      "year": 2009,
+      "artist": "The Internet",
+      "album": "Ego Death",
+      "year": 2015,
       "genres": [
-        "indie pop",
-        "synth-pop"
+        "neo-soul",
+        "alternative r&b"
       ],
-      "spotify_url": "https://open.spotify.com/album/0xG5b9nkWxKc5VTpo6Fq5I",
+      "spotify_url": "https://open.spotify.com/album/69g3CtOVg98TPOwqmI2K7Q",
       "link_is_search": false,
-      "blurb": "Phoenix formed in Versailles in the 1990s, part of the same suburban scene that produced Air and Daft Punk — guitarist Laurent Brancowitz played alongside the future Daft Punk duo in the band Darlin' before joining. Wolfgang Amadeus Phoenix is their fourth album, the record that turned a decade-old cult band into an arena act on the back of the singles \"1901\" and \"Lisztomania\" and Thomas Mars's clipped, bright vocal delivery.",
-      "reception": "The album won the 2010 Grammy Award for Best Alternative Music Album, and \"1901\" reached No. 1 on Billboard's Alternative Songs chart."
+      "blurb": "The Internet grew out of the Odd Future collective, led by vocalist Syd and producer Matt Martians, with a teenage Steve Lacy joining the lineup in time for this, their third album. Ego Death is where the group tightened from loose bedroom funk into a sleek live-band neo-soul unit, with guest turns from Janelle Monáe and Tyler, the Creator, and it launched the members' parallel solo careers.",
+      "reception": "It earned the band their first Grammy nomination, for Best Urban Contemporary Album at the 2016 awards, and debuted at number 89 on the Billboard 200."
     }
   ]
 }

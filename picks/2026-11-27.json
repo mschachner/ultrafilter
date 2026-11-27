@@ -1,0 +1,43 @@
+{
+  "date": "2026-11-27",
+  "artwork": {
+    "wikidata": "Q60497141",
+    "title": "Senecio (Klee)",
+    "interest": "surrealism"
+  },
+  "wikis": {
+    "wikipedia": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Intersection_number_(graph_theory)",
+        "title": "Intersection number (graph theory)",
+        "topic": "math"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Liverwort",
+        "title": "Liverwort",
+        "topic": "sci"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Daniel_Vangarde",
+        "title": "Daniel Vangarde",
+        "topic": "arts"
+      }
+    ],
+    "nlab": {
+      "url": "https://ncatlab.org/nlab/show/Samuel+compactification",
+      "title": "Samuel compactification"
+    },
+    "sep": {
+      "url": "https://plato.stanford.edu/entries/tarski/",
+      "title": "Tarski, Alfred"
+    },
+    "attic": {
+      "url": "https://neugierde.github.io/cantors-attic/Subtle",
+      "title": "Subtle"
+    },
+    "oeis": {
+      "url": "https://oeis.org/A342246",
+      "title": "Numbers k such that k-1, k and k+1 are all composite with four, five and six (not necessarily distinct) prime factors respectively."
+    }
+  }
+}
